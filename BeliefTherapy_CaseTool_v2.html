@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belief Therapy Case Consultant</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, serif; background: #f7f5f0; color: #2c2c2c; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 20px; }
+  .card { background: #fff; border: 1px solid #ddd; border-radius: 12px; max-width: 680px; width: 100%; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.08); }
+  header { background: #1a3a2a; color: #e8dfc8; padding: 20px 28px; border-bottom: 3px solid #c8a84b; }
+  header .logo { font-size: 24px; font-weight: bold; }
+  header .sub { font-size: 13px; color: #a8c8a8; font-style: italic; margin-top: 3px; }
+  .body { padding: 28px; }
+  .body h2 { font-size: 20px; color: #1a3a2a; margin-bottom: 12px; }
+  .body p { font-size: 15px; line-height: 1.7; color: #444; margin-bottom: 14px; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 20px 0; }
+  .step { background: #f0ead8; border: 1px solid #ddd; border-radius: 8px; padding: 10px 8px; text-align: center; }
+  .step .num { font-family: Arial, sans-serif; font-size: 11px; color: #c8a84b; font-weight: bold; margin-bottom: 3px; }
+  .step .name { font-size: 13px; color: #1a3a2a; font-weight: bold; }
+  .scripture { background: #f0ead8; border-left: 3px solid #c8a84b; padding: 12px 16px; font-style: italic; font-size: 14px; color: #4a3a1a; margin: 16px 0; border-radius: 0 6px 6px 0; }
+  .case-form { background: #f7f5f0; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-top: 20px; }
+  .case-form label { display: block; font-size: 13px; font-weight: bold; color: #1a3a2a; margin-bottom: 6px; font-family: Arial, sans-serif; }
+  .case-form textarea { width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 10px 14px; font-family: Georgia, serif; font-size: 14px; line-height: 1.5; resize: vertical; min-height: 90px; color: #2c2c2c; background: #fff; outline: none; }
+  .case-form textarea:focus { border-color: #1a3a2a; }
+  .options { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+  .opt-btn { font-family: Arial, sans-serif; font-size: 12px; padding: 6px 12px; border: 1px solid #1a3a2a; border-radius: 99px; background: transparent; color: #1a3a2a; cursor: pointer; transition: all 0.15s; }
+  .opt-btn:hover, .opt-btn.selected { background: #1a3a2a; color: #e8dfc8; }
+  .launch-btn { display: block; width: 100%; margin-top: 16px; background: #1a3a2a; color: #e8dfc8; border: none; border-radius: 8px; padding: 14px 20px; font-family: Georgia, serif; font-size: 16px; cursor: pointer; text-align: center; transition: background 0.2s; }
+  .launch-btn:hover { background: #2a5a3a; }
+  .launch-btn:disabled { background: #999; cursor: not-allowed; }
+  .note { font-family: Arial, sans-serif; font-size: 12px; color: #888; text-align: center; margin-top: 10px; }
+  footer { background: #1a3a2a; color: #a8c8a8; text-align: center; font-family: Arial, sans-serif; font-size: 11px; padding: 10px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <header>
+    <div class="logo">Belief Therapy</div>
+    <div class="sub">Case Consultation — Dr. Brian Campbell, PhD</div>
+  </header>
+
+  <div class="body">
+    <h2>AI Case Consultation Tool</h2>
+    <p>This tool walks you through a real client case using Dr. Campbell's Belief Therapy model — a structured, Scripture-integrated approach based on 35 years of Christian counseling practice. Describe your client below, then launch a guided consultation session.</p>
+
+    <div class="scripture">"We take captive every thought to make it obedient to Christ." — 2 Corinthians 10:5</div>
+
+    <div class="steps">
+      <div class="step"><div class="num">1</div><div class="name">Assess</div></div>
+      <div class="step"><div class="num">2</div><div class="name">Identify</div></div>
+      <div class="step"><div class="num">3</div><div class="name">Hypothesize</div></div>
+      <div class="step"><div class="num">4</div><div class="name">Question</div></div>
+      <div class="step"><div class="num">5</div><div class="name">Refute</div></div>
+      <div class="step"><div class="num">6</div><div class="name">Replace</div></div>
+      <div class="step"><div class="num">7</div><div class="name">Rehearse</div></div>
+      <div class="step"><div class="num">8</div><div class="name">Reinforce</div></div>
+    </div>
+
+    <div class="case-form">
+      <label>Briefly describe your client's presenting problem:</label>
+      <textarea id="caseInput" placeholder="e.g. My client is a 42-year-old Christian woman struggling with severe depression. She believes God has abandoned her and that she is unforgivable due to past mistakes..."></textarea>
+
+      <label style="margin-top:14px;">Common presenting issues (click to add):</label>
+      <div class="options">
+        <button class="opt-btn" onclick="addTopic('anxiety and worry')">Anxiety & worry</button>
+        <button class="opt-btn" onclick="addTopic('depression and hopelessness')">Depression & hopelessness</button>
+        <button class="opt-btn" onclick="addTopic('feels God has abandoned them')">Feels abandoned by God</button>
+        <button class="opt-btn" onclick="addTopic('cannot forgive themselves')">Cannot forgive themselves</button>
+        <button class="opt-btn" onclick="addTopic('grief and loss')">Grief & loss</button>
+        <button class="opt-btn" onclick="addTopic('anger and resentment')">Anger & resentment</button>
+        <button class="opt-btn" onclick="addTopic('low self-worth and feelings of worthlessness')">Low self-worth</button>
+        <button class="opt-btn" onclick="addTopic('marital or relationship conflict')">Relationship conflict</button>
+      </div>
+
+      <button class="launch-btn" id="launchBtn" onclick="launchConsultation()">
+        Begin Case Consultation →
+      </button>
+      <p class="note">Opens a guided session in Claude AI (free account required)</p>
+    </div>
+  </div>
+
+  <footer>Belief Therapy Case Consultant &nbsp;|&nbsp; Based on the work of Dr. Brian Campbell &nbsp;|&nbsp; counseling4christians.com</footer>
+</div>
+
+<script>
+function addTopic(topic) {
+  const ta = document.getElementById('caseInput');
+  const current = ta.value.trim();
+  if (current && !current.endsWith(',') && !current.endsWith('.')) {
+    ta.value = current + '. Client is also dealing with ' + topic + '.';
+  } else if (current) {
+    ta.value = current + ' Client is dealing with ' + topic + '.';
+  } else {
+    ta.value = 'My client is dealing with ' + topic + '.';
+  }
+  ta.focus();
+}
+
+function launchConsultation() {
+  const caseText = document.getElementById('caseInput').value.trim();
+  const btn = document.getElementById('launchBtn');
+
+  const systemContext = `You are the Belief Therapy Case Consultant, an AI teaching tool built on the clinical model and 35 years of private practice of Dr. Brian Campbell, PhD, licensed psychologist (Florida). Your purpose is to walk Christian counselors through real client cases using the Belief Therapy model — also called Christian Cognitive-Behavioral Therapy (CCBT).
+
+YOUR VOICE: Speak as a wise, experienced clinical supervisor — warm but direct, practical, deeply Christian. Use Dr. Campbell's phrases naturally: "Let's stop and look at what God has to say about that…", "These are the lies driving the pain", "You cannot attack a belief you haven't named", "The truth will set them free."
+
+THE EIGHT-STEP MODEL:
+1. ASSESS — Gather comprehensive history: presenting problem, family/parental patterns, Christian background and beliefs, functioning across biological, psychological, interpersonal, socioeconomic, sociocultural, and spiritual levels.
+2. IDENTIFY — Surface the specific false beliefs (the "lies") driving distress. Common lies: "I am worthless", "Nothing will ever change", "God has abandoned me", "I am unforgivable", "I'm a failure", "Nobody loves me."
+3. HYPOTHESIZE — Determine which belief, if changed, would produce the greatest therapeutic shift.
+4. QUESTION — Use targeted spiritual questions ("How might an all-loving God view this?", "Are your sins too big for the Creator to forgive?") and general questions ("What's the actual evidence?", "Is it possible you've believed a lie your entire life?")
+5. REFUTE — Actively argue against the false belief using evidence, Scripture, logic, and the client's own experience.
+6. REPLACE — Construct a replacement belief grounded in Biblical truth: "I am imperfect but deeply loved by God", "Christ has forgiven my sins", "God has not abandoned me."
+7. REHEARSE — Assign homework: Scripture memorization, reminder cards, reading from Godly Counsel or Pearls, audio downloads (Overcoming Anxiety, Overcoming Depression).
+8. REINFORCE — Review progress, belief strength, remaining triggers, spiritual growth.
+
+KEY SCRIPTURES: Romans 12:2, 2 Corinthians 10:5, John 8:32, John 14:26, Psalm 119:11, 2 Timothy 3:16.
+
+TEACHING APPROACH: Walk the counselor through the case step by step. At each step explain WHY. Ask one focused question at a time. Label each new step clearly. Give brief clinical feedback on the counselor's reasoning.`;
+
+  const userMessage = caseText
+    ? `I am a Christian counselor seeking supervision using the Belief Therapy model. Here is my client: ${caseText}\n\nPlease begin walking me through this case using the 8-step Belief Therapy model, starting with the ASSESS step.`
+    : `I am a Christian counselor seeking supervision using the Belief Therapy model. I would like to work through a case with you. Please begin by asking me about my client.`;
+
+  const fullPrompt = systemContext + '\n\n---\n\n' + userMessage;
+  const encoded = encodeURIComponent(fullPrompt);
+  const claudeURL = 'https://claude.ai/new?q=' + encoded;
+
+  btn.textContent = 'Opening Claude...';
+  btn.disabled = true;
+
+  window.open(claudeURL, '_blank');
+
+  setTimeout(() => {
+    btn.textContent = 'Begin Case Consultation →';
+    btn.disabled = false;
+  }, 3000);
+}
+</script>
+</body>
+</html>
