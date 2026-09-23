@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>I Am Worthless — Belief Therapy Counseling Companion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --page:#FFFFFF; --ink:#1B1B1B; --muted:#4A4A4A;
+  --navy:#1F3864; --navy-ink:#FFFFFF; --gold:#8A6A1F; --tan:#F1ECE2; --tan-line:#D8CFBE; --rule:#B99A55;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --page:#15181E; --ink:#ECECEC; --muted:#BFBFBF;
+    --navy:#9DB6E0; --navy-ink:#10131A; --gold:#D8B566; --tan:#22262E; --tan-line:#3A404B; --rule:#8C7440;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#15181E; --ink:#ECECEC; --muted:#BFBFBF;
+  --navy:#9DB6E0; --navy-ink:#10131A; --gold:#D8B566; --tan:#22262E; --tan-line:#3A404B; --rule:#8C7440;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4.25rem);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--page);color:var(--ink);font-family:Carlito,Calibri,"Segoe UI",Arial,sans-serif;font-size:1.1875rem;line-height:1.55}
+.wrap{max-width:46rem;margin:0 auto;padding:0 1.1rem}
+p{margin:0 0 .9rem}
+a{color:var(--navy);font-weight:700}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+ul,ol{margin:0 0 1rem;padding-left:1.35rem}
+li{margin:.3rem 0}
+
+/* Title block — mirrors the Word document */
+header.doc{text-align:center;padding:2rem 0 1.25rem}
+.label{color:var(--gold);font-weight:700;letter-spacing:.04em;font-size:.95rem;text-transform:uppercase}
+h1{color:var(--navy);font-size:clamp(1.7rem,7vw,2.3rem);line-height:1.2;margin:.35rem 0 .9rem}
+.lede{font-style:italic;color:var(--muted);margin:0}
+.lede b{color:var(--ink)}
+
+/* Sticky jump bar */
+nav.jump{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--navy);border-bottom:3px solid var(--gold)}
+nav.jump ol{list-style:none;margin:0 auto;padding:.5rem .6rem;max-width:46rem;display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}
+nav.jump li{margin:0}
+nav.jump a{display:block;text-align:center;text-decoration:none;color:var(--navy-ink);font-weight:700;font-size:1.05rem;letter-spacing:.03em;text-transform:uppercase;padding:.5rem .2rem;border-radius:6px;border:1.5px solid transparent}
+nav.jump a.on{border-color:var(--navy-ink)}
+
+/* Section headings: navy title with gold rule, like the document */
+h2.sec{color:var(--navy);font-size:1.45rem;margin:2.2rem 0 .8rem;padding-bottom:.3rem;border-bottom:1.5px solid var(--rule)}
+h3{color:var(--navy);font-size:1.25rem;margin:1.8rem 0 .6rem}
+
+/* Treatment process: navy header + tan cells; stacked on phones, side by side on wide screens */
+.process{display:grid;gap:.8rem}
+.col{border:1px solid var(--tan-line)}
+.col h3{margin:0;background:var(--navy);color:var(--navy-ink);text-align:center;font-size:1.1rem;letter-spacing:.05em;text-transform:uppercase;padding:.55rem;text-decoration:underline;text-underline-offset:3px}
+.col ol{background:var(--tan);margin:0;padding:.7rem .9rem .8rem 2.2rem}
+@media (min-width:760px){.process{grid-template-columns:1fr 1.15fr 1fr;gap:0}.col+.col{border-left:0}.col ol{height:100%}.col{display:flex;flex-direction:column}}
+
+/* Snapshot: label above value on phones, two columns when wide */
+.snap{border:1px solid var(--tan-line)}
+.snap .row{border-top:1px solid var(--tan-line);padding:.65rem .9rem}
+.snap .row:first-child{border-top:0}
+.snap .k{color:var(--navy);font-weight:700;display:block}
+@media (min-width:760px){.snap .row{display:grid;grid-template-columns:14rem 1fr;padding:0}.snap .k{background:var(--tan);padding:.65rem .9rem}.snap .v{padding:.65rem .9rem}}
+
+/* Stage banners */
+.stage{margin-top:2.75rem}
+.banner{background:var(--navy);color:var(--navy-ink);padding:1rem 1.1rem}
+.banner .n{font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;opacity:.9}
+.banner h2{margin:.1rem 0 0;font-size:1.9rem;letter-spacing:.05em;text-transform:uppercase}
+.banner p{margin:.5rem 0 0;font-style:italic}
+
+.levels{list-style:none;padding:0;counter-reset:lv}
+.levels li{counter-increment:lv;position:relative;padding:.6rem 0 .6rem 2.4rem;border-bottom:1px solid var(--tan-line);margin:0}
+.levels li::before{content:counter(lv);position:absolute;left:0;top:.6rem;width:1.7rem;height:1.7rem;background:var(--navy);color:var(--navy-ink);font-weight:700;text-align:center;line-height:1.7rem;font-size:1rem}
+.levels b{display:block;color:var(--navy)}
+
+.core{text-align:center;font-size:1.7rem;font-weight:700;font-style:italic;color:var(--navy);background:var(--tan);border-top:3px solid var(--navy);border-bottom:3px solid var(--navy);padding:1rem;margin:0 0 1rem}
+
+details{border:1px solid var(--tan-line);margin-bottom:.55rem;background:var(--page)}
+summary{cursor:pointer;list-style:none;background:var(--tan);color:var(--navy);font-weight:700;padding:.75rem 2.6rem .75rem .9rem;position:relative;min-height:2.9rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:.9rem;top:50%;transform:translateY(-50%);font-size:1.5rem;font-weight:400}
+details[open] summary::after{content:"–"}
+details .body{padding:.75rem .9rem .2rem}
+.hint{color:var(--muted);font-style:italic;font-size:1rem}
+
+.qhead{color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:1rem;margin:1rem 0 .2rem}
+
+.verse{background:var(--tan);border-left:5px solid var(--gold);padding:1rem 1rem .4rem;margin:0 0 1rem}
+.verse blockquote{margin:0 0 .5rem;font-style:italic;font-size:1.25rem;line-height:1.5}
+.verse cite{display:block;font-style:normal;font-weight:700;color:var(--gold);margin-bottom:.5rem}
+
+.lt{border:1px solid var(--tan-line);margin-bottom:1rem}
+.lt div{padding:.7rem .9rem}
+.lt div+div{border-top:1px solid var(--tan-line)}
+.lt b{display:block;text-transform:uppercase;letter-spacing:.05em;font-size:.95rem}
+.lt .lie b{color:var(--gold)} .lt .truth{background:var(--tan)} .lt .truth b{color:var(--navy)}
+
+.note{border:1.5px solid var(--gold);padding:.9rem 1rem;margin:1.25rem 0}
+.note b{color:var(--gold)}
+.prayer{text-align:center;font-style:italic;font-size:1.2rem;background:var(--tan);padding:1.1rem 1rem;border-top:3px solid var(--navy);border-bottom:3px solid var(--navy)}
+.insights{border:1px solid var(--tan-line);margin:2.75rem 0 0}
+.insights h2{margin:0;background:var(--navy);color:var(--navy-ink);font-size:1.3rem;padding:.7rem 1rem}
+.insights .in{padding:1rem 1rem .2rem}
+footer{text-align:center;color:var(--muted);font-size:1rem;padding:2rem 0 3rem}
+footer a{display:inline-block;margin-top:.6rem}
+</style>
+</head>
+<body>
+
+<header class="doc wrap" id="top">
+  <div class="label">Belief Therapy Counseling Companion</div>
+  <h1>Core Irrational Belief: “I Am Worthless”</h1>
+  <p class="lede">This counseling companion applies Dr. Brian Campbell’s three-phase Belief Therapy Model: identify the irrational belief and its effects, <b>challenge</b> its accuracy with Scripture and reasoned refutation, and <b>replace</b> it with truth that is practiced, maintained, and sets you free.</p>
+</header>
+
+<nav class="jump" aria-label="Jump to a stage">
+  <ol>
+    <li><a href="#identify">Identify</a></li>
+    <li><a href="#challenge">Challenge</a></li>
+    <li><a href="#replace">Replace</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<h2 class="sec">Treatment Process</h2>
+<div class="process">
+  <div class="col"><h3>1 Identify</h3><ol>
+    <li>Assess the Presenting Problem</li><li>Identify the Core Irrational Belief</li><li>Identify Associated Thoughts/Beliefs</li><li>Identify Associated Emotions</li><li>Identify Associated Behaviors</li><li>Identify Associated Negative Self-Talk</li><li>Recognize Cognitive Errors</li></ol></div>
+  <div class="col"><h3>2 Challenge</h3><ol>
+    <li>Question the Truth of the Core Belief</li><li>Challenge Underlying Assumptions and Cognitive Errors</li><li>Refute the Irrational Belief with Scripture and Reason</li><li>Do Targeted Experiments That Challenge the Core Belief</li></ol></div>
+  <div class="col"><h3>3 Replace</h3><ol>
+    <li>Replace with Positive Self-Statements</li><li>Replace with God’s Truth (Scripture)</li><li>Develop the Mind of Christ</li><li>Rehearse the Truth (Practice)</li><li>Reinforce and Maintain the Truth</li></ol></div>
+</div>
+
+<h2 class="sec">Counseling Snapshot</h2>
+<div class="snap">
+  <div class="row"><span class="k">Core Irrational Belief</span><span class="v">I Am Worthless</span></div>
+  <div class="row"><span class="k">Primary Emotions</span><span class="v">Depression, shame, hopelessness, discouragement, loneliness</span></div>
+  <div class="row"><span class="k">Common Behaviors</span><span class="v">Withdrawal, perfectionism, people-pleasing, avoidance, accepting mistreatment</span></div>
+  <div class="row"><span class="k">Typical Automatic Thoughts</span><span class="v">“I’m a failure.” “Nobody loves me.” “I don’t matter.” “I don’t have any value.” “I am not worthy of love.”</span></div>
+  <div class="row"><span class="k">Primary Therapeutic Goal</span><span class="v">Replace an identity based upon performance and human approval with an identity grounded in God’s love.</span></div>
+  <div class="row"><span class="k">Key Scriptures</span><span class="v">Psalm 8:5; John 3:16; Romans 5:8; Psalm 139:13–14; Ephesians 2:10; Romans 8:1 (NIV)</span></div>
+  <div class="row"><span class="k">Christlike Outcome</span><span class="v">A secure identity in Christ expressed through humility, gratitude, confidence in God’s love, and service.</span></div>
+</div>
+
+<!-- STAGE 1 -->
+<section class="stage" id="identify">
+  <div class="banner"><div class="n">Stage 1</div><h2>Identify</h2>
+    <p>Clarify the presenting problem, uncover the core belief, and trace its cognitive, emotional, and behavioral effects. “You cannot attack a belief you haven’t named.”</p></div>
+
+  <h3>Assess the Presenting Problem</h3>
+  <p>What happened? What did the client think? What did the client say to himself or herself? What did the client feel? What did the client do? What happened as a result? How long has this pattern persisted? Under what circumstances does it appear? Why is the client seeking help now?</p>
+
+  <h3>Mine for Core Beliefs: Levels of Analysis</h3>
+  <p>Dr. Campbell’s General Theory of Integration examines the presenting problem across six levels. No level competes with or is superior to another — each has its own story to tell, because all truth is God’s truth.</p>
+  <ol class="levels">
+    <li><b>Biological (including physical)</b>Biochemical processes, brain functioning, genetics, medications, pain, or physical illness. Rule these out before assuming the distress is belief-driven.</li>
+    <li><b>Psychological / cognitive</b>Automatic thoughts, self-statements, emotions, learning history, and information processing.</li>
+    <li><b>Interpersonal</b>Family relationships, marriage, communication patterns, abuse, abandonment, and social support.</li>
+    <li><b>Socioeconomic</b>Finances, employment history, poverty or affluence, and related pressures.</li>
+    <li><b>Sociocultural</b>Culture, race and ethnicity, church culture, and community or social expectations.</li>
+    <li><b>Spiritual / religious</b>Beliefs about God, Christ, and the Holy Spirit; sin and forgiveness; salvation; prayer; and religious upbringing.</li>
+  </ol>
+
+  <h3>Core Irrational Belief</h3>
+  <p class="core">“I am worthless.”</p>
+
+  <h3>Why Do People Believe This Lie?</h3>
+  <p>This belief commonly develops when painful life experiences are interpreted as evidence that personal worth depends upon performance, achievement, acceptance, or the approval of others. Often the lie is taught directly — a parent or caretaker who told the child, in word or in action, that he or she was “bad” or “worthless.” Once accepted, this belief becomes part of the client’s worldview and influences emotions, relationships, decisions, and behavior.</p>
+
+  <h3>Associated Thoughts and Beliefs</h3>
+  <ul>
+    <li>Nobody loves me.</li><li>I don’t matter.</li><li>I am insignificant.</li><li>I have no purpose.</li><li>God doesn’t love me.</li><li>I am a failure.</li><li>Nobody could love me.</li><li>God must be disappointed with me.</li><li>I’m no good — I never have been.</li><li>I don’t have any value.</li><li>I am not worthy of love.</li><li>I am beyond help.</li>
+  </ul>
+
+  <h3>How This Lie Affects Emotions and Behavior</h3>
+  <p><b>Emotions:</b> depression, shame, hopelessness, discouragement, loneliness — often clustered with guilt, shame, and spiritual despair (“God has forsaken me,” “my sins are unforgivable”).</p>
+  <p><b>Behaviors:</b> withdrawal, perfectionism, avoidance, people-pleasing, accepting mistreatment.</p>
+
+  <h3>Common Cognitive Errors</h3>
+  <p>The belief is maintained by predictable patterns of distorted thinking. Recognizing them helps explain how the belief formed and how it keeps being reinforced.</p>
+  <p class="hint">Tap each one to read more.</p>
+  <details><summary>Overgeneralization</summary><div class="body"><p><b>What it is:</b> Drawing broad conclusions based on limited evidence or a single incident.</p><p><b>How it shows up:</b> One failure or rejection becomes proof that the client is completely worthless, rather than being recognized as a single event among many.</p></div></details>
+  <details><summary>Global Labeling</summary><div class="body"><p><b>What it is:</b> Applying a global negative label to oneself based on one behavior or weakness, rather than considering the broader context.</p><p><b>How it shows up:</b> Instead of thinking, “I failed at this task,” the client concludes, “I am worthless.” A single behavior becomes the client’s entire identity.</p></div></details>
+  <details><summary>Discounting the Positive</summary><div class="body"><p><b>What it is:</b> Rejecting positive experiences or feedback by insisting they don’t count for some reason.</p><p><b>How it shows up:</b> Compliments, successes, and evidence of God’s care are dismissed as flukes or exceptions, so the lie is never allowed to be contradicted.</p></div></details>
+  <details><summary>Emotional Reasoning</summary><div class="body"><p><b>What it is:</b> Assuming that because we feel a certain way, what we think must be true.</p><p><b>How it shows up:</b> Because the client feels worthless, the client concludes that he or she actually is worthless — the feeling is treated as evidence.</p></div></details>
+  <details><summary>Mental Filter</summary><div class="body"><p><b>What it is:</b> Focusing exclusively on isolated negative details of a situation while disregarding the broader context.</p><p><b>How it shows up:</b> One criticism outweighs years of affirmation and is treated as final confirmation of the client’s worthlessness.</p></div></details>
+  <details><summary>Magnification or Minimization</summary><div class="body"><p><b>What it is:</b> Exaggerating the importance of negative events while minimizing positive events or personal strengths.</p><p><b>How it shows up:</b> A minor mistake is magnified into “proof” of no value, while genuine accomplishments and God-given gifts are minimized or explained away.</p></div></details>
+</section>
+
+<!-- STAGE 2 -->
+<section class="stage" id="challenge">
+  <div class="banner"><div class="n">Stage 2</div><h2>Challenge</h2>
+    <p>Examine the evidence, expose the cognitive errors, and refute the irrational belief with sound reasoning and Scripture. “We demolish arguments… and take captive every thought to make it obedient to Christ” (2 Corinthians 10:5).</p></div>
+
+  <h3>Questions That Challenge This Belief</h3>
+  <p class="qhead">Spiritual</p>
+  <ul>
+    <li>How might an all-loving God look at me or this situation?</li><li>Does God still love me despite my faults or limitations?</li><li>Have I overlooked some of the gifts God has given me?</li><li>Won’t God forgive me if I just ask?</li><li>How does God see me through His eyes?</li>
+  </ul>
+  <p class="qhead">General</p>
+  <ul>
+    <li>What is the actual evidence that convinces me I am worthless?</li><li>Who first taught me this?</li><li>Just because my parents or others told me this, does that make it true?</li><li>Is it possible I have been believing a lie my entire life?</li><li>Am I discounting evidence that contradicts this belief?</li><li>What are some of the best arguments against my belief or conclusion?</li>
+  </ul>
+
+  <h3>Cognitive Refutations</h3>
+  <ul>
+    <li>My worth is not determined by my performance.</li><li>Failure does not determine my identity.</li><li>God’s evaluation of me is more trustworthy than my own distorted self-evaluation.</li><li>Not everything I was taught — by parents, culture, or even well-intentioned church teaching — is necessarily true.</li>
+  </ul>
+
+  <h3>God’s Truth That Challenges This Belief</h3>
+  <div class="verse"><blockquote>“You made him a little lower than the heavenly beings and crowned him with glory and honor.”</blockquote><cite>Psalm 8:5 (NIV)</cite><p>You are not worthless. God considers you a wonderful creation with great value and worth — so much so that He places a crown on your head and honors and glorifies your name.</p></div>
+  <div class="verse"><blockquote>“For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.”</blockquote><cite>John 3:16 (NIV)</cite><p>If God loved you enough to sacrifice His one and only Son so that you might have eternal life, then your worth cannot be measured by your failures or the opinions of others. Your value is revealed by God’s love rather than by your performance.</p></div>
+  <div class="verse"><blockquote>“But God demonstrates his own love for us in this: while we were still sinners, Christ died for us.”</blockquote><cite>Romans 5:8 (NIV)</cite><p>You do not have to earn God’s love. Christ died for you while you were still a sinner. God’s love is based upon His grace rather than your performance.</p></div>
+  <div class="verse"><blockquote>“For you created my inmost being; you knit me together in my mother’s womb. I praise you because I am fearfully and wonderfully made; your works are wonderful, I know that full well.”</blockquote><cite>Psalm 139:13–14 (NIV)</cite><p>You are not insignificant or defective. Your worth begins with God’s creative purpose rather than your accomplishments.</p></div>
+  <div class="verse"><blockquote>“For we are God’s handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do.”</blockquote><cite>Ephesians 2:10 (NIV)</cite><p>You are God’s workmanship, created with purpose. Your significance comes from God’s calling rather than self-achievement.</p></div>
+  <div class="verse"><blockquote>“Therefore, there is now no condemnation for those who are in Christ Jesus.”</blockquote><cite>Romans 8:1 (NIV)</cite><p>Your failures do not define your identity. God’s grace is greater than your condemnation.</p></div>
+</section>
+
+<!-- STAGE 3 -->
+<section class="stage" id="replace">
+  <div class="banner"><div class="n">Stage 3</div><h2>Replace</h2>
+    <p>Establish a truthful identity, practice Christlike thinking and behavior, and maintain the change over time. “The truth will set you free” (John 8:32).</p></div>
+
+  <h3>Replacing the Lie</h3>
+  <div class="lt">
+    <div class="lie"><b>Lie</b>“I am worthless.”</div>
+    <div class="truth"><b>Truth</b>My worth is grounded in God’s love, His creation, and Christ’s sacrifice — “I am fearfully and wonderfully made” (Psalm 139:14).</div>
+  </div>
+
+  <h3>Developing the Mind of Christ</h3>
+  <p>Christ acted with assurance rooted in His relationship with the Father. He possessed a secure identity and healthy self-worth based on being known, valued, and loved by God (Jeremiah 17:7; Ephesians 2:10) — yet He remained humble, recognizing His own limitations and refusing self-exaltation, knowing that all competence and goodness come from God (Philippians 2:3).</p>
+  <p>The client no longer measures worth by performance, appearance, achievement, or the opinions of others. Identity becomes firmly rooted in Jesus Christ: resting securely in God’s love, cultivating a daily relationship with Him through prayer and Scripture, replacing lies with truth, taking every thought captive (2 Corinthians 10:5), and increasingly reflecting Christ’s humility, gratitude, grace, and confidence. The goal is not merely to feel better, but to become progressively more like Christ.</p>
+
+  <h3>Portrait of a Person Who Believes the Truth</h3>
+  <p>Imagine waking each morning no longer wondering whether you matter. You know your worth has already been settled by God’s love through Jesus Christ. Praise no longer inflates you, and criticism no longer destroys you, because your identity rests in Christ. You are free to love without demanding approval, serve without seeking recognition, admit mistakes without feeling worthless, and celebrate the success of others without feeling diminished.</p>
+  <p>As God’s truth renews your mind, your inner dialogue changes from self-condemnation to gratitude, hope, and confidence. When you fail, you confess, receive God’s forgiveness, learn, and continue growing instead of remaining trapped in shame. Others begin to notice greater humility, peace, compassion, teachability, and quiet confidence rooted in God’s grace.</p>
+
+  <div class="note"><b>Counselor’s note:</b> <i>The ultimate evidence that this irrational belief has been replaced is not merely reduced distress or improved self-esteem. It is the gradual emergence of Christlike thinking, Christlike character, Christlike relationships, and Christlike living.</i></div>
+
+  <h3>How Will You Know This Belief Is Changing?</h3>
+  <ul>
+    <li>You no longer define yourself by failure.</li><li>Criticism no longer destroys your identity.</li><li>Gratitude replaces shame.</li><li>You can say, and increasingly believe, “I am worthy of love and belonging” and “my worth is inherent, not earned.”</li><li>Your confidence increasingly rests in God’s love rather than in performance or approval.</li>
+  </ul>
+
+  <h3>Maintenance: Keeping the Truth Alive</h3>
+  <p>Recognize triggers, return to Scripture, practice truthful self-talk, remain connected to mature believers, and continue growing spiritually. When an old negative self-statement resurfaces, pull the paired index card and rehearse the corresponding truth until the new belief becomes automatic.</p>
+
+  <h3>Walking in the Truth</h3>
+  <p><i>Each morning ask: “If I truly believed God’s truth instead of this lie, how would I think, speak, act, and become more like Christ today?”</i></p>
+
+  <h3>Homework</h3>
+  <ul>
+    <li>Read the listed Scriptures daily; memorize John 3:16 and Psalm 139:14.</li>
+    <li>Complete the Depressive Thoughts &amp; Beliefs Checklist and identify the 2–3 items that feel most true. Bring these to the next session for discussion.</li>
+    <li>Work through the Negative Self-Statements list. For each statement checked (for example, “I am worthless,” “I don’t have any value”), pair it on a 3-by-5 index card with a corresponding Positive Self-Statement (for example, “my worth is inherent, not earned,” “I am worthy of love and belonging”). Carry the cards and review them daily.</li>
+    <li>Read the “Who I Am…” section of <a href="https://32ece26a-021e-4735-8f29-4888e5a1d6bc.usrfiles.com/ugd/dbdded_367863316af04b929952fb8e77e78000.pdf" target="_blank" rel="noopener"><i>Godly Counsel</i>, Chapter 24: Self-Esteem, Low</a>, and the <a href="https://dc1039c4-5e9d-4f82-abcd-56487716be7c.usrfiles.com/ugd/dbdded_ae1ed99f6bf1477a93e9b3e2cca68c57.pdf" target="_blank" rel="noopener">“Self-Esteem, Low” Scriptures in <i>Pearls</i></a>.</li>
+    <li>Listen to the Overcoming Depression audio download as needed.</li>
+    <li>Each day, write one biblical truth beside every negative thought that surfaces.</li>
+  </ul>
+
+  <h3>Further Reading</h3>
+  <p class="hint">Each link opens in a new tab. Close that tab to return here.</p>
+  <ul>
+    <li><a href="https://f5ebb4be-1a1e-48f8-8fa9-70737c1c6393.usrfiles.com/ugd/dbdded_2f40aed99f8e4c7fb470b3f11ef4c04c.pdf" target="_blank" rel="noopener">The Mentally Healthy Christian</a> (from <i>Christlike: Walking the Walk</i>, pp. 14–35)</li>
+    <li><a href="https://32ece26a-021e-4735-8f29-4888e5a1d6bc.usrfiles.com/ugd/dbdded_367863316af04b929952fb8e77e78000.pdf" target="_blank" rel="noopener"><i>Godly Counsel</i>, Chapter 24: Self-Esteem, Low</a> (pp. 171–180)</li>
+    <li><a href="https://32ece26a-021e-4735-8f29-4888e5a1d6bc.usrfiles.com/ugd/dbdded_2c24145396194e8b88281f1525fb51a2.pdf" target="_blank" rel="noopener"><i>Godly Counsel</i>, Chapter 29: Thinking, Healthy</a> (pp. 214–218)</li>
+    <li><a href="https://32ece26a-021e-4735-8f29-4888e5a1d6bc.usrfiles.com/ugd/dbdded_931c324b0e8646b8aa1b625607ddeb31.pdf" target="_blank" rel="noopener"><i>Godly Counsel</i>, Chapter 17: Love</a> (pp. 121–131)</li>
+    <li><a href="https://32ece26a-021e-4735-8f29-4888e5a1d6bc.usrfiles.com/ugd/dbdded_7d00b23d56f3451692029e4367c19822.pdf" target="_blank" rel="noopener"><i>Godly Counsel</i>, Chapter 31: Truth</a> (pp. 223–228)</li>
+    <li><a href="https://32ece26a-021e-4735-8f29-4888e5a1d6bc.usrfiles.com/ugd/dbdded_ccad3cb6f8454c12a3059fd5a1c78958.pdf" target="_blank" rel="noopener"><i>Godly Counsel</i>, Chapter 14: Forgive/Forgiveness</a> (pp. 108–111)</li>
+  </ul>
+
+  <h3>Prayer</h3>
+  <p class="prayer">Father, help me reject the lie that I am worthless. Renew my mind with Your truth, remind me that my worth was settled at the cross, and help me become more like Christ each day. In Jesus’ name, Amen.</p>
+</section>
+
+<aside class="insights">
+  <h2>Dr. Campbell’s Counseling Insights</h2>
+  <div class="in">
+    <p>You cannot attack a belief you haven’t named. Help the client identify the underlying belief before you challenge it — present it as a hypothesis to explore together, not a verdict to impose.</p>
+    <p>Do not assume every case of “I am worthless” is purely belief-driven; rule out biological, medical, and situational contributors first.</p>
+    <p>Once the lie is named, let Scripture do the heavy lifting: gently expose its inaccuracies, and patiently replace it with God’s truth until the client increasingly interprets life through a Christlike worldview.</p>
+    <p>Remember that not everything a client believes — even things taught by well-meaning parents or churches — is necessarily true. The goal is never simply reduced distress; it is the gradual emergence of Christlike thinking, Christlike character, and Christlike living.</p>
+  </div>
+</aside>
+
+</main>
+
+<footer class="wrap">
+  Belief Therapy Counseling Companion · Brian Campbell, Ph.D.<br>
+  <a href="#top">Back to top</a>
+</footer>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('nav.jump a');
+  var ids = ['identify','challenge','replace'];
+  function mark(){
+    var y = window.scrollY + 120, cur = null;
+    ids.forEach(function(id){ var el = document.getElementById(id); if (el && el.offsetTop <= y) cur = id; });
+    links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + cur); });
+  }
+  window.addEventListener('scroll', mark, {passive:true}); mark();
+})();
+</script>
+</body>
+</html>
