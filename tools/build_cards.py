@@ -70,16 +70,16 @@ def scripture(ref, bible):
     """Verse text tidied for quoting: balanced inner quotes shown as single quotes,
     first letter capitalized, and a sentence-ending mark in place of a trailing comma/dash."""
     t = " ".join(t for _, t in verses(ref, bible)).strip()
-    opens, closes = t.count("“"), t.count("”")
-    while closes > opens and t.endswith("”"):
-        t, closes = t[:-1].rstrip(), closes - 1
-    while closes > opens and "”" in t:
-        i = t.index("”"); t = t[:i] + t[i + 1:]; closes -= 1
-    if opens > closes:
-        if t.startswith("“") and opens - closes == 1 and t.count("“") == 1:
-            t = t[1:]
-        else:
-            t = t + "”"
+    depth, out = 0, []
+    for ch in t:  # drop closing quotes with no opener (speech began in an earlier verse)
+        if ch == "“":
+            depth += 1
+        elif ch == "”":
+            if depth == 0:
+                continue
+            depth -= 1
+        out.append(ch)
+    t = "".join(out).rstrip() + "”" * depth  # close speech that continues past the quoted verses
     t = t.replace("“", "‘").replace("”", "’")
     t = re.sub(r"[,;:—–-]+([’]?)$", r".\1", t)
     if t and t[0].islower():
