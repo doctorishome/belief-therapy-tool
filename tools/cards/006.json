@@ -1,0 +1,23 @@
+{
+"num": 6, "group": "Christ",
+"belief": "I need a priest, a saint, or Mary to bring my prayers to God.",
+"file": "I-Need-Someone-Else-To-Bring-My-Prayers-To-God",
+"meta": "A Christian look at the false belief that you need someone else to bring your prayers to God, with Scripture, questions, and homework for replacing it with the truth.",
+"origins": "Being taught as a child that ordinary people should not speak to God directly. A church culture where only clergy prayed aloud or led worship. Feeling too sinful or unimportant to approach God yourself. Seeing God as a distant king who only receives messages through officials. Some traditions ask saints to pray for them, much as we ask a friend to pray, but that is different from believing you <em>cannot</em> go to God yourself.",
+"teaches": "Through Jesus, every believer has direct access to the Father. Jesus is the one mediator between God and people, and He Himself intercedes for you. You are invited to come boldly to God’s throne of grace, in your own words, at any time. Asking others to pray for you is a gift, but it never replaces your own open door to God.",
+"key": "1 Timothy 2:5–6",
+"also": ["Hebrews 4:16", "Ephesians 3:12", "Romans 8:34", "Matthew 6:6"],
+"self_statements": ["God won’t listen if I pray on my own.", "My prayers aren’t good enough to reach God.", "Someone holier than me has to ask for me.", "I don’t know the right words, so I shouldn’t pray.", "God is too important to hear from someone like me.", "I have to go through the proper channels."],
+"errors": [["Overgeneralization", "Turning “others can pray for me” into “only others can reach God for me.”"], ["Discounting the positive", "Overlooking the many invitations in Scripture to come to God directly."], ["Labeling", "Calling yourself “too unworthy” to pray, when Christ has already made you welcome."], ["Projection", "Picturing God as a busy official who only takes messages through a secretary."], ["Emotional reasoning", "Concluding “I feel unworthy, so God must not want to hear from me.”"]],
+"questions": ["Where in Scripture does God say I may not speak to Him myself?", "If Jesus is the one mediator, who else do I really need?", "Why would God invite me to come boldly if He did not want to hear me?", "Is it possible I learned this from a person or system, not from God?", "Does a loving father want his children to speak to him only through others?", "Can I ask others to pray for me and still pray myself?", "What happened the last time I prayed honestly in my own words?"],
+"truth": "I can speak to God myself. Jesus is my mediator, and He opened the way for me to come to the Father with confidence. My simple, honest words are welcome. Others may pray for me, and I am grateful when they do, but I never need permission or a go-between to talk to my Father.",
+"pearls": ["prayer-how-to", "christ-mission-of", "christ-sacrifice-of", "grace", "prayer-answers-to"],
+"hw_questions": ["Where does Scripture say I can’t speak to God myself?", "If Jesus is my mediator, who else do I need?", "Why would God invite me to come boldly if He didn’t want to hear me?", "Did I learn this from God or from people?", "Would a loving father only hear his child through others?", "What happened when I prayed in my own words?"],
+"hw_truths": ["Jesus is my mediator, and through Him I can speak to God myself.", "I may come to God with boldness and confidence.", "My simple, honest words are welcome to my Father.", "Others can pray for me, and I can pray too.", "God sees me in secret and hears me.", "I am invited, not just allowed, to come to God."],
+"log": ["Prayer log", "Each day, write one thing I told God in my own words, and anything I noticed afterward."],
+"name_example": ["Ephesians 3:12", "In Him and through faith in Him <strong>Sarah</strong> may enter God’s presence with boldness and confidence."],
+"reading": "prayer-how-to", "listening": "Anxiety",
+"actions": [["Pray for two minutes in your own words,", "out loud or silently, then go on with your day without waiting for a special feeling."], ["Write a short letter to God", "about one real concern, and read it to Him."], ["Pray a one-sentence prayer", "at a time you normally wouldn’t, such as in the car or while cooking."], ["Ask a trusted Christian friend:", "“How did you learn to talk to God in your own words?” Write down what they say."]],
+"tracker": "Something I told God myself",
+"prayer": "Father, thank You that through Jesus I can come to You myself. Help me reject the lie that I need someone else to reach You. Teach me to speak to You simply and honestly, and to trust that You hear me. Thank You for the people who pray for me, and for the open door You have given me. In Jesus’ name, Amen."
+}
