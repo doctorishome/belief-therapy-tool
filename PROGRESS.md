@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–90 are done. Next card to build: **#91**.
+**Where I left off:** Cards 1–95 are done. Next card to build: **#96**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -112,7 +112,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 88 | I must never question or wrestle with hard passages. | Belief-088-I-Must-Never-Question-Hard-Passages.html |
 | 89 | Any verse is a promise I can claim for whatever I want. | Belief-089-Any-Verse-Is-A-Promise-I-Can-Claim.html |
 | 90 | Only pastors or scholars can understand the Bible. | Belief-090-Only-Pastors-Or-Scholars-Can-Understand-The-Bible.html |
+| 91 | Questioning my pastor is questioning God. | Belief-091-Questioning-My-Pastor-Is-Questioning-God.html |
+| 92 | Pastors and leaders are closer to God than I am. | Belief-092-Pastors-And-Leaders-Are-Closer-To-God.html |
+| 93 | Leaving a church means leaving God. | Belief-093-Leaving-A-Church-Means-Leaving-God.html |
+| 94 | Family problems must be kept secret to protect the church. | Belief-094-Family-Problems-Must-Be-Kept-Secret.html |
+| 95 | Being busy at church means being spiritual. | Belief-095-Being-Busy-At-Church-Means-Being-Spiritual.html |
 
 ## Still to do
-- Cards 91–120.
+- Cards 96–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
