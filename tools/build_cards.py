@@ -88,6 +88,8 @@ def scripture(ref, bible):
     t = t.replace("“", "‘").replace("”", "’")
     t = re.sub(r"\s+Selah$", "", t)
     t = re.sub(r"[,;:—–-]+([’]?)$", r".\1", t)
+    if t and t[-1] not in ".!?’”":
+        t += "."
     if t and t[0].islower():
         t = t[0].upper() + t[1:]
     return t

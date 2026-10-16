@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–95 are done. Next card to build: **#96**.
+**Where I left off:** Cards 1–100 are done. Next card to build: **#101**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -117,7 +117,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 93 | Leaving a church means leaving God. | Belief-093-Leaving-A-Church-Means-Leaving-God.html |
 | 94 | Family problems must be kept secret to protect the church. | Belief-094-Family-Problems-Must-Be-Kept-Secret.html |
 | 95 | Being busy at church means being spiritual. | Belief-095-Being-Busy-At-Church-Means-Being-Spiritual.html |
+| 96 | Being submissive means accepting mistreatment or abuse. | Belief-096-Being-Submissive-Means-Accepting-Abuse.html |
+| 97 | Because I am divorced, God can’t use me. | Belief-097-Because-I-Am-Divorced-God-Cant-Use-Me.html |
+| 98 | Sex is dirty, even in marriage. | Belief-098-Sex-Is-Dirty-Even-In-Marriage.html |
+| 99 | If my children turn away from God, I failed as a parent. | Belief-099-If-My-Children-Turn-Away-I-Failed-As-A-Parent.html |
+| 100 | Single people are less complete in God’s eyes. | Belief-100-Single-People-Are-Less-Complete-In-Gods-Eyes.html |
 
 ## Still to do
-- Cards 96–120.
+- Cards 101–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
