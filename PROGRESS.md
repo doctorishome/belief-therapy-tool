@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–105 are done. Next card to build: **#106**.
+**Where I left off:** Cards 1–110 are done. Next card to build: **#111**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -127,7 +127,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 103 | I need a clear sign from God before I can decide anything. | Belief-103-I-Need-A-Clear-Sign-Before-I-Can-Decide.html |
 | 104 | Every decision has one right answer, and I must find it. | Belief-104-Every-Decision-Has-One-Right-Answer.html |
 | 105 | If something is hard, it can’t be God’s will. | Belief-105-If-Something-Is-Hard-It-Cant-Be-Gods-Will.html |
+| 106 | If I am suffering, God is punishing me. | Belief-106-If-I-Am-Suffering-God-Is-Punishing-Me.html |
+| 107 | Real Christians don’t suffer. | Belief-107-Real-Christians-Dont-Suffer.html |
+| 108 | I must figure out the reason for everything bad that happens. | Belief-108-I-Must-Figure-Out-The-Reason-For-Everything-Bad.html |
+| 109 | Complaining to God is a sin. | Belief-109-Complaining-To-God-Is-A-Sin.html |
+| 110 | My suffering means God has abandoned me. | Belief-110-My-Suffering-Means-God-Has-Abandoned-Me.html |
 
 ## Still to do
-- Cards 106–120.
+- Cards 111–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
