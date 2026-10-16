@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–65 are done. Next card to build: **#66**.
+**Where I left off:** Cards 1–70 are done. Next card to build: **#71**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -87,7 +87,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 63 | Heaven will be an endless, boring church service. | Belief-063-Heaven-Will-Be-An-Endless-Boring-Church-Service.html |
 | 64 | In heaven I’ll be grieving for the people who aren’t there. | Belief-064-In-Heaven-Ill-Be-Grieving-For-Those-Not-There.html |
 | 65 | In heaven every mistake I made will be shown to everyone. | Belief-065-In-Heaven-Every-Mistake-Will-Be-Shown.html |
+| 66 | Every sinful thought puts me in danger of hell. | Belief-066-Every-Sinful-Thought-Puts-Me-In-Danger-Of-Hell.html |
+| 67 | If I die with an unconfessed sin, I will go to hell. | Belief-067-If-I-Die-With-Unconfessed-Sin-I-Will-Go-To-Hell.html |
+| 68 | I’m going to hell because of my many sins. | Belief-068-Im-Going-To-Hell-Because-Of-My-Many-Sins.html |
+| 69 | My loved one is in hell because I didn’t share my faith enough. | Belief-069-My-Loved-One-Is-In-Hell-Because-Of-Me.html |
+| 70 | Fear of hell is the main reason to follow God. | Belief-070-Fear-Of-Hell-Is-The-Main-Reason-To-Follow-God.html |
 
 ## Still to do
-- Cards 66–120.
+- Cards 71–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
