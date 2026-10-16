@@ -9,6 +9,8 @@ public domain) so every quotation is exact. To switch translations later, supply
 new text file in the same format and change TRANSLATION below.
 """
 import html, json, os, re, subprocess, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from add_songs import add_songs
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOOLS = os.path.join(ROOT, "tools")
@@ -315,6 +317,7 @@ def main():
     for n in nums:
         d = json.load(open(os.path.join(TOOLS, "cards", "%03d.json" % n), encoding="utf-8"))
         base, page, used = render(d, bible, style)
+        page = add_songs(page, d)
         for old in os.listdir(OUT):  # remove an older file name for the same number
             if old.startswith("Belief-%03d-" % n) and not old.startswith(base + "."):
                 os.remove(os.path.join(OUT, old))

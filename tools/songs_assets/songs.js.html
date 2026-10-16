@@ -1,0 +1,15 @@
+<script>
+document.querySelectorAll('a.song').forEach(function(a){
+  var id=(a.href.match(/[?&]v=([\w-]{11})/)||[])[1]; if(!id) return;
+  var l=document.createElement('a'); l.className='ytlink'; l.href=a.href; l.target='_blank'; l.rel='noopener'; l.textContent='Watch on YouTube';
+  var w=document.createElement('div'); w.className='songwrap'; a.parentNode.insertBefore(w,a); w.appendChild(a); w.appendChild(l);
+  a.addEventListener('click',function(e){
+    var t=a.querySelector('.thumb'); if(!t||a.classList.contains('playing')) return;
+    e.preventDefault(); a.classList.add('playing');
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+    f.allow='autoplay; encrypted-media; fullscreen'; f.setAttribute('allowfullscreen','');
+    t.appendChild(f);
+  });
+});
+</script>

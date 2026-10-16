@@ -147,7 +147,7 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 - Cards are opened from the Wix page inside a restricted box, so links to youtube.com from a card are blocked ("refused to connect").
 - Fix: each song plays inside the card using the youtube-nocookie.com embed player (tap the picture to play), with a small "Watch on YouTube" link as backup. Card 43 is the model (see its script at the bottom of the file).
 - Test every new song's embed before using it; some music-label videos refuse embedding.
-- Card 43's PDF has not been updated to match.
+- Songs live in each card's JSON ("songs": [[videoID, title, artist, one-line why], ...]); tools/add_songs.py adds the audio, songs, journal and player script when the cards are built. Cards 41–45 done; the rest of the 120 still need songs.
 
 ## Still to do
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
