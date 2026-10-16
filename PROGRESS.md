@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–60 are done. Next card to build: **#61**.
+**Where I left off:** Cards 1–65 are done. Next card to build: **#66**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -82,7 +82,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 58 | Faith means never asking questions. | Belief-058-Faith-Means-Never-Asking-Questions.html |
 | 59 | My faith is only as strong as my feelings. | Belief-059-My-Faith-Is-Only-As-Strong-As-My-Feelings.html |
 | 60 | Real faith means never feeling afraid. | Belief-060-Real-Faith-Means-Never-Feeling-Afraid.html |
+| 61 | I’m not good enough to go to heaven. | Belief-061-Im-Not-Good-Enough-To-Go-To-Heaven.html |
+| 62 | My loved one in heaven is watching me and is disappointed in me. | Belief-062-My-Loved-One-In-Heaven-Is-Disappointed-In-Me.html |
+| 63 | Heaven will be an endless, boring church service. | Belief-063-Heaven-Will-Be-An-Endless-Boring-Church-Service.html |
+| 64 | In heaven I’ll be grieving for the people who aren’t there. | Belief-064-In-Heaven-Ill-Be-Grieving-For-Those-Not-There.html |
+| 65 | In heaven every mistake I made will be shown to everyone. | Belief-065-In-Heaven-Every-Mistake-Will-Be-Shown.html |
 
 ## Still to do
-- Cards 61–120.
+- Cards 66–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
