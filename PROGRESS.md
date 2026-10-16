@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–40 are done. Next card to build: **#41**.
+**Where I left off:** Cards 1–45 are done. Next card to build: **#46**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -62,7 +62,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 38 | Forgiving means I must trust them again. | Belief-038-Forgiving-Means-I-Must-Trust-Them-Again.html |
 | 39 | God has forgiven me, but I can never forgive myself. | Belief-039-I-Can-Never-Forgive-Myself.html |
 | 40 | Forgiving means pretending it didn’t hurt. | Belief-040-Forgiving-Means-Pretending-It-Didnt-Hurt.html |
+| 41 | I am saved by my good works. | Belief-041-I-Am-Saved-By-My-Good-Works.html |
+| 42 | I can never really know whether I am saved. | Belief-042-I-Can-Never-Know-Whether-I-Am-Saved.html |
+| 43 | One more sin and God will give up on me. | Belief-043-One-More-Sin-And-God-Will-Give-Up-On-Me.html |
+| 44 | I must suffer in purgatory before I can be with God. | Belief-044-I-Must-Suffer-In-Purgatory.html |
+| 45 | Being raised in a Christian family makes me a Christian. | Belief-045-Being-Raised-In-A-Christian-Family-Makes-Me-A-Christian.html |
 
 ## Still to do
-- Cards 41–120.
+- Cards 46–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
