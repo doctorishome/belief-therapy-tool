@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–55 are done. Next card to build: **#56**.
+**Where I left off:** Cards 1–60 are done. Next card to build: **#61**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -77,7 +77,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 53 | My needs and feelings never count. | Belief-053-My-Needs-And-Feelings-Never-Count.html |
 | 54 | God is like my father (or mother). | Belief-054-God-Is-Like-My-Father-Or-Mother.html |
 | 55 | Enjoying life is worldly or sinful. | Belief-055-Enjoying-Life-Is-Worldly-Or-Sinful.html |
+| 56 | Doubt means I am not a real Christian. | Belief-056-Doubt-Means-I-Am-Not-A-Real-Christian.html |
+| 57 | If I don’t feel close to God, He has left me. | Belief-057-If-I-Dont-Feel-Close-To-God-He-Has-Left-Me.html |
+| 58 | Faith means never asking questions. | Belief-058-Faith-Means-Never-Asking-Questions.html |
+| 59 | My faith is only as strong as my feelings. | Belief-059-My-Faith-Is-Only-As-Strong-As-My-Feelings.html |
+| 60 | Real faith means never feeling afraid. | Belief-060-Real-Faith-Means-Never-Feeling-Afraid.html |
 
 ## Still to do
-- Cards 56–120.
+- Cards 61–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
