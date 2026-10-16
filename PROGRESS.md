@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–45 are done. Next card to build: **#46**.
+**Where I left off:** Cards 1–50 are done. Next card to build: **#51**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -67,7 +67,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 43 | One more sin and God will give up on me. | Belief-043-One-More-Sin-And-God-Will-Give-Up-On-Me.html |
 | 44 | I must suffer in purgatory before I can be with God. | Belief-044-I-Must-Suffer-In-Purgatory.html |
 | 45 | Being raised in a Christian family makes me a Christian. | Belief-045-Being-Raised-In-A-Christian-Family-Makes-Me-A-Christian.html |
+| 46 | If I had enough faith, God would have healed me. | Belief-046-If-I-Had-Enough-Faith-God-Would-Have-Healed-Me.html |
+| 47 | If I give more, God must give me more. | Belief-047-If-I-Give-More-God-Must-Give-Me-More.html |
+| 48 | My words create my reality, so I must ‘name it and claim it.’ | Belief-048-My-Words-Create-My-Reality.html |
+| 49 | If God doesn’t do a miracle, He doesn’t care. | Belief-049-If-God-Doesnt-Do-A-Miracle-He-Doesnt-Care.html |
+| 50 | God’s blessing always shows up as health and wealth. | Belief-050-Gods-Blessing-Always-Shows-Up-As-Health-And-Wealth.html |
 
 ## Still to do
-- Cards 46–120.
+- Cards 51–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
