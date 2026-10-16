@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–75 are done. Next card to build: **#76**.
+**Where I left off:** Cards 1–80 are done. Next card to build: **#81**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -97,7 +97,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 73 | My illness, disability, or scars will last forever. | Belief-073-My-Illness-Disability-Or-Scars-Will-Last-Forever.html |
 | 74 | If my body is cremated, God can’t raise it. | Belief-074-If-My-Body-Is-Cremated-God-Cant-Raise-It.html |
 | 75 | I won’t know my loved ones after the resurrection. | Belief-075-I-Wont-Know-My-Loved-Ones-After-The-Resurrection.html |
+| 76 | If I grieve deeply, I don’t trust God. | Belief-076-If-I-Grieve-Deeply-I-Dont-Trust-God.html |
+| 77 | God took my loved one because He needed them more than I did. | Belief-077-God-Took-My-Loved-One-Because-He-Needed-Them.html |
+| 78 | Being afraid of death means my faith is weak. | Belief-078-Being-Afraid-Of-Death-Means-My-Faith-Is-Weak.html |
+| 79 | My loved one who died by suicide can never be with God. | Belief-079-My-Loved-One-Who-Died-By-Suicide-Can-Never-Be-With-God.html |
+| 80 | My loved one died because I didn’t pray enough. | Belief-080-My-Loved-One-Died-Because-I-Didnt-Pray-Enough.html |
 
 ## Still to do
-- Cards 76–120.
+- Cards 81–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
