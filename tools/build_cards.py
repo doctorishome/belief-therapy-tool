@@ -70,6 +70,8 @@ def scripture(ref, bible):
     """Verse text tidied for quoting: balanced inner quotes shown as single quotes,
     first letter capitalized, and a sentence-ending mark in place of a trailing comma/dash."""
     t = " ".join(t for _, t in verses(ref, bible)).strip()
+    if "‘" in t and "“" in t:
+        raise ValueError("Quote inside a quote in %s; choose a different verse range" % ref)
     depth, out = 0, []
     for ch in t:  # drop closing quotes with no opener (speech began in an earlier verse)
         if ch == "“":

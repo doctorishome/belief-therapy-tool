@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–15 are done. Next card to build: **#16**.
+**Where I left off:** Cards 1–20 are done. Next card to build: **#21**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -36,7 +36,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 13 | I have committed the unpardonable sin. | Belief-013-I-Have-Committed-The-Unpardonable-Sin.html |
 | 14 | The Spirit’s leading always comes as a strong feeling. | Belief-014-The-Spirits-Leading-Is-Always-A-Strong-Feeling.html |
 | 15 | My spiritual gifts don’t matter as much as other people’s. | Belief-015-My-Spiritual-Gifts-Dont-Matter.html |
+| 16 | Every problem I have is a spiritual attack. | Belief-016-Every-Problem-Is-A-Spiritual-Attack.html |
+| 17 | Satan has power over me, and I am helpless. | Belief-017-Satan-Has-Power-Over-Me.html |
+| 18 | I am under a generational curse. | Belief-018-I-Am-Under-A-Generational-Curse.html |
+| 19 | My loved one has become an angel watching over me. | Belief-019-My-Loved-One-Has-Become-An-Angel.html |
+| 20 | I should pray to angels for help. | Belief-020-I-Should-Pray-To-Angels.html |
 
 ## Still to do
-- Cards 16–120.
+- Cards 21–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
