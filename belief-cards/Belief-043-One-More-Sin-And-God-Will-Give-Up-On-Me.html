@@ -115,6 +115,7 @@
   .song .st{display:block;font-weight:700;color:var(--navy);line-height:1.3}
   .song .sa{display:block;font-size:14px;color:var(--gold);font-weight:600;margin-top:2px}
   .song .sw{display:block;font-size:14px;line-height:1.45;margin-top:6px;color:#4a453d}
+  .song.playing .thumb{background:#000}.song .thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2}.song.playing .thumb::after{display:none}.ytlink{display:block;font-size:13px;margin:4px 2px 0;color:var(--navy)}@media print{.ytlink{display:none}}
   .songnote{font-size:13px;color:#5a5348;font-style:italic;margin:8px 0 0}
   @media print{
     .songs{display:block}
@@ -222,14 +223,14 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 </div>
 
 <h2>Songs that speak truth to this belief</h2>
-<p class="songnote2">Tap a song to listen on YouTube.</p>
+<p class="songnote2">Tap a song to play it right here.</p>
 <div class="songs">
 <a class="song" href="https://www.youtube.com/watch?v=Sc6SSHuZvQE" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/Sc6SSHuZvQE/hqdefault.jpg')"></span><span class="txt"><span class="st">Reckless Love</span><span class="sa">Cory Asbury</span><span class="sw">Pictures God as the shepherd who goes after the one who wandered, rather than giving up on them.</span></span></a>
 <a class="song" href="https://www.youtube.com/watch?v=HcpeLDp0Foo" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/HcpeLDp0Foo/hqdefault.jpg')"></span><span class="txt"><span class="st">Run to the Father</span><span class="sa">Cody Carnes</span><span class="sw">Like the prodigal son, we can run back to a Father who is already running toward us.</span></span></a>
 <a class="song" href="https://www.youtube.com/watch?v=r2zhf2mqEMI" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/r2zhf2mqEMI/hqdefault.jpg')"></span><span class="txt"><span class="st">Come As You Are</span><span class="sa">Crowder</span><span class="sw">God's welcome does not wait until we clean ourselves up; we can come to Him as we are.</span></span></a>
 <a class="song" href="https://www.youtube.com/watch?v=936BapRFHaQ" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/936BapRFHaQ/hqdefault.jpg')"></span><span class="txt"><span class="st">He Will Hold Me Fast</span><span class="sa">Keith &amp; Kristyn Getty</span><span class="sw">Our security rests on Christ holding onto us, not on how tightly we hold onto Him.</span></span></a>
 </div>
-<p class="songnote">Songs open on YouTube, which may play a short ad first.</p>
+<p class="songnote">Songs play here through YouTube and may start with a short ad. If one will not play, use its “Watch on YouTube” link.</p>
 
 <p class="morning">Each morning ask: “If I truly believed God’s truth instead of this lie, how would I think, speak, and act today?”</p>
 <div class="foot">✦ ✦ ✦</div>
@@ -369,4 +370,19 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 
 <p class="back"><a href="#top">Back to top</a> · <a href="https://doctorishome.wixstudio.com/website-6/spiritual-religious-false-beliefs" target="_top">All Spiritual/Religious False Beliefs</a></p>
 
-</div></body></html>
+</div><script>
+document.querySelectorAll('a.song').forEach(function(a){
+  var id=(a.href.match(/[?&]v=([\w-]{11})/)||[])[1]; if(!id) return;
+  var l=document.createElement('a'); l.className='ytlink'; l.href=a.href; l.target='_blank'; l.rel='noopener'; l.textContent='Watch on YouTube';
+  var w=document.createElement('div'); w.className='songwrap'; a.parentNode.insertBefore(w,a); w.appendChild(a); w.appendChild(l);
+  a.addEventListener('click',function(e){
+    var t=a.querySelector('.thumb'); if(!t||a.classList.contains('playing')) return;
+    e.preventDefault(); a.classList.add('playing');
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+    f.allow='autoplay; encrypted-media; fullscreen'; f.setAttribute('allowfullscreen','');
+    t.appendChild(f);
+  });
+});
+</script>
+</body></html>

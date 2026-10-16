@@ -143,6 +143,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 119 | Since the world is ending, planning for the future doesn’t matter. | Belief-119-Since-The-World-Is-Ending-Planning-Doesnt-Matter.html |
 | 120 | Natural disasters are God punishing the people they strike. | Belief-120-Natural-Disasters-Are-God-Punishing-The-People-They-Strike.html |
 
+## Song players (rule for all cards)
+- Cards are opened from the Wix page inside a restricted box, so links to youtube.com from a card are blocked ("refused to connect").
+- Fix: each song plays inside the card using the youtube-nocookie.com embed player (tap the picture to play), with a small "Watch on YouTube" link as backup. Card 43 is the model (see its script at the bottom of the file).
+- Test every new song's embed before using it; some music-label videos refuse embedding.
+- Card 43's PDF has not been updated to match.
+
 ## Still to do
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
 - Brian to review cards 6–120 (written by Claude from his 120-belief list in the style of cards 1–5).
