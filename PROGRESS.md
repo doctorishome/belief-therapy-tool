@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–115 are done. Next card to build: **#116**.
+**Where I left off:** All 120 cards are done (HTML + PDF). Remaining: link each card from the website dropdowns, and Brian’s review of cards 6–120.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -137,7 +137,13 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 113 | Because of grace, my choices don’t matter. | Belief-113-Because-Of-Grace-My-Choices-Dont-Matter.html |
 | 114 | Resting or receiving help means I’m spiritually lazy. | Belief-114-Resting-Or-Receiving-Help-Means-Im-Lazy.html |
 | 115 | I have to clean up my life before I can come to God. | Belief-115-I-Have-To-Clean-Up-My-Life-Before-I-Can-Come-To-God.html |
+| 116 | I should live in constant fear of the end times. | Belief-116-I-Should-Live-In-Constant-Fear-Of-The-End-Times.html |
+| 117 | Current events tell me exactly when the end is coming. | Belief-117-Current-Events-Tell-Me-When-The-End-Is-Coming.html |
+| 118 | I could be left behind because I’m not good enough. | Belief-118-I-Could-Be-Left-Behind-Because-Im-Not-Good-Enough.html |
+| 119 | Since the world is ending, planning for the future doesn’t matter. | Belief-119-Since-The-World-Is-Ending-Planning-Doesnt-Matter.html |
+| 120 | Natural disasters are God punishing the people they strike. | Belief-120-Natural-Disasters-Are-God-Punishing-The-People-They-Strike.html |
 
 ## Still to do
-- Cards 116–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
+- Brian to review cards 6–120 (written by Claude from his 120-belief list in the style of cards 1–5).
+- Cards 1–5 quote the NIV; cards 6–120 quote the Berean Standard Bible.
