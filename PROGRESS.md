@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–35 are done. Next card to build: **#36**.
+**Where I left off:** Cards 1–40 are done. Next card to build: **#41**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -57,7 +57,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 33 | If a teaching makes me feel good, it must be from God. | Belief-033-If-A-Teaching-Feels-Good-It-Must-Be-From-God.html |
 | 34 | If a leader quotes Scripture, what he says must be true. | Belief-034-If-A-Leader-Quotes-Scripture-It-Must-Be-True.html |
 | 35 | Church tradition carries the same authority as Scripture. | Belief-035-Church-Tradition-Has-The-Same-Authority-As-Scripture.html |
+| 36 | God forgives, but He never forgets. | Belief-036-God-Forgives-But-He-Never-Forgets.html |
+| 37 | I must pay for my sins through suffering. | Belief-037-I-Must-Pay-For-My-Sins-Through-Suffering.html |
+| 38 | Forgiving means I must trust them again. | Belief-038-Forgiving-Means-I-Must-Trust-Them-Again.html |
+| 39 | God has forgiven me, but I can never forgive myself. | Belief-039-I-Can-Never-Forgive-Myself.html |
+| 40 | Forgiving means pretending it didn’t hurt. | Belief-040-Forgiving-Means-Pretending-It-Didnt-Hurt.html |
 
 ## Still to do
-- Cards 36–120.
+- Cards 41–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
