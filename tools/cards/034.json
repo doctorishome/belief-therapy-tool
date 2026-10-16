@@ -1,0 +1,23 @@
+{
+"num": 34, "group": "Truth",
+"belief": "If a leader quotes Scripture, what he says must be true.",
+"file": "If-A-Leader-Quotes-Scripture-It-Must-Be-True",
+"meta": "A Christian look at the false belief that if a leader quotes Scripture what he says must be true, with Scripture, questions, and homework for replacing it with the truth.",
+"origins": "Respect for spiritual leaders, taught from childhood. Leaders who used Bible verses to demand obedience or silence questions. Experiences of spiritual abuse or manipulation. Not feeling confident enough to study the Bible yourself. Assuming that anyone who knows the Bible well must be using it rightly.",
+"teaches": "Scripture is true, but it can be misused. Even the devil quoted Scripture to Jesus, taking verses out of context. Paul warned that men would rise up even within the church and distort the truth. Peter said some people twist the Scriptures to their own destruction. Jesus told us to recognize false teachers by their fruit. A verse quoted out of context, or used to control or harm, does not carry God’s authority.",
+"key": "Acts 20:29–30",
+"also": ["2 Peter 3:16", "Matthew 7:15–16", "Acts 17:11", "Isaiah 8:20"],
+"self_statements": ["He quoted the Bible, so I have to obey.", "I can’t question a leader who knows Scripture.", "If I disagree, I’m disagreeing with God.", "He knows the Bible better than I do, so he must be right.", "Using verses proves he’s from God.", "I’m not smart enough to check."],
+"errors": [["Appeal to authority", "Accepting a claim because a leader made it with a verse attached."], ["Discounting yourself", "Assuming you cannot understand or check Scripture."], ["Overlooking context", "Accepting a verse without asking what it meant where it was written."], ["Fear-based thinking", "Avoiding questions because you fear being labeled rebellious."]],
+"questions": ["Did the devil quote Scripture to Jesus? Was he right?", "Is this verse being used in its original context?", "What fruit do I see in this leader’s life and ministry?", "Does this teaching line up with the whole Bible, or just one verse?", "Is Scripture being used to help me or to control me?", "What did Paul warn about leaders who distort the truth?", "Who else could help me look at this passage honestly?"],
+"truth": "A leader quoting Scripture does not automatically make what he says true. God’s Word is always true, but people can misuse it. I can respect leaders and still check what they say against the whole of Scripture, look at its context, and watch the fruit of their lives. God gives me His Word and His Spirit to help me discern.",
+"pearls": ["truth", "scripture-word", "church", "wisdom", "dishonesty"],
+"hw_questions": ["Did the devil quote Scripture correctly?", "Is this verse used in its original context?", "What fruit do I see in this leader?", "Does this fit the whole Bible?", "Is Scripture being used to help me or control me?", "Who could help me study this honestly?"],
+"hw_truths": ["Scripture is true, but people can misuse it.", "I can check every teaching against the whole Bible.", "I can recognize teachers by their fruit.", "Questioning a leader is not questioning God.", "God helps me understand His Word.", "Respect for leaders does not mean blind obedience."],
+"log": ["Context log", "When a verse is used to tell me what to do, write the verse and read the whole chapter around it."],
+"name_example": ["Acts 17:11", "Now <strong>Sarah</strong> is noble-minded, for <strong>she</strong> receives the message with great eagerness and examines the Scriptures every day to see if these teachings are true."],
+"reading": "truth", "listening": "Anxiety",
+"actions": [["Choose one verse a leader often quotes,", "read the entire chapter, and write what it meant in context."], ["Read Matthew 4:1–11,", "and write how Jesus answered Scripture misused with Scripture rightly used."], ["Talk with a different, trusted pastor or Christian counselor", "about a teaching that has troubled you."], ["Write down the fruit you see in a leader’s life", "using Galatians 5:22–23 as a checklist."]],
+"tracker": "One verse I read in context",
+"prayer": "Father, thank You that Your Word is true and trustworthy. Help me reject the lie that anything a leader says must be true if he quotes Scripture. Give me wisdom to read Your Word in context, discernment to see fruit, and courage to hold to Your truth. Protect me from anyone who misuses Your Word. In Jesus’ name, Amen."
+}

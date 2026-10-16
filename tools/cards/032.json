@@ -1,0 +1,23 @@
+{
+"num": 32, "group": "Truth",
+"belief": "Truth is whatever feels right to me.",
+"file": "Truth-Is-Whatever-Feels-Right-To-Me",
+"meta": "A Christian look at the false belief that truth is whatever feels right to you, with Scripture, questions, and homework for replacing it with the truth.",
+"origins": "A culture that says “follow your heart” and “live your truth.” Hurt from rigid rules that made you distrust any outside authority. Wanting to avoid conflict by letting everyone decide for themselves. Times when your feelings did guide you well. Not having been taught that truth is something we discover, not something we create.",
+"teaches": "Our feelings are real and important, but they are not reliable judges of truth. Scripture warns that there is a way that seems right to a person, but it ends in death, and that the human heart can deceive us. Jesus said God’s Word is truth, and that if we continue in His word, we will know the truth and the truth will set us free. Truth is found in God, not invented by our feelings.",
+"key": "Proverbs 14:12",
+"also": ["Jeremiah 17:9", "John 17:17", "John 8:31–32", "Psalm 119:105"],
+"self_statements": ["If it feels right, it must be right.", "My truth is just as valid as anyone else’s.", "No one can tell me what’s true for me.", "If I feel peace about it, God must approve.", "Rules are just other people’s opinions.", "I’ll know the truth by how it feels."],
+"errors": [["Emotional reasoning", "Deciding what is true based on how something feels."], ["Relativism", "Treating truth as personal preference instead of reality."], ["Selective attention", "Remembering when feelings were right and forgetting when they misled you."], ["Overconfidence", "Trusting your heart more than God’s Word."]],
+"questions": ["Have my feelings ever been wrong about something important?", "What does Proverbs 14:12 say about a way that seems right?", "If truth is just a feeling, how could anyone ever be wrong?", "Where does Jesus say truth is found?", "Do I want my doctor or my bank to work by feelings?", "Is this belief protecting me from something I don’t want to face?", "What would it look like to let God’s Word guide my feelings?"],
+"truth": "Truth is not whatever feels right to me. My feelings matter, but they can be mistaken. God’s Word is truth, and it is a lamp to my feet. When I continue in Jesus’ word, I will know the truth, and the truth will set me free. I can bring my feelings under the light of His Word.",
+"pearls": ["truth", "scripture-word", "thinking-healthy", "wisdom", "guidance"],
+"hw_questions": ["Have my feelings ever been wrong about something important?", "What happens to the way that seems right?", "If truth is a feeling, can anyone be wrong?", "Where does Jesus say truth is found?", "Would I want my doctor to work by feelings?", "How can God’s Word guide my feelings?"],
+"hw_truths": ["God’s Word is truth.", "My feelings matter, but they are not the final judge.", "The truth will set me free.", "God’s Word is a lamp to my feet.", "I can bring my feelings under the light of Scripture.", "Truth is something I discover, not something I create."],
+"log": ["Feelings and facts log", "When a strong feeling tells me something is true, write the feeling, then write what Scripture and the facts say."],
+"name_example": ["Psalm 119:105", "Your word is a lamp to <strong>Sarah’s</strong> feet and a light to <strong>her</strong> path."],
+"reading": "truth", "listening": "Anxiety",
+"actions": [["Write down a time a strong feeling led you wrong,", "and what you learned from it."], ["Before your next decision, ask:", "“What do I feel? What does God’s Word say? What do wise people say?” Write all three."], ["Read John 8:31–36,", "and write what Jesus says about truth and freedom."], ["Memorize John 17:17", "and say it whenever you are tempted to trust a feeling over God’s Word."]],
+"tracker": "One feeling I checked against Scripture",
+"prayer": "Lord, thank You that Your Word is truth. Help me reject the lie that truth is whatever feels right to me. Teach me to value my feelings without letting them rule me, and to let Your Word be a lamp to my feet. Lead me into the truth that sets me free. In Jesus’ name, Amen."
+}

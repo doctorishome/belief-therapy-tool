@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–30 are done. Next card to build: **#31**.
+**Where I left off:** Cards 1–35 are done. Next card to build: **#36**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -52,7 +52,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 28 | A good Christian always feels guilty. | Belief-028-A-Good-Christian-Always-Feels-Guilty.html |
 | 29 | Being tempted is the same as sinning. | Belief-029-Being-Tempted-Is-The-Same-As-Sinning.html |
 | 30 | Some sins can’t be forgiven until I confess them to a priest. | Belief-030-Some-Sins-Need-A-Priest-To-Be-Forgiven.html |
+| 31 | Whatever my church teaches must be biblical. | Belief-031-Whatever-My-Church-Teaches-Must-Be-Biblical.html |
+| 32 | Truth is whatever feels right to me. | Belief-032-Truth-Is-Whatever-Feels-Right-To-Me.html |
+| 33 | If a teaching makes me feel good, it must be from God. | Belief-033-If-A-Teaching-Feels-Good-It-Must-Be-From-God.html |
+| 34 | If a leader quotes Scripture, what he says must be true. | Belief-034-If-A-Leader-Quotes-Scripture-It-Must-Be-True.html |
+| 35 | Church tradition carries the same authority as Scripture. | Belief-035-Church-Tradition-Has-The-Same-Authority-As-Scripture.html |
 
 ## Still to do
-- Cards 31–120.
+- Cards 36–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).

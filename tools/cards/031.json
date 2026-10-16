@@ -1,0 +1,23 @@
+{
+"num": 31, "group": "Truth",
+"belief": "Whatever my church teaches must be biblical.",
+"file": "Whatever-My-Church-Teaches-Must-Be-Biblical",
+"meta": "A Christian look at the false belief that whatever your church teaches must be biblical, with Scripture, questions, and homework for replacing it with the truth.",
+"origins": "Growing up in a church that discouraged questions. Deep loyalty to a pastor or denomination that helped you. Fear that checking teaching means doubting God. Not knowing how to study the Bible for yourself. Being told that leaders are always right or that questioning is rebellion.",
+"teaches": "Good churches and faithful teachers are a gift from God, and we should respect them. But every church is made up of imperfect people. Scripture praises the Bereans, who received Paul’s message eagerly and then examined the Scriptures every day to see if it was true. We are told to test all things and hold fast to what is good. God’s Word is the final authority, and a healthy church welcomes being measured by it.",
+"key": "Acts 17:11",
+"also": ["1 Thessalonians 5:21", "2 Timothy 3:16–17", "Galatians 1:8", "Psalm 119:160"],
+"self_statements": ["If my church says it, it must be true.", "Checking the Bible for myself would be disloyal.", "My pastor is never wrong.", "Asking questions shows a lack of faith.", "Other churches are wrong, so mine must be right about everything.", "I don’t need to read the Bible; my church tells me what it says."],
+"errors": [["All-or-nothing thinking", "Believing your church must be either completely right or completely wrong."], ["Appeal to authority", "Accepting a teaching because of who said it rather than what Scripture says."], ["Fear-based thinking", "Avoiding questions because you fear what you might find."], ["Overgeneralization", "Assuming that because your church is right on many things, it is right on all things."]],
+"questions": ["What did the Bereans do with Paul’s teaching, and why were they praised?", "Can a church be good and still be wrong on some points?", "Have I ever checked this teaching in Scripture for myself?", "Would a healthy church be afraid of being tested by the Bible?", "What does 1 Thessalonians 5:21 ask me to do?", "Is my loyalty to my church greater than my loyalty to God’s Word?", "Who could help me study this question honestly?"],
+"truth": "My church is a gift, but it is not perfect. God’s Word is the final authority. Like the Bereans, I can receive teaching eagerly and also check it against Scripture. Testing what I hear is not disloyalty; it is faithfulness. I can respect my leaders and still hold fast to what the Bible says.",
+"pearls": ["truth", "scripture-word", "church", "wisdom", "belief"],
+"hw_questions": ["What did the Bereans do, and why were they praised?", "Can a good church be wrong on some points?", "Have I checked this teaching myself?", "Would a healthy church fear being tested by the Bible?", "Is my loyalty to my church greater than to God’s Word?", "Who could help me study this honestly?"],
+"hw_truths": ["God’s Word is the final authority.", "I can test all things and hold fast to what is good.", "Checking teaching against Scripture is faithful, not disloyal.", "I can respect my leaders and still read the Bible for myself.", "All Scripture is God-breathed and useful.", "My church is a gift, but it is not perfect."],
+"log": ["Berean log", "Each week, write one thing I heard taught and the verses I checked it against."],
+"name_example": ["1 Thessalonians 5:21", "But <strong>Sarah</strong> should test all things and hold fast to what is good."],
+"reading": "truth", "listening": "Anxiety",
+"actions": [["Choose one teaching from your church", "and look up what the Bible says about it, using a concordance or study Bible."], ["Read Acts 17:10–12,", "and write down what made the Bereans “noble-minded.”"], ["Ask your pastor respectfully:", "“Where does the Bible teach this?” Notice how the question is received."], ["Read one book of the Bible straight through this month", "on your own, not just in sermon portions."]],
+"tracker": "One teaching I checked in Scripture",
+"prayer": "Father, thank You for my church and for faithful teachers. Help me reject the lie that whatever my church teaches must be biblical. Give me the heart of the Bereans, eager to learn and careful to check everything against Your Word. Let Your Word be my final authority. In Jesus’ name, Amen."
+}
