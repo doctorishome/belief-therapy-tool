@@ -62,7 +62,10 @@ def verses(ref, bible):
             key = (book, ch, v)
             if key not in bible:
                 raise KeyError("Verse not found: %s %d:%d (from %s)" % (book, ch, v, ref))
-            out.append((key, bible[key]))
+            text = bible[key]
+            if book == "Psalms" and v == 1:  # drop the psalm's heading ("Of David. A Maskil.")
+                text = re.sub(r"^(?:(?:A|An|For|Of|To|According|Concerning|With|On|Set|Upon|Psalm|Song|Prayer)\b[^.]*\.\s+)+", "", text)
+            out.append((key, text))
     return out
 
 

@@ -1,0 +1,23 @@
+{
+"num": 30, "group": "Sin",
+"belief": "Some sins can’t be forgiven until I confess them to a priest.",
+"file": "Some-Sins-Need-A-Priest-To-Be-Forgiven",
+"meta": "A Christian look at the false belief that some sins can’t be forgiven until you confess them to a priest, with Scripture, questions, and homework for replacing it with the truth.",
+"origins": "Church teaching that tied forgiveness of serious sins to confession with a priest. Fear of dying before you could get to confession. Shame that keeps you from going to confession, leaving you feeling stuck and unforgiven. Not knowing how to confess directly to God. Some traditions value confession to a priest as a helpful practice; the lie is that God <em>cannot</em> forgive you when you come to Him directly in Christ.",
+"teaches": "Scripture shows people confessing directly to God and being forgiven. David said, “I will confess my transgressions to the LORD,” and God forgave the guilt of his sin. The tax collector simply prayed, “God, have mercy on me, a sinner,” and Jesus said he went home justified. Through Christ, you can approach God’s throne of grace yourself. Confessing to other believers is also encouraged in Scripture and can bring healing, but it is Christ who forgives.",
+"key": "Psalm 32:5",
+"also": ["1 John 1:9", "Luke 18:13–14", "Hebrews 4:16", "James 5:16"],
+"self_statements": ["God won’t forgive me until I go to confession.", "This sin is too serious for just praying.", "If I die before confession, I’m lost.", "I’m too ashamed to confess, so I’m stuck.", "My prayers alone don’t count.", "Someone else has to declare me forgiven."],
+"errors": [["Overgeneralization", "Turning a church practice into a limit on God’s power to forgive."], ["Catastrophizing", "Imagining the worst if you cannot reach a priest in time."], ["Discounting Scripture", "Overlooking examples of people confessing directly to God."], ["Emotional reasoning", "Concluding “I don’t feel forgiven, so I’m not.”"]],
+"questions": ["What happened when David confessed directly to the LORD?", "Did the tax collector need a priest to go home justified?", "What does 1 John 1:9 promise when I confess?", "Who is my great high priest?", "Can I value confession with others and still know that God forgives me directly?", "Is fear keeping me from God, rather than bringing me to Him?", "What would change if I confessed to God right now?"],
+"truth": "I can confess my sins directly to God, and He is faithful and just to forgive me. Jesus is my great high priest, and through Him I can come to God’s throne of grace. Confessing to other believers can bring healing, and I may choose to do that, but God’s forgiveness is not out of my reach. When I confess to Him, He forgives.",
+"pearls": ["confession", "forgiveness", "prayer-how-to", "repent", "christ-mission-of"],
+"hw_questions": ["What happened when David confessed to the LORD?", "Did the tax collector need a priest?", "What does 1 John 1:9 promise me?", "Who is my great high priest?", "Is fear keeping me from God?", "What would change if I confessed to God now?"],
+"hw_truths": ["I can confess my sins directly to God.", "When I confess, God is faithful to forgive.", "Jesus is my great high priest.", "God’s forgiveness is not out of my reach.", "Confessing to others can help me heal.", "I can approach God’s throne of grace with confidence."],
+"log": ["Confession journal", "Each night, write a short, honest confession to God, then write: “You forgave the guilt of my sin.”"],
+"name_example": ["1 John 1:9", "If <strong>Sarah</strong> confesses <strong>her</strong> sins, He is faithful and just to forgive <strong>her</strong> sins and to cleanse <strong>her</strong> from all unrighteousness."],
+"reading": "confession", "listening": "Anxiety",
+"actions": [["Write a simple prayer of confession to God", "about something weighing on you, read it aloud, and then thank Him for His forgiveness."], ["Read Psalm 32 and Psalm 51,", "and notice how David speaks directly to God."], ["Consider confessing one struggle to a trusted believer", "for prayer and support, as James 5:16 encourages."], ["If your church has a practice of confession,", "talk with your pastor or priest about what it means and what it does not mean."]],
+"tracker": "One thing I confessed to God",
+"prayer": "Father, thank You that through Jesus I can come to You directly. Help me reject the lie that some sins cannot be forgiven until I confess them to a priest. I confess my sins to You now, trusting Your promise to forgive and cleanse me. Thank You for the believers who pray with me, and for Christ, my great high priest. In Jesus’ name, Amen."
+}

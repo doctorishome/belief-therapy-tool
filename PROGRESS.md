@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–25 are done. Next card to build: **#26**.
+**Where I left off:** Cards 1–30 are done. Next card to build: **#31**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -47,7 +47,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 23 | Counseling or medication shows a lack of faith. | Belief-023-Counseling-Or-Medication-Shows-A-Lack-Of-Faith.html |
 | 24 | My body and its desires are shameful. | Belief-024-My-Body-And-Its-Desires-Are-Shameful.html |
 | 25 | Feeling angry is always a sin. | Belief-025-Feeling-Angry-Is-Always-A-Sin.html |
+| 26 | I have sinned too much to be forgiven. | Belief-026-I-Have-Sinned-Too-Much-To-Be-Forgiven.html |
+| 27 | If I feel guilty, I must be guilty. | Belief-027-If-I-Feel-Guilty-I-Must-Be-Guilty.html |
+| 28 | A good Christian always feels guilty. | Belief-028-A-Good-Christian-Always-Feels-Guilty.html |
+| 29 | Being tempted is the same as sinning. | Belief-029-Being-Tempted-Is-The-Same-As-Sinning.html |
+| 30 | Some sins can’t be forgiven until I confess them to a priest. | Belief-030-Some-Sins-Need-A-Priest-To-Be-Forgiven.html |
 
 ## Still to do
-- Cards 26–120.
+- Cards 31–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
