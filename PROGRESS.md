@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–50 are done. Next card to build: **#51**.
+**Where I left off:** Cards 1–55 are done. Next card to build: **#56**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -72,7 +72,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 48 | My words create my reality, so I must ‘name it and claim it.’ | Belief-048-My-Words-Create-My-Reality.html |
 | 49 | If God doesn’t do a miracle, He doesn’t care. | Belief-049-If-God-Doesnt-Do-A-Miracle-He-Doesnt-Care.html |
 | 50 | God’s blessing always shows up as health and wealth. | Belief-050-Gods-Blessing-Always-Shows-Up-As-Health-And-Wealth.html |
+| 51 | Good Christians don’t have problems. | Belief-051-Good-Christians-Dont-Have-Problems.html |
+| 52 | My worth depends on how much I serve. | Belief-052-My-Worth-Depends-On-How-Much-I-Serve.html |
+| 53 | My needs and feelings never count. | Belief-053-My-Needs-And-Feelings-Never-Count.html |
+| 54 | God is like my father (or mother). | Belief-054-God-Is-Like-My-Father-Or-Mother.html |
+| 55 | Enjoying life is worldly or sinful. | Belief-055-Enjoying-Life-Is-Worldly-Or-Sinful.html |
 
 ## Still to do
-- Cards 51–120.
+- Cards 56–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
