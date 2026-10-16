@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–100 are done. Next card to build: **#101**.
+**Where I left off:** Cards 1–105 are done. Next card to build: **#106**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -122,7 +122,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 98 | Sex is dirty, even in marriage. | Belief-098-Sex-Is-Dirty-Even-In-Marriage.html |
 | 99 | If my children turn away from God, I failed as a parent. | Belief-099-If-My-Children-Turn-Away-I-Failed-As-A-Parent.html |
 | 100 | Single people are less complete in God’s eyes. | Belief-100-Single-People-Are-Less-Complete-In-Gods-Eyes.html |
+| 101 | If I miss God’s perfect will, my life is ruined. | Belief-101-If-I-Miss-Gods-Perfect-Will-My-Life-Is-Ruined.html |
+| 102 | God’s will is always the thing I least want. | Belief-102-Gods-Will-Is-Always-The-Thing-I-Least-Want.html |
+| 103 | I need a clear sign from God before I can decide anything. | Belief-103-I-Need-A-Clear-Sign-Before-I-Can-Decide.html |
+| 104 | Every decision has one right answer, and I must find it. | Belief-104-Every-Decision-Has-One-Right-Answer.html |
+| 105 | If something is hard, it can’t be God’s will. | Belief-105-If-Something-Is-Hard-It-Cant-Be-Gods-Will.html |
 
 ## Still to do
-- Cards 101–120.
+- Cards 106–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
