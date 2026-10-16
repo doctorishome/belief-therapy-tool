@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–80 are done. Next card to build: **#81**.
+**Where I left off:** Cards 1–85 are done. Next card to build: **#86**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -102,7 +102,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 78 | Being afraid of death means my faith is weak. | Belief-078-Being-Afraid-Of-Death-Means-My-Faith-Is-Weak.html |
 | 79 | My loved one who died by suicide can never be with God. | Belief-079-My-Loved-One-Who-Died-By-Suicide-Can-Never-Be-With-God.html |
 | 80 | My loved one died because I didn’t pray enough. | Belief-080-My-Loved-One-Died-Because-I-Didnt-Pray-Enough.html |
+| 81 | If my prayer isn’t answered, I prayed the wrong way. | Belief-081-If-My-Prayer-Isnt-Answered-I-Prayed-The-Wrong-Way.html |
+| 82 | God only listens if I use the right words. | Belief-082-God-Only-Listens-If-I-Use-The-Right-Words.html |
+| 83 | Asking God more than once shows a lack of faith. | Belief-083-Asking-God-More-Than-Once-Shows-A-Lack-Of-Faith.html |
+| 84 | If I pray enough, I shouldn’t need a doctor or counselor. | Belief-084-If-I-Pray-Enough-I-Shouldnt-Need-A-Doctor.html |
+| 85 | God only hears the prayers of good people. | Belief-085-God-Only-Hears-The-Prayers-Of-Good-People.html |
 
 ## Still to do
-- Cards 81–120.
+- Cards 86–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).

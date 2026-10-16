@@ -1,0 +1,23 @@
+{
+"num": 82, "group": "Prayer",
+"belief": "God only listens if I use the right words.",
+"file": "God-Only-Listens-If-I-Use-The-Right-Words",
+"meta": "A Christian look at the false belief that God only listens if you use the right words, with Scripture, questions, and homework for replacing it with the truth.",
+"origins": "Hearing others pray eloquently and feeling yours are too plain. Being taught formal or set prayers as the only proper way. Fear of saying something wrong to God. Shyness about praying out loud. Believing certain phrases have special power.",
+"teaches": "God listens to the heart, not to fancy words. Jesus warned against piling up words as if God hears us for our many words, and said the Father knows what we need before we ask. God knows our words before they are on our tongue. The tax collector simply prayed, “God, have mercy on me, a sinner!” and went home justified. When we do not know what to say, the Spirit Himself intercedes for us.",
+"key": "Matthew 6:7–8",
+"also": ["Psalm 139:4", "Luke 18:13–14", "Romans 8:26", "Psalm 62:8"],
+"self_statements": ["My prayers aren’t good enough.", "I don’t know how to pray right.", "Other people’s prayers sound better.", "If I say it wrong, God won’t hear.", "I need special words for God to listen.", "I’m too embarrassed to pray out loud."],
+"errors": [["Comparison", "Measuring your prayers against others’ eloquence."], ["Perfectionism", "Believing prayer must be polished to count."], ["Magical thinking", "Believing certain words have power to move God."], ["Fear-based thinking", "Avoiding prayer for fear of saying it wrong."]],
+"questions": ["What did Jesus say about many words in prayer?", "Does God know what I need before I ask?", "What did the tax collector pray?", "Does God know my words before I speak them?", "What does the Spirit do when I don’t know what to say?", "Would a loving father reject his child’s simple words?", "What would I say to God if no one else were listening?"],
+"truth": "God does not only listen if I use the right words. He listens to my heart. My Father knows what I need before I ask and knows my words before I speak. Simple, honest prayers are welcome. When I don’t know what to say, the Spirit prays for me.",
+"pearls": ["prayer-how-to", "prayer-answers-to", "lords-prayer", "trust", "communication"],
+"hw_questions": ["What did Jesus say about many words?", "Does God know my needs before I ask?", "What did the tax collector pray?", "Does God know my words beforehand?", "What does the Spirit do for me?", "Would a loving father reject simple words?"],
+"hw_truths": ["God listens to my heart, not my eloquence.", "My Father knows what I need before I ask.", "Simple, honest prayers are welcome.", "The Spirit prays for me when I don’t know what to say.", "I can pour out my heart to God.", "God hears even my shortest prayer."],
+"log": ["Simple prayer log", "Each day, write one short, honest sentence I prayed to God."],
+"name_example": ["Psalm 139:4", "Even before a word is on <strong>Sarah’s</strong> tongue, You know all about it, O LORD."],
+"reading": "prayer-how-to", "listening": "Anxiety",
+"actions": [["Pray one-sentence prayers throughout the day,", "such as “Help me,” “Thank You,” or “I’m scared.”"], ["Pray the tax collector’s prayer", "slowly each morning this week."], ["Write a prayer the way you would write to a close friend,", "without trying to sound spiritual."], ["Pray aloud once with a trusted friend,", "even if it’s only a sentence."]],
+"tracker": "One simple prayer I prayed",
+"prayer": "Father, thank You that You listen to my heart and not to fancy words. Help me reject the lie that You only listen if I use the right words. Teach me to talk to You simply and honestly, and thank You that Your Spirit prays for me when I don’t know what to say. In Jesus’ name, Amen."
+}
