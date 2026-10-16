@@ -1,11 +1,12 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–20 are done. Next card to build: **#21**.
+**Where I left off:** Cards 1–25 are done. Next card to build: **#26**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
 - `python3 tools/build_cards.py 11 12 13` builds the phone page (.html) and PDF into `belief-cards/`.
 - Scripture is pulled automatically from `tools/BSB.txt` (Berean Standard Bible, public domain), so every verse is exact. Only references are stored in the card files.
+- Fonts: before building, install Cormorant Garamond and Source Serif 4 locally (from github.com/google/fonts, folders ofl/cormorantgaramond and ofl/sourceserif4) so the PDFs match cards 1–5.
 - Pearls topic links are checked against `tools/pearls-topics.json` (172 topics from the Pearls database).
 - Belief wording and numbering come from Brian's file "Belief_Cards_All_120_Plain_Language.html", with these changes:
   - #1 is now "God is punishing me for my many sins."
@@ -41,7 +42,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 18 | I am under a generational curse. | Belief-018-I-Am-Under-A-Generational-Curse.html |
 | 19 | My loved one has become an angel watching over me. | Belief-019-My-Loved-One-Has-Become-An-Angel.html |
 | 20 | I should pray to angels for help. | Belief-020-I-Should-Pray-To-Angels.html |
+| 21 | Strong emotions mean my faith is weak. | Belief-021-Strong-Emotions-Mean-My-Faith-Is-Weak.html |
+| 22 | Depression and anxiety are always caused by sin. | Belief-022-Depression-And-Anxiety-Are-Always-Caused-By-Sin.html |
+| 23 | Counseling or medication shows a lack of faith. | Belief-023-Counseling-Or-Medication-Shows-A-Lack-Of-Faith.html |
+| 24 | My body and its desires are shameful. | Belief-024-My-Body-And-Its-Desires-Are-Shameful.html |
+| 25 | Feeling angry is always a sin. | Belief-025-Feeling-Angry-Is-Always-A-Sin.html |
 
 ## Still to do
-- Cards 21–120.
+- Cards 26–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).

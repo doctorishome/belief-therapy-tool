@@ -83,6 +83,7 @@ def scripture(ref, bible):
         out.append(ch)
     t = "".join(out).rstrip() + "”" * depth  # close speech that continues past the quoted verses
     t = t.replace("“", "‘").replace("”", "’")
+    t = re.sub(r"\s+Selah$", "", t)
     t = re.sub(r"[,;:—–-]+([’]?)$", r".\1", t)
     if t and t[0].islower():
         t = t[0].upper() + t[1:]
