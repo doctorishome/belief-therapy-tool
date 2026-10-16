@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–110 are done. Next card to build: **#111**.
+**Where I left off:** Cards 1–115 are done. Next card to build: **#116**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -132,7 +132,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 108 | I must figure out the reason for everything bad that happens. | Belief-108-I-Must-Figure-Out-The-Reason-For-Everything-Bad.html |
 | 109 | Complaining to God is a sin. | Belief-109-Complaining-To-God-Is-A-Sin.html |
 | 110 | My suffering means God has abandoned me. | Belief-110-My-Suffering-Means-God-Has-Abandoned-Me.html |
+| 111 | I must keep the rules to stay in God’s favor. | Belief-111-I-Must-Keep-The-Rules-To-Stay-In-Gods-Favor.html |
+| 112 | The more I do for God, the more He loves me. | Belief-112-The-More-I-Do-For-God-The-More-He-Loves-Me.html |
+| 113 | Because of grace, my choices don’t matter. | Belief-113-Because-Of-Grace-My-Choices-Dont-Matter.html |
+| 114 | Resting or receiving help means I’m spiritually lazy. | Belief-114-Resting-Or-Receiving-Help-Means-Im-Lazy.html |
+| 115 | I have to clean up my life before I can come to God. | Belief-115-I-Have-To-Clean-Up-My-Life-Before-I-Can-Come-To-God.html |
 
 ## Still to do
-- Cards 111–120.
+- Cards 116–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
