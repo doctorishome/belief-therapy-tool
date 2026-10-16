@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–70 are done. Next card to build: **#71**.
+**Where I left off:** Cards 1–75 are done. Next card to build: **#76**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -92,7 +92,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 68 | I’m going to hell because of my many sins. | Belief-068-Im-Going-To-Hell-Because-Of-My-Many-Sins.html |
 | 69 | My loved one is in hell because I didn’t share my faith enough. | Belief-069-My-Loved-One-Is-In-Hell-Because-Of-Me.html |
 | 70 | Fear of hell is the main reason to follow God. | Belief-070-Fear-Of-Hell-Is-The-Main-Reason-To-Follow-God.html |
+| 71 | My body doesn’t matter to God; only my soul counts. | Belief-071-My-Body-Doesnt-Matter-To-God.html |
+| 72 | After death we become spirits floating forever. | Belief-072-After-Death-We-Become-Spirits-Floating-Forever.html |
+| 73 | My illness, disability, or scars will last forever. | Belief-073-My-Illness-Disability-Or-Scars-Will-Last-Forever.html |
+| 74 | If my body is cremated, God can’t raise it. | Belief-074-If-My-Body-Is-Cremated-God-Cant-Raise-It.html |
+| 75 | I won’t know my loved ones after the resurrection. | Belief-075-I-Wont-Know-My-Loved-Ones-After-The-Resurrection.html |
 
 ## Still to do
-- Cards 71–120.
+- Cards 76–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
