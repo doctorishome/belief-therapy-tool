@@ -1,0 +1,23 @@
+{
+"num": 90, "group": "The Bible",
+"belief": "Only pastors or scholars can understand the Bible.",
+"file": "Only-Pastors-Or-Scholars-Can-Understand-The-Bible",
+"meta": "A Christian look at the false belief that only pastors or scholars can understand the Bible, with Scripture, questions, and homework for replacing it with the truth.",
+"origins": "Feeling intimidated by the Bible’s size, history, or language. Church settings where only leaders explained Scripture. Past attempts to read that ended in confusion. Limited schooling or reading difficulties. Being told not to interpret the Bible for yourself.",
+"teaches": "Pastors and scholars are gifts to the church, and their help is valuable. But God gave His Word to all His people. The law of the LORD makes wise the simple, and the unfolding of His words gives light to the simple. Peter and John were unschooled, ordinary men, yet people saw that they had been with Jesus. The Holy Spirit teaches believers. Timothy learned the Scriptures as a child. You can read and understand God’s Word, and grow in it.",
+"key": "Psalm 119:130",
+"also": ["Psalm 19:7", "John 14:26", "Acts 4:13", "2 Timothy 3:15"],
+"self_statements": ["I’m not smart enough to understand the Bible.", "I need a pastor to tell me what it means.", "The Bible is too hard for ordinary people.", "I’ll just get it wrong.", "Only experts should read it seriously.", "I don’t have enough education."],
+"errors": [["Discounting yourself", "Believing you cannot understand what God gave to all His people."], ["All-or-nothing thinking", "Believing you must understand everything or nothing."], ["Fear-based thinking", "Avoiding Scripture for fear of misunderstanding."], ["Overreliance on others", "Letting others do all your Bible reading for you."]],
+"questions": ["Who does Psalm 19:7 say God’s Word makes wise?", "What did people notice about Peter and John, who were unschooled?", "What does the Holy Spirit do, according to John 14:26?", "Did Timothy learn the Scriptures as a child?", "Can I understand some of the Bible now and grow over time?", "Who could help me start?", "What part of the Bible could I begin with?"],
+"truth": "I can understand the Bible. God gave His Word to all His people, and it makes wise the simple. The Holy Spirit teaches me. Pastors and scholars can help, but I do not have to depend on them for everything. I can read, grow, and understand more over time.",
+"pearls": ["scripture-word", "holy-spirit", "wisdom", "intelligence", "truth"],
+"hw_questions": ["Who does God’s Word make wise?", "What did people notice about Peter and John?", "What does the Holy Spirit do?", "Did Timothy learn Scripture as a child?", "Can I understand some now and grow?", "Where could I begin?"],
+"hw_truths": ["God’s Word makes wise the simple.", "The Holy Spirit teaches me.", "God gave His Word to all His people.", "I can understand the Bible and grow over time.", "Ordinary people can know God through His Word.", "The unfolding of His words gives light."],
+"log": ["Understanding log", "Each day, write one thing I understood from what I read."],
+"name_example": ["Psalm 119:130", "The unfolding of Your words gives light to <strong>Sarah</strong>; it informs <strong>her</strong>."],
+"reading": "scripture-word", "listening": "Anxiety",
+"actions": [["Start with the Gospel of Mark,", "reading one short section each day."], ["Use a readable translation", "or listen to an audio Bible."], ["Before reading, pray:", "“Open my eyes, Holy Spirit,” and write one thing you notice."], ["Join a small group Bible study", "where people of all backgrounds learn together."]],
+"tracker": "One thing I understood",
+"prayer": "Father, thank You for giving Your Word to all Your people. Help me reject the lie that only pastors or scholars can understand the Bible. Holy Spirit, teach me as I read, and give me confidence and joy in Your Word. In Jesus’ name, Amen."
+}

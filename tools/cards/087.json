@@ -1,0 +1,23 @@
+{
+"num": 87, "group": "The Bible",
+"belief": "Every verse applies directly to me, whatever its context.",
+"file": "Every-Verse-Applies-Directly-To-Me",
+"meta": "A Christian look at the false belief that every verse applies directly to you whatever its context, with Scripture, questions, and homework for replacing it with the truth.",
+"origins": "Reading single verses on calendars, mugs, and social media. Devotionals that use verses without their setting. Never being taught how to read the Bible in context. Opening the Bible at random looking for a personal message. Applying harsh verses to yourself and feeling condemned.",
+"teaches": "All Scripture is God-breathed and was written for our instruction. But to understand how a verse applies to us, we need to know who wrote it, to whom, and why. Paul urged Timothy to handle the word of truth accurately. In Nehemiah’s day, leaders explained the Law so the people could understand it. Reading in context protects us from misusing God’s promises and warnings, and it helps us hear what God is really saying.",
+"key": "2 Timothy 2:15",
+"also": ["Nehemiah 8:8", "Romans 15:4", "Acts 8:30–31", "2 Peter 3:16"],
+"self_statements": ["This verse is God speaking directly to my situation.", "I don’t need to know the background.", "If I open my Bible randomly, God will show me what to do.", "Every warning in the Bible is about me.", "Context doesn’t matter; God’s Word is God’s Word.", "That promise means God will do exactly this for me."],
+"errors": [["Taking verses out of context", "Reading a verse without its surrounding passage."], ["Personalization", "Assuming every verse is a direct message to you."], ["Overgeneralization", "Applying a promise made to one person or nation to every situation."], ["Selective reading", "Choosing verses that fit what you already want or fear."]],
+"questions": ["Who wrote this verse, to whom, and why?", "What does the whole chapter say?", "What does 2 Timothy 2:15 ask me to do with God’s Word?", "Am I applying a promise or warning that was for a specific situation?", "How might this verse apply to me after I understand it?", "Have I ever been hurt by a verse taken out of context?", "Who could help me understand this passage better?"],
+"truth": "Every verse is God’s Word, but I need to understand its context to apply it rightly. All Scripture was written for my instruction, and I can learn to handle it accurately: reading the surrounding passage, asking who it was written to, and then seeing how it applies to me. Context helps me hear God clearly.",
+"pearls": ["scripture-word", "truth", "wisdom", "thinking-healthy", "guidance"],
+"hw_questions": ["Who wrote this, to whom, and why?", "What does the whole chapter say?", "What does 2 Timothy 2:15 ask of me?", "Was this for a specific situation?", "How does it apply to me after I understand it?", "Who can help me understand this passage?"],
+"hw_truths": ["All Scripture was written for my instruction.", "I can handle God’s Word accurately.", "Context helps me hear God clearly.", "I can read the whole passage before applying a verse.", "God gives me teachers and His Spirit to help me understand.", "The Scriptures give me endurance, encouragement, and hope."],
+"log": ["Context log", "Each time a verse speaks to me, write who wrote it, to whom, and what the chapter is about."],
+"name_example": ["2 Timothy 2:15", "<strong>Sarah</strong> makes every effort to present <strong>herself</strong> approved to God, an unashamed workman who accurately handles the word of truth."],
+"reading": "scripture-word", "listening": "Anxiety",
+"actions": [["Pick a favorite verse and read the whole chapter around it,", "then write what it meant in its setting."], ["Use a study Bible", "to read the introduction to one book of the Bible."], ["Read Jeremiah 29:1–14,", "and write who the famous verse 11 was first spoken to."], ["Join a Bible study", "that reads whole passages together."]],
+"tracker": "One verse I read in context",
+"prayer": "Father, thank You for Your Word, written for my instruction and hope. Help me reject the idea that every verse applies directly to me whatever its context. Teach me to handle Your Word accurately and to hear what You are truly saying. In Jesus’ name, Amen."
+}

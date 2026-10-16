@@ -1,6 +1,6 @@
 # Spiritual/Religious Belief Cards — Progress
 
-**Where I left off:** Cards 1–85 are done. Next card to build: **#86**.
+**Where I left off:** Cards 1–90 are done. Next card to build: **#91**.
 
 ## How the cards are made
 - Each card's content is in `tools/cards/NNN.json` (NNN = card number).
@@ -107,7 +107,12 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 | 83 | Asking God more than once shows a lack of faith. | Belief-083-Asking-God-More-Than-Once-Shows-A-Lack-Of-Faith.html |
 | 84 | If I pray enough, I shouldn’t need a doctor or counselor. | Belief-084-If-I-Pray-Enough-I-Shouldnt-Need-A-Doctor.html |
 | 85 | God only hears the prayers of good people. | Belief-085-God-Only-Hears-The-Prayers-Of-Good-People.html |
+| 86 | If I don’t read my Bible every day, God is displeased with me. | Belief-086-If-I-Dont-Read-My-Bible-Every-Day-God-Is-Displeased.html |
+| 87 | Every verse applies directly to me, whatever its context. | Belief-087-Every-Verse-Applies-Directly-To-Me.html |
+| 88 | I must never question or wrestle with hard passages. | Belief-088-I-Must-Never-Question-Hard-Passages.html |
+| 89 | Any verse is a promise I can claim for whatever I want. | Belief-089-Any-Verse-Is-A-Promise-I-Can-Claim.html |
+| 90 | Only pastors or scholars can understand the Bible. | Belief-090-Only-Pastors-Or-Scholars-Can-Understand-The-Bible.html |
 
 ## Still to do
-- Cards 86–120.
+- Cards 91–120.
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).

@@ -1,0 +1,23 @@
+{
+"num": 86, "group": "The Bible",
+"belief": "If I don’t read my Bible every day, God is displeased with me.",
+"file": "If-I-Dont-Read-My-Bible-Every-Day-God-Is-Displeased",
+"meta": "A Christian look at the false belief that if you don’t read your Bible every day God is displeased with you, with Scripture, questions, and homework for replacing it with the truth.",
+"origins": "Strict devotional checklists from church or youth group. Guilt when you miss a day or fall behind on a reading plan. Comparing your habits with people who read for hours. A perfectionistic personality. Seeing Bible reading as a duty that earns approval rather than a gift.",
+"teaches": "Daily time in God’s Word is a wonderful habit, and Scripture calls the person who delights in it blessed. But reading the Bible is a gift that nourishes you, not a test that earns God’s approval. You are accepted in Christ by grace, not by a perfect reading record. The psalmist found God’s words sweeter than honey. God wants you to come to His Word out of hunger and love, not fear of His displeasure.",
+"key": "Psalm 119:103",
+"also": ["Psalm 1:2–3", "Romans 8:1", "Psalm 103:13–14", "Matthew 11:28–30"],
+"self_statements": ["I missed a day, so God is disappointed.", "I’m a bad Christian because I don’t read enough.", "I have to finish my reading plan or I’ve failed.", "God only blesses me when I’ve done my devotions.", "I can’t pray until I’ve read my chapter.", "Missing Bible reading means God is far from me."],
+"errors": [["Should statements", "“I must read every day or God is unhappy with me.”"], ["All-or-nothing thinking", "Believing a missed day ruins everything."], ["Performance-based thinking", "Treating Bible reading as a way to earn approval."], ["Mind reading", "Assuming you know God is displeased."]],
+"questions": ["Is Bible reading a gift to nourish me or a test to pass?", "Am I accepted by God because of my reading or because of Christ?", "How did the psalmist describe God’s words?", "Does guilt make me want to read more or less?", "What would it look like to read out of hunger rather than fear?", "Would a loving father be angry when his child misses a meal?", "What small, realistic habit could I begin?"],
+"truth": "God is not displeased with me when I miss a day of Bible reading. I am accepted in Christ by grace. God’s Word is a gift to nourish me, sweeter than honey. I can build a healthy habit of reading Scripture out of love and hunger, not fear, and come back to it without guilt when I miss a day.",
+"pearls": ["scripture-word", "grace", "meditation", "guilt-shame", "love-by-god"],
+"hw_questions": ["Is Bible reading a gift or a test?", "Am I accepted by my reading or by Christ?", "How did the psalmist describe God’s words?", "Does guilt help or hurt my reading?", "Can I read out of hunger rather than fear?", "What realistic habit can I start?"],
+"hw_truths": ["God’s Word is a gift, not a test.", "I am accepted in Christ, not by my reading record.", "God’s words are sweeter than honey.", "I can come back to Scripture without guilt.", "There is no condemnation for me in Christ.", "Jesus’ yoke is easy and His burden is light."],
+"log": ["Delight log", "Each time I read Scripture, write one verse or phrase that I enjoyed or that helped me."],
+"name_example": ["Psalm 119:103", "How sweet are Your words to <strong>Sarah’s</strong> taste—sweeter than honey in <strong>her</strong> mouth!"],
+"reading": "scripture-word", "listening": "Anxiety",
+"actions": [["Choose a small, realistic reading goal,", "such as one psalm or five minutes a day."], ["If you miss a day, simply start again the next day", "without trying to “catch up.”"], ["Read one passage slowly", "and write down one thing it shows you about God’s love."], ["Listen to Scripture on an audio app", "during a drive or walk."]],
+"tracker": "One verse I enjoyed",
+"prayer": "Father, thank You for the gift of Your Word. Help me reject the lie that You are displeased with me when I miss a day of Bible reading. Give me a hunger for Your Word, and let me come to it out of love and delight, resting in Your grace. In Jesus’ name, Amen."
+}
