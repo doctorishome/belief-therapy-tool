@@ -117,6 +117,21 @@ def pearls_link(slug):
     return '<a href="%s%s" target="_blank" rel="noopener">%s</a>' % (PEARLS, slug, PEARLS_TOPICS[slug])
 
 
+def godly_counsel_html(nums):
+    """The "Godly Counsel Lessons" list shown under Related Pearls topics (empty if no lessons)."""
+    if not nums:
+        return ""
+    items = []
+    for c in nums:
+        title = GODLY_COUNSEL[str(c)][0]
+        pdf = GC_BASE + "GC-%02d-%s.pdf" % (int(c), re.sub(r"[^A-Za-z0-9]+", "-", title).strip("-"))
+        items.append('<li><a href="%s" target="_blank" rel="noopener">%s</a></li>' % (pdf, e(title)))
+    return ('<p class="gc-head"><strong>Godly Counsel Lessons:</strong></p>\n'
+            '<p>From the book <em>Godly Counsel</em> by Dr. Brian Campbell. '
+            'Click a lesson to open it. You can read it on screen or print it.</p>\n'
+            '<ul class="pearls">\n%s\n</ul>' % "\n".join(items))
+
+
 def render(d, bible, style):
     n, belief = d["num"], d["belief"]
     lie = belief.rstrip(".")
@@ -129,17 +144,7 @@ def render(d, bible, style):
     also_html = "\n".join('<p><q>%s</q> <span class="ref">(%s)</span>.</p>' % (e(strip_end(t)), r) for r, t in also)
     errors_html = "\n".join("<li><strong>%s: </strong>%s</li>" % (a, b) for a, b in d["errors"])
     pearls_html = "\n".join("<li>%s</li>" % pearls_link(s) for s in d["pearls"])
-    gc_html = ""
-    if d.get("godly_counsel"):
-        gc_items = []
-        for c in d["godly_counsel"]:
-            title = GODLY_COUNSEL[str(c)][0]
-            pdf = GC_BASE + "GC-%02d-%s.pdf" % (int(c), re.sub(r"[^A-Za-z0-9]+", "-", title).strip("-"))
-            gc_items.append('<li><a href="%s" target="_blank" rel="noopener">%s</a></li>' % (pdf, e(title)))
-        gc_html = ('<p class="gc-head"><strong>Godly Counsel Lessons:</strong></p>\n'
-                   '<p>From the book <em>Godly Counsel</em> by Dr. Brian Campbell. '
-                   'Click a lesson to open it. You can read it on screen or print it.</p>\n'
-                   '<ul class="pearls">\n%s\n</ul>' % "\n".join(gc_items))
+    gc_html = godly_counsel_html(d.get("godly_counsel"))
     hw_scrip = "\n".join('<li><span class="ref">%s</span><span class="scrip">“%s”</span></li>' % (r, e(t)) for r, t in hw)
     actions = "\n".join("<li><strong>%s</strong> %s</li>" % (a, b) for a, b in d["actions"])
     log_t, log_d = d["log"]

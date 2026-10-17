@@ -160,5 +160,5 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 - Under "Related Pearls topics," a card can list Godly Counsel Lessons. Add `"godly_counsel": [26, 14, 6, 7]` (lesson numbers) to the card's JSON file and rebuild.
 - Links go to the framed lessons in `belief-cards/godly-counsel/` (navy-and-gold frame, letter size, printable).
 - To re-make the framed lessons: `python3 tools/frame_godly_counsel.py <folder with the 33 chapter PDFs>` (Brian's file Godly_Counsel_33_Chapters_5.zip). Lesson list: `tools/godly-counsel-chapters.json`.
-- Done so far: Card 43. Remaining: choose lessons for the other cards (Brian approves the list first).
+- Done: all 120 cards have Godly Counsel Lessons (Brian approved the list Oct 16, 2026; list in `tools/godly-counsel-plan.json`). Cards 1–5 have no JSON file, so their lesson section was added directly to the HTML (via `godly_counsel_html` in build_cards.py) and their PDFs re-printed.
 - The first page of Self-Esteem, Low (#24) says "Lesson 23" in the book (typo). The framed copy shows "Lesson 24" (see FIXES in tools/frame_godly_counsel.py). The book file and Wix copy still say 23.
