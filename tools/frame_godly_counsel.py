@@ -15,7 +15,7 @@ TOOLS = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(TOOLS, "..", "belief-cards", "godly-counsel")
 NAVY, GOLD, LINE = HexColor("#1F3A5F"), HexColor("#B08A4B"), HexColor("#E4D9C6")
 W, H = 612, 792  # US letter
-TRIM_TOP, TRIM_SIDE, TRIM_BOTTOM = 26, 40, 40  # blank book margin to trim, in points
+TRIM_TOP, TRIM_SIDE, TRIM_BOTTOM = 26, 38, 20  # blank book margin to trim, in points
 
 F = os.path.join(TOOLS, "gc_fonts")
 pdfmetrics.registerFont(TTFont("Corm", os.path.join(F, "Cormorant-SemiBold.ttf")))

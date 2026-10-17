@@ -21,6 +21,7 @@ LIST_PAGE = "https://doctorishome.wixstudio.com/website-6/spiritual-religious-fa
 TRANSLATION_NOTE = ("Scripture quotations are from the Berean Standard Bible (BSB), "
                     "which is in the public domain.")
 
+GC_BASE = "https://doctorishome.github.io/belief-therapy-tool/belief-cards/godly-counsel/"  # framed lessons (tools/frame_godly_counsel.py)
 GODLY_COUNSEL = {}  # chapter number -> [title, pages, pdf link], from tools/godly-counsel-chapters.json
 PEARLS_TOPICS = {}  # slug -> display name, loaded from tools/pearls-topics.json
 
@@ -132,7 +133,8 @@ def render(d, bible, style):
     if d.get("godly_counsel"):
         gc_items = []
         for c in d["godly_counsel"]:
-            title, pages, pdf = GODLY_COUNSEL[str(c)]
+            title = GODLY_COUNSEL[str(c)][0]
+            pdf = GC_BASE + "GC-%02d-%s.pdf" % (int(c), re.sub(r"[^A-Za-z0-9]+", "-", title).strip("-"))
             gc_items.append('<li><a href="%s" target="_blank" rel="noopener">%s</a></li>' % (pdf, e(title)))
         gc_html = ('<p class="gc-head"><strong>Godly Counsel Lessons:</strong></p>\n'
                    '<p>From the book <em>Godly Counsel</em> by Dr. Brian Campbell. '

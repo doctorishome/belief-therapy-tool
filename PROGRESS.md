@@ -155,3 +155,10 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 - Link each dropdown item on the Wix page "Spiritual/Religious False Beliefs" to its card (needs the Wix editor).
 - Brian to review cards 6–120 (written by Claude from his 120-belief list in the style of cards 1–5).
 - Cards 1–5 quote the NIV; cards 6–120 quote the Berean Standard Bible.
+
+## Godly Counsel Lessons (added Oct 16, 2026)
+- Under "Related Pearls topics," a card can list Godly Counsel Lessons. Add `"godly_counsel": [26, 14, 6, 7]` (lesson numbers) to the card's JSON file and rebuild.
+- Links go to the framed lessons in `belief-cards/godly-counsel/` (navy-and-gold frame, letter size, printable).
+- To re-make the framed lessons: `python3 tools/frame_godly_counsel.py <folder with the 33 chapter PDFs>` (Brian's file Godly_Counsel_33_Chapters_5.zip). Lesson list: `tools/godly-counsel-chapters.json`.
+- Done so far: Card 43. Remaining: choose lessons for the other cards (Brian approves the list first).
+- Note: the first page of the Self-Esteem, Low lesson (#24) says "Lesson 23" — a typo in the book's PDF.
