@@ -15,6 +15,7 @@ TOOLS = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(TOOLS, "..", "belief-cards", "godly-counsel")
 NAVY, GOLD, LINE = HexColor("#1F3A5F"), HexColor("#B08A4B"), HexColor("#E4D9C6")
 W, H = 612, 792  # US letter
+TRIM_TOP, TRIM_SIDE, TRIM_BOTTOM = 26, 40, 40  # blank book margin to trim, in points
 
 F = os.path.join(TOOLS, "gc_fonts")
 pdfmetrics.registerFont(TTFont("Corm", os.path.join(F, "Cormorant-SemiBold.ttf")))
@@ -56,13 +57,18 @@ def build(src_dir, num, chapters):
     out = PdfWriter()
     n = len(reader.pages)
     for i, p in enumerate(reader.pages, 1):
-        pw, ph = float(p.mediabox.width), float(p.mediabox.height)
-        box_top, box_bottom = H - 96, 68           # space between header and footer
-        s = min((W - 120) / pw, (box_top - box_bottom) / ph, 1.0)
+        # trim the book's own blank margins (same amount on every page, so pages line up)
+        x0, y0 = float(p.mediabox.left) + TRIM_SIDE, float(p.mediabox.bottom) + TRIM_BOTTOM
+        pw = float(p.mediabox.width) - 2 * TRIM_SIDE
+        ph = float(p.mediabox.height) - TRIM_TOP - TRIM_BOTTOM
+        box_top, box_bottom = H - 94, 66           # space between header and footer
+        s = min((W - 120) / pw, (box_top - box_bottom) / ph, 1.1)
         x = (W - pw * s) / 2
-        y = box_bottom + ((box_top - box_bottom) - ph * s) / 2
+        y = box_top - ph * s                       # text starts just under the heading
+        p.cropbox.lower_left = (x0, y0)
+        p.cropbox.upper_right = (x0 + pw, y0 + ph)
         page = PageObject.create_blank_page(width=W, height=H)
-        page.merge_transformed_page(p, Transformation().scale(s).translate(x, y))
+        page.merge_transformed_page(p, Transformation().translate(-x0, -y0).scale(s).translate(x, y))
         page.merge_page(frame(num, title, i, n))
         out.add_page(page)
     out.add_metadata({"/Title": "Godly Counsel – Chapter %d: %s" % (num, title), "/Author": "Dr. Brian Campbell"})
