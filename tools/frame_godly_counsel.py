@@ -36,10 +36,11 @@ def frame(num, title, page_no, pages):
     # header
     c.setFillColor(GOLD); c.setFont("Serif", 8.5)
     c.drawCentredString(W / 2, H - 52, "G O D L Y   C O U N S E L")
-    c.setFillColor(NAVY); c.setFont("Corm", 19)
-    c.drawCentredString(W / 2, H - 74, "Chapter %d · %s" % (num, title))
-    c.setStrokeColor(GOLD); c.setLineWidth(0.8)
-    c.line(W / 2 - 60, H - 84, W / 2 + 60, H - 84)
+    if page_no > 1:  # page 1 already shows the book's own "Lesson NN / TITLE"
+        c.setFillColor(NAVY); c.setFont("Corm", 19)
+        c.drawCentredString(W / 2, H - 74, "Lesson %d · %s" % (num, title))
+        c.setStrokeColor(GOLD); c.setLineWidth(0.8)
+        c.line(W / 2 - 60, H - 84, W / 2 + 60, H - 84)
     # footer
     c.setStrokeColor(LINE); c.setLineWidth(0.6); c.line(60, 58, W - 60, 58)
     c.setFillColor(NAVY); c.setFont("SerifI", 8.5)
@@ -61,7 +62,8 @@ def build(src_dir, num, chapters):
         x0, y0 = float(p.mediabox.left) + TRIM_SIDE, float(p.mediabox.bottom) + TRIM_BOTTOM
         pw = float(p.mediabox.width) - 2 * TRIM_SIDE
         ph = float(p.mediabox.height) - TRIM_TOP - TRIM_BOTTOM
-        box_top, box_bottom = H - 94, 66           # space between header and footer
+        box_top = H - 94 if i > 1 else H - 62     # page 1 has no lesson heading, so text starts higher
+        box_bottom = 66
         s = min((W - 120) / pw, (box_top - box_bottom) / ph, 1.1)
         x = (W - pw * s) / 2
         y = box_top - ph * s                       # text starts just under the heading
@@ -71,7 +73,7 @@ def build(src_dir, num, chapters):
         page.merge_transformed_page(p, Transformation().translate(-x0, -y0).scale(s).translate(x, y))
         page.merge_page(frame(num, title, i, n))
         out.add_page(page)
-    out.add_metadata({"/Title": "Godly Counsel – Chapter %d: %s" % (num, title), "/Author": "Dr. Brian Campbell"})
+    out.add_metadata({"/Title": "Godly Counsel – Lesson %d: %s" % (num, title), "/Author": "Dr. Brian Campbell"})
     os.makedirs(OUT, exist_ok=True)
     name = "GC-%02d-%s.pdf" % (num, slug(title))
     with open(os.path.join(OUT, name), "wb") as fh:

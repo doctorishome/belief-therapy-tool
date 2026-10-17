@@ -134,9 +134,9 @@ def render(d, bible, style):
         for c in d["godly_counsel"]:
             title, pages, pdf = GODLY_COUNSEL[str(c)]
             gc_items.append('<li><a href="%s" target="_blank" rel="noopener">%s</a></li>' % (pdf, e(title)))
-        gc_html = ('<p class="gc-head"><strong>Godly Counsel Chapters:</strong></p>\n'
+        gc_html = ('<p class="gc-head"><strong>Godly Counsel Lessons:</strong></p>\n'
                    '<p>From the book <em>Godly Counsel</em> by Dr. Brian Campbell. '
-                   'Click a chapter to open it. You can read it on screen or print it.</p>\n'
+                   'Click a lesson to open it. You can read it on screen or print it.</p>\n'
                    '<ul class="pearls">\n%s\n</ul>' % "\n".join(gc_items))
     hw_scrip = "\n".join('<li><span class="ref">%s</span><span class="scrip">“%s”</span></li>' % (r, e(t)) for r, t in hw)
     actions = "\n".join("<li><strong>%s</strong> %s</li>" % (a, b) for a, b in d["actions"])
