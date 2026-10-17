@@ -163,3 +163,9 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 - Done: all 120 cards have Godly Counsel Lessons (Brian approved the list Oct 16, 2026; list in `tools/godly-counsel-plan.json`). Cards 1–5 have no JSON file, so their lesson section was added directly to the HTML (via `godly_counsel_html` in build_cards.py) and their PDFs re-printed.
 - The first page of Self-Esteem, Low (#24) says "Lesson 23" in the book (typo). The framed copy shows "Lesson 24" (see FIXES in tools/frame_godly_counsel.py). The book file and Wix copy still say 23.
 - Cards 1, 26, 41, 42, 45, 52 use slightly tighter print spacing on the belief page (`"print_tight": true`, style in `tools/print-tight.css`; card 1 has it in its HTML) so their PDFs keep their original page count. Phone view is unchanged.
+
+## Psychological/Cognitive belief cards (started Oct 17, 2026)
+- Wix page: https://doctorishome.wixstudio.com/website-6/blank-7 ("Psychological/Cognitive False Beliefs", not yet in the menu). Its content is an HTML embed (#html1): 10 personality-disorder boxes, 5 beliefs each.
+- Cards live in `belief-cards/psychological/` as hand-made HTML (no builder yet). Card #1: Psych-001-If-I-Let-My-Guard-Down.html (+ PDF), linked from the Paranoid belief "Relaxing my guard leaves me defenseless." via `<a class="cardlink">` in the embed code.
+- Next cards are drafted by ChatGPT from Brian's desktop file "Instructions for ChatGPT - Next Psych Card" (template = card #1); Brian uploads them here, then each is linked from its belief in the embed and the site republished.
+- To do: add page to menu + rename its address; make the page's belief wording match card titles.
