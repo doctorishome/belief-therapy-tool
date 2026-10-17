@@ -23,6 +23,23 @@ pdfmetrics.registerFont(TTFont("Serif", os.path.join(F, "SourceSerif4-Regular.tt
 pdfmetrics.registerFont(TTFont("SerifI", os.path.join(F, "SourceSerif4-Italic.ttf")))
 
 
+# Corrections to the book's own pages: (lesson, page) -> (x, baseline y, font size, wrong-text box, new text)
+# Lesson 24's first page says "Lesson 23" (typo in the book); show "24" instead.
+FIXES = {(24, 1): (232.86, 585.89, 16, (231.5, 581.0, 18.5, 18.0), "24")}
+
+
+def apply_fix(p, fix):
+    x, base, size, (bx, by, bw, bh), text = fix
+    buf = io.BytesIO()
+    c = canvas.Canvas(buf, pagesize=(float(p.mediabox.width), float(p.mediabox.height)))
+    c.setFillColor(HexColor("#FFFFFF")); c.setStrokeColor(HexColor("#FFFFFF"))
+    c.rect(bx, by, bw, bh, fill=1, stroke=0)
+    c.setFillColor(HexColor("#000000")); c.setFont("Times-Roman", size)
+    c.drawString(x, base, text)
+    c.save()
+    p.merge_page(PdfReader(io.BytesIO(buf.getvalue())).pages[0])
+
+
 def slug(title):
     return re.sub(r"[^A-Za-z0-9]+", "-", title).strip("-")
 
@@ -58,6 +75,8 @@ def build(src_dir, num, chapters):
     out = PdfWriter()
     n = len(reader.pages)
     for i, p in enumerate(reader.pages, 1):
+        if (num, i) in FIXES:
+            apply_fix(p, FIXES[(num, i)])
         # trim the book's own blank margins (same amount on every page, so pages line up)
         x0, y0 = float(p.mediabox.left) + TRIM_SIDE, float(p.mediabox.bottom) + TRIM_BOTTOM
         pw = float(p.mediabox.width) - 2 * TRIM_SIDE

@@ -161,4 +161,4 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 - Links go to the framed lessons in `belief-cards/godly-counsel/` (navy-and-gold frame, letter size, printable).
 - To re-make the framed lessons: `python3 tools/frame_godly_counsel.py <folder with the 33 chapter PDFs>` (Brian's file Godly_Counsel_33_Chapters_5.zip). Lesson list: `tools/godly-counsel-chapters.json`.
 - Done so far: Card 43. Remaining: choose lessons for the other cards (Brian approves the list first).
-- Note: the first page of the Self-Esteem, Low lesson (#24) says "Lesson 23" — a typo in the book's PDF.
+- The first page of Self-Esteem, Low (#24) says "Lesson 23" in the book (typo). The framed copy shows "Lesson 24" (see FIXES in tools/frame_godly_counsel.py). The book file and Wix copy still say 23.
