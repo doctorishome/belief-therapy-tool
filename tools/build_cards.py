@@ -338,6 +338,9 @@ def main():
         d = json.load(open(os.path.join(TOOLS, "cards", "%03d.json" % n), encoding="utf-8"))
         base, page, used = render(d, bible, style)
         page = add_songs(page, d)
+        if d.get("print_tight"):  # a few cards need a slightly tighter printed belief page
+            tight = open(os.path.join(TOOLS, "print-tight.css"), encoding="utf-8").read()
+            page = page.replace("</style></head>", tight + "</style></head>", 1)
         for old in os.listdir(OUT):  # remove an older file name for the same number
             if old.startswith("Belief-%03d-" % n) and not old.startswith(base + "."):
                 os.remove(os.path.join(OUT, old))
