@@ -1,4 +1,4 @@
-"""Adds the optional media sections to a built card page: Overcoming Anxiety audio,
+"""Adds media to a built card page: the Overcoming Anxiety/Depression recording (every card),
 "Songs that speak truth to this belief" (in-card YouTube players), and the song journal.
 
 A card gets songs when its JSON file has a "songs" list:
@@ -10,6 +10,11 @@ Test each new video's embed before using it (some music-label videos refuse embe
 """
 import html, os
 
+AUDIO = {  # Dr. Campbell's recordings, in the Wix Media Manager of "Pearls Working 5" (folder Audio)
+    "Anxiety": ("https://music.wixstatic.com/mp3/dbdded_f67d414544534727acf6973d58189443.mp3", 18),
+    "Depression": ("https://music.wixstatic.com/mp3/dbdded_149606a27908493da01ac9492fb18ab1.mp3", 20),
+}
+
 HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "songs_assets")
 
 
@@ -18,9 +23,7 @@ def _read(name):
 
 
 def add_songs(page, d):
-    songs = d.get("songs")
-    if not songs:
-        return page
+    songs = d.get("songs") or []
     e = html.escape
     cards = []
     for vid, title, artist, why in songs:
@@ -29,32 +32,38 @@ def add_songs(page, d):
             '<span class="thumb" style="background-image:url(\'https://i.ytimg.com/vi/%s/hqdefault.jpg\')"></span>'
             '<span class="txt"><span class="st">%s</span><span class="sa">%s</span><span class="sw">%s</span></span></a>'
             % (vid, vid, e(title), e(artist), e(why)))
-    audio = _read("audio.html") if d.get("listening", "Depression") == "Anxiety" else ""
-    block = (audio + '<h2>Songs that speak truth to this belief</h2>\n'
-             '<p class="songnote2">Tap a song to play it right here.</p>\n<div class="songs">\n'
-             + "\n".join(cards) + '\n</div>\n'
-             '<p class="songnote">Songs play here through YouTube and may start with a short ad. '
-             'If one will not play, use its “Watch on YouTube” link.</p>\n\n')
+    topic = d.get("listening", "Depression")
+    url, minutes = AUDIO[topic]
+    audio = _read("audio.html").format(url=url, topic=topic, minutes=minutes)
+    block = audio
+    if songs:
+        block += ('<h2>Songs that speak truth to this belief</h2>\n'
+                  '<p class="songnote2">Tap a song to play it right here.</p>\n<div class="songs">\n'
+                  + "\n".join(cards) + '\n</div>\n'
+                  '<p class="songnote">Songs play here through YouTube and may start with a short ad. '
+                  'If one will not play, use its “Watch on YouTube” link.</p>\n')
+    block += "\n"
 
     def swap(old, new):
         nonlocal page
         assert page.count(old) == 1, "anchor not found once: " + old[:50]
         page = page.replace(old, new)
 
-    if audio:
-        swap("<li><strong>Listening:</strong> The Overcoming Anxiety audio download.</li>",
-             '<li><strong>Listening:</strong> The <a href="https://music.wixstatic.com/mp3/dbdded_f67d414544534727acf6973d58189443.mp3" '
-             'target="_blank" rel="noopener">Overcoming Anxiety audio</a> by Dr. Brian Campbell. Tap to play.</li>')
+    swap("<li><strong>Listening:</strong> The Overcoming %s audio download.</li>" % topic,
+         '<li><strong>Listening:</strong> The <a href="%s" target="_blank" rel="noopener">Overcoming %s audio</a> '
+         'by Dr. Brian Campbell. Tap to play.</li>' % (url, topic))
     swap("</style>", _read("songs.css") + "</style>")
     swap('<p class="morning">', block + '<p class="morning">')
-    swap("Everyone does the first three.", "Everyone does the first four.")
-    swap("<li><strong>Set reminders</strong>",
-         "<li><strong>Listen to one song each day</strong> from “Songs that speak truth to this belief” on my card, "
-         "and fill in my song journal (below).</li>\n<li><strong>Set reminders</strong>")
-    journal = ('<h2>My song journal</h2>\n<p class="why">After each day\'s song, write what it told you that challenges the lie.</p>\n'
-               '<table class="track songj">\n<tr><th>Day</th><th>Song I listened to</th><th>What it told me that challenges the lie</th></tr>\n'
-               + "".join('<tr><td>%s</td><td></td><td></td></tr>\n' % x for x in "Mon Tue Wed Thu Fri Sat Sun".split())
-               + '</table>\n\n')
-    swap("<h2>My Truth Card</h2>", journal + "<h2>My Truth Card</h2>")
+    if songs:
+        swap("Everyone does the first three.", "Everyone does the first four.")
+        swap("<li><strong>Set reminders</strong>",
+             "<li><strong>Listen to one song each day</strong> from “Songs that speak truth to this belief” on my card, "
+             "and fill in my song journal (below).</li>\n<li><strong>Set reminders</strong>")
+        journal = ('<h2>My song journal</h2>\n<p class="why">After each day\'s song, write what it told you that challenges the lie.</p>\n'
+                   '<table class="track songj">\n<tr><th>Day</th><th>Song I listened to</th><th>What it told me that challenges the lie</th></tr>\n'
+                   + "".join('<tr><td>%s</td><td></td><td></td></tr>\n' % x for x in "Mon Tue Wed Thu Fri Sat Sun".split())
+                   + '</table>\n\n')
+        swap("<h2>My Truth Card</h2>", journal + "<h2>My Truth Card</h2>")
+
     swap("</body>", _read("songs.js.html") + "</body>")
     return page

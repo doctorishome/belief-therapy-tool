@@ -105,6 +105,41 @@
   .back a{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px;margin:0 8px}
   @media print{.back{display:none}}
   .bnote{margin-top:14px;text-align:center;font-size:13px;color:#5a5348;font-style:italic}
+  /* ---- Songs that speak truth (optional section) ---- */
+  .songs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr));gap:16px;margin:12px 0 4px}
+  .song{display:block;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;transition:transform .15s,box-shadow .15s}
+  .song:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(31,58,95,.18)}
+  .song .thumb{display:block;position:relative;aspect-ratio:16/9;background:var(--navy) center/cover no-repeat}
+  .song .thumb::after{content:"";position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:rgba(31,58,95,.82) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l9 5-9 5z' fill='%23fff'/%3E%3C/svg%3E") center/26px no-repeat;border:2px solid var(--gold)}
+  .song .txt{display:block;padding:10px 12px 12px}
+  .song .st{display:block;font-weight:700;color:var(--navy);line-height:1.3}
+  .song .sa{display:block;font-size:14px;color:var(--gold);font-weight:600;margin-top:2px}
+  .song .sw{display:block;font-size:14px;line-height:1.45;margin-top:6px;color:#4a453d}
+  .song.playing .thumb{background:#000}.song .thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2}.song.playing .thumb::after{display:none}.ytlink{display:block;font-size:13px;margin:4px 2px 0;color:var(--navy)}@media print{.ytlink{display:none}}
+  .songnote{font-size:13px;color:#5a5348;font-style:italic;margin:8px 0 0}
+  @media print{
+    .songs{display:block}
+    .song{border:0;border-radius:0;margin:0 0 6px}
+    .song .thumb,.songnote,.songnote2{display:none}
+    .song .txt{padding:0}
+    .song .st,.song .sa{display:inline;font-size:13px}
+    .song .sa::before{content:" — "}
+    .song .sw{font-size:12.5px;margin-top:1px}
+  }
+  table.songj td{height:54px;text-align:left}
+  table.songj td:nth-child(2){width:30%}
+  @media print{table.songj td{height:44px}}
+  .audio{background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:14px 16px;margin:10px 0 4px}
+  .audio .atitle{margin:0 0 8px;font-weight:700}
+  .audio .atitle a{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+  .audio .atitle span{font-weight:400;font-size:14px;color:#5a5348}
+  .audio audio{width:100%;display:block}
+  .audio .anote{margin:6px 0 0;font-size:13px;color:#5a5348;font-style:italic}
+  @media print{.audio{padding:8px 12px}.audio audio,.audio .anote{display:none}.audio .atitle{margin:0}}
+  .bnote{margin-top:14px;text-align:center;font-size:13px;color:#5a5348;font-style:italic}
+  .audio .aload{margin:8px 0 0;padding:6px 10px;background:#fff;border:1px solid var(--gold);border-radius:6px;font-size:14px;font-weight:600;color:var(--navy)}
+  .audio .aload[hidden]{display:none}
+  @media print{.audio .aload{display:none}}
 </style></head><body><div class="wrap" id="top">
 
 <div class="printbar">
@@ -183,6 +218,15 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 <li><a href="https://doctorishome.wixstudio.com/website-6/scriptures?topic=humility" target="_blank" rel="noopener">Humility</a></li>
 </ul>
 
+<h2>Listen: Overcoming Anxiety</h2>
+<div class="audio">
+<p class="atitle"><a href="https://music.wixstatic.com/mp3/dbdded_f67d414544534727acf6973d58189443.mp3" target="_blank" rel="noopener">Overcoming Anxiety</a> <span>· Dr. Brian Campbell · about 18 minutes</span></p>
+<audio controls preload="none" src="https://music.wixstatic.com/mp3/dbdded_f67d414544534727acf6973d58189443.mp3">Your browser can’t play this here. <a href="https://music.wixstatic.com/mp3/dbdded_f67d414544534727acf6973d58189443.mp3">Open the recording</a>.</audio>
+<p class="aload" hidden>Starting the recording… it is a long one, so it may take a few seconds to begin.</p>
+<p class="anote">Press play to listen here, or tap the title to open it on its own.</p>
+</div>
+
+
 <p class="morning">Each morning ask: “If I truly believed God’s truth instead of this lie, how would I think, speak, and act today?”</p>
 <div class="foot">✦ ✦ ✦</div>
 </div>
@@ -256,7 +300,7 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 <li><strong>Gratitude journal:</strong> Each night, write three things I thank God for.</li>
 <li><strong>Truth recording:</strong> Record my own voice reading my Truth Card and verse, and listen in the car or on a walk.</li>
 <li><strong>Reading:</strong> The <a href="https://doctorishome.wixstudio.com/website-6/scriptures?topic=church" target="_blank" rel="noopener">“Church” topic in Pearls</a>.</li>
-<li><strong>Listening:</strong> The Overcoming Anxiety audio download.</li>
+<li><strong>Listening:</strong> The <a href="https://music.wixstatic.com/mp3/dbdded_f67d414544534727acf6973d58189443.mp3" target="_blank" rel="noopener">Overcoming Anxiety audio</a> by Dr. Brian Campbell. Tap to play.</li>
 </ul>
 
 <div class="step"><div class="num">6</div><div><h2>My action step this week</h2><p class="why">Do one thing that tests the lie in real life.</p></div></div>
@@ -307,4 +351,26 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 
 <p class="back"><a href="#top">Back to top</a> · <a href="https://doctorishome.wixstudio.com/website-6/spiritual-religious-false-beliefs" target="_top">All Spiritual/Religious False Beliefs</a></p>
 
-</div></body></html>
+</div><script>
+document.querySelectorAll('a.song').forEach(function(a){
+  var id=(a.href.match(/[?&]v=([\w-]{11})/)||[])[1]; if(!id) return;
+  var l=document.createElement('a'); l.className='ytlink'; l.href=a.href; l.target='_blank'; l.rel='noopener'; l.textContent='Watch on YouTube';
+  var w=document.createElement('div'); w.className='songwrap'; a.parentNode.insertBefore(w,a); w.appendChild(a); w.appendChild(l);
+  a.addEventListener('click',function(e){
+    var t=a.querySelector('.thumb'); if(!t||a.classList.contains('playing')) return;
+    e.preventDefault(); a.classList.add('playing');
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+    f.allow='autoplay; encrypted-media; fullscreen'; f.setAttribute('allowfullscreen','');
+    t.appendChild(f);
+  });
+});
+document.querySelectorAll('.audio audio').forEach(function(au){
+  var n=au.parentNode.querySelector('.aload'); if(!n) return;
+  function show(){ if(au.readyState<3) n.hidden=false; }
+  function hide(){ n.hidden=true; }
+  au.addEventListener('play',show); au.addEventListener('waiting',show);
+  au.addEventListener('playing',hide); au.addEventListener('pause',hide); au.addEventListener('error',hide);
+});
+</script>
+</body></html>
