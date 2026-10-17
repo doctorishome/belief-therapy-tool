@@ -21,6 +21,7 @@ LIST_PAGE = "https://doctorishome.wixstudio.com/website-6/spiritual-religious-fa
 TRANSLATION_NOTE = ("Scripture quotations are from the Berean Standard Bible (BSB), "
                     "which is in the public domain.")
 
+GODLY_COUNSEL = {}  # chapter number -> [title, pages, pdf link], from tools/godly-counsel-chapters.json
 PEARLS_TOPICS = {}  # slug -> display name, loaded from tools/pearls-topics.json
 
 BOOK_ALIAS = {"Psalm": "Psalms", "Song of Songs": "Song of Solomon", "Revelation": "Revelation of John"}
@@ -127,6 +128,13 @@ def render(d, bible, style):
     also_html = "\n".join('<p><q>%s</q> <span class="ref">(%s)</span>.</p>' % (e(strip_end(t)), r) for r, t in also)
     errors_html = "\n".join("<li><strong>%s: </strong>%s</li>" % (a, b) for a, b in d["errors"])
     pearls_html = "\n".join("<li>%s</li>" % pearls_link(s) for s in d["pearls"])
+    gc_html = ""
+    if d.get("godly_counsel"):
+        gc_items = []
+        for c in d["godly_counsel"]:
+            title, pages, pdf = GODLY_COUNSEL[str(c)]
+            gc_items.append('<li><a href="%s" target="_blank" rel="noopener">%s</a> <span class="ref">(%s)</span></li>' % (pdf, e(title), pages))
+        gc_html = '<p class="gc-head"><strong>Godly Counsel Chapters:</strong></p>\n<ul class="pearls">\n%s\n</ul>' % "\n".join(gc_items)
     hw_scrip = "\n".join('<li><span class="ref">%s</span><span class="scrip">“%s”</span></li>' % (r, e(t)) for r, t in hw)
     actions = "\n".join("<li><strong>%s</strong> %s</li>" % (a, b) for a, b in d["actions"])
     log_t, log_d = d["log"]
@@ -200,6 +208,7 @@ window.addEventListener('afterprint', function(){{ document.body.classList.remov
 <ul class="pearls">
 {pearls_html}
 </ul>
+{gc_html}
 
 <p class="morning">Each morning ask: “If I truly believed God’s truth instead of this lie, how would I think, speak, and act today?”</p>
 <div class="foot">✦ ✦ ✦</div>
@@ -310,6 +319,7 @@ window.addEventListener('afterprint', function(){{ document.body.classList.remov
 def main():
     global PEARLS_TOPICS
     PEARLS_TOPICS = json.load(open(os.path.join(TOOLS, "pearls-topics.json"), encoding="utf-8"))
+    GODLY_COUNSEL.update(json.load(open(os.path.join(TOOLS, "godly-counsel-chapters.json"), encoding="utf-8")))
     bible = load_bible()
     style = open(os.path.join(TOOLS, "card-style.css"), encoding="utf-8").read().rstrip()
     nums = [int(a) for a in sys.argv[1:]] or sorted(
