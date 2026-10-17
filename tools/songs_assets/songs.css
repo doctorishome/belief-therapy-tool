@@ -30,3 +30,6 @@
   .audio .anote{margin:6px 0 0;font-size:13px;color:#5a5348;font-style:italic}
   @media print{.audio{padding:8px 12px}.audio audio,.audio .anote{display:none}.audio .atitle{margin:0}}
   .bnote{margin-top:14px;text-align:center;font-size:13px;color:#5a5348;font-style:italic}
+  .audio .aload{margin:8px 0 0;padding:6px 10px;background:#fff;border:1px solid var(--gold);border-radius:6px;font-size:14px;font-weight:600;color:var(--navy)}
+  .audio .aload[hidden]{display:none}
+  @media print{.audio .aload{display:none}}

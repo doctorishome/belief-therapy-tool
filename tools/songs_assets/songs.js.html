@@ -12,4 +12,11 @@ document.querySelectorAll('a.song').forEach(function(a){
     t.appendChild(f);
   });
 });
+document.querySelectorAll('.audio audio').forEach(function(au){
+  var n=au.parentNode.querySelector('.aload'); if(!n) return;
+  function show(){ if(au.readyState<3) n.hidden=false; }
+  function hide(){ n.hidden=true; }
+  au.addEventListener('play',show); au.addEventListener('waiting',show);
+  au.addEventListener('playing',hide); au.addEventListener('pause',hide); au.addEventListener('error',hide);
+});
 </script>

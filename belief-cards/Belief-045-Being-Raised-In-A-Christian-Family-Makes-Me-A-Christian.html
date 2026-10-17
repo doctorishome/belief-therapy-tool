@@ -137,6 +137,9 @@
   .audio .anote{margin:6px 0 0;font-size:13px;color:#5a5348;font-style:italic}
   @media print{.audio{padding:8px 12px}.audio audio,.audio .anote{display:none}.audio .atitle{margin:0}}
   .bnote{margin-top:14px;text-align:center;font-size:13px;color:#5a5348;font-style:italic}
+  .audio .aload{margin:8px 0 0;padding:6px 10px;background:#fff;border:1px solid var(--gold);border-radius:6px;font-size:14px;font-weight:600;color:var(--navy)}
+  .audio .aload[hidden]{display:none}
+  @media print{.audio .aload{display:none}}
 </style></head><body><div class="wrap" id="top">
 
 <div class="printbar">
@@ -219,6 +222,7 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 <div class="audio">
 <p class="atitle"><a href="https://music.wixstatic.com/mp3/dbdded_f67d414544534727acf6973d58189443.mp3" target="_blank" rel="noopener">Overcoming Anxiety</a> <span>· Dr. Brian Campbell · about 18 minutes</span></p>
 <audio controls preload="none" src="https://music.wixstatic.com/mp3/dbdded_f67d414544534727acf6973d58189443.mp3">Your browser can’t play this here. <a href="https://music.wixstatic.com/mp3/dbdded_f67d414544534727acf6973d58189443.mp3">Open the recording</a>.</audio>
+<p class="aload" hidden>Starting the recording… it is a long one, so it may take a few seconds to begin.</p>
 <p class="anote">Press play to listen here, or tap the title to open it on its own.</p>
 </div>
 
@@ -383,6 +387,13 @@ document.querySelectorAll('a.song').forEach(function(a){
     f.allow='autoplay; encrypted-media; fullscreen'; f.setAttribute('allowfullscreen','');
     t.appendChild(f);
   });
+});
+document.querySelectorAll('.audio audio').forEach(function(au){
+  var n=au.parentNode.querySelector('.aload'); if(!n) return;
+  function show(){ if(au.readyState<3) n.hidden=false; }
+  function hide(){ n.hidden=true; }
+  au.addEventListener('play',show); au.addEventListener('waiting',show);
+  au.addEventListener('playing',hide); au.addEventListener('pause',hide); au.addEventListener('error',hide);
 });
 </script>
 </body></html>
