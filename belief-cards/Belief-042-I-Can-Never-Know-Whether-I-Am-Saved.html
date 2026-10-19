@@ -240,12 +240,12 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 </div>
 
 <h2>Songs that speak truth to this belief</h2>
-<p class="songnote2">Tap a song to play it right here.</p>
+<p class="songnote2">Tap a song to play it right here. Three contemporary selections and one classic hymn or older favorite.</p>
 <div class="songs">
-<a class="song" href="https://www.youtube.com/watch?v=IcC1Bp13n_4" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/IcC1Bp13n_4/hqdefault.jpg')"></span><span class="txt"><span class="st">Who You Say I Am</span><span class="sa">Hillsong Worship</span><span class="sw">Rests my identity on what God says about me instead of on my doubts.</span></span></a>
-<a class="song" href="https://www.youtube.com/watch?v=ifFovH-dhHw" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/ifFovH-dhHw/hqdefault.jpg')"></span><span class="txt"><span class="st">Living Hope</span><span class="sa">Phil Wickham</span><span class="sw">Because Jesus rose, I have a living hope that does not depend on my feelings.</span></span></a>
-<a class="song" href="https://www.youtube.com/watch?v=zundjUFazfg" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/zundjUFazfg/hqdefault.jpg')"></span><span class="txt"><span class="st">Yet Not I But Through Christ In Me</span><span class="sa">CityAlight</span><span class="sw">My standing before God rests on Christ&#x27;s work, and Christ in me is my confidence.</span></span></a>
-<a class="song" href="https://www.youtube.com/watch?v=eSsEh0iIW54" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/eSsEh0iIW54/hqdefault.jpg')"></span><span class="txt"><span class="st">Blessed Assurance</span><span class="sa">Jeremy Riddle</span><span class="sw">Calls salvation an assurance I can rest in: Jesus is mine.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=16KYvfIc2bE" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/16KYvfIc2bE/hqdefault.jpg')"></span><span class="txt"><span class="st">In Christ Alone</span><span class="sa">Keith and Kristyn Getty with Alison Krauss · Contemporary</span><span class="sw">Security and salvation rest in Christ’s life, death, and resurrection.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=ifFovH-dhHw" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/ifFovH-dhHw/hqdefault.jpg')"></span><span class="txt"><span class="st">Living Hope</span><span class="sa">Phil Wickham · Contemporary</span><span class="sw">Christ’s resurrection and forgiveness provide hope beyond sin and death.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=ZuJWQzjfU3o" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/ZuJWQzjfU3o/hqdefault.jpg')"></span><span class="txt"><span class="st">Hello My Name Is</span><span class="sa">Matthew West · Contemporary</span><span class="sw">God’s redeemed-child identity challenges labels of regret and defeat.</span></span></a>
+<a class="song" data-era="classic" href="https://www.youtube.com/watch?v=5T7ccgshEE0" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/5T7ccgshEE0/hqdefault.jpg')"></span><span class="txt"><span class="st">Blessed Assurance</span><span class="sa">Larry Ford and Lillie Knauls with Gaither · Classic hymn / older favorite</span><span class="sw">This classic hymn celebrates belonging to Christ and resting in His salvation.</span></span></a>
 </div>
 <p class="songnote">Songs play here through YouTube and may start with a short ad. If one will not play, use its “Watch on YouTube” link.</p>
 
@@ -393,10 +393,13 @@ document.querySelectorAll('a.song').forEach(function(a){
   var l=document.createElement('a'); l.className='ytlink'; l.href=a.href; l.target='_blank'; l.rel='noopener'; l.textContent='Watch on YouTube';
   var w=document.createElement('div'); w.className='songwrap'; a.parentNode.insertBefore(w,a); w.appendChild(a); w.appendChild(l);
   a.addEventListener('click',function(e){
+    e.preventDefault();
     var t=a.querySelector('.thumb'); if(!t||a.classList.contains('playing')) return;
-    e.preventDefault(); a.classList.add('playing');
+    a.classList.add('playing');
     var f=document.createElement('iframe');
     f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+    f.title=a.querySelector('.st').textContent+' — lyric video';
+    f.referrerPolicy='strict-origin-when-cross-origin';
     f.allow='autoplay; encrypted-media; fullscreen'; f.setAttribute('allowfullscreen','');
     t.appendChild(f);
   });

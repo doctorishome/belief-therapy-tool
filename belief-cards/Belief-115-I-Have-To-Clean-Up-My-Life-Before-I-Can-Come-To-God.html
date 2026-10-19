@@ -234,6 +234,16 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 </div>
 
 
+<h2>Songs that speak truth to this belief</h2>
+<p class="songnote2">Tap a song to play it right here. Three contemporary selections and one classic hymn or older favorite.</p>
+<div class="songs">
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=WdUu6ZsdVfM" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/WdUu6ZsdVfM/hqdefault.jpg')"></span><span class="txt"><span class="st">Broken Things</span><span class="sa">Matthew West · Contemporary</span><span class="sw">God can work through imperfect people without waiting for them to become flawless.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=2BfZ3KKKg9c" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/2BfZ3KKKg9c/hqdefault.jpg')"></span><span class="txt"><span class="st">Clean</span><span class="sa">Natalie Grant · Contemporary</span><span class="sw">God’s cleansing grace challenges the belief that shame or sin makes a person beyond restoration.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=6wcULqyoINg" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/6wcULqyoINg/hqdefault.jpg')"></span><span class="txt"><span class="st">The Power of the Cross</span><span class="sa">Keith and Kristyn Getty · Contemporary</span><span class="sw">Christ’s sacrifice answers guilt and the effort to pay for one’s own sins.</span></span></a>
+<a class="song" data-era="classic" href="https://www.youtube.com/watch?v=Ck58d3BMBX0" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/Ck58d3BMBX0/hqdefault.jpg')"></span><span class="txt"><span class="st">Softly and Tenderly</span><span class="sa">Kristyn Getty with Vince Gill, Ellie Holcomb and Sierra Hull · Classic hymn / older favorite</span><span class="sw">This older hymn pictures Christ’s gracious invitation to return rather than hide in shame.</span></span></a>
+</div>
+<p class="songnote">Songs play here through YouTube and may start with a short ad. If one will not play, use its “Watch on YouTube” link.</p>
+
 <p class="morning">Each morning ask: “If I truly believed God’s truth instead of this lie, how would I think, speak, and act today?”</p>
 <div class="foot">✦ ✦ ✦</div>
 </div>
@@ -291,11 +301,12 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 <h1>Practicing the Truth</h1>
 <div class="orn">✦ ✦ ✦</div>
 
-<div class="step"><div class="num">5</div><div><h2>My practice plan</h2><p class="why">Everyone does the first three. Then pick one or two extra tools.</p></div></div>
+<div class="step"><div class="num">5</div><div><h2>My practice plan</h2><p class="why">Everyone does the first four. Then pick one or two extra tools.</p></div></div>
 <div class="group">Everyone does these</div>
 <ul class="opts">
 <li><strong>Make my Truth Card</strong> (below). Carry it and read it at least three times a day.</li>
 <li><strong>Memorize my Scripture</strong> from Step 4.</li>
+<li><strong>Listen to one song each day</strong> from “Songs that speak truth to this belief” on my card, and fill in my song journal (below).</li>
 <li><strong>Set reminders</strong> to silently repeat my truth. Check one or more:
   <span class="scrip" style="font-style:normal">☐ <strong>A buzz:</strong> my watch or phone vibrates every ______ minutes<br/>☐ <strong>An everyday event:</strong> every time I ______________________________<br/>☐ <strong>A visual reminder:</strong> something I will see often, such as a sticky note on my mirror, my truth as the background picture on my phone, or a note on my car dashboard.</span></li>
 </ul>
@@ -339,6 +350,18 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 <tr><td>Sun</td><td></td><td></td><td></td><td class="wide"></td></tr>
 </table>
 
+<h2>My song journal</h2>
+<p class="why">After each day's song, write what it told you that challenges the lie.</p>
+<table class="track songj"><tr><th>Day</th><th>Song I listened to</th><th>What it told me that challenges the lie</th></tr>
+<tr><td>Mon</td><td></td><td></td></tr>
+<tr><td>Tue</td><td></td><td></td></tr>
+<tr><td>Wed</td><td></td><td></td></tr>
+<tr><td>Thu</td><td></td><td></td></tr>
+<tr><td>Fri</td><td></td><td></td></tr>
+<tr><td>Sat</td><td></td><td></td></tr>
+<tr><td>Sun</td><td></td><td></td></tr>
+</table>
+
 <h2>My Truth Card</h2>
 <div class="cutcard">
 <div class="lbl">The lie</div>
@@ -364,10 +387,13 @@ document.querySelectorAll('a.song').forEach(function(a){
   var l=document.createElement('a'); l.className='ytlink'; l.href=a.href; l.target='_blank'; l.rel='noopener'; l.textContent='Watch on YouTube';
   var w=document.createElement('div'); w.className='songwrap'; a.parentNode.insertBefore(w,a); w.appendChild(a); w.appendChild(l);
   a.addEventListener('click',function(e){
+    e.preventDefault();
     var t=a.querySelector('.thumb'); if(!t||a.classList.contains('playing')) return;
-    e.preventDefault(); a.classList.add('playing');
+    a.classList.add('playing');
     var f=document.createElement('iframe');
     f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+    f.title=a.querySelector('.st').textContent+' — lyric video';
+    f.referrerPolicy='strict-origin-when-cross-origin';
     f.allow='autoplay; encrypted-media; fullscreen'; f.setAttribute('allowfullscreen','');
     t.appendChild(f);
   });

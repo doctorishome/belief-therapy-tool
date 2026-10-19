@@ -234,12 +234,12 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 </div>
 
 <h2>Songs that speak truth to this belief</h2>
-<p class="songnote2">Tap a song to play it right here.</p>
+<p class="songnote2">Tap a song to play it right here. Three contemporary selections and one classic hymn or older favorite.</p>
 <div class="songs">
-<a class="song" href="https://www.youtube.com/watch?v=m_063OI38RQ" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/m_063OI38RQ/hqdefault.jpg')"></span><span class="txt"><span class="st">In Christ Alone</span><span class="sa">Keith &amp; Kristyn Getty, CityAlight</span><span class="sw">Says Christ took the punishment for sin, so nothing is left for me to pay.</span></span></a>
-<a class="song" href="https://www.youtube.com/watch?v=uMsMiluCUUI" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/uMsMiluCUUI/hqdefault.jpg')"></span><span class="txt"><span class="st">Death Was Arrested</span><span class="sa">North Point InsideOut</span><span class="sw">Celebrates that Christ&#x27;s work has defeated death and set me free.</span></span></a>
-<a class="song" href="https://www.youtube.com/watch?v=coW-oVzuPSo" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/coW-oVzuPSo/hqdefault.jpg')"></span><span class="txt"><span class="st">Christ Is Risen</span><span class="sa">Matt Maher</span><span class="sw">Proclaims that Christ is risen and has beaten death, so the believer need not fear it.</span></span></a>
-<a class="song" href="https://www.youtube.com/watch?v=PBvU7arNhQs" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/PBvU7arNhQs/hqdefault.jpg')"></span><span class="txt"><span class="st">Because He Lives (Amen)</span><span class="sa">Matt Maher</span><span class="sw">Because Christ lives, I can face tomorrow and even death without fear.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=cEbQswNB6Wc" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/cEbQswNB6Wc/hqdefault.jpg')"></span><span class="txt"><span class="st">Jesus</span><span class="sa">Chris Tomlin · Contemporary</span><span class="sw">Jesus is present in suffering and is greater than the circumstances we face.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=HKzS4SjBeb8" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/HKzS4SjBeb8/hqdefault.jpg')"></span><span class="txt"><span class="st">Forever</span><span class="sa">Kari Jobe · Contemporary</span><span class="sw">Christ’s resurrection grounds hope in His victory over sin and death.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=bqxtFUwM3-o" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/bqxtFUwM3-o/hqdefault.jpg')"></span><span class="txt"><span class="st">Hymn of Heaven</span><span class="sa">Phil Wickham · Contemporary</span><span class="sw">Christian hope looks toward resurrection, restored life, and worship with God.</span></span></a>
+<a class="song" data-era="classic" href="https://www.youtube.com/watch?v=pc05NoZTVnw" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/pc05NoZTVnw/hqdefault.jpg')"></span><span class="txt"><span class="st">Because He Lives</span><span class="sa">Bill and Gloria Gaither · Classic hymn / older favorite</span><span class="sw">This older favorite grounds courage for tomorrow in Christ’s resurrection.</span></span></a>
 </div>
 <p class="songnote">Songs play here through YouTube and may start with a short ad. If one will not play, use its “Watch on YouTube” link.</p>
 
@@ -387,10 +387,13 @@ document.querySelectorAll('a.song').forEach(function(a){
   var l=document.createElement('a'); l.className='ytlink'; l.href=a.href; l.target='_blank'; l.rel='noopener'; l.textContent='Watch on YouTube';
   var w=document.createElement('div'); w.className='songwrap'; a.parentNode.insertBefore(w,a); w.appendChild(a); w.appendChild(l);
   a.addEventListener('click',function(e){
+    e.preventDefault();
     var t=a.querySelector('.thumb'); if(!t||a.classList.contains('playing')) return;
-    e.preventDefault(); a.classList.add('playing');
+    a.classList.add('playing');
     var f=document.createElement('iframe');
     f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+    f.title=a.querySelector('.st').textContent+' — lyric video';
+    f.referrerPolicy='strict-origin-when-cross-origin';
     f.allow='autoplay; encrypted-media; fullscreen'; f.setAttribute('allowfullscreen','');
     t.appendChild(f);
   });

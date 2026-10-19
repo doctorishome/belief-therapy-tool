@@ -241,12 +241,12 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 </div>
 
 <h2>Songs that speak truth to this belief</h2>
-<p class="songnote2">Tap a song to play it right here.</p>
+<p class="songnote2">Tap a song to play it right here. Three contemporary selections and one classic hymn or older favorite.</p>
 <div class="songs">
-<a class="song" href="https://www.youtube.com/watch?v=0rWXUqF_BFo" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/0rWXUqF_BFo/hqdefault.jpg')"></span><span class="txt"><span class="st">Jesus Paid It All</span><span class="sa">Kristian Stanfill (Passion)</span><span class="sw">The refrain says Jesus paid it all, so there is nothing left for my good works to pay.</span></span></a>
-<a class="song" href="https://www.youtube.com/watch?v=Jbe7OruLk8I" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/Jbe7OruLk8I/hqdefault.jpg')"></span><span class="txt"><span class="st">Amazing Grace (My Chains Are Gone)</span><span class="sa">Chris Tomlin</span><span class="sw">Salvation is pictured as a gift that sets us free, not a wage we earn.</span></span></a>
-<a class="song" href="https://www.youtube.com/watch?v=8QH5lpYSBpI" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/8QH5lpYSBpI/hqdefault.jpg')"></span><span class="txt"><span class="st">Nothing but the Blood</span><span class="sa">Reawaken Hymns</span><span class="sw">Asks what can wash away sin and answers: nothing but the blood of Jesus.</span></span></a>
-<a class="song" href="https://www.youtube.com/watch?v=SjZUqDKXws0" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/SjZUqDKXws0/hqdefault.jpg')"></span><span class="txt"><span class="st">Not What My Hands Have Done</span><span class="sa">Aaron Keyes</span><span class="sw">Names what our own efforts cannot do and points to Christ alone.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=3MZgXXUW08Q" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/3MZgXXUW08Q/hqdefault.jpg')"></span><span class="txt"><span class="st">Amazing Grace My Chains Are Gone</span><span class="sa">Chris Tomlin · Contemporary</span><span class="sw">Salvation and freedom come through grace rather than earning acceptance.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=rjXjkbODrro" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/rjXjkbODrro/hqdefault.jpg')"></span><span class="txt"><span class="st">This Is Amazing Grace</span><span class="sa">Phil Wickham · Contemporary</span><span class="sw">Christ bears the burden of rescue rather than demanding self-salvation.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=6wcULqyoINg" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/6wcULqyoINg/hqdefault.jpg')"></span><span class="txt"><span class="st">The Power of the Cross</span><span class="sa">Keith and Kristyn Getty · Contemporary</span><span class="sw">Christ’s sacrifice answers guilt and the effort to pay for one’s own sins.</span></span></a>
+<a class="song" data-era="classic" href="https://www.youtube.com/watch?v=aDmcdZTEU5E" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/aDmcdZTEU5E/hqdefault.jpg')"></span><span class="txt"><span class="st">Amazing Grace</span><span class="sa">Reawaken Hymns · Classic hymn / older favorite</span><span class="sw">This classic hymn locates salvation and sustaining hope in grace rather than merit.</span></span></a>
 </div>
 <p class="songnote">Songs play here through YouTube and may start with a short ad. If one will not play, use its “Watch on YouTube” link.</p>
 
@@ -394,10 +394,13 @@ document.querySelectorAll('a.song').forEach(function(a){
   var l=document.createElement('a'); l.className='ytlink'; l.href=a.href; l.target='_blank'; l.rel='noopener'; l.textContent='Watch on YouTube';
   var w=document.createElement('div'); w.className='songwrap'; a.parentNode.insertBefore(w,a); w.appendChild(a); w.appendChild(l);
   a.addEventListener('click',function(e){
+    e.preventDefault();
     var t=a.querySelector('.thumb'); if(!t||a.classList.contains('playing')) return;
-    e.preventDefault(); a.classList.add('playing');
+    a.classList.add('playing');
     var f=document.createElement('iframe');
     f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+    f.title=a.querySelector('.st').textContent+' — lyric video';
+    f.referrerPolicy='strict-origin-when-cross-origin';
     f.allow='autoplay; encrypted-media; fullscreen'; f.setAttribute('allowfullscreen','');
     t.appendChild(f);
   });

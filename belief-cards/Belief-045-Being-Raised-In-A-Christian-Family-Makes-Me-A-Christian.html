@@ -240,12 +240,12 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 </div>
 
 <h2>Songs that speak truth to this belief</h2>
-<p class="songnote2">Tap a song to play it right here.</p>
+<p class="songnote2">Tap a song to play it right here. Three contemporary selections and one classic hymn or older favorite.</p>
 <div class="songs">
-<a class="song" href="https://www.youtube.com/watch?v=us4VSFAKuPY" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/us4VSFAKuPY/hqdefault.jpg')"></span><span class="txt"><span class="st">Born Again</span><span class="sa">Newsboys</span><span class="sw">Describes faith as a personal new birth, not something inherited from family.</span></span></a>
-<a class="song" href="https://www.youtube.com/watch?v=xSPcuV5Sli8" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/xSPcuV5Sli8/hqdefault.jpg')"></span><span class="txt"><span class="st">I Surrender All</span><span class="sa">Reawaken Hymns</span><span class="sw">Faith is my own surrender to Jesus, not a family tradition.</span></span></a>
-<a class="song" href="https://www.youtube.com/watch?v=tdxSC1tHJn0" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/tdxSC1tHJn0/hqdefault.jpg')"></span><span class="txt"><span class="st">Jesus Messiah</span><span class="sa">Chris Tomlin</span><span class="sw">Keeps my eyes on what Christ personally did for me.</span></span></a>
-<a class="song" href="https://www.youtube.com/watch?v=ax_NMWLEb6U" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/ax_NMWLEb6U/hqdefault.jpg')"></span><span class="txt"><span class="st">Come Thou Fount of Every Blessing</span><span class="sa">Chris Rice</span><span class="sw">A personal confession of how much I depend on God&#x27;s grace.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=tdxSC1tHJn0" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/tdxSC1tHJn0/hqdefault.jpg')"></span><span class="txt"><span class="st">Jesus Messiah</span><span class="sa">Chris Tomlin · Contemporary</span><span class="sw">Christ’s sacrifice and rescue are the foundation of hope and access to God.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=uN9anMOoS4Q" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/uN9anMOoS4Q/hqdefault.jpg')"></span><span class="txt"><span class="st">One True God</span><span class="sa">Steven Curtis Chapman · Contemporary</span><span class="sw">Jesus is the risen Savior and the source of salvation.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=WdUu6ZsdVfM" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/WdUu6ZsdVfM/hqdefault.jpg')"></span><span class="txt"><span class="st">Broken Things</span><span class="sa">Matthew West · Contemporary</span><span class="sw">God can work through imperfect people without waiting for them to become flawless.</span></span></a>
+<a class="song" data-era="classic" href="https://www.youtube.com/watch?v=FEC8pJsOVvc" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/FEC8pJsOVvc/hqdefault.jpg')"></span><span class="txt"><span class="st">To God Be the Glory</span><span class="sa">Reawaken Hymns · Classic hymn / older favorite</span><span class="sw">This classic hymn celebrates redemption and forgiveness through Christ.</span></span></a>
 </div>
 <p class="songnote">Songs play here through YouTube and may start with a short ad. If one will not play, use its “Watch on YouTube” link.</p>
 
@@ -393,10 +393,13 @@ document.querySelectorAll('a.song').forEach(function(a){
   var l=document.createElement('a'); l.className='ytlink'; l.href=a.href; l.target='_blank'; l.rel='noopener'; l.textContent='Watch on YouTube';
   var w=document.createElement('div'); w.className='songwrap'; a.parentNode.insertBefore(w,a); w.appendChild(a); w.appendChild(l);
   a.addEventListener('click',function(e){
+    e.preventDefault();
     var t=a.querySelector('.thumb'); if(!t||a.classList.contains('playing')) return;
-    e.preventDefault(); a.classList.add('playing');
+    a.classList.add('playing');
     var f=document.createElement('iframe');
     f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+    f.title=a.querySelector('.st').textContent+' — lyric video';
+    f.referrerPolicy='strict-origin-when-cross-origin';
     f.allow='autoplay; encrypted-media; fullscreen'; f.setAttribute('allowfullscreen','');
     t.appendChild(f);
   });

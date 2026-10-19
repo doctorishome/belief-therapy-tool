@@ -241,12 +241,12 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 </div>
 
 <h2>Songs that speak truth to this belief</h2>
-<p class="songnote2">Tap a song to play it right here.</p>
+<p class="songnote2">Tap a song to play it right here. Three contemporary selections and one classic hymn or older favorite.</p>
 <div class="songs">
-<a class="song" href="https://www.youtube.com/watch?v=RiRKTvqsnlw" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/RiRKTvqsnlw/hqdefault.jpg')"></span><span class="txt"><span class="st">Who You Say I Am</span><span class="sa">Hillsong Worship</span><span class="sw">Our identity comes from being God&#x27;s child, freely chosen and set free, not from what we produce.</span></span></a>
-<a class="song" href="https://www.youtube.com/watch?v=N8WK9HmF53w" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/N8WK9HmF53w/hqdefault.jpg')"></span><span class="txt"><span class="st">You Say</span><span class="sa">Lauren Daigle</span><span class="sw">Sets God&#x27;s view of us against the voices that say we are not enough.</span></span></a>
-<a class="song" href="https://www.youtube.com/watch?v=jLUM48jPBBw" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/jLUM48jPBBw/hqdefault.jpg')"></span><span class="txt"><span class="st">Child of Love</span><span class="sa">We The Kingdom</span><span class="sw">We are God&#x27;s beloved children because of His love, not because of how much we do for Him.</span></span></a>
-<a class="song" href="https://www.youtube.com/watch?v=xtiUjNT_vAM" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/xtiUjNT_vAM/hqdefault.jpg')"></span><span class="txt"><span class="st">Grace Got You</span><span class="sa">MercyMe</span><span class="sw">A joyful reminder that grace, not our effort or service, is what holds us and makes us God&#x27;s.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=3rT8Re1EIQc" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/3rT8Re1EIQc/hqdefault.jpg')"></span><span class="txt"><span class="st">Who Am I</span><span class="sa">Casting Crowns · Contemporary</span><span class="sw">Being known and cared for by God rests on His love rather than personal importance.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=ZuJWQzjfU3o" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/ZuJWQzjfU3o/hqdefault.jpg')"></span><span class="txt"><span class="st">Hello My Name Is</span><span class="sa">Matthew West · Contemporary</span><span class="sw">God’s redeemed-child identity challenges labels of regret and defeat.</span></span></a>
+<a class="song" data-era="contemporary" href="https://www.youtube.com/watch?v=rjXjkbODrro" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/rjXjkbODrro/hqdefault.jpg')"></span><span class="txt"><span class="st">This Is Amazing Grace</span><span class="sa">Phil Wickham · Contemporary</span><span class="sw">Christ bears the burden of rescue rather than demanding self-salvation.</span></span></a>
+<a class="song" data-era="classic" href="https://www.youtube.com/watch?v=5T7ccgshEE0" target="_blank" rel="noopener"><span class="thumb" style="background-image:url('https://i.ytimg.com/vi/5T7ccgshEE0/hqdefault.jpg')"></span><span class="txt"><span class="st">Blessed Assurance</span><span class="sa">Larry Ford and Lillie Knauls with Gaither · Classic hymn / older favorite</span><span class="sw">This classic hymn celebrates belonging to Christ and resting in His salvation.</span></span></a>
 </div>
 <p class="songnote">Songs play here through YouTube and may start with a short ad. If one will not play, use its “Watch on YouTube” link.</p>
 
@@ -394,10 +394,13 @@ document.querySelectorAll('a.song').forEach(function(a){
   var l=document.createElement('a'); l.className='ytlink'; l.href=a.href; l.target='_blank'; l.rel='noopener'; l.textContent='Watch on YouTube';
   var w=document.createElement('div'); w.className='songwrap'; a.parentNode.insertBefore(w,a); w.appendChild(a); w.appendChild(l);
   a.addEventListener('click',function(e){
+    e.preventDefault();
     var t=a.querySelector('.thumb'); if(!t||a.classList.contains('playing')) return;
-    e.preventDefault(); a.classList.add('playing');
+    a.classList.add('playing');
     var f=document.createElement('iframe');
     f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+    f.title=a.querySelector('.st').textContent+' — lyric video';
+    f.referrerPolicy='strict-origin-when-cross-origin';
     f.allow='autoplay; encrypted-media; fullscreen'; f.setAttribute('allowfullscreen','');
     t.appendChild(f);
   });
