@@ -169,3 +169,6 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 - Cards live in `belief-cards/psychological/` as hand-made HTML (no builder yet). Card #1: Psych-001-If-I-Let-My-Guard-Down.html (+ PDF), linked from the Paranoid belief "Relaxing my guard leaves me defenseless." via `<a class="cardlink">` in the embed code.
 - Next cards are drafted by ChatGPT from Brian's desktop file "Instructions for ChatGPT - Next Psych Card" (template = card #1); Brian uploads them here, then each is linked from its belief in the embed and the site republished.
 - To do: add page to menu + rename its address; make the page's belief wording match card titles.
+
+## Counselors' Room addresses (Wix test site)
+Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-15, Course blank-16, Library blank-17 (under /website-6/). masterPage.js lock uses blank-12..17; REQUIRE_PAID still false until payments are set up.
