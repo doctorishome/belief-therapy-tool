@@ -8,36 +8,250 @@
  "card_base": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/",
  "footer": "Sources: DSM-5-TR (categories); Beck, Davis, &amp; Freeman (Eds.), <em>Cognitive Therapy of Personality Disorders</em> (3rd ed., 2015), and Beck Institute personality-belief materials (themes). These examples are not a validated assessment or a ranked top-five list. Schizotypal examples are educational syntheses, not an original PBQ scale. OCPD is distinct from OCD.",
  "groups": [
-  {"name":"Mistrusting Others","beliefs":[
-   ["I can't let my guard down","Psych-001-If-I-Let-My-Guard-Down.html"],
-   ["Friendliness usually hides an ulterior motive.","Psych-002-Friendliness-Hides-Ulterior-Motive.html"],
-   ["I need to hide the real me in order to not get hurt.","Psych-003-I-Need-to-Hide-the-Real-Me.html"],
-   ["People always try to hide what they are doing","Psych-004-People-Are-Generally-Untrustworthy.html"],
-   ["Little things often have great significance","Psych-005-Ambiguous-Remarks-Are-Deliberate-Attacks.html"]]},
-  {"name":"Avoiding Others","beliefs":[
-   ["Getting close to people will cost me my freedom.","Psych-011-Getting-Close-Will-Cost-Me-My-Freedom.html"],
-   ["I don’t need anyone. I am better off alone.","Psych-012-I-Dont-Need-Anyone-I-Am-Better-Off-Alone.html"],
-   ["Depending on anyone only leads to trouble.","Psych-013-Depending-on-Anyone-Only-Leads-to-Trouble.html"],
-   ["My feelings aren’t worth sharing. Talking about them changes nothing.","Psych-014-My-Feelings-Arent-Worth-Sharing.html"],
-   ["Relationships take more than they give, so they aren’t worth the effort.","Psych-015-Relationships-Take-More-Than-They-Give.html"]]},
-  {"name":"Social Isolation","beliefs":[
-   ["What other people think of me doesn’t matter.","Psych-016-What-Other-People-Think-of-Me-Doesnt-Matter.html"],
-   ["I’ve given up on letting people in.","Psych-017-Ive-Given-Up-on-Letting-People-In.html"],
-   ["Close relationships aren’t important to me.","Psych-018-Close-Relationships-Arent-Important-to-Me.html"],
-   ["I shouldn’t confide in anyone.","Psych-019-I-Shouldnt-Confide-in-Anyone.html"],
-   ["Nothing is much fun anyway, so I might as well be on my own.","Psych-020-Nothing-Is-Much-Fun-Anyway-So-I-Might-as-Well-Be-on-My-Own.html"]]},
-  {"name":"Unusual Thinking and Social Unease","beliefs":[["I am fundamentally unlike other people."],["Ordinary coincidences carry personal messages."],["My thoughts can cause unrelated events."],["Unusual sensations confirm my unusual explanations."],["Other people’s intentions are usually threatening."]]},
-  {"name":"Rule Breaking","beliefs":[["Exploiting others is necessary for survival."],["My wants outweigh other people’s rights."],["Deception is acceptable when it benefits me."],["Dominating others prevents being dominated."],["Getting what I deserve justifies harming others."]]},
-  {"name":"Intense Emotions and Fear of Abandonment","beliefs":[["My real self is unacceptable."],["Important people will eventually leave me."],["I cannot manage life without someone."],["Intense feelings will overwhelm me completely."],["Relationship conflict means rejection is coming."]]},
-  {"name":"Need for Attention and Approval","beliefs":[["Attention determines my worth."],["I must entertain people to retain affection."],["Being unnoticed means being insignificant."],["Stronger displays are necessary to be heard."],["My feelings reliably establish what is true."]]},
-  {"name":"Specialness and Need for Admiration","beliefs":[["I am entitled to exceptional treatment."],["Ordinary limits should not apply to me."],["Admiration establishes my importance."],["Criticism is an unacceptable humiliation."],["Other people should prioritize my needs."]]},
-  {"name":"Fear of Rejection and Inadequacy","beliefs":[
-   ["Avoiding people and new challenges is safer than risking embarrassment.","Psych-006-Avoiding-People-Is-Safer-Than-Risking-Embarrassment.html"],
-   ["I am inadequate and less than other people.","Psych-007-I-Am-Inadequate-and-Less-Than-Others.html"],
-   ["I am awkward and unlikable, and I have little to offer.","Psych-008-I-Am-Awkward-and-Unlikable.html"],
-   ["I must be sure people will like me before I let them know me.","Psych-009-I-Must-Be-Sure-People-Will-Like-Me.html"],
-   ["Ridicule or criticism would prove I am worthless, and I could not bear it.","Psych-010-Ridicule-Would-Prove-I-Am-Worthless.html"]]},
-  {"name":"Need for Care and Reassurance","beliefs":[["I lack the ability to cope independently."],["Other people’s judgment is better than mine."],["Disagreement threatens the support I need."],["Keeping support requires surrendering my preferences."],["Being alone means being helpless."]]},
-  {"name":"Perfectionism and Control","beliefs":[["Only flawless performance is acceptable."],["Mistakes signal personal failure."],["Strict control prevents disaster."],["Delegating means accepting unacceptable risks."],["My standards should govern everyone’s behavior."]]}
+  {
+   "name": "Mistrusting Others",
+   "beliefs": [
+    [
+     "I can't let my guard down",
+     "Psych-001-If-I-Let-My-Guard-Down.html"
+    ],
+    [
+     "Friendliness usually hides an ulterior motive.",
+     "Psych-002-Friendliness-Hides-Ulterior-Motive.html"
+    ],
+    [
+     "I need to hide the real me in order to not get hurt.",
+     "Psych-003-I-Need-to-Hide-the-Real-Me.html"
+    ],
+    [
+     "People always try to hide what they are doing",
+     "Psych-004-People-Are-Generally-Untrustworthy.html"
+    ],
+    [
+     "Little things often have great significance",
+     "Psych-005-Ambiguous-Remarks-Are-Deliberate-Attacks.html"
+    ]
+   ]
+  },
+  {
+   "name": "Avoiding Others",
+   "beliefs": [
+    [
+     "Getting close to people will cost me my freedom.",
+     "Psych-011-Getting-Close-Will-Cost-Me-My-Freedom.html"
+    ],
+    [
+     "I don’t need anyone. I am better off alone.",
+     "Psych-012-I-Dont-Need-Anyone-I-Am-Better-Off-Alone.html"
+    ],
+    [
+     "Depending on anyone only leads to trouble.",
+     "Psych-013-Depending-on-Anyone-Only-Leads-to-Trouble.html"
+    ],
+    [
+     "My feelings aren’t worth sharing. Talking about them changes nothing.",
+     "Psych-014-My-Feelings-Arent-Worth-Sharing.html"
+    ],
+    [
+     "Relationships take more than they give, so they aren’t worth the effort.",
+     "Psych-015-Relationships-Take-More-Than-They-Give.html"
+    ]
+   ]
+  },
+  {
+   "name": "Social Isolation",
+   "beliefs": [
+    [
+     "What other people think of me doesn’t matter.",
+     "Psych-016-What-Other-People-Think-of-Me-Doesnt-Matter.html"
+    ],
+    [
+     "I’ve given up on letting people in.",
+     "Psych-017-Ive-Given-Up-on-Letting-People-In.html"
+    ],
+    [
+     "Close relationships aren’t important to me.",
+     "Psych-018-Close-Relationships-Arent-Important-to-Me.html"
+    ],
+    [
+     "I shouldn’t confide in anyone.",
+     "Psych-019-I-Shouldnt-Confide-in-Anyone.html"
+    ],
+    [
+     "Nothing is much fun anyway, so I might as well be on my own.",
+     "Psych-020-Nothing-Is-Much-Fun-Anyway-So-I-Might-as-Well-Be-on-My-Own.html"
+    ]
+   ]
+  },
+  {
+   "name": "Unusual Thinking and Social Unease",
+   "beliefs": [
+    [
+     "I am fundamentally unlike other people."
+    ],
+    [
+     "Ordinary coincidences carry personal messages."
+    ],
+    [
+     "My thoughts can cause unrelated events."
+    ],
+    [
+     "Unusual sensations confirm my unusual explanations."
+    ],
+    [
+     "Other people’s intentions are usually threatening."
+    ]
+   ]
+  },
+  {
+   "name": "Rule Breaking",
+   "beliefs": [
+    [
+     "Exploiting others is necessary for survival."
+    ],
+    [
+     "My wants outweigh other people’s rights."
+    ],
+    [
+     "Deception is acceptable when it benefits me."
+    ],
+    [
+     "Dominating others prevents being dominated."
+    ],
+    [
+     "Getting what I deserve justifies harming others."
+    ]
+   ]
+  },
+  {
+   "name": "Intense Emotions and Fear of Abandonment",
+   "beliefs": [
+    [
+     "The people I love will eventually leave me.",
+     "Psych-021-The-People-I-Love-Will-Eventually-Leave-Me.html"
+    ],
+    [
+     "If people really knew me, they would not accept me.",
+     "Psych-022-If-People-Really-Knew-Me-They-Would-Not-Accept-Me.html"
+    ],
+    [
+     "I can’t manage life without someone to lean on.",
+     "Psych-023-I-Cant-Manage-Life-Without-Someone-to-Lean-On.html"
+    ],
+    [
+     "My feelings are so strong they will completely overwhelm me.",
+     "Psych-024-My-Feelings-Are-So-Strong-They-Will-Completely-Overwhelm-Me.html"
+    ],
+    [
+     "Any disagreement means the people I love are about to reject me.",
+     "Psych-025-Any-Disagreement-Means-the-People-I-Love-Are-About-to-Reject-Me.html"
+    ]
+   ]
+  },
+  {
+   "name": "Need for Attention and Approval",
+   "beliefs": [
+    [
+     "Attention determines my worth."
+    ],
+    [
+     "I must entertain people to retain affection."
+    ],
+    [
+     "Being unnoticed means being insignificant."
+    ],
+    [
+     "Stronger displays are necessary to be heard."
+    ],
+    [
+     "My feelings reliably establish what is true."
+    ]
+   ]
+  },
+  {
+   "name": "Specialness and Need for Admiration",
+   "beliefs": [
+    [
+     "I am entitled to exceptional treatment."
+    ],
+    [
+     "Ordinary limits should not apply to me."
+    ],
+    [
+     "Admiration establishes my importance."
+    ],
+    [
+     "Criticism is an unacceptable humiliation."
+    ],
+    [
+     "Other people should prioritize my needs."
+    ]
+   ]
+  },
+  {
+   "name": "Fear of Rejection and Inadequacy",
+   "beliefs": [
+    [
+     "Avoiding people and new challenges is safer than risking embarrassment.",
+     "Psych-006-Avoiding-People-Is-Safer-Than-Risking-Embarrassment.html"
+    ],
+    [
+     "I am inadequate and less than other people.",
+     "Psych-007-I-Am-Inadequate-and-Less-Than-Others.html"
+    ],
+    [
+     "I am awkward and unlikable, and I have little to offer.",
+     "Psych-008-I-Am-Awkward-and-Unlikable.html"
+    ],
+    [
+     "I must be sure people will like me before I let them know me.",
+     "Psych-009-I-Must-Be-Sure-People-Will-Like-Me.html"
+    ],
+    [
+     "Ridicule or criticism would prove I am worthless, and I could not bear it.",
+     "Psych-010-Ridicule-Would-Prove-I-Am-Worthless.html"
+    ]
+   ]
+  },
+  {
+   "name": "Need for Care and Reassurance",
+   "beliefs": [
+    [
+     "I lack the ability to cope independently."
+    ],
+    [
+     "Other people’s judgment is better than mine."
+    ],
+    [
+     "Disagreement threatens the support I need."
+    ],
+    [
+     "Keeping support requires surrendering my preferences."
+    ],
+    [
+     "Being alone means being helpless."
+    ]
+   ]
+  },
+  {
+   "name": "Perfectionism and Control",
+   "beliefs": [
+    [
+     "Only flawless performance is acceptable."
+    ],
+    [
+     "Mistakes signal personal failure."
+    ],
+    [
+     "Strict control prevents disaster."
+    ],
+    [
+     "Delegating means accepting unacceptable risks."
+    ],
+    [
+     "My standards should govern everyone’s behavior."
+    ]
+   ]
+  }
  ]
 }
