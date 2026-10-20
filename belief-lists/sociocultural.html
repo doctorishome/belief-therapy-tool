@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sociocultural False Beliefs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1f3a5f;
+    --gold: #a98a4c;
+    --gold-line: #d8c9a0;
+    --cream: #fdfaf3;
+    --card: #f6ece1;
+    --card-open: #f0e2d0;
+    --text: #3b3b3b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 8px 4px 40px;
+    font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+    color: var(--text);
+    background: transparent;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  h1 { display: none; }
+  .intro { font-size: 1.2rem; margin: 0 0 18px; }
+  .note {
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    padding: 12px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.92rem;
+    color: #555;
+    margin-bottom: 26px;
+  }
+  label.search-label {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  #search {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: inherit;
+    font-size: 1.05rem;
+    border: 1px solid var(--gold-line);
+    background: var(--cream);
+    border-radius: 8px;
+    color: var(--text);
+  }
+  #search:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--navy);
+    font-size: 1.05rem;
+    margin: 34px 0 18px;
+  }
+  .divider::after { content: ""; flex: 1; border-top: 1.5px solid var(--gold-line); }
+  .category {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    margin: 26px 0 14px;
+  }
+  .category::after { content: ""; flex: 1; border-top: 1px solid var(--gold-line); }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .topic {
+    background: var(--card);
+    border: 1px solid #e3d3bf;
+    border-radius: 8px;
+    padding: 20px 20px 18px;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    color: var(--navy);
+  }
+  .topic:hover { background: var(--card-open); }
+  .topic.open { background: var(--card-open); border-color: var(--gold); }
+  .topic .name { display: block; font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
+  .topic .count { font-family: Arial, Helvetica, sans-serif; font-size: 0.95rem; color: #5a5a5a; }
+  .topic .arrow { color: var(--gold); font-size: 0.75rem; margin-left: 4px; }
+  .panel {
+    grid-column: 1 / -1;
+    background: #fff;
+    border: 1px solid #e3d3bf;
+    border-radius: 8px;
+    padding: 18px 24px 14px;
+  }
+  .panel h3 { margin: 0 0 8px; font-size: 1.15rem; color: var(--navy); }
+  .panel ul { margin: 0; padding-left: 22px; }
+  .panel li { font-size: 1.1rem; margin: 6px 0; }
+  #results { display: none; margin-top: 22px; }
+  #results h3 { color: var(--navy); font-size: 1.1rem; margin: 0 0 10px; }
+  #results .hit {
+    background: #fff;
+    border: 1px solid #e3d3bf;
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    font-size: 1.08rem;
+  }
+  #results .hit small {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    margin-top: 4px;
+  }
+  mark { background: #f3e3a8; color: inherit; padding: 0 1px; }
+  .none { font-family: Arial, Helvetica, sans-serif; color: #666; }
+  .crisis {
+    margin-top: 44px;
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.93rem;
+    color: #444;
+  }
+  .crisis p { margin: 0 0 8px; }
+  .crisis p:last-child { margin-bottom: 0; }
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+    .intro { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Sociocultural False Beliefs</h1>
+  <p class="intro">The culture, community and society around us teach us what is normal, acceptable and valuable, often before we are old enough to question it. Choose a topic below, or search for a word or short sentence, to find beliefs that may have come from the world around you.</p>
+
+  <div class="note">Culture and tradition can carry much good. This page looks only at the messages that teach us something false about ourselves, others, or God. It does not replace professional help.</div>
+
+  <label class="search-label" for="search">Type a word or a short sentence</label>
+  <input id="search" type="text" autocomplete="off" placeholder="For example: shame, family, church, money, appearance, strong, outsider">
+
+  <div id="results" aria-live="polite"></div>
+
+  <div id="browse">
+    <div class="divider">Or choose a topic below</div>
+    <div id="categories"></div>
+  </div>
+
+  <div class="crisis">
+    <p><strong>If you are thinking about ending your life,</strong> please call or text <strong>988</strong> (the Suicide &amp; Crisis Lifeline) right now, or call 911. You do not have to carry this alone.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var DATA = [
+    { category: "Culture & Community", topics: [
+      { name: "Family Traditions & Heritage", beliefs: [
+        "We don't talk about our problems outside the family.",
+        "Asking for help is a sign of weakness.",
+        "I must never bring shame on my family.",
+        "Our family has always been this way, and it can't change.",
+        "I have to live up to what my family expects of me."
+      ]},
+      { name: "Race, Ethnicity & Language", beliefs: [
+        "People like me will never be treated fairly.",
+        "People like me don't succeed.",
+        "Because of my background, I'll always be an outsider.",
+        "Everyone from that group is the same.",
+        "I'm less valuable because of where I come from."
+      ]},
+      { name: "Community & Neighborhood", beliefs: [
+        "What other people think of me is what matters most.",
+        "I'll never escape where I grew up.",
+        "I can't be trusted or respected because of my reputation.",
+        "If I don't fit in with my community, I'm worthless.",
+        "People in my town will always see me as I was."
+      ]},
+      { name: "Belonging & Being an Outsider", beliefs: [
+        "I don't belong anywhere.",
+        "I have to hide who I really am to be accepted.",
+        "If I leave my culture behind, I'm betraying my people.",
+        "Nobody will ever understand where I come from.",
+        "I have to earn my place in any group."
+      ]}
+    ]},
+    { category: "Media & Appearance", topics: [
+      { name: "Media & Social Media", beliefs: [
+        "Everyone else's life is better than mine.",
+        "If I'm not liked online, I don't matter.",
+        "I must have the latest things to be happy.",
+        "What the media says is normal must be right.",
+        "If it feels good, it must be okay."
+      ]},
+      { name: "Appearance & Body Image", beliefs: [
+        "I have to look a certain way to be loved.",
+        "I'm ugly, and nothing can change that.",
+        "My body determines my worth.",
+        "I'm too old, too heavy, or too plain to matter.",
+        "I'll be happy once I look the way I'm supposed to."
+      ]},
+      { name: "Success, Status & Money", beliefs: [
+        "My worth depends on my success.",
+        "If I don't have enough money, I'm a failure.",
+        "Money and things will make me happy.",
+        "I must keep up with everyone around me.",
+        "Winning is everything, and losing means I'm nothing."
+      ]}
+    ]},
+    { category: "Church & Society", topics: [
+      { name: "Church Culture & Expectations", beliefs: [
+        "Good Christians never struggle.",
+        "I must look perfect to be accepted at church.",
+        "If I doubt, I'm a bad Christian.",
+        "My church's rules are the same as God's love.",
+        "If I leave my church, I'm leaving God."
+      ]},
+      { name: "Mental Health & Seeking Help", beliefs: [
+        "Strong people don't show emotion.",
+        "Needing counseling means I have weak faith.",
+        "If I just prayed more, I wouldn't feel this way.",
+        "People will think I'm crazy if they know.",
+        "I should be able to handle this on my own."
+      ]},
+      { name: "Gender Roles & Expectations", beliefs: [
+        "Real men don't cry or ask for help.",
+        "A good woman puts everyone else first.",
+        "I'm not a real man or woman if I don't measure up.",
+        "I must be the strong one, no matter what.",
+        "My role is fixed, and I can't be more than that."
+      ]}
+    ]},
+    { category: "The World Around Us", topics: [
+      { name: "Politics & Government", beliefs: [
+        "The people who disagree with me are evil.",
+        "Things will never get better in this country.",
+        "My vote, my voice, and my life don't matter.",
+        "If the right people were in power, I would finally be safe.",
+        "I can't trust anyone in authority."
+      ]},
+      { name: "Fear & the News", beliefs: [
+        "The world is getting worse and worse.",
+        "I can never be safe.",
+        "Terrible things are about to happen to me.",
+        "I must stay on guard all the time.",
+        "I can't trust anybody."
+      ]}
+    ]}
+  ];
+
+  var catsEl = document.getElementById('categories');
+  var searchEl = document.getElementById('search');
+  var resultsEl = document.getElementById('results');
+  var browseEl = document.getElementById('browse');
+  var openCard = null, openPanel = null;
+
+  function cols() { return window.innerWidth <= 600 ? 1 : 2; }
+
+  function closePanel() {
+    if (openPanel) { openPanel.parentNode.removeChild(openPanel); }
+    if (openCard) {
+      openCard.classList.remove('open');
+      openCard.setAttribute('aria-expanded', 'false');
+      openCard.querySelector('.arrow').innerHTML = '&#9662;';
+    }
+    openCard = null; openPanel = null;
+  }
+
+  function build() {
+    DATA.forEach(function (cat) {
+      var h = document.createElement('div');
+      h.className = 'category';
+      h.textContent = cat.category;
+      catsEl.appendChild(h);
+
+      var grid = document.createElement('div');
+      grid.className = 'grid';
+      catsEl.appendChild(grid);
+
+      cat.topics.forEach(function (t) {
+        var card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'topic';
+        card.setAttribute('aria-expanded', 'false');
+        card.innerHTML = '<span class="name"></span><span class="count">' + t.beliefs.length +
+          ' beliefs <span class="arrow">&#9662;</span></span>';
+        card.querySelector('.name').textContent = t.name;
+        card.addEventListener('click', function () {
+          var wasOpen = (openCard === card);
+          closePanel();
+          if (wasOpen) { return; }
+
+          var panel = document.createElement('div');
+          panel.className = 'panel';
+          var h3 = document.createElement('h3');
+          h3.textContent = t.name;
+          var ul = document.createElement('ul');
+          t.beliefs.forEach(function (b) {
+            var li = document.createElement('li');
+            li.textContent = b;
+            ul.appendChild(li);
+          });
+          panel.appendChild(h3);
+          panel.appendChild(ul);
+
+          var kids = Array.prototype.filter.call(grid.children, function (el) {
+            return el.classList.contains('topic');
+          });
+          var idx = kids.indexOf(card);
+          var c = cols();
+          var rowEnd = Math.min(kids.length - 1, idx - (idx % c) + c - 1);
+          var after = kids[rowEnd];
+          grid.insertBefore(panel, after.nextSibling);
+
+          card.classList.add('open');
+          card.setAttribute('aria-expanded', 'true');
+          card.querySelector('.arrow').innerHTML = '&#9652;';
+          openCard = card; openPanel = panel;
+        });
+        grid.appendChild(card);
+      });
+    });
+  }
+
+  function esc(s) {
+    return s.replace(/[&<>"]/g, function (ch) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch];
+    });
+  }
+
+  function norm(s) { return s.toLowerCase().replace(/[^a-z0-9' ]+/g, ' '); }
+
+  function search() {
+    var q = searchEl.value.trim();
+    if (!q) {
+      resultsEl.style.display = 'none';
+      resultsEl.innerHTML = '';
+      browseEl.style.display = '';
+      return;
+    }
+    var words = norm(q).split(/\s+/).filter(function (w) { return w.length > 1; });
+    var hits = [];
+    DATA.forEach(function (cat) {
+      cat.topics.forEach(function (t) {
+        var topicText = norm(t.name);
+        t.beliefs.forEach(function (b) {
+          var text = norm(b) + ' ' + topicText;
+          var score = 0;
+          words.forEach(function (w) { if (text.indexOf(w) !== -1) { score++; } });
+          if (score > 0) { hits.push({ b: b, topic: t.name, score: score }); }
+        });
+      });
+    });
+    hits.sort(function (a, b) { return b.score - a.score; });
+    browseEl.style.display = 'none';
+    resultsEl.style.display = 'block';
+    if (!hits.length) {
+      resultsEl.innerHTML = '<p class="none">No beliefs matched that. Try a simpler word, such as <em>family</em>, <em>church</em>, <em>money</em>, or <em>shame</em>.</p>';
+      return;
+    }
+    var html = '<h3>' + hits.length + (hits.length === 1 ? ' belief found' : ' beliefs found') + '</h3>';
+    hits.slice(0, 40).forEach(function (h) {
+      var text = esc(h.b);
+      words.forEach(function (w) {
+        var re = new RegExp('(' + w + ')', 'ig');
+        text = text.replace(re, '<mark>$1</mark>');
+      });
+      html += '<div class="hit">' + text + '<small>' + esc(h.topic) + '</small></div>';
+    });
+    resultsEl.innerHTML = html;
+  }
+
+  build();
+  searchEl.addEventListener('input', search);
+  window.addEventListener('resize', closePanel);
+})();
+</script>
+</body>
+</html>

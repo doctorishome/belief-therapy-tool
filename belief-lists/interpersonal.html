@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interpersonal False Beliefs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1f3a5f;
+    --gold: #a98a4c;
+    --gold-line: #d8c9a0;
+    --cream: #fdfaf3;
+    --card: #f6ece1;
+    --card-open: #f0e2d0;
+    --text: #3b3b3b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 8px 4px 40px;
+    font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+    color: var(--text);
+    background: transparent;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  .intro { font-size: 1.2rem; margin: 0 0 18px; }
+  .note {
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    padding: 12px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.92rem;
+    color: #555;
+    margin-bottom: 26px;
+  }
+  label.search-label {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  #search {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: inherit;
+    font-size: 1.05rem;
+    border: 1px solid var(--gold-line);
+    background: var(--cream);
+    border-radius: 8px;
+    color: var(--text);
+  }
+  #search:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--navy);
+    font-size: 1.05rem;
+    margin: 34px 0 18px;
+  }
+  .divider::after { content: ""; flex: 1; border-top: 1.5px solid var(--gold-line); }
+  .category {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    margin: 26px 0 14px;
+  }
+  .category::after { content: ""; flex: 1; border-top: 1px solid var(--gold-line); }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .topic {
+    background: var(--card);
+    border: 1px solid #e3d3bf;
+    border-radius: 8px;
+    padding: 20px 20px 18px;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    color: var(--navy);
+  }
+  .topic:hover { background: var(--card-open); }
+  .topic.open { background: var(--card-open); border-color: var(--gold); }
+  .topic .name { display: block; font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
+  .topic .count { font-family: Arial, Helvetica, sans-serif; font-size: 0.95rem; color: #5a5a5a; }
+  .topic .arrow { color: var(--gold); font-size: 0.75rem; margin-left: 4px; }
+  .panel {
+    grid-column: 1 / -1;
+    background: #fff;
+    border: 1px solid #e3d3bf;
+    border-radius: 8px;
+    padding: 18px 24px 14px;
+  }
+  .panel a, #results a { color: var(--navy); text-decoration: underline; }
+    .panel h3 { margin: 0 0 8px; font-size: 1.15rem; color: var(--navy); }
+  .panel ul { margin: 0; padding-left: 22px; }
+  .panel li { font-size: 1.1rem; margin: 6px 0; }
+  #results { display: none; margin-top: 22px; }
+  #results h3 { color: var(--navy); font-size: 1.1rem; margin: 0 0 10px; }
+  #results .hit {
+    background: #fff;
+    border: 1px solid #e3d3bf;
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    font-size: 1.08rem;
+  }
+  #results .hit small {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    margin-top: 4px;
+  }
+  mark { background: #f3e3a8; color: inherit; padding: 0 1px; }
+  .none { font-family: Arial, Helvetica, sans-serif; color: #666; }
+  .crisis {
+    margin-top: 44px;
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.93rem;
+    color: #444;
+  }
+  .crisis p { margin: 0 0 8px; }
+  .crisis p:last-child { margin-bottom: 0; }
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+    .intro { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="intro">How people have treated you, and how you have treated them, is not a verdict on who you are. Choose a topic below, or search for a word or short sentence, to find beliefs that can grow out of your closest relationships.</p>
+
+  <div class="note">Some of these beliefs come from painful or unsafe situations. This page does not replace professional help. If you are being hurt or threatened by someone, please see the safety information at the bottom of this page.</div>
+
+  <label class="search-label" for="search">Type a word or a short sentence</label>
+  <input id="search" type="text" autocomplete="off" placeholder="For example: mother, divorce, trust, lonely, forgive, church">
+
+  <div id="results" aria-live="polite"></div>
+
+  <div id="browse">
+    <div class="divider">Or choose a topic below</div>
+    <div id="categories"></div>
+  </div>
+
+  <div class="crisis">
+    <p><strong>If you are thinking about ending your life,</strong> please call or text <strong>988</strong> (the Suicide &amp; Crisis Lifeline) right now, or call 911. You do not have to carry this alone.</p>
+    <p><strong>If someone is hurting or threatening you or your children,</strong> call 911 if you are in danger, or call the National Domestic Violence Hotline at <strong>1-800-799-7233</strong> (or text START to 88788).</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var DATA = [
+    { category: "Family", topics: [
+      { name: "Parents", beliefs: [
+        "My parents never loved me.",
+        "I can never please my parents.",
+        "What my parents said about me must be true.",
+        "I have to earn my parents' love.",
+        "I can't be happy until my parents change."
+      ]},
+      { name: "Parenting", beliefs: [
+        "I'm a failure as a parent.",
+        "If my child struggles, it's my fault.",
+        "I have ruined my children.",
+        "I'm turning into my own parents.",
+        "It's too late to be a good parent to my kids."
+      ]},
+      { name: "Marriage", beliefs: [
+        "My spouse should make me happy.",
+        "My marriage will never get better.",
+        "If my spouse loved me, they would know what I need.",
+        "I married the wrong person.",
+        "I can't be loved or happy without my spouse."
+      ]},
+      { name: "Relatives", beliefs: [
+        "My family will never change.",
+        "I have to keep everyone in my family happy.",
+        "I'm the black sheep, and I'll never belong.",
+        "Family means I must put up with anything.",
+        "I'm responsible for fixing my family's problems."
+      ]}
+    ]},
+    { category: "Friends, Church & Work", topics: [
+      { name: "Friends & Belonging", beliefs: [
+        "Nobody really likes me.",
+        "I don't fit in anywhere.",
+        "If people really knew me, they would leave.",
+        "Everyone else has real friends but me.",
+        "I have to be useful to be wanted."
+      ]},
+      { name: "Church & Christian Relationships", beliefs: [
+        "Christians will judge me.",
+        "Everyone at church has it all together but me.",
+        "Because church people hurt me, God must be just like them.",
+        "I don't belong in church because of my past.",
+        "I have to hide my struggles from other Christians."
+      ]},
+      { name: "Work & Authority", beliefs: [
+        "My boss will always find fault with me.",
+        "I have to be perfect or I'll lose my job.",
+        "People in authority can't be trusted.",
+        "I'll never be respected at work.",
+        "If I speak up, I'll be punished."
+      ]}
+    ]},
+    { category: "Love & Loss", topics: [
+      { name: "Dating & Singleness", beliefs: [
+        "No one will ever want me.",
+        "I'm single because something is wrong with me.",
+        "I'm too old to find love.",
+        "I need a partner to be complete.",
+        "God is keeping me single because he is displeased with me."
+      ]},
+      { name: "Divorce, Betrayal & Broken Relationships", beliefs: [
+        "I'll never be able to trust anyone again.",
+        "Because my marriage ended, I'm a failure.",
+        "If I had been better, they would not have left.",
+        "Everyone I love eventually betrays me.",
+        "I'm damaged goods."
+      ]},
+      { name: "Grief & Loss", beliefs: [
+        "I'll never get over losing them.",
+        "If I had done something different, they would still be alive.",
+        "Moving on means forgetting them.",
+        "God took them from me to punish me.",
+        "Grieving shows a lack of faith."
+      ]}
+    ]},
+    { category: "Healing Relationships", topics: [
+      { name: "Forgiving Others", beliefs: [
+        "If I forgive them, I'm saying what they did was okay.",
+        "Forgiving means I have to trust them again.",
+        "I can't forgive until I feel like forgiving.",
+        "They don't deserve to be forgiven.",
+        "I'm a poor Christian because I can't forgive."
+      ]},
+      { name: "Boundaries & Conflict", beliefs: [
+        "If I say no, people will reject me.",
+        "Setting boundaries is selfish.",
+        "Conflict always ruins relationships.",
+        "I must give people whatever they ask of me.",
+        "A good Christian never gets angry."
+      ]}
+    ]}
+  ];
+  var CARD_LINKS = {"My spouse should make me happy.": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/interpersonal/marriage/Marriage-001-My-Spouse-Should-Make-Me-Happy.html", "My marriage will never get better.": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/interpersonal/marriage/Marriage-002-My-Marriage-Will-Never-Get-Better.html", "If my spouse loved me, they would know what I need.": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/interpersonal/marriage/Marriage-003-If-My-Spouse-Loved-Me-They-Would-Know-What-I-Need.html", "I married the wrong person.": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/interpersonal/marriage/Marriage-004-I-Married-The-Wrong-Person.html", "I can't be loved or happy without my spouse.": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/interpersonal/marriage/Marriage-005-I-Cant-Be-Loved-Or-Happy-Without-My-Spouse.html"};
+
+  var catsEl = document.getElementById('categories');
+  var searchEl = document.getElementById('search');
+  var resultsEl = document.getElementById('results');
+  var browseEl = document.getElementById('browse');
+  var openCard = null, openPanel = null;
+
+  function cols() { return window.innerWidth <= 600 ? 1 : 2; }
+
+  function closePanel() {
+    if (openPanel) { openPanel.parentNode.removeChild(openPanel); }
+    if (openCard) {
+      openCard.classList.remove('open');
+      openCard.setAttribute('aria-expanded', 'false');
+      openCard.querySelector('.arrow').innerHTML = '&#9662;';
+    }
+    openCard = null; openPanel = null;
+  }
+
+  function build() {
+    DATA.forEach(function (cat) {
+      var h = document.createElement('div');
+      h.className = 'category';
+      h.textContent = cat.category;
+      catsEl.appendChild(h);
+
+      var grid = document.createElement('div');
+      grid.className = 'grid';
+      catsEl.appendChild(grid);
+
+      cat.topics.forEach(function (t) {
+        var card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'topic';
+        card.setAttribute('aria-expanded', 'false');
+        card.innerHTML = '<span class="name"></span><span class="count">' + t.beliefs.length +
+          ' beliefs <span class="arrow">&#9662;</span></span>';
+        card.querySelector('.name').textContent = t.name;
+        card.addEventListener('click', function () {
+          var wasOpen = (openCard === card);
+          closePanel();
+          if (wasOpen) { return; }
+
+          var panel = document.createElement('div');
+          panel.className = 'panel';
+          var h3 = document.createElement('h3');
+          h3.textContent = t.name;
+          var ul = document.createElement('ul');
+          t.beliefs.forEach(function (b) {
+            var li = document.createElement('li');
+            if (CARD_LINKS[b]) { var a = document.createElement('a'); a.href = CARD_LINKS[b]; a.target = '_blank'; a.rel = 'noopener'; a.textContent = b; li.appendChild(a); } else { li.textContent = b; }
+            ul.appendChild(li);
+          });
+          panel.appendChild(h3);
+          panel.appendChild(ul);
+
+          var kids = Array.prototype.filter.call(grid.children, function (el) {
+            return el.classList.contains('topic');
+          });
+          var idx = kids.indexOf(card);
+          var c = cols();
+          var rowEnd = Math.min(kids.length - 1, idx - (idx % c) + c - 1);
+          grid.insertBefore(panel, kids[rowEnd].nextSibling);
+
+          card.classList.add('open');
+          card.setAttribute('aria-expanded', 'true');
+          card.querySelector('.arrow').innerHTML = '&#9652;';
+          openCard = card; openPanel = panel;
+        });
+        grid.appendChild(card);
+      });
+    });
+  }
+
+  function esc(s) {
+    return s.replace(/[&<>"]/g, function (ch) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch];
+    });
+  }
+
+  function norm(s) { return s.toLowerCase().replace(/[^a-z0-9' ]+/g, ' '); }
+
+  function search() {
+    var q = searchEl.value.trim();
+    if (!q) {
+      resultsEl.style.display = 'none';
+      resultsEl.innerHTML = '';
+      browseEl.style.display = '';
+      return;
+    }
+    var words = norm(q).split(/\s+/).filter(function (w) { return w.length > 1; });
+    var hits = [];
+    DATA.forEach(function (cat) {
+      cat.topics.forEach(function (t) {
+        var topicText = norm(t.name);
+        t.beliefs.forEach(function (b) {
+          var text = norm(b) + ' ' + topicText;
+          var score = 0;
+          words.forEach(function (w) { if (text.indexOf(w) !== -1) { score++; } });
+          if (score > 0) { hits.push({ b: b, topic: t.name, score: score }); }
+        });
+      });
+    });
+    hits.sort(function (a, b) { return b.score - a.score; });
+    browseEl.style.display = 'none';
+    resultsEl.style.display = 'block';
+    if (!hits.length) {
+      resultsEl.innerHTML = '<p class="none">No beliefs matched that. Try a simpler word, such as <em>trust</em>, <em>alone</em>, <em>mother</em>, or <em>forgive</em>.</p>';
+      return;
+    }
+    var html = '<h3>' + hits.length + (hits.length === 1 ? ' belief found' : ' beliefs found') + '</h3>';
+    hits.slice(0, 40).forEach(function (h) {
+      var text = esc(h.b);
+      words.forEach(function (w) {
+        var re = new RegExp('(' + w + ')', 'ig');
+        text = text.replace(re, '<mark>$1</mark>');
+      });
+      if (CARD_LINKS[h.b]) { text = '<a href="' + CARD_LINKS[h.b] + '" target="_blank" rel="noopener">' + text + '</a>'; }
+      html += '<div class="hit">' + text + '<small>' + esc(h.topic) + '</small></div>';
+    });
+    resultsEl.innerHTML = html;
+  }
+
+  build();
+  searchEl.addEventListener('input', search);
+  window.addEventListener('resize', closePanel);
+})();
+</script>
+</body>
+</html>
