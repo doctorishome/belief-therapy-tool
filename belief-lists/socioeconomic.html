@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Socioeconomic False Beliefs</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1e3556;--ink:#2b2b2b;--gold:#a8864f;--gold-line:#d9c7a3;--card:#f6eee2;--card-border:#eadcc4;--card-hover:#f0e4d1;--input:#fdfaf4;--muted:#5b6472;--note-bg:#fbf6ec;}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink)}
+body{font-family:"Libre Baskerville",Georgia,serif;padding:0 16px 40px}
+.wrap{max-width:1150px;margin:0 auto}
+.intro{font-size:19px;line-height:1.75;max-width:1000px;margin:0 0 22px}
+.note{font-family:Inter,Arial,sans-serif;font-size:15px;line-height:1.6;color:var(--muted);background:var(--note-bg);border-left:3px solid var(--gold);padding:12px 16px;border-radius:4px;max-width:1000px;margin:0 0 34px}
+.label{font-family:Inter,Arial,sans-serif;font-weight:500;font-size:19px;color:var(--navy);margin:0 0 12px}
+.search{width:100%;max-width:795px;font-family:inherit;font-size:18px;padding:17px 20px;border:1px solid var(--card-border);border-radius:8px;background:var(--input);color:var(--ink);outline:none}
+.search:focus{border-color:var(--gold)}
+.search::placeholder{color:#8a8a8a}
+.results{margin:18px 0 0;max-width:1000px}
+.results .count{font-family:Inter,Arial,sans-serif;font-size:15px;color:var(--muted);margin-bottom:10px}
+.result{background:var(--card);border:1px solid var(--card-border);border-radius:8px;padding:12px 16px;margin-bottom:8px;font-size:17px;line-height:1.5}
+.result .tag{display:block;font-family:Inter,Arial,sans-serif;font-size:13px;color:var(--gold);margin-top:4px}
+.choose{display:flex;align-items:center;gap:16px;margin:46px 0 22px}
+.choose span{font-family:Inter,Arial,sans-serif;font-weight:500;font-size:19px;color:var(--navy);white-space:nowrap}
+.choose i,.group-head i{flex:1;height:1px;background:var(--gold-line);display:block}
+.choose i{height:2px}
+.group-head{display:flex;align-items:center;gap:16px;margin:28px 0 16px}
+.group-head span{font-size:18px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:20px 20px 18px;cursor:pointer;text-align:left;font-family:inherit;color:inherit;min-height:120px;display:flex;flex-direction:column;justify-content:center;transition:background .15s}
+.card:hover{background:var(--card-hover)}
+.card[aria-expanded="true"]{border-color:var(--gold);background:var(--card-hover)}
+.card h3{font-size:21px;line-height:1.3;color:var(--navy);margin:0 0 10px;font-weight:700}
+.card small{font-family:Inter,Arial,sans-serif;font-size:16px;color:var(--muted)}
+.card small b{font-size:11px;color:var(--gold);margin-left:8px;display:inline-block;transition:transform .15s}
+.card[aria-expanded="true"] small b{transform:rotate(180deg)}
+.panel{grid-column:1/-1;background:#fff;border:1px solid var(--gold-line);border-radius:10px;padding:20px 26px;display:none}
+.panel.open{display:block}
+.panel h4{font-size:19px;color:var(--navy);margin:0 0 12px}
+.panel ul{margin:0;padding-left:22px}
+.cardlink{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px;font-weight:600}.cardtag{font:600 12px Inter,sans-serif;color:var(--gold);margin-left:6px;white-space:nowrap}.panel li{font-size:18px;line-height:1.55;margin:6px 0}
+.crisis{font-family:Inter,Arial,sans-serif;font-size:15px;line-height:1.6;color:var(--ink);background:var(--note-bg);border:1px solid var(--gold-line);border-radius:8px;padding:14px 18px;margin:44px 0 0;max-width:1000px}
+.crisis strong{color:var(--navy)}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){body{padding:4px 16px 30px}.intro{font-size:17px}.card{padding:16px;min-height:100px}.card h3{font-size:18px}.group-head span{font-size:15px;letter-spacing:1.2px;white-space:normal}.choose span{font-size:17px}.panel{padding:16px 18px}.panel li{font-size:17px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<p class="intro">Your worth is not measured by what you earn, own, or achieve. Choose a topic below, or search for a word or short sentence, to find beliefs that can grow out of money, work, and social standing.</p>
+
+<p class="note">This page does not replace financial or legal advice. If you are facing a financial crisis, please reach out to a trusted advisor, your church, or local assistance services.</p>
+
+<p class="label">Type a word or a short sentence</p>
+<input class="search" id="search" type="search" placeholder="For example: enough, debt, job, worthless, retirement, burden" autocomplete="off">
+<div class="results" id="results"></div>
+
+<div class="choose"><span>Or choose a topic below</span><i></i></div>
+<div id="topics"></div>
+
+<p class="crisis"><strong>If you are thinking about ending your life,</strong> please call or text <strong>988</strong> (the Suicide &amp; Crisis Lifeline) right now, or call 911. You do not have to carry this alone.</p>
+
+</div>
+
+<script>
+/* ============================================================
+   TO CHANGE THE WORDING OF A BELIEF:
+   Find the sentence below and retype it between the quote marks.
+   Keep the quote marks ("...") and the comma after each line.
+   ============================================================ */
+var GROUPS = [
+  { group: "Money & Security", topics: [
+    { name: "Scarcity & Security", beliefs: [
+      "There will never be enough.",
+      "Anything I have could vanish tomorrow.",
+      "I must hold on to everything.",
+      "Asking for help means I've failed.",
+      "Life is never stable or safe."
+    ]},
+    { name: "Debt & Shame", beliefs: [
+      "My debt proves I'm irresponsible.",
+      "I must hide my money problems.",
+      "I can never get out of this.",
+      "I don't deserve anything nice.",
+      "Talking about money is shameful."
+    ]},
+    { name: "Family Money Messages", beliefs: [
+      "Love is shown through things.",
+      "People like us never get ahead.",
+      "People like us don't go to college.",
+      "Money is what causes all our fights.",
+      "Wealthy people can't be trusted."
+    ]},
+    { name: "Wealth & Privilege", beliefs: [
+      "I earned everything; others just didn't try.",
+      "My worth depends on staying wealthy.",
+      "People only like me for my money.",
+      "I must never let anyone see me struggle.",
+      "Money can fix any problem."
+    ]}
+  ]},
+  { group: "Work & Worth", topics: [
+    { name: "Work & Identity", beliefs: [
+      "I am what I do for a living.",
+      "Without a job, I'm worthless.",
+      "Rest must be earned.",
+      "My value depends on how much I earn.",
+      "If I lose this job, I lose everything."
+    ]},
+    { name: "Job Loss & Setbacks", beliefs: [
+      "I'm a failure because I lost my job.",
+      "I'll never recover from this.",
+      "Others must think I'm useless.",
+      "I should be further along by now.",
+      "One setback means I've ruined my life."
+    ]},
+    { name: "Worth & Class", beliefs: [
+      "People with money are better than me.",
+      "Where I come from makes me less.",
+      "I don't belong among successful people.",
+      "My clothes, car, or home show my worth.",
+      "Being poor means being lazy or bad."
+    ]},
+    { name: "Life-Stage Pressures", beliefs: [
+      "Retirement means I'm no longer useful.",
+      "Caring for others means my needs don't count.",
+      "As a parent, I must provide everything.",
+      "I'm a burden now that I can't work.",
+      "Needing help means losing my dignity."
+    ]}
+  ]},
+  { group: "Faith & Finances", topics: [
+    { name: "God's Provision", beliefs: [
+      "If God loved me, I wouldn't be struggling.",
+      "God has forgotten my needs.",
+      "My money problems are God's punishment.",
+      "It's all up to me; I can't count on God to provide.",
+      "Worrying about money shows I'm being responsible."
+    ]},
+    { name: "Prosperity & Blessing", beliefs: [
+      "Wealth proves God is pleased with me.",
+      "If I had enough faith, I wouldn't be poor.",
+      "Being poor means God has rejected me.",
+      "God only blesses people who succeed.",
+      "Struggling financially means I'm out of God's will."
+    ]},
+    { name: "Work & Calling", beliefs: [
+      "My work only matters to God if it's ministry.",
+      "God can't use me without a good job.",
+      "Rest is laziness, even when God commands it.",
+      "If I'm not productive, I'm wasting the life God gave me.",
+      "God values me for what I accomplish."
+    ]}
+  ]}
+];
+/* ====== Nothing below this line needs to change ====== */
+
+(function(){
+  var topicsEl = document.getElementById("topics");
+  var resultsEl = document.getElementById("results");
+  var searchEl = document.getElementById("search");
+  var openCard = null;
+
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+  GROUPS.forEach(function(g){
+    var head = document.createElement("div");
+    head.className = "group-head";
+    head.innerHTML = "<span>" + esc(g.group) + "</span><i></i>";
+    topicsEl.appendChild(head);
+
+    var grid = document.createElement("div");
+    grid.className = "grid";
+    topicsEl.appendChild(grid);
+
+    var panel = document.createElement("div");
+    panel.className = "panel";
+
+    g.topics.forEach(function(t){
+      var card = document.createElement("button");
+      card.type = "button";
+      card.className = "card";
+      card.setAttribute("aria-expanded","false");
+      card.innerHTML = "<h3>" + esc(t.name) + "</h3><small>" + t.beliefs.length + " beliefs<b>&#9660;</b></small>";
+      card.addEventListener("click", function(){
+        var wasOpen = (openCard === card);
+        closeAll();
+        if (wasOpen) return;
+        card.setAttribute("aria-expanded","true");
+        panel.innerHTML = "<h4>" + esc(t.name) + "</h4><ul>" +
+          t.beliefs.map(function(b){return "<li>" + lk(b) + "</li>";}).join("") + "</ul>";
+        var cards = grid.querySelectorAll(".card"), rowEnd = card;
+        for (var i = 0; i < cards.length; i++){ if (cards[i].offsetTop === card.offsetTop) rowEnd = cards[i]; }
+        rowEnd.parentNode.insertBefore(panel, rowEnd.nextSibling);
+        panel.classList.add("open");
+        openCard = card;
+      });
+      grid.appendChild(card);
+    });
+    grid.appendChild(panel);
+  });
+
+  function closeAll(){
+    document.querySelectorAll(".card").forEach(function(c){c.setAttribute("aria-expanded","false");});
+    document.querySelectorAll(".panel").forEach(function(p){p.classList.remove("open");});
+    openCard = null;
+  }
+
+  var CL={};GROUPS.forEach(function(g){g.topics.forEach(function(t){if(t.name.indexOf("Scarcity")===0){var U=["https://doctorishome.github.io/belief-therapy-tool/belief-cards/socioeconomic/scarcity-security/Socio-001-There-Will-Never-Be-Enough.html","https://doctorishome.github.io/belief-therapy-tool/belief-cards/socioeconomic/scarcity-security/Socio-002-Anything-I-Have-Could-Vanish-Tomorrow.html","https://doctorishome.github.io/belief-therapy-tool/belief-cards/socioeconomic/scarcity-security/Socio-003-I-Must-Hold-On-to-Everything.html","https://doctorishome.github.io/belief-therapy-tool/belief-cards/socioeconomic/scarcity-security/Socio-004-Asking-for-Help-Means-Ive-Failed.html","https://doctorishome.github.io/belief-therapy-tool/belief-cards/socioeconomic/scarcity-security/Socio-005-Life-Is-Never-Stable-or-Safe.html"];t.beliefs.forEach(function(b,i){CL[b]=U[i];});}});});function lk(b){var u=CL[b];return u?'<a class="cardlink" href="'+u+'" target="_blank" rel="noopener">'+esc(b)+'</a> <small class="cardtag">Open belief card</small>':esc(b);}
+function norm(s){return s.toLowerCase().replace(/[’']/g,"").replace(/[^a-z0-9 ]+/g," ");}
+
+  searchEl.addEventListener("input", function(){
+    var q = norm(searchEl.value).trim();
+    if (!q){ resultsEl.innerHTML = ""; return; }
+    var words = q.split(/\s+/);
+    var hits = [];
+    GROUPS.forEach(function(g){
+      g.topics.forEach(function(t){
+        t.beliefs.forEach(function(b){
+          var hay = norm(b + " " + t.name + " " + g.group);
+          if (words.every(function(w){return hay.indexOf(w) !== -1;})) hits.push({b:b, t:t.name});
+        });
+      });
+    });
+    if (!hits.length){
+      resultsEl.innerHTML = '<div class="count">No beliefs matched. Try a different word, or choose a topic below.</div>';
+      return;
+    }
+    resultsEl.innerHTML = '<div class="count">' + hits.length + (hits.length === 1 ? " belief" : " beliefs") + " found</div>" +
+      hits.map(function(h){return '<div class="result">' + lk(h.b) + '<span class="tag">' + esc(h.t) + "</span></div>";}).join("");
+  });
+})();
+</script>
+</body>
+</html>
