@@ -1,0 +1,119 @@
+{
+  "belief": "What my parents said about me must be true.",
+  "file": "What-My-Parents-Said-About-Me-Must-Be-True",
+  "origins": "Children believe what their parents say. If we were told we were lazy, stupid, selfish, ugly, or “just like” a difficult relative, those words went in deeply, and we may still repeat them to ourselves. A parent’s words carry weight because they came at a time when we had no way to question them.",
+  "teaches": "Jesus said, “Then you will know the truth, and the truth will set you free.” Paul writes, “Do not be conformed to this world, but be transformed by the renewing of your mind.” He also says, “We tear down arguments and every presumption set up against the knowledge of God; and we take captive every thought to make it obedient to Christ.” God says of you, “I praise You, for I am fearfully and wonderfully made,” and “we are God’s workmanship, created in Christ Jesus to do good works.” A parent’s words may have been repeated for years, but repetition does not make a statement true. Truth is tested against what God says.",
+  "key": "John 8:32",
+  "also": [
+    "Psalm 139:14",
+    "Ephesians 2:10",
+    "2 Corinthians 10:5",
+    "Romans 12:2"
+  ],
+  "self_statements": [
+    "They said I was worthless, so I must be.",
+    "They know me best.",
+    "I will always be the stupid one.",
+    "I am exactly what they said I was.",
+    "I cannot trust my own opinion of myself.",
+    "If it was said so often, it must be true."
+  ],
+  "errors": [
+    [
+      "Authority bias",
+      "Accepting a statement as true because it came from a parent."
+    ],
+    [
+      "Labeling",
+      "Carrying a childhood label into adulthood."
+    ],
+    [
+      "Emotional reasoning",
+      "Feeling flawed and treating the feeling as proof."
+    ],
+    [
+      "Discounting the positive",
+      "Dismissing evidence that contradicts the label."
+    ]
+  ],
+  "questions": [
+    "What exactly did my parents say about me, in their words?",
+    "Just because my parents said it, does that make it true?",
+    "What evidence from my life supports it, and what contradicts it?",
+    "What was going on in the parent who said it?",
+    "What does God say about me instead?",
+    "What would I say to a child who was told this?"
+  ],
+  "truth": "Words spoken over me are not the same as the truth about me. I can test what my parents said against Scripture and against the evidence of my life. God says I am fearfully and wonderfully made, and His word is the truth that sets me free.",
+  "hw_truths": [
+    "A statement is not true just because a parent said it.",
+    "God’s word is the truth that sets me free.",
+    "I am fearfully and wonderfully made.",
+    "I am God’s workmanship.",
+    "I can take captive every thought.",
+    "I can renew my mind."
+  ],
+  "log": [
+    "Lie and truth",
+    "Each time an old parental message appears, write the message and a truth from Scripture to answer it."
+  ],
+  "actions": [
+    [
+      "Write the messages.",
+      "List what your parents said about you, one line each."
+    ],
+    [
+      "Test each one.",
+      "Beside each, write evidence for, evidence against, and what God says."
+    ],
+    [
+      "Replace the label.",
+      "Write a truthful sentence that replaces each message."
+    ],
+    [
+      "Read your truth card daily.",
+      "Read the replacement sentences aloud each morning."
+    ]
+  ],
+  "tracker": "A lie answered",
+  "prayer": "Father, some words were spoken over me that I have believed for years. Show me what is true. Break the hold of every false message and renew my mind with Your word. Amen.",
+  "songs": [
+    "liar",
+    "truth",
+    "yousay",
+    "assurance"
+  ],
+  "pearls": [
+    "truth",
+    "thinking-unhealthy",
+    "self-esteem-low",
+    "parenting",
+    "scripture-word"
+  ],
+  "godly_counsel": [
+    24,
+    29
+  ],
+  "reading": "thinking-unhealthy",
+  "listening": "Depression",
+  "hw_questions": [
+    "What exactly did my parents say?",
+    "Is it true?",
+    "What evidence contradicts it?",
+    "What was happening in my parent?",
+    "What does God say?",
+    "What would I tell a child who heard it?"
+  ],
+  "name_example": [
+    "Psalm 139:14",
+    "<strong>Sarah</strong> can write: “I am fearfully and wonderfully made, whatever I was told.”"
+  ],
+  "hw_scriptures": [
+    "John 8:32",
+    "Psalm 139:14",
+    "2 Corinthians 10:5"
+  ],
+  "num": 3,
+  "group": "Parents",
+  "meta": "Christian belief counseling for “What my parents said about me must be true.” with BSB scriptures, questions, songs, and practical homework."
+}
