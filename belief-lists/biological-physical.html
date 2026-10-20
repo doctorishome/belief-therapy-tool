@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biological/Physical False Beliefs</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   COLORS — matched to the Spiritual/Religious False Beliefs page
+   ============================================================ */
+:root{
+  --navy:#1e3556;
+  --ink:#2b2b2b;
+  --gold:#a8864f;
+  --gold-line:#d9c7a3;
+  --card:#f6eee2;
+  --card-border:#eadcc4;
+  --card-hover:#f0e4d1;
+  --input:#fdfaf4;
+  --muted:#5b6472;
+  --note-bg:#fbf6ec;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink)}
+body{font-family:"Libre Baskerville",Georgia,serif;padding:0 16px 40px}
+.wrap{max-width:1150px;margin:0 auto}
+h1{font-family:Inter,Arial,sans-serif;font-weight:700;font-size:40px;letter-spacing:-.5px;color:#111;margin:10px 0 36px}
+.intro{font-size:19px;line-height:1.75;max-width:1000px;margin:0 0 22px}
+.note{font-family:Inter,Arial,sans-serif;font-size:15px;line-height:1.6;color:var(--muted);background:var(--note-bg);border-left:3px solid var(--gold);padding:12px 16px;border-radius:4px;max-width:1000px;margin:0 0 34px}
+.label{font-family:Inter,Arial,sans-serif;font-weight:500;font-size:19px;color:var(--navy);margin:0 0 12px}
+.search{width:100%;max-width:795px;font-family:inherit;font-size:18px;padding:17px 20px;border:1px solid var(--card-border);border-radius:8px;background:var(--input);color:var(--ink);outline:none}
+.search:focus{border-color:var(--gold)}
+.search::placeholder{color:#8a8a8a}
+.results{margin:18px 0 0;max-width:1000px}
+.results .count{font-family:Inter,Arial,sans-serif;font-size:15px;color:var(--muted);margin-bottom:10px}
+.result{background:var(--card);border:1px solid var(--card-border);border-radius:8px;padding:12px 16px;margin-bottom:8px;font-size:17px;line-height:1.5}
+.result .tag{display:block;font-family:Inter,Arial,sans-serif;font-size:13px;color:var(--gold);margin-top:4px}
+.choose{display:flex;align-items:center;gap:16px;margin:46px 0 22px}
+.choose span{font-family:Inter,Arial,sans-serif;font-weight:500;font-size:19px;color:var(--navy);white-space:nowrap}
+.choose i,.group-head i{flex:1;height:1px;background:var(--gold-line);display:block}
+.choose i{height:2px}
+.group-head{display:flex;align-items:center;gap:16px;margin:28px 0 16px}
+.group-head span{font-size:18px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:20px 20px 18px;cursor:pointer;text-align:left;font-family:inherit;color:inherit;min-height:120px;display:flex;flex-direction:column;justify-content:center;transition:background .15s}
+.card:hover{background:var(--card-hover)}
+.card[aria-expanded="true"]{border-color:var(--gold);background:var(--card-hover)}
+.card h3{font-size:21px;line-height:1.3;color:var(--navy);margin:0 0 10px;font-weight:700}
+.card small{font-family:Inter,Arial,sans-serif;font-size:16px;color:var(--muted)}
+.card small b{font-size:11px;color:var(--gold);margin-left:8px;display:inline-block;transition:transform .15s}
+.card[aria-expanded="true"] small b{transform:rotate(180deg)}
+.panel{grid-column:1/-1;background:#fff;border:1px solid var(--gold-line);border-radius:10px;padding:20px 26px;display:none}
+.panel.open{display:block}
+.panel h4{font-size:19px;color:var(--navy);margin:0 0 12px}
+.panel ul{margin:0;padding-left:22px}
+.panel li{font-size:18px;line-height:1.55;margin:6px 0}
+.crisis{font-family:Inter,Arial,sans-serif;font-size:15px;line-height:1.6;color:var(--ink);background:var(--note-bg);border:1px solid var(--gold-line);border-radius:8px;padding:14px 18px;margin:44px 0 0;max-width:1000px}
+.crisis strong{color:var(--navy)}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){
+  body{padding:4px 16px 30px}
+  h1{font-size:30px;margin-bottom:24px}
+  .intro{font-size:17px}
+  .card{padding:16px;min-height:100px}
+  .card h3{font-size:18px}
+  .group-head span{font-size:15px;letter-spacing:1.2px;white-space:normal}
+  .choose span{font-size:17px}
+  .panel{padding:16px 18px}
+  .panel li{font-size:17px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<p class="intro">What happens to your body is not a verdict on who you are. Choose a topic below, or search for a word or short sentence, to find beliefs that can grow out of illness, pain, or physical limits.</p>
+
+<p class="note">This page does not replace medical care. If you have new or worsening symptoms, please see your doctor.</p>
+
+<p class="label">Type a word or a short sentence</p>
+<input class="search" id="search" type="search" placeholder="For example: pain, burden, medication, ugly, useless, healing" autocomplete="off">
+<div class="results" id="results"></div>
+
+<div class="choose"><span>Or choose a topic below</span><i></i></div>
+<div id="topics"></div>
+
+<p class="crisis"><strong>If you are thinking about ending your life,</strong> please call or text <strong>988</strong> (the Suicide &amp; Crisis Lifeline) right now, or call 911. You do not have to carry this alone.</p>
+
+</div>
+
+<script>
+/* ============================================================
+   TO CHANGE THE WORDING OF A BELIEF:
+   Find the sentence below and retype it between the quote marks.
+   Keep the quote marks ("...") and the comma after each line.
+   ============================================================ */
+var GROUPS = [
+  { group: "Illness & Pain", topics: [
+    { name: "Chronic Illness", beliefs: [
+      "My body has betrayed me.",
+      "I am nothing but my illness.",
+      "I will never feel well again.",
+      "I am a burden to everyone.",
+      "My life is over."
+    ]},
+    { name: "Chronic Pain", beliefs: [
+      "This pain will never end.",
+      "I can't take one more day of this.",
+      "I can't be happy as long as I hurt.",
+      "If doctors can't find the cause, it must be all in my head.",
+      "People think I'm faking."
+    ]},
+    { name: "Medications & Treatment", beliefs: [
+      "Needing medication means I'm weak.",
+      "If this treatment didn't work, nothing will.",
+      "I'll have to take this forever, so I'll never really be well.",
+      "Taking medication means I'm not really myself.",
+      "The side effects prove nothing will ever work for me."
+    ]},
+    { name: "Aging & Decline", beliefs: [
+      "I'm old and useless.",
+      "My best years are behind me.",
+      "I've lost my purpose.",
+      "I'm too old to change.",
+      "People are just waiting for me to die."
+    ]}
+  ]},
+  { group: "Brain & Mind", topics: [
+    { name: "Brain Chemistry & Mental Illness", beliefs: [
+      "Something is fundamentally wrong with me.",
+      "I'm broken and can't be fixed.",
+      "I'll never be normal.",
+      "My feelings are facts.",
+      "I'm going crazy."
+    ]},
+    { name: "Genetics & Family History", beliefs: [
+      "It runs in my family, so I'm doomed.",
+      "I'll end up just like my parent.",
+      "I was born defective.",
+      "It's in my genes, so there's no point trying.",
+      "I'll pass this on and ruin my children's lives."
+    ]},
+    { name: "Brain Injury & Memory", beliefs: [
+      "I'm not the person I used to be, so I'm less of a person.",
+      "I'm stupid now.",
+      "I'm losing my mind, and nothing can be done.",
+      "If I forget things, people will think less of me.",
+      "I can't learn or grow anymore."
+    ]},
+    { name: "Learning & Developmental Differences", beliefs: [
+      "I'm dumb.",
+      "I'll always be behind everyone else.",
+      "Why try? I can never succeed.",
+      "I'm a disappointment to my parents.",
+      "Everyone else is better than me."
+    ]}
+  ]},
+  { group: "Body & Appearance", topics: [
+    { name: "Disability & Impairment", beliefs: [
+      "I'm helpless.",
+      "I'm less of a man (or woman) because of this.",
+      "If I can't be independent, I have no dignity.",
+      "I'm always in the way.",
+      "People only feel sorry for me."
+    ]},
+    { name: "Vision & Hearing Loss", beliefs: [
+      "I'm cut off from everyone.",
+      "People get tired of repeating things for me.",
+      "I can't enjoy life anymore.",
+      "I'll end up completely dependent on others.",
+      "I'm embarrassing to be around."
+    ]},
+    { name: "Appearance & Body Image", beliefs: [
+      "I'm ugly, so I'm unlovable.",
+      "My worth depends on how I look.",
+      "People are always staring and judging me.",
+      "No one could be attracted to me.",
+      "If I looked different, my life would be fine."
+    ]},
+    { name: "Physical Differences", beliefs: [
+      "I have to hide my difference to be accepted.",
+      "People see my difference before they see me.",
+      "I'll always be the odd one out.",
+      "I'll never fit in.",
+      "Something is wrong with me because I don't look like others."
+    ]}
+  ]},
+  { group: "Faith & the Body", topics: [
+    { name: "Why God Allows Suffering", beliefs: [
+      "God is punishing me with this illness.",
+      "I must have done something to deserve this.",
+      "A loving God wouldn't let me suffer like this.",
+      "God has abandoned me.",
+      "My suffering is meaningless."
+    ]},
+    { name: "Healing & Faith", beliefs: [
+      "If I had enough faith, God would heal me.",
+      "God doesn't hear my prayers, or He would have taken this away.",
+      "Needing medication means my faith is weak.",
+      "Christians shouldn't get depressed or anxious.",
+      "If I'm not healed, I must not be right with God."
+    ]},
+    { name: "Serving God with Limits", beliefs: [
+      "God can't use me in this condition.",
+      "I'm useless to the church now.",
+      "My limitations disqualify me from God's purpose.",
+      "I have nothing left to give.",
+      "Only healthy, strong people can serve God well."
+    ]}
+  ]}
+];
+/* ====== Nothing below this line needs to change ====== */
+
+(function(){
+  var topicsEl = document.getElementById("topics");
+  var resultsEl = document.getElementById("results");
+  var searchEl = document.getElementById("search");
+  var openCard = null;
+
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+  GROUPS.forEach(function(g, gi){
+    var head = document.createElement("div");
+    head.className = "group-head";
+    head.innerHTML = "<span>" + esc(g.group) + "</span><i></i>";
+    topicsEl.appendChild(head);
+
+    var grid = document.createElement("div");
+    grid.className = "grid";
+    topicsEl.appendChild(grid);
+
+    var panel = document.createElement("div");
+    panel.className = "panel";
+
+    g.topics.forEach(function(t, ti){
+      var card = document.createElement("button");
+      card.type = "button";
+      card.className = "card";
+      card.setAttribute("aria-expanded","false");
+      card.innerHTML = "<h3>" + esc(t.name) + "</h3><small>" + t.beliefs.length + " beliefs<b>&#9660;</b></small>";
+      card.addEventListener("click", function(){
+        var wasOpen = (openCard === card);
+        closeAll();
+        if (wasOpen) return;
+        card.setAttribute("aria-expanded","true");
+        panel.innerHTML = "<h4>" + esc(t.name) + "</h4><ul>" +
+          t.beliefs.map(function(b){return "<li>" + esc(b) + "</li>";}).join("") + "</ul>";
+        var cards = grid.querySelectorAll(".card"), rowEnd = card;
+        for (var i = 0; i < cards.length; i++){ if (cards[i].offsetTop === card.offsetTop) rowEnd = cards[i]; }
+        rowEnd.parentNode.insertBefore(panel, rowEnd.nextSibling);
+        panel.classList.add("open");
+        openCard = card;
+      });
+      grid.appendChild(card);
+    });
+    grid.appendChild(panel);
+  });
+
+  function closeAll(){
+    document.querySelectorAll(".card").forEach(function(c){c.setAttribute("aria-expanded","false");});
+    document.querySelectorAll(".panel").forEach(function(p){p.classList.remove("open");});
+    openCard = null;
+  }
+
+  function norm(s){return s.toLowerCase().replace(/[’']/g,"").replace(/[^a-z0-9 ]+/g," ");}
+
+  searchEl.addEventListener("input", function(){
+    var q = norm(searchEl.value).trim();
+    if (!q){ resultsEl.innerHTML = ""; return; }
+    var words = q.split(/\s+/);
+    var hits = [];
+    GROUPS.forEach(function(g){
+      g.topics.forEach(function(t){
+        t.beliefs.forEach(function(b){
+          var hay = norm(b + " " + t.name + " " + g.group);
+          if (words.every(function(w){return hay.indexOf(w) !== -1;})) hits.push({b:b, t:t.name});
+        });
+      });
+    });
+    if (!hits.length){
+      resultsEl.innerHTML = '<div class="count">No beliefs matched. Try a different word, or choose a topic below.</div>';
+      return;
+    }
+    resultsEl.innerHTML = '<div class="count">' + hits.length + (hits.length === 1 ? " belief" : " beliefs") + " found</div>" +
+      hits.map(function(h){return '<div class="result">' + esc(h.b) + '<span class="tag">' + esc(h.t) + "</span></div>";}).join("");
+  });
+})();
+</script>
+</body>
+</html>

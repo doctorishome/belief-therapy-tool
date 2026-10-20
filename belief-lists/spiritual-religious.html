@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spiritual/Religious False Beliefs</title>
+<style>
+  :root{--navy:#1F3A5F;--ink:#2D2A26;--muted:#6E6557;--gold:#B08A4B;--cream:#FFFDF8;--tile:#F6EFE2;--line:#E4D9C6}
+  *{box-sizing:border-box}
+  body{margin:0;background:transparent;color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+  .note{background:#FFF7E0;border-bottom:1px solid #EAD9A8;color:#6B5A2E;font:14px/1.4 system-ui,sans-serif;padding:10px 16px;text-align:center}
+  header.site{display:flex;align-items:center;gap:10px;padding:18px 24px;border-bottom:1px solid #eee;font-family:system-ui,sans-serif}
+  .dot{width:26px;height:26px;border-radius:50%;background:#111;box-shadow:12px 0 0 #111}
+  header.site b{margin-left:14px;font-weight:500;font-size:18px}
+  main{max-width:1000px;margin:0 auto;padding:4px 16px 24px}
+  h1{font-family:system-ui,sans-serif;font-weight:800;font-size:34px;margin:0 0 6px;color:#000}
+  .lede{max-width:700px;font-size:17px;line-height:1.55;margin:0 0 22px}
+  .search{max-width:560px;margin:0 0 28px}
+  .search input{width:100%;font:16px Georgia,serif;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--cream)}
+  .search input:focus{outline:2px solid var(--gold);outline-offset:1px}
+  .group{margin:0 0 22px}
+  .group h3{margin:0 0 10px;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:normal;display:flex;align-items:center;gap:10px}
+  .group h3::after{content:"";flex:1;border-top:1px solid var(--line)}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  @media (min-width:700px){.tiles{grid-template-columns:repeat(6,1fr)}.t-name{font-size:15px}}
+  .tile{all:unset;cursor:pointer;background:var(--tile);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;justify-content:center;min-height:56px;transition:transform .12s,box-shadow .12s}
+  .tile:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(60,40,10,.10)}
+  .tile:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .tile.on{background:var(--navy);border-color:var(--navy)}
+  .tile.on .t-name{color:#fff}
+  .t-name{color:var(--navy);font-weight:bold;font-size:15.5px;line-height:1.25}
+  .panel{margin:6px 0 26px;max-height:460px;overflow-y:auto;overflow-x:hidden;border:1px solid var(--line);border-radius:10px;background:var(--cream);scroll-margin-top:16px;scrollbar-width:thin;scrollbar-color:var(--gold) transparent}
+  .panel h2{position:sticky;top:0;background:var(--cream);z-index:1}
+  .more{position:sticky;bottom:0;background:#F6EFE2;padding:9px 20px;font:13px system-ui,sans-serif;color:var(--muted);text-align:center;border-top:1px solid #EFE6D6}
+  .panel:empty{display:none}
+  .panel h2{margin:0;padding:16px 20px;font-size:20px;color:var(--navy);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .panel h2 small{font-weight:normal;font-size:14px;color:var(--muted)}
+  .row{display:flex;align-items:center;gap:14px;padding:13px 20px;border-top:1px solid #EFE6D6}
+  .row:first-of-type{border-top:none}
+  .num{flex:none;width:32px;height:32px;border-radius:50%;background:#F3E9D2;color:#665A49;display:grid;place-items:center;font-weight:bold;font-size:13px}
+  .belief{flex:1;font-size:17px;line-height:1.4}
+  .tag{font:12px system-ui,sans-serif;color:var(--gold);display:block;margin-top:2px}
+  .go{flex:none;color:var(--navy);border:1px solid var(--navy);border-radius:6px;padding:7px 12px;text-decoration:none;font-size:14px}
+  .go:hover{background:var(--navy);color:#fff}
+  .empty{padding:18px 20px;color:var(--muted)}
+  .hint{margin:10px 0 0;font-size:14px;color:var(--muted);text-align:center}
+  @media (max-width:560px){h1{font-size:28px}.row{flex-wrap:wrap}.go{margin-left:46px}.tiles{grid-template-columns:repeat(2,1fr)}}
+  .lbl{display:block;font:600 15px/1.3 system-ui,sans-serif;color:var(--navy);margin:0 0 8px}
+  .or{display:flex;align-items:center;gap:12px;font:600 15px/1.3 system-ui,sans-serif;color:var(--navy);margin:4px 0 16px}
+  .or::after{content:"";flex:1;border-top:2px solid var(--gold);opacity:.5}
+  .t-meta{display:flex;align-items:center;gap:6px;margin-top:6px;font:13px system-ui,sans-serif;color:var(--muted)}
+  .arw{display:inline-block;font-size:15px;line-height:1;color:var(--gold);transition:transform .15s}
+  .tile:hover{background:#EFE3CB;border-color:var(--gold)}
+  .tile.on,.tile.on:hover{background:var(--navy);border-color:var(--navy)}
+  .tile.on .t-meta{color:#D9E2EE}
+  .tile.on .arw{transform:rotate(180deg);color:#fff}
+  .using{padding:8px 20px;font:13px system-ui,sans-serif;color:var(--muted);border-bottom:1px solid #EFE6D6}
+.belief a.blink{color:inherit;text-decoration:none}.belief a.blink:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<main>
+  <p class="lede">Not everything taught in the name of God is the truth of God. Choose a topic below, or search for a word or short sentence, to find beliefs you may have learned in church, at home, or through religious teaching.</p>
+  <div class="search"><label class="lbl" for="q">Type a word or a short sentence</label><input id="q" type="search" name="belief-search-q" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="For example: guilt, hell, unforgiven, sin, miracles, suffering" aria-label="Search false religious beliefs"></div>
+  <section class="panel" id="results" aria-live="polite"></section>
+  <div class="or">Or choose a topic below</div>
+  <p style="font:15px/1.5 Arial,sans-serif;color:var(--muted);margin:0 0 16px">Click once to open and again to close</p>
+  <div id="groups"></div>
+</main>
+<script>
+const GROUPS=[["God & the Spiritual World",[["God",1,["God is punishing me for my many sins.","If there is a God, he would not let this happen.","God is disappointed in me.","God is too distant or too busy to care about me.","God loves some people more than others."]],["Christ",6,["I need a priest, a saint, or Mary to bring my prayers to God.","Jesus saved me, but now it’s up to me to stay acceptable.","Jesus is one good way to God among many.","Jesus doesn’t understand what I’m going through.","Jesus died for other people’s sins, but not ones as bad as mine."]],["Holy Spirit",11,["If I don’t speak in tongues, I don’t have the Holy Spirit.","If the Spirit were in me, I would never struggle.","I have committed the unpardonable sin.","The Spirit’s leading always comes as a strong feeling.","My spiritual gifts don’t matter as much as other people’s."]],["The Supernatural",16,["Every problem I have is a spiritual attack.","Satan has power over me, and I am helpless.","I am under a generational curse.","My loved one has become an angel watching over me.","I should pray to angels for help."]],["Miracles & Blessing",46,["If I had enough faith, God would have healed me.","If I give more, God must give me more.","My words create my reality, so I must “name it and claim it.”","If God doesn’t do a miracle, He doesn’t care.","God’s blessing always shows up as health and wealth."]],["God's Will & Guidance",101,["If I miss God’s perfect will, my life is ruined.","God’s will is always the thing I least want.","I need a clear sign from God before I can decide anything.","Every decision has one right answer, and I must find it.","If something is hard, it can’t be God’s will."]]]],["Sin, Grace & Salvation",[["Sin",26,["I have sinned too much to be forgiven.","If I feel guilty, I must be guilty.","A good Christian always feels guilty.","Being tempted is the same as sinning.","Some sins can’t be forgiven until I confess them to a priest."]],["Forgiveness",36,["God forgives, but He never forgets.","I must pay for my sins through suffering.","Forgiving means I must trust them again.","God has forgiven me, but I can never forgive myself.","Forgiving means pretending it didn’t hurt."]],["Salvation",41,["I am saved by my good works.","I can never really know whether I am saved.","One more sin and God will give up on me.","I must suffer in purgatory before I can be with God.","Being raised in a Christian family makes me a Christian."]],["Grace & Works",111,["I must keep the rules to stay in God’s favor.","The more I do for God, the more He loves me.","Because of grace, my choices don’t matter.","Resting or receiving help means I’m spiritually lazy.","I have to clean up my life before I can come to God."]],["Faith & Belief",56,["Doubt means I am not a real Christian.","If I don’t feel close to God, He has left me.","Faith means never asking questions.","My faith is only as strong as my feelings.","Real faith means never feeling afraid."]],["Prayer",81,["If my prayer isn’t answered, I prayed the wrong way.","God only listens if I use the right words.","Asking God more than once shows a lack of faith.","If I pray enough, I shouldn’t need a doctor or counselor.","God only hears the prayers of good people."]]]],["Church, Scripture & Family",[["Truth",31,["Whatever my church teaches must be biblical.","Truth is whatever feels right to me.","If a teaching makes me feel good, it must be from God.","If a leader quotes Scripture, what he says must be true.","Church tradition carries the same authority as Scripture."]],["The Bible",86,["If I don’t read my Bible every day, God is displeased with me.","Every verse applies directly to me, whatever its context.","I must never question or wrestle with hard passages.","Any verse is a promise I can claim for whatever I want.","Only pastors or scholars can understand the Bible."]],["Church & Authority",91,["Questioning my pastor is questioning God.","Pastors and leaders are closer to God than I am.","Leaving a church means leaving God.","Family problems must be kept secret to protect the church.","Being busy at church means being spiritual."]],["Religious Upbringing & Training",51,["Good Christians don’t have problems.","My worth depends on how much I serve.","My needs and feelings never count.","God is like my father (or mother).","Enjoying life is worldly or sinful."]],["Marriage, Sex & Family",96,["Being submissive means accepting mistreatment or abuse.","Because I am divorced, God can’t use me.","Sex is dirty, even in marriage.","If my children turn away from God, I failed as a parent.","Single people are less complete in God’s eyes."]],["The Soul: Emotions & Body",21,["Strong emotions mean my faith is weak.","Depression and anxiety are always caused by sin.","Counseling or medication shows a lack of faith.","My body and its desires are shameful.","Feeling angry is always a sin."]]]],["Suffering, Death & Eternity",[["Suffering",106,["If I am suffering, God is punishing me.","Real Christians don’t suffer.","I must figure out the reason for everything bad that happens.","Complaining to God is a sin.","My suffering means God has abandoned me."]],["Death & Grief",76,["If I grieve deeply, I don’t trust God.","God took my loved one because He needed them more than I did.","Being afraid of death means my faith is weak.","My loved one who died by suicide can never be with God.","My loved one died because I didn’t pray enough."]],["Heaven",61,["I’m not good enough to go to heaven.","My loved one in heaven is watching me and is disappointed in me.","Heaven will be an endless, boring church service.","In heaven I’ll be grieving for the people who aren’t there.","In heaven every mistake I made will be shown to everyone."]],["Hell",66,["Every sinful thought puts me in danger of hell.","If I die with an unconfessed sin, I will go to hell.","I’m going to hell because of my many sins.","My loved one is in hell because I didn’t share my faith enough.","Fear of hell is the main reason to follow God."]],["Resurrection & the Body",71,["My body doesn’t matter to God; only my soul counts.","After death we become spirits floating forever.","My illness, disability, or scars will last forever.","If my body is cremated, God can’t raise it.","I won’t know my loved ones after the resurrection."]],["The End Times",116,["I should live in constant fear of the end times.","Current events tell me exactly when the end is coming.","I could be left behind because I’m not good enough.","Since the world is ending, planning for the future doesn’t matter.","Natural disasters are God punishing the people they strike."]]]]];
+const ALL=[]; let n=0;
+GROUPS.forEach(([g,ts])=>ts.forEach(([s,start,items])=>items.forEach((b,i)=>ALL.push({n:start+i,topic:s,b}))));
+ALL.sort((a,b)=>a.n-b.n);
+const wrap=document.getElementById('groups'), results=document.getElementById('results'), q=document.getElementById('q');
+const tileEls=[]; const panels=[];
+const SLUGS=["God-Is-Punishing-Me-For-My-Sins","If-There-Is-A-God-He-Would-Not-Let-This-Happen","God-Is-Disappointed-In-Me","God-Is-Too-Distant-To-Care","God-Loves-Some-People-More","I-Need-Someone-Else-To-Bring-My-Prayers-To-God","Now-Its-Up-To-Me-To-Stay-Acceptable","Jesus-Is-One-Way-Among-Many","Jesus-Doesnt-Understand-What-Im-Going-Through","My-Sins-Are-Too-Bad-For-Jesus","No-Tongues-Means-No-Holy-Spirit","If-The-Spirit-Were-In-Me-I-Would-Never-Struggle","I-Have-Committed-The-Unpardonable-Sin","The-Spirits-Leading-Is-Always-A-Strong-Feeling","My-Spiritual-Gifts-Dont-Matter","Every-Problem-Is-A-Spiritual-Attack","Satan-Has-Power-Over-Me","I-Am-Under-A-Generational-Curse","My-Loved-One-Has-Become-An-Angel","I-Should-Pray-To-Angels","Strong-Emotions-Mean-My-Faith-Is-Weak","Depression-And-Anxiety-Are-Always-Caused-By-Sin","Counseling-Or-Medication-Shows-A-Lack-Of-Faith","My-Body-And-Its-Desires-Are-Shameful","Feeling-Angry-Is-Always-A-Sin","I-Have-Sinned-Too-Much-To-Be-Forgiven","If-I-Feel-Guilty-I-Must-Be-Guilty","A-Good-Christian-Always-Feels-Guilty","Being-Tempted-Is-The-Same-As-Sinning","Some-Sins-Need-A-Priest-To-Be-Forgiven","Whatever-My-Church-Teaches-Must-Be-Biblical","Truth-Is-Whatever-Feels-Right-To-Me","If-A-Teaching-Feels-Good-It-Must-Be-From-God","If-A-Leader-Quotes-Scripture-It-Must-Be-True","Church-Tradition-Has-The-Same-Authority-As-Scripture","God-Forgives-But-He-Never-Forgets","I-Must-Pay-For-My-Sins-Through-Suffering","Forgiving-Means-I-Must-Trust-Them-Again","I-Can-Never-Forgive-Myself","Forgiving-Means-Pretending-It-Didnt-Hurt","I-Am-Saved-By-My-Good-Works","I-Can-Never-Know-Whether-I-Am-Saved","One-More-Sin-And-God-Will-Give-Up-On-Me","I-Must-Suffer-In-Purgatory","Being-Raised-In-A-Christian-Family-Makes-Me-A-Christian","If-I-Had-Enough-Faith-God-Would-Have-Healed-Me","If-I-Give-More-God-Must-Give-Me-More","My-Words-Create-My-Reality","If-God-Doesnt-Do-A-Miracle-He-Doesnt-Care","Gods-Blessing-Always-Shows-Up-As-Health-And-Wealth","Good-Christians-Dont-Have-Problems","My-Worth-Depends-On-How-Much-I-Serve","My-Needs-And-Feelings-Never-Count","God-Is-Like-My-Father-Or-Mother","Enjoying-Life-Is-Worldly-Or-Sinful","Doubt-Means-I-Am-Not-A-Real-Christian","If-I-Dont-Feel-Close-To-God-He-Has-Left-Me","Faith-Means-Never-Asking-Questions","My-Faith-Is-Only-As-Strong-As-My-Feelings","Real-Faith-Means-Never-Feeling-Afraid","Im-Not-Good-Enough-To-Go-To-Heaven","My-Loved-One-In-Heaven-Is-Disappointed-In-Me","Heaven-Will-Be-An-Endless-Boring-Church-Service","In-Heaven-Ill-Be-Grieving-For-Those-Not-There","In-Heaven-Every-Mistake-Will-Be-Shown","Every-Sinful-Thought-Puts-Me-In-Danger-Of-Hell","If-I-Die-With-Unconfessed-Sin-I-Will-Go-To-Hell","Im-Going-To-Hell-Because-Of-My-Many-Sins","My-Loved-One-Is-In-Hell-Because-Of-Me","Fear-Of-Hell-Is-The-Main-Reason-To-Follow-God","My-Body-Doesnt-Matter-To-God","After-Death-We-Become-Spirits-Floating-Forever","My-Illness-Disability-Or-Scars-Will-Last-Forever","If-My-Body-Is-Cremated-God-Cant-Raise-It","I-Wont-Know-My-Loved-Ones-After-The-Resurrection","If-I-Grieve-Deeply-I-Dont-Trust-God","God-Took-My-Loved-One-Because-He-Needed-Them","Being-Afraid-Of-Death-Means-My-Faith-Is-Weak","My-Loved-One-Who-Died-By-Suicide-Can-Never-Be-With-God","My-Loved-One-Died-Because-I-Didnt-Pray-Enough","If-My-Prayer-Isnt-Answered-I-Prayed-The-Wrong-Way","God-Only-Listens-If-I-Use-The-Right-Words","Asking-God-More-Than-Once-Shows-A-Lack-Of-Faith","If-I-Pray-Enough-I-Shouldnt-Need-A-Doctor","God-Only-Hears-The-Prayers-Of-Good-People","If-I-Dont-Read-My-Bible-Every-Day-God-Is-Displeased","Every-Verse-Applies-Directly-To-Me","I-Must-Never-Question-Hard-Passages","Any-Verse-Is-A-Promise-I-Can-Claim","Only-Pastors-Or-Scholars-Can-Understand-The-Bible","Questioning-My-Pastor-Is-Questioning-God","Pastors-And-Leaders-Are-Closer-To-God","Leaving-A-Church-Means-Leaving-God","Family-Problems-Must-Be-Kept-Secret","Being-Busy-At-Church-Means-Being-Spiritual","Being-Submissive-Means-Accepting-Abuse","Because-I-Am-Divorced-God-Cant-Use-Me","Sex-Is-Dirty-Even-In-Marriage","If-My-Children-Turn-Away-I-Failed-As-A-Parent","Single-People-Are-Less-Complete-In-Gods-Eyes","If-I-Miss-Gods-Perfect-Will-My-Life-Is-Ruined","Gods-Will-Is-Always-The-Thing-I-Least-Want","I-Need-A-Clear-Sign-Before-I-Can-Decide","Every-Decision-Has-One-Right-Answer","If-Something-Is-Hard-It-Cant-Be-Gods-Will","If-I-Am-Suffering-God-Is-Punishing-Me","Real-Christians-Dont-Suffer","I-Must-Figure-Out-The-Reason-For-Everything-Bad","Complaining-To-God-Is-A-Sin","My-Suffering-Means-God-Has-Abandoned-Me","I-Must-Keep-The-Rules-To-Stay-In-Gods-Favor","The-More-I-Do-For-God-The-More-He-Loves-Me","Because-Of-Grace-My-Choices-Dont-Matter","Resting-Or-Receiving-Help-Means-Im-Lazy","I-Have-To-Clean-Up-My-Life-Before-I-Can-Come-To-God","I-Should-Live-In-Constant-Fear-Of-The-End-Times","Current-Events-Tell-Me-When-The-End-Is-Coming","I-Could-Be-Left-Behind-Because-Im-Not-Good-Enough","Since-The-World-Is-Ending-Planning-Doesnt-Matter","Natural-Disasters-Are-God-Punishing-The-People-They-Strike"];
+function bLink(n){return 'https://doctorishome.github.io/belief-therapy-tool/belief-cards/Belief-'+String(n).padStart(3,'0')+'-'+SLUGS[n-1]+'.html';}
+function rows(list,showTopic){
+  if(!list.length) return '<div class="empty">No beliefs match that word. Try another word, or choose a topic below.</div>';
+  return list.map(x=>'<div class="row"><div class="num">'+x.n+'</div><div class="belief"><a class="blink" href="'+bLink(x.n)+'" target="_blank" rel="noopener">“'+x.b+'”</a>'+(showTopic?'<span class="tag">'+x.topic+'</span>':'')+'</div></div>').join('');
+}
+GROUPS.forEach(([g,ts],gi)=>{
+  const sec=document.createElement('div'); sec.className='group';
+  sec.innerHTML='<h3>'+g+'</h3>';
+  const grid=document.createElement('div'); grid.className='tiles';
+  const panel=document.createElement('section'); panel.className='panel';
+  ts.forEach(([s,start,items])=>{
+    const t=document.createElement('button'); t.type='button'; t.className='tile';
+    t.innerHTML='<span class="t-name">'+s+'</span><span class="t-meta">'+items.length+' beliefs <span class="arw">&#9662;</span></span>';
+    t.onclick=()=>{ q.value=''; results.innerHTML=''; open(s,t,panel); };
+    grid.appendChild(t); tileEls.push(t);
+  });
+  sec.appendChild(grid); sec.appendChild(panel); wrap.appendChild(sec); panels.push(panel);
+});
+function open(s,t,panel){
+  const was=t.classList.contains('on');
+  tileEls.forEach(x=>x.classList.remove('on')); panels.forEach(p=>p.innerHTML='');
+  if(was) return;
+  t.classList.add('on');
+  const list=ALL.filter(x=>x.topic===s);
+  panel.innerHTML='<h2>'+s+'<small>'+list.length+' beliefs</small></h2>'+rows(list,false);
+  
+}
+q.addEventListener('input',()=>{
+  const v=q.value.trim().toLowerCase();
+  tileEls.forEach(x=>x.classList.remove('on')); panels.forEach(p=>p.innerHTML='');
+  if(!v){results.innerHTML='';return;}
+  // Search: works with one word or a whole sentence. Small words are ignored,
+  // and each remaining word is matched by its root (sins -> sin, suffering -> suffer).
+  const STOP=new Set('i im ive id ill me my mine myself we our us you your he him his she her it its they them their a an the and or but if then so of to in on at for from by with without about into onto over under up down out is am are was were be been being do does did doing have has had not no nor yes this that these those there here what when where who whom why how will would can could should may might must shall going go goes gone get gets got just very much many more most because as than too also all any some every each one ones really still even ever never always only own same such'.split(' '));
+  const stem=w=>{ w=w.replace(/^un(?=forg|pardon|lov|worth)/,''); for(const s of ['ness','ings','ing','edly','ed','es','s','ful','able','en']){ if(w.length-s.length>=3 && w.endsWith(s)) return w.slice(0,-s.length); } return w; };
+  const norm=s=>s.toLowerCase().replace(/[’‘]/g,"'");
+  const words=[...new Set(norm(v).split(/[^a-z']+/).map(t=>t.replace(/'/g,'')).filter(t=>t.length>=3 && !STOP.has(t)).map(stem))];
+  const phrase=norm(v).replace(/[“”"]/g,'').trim();
+  const scored=ALL.map(x=>{ const text=norm(x.b+' '+x.topic); let s=0; words.forEach(w=>{ if(new RegExp('(^|[^a-z])'+w).test(text)) s++; }); if(phrase.length>3 && norm(x.b).includes(phrase)) s+=100; return {x,s}; }).filter(o=>o.s>0);
+  scored.sort((p,r)=>r.s-p.s || p.x.n-r.x.n);
+  const list=scored.map(o=>o.x);
+  const using=words.length>1?'<div class="using">Matching any of: '+words.join(', ')+' — best matches first</div>':'';
+  results.innerHTML='<h2>Results for “'+q.value.trim()+'”<small>'+list.length+' found</small></h2>'+using+rows(list,true)+(list.length>6?'<div class="more">Scroll inside this box to see all '+list.length+' results</div>':'');
+});
+// All topics start closed each time the page is opened.
+function closeAll(){ tileEls.forEach(x=>x.classList.remove('on')); panels.forEach(p=>p.innerHTML=''); }
+window.addEventListener('pageshow', closeAll);
+window.addEventListener('pagehide', function(){ q.value=''; results.innerHTML=''; closeAll(); });
+</script>
+</body>
+</html>
