@@ -20,6 +20,12 @@
    ["Depending on anyone only leads to trouble.","Psych-013-Depending-on-Anyone-Only-Leads-to-Trouble.html"],
    ["My feelings aren’t worth sharing. Talking about them changes nothing.","Psych-014-My-Feelings-Arent-Worth-Sharing.html"],
    ["Relationships take more than they give, so they aren’t worth the effort.","Psych-015-Relationships-Take-More-Than-They-Give.html"]]},
+  {"name":"Social Isolation","beliefs":[
+   ["What other people think of me doesn’t matter.","Psych-016-What-Other-People-Think-of-Me-Doesnt-Matter.html"],
+   ["I’ve given up on letting people in.","Psych-017-Ive-Given-Up-on-Letting-People-In.html"],
+   ["Close relationships aren’t important to me.","Psych-018-Close-Relationships-Arent-Important-to-Me.html"],
+   ["I shouldn’t confide in anyone.","Psych-019-I-Shouldnt-Confide-in-Anyone.html"],
+   ["Nothing is much fun anyway, so I might as well be on my own.","Psych-020-Nothing-Is-Much-Fun-Anyway-So-I-Might-as-Well-Be-on-My-Own.html"]]},
   {"name":"Unusual Thinking and Social Unease","beliefs":[["I am fundamentally unlike other people."],["Ordinary coincidences carry personal messages."],["My thoughts can cause unrelated events."],["Unusual sensations confirm my unusual explanations."],["Other people’s intentions are usually threatening."]]},
   {"name":"Rule Breaking","beliefs":[["Exploiting others is necessary for survival."],["My wants outweigh other people’s rights."],["Deception is acceptable when it benefits me."],["Dominating others prevents being dominated."],["Getting what I deserve justifies harming others."]]},
   {"name":"Intense Emotions and Fear of Abandonment","beliefs":[["My real self is unacceptable."],["Important people will eventually leave me."],["I cannot manage life without someone."],["Intense feelings will overwhelm me completely."],["Relationship conflict means rejection is coming."]]},
