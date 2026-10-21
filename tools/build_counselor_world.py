@@ -42,7 +42,7 @@ def nav(active):
     # These pages are shown inside a Wix embed box, which does not allow links to change the whole Wix page.
     # So counselor pages open inside the same box, and the public site opens in a new tab.
     ls=''.join('<a class="l%s" href="%s.html">%s</a>'%(' on' if k==active else '',k,t) for k,t,slug in PAGES)
-    return '<div class="nav"><div class="brand">Belief Counseling<small>For Counselors</small></div>%s<a class="pub" target="_blank" rel="noopener" href="%s/lie-finder">Lie Finder ↗</a><a class="pub" target="_blank" rel="noopener" href="%s">Public Site ↗</a></div>'%(ls,SITE,SITE)
+    return '<div class="nav"><div class="brand">Belief Counseling<small>For Counselors</small></div>%s<a class="pub" target="_blank" rel="noopener" href="%s/false-belief-finder">False Belief Finder ↗</a><a class="pub" target="_blank" rel="noopener" href="%s">Public Site ↗</a></div>'%(ls,SITE,SITE)
 FOOT='<div class="foot">Educational training for counselors. Never enter real client names or details. · Scripture quotations: Berean Standard Bible (BSB), public domain. · © Brian Campbell, Ph.D.</div>'
 def page(key,title,hero_sub,body,eyebrow='Belief Counseling for Counselors'):
     h='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>%s</title><style>%s</style></head><body>'%(html.escape(title),CSS)

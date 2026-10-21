@@ -1,6 +1,6 @@
-// Lie Finder - page code (Wix Studio site "Pearls Working 5", page "Lie Finder")
+// False Belief Finder - page code (Wix Studio site "Pearls Working 5", page "False Belief Finder")
 // Paste this into the page's code panel. It assumes the embedded page element is named #html1.
-// It passes the counselor's notes from the embedded Lie Finder page to the backend and the
+// It passes the counselor's notes from the embedded False Belief Finder page to the backend and the
 // results back again.
 
 import { findLies } from 'backend/lieFinder.web';
@@ -19,7 +19,7 @@ $w.onReady(function () {
         if (answer && answer.result) reply({ type: 'result', result: answer.result });
         else reply({ type: 'error', message: (answer && answer.error) || 'The search did not work. Please try again.' });
       } catch (e) {
-        reply({ type: 'error', message: 'Please log in to the website to use the Lie Finder.' });
+        reply({ type: 'error', message: 'Please log in to the website to use the False Belief Finder.' });
       }
     }
   });
