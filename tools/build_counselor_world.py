@@ -39,8 +39,10 @@ ul.clean{padding-left:20px}ul.clean li{margin:5px 0}
 @media(max-width:560px){.nav{padding:8px 12px}.nav a.l{font-size:.85rem}.step{flex-direction:column}}
 """
 def nav(active):
-    ls=''.join('<a class="l%s" target="_top" href="%s/%s">%s</a>'%(' on' if k==active else '',SITE,slug,t) for k,t,slug in PAGES)
-    return '<div class="nav"><div class="brand">Belief Counseling<small>For Counselors</small></div>%s<a class="pub" target="_top" href="%s">Public Site</a></div>'%(ls,SITE)
+    # These pages are shown inside a Wix embed box, which does not allow links to change the whole Wix page.
+    # So counselor pages open inside the same box, and the public site opens in a new tab.
+    ls=''.join('<a class="l%s" href="%s.html">%s</a>'%(' on' if k==active else '',k,t) for k,t,slug in PAGES)
+    return '<div class="nav"><div class="brand">Belief Counseling<small>For Counselors</small></div>%s<a class="pub" target="_blank" rel="noopener" href="%s">Public Site ↗</a></div>'%(ls,SITE)
 FOOT='<div class="foot">Educational training for counselors. Never enter real client names or details. · Scripture quotations: Berean Standard Bible (BSB), public domain. · © Brian Campbell, Ph.D.</div>'
 def page(key,title,hero_sub,body,eyebrow='Belief Counseling for Counselors'):
     h='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>%s</title><style>%s</style></head><body>'%(html.escape(title),CSS)
@@ -75,7 +77,7 @@ steps=[('Assess','Gather the whole story: the presenting problem, family and par
 ('Reinforce','Review progress, belief strength, remaining triggers, and spiritual growth.','Gains last when they are reviewed and protected.')]
 body='<h2>The eight steps</h2><p>Each step has a purpose. In training, you will learn what to do and why it works.</p>'+''.join('<div class="step"><div class="num">%d</div><div><strong>%s</strong><p>%s</p><p><em>Why: %s</em></p></div></div>'%(i+1,a,b,c) for i,(a,b,c) in enumerate(steps))
 body+='<h2>Key Scriptures</h2><div class="scrip">“Do not be conformed to this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what is the good, pleasing, and perfect will of God.” <b>Romans 12:2</b></div><div class="scrip">“We tear down arguments and every presumption set up against the knowledge of God; and we take captive every thought to make it obedient to Christ.” <b>2 Corinthians 10:5</b></div><div class="scrip">“Then you will know the truth, and the truth will set you free.” <b>John 8:32</b></div><div class="scrip">“I have hidden Your word in my heart that I might not sin against You.” <b>Psalm 119:11</b></div><div class="scrip">“All Scripture is God-breathed and is useful for instruction, for conviction, for correction, and for training in righteousness.” <b>2 Timothy 3:16</b></div>'
-body+='<div class="cta"><a class="btn" target="_top" href="%s/blank-15">Practice the process on a case</a></div>'%SITE
+body+='<div class="cta"><a class="btn" href="cases.html">Practice the process on a case</a></div>'
 page('process','The Process','The eight steps of Belief Therapy, and the reason behind each one.',body)
 # 3 Tips
 page('tips','Professional Tips','Practical teaching from 35 years of clinical experience, delivered to you and kept here for reference.',
