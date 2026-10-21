@@ -1,0 +1,119 @@
+{
+ "belief": "The world is unsafe.",
+ "file": "The-World-Is-Unsafe",
+ "num": 15,
+ "group": "The World & the Future",
+ "origins": "This belief often comes from real danger: abuse, violence, a frightening accident, a crime, a natural disaster, or growing up in a chaotic home. Constant news of tragedy can strengthen it. After danger, the body stays on alert, scanning for threats. That alertness helped us survive, but when it never shuts off, it can keep us anxious, isolated, and unable to enjoy life.",
+ "teaches": "Scripture is honest that the world has dangers; Jesus said that in this world we will have trouble. But He added that He has overcome the world. The psalmist found shelter in the shadow of the Almighty and could lie down and sleep in peace because the Lord made him dwell in safety. The name of the Lord is a strong tower. God does not promise that nothing bad will ever happen, but He promises His presence, and our ultimate safety rests in Him.",
+ "key": "Psalm 91:1–2",
+ "also": [
+  "John 16:33",
+  "Psalm 4:8",
+  "Proverbs 18:10",
+  "Isaiah 26:3"
+ ],
+ "self_statements": [
+  "Something bad could happen at any moment.",
+  "I have to stay on guard.",
+  "It’s not safe to go out.",
+  "People are dangerous.",
+  "If I relax, I’ll get hurt.",
+  "Nowhere is safe."
+ ],
+ "errors": [
+  [
+   "Overgeneralization",
+   "Deciding that because danger happened once, it is everywhere."
+  ],
+  [
+   "Catastrophizing",
+   "Treating unlikely dangers as certain."
+  ],
+  [
+   "Mental filter",
+   "Focusing on threats and overlooking signs of safety."
+  ],
+  [
+   "Emotional reasoning",
+   "Believing I am in danger because I feel afraid."
+  ]
+ ],
+ "questions": [
+  "What happened that taught me the world is unsafe?",
+  "Is that danger present now, or am I reacting to the past?",
+  "What reasonable steps keep me safe, and which ones are excessive?",
+  "Where have I been safe recently?",
+  "What does God promise about His protection and presence?",
+  "What could I enjoy if I felt a little safer?"
+ ],
+ "truth": "There are real dangers in the world, and I have been hurt before. But I am not in danger every moment. I can take sensible precautions and then rest, because God is my refuge. He has overcome the world, and I can find peace in Him.",
+ "hw_truths": [
+  "God is my refuge and fortress.",
+  "Jesus has overcome the world.",
+  "I can lie down in peace.",
+  "Feeling afraid is not the same as being in danger.",
+  "I can take wise steps and then rest.",
+  "The name of the Lord is a strong tower."
+ ],
+ "log": [
+  "Where I was safe today",
+  "Each evening, write the places and moments you were safe today."
+ ],
+ "actions": [
+  [
+   "Separate past from present.",
+   "Write what happened in the past that frightened you. Then write what is different about your situation now."
+  ],
+  [
+   "Take one brave step.",
+   "Choose one place or activity you avoid out of fear that is actually safe, and do it this week with support if needed."
+  ],
+  [
+   "Limit the news.",
+   "Choose a set time for news once a day instead of checking all day."
+  ],
+  [
+   "Get help for trauma.",
+   "If past danger still triggers strong fear, flashbacks, or nightmares, talk with a counselor trained to help."
+  ]
+ ],
+ "tracker": "A moment I felt safe",
+ "prayer": "Lord, I feel unsafe so much of the time. Thank You that You are my refuge and that Jesus has overcome the world. Calm my body and mind, give me wisdom to stay safe, and help me rest in Your shelter. Amen.",
+ "songs": [
+  "fear",
+  "battle",
+  "power",
+  "eyes"
+ ],
+ "pearls": [
+  "refuge-safety",
+  "protection",
+  "fear",
+  "peace",
+  "trust"
+ ],
+ "meta": "Christian belief counseling for “The world is unsafe.” with BSB scriptures, questions, songs, and practical homework.",
+ "godly_counsel": [
+  5,
+  27
+ ],
+ "reading": "refuge-safety",
+ "listening": "Anxiety",
+ "hw_questions": [
+  "What taught me the world is unsafe?",
+  "Is that danger present now?",
+  "Which precautions are sensible and which are excessive?",
+  "Where have I been safe recently?",
+  "What does God promise about His protection?",
+  "What could I enjoy if I felt safer?"
+ ],
+ "name_example": [
+  "Psalm 91:1–2",
+  "<strong>Karen</strong> can write: “The Lord is my refuge and my fortress. I can rest in His shelter today.”"
+ ],
+ "hw_scriptures": [
+  "Psalm 91:1–2",
+  "John 16:33",
+  "Psalm 4:8"
+ ]
+}
