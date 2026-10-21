@@ -71,8 +71,13 @@ export const findLies = webMethod(Permissions.Admin, async (input) => {
     }
 
     const { instructions, beliefs } = await loadFromGitHub();
-    const raw = await elevate(secrets.getSecretValue)('ANTHROPIC_API_KEY');
-    const apiKey = typeof raw === 'string' ? raw : raw && raw.value;
+    let apiKey = '';
+    try {
+      const raw = await elevate(secrets.getSecretValue)('ANTHROPIC_API_KEY');
+      apiKey = typeof raw === 'string' ? raw : raw && raw.value;
+    } catch (e) {
+      apiKey = '';
+    }
     if (!apiKey) return { error: 'The search is not set up yet (the AI key is missing).' };
 
     const system = instructions +
