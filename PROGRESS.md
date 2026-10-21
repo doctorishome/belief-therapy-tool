@@ -178,5 +178,5 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - Same format as the other cards. Content in `tools/core/NNN.json`. Build: `python3 tools/build_core_cards.py core <group-folder> "<Group Title>"`, then `python3 tools/print_core_cards.py <group-folder> "<Group Title>"`. Cards go to `belief-cards/core/<group-folder>/` as Core-NNN-....
 - Songs: 3 contemporary + 1 classic (Brian's request).
 - No link to the separate "I Am Worthless" Counseling Companion; core cards stand on their own (Brian, Oct 20, 2026).
-- Website list: `belief-lists/core.html` (same look as the Wix box). To make a belief clickable, fill in its `link:`. The Wix page still shows its own old box until it is switched once to show this GitHub list.
+- Website list: `belief-lists/core.html` (same look as the Wix box). To make a belief clickable, fill in its `link:`. The Wix page "Core False Beliefs" now shows this GitHub list (embed #html3 set to its web address, Oct 20, 2026), so no Wix edits are needed for new cards. The old table embed (#html2) is still on the page in a hidden section.
 - Done: Card 1 "Something is wrong with me." (my-worth). Waiting for Brian's review before the rest.
