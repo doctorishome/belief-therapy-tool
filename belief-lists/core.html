@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Core False Beliefs</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   COLORS — matched to the Spiritual/Religious False Beliefs page
+   ============================================================ */
+:root{
+  --navy:#1e3556;
+  --ink:#2b2b2b;
+  --gold:#a8864f;
+  --gold-line:#d9c7a3;
+  --card:#f6eee2;
+  --card-border:#eadcc4;
+  --card-hover:#f0e4d1;
+  --input:#fdfaf4;
+  --muted:#5b6472;
+  --note-bg:#fbf6ec;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink)}
+body{font-family:"Libre Baskerville",Georgia,serif;padding:8px 16px 40px}
+.wrap{max-width:1150px;margin:0 auto}
+h1{font-family:Inter,Arial,sans-serif;font-weight:700;font-size:40px;letter-spacing:-.5px;color:#111;margin:10px 0 36px}
+.intro{font-size:19px;line-height:1.75;max-width:1000px;margin:0 0 22px}
+.note{font-family:Inter,Arial,sans-serif;font-size:15px;line-height:1.6;color:var(--muted);background:var(--note-bg);border-left:3px solid var(--gold);padding:12px 16px;border-radius:4px;max-width:1000px;margin:0 0 34px}
+.label{font-family:Inter,Arial,sans-serif;font-weight:500;font-size:19px;color:var(--navy);margin:0 0 12px}
+.search{width:100%;max-width:795px;font-family:inherit;font-size:18px;padding:17px 20px;border:1px solid var(--card-border);border-radius:8px;background:var(--input);color:var(--ink);outline:none}
+.search:focus{border-color:var(--gold)}
+.search::placeholder{color:#8a8a8a}
+.results{margin:18px 0 0;max-width:1000px}
+.results .count{font-family:Inter,Arial,sans-serif;font-size:15px;color:var(--muted);margin-bottom:10px}
+.result{background:var(--card);border:1px solid var(--card-border);border-radius:8px;padding:12px 16px;margin-bottom:8px;font-size:17px;line-height:1.5}
+.result .tag{display:block;font-family:Inter,Arial,sans-serif;font-size:13px;color:var(--gold);margin-top:4px}
+.choose{display:flex;align-items:center;gap:16px;margin:46px 0 22px}
+.choose span{font-family:Inter,Arial,sans-serif;font-weight:500;font-size:19px;color:var(--navy);white-space:nowrap}
+.choose i,.group-head i{flex:1;height:1px;background:var(--gold-line);display:block}
+.choose i{height:2px}
+.group-head{display:flex;align-items:center;gap:16px;margin:28px 0 16px}
+.group-head span{font-size:18px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.panel a{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+.panel a:hover{color:var(--gold)}
+.result a{color:var(--navy)}
+.cardtag{font-family:Inter,Arial,sans-serif;font-size:12px;color:var(--gold);white-space:nowrap;margin-left:6px}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:20px 20px 18px;cursor:pointer;text-align:left;font-family:inherit;color:inherit;min-height:120px;display:flex;flex-direction:column;justify-content:center;transition:background .15s}
+.card:hover{background:var(--card-hover)}
+.card[aria-expanded="true"]{border-color:var(--gold);background:var(--card-hover)}
+.card h3{font-size:20px;line-height:1.3;color:var(--navy);margin:0 0 10px;font-weight:700}
+.card small{font-family:Inter,Arial,sans-serif;font-size:16px;color:var(--muted)}
+.card small b{font-size:11px;color:var(--gold);margin-left:8px;display:inline-block;transition:transform .15s}
+.card[aria-expanded="true"] small b{transform:rotate(180deg)}
+.panel{grid-column:1/-1;background:#fff;border:1px solid var(--gold-line);border-radius:10px;padding:20px 26px;display:none}
+.panel.open{display:block}
+.panel h4{font-size:19px;color:var(--navy);margin:0 0 12px}
+.panel ul{margin:0;padding-left:22px}
+.panel li{font-size:18px;line-height:1.55;margin:6px 0}
+.crisis{font-family:Inter,Arial,sans-serif;font-size:15px;line-height:1.6;color:var(--ink);background:var(--note-bg);border:1px solid var(--gold-line);border-radius:8px;padding:14px 18px;margin:44px 0 0;max-width:1000px}
+.crisis strong{color:var(--navy)}
+@media (max-width:1050px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){
+  body{padding:4px 16px 30px}
+  h1{font-size:30px;margin-bottom:24px}
+  .intro{font-size:17px}
+  .card{padding:16px;min-height:100px}
+  .card h3{font-size:18px}
+  .group-head span{font-size:15px;letter-spacing:1.2px;white-space:normal}
+  .choose span{font-size:17px}
+  .panel{padding:16px 18px}
+  .panel li{font-size:17px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<p class="intro">Core false beliefs are the deep lies underneath much of our pain: lies about ourselves, other people, and the world. Choose a topic below, or search for a word or short sentence, to find the beliefs that may be driving what you feel.</p>
+
+<p class="label">Type a word or a short sentence</p>
+<input class="search" id="search" type="search" placeholder="For example: worthless, failure, perfect, trust, control, fault" autocomplete="off">
+<div class="results" id="results"></div>
+
+<div class="choose"><span>Or choose a topic below</span><i></i></div>
+<div id="topics"></div>
+
+<p class="crisis"><strong>If you are thinking about ending your life,</strong> please call or text <strong>988</strong> (the Suicide &amp; Crisis Lifeline) right now, or call 911. You do not have to carry this alone.</p>
+
+</div>
+
+<script>
+/* ============================================================
+   This page lives on GitHub (belief-lists/core.html) and is shown
+   on the Wix page "Core False Beliefs".
+   TO MAKE A BELIEF CLICKABLE (once its card is ready):
+   put the card's file path after  link:  between the quote marks,
+   for example  link: "my-worth/Core-001-Something-Is-Wrong-With-Me.html"
+   Beliefs with an empty link ("") show as plain text.
+   ============================================================ */
+var CARD_BASE = "https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/";
+var GROUPS = [
+  { group: "", topics: [
+    { name: "My Worth", beliefs: [
+      { text: "Something is wrong with me.", link: "my-worth/Core-001-Something-Is-Wrong-With-Me.html" },
+      { text: "I am worthless.", link: "" },
+      { text: "I am not lovable.", link: "" },
+      { text: "I am a failure.", link: "" }
+    ]},
+    { name: "My Strength", beliefs: [
+      { text: "I am powerless.", link: "" },
+      { text: "I cannot handle this.", link: "" },
+      { text: "I cannot make it on my own.", link: "" }
+    ]},
+    { name: "Other People", beliefs: [
+      { text: "I don’t belong.", link: "" },
+      { text: "People will leave me.", link: "" },
+      { text: "No one will care for me when I need them.", link: "" },
+      { text: "Nobody loves me.", link: "" },
+      { text: "People cannot be trusted.", link: "" },
+      { text: "My needs don’t matter.", link: "" }
+    ]},
+    { name: "The World & the Future", beliefs: [
+      { text: "Things will always go badly.", link: "" },
+      { text: "The world is unsafe.", link: "" },
+      { text: "Something terrible is going to happen.", link: "" }
+    ]},
+    { name: "Rules I Live By", beliefs: [
+      { text: "I must be perfect.", link: "" },
+      { text: "I must have everyone’s approval.", link: "" },
+      { text: "I must be in control.", link: "" },
+      { text: "I must not make mistakes.", link: "" }
+    ]},
+    { name: "After Painful Experiences", beliefs: [
+      { text: "It was my fault.", link: "" },
+      { text: "What happened makes me dirty or bad.", link: "" }
+    ]}
+  ]}
+];
+/* ====== Nothing below this line needs to change ====== */
+
+(function(){
+  var topicsEl = document.getElementById("topics");
+  var resultsEl = document.getElementById("results");
+  var searchEl = document.getElementById("search");
+  var openCard = null;
+
+  function item(b){
+    return b.link ? '<a href="' + esc(CARD_BASE + b.link) + '" target="_blank" rel="noopener">' + esc(b.text) + '</a><span class="cardtag">Open belief card</span>' : esc(b.text);
+  }
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+  GROUPS.forEach(function(g, gi){
+    if (g.group) {
+      var head = document.createElement("div");
+      head.className = "group-head";
+      head.innerHTML = "<span>" + esc(g.group) + "</span><i></i>";
+      topicsEl.appendChild(head);
+    }
+
+    var grid = document.createElement("div");
+    grid.className = "grid";
+    topicsEl.appendChild(grid);
+
+    var panel = document.createElement("div");
+    panel.className = "panel";
+
+    g.topics.forEach(function(t, ti){
+      var card = document.createElement("button");
+      card.type = "button";
+      card.className = "card";
+      card.setAttribute("aria-expanded","false");
+      card.innerHTML = "<h3>" + esc(t.name) + "</h3><small>" + t.beliefs.length + " beliefs<b>&#9660;</b></small>";
+      card.addEventListener("click", function(){
+        var wasOpen = (openCard === card);
+        closeAll();
+        if (wasOpen) return;
+        card.setAttribute("aria-expanded","true");
+        panel.innerHTML = "<h4>" + esc(t.name) + "</h4><ul>" +
+          t.beliefs.map(function(b){return "<li>" + item(b) + "</li>";}).join("") + "</ul>";
+        var cards = grid.querySelectorAll(".card"), rowEnd = card;
+        for (var i = 0; i < cards.length; i++){ if (cards[i].offsetTop === card.offsetTop) rowEnd = cards[i]; }
+        rowEnd.parentNode.insertBefore(panel, rowEnd.nextSibling);
+        panel.classList.add("open");
+        openCard = card;
+      });
+      grid.appendChild(card);
+    });
+    grid.appendChild(panel);
+  });
+
+  function closeAll(){
+    document.querySelectorAll(".card").forEach(function(c){c.setAttribute("aria-expanded","false");});
+    document.querySelectorAll(".panel").forEach(function(p){p.classList.remove("open");});
+    openCard = null;
+  }
+
+  function norm(s){return s.toLowerCase().replace(/[’']/g,"").replace(/[^a-z0-9 ]+/g," ");}
+
+  searchEl.addEventListener("input", function(){
+    var q = norm(searchEl.value).trim();
+    if (!q){ resultsEl.innerHTML = ""; return; }
+    var words = q.split(/\s+/);
+    var hits = [];
+    GROUPS.forEach(function(g){
+      g.topics.forEach(function(t){
+        t.beliefs.forEach(function(b){
+          var hay = norm(b.text + " " + t.name + " " + g.group);
+          if (words.every(function(w){return hay.indexOf(w) !== -1;})) hits.push({b:b, t:t.name});
+        });
+      });
+    });
+    if (!hits.length){
+      resultsEl.innerHTML = '<div class="count">No beliefs matched. Try a different word, or choose a topic below.</div>';
+      return;
+    }
+    resultsEl.innerHTML = '<div class="count">' + hits.length + (hits.length === 1 ? " belief" : " beliefs") + " found</div>" +
+      hits.map(function(h){return '<div class="result">' + item(h.b) + '<span class="tag">' + esc(h.t) + "</span></div>";}).join("");
+  });
+})();
+</script>
+</body>
+</html>

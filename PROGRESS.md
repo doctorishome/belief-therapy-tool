@@ -172,3 +172,11 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 
 ## Counselors' Room addresses (Wix test site)
 Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-15, Course blank-16, Library blank-17 (under /website-6/). masterPage.js lock uses blank-12..17; REQUIRE_PAID still false until payments are set up.
+
+## Core False Beliefs cards (started Oct 20, 2026)
+- 22 core beliefs, in six groups (My Worth, My Strength, Other People, The World & the Future, Rules I Live By, After Painful Experiences). Wording comes from the Wix page "Core False Beliefs" (/website-6/core-beliefs).
+- Same format as the other cards. Content in `tools/core/NNN.json`. Build: `python3 tools/build_core_cards.py core <group-folder> "<Group Title>"`, then `python3 tools/print_core_cards.py <group-folder> "<Group Title>"`. Cards go to `belief-cards/core/<group-folder>/` as Core-NNN-....
+- Songs: 3 contemporary + 1 classic (Brian's request).
+- No link to the separate "I Am Worthless" Counseling Companion; core cards stand on their own (Brian, Oct 20, 2026).
+- Website list: `belief-lists/core.html` (same look as the Wix box). To make a belief clickable, fill in its `link:`. The Wix page still shows its own old box until it is switched once to show this GitHub list.
+- Done: Card 1 "Something is wrong with me." (my-worth). Waiting for Brian's review before the rest.
