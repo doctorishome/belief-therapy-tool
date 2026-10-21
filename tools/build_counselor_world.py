@@ -4,8 +4,8 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'counselors'; OUT.mkdir(exist_ok=True)
 SITE='https://doctorishome.wixstudio.com/website-6'
-PAGES=[('welcome','Welcome','counselors-room'),('process','The Process','counselors-room-process'),('tips','Professional Tips','counselors-room-tips'),
-       ('theory','Theory Topics','counselors-room-theory'),('cases','Case Studies','counselors-room-cases'),('course','The Course','counselors-room-course'),('library','Clinical Library','counselors-room-library')]
+PAGES=[('welcome','Welcome','blank-11'),('process','The Process','blank-12'),('tips','Professional Tips','blank-13'),
+       ('theory','Theory Topics','blank-14'),('cases','Case Studies','blank-15'),('course','The Course','blank-16'),('library','Clinical Library','blank-17')]
 CSS="""
 :root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -75,7 +75,7 @@ steps=[('Assess','Gather the whole story: the presenting problem, family and par
 ('Reinforce','Review progress, belief strength, remaining triggers, and spiritual growth.','Gains last when they are reviewed and protected.')]
 body='<h2>The eight steps</h2><p>Each step has a purpose. In training, you will learn what to do and why it works.</p>'+''.join('<div class="step"><div class="num">%d</div><div><strong>%s</strong><p>%s</p><p><em>Why: %s</em></p></div></div>'%(i+1,a,b,c) for i,(a,b,c) in enumerate(steps))
 body+='<h2>Key Scriptures</h2><div class="scrip">“Do not be conformed to this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what is the good, pleasing, and perfect will of God.” <b>Romans 12:2</b></div><div class="scrip">“We tear down arguments and every presumption set up against the knowledge of God; and we take captive every thought to make it obedient to Christ.” <b>2 Corinthians 10:5</b></div><div class="scrip">“Then you will know the truth, and the truth will set you free.” <b>John 8:32</b></div><div class="scrip">“I have hidden Your word in my heart that I might not sin against You.” <b>Psalm 119:11</b></div><div class="scrip">“All Scripture is God-breathed and is useful for instruction, for conviction, for correction, and for training in righteousness.” <b>2 Timothy 3:16</b></div>'
-body+='<div class="cta"><a class="btn" target="_top" href="%s/counselors-room-cases">Practice the process on a case</a></div>'%SITE
+body+='<div class="cta"><a class="btn" target="_top" href="%s/blank-15">Practice the process on a case</a></div>'%SITE
 page('process','The Process','The eight steps of Belief Therapy, and the reason behind each one.',body)
 # 3 Tips
 page('tips','Professional Tips','Practical teaching from 35 years of clinical experience, delivered to you and kept here for reference.',
