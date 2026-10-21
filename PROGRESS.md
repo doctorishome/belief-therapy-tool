@@ -186,4 +186,5 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - Built automatically from the cards by `python3 tools/build_lie_finder_list.py`. Re-run it after adding cards, then push.
 - Each entry: id, level, topic, belief, where it comes from (short), what clients say (up to 6), card link.
 - Oct 21: 447 beliefs (Bio 75, Psych 55, Interpersonal 60, Socioeconomic 55, Sociocultural 60, Spiritual 120, Core 22); 25 psychological beliefs have no card yet.
-- Next: write and test the search instructions in chat; then the members-only search page on Pearls Working 5.
+- Search instructions: `lie-finder/search-instructions.md` (safety and real needs first, 5–7 lies in Strong fit / Likely / Worth checking, why it fits, confirming questions, ask for missing client words). Test 1 (single mother, can't feed five children) approved by Brian Oct 21.
+- Next: one or two more test cases, then the members-only search page on Pearls Working 5.
