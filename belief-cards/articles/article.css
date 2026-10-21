@@ -1,0 +1,56 @@
+/* Shared style for Belief Counseling articles: phone-friendly on screen, framed letter pages in print
+   (tools/build_article_pdf.py prints each article and adds the navy-and-gold frame). */
+@font-face{font-family:"Corm";src:url("../../tools/gc_fonts/Cormorant-SemiBold.ttf")}
+@font-face{font-family:"SS";src:url("../../tools/gc_fonts/SourceSerif4-Regular.ttf")}
+@font-face{font-family:"SS";font-style:italic;src:url("../../tools/gc_fonts/SourceSerif4-Italic.ttf")}
+:root{--navy:#1F3A5F;--gold:#B08A4B;--line:#E4D9C6;--ink:#222;--cream:#FBF7EE}
+html{font-family:"SS",Georgia,serif;color:var(--ink)}
+body{margin:0}
+.kicker{text-align:center;color:var(--gold);letter-spacing:.3em;text-transform:uppercase;margin:0 0 6px}
+h1{font-family:"Corm",Georgia,serif;font-weight:600;color:var(--navy);text-align:center;line-height:1.1;margin:0}
+.byline{text-align:center;color:#555;font-style:italic;margin:4px 0 0}
+.rule{width:120px;border-top:1px solid var(--gold);margin:14px auto 18px}
+h2{font-family:"Corm",Georgia,serif;font-weight:600;color:var(--navy);margin:22px 0 4px;break-after:avoid}
+h3{color:var(--navy);margin:16px 0 3px;break-after:avoid}
+h3 .n{color:var(--gold);margin-right:5px}
+p{margin:0 0 10px}
+a{color:var(--navy)}
+.quote{border-left:3px solid var(--gold);background:var(--cream);padding:10px 14px;margin:8px 0 14px;font-style:italic;break-inside:avoid}
+.quote .src{display:block;font-style:normal;color:var(--navy);margin-top:5px;font-size:.9em}
+.scrip{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin:8px 0 14px;break-inside:avoid}
+.scrip p{margin:0 0 7px;font-style:italic}.scrip .ref{font-style:normal;color:var(--navy);font-size:.9em}
+.bottom{border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:10px 0;margin:16px 0}
+.sig{text-align:right;font-style:italic;color:var(--navy);margin-top:8px}
+.foot{margin-top:22px;text-align:center;font-size:.78em;color:#777}
+/* Nick's story */
+.nick{display:flex;gap:14px;align-items:center;background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:12px;margin:10px 0 16px;break-inside:avoid;text-decoration:none;color:inherit}
+.nick img{width:150px;height:auto;border-radius:4px;flex-shrink:0}
+.nick b{color:var(--navy);display:block;margin-bottom:2px}
+.nick small{color:#555}
+.video{position:relative;width:100%;padding-top:56.25%;margin:10px 0 6px;border-radius:8px;overflow:hidden;background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.print-only{display:none}
+
+@media screen{
+  html{font-size:18px;line-height:1.65;background:#F3EEE3}
+  .page{max-width:760px;margin:18px auto;background:#fff;border:2px solid var(--navy);outline:1px solid var(--gold);outline-offset:-7px;padding:34px 30px 26px}
+  h1{font-size:2.2rem}h2{font-size:1.5rem}h3{font-size:1.05rem}
+  .kicker{font-size:.72rem}
+  .printthumb{display:none!important}
+  .back{display:block;text-align:center;font-size:.85rem;margin:6px 0 18px}
+}
+@media screen and (max-width:600px){
+  html{font-size:17px}
+  .page{margin:0;border-width:0 0 0 0;outline:none;padding:22px 16px}
+  .nick{flex-direction:column;align-items:flex-start}.nick img{width:100%}
+}
+@media print{
+  @page{size:letter;margin:0.95in 0.9in 0.85in}
+  html{font-size:11.2pt;line-height:1.55}
+  h1{font-size:27pt}h2{font-size:17pt}h3{font-size:11.4pt}
+  .kicker{font-size:8.5pt}
+  .screen-only,.video,.back{display:none!important}
+  .print-only{display:block}
+  .printthumb{display:flex!important}
+  .nick img{width:130px}
+}

@@ -1,8 +1,8 @@
 """Builds a framed article PDF (navy-and-gold frame matching the Belief Cards and Godly Counsel lessons).
 
-Usage: python3 tools/build_article_pdf.py belief-cards/articles/source/<Name>.html
-Output: belief-cards/articles/<Name>.pdf  (letter size)
-The article text is written in the source .html; this script prints it and adds the frame and page numbers.
+Usage: python3 tools/build_article_pdf.py belief-cards/articles/<Name>.html
+Output: belief-cards/articles/<Name>.pdf next to the page (letter size)
+The .html is also the phone-friendly web page; this script prints it and adds the frame and page numbers.
 """
 import io, os, sys, pathlib
 from playwright.sync_api import sync_playwright
@@ -18,7 +18,7 @@ W, H = 612, 792
 pdfmetrics.registerFont(TTFont("Serif", os.path.join(TOOLS, "gc_fonts", "SourceSerif4-Regular.ttf")))
 
 src = pathlib.Path(sys.argv[1]).resolve()
-out = src.parent.parent / (src.stem + ".pdf")
+out = src.with_suffix(".pdf")
 with sync_playwright() as p:
     b = p.chromium.launch(); pg = b.new_page()
     pg.goto(src.as_uri()); pg.wait_for_timeout(800)
