@@ -139,15 +139,20 @@ LIBCSS=('<style>'
 '.book:hover,.book:focus{transform:translateY(-6px)}'
 '.book .t{font-family:Georgia,serif;font-weight:bold;font-size:.86rem;line-height:1.25;text-align:center;border-top:1px solid rgba(233,207,138,.6);border-bottom:1px solid rgba(233,207,138,.6);padding:6px 0}'
 '.book .a{font-size:.68rem;text-align:center;letter-spacing:.5px;opacity:.9}'
-'.catalog{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:16px 0}'
-'.ccard{background:#fffdf6;border:1px solid #d8cfb8;border-radius:3px;padding:14px 16px 12px;font-family:"Courier New",Courier,monospace;font-size:.9rem;box-shadow:0 2px 4px rgba(0,0,0,.12);background-image:linear-gradient(#fffdf6 40px,#c9392b 40px,#c9392b 41px,#fffdf6 41px);background-repeat:no-repeat;scroll-margin-top:80px}'
-'.ccard:target{outline:3px solid var(--gold);box-shadow:0 0 0 6px rgba(201,162,39,.25)}'
-'.ccard h3{font-family:"Courier New",Courier,monospace;font-size:.98rem;margin:0 0 14px;color:var(--navy)}'
+'.slot{position:relative}'
+'.slot .ccard{display:none;position:absolute;top:calc(100% + 6px);left:-10px;width:290px;z-index:20}'
+'.slot:hover .ccard,.slot.open .ccard{display:block}'
+'.slot:hover .book,.slot.open .book{transform:translateY(-6px)}'
+'.slot .ccard::before{content:"";position:absolute;top:-12px;left:0;right:0;height:12px}'
+'.ccard{background:#fffdf6;border:1px solid #d8cfb8;border-radius:3px;padding:14px 16px 12px;font-family:"Courier New",Courier,monospace;font-size:.9rem;box-shadow:0 2px 4px rgba(0,0,0,.12);scroll-margin-top:80px}'
+'.ccard{box-shadow:0 8px 22px rgba(0,0,0,.45)}'
+'.ccard h3{font-family:"Courier New",Courier,monospace;font-size:.98rem;margin:0 -16px 10px;padding:0 16px 8px;border-bottom:1px solid #c9392b;color:var(--navy)}'
 '.ccard p{margin:4px 0;color:#333}.ccard .lbl{color:#777}'
 '.ccard .order{display:inline-block;margin-top:8px;padding:6px 14px;border-radius:4px;background:var(--navy);color:#fff;text-decoration:none;font-family:Georgia,serif;font-weight:bold}'
 '.ccard .soon{display:inline-block;margin-top:8px;color:#8a6d1f;font-style:italic;font-family:Georgia,serif}'
 '.discl{font-size:.8rem;color:var(--mut);text-align:center}'
-'@media(max-width:560px){.book{width:104px;height:150px}.row{gap:10px;padding:0 4px}}'
+'.hint{color:#e9cf8a;font-size:.85rem;margin:0 0 6px 6px;font-style:italic}'
+'@media(max-width:560px){.book{width:104px;height:150px}.row{gap:10px;padding:0 4px}.slot .ccard{width:250px}.slot:nth-child(3n) .ccard{left:auto;right:-6px}}'
 '</style>')
 def _lib():
     bs=_books(); shelves={}
@@ -155,22 +160,25 @@ def _lib():
     order=sorted(shelves,key=lambda k:(k!="Dr. Campbell's Books",k))
     slug=lambda t:_re.sub(r'[^a-z0-9]+','-',t.lower()).strip('-')
     E=lambda x:html.escape(x,quote=True)
-    lib='<div class="lib" aria-label="Bookshelves">'; i=0
+    def card(b):
+        btn=('<a class="order" href="%s" target="_blank" rel="noopener sponsored">Order on Amazon</a>'%E(b['link'])) if b['link'] else '<span class="soon">Ordering link coming soon</span>'
+        return '<div class="ccard" role="dialog" aria-label="%s"><h3>%s</h3><p><span class="lbl">Author:</span> %s</p>%s%s</div>'%(
+            E(b['title']),E(b['title']),E(b['author']),
+            ('<p><span class="lbl">Why I recommend it:</span> %s</p>'%E(b['why'])) if b['why'] else '',btn)
+    lib='<div class="lib" aria-label="Bookshelves"><p class="hint">Point to a book (or tap it on a phone) to see its library card.</p>'; i=0
     for sh in order:
         lib+='<div class="shelf"><div class="plaque">%s</div><div class="row">'%E(sh)
         for b in shelves[sh]:
             c1,c2=COVERS[i%len(COVERS)]; i+=1
-            lib+='<a class="book" href="#%s" style="background:linear-gradient(90deg,%s,%s)" title="%s"><span class="t">%s</span><span class="a">%s</span></a>'%(slug(b['title']),c2,c1,E(b['title']),E(b['title']),E(b['author']))
+            lib+='<div class="slot"><button type="button" class="book" style="background:linear-gradient(90deg,%s,%s);border:0;cursor:pointer" aria-label="%s, by %s"><span class="t">%s</span><span class="a">%s</span></button>%s</div>'%(
+                c2,c1,E(b['title']),E(b['author']),E(b['title']),E(b['author']),card(b))
         lib+='</div><div class="board"></div></div>'
     lib+='</div>'
-    cat='<h2>Card catalog</h2><p>Choose a book on the shelf to open its catalog card.</p><div class="catalog">'
-    for sh in order:
-        for b in shelves[sh]:
-            btn=('<a class="order" href="%s" target="_blank" rel="noopener sponsored">Order on Amazon</a>'%E(b['link'])) if b['link'] else '<span class="soon">Ordering link coming soon</span>'
-            cat+='<div class="ccard" id="%s"><h3>%s</h3><p><span class="lbl">Author:</span> %s</p><p><span class="lbl">Shelf:</span> %s</p>%s%s</div>'%(
-                slug(b['title']),E(b['title']),E(b['author']),E(b['shelf']),
-                ('<p><span class="lbl">Why I recommend it:</span> %s</p>'%E(b['why'])) if b['why'] else '',btn)
-    cat+='</div>'
+    js=('<script>document.addEventListener("click",function(e){var s=e.target.closest(".slot");'
+        'if(s&&e.target.closest(".ccard"))return;'
+        'document.querySelectorAll(".slot.open").forEach(function(o){if(o!==s)o.classList.remove("open")});'
+        'if(s)s.classList.toggle("open")});</script>')
+    cat=js
     disc='<p class="discl">As an Amazon Associate, I earn from qualifying purchases.</p>' if any(b['link'] for b in bs) else ''
     return LIBCSS+'<p>Books Dr. Campbell recommends to counselors, arranged by topic. Many are also recommended to clients on the belief cards.</p>'+lib+cat+disc
 page('books','Recommended Books','Dr. Campbell’s library: books for your own growth and to recommend to your clients.',_lib(),eyebrow='The Counselors’ Library')
