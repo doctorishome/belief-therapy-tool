@@ -28,6 +28,24 @@ You can also write a topic instead, such as "all pain and suffering cards," and 
 - Why I recommend it: Help for believers whose suffering doesn't seem to fit what they expected of God.
 - Cards: all pain and suffering cards (SPR-002, SPR-073, SPR-077, SPR-106, SPR-107, SPR-108, SPR-110, SPR-120, INT-049, BIO-006, BIO-008, BIO-061, BIO-062, BIO-063, BIO-064, BIO-065, BIO-075)
 
+## Pearls: Scriptures to Live By
+- Author: Dr. Brian Campbell
+- Amazon link: (add later)
+- Why I recommend it: A mental-health concordance of the Bible: Scriptures organized into 172 topics for the struggles people bring to counseling.
+- Cards: (add later; it could fit every card, since each card already links to Pearls topics)
+
+## Godly Counsel: Scriptures for Today's World
+- Author: Dr. Brian Campbell
+- Amazon link: (add later)
+- Why I recommend it: Scripture lessons on 33 of life's most common struggles, such as anxiety, depression, anger, and grief.
+- Cards: (add later; it could fit every card that lists Godly Counsel Lessons)
+
+## Christlike: Walking the Walk
+- Author: Dr. Brian Campbell, in collaboration with Rev. Jim Angelakos
+- Amazon link: (add later)
+- Why I recommend it: A picture of the mentally healthy Christian, based on the characteristics of Christ.
+- Cards: (add later)
+
 ---
 
 ## Sample (copy this block to add a book)
