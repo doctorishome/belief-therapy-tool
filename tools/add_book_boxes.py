@@ -1,6 +1,7 @@
 """Adds a "Recommended Books" box to belief cards, from books/recommended-books.md.
 
 Run:  python3 tools/add_book_boxes.py
+- Only books whose "Show on" line says "cards" or "both" go on cards ("counselors" books do not).
 - Each card listed for a book (by card number, e.g. SPR-106) gets one box listing all its books.
 - The box sits just before "Related Pearls topics" (after the Truth summary and any "Read more" box).
 - A book whose "Amazon link" line holds a web address gets a "View on Amazon" button, and the box then
@@ -31,6 +32,7 @@ def read_books():
             "author": fields.get("Author", "").strip(),
             "why": fields.get("Why I recommend it", "").strip(),
             "link": link if link.startswith("http") else "",
+            "show": fields.get("Show on", "both").strip().lower() or "both",
             "cards": re.findall(r"\b(?:SPR|BIO|PSY|INT|SEC|SCU|CORE)-[A-Z]?\d+\b", fields.get("Cards", "")),
         })
     return books
@@ -61,6 +63,8 @@ def box(books):
 cards = {b["id"]: b["card"] for b in json.loads((ROOT / "lie-finder/master-list.json").read_text(encoding="utf-8"))["beliefs"]}
 per_card = {}
 for b in read_books():
+    if b["show"] not in ("cards", "both"):  # "counselors" books appear only in the Counselor's Room
+        continue
     for cid in b["cards"]:
         if not cards.get(cid):
             print("No card page for", cid, "(%s)" % b["title"]); continue
