@@ -203,5 +203,10 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 
 ## Public and counselor pages (Oct 22, 2026)
 - `pages/behavioral-experiments.html`: public "Behavioral Experiments" page, shown on Wix page /blank-5 through an "Embed Site" element (#html1; desktop 840x2450, tablet 720x2700, phone 370x3400). Edit the file here to change wording; make the Wix box taller if the text grows.
-- `pages/counselor/behavioral-interventions-ccbt.html`: "Behavioral Interventions in Christian Cognitive-Behavioral Therapy" for the Counselor's World side. NOT placed on Wix yet (Brian hasn't chosen where). Original Word file saved beside it. Full height: about 4600px at 840 wide, 7700px on phones.
+- `pages/counselor/behavioral-interventions-ccbt.html` (+ PDF): "Behavioral Interventions in Christian Cognitive-Behavioral Therapy". Listed on the Counselors' Room Articles page. Original Word file saved beside it. Full height: about 4600px at 840 wide, 7700px on phones.
 - Psychological/Cognitive page heading: page code (#text5) puts "Cognitive" on its own line at 75% size so the word doesn't split.
+
+## Counselors' Room Articles (Oct 22, 2026)
+- New tab "Articles" in the Counselors' Room menu (added to all 8 pages in `counselors/`). Page: `counselors/articles.html` — one card per article (topic tag, title, summary, Read article [new tab] + Download PDF).
+- Articles so far: Behavioral Interventions in CCBT (`pages/counselor/`), Free Will, Pain, and Suffering — counselor version (`belief-cards/articles/`).
+- To add an article: put the HTML (+ PDF) on GitHub, then add one entry to the list in `counselors/articles.html`. No Wix editing needed (the tab opens inside the existing Counselors' Room embeds).
