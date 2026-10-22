@@ -210,3 +210,8 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - New tab "Articles" in the Counselors' Room menu (added to all 8 pages in `counselors/`). Page: `counselors/articles.html` — one card per article (topic tag, title, summary, Read article [new tab] + Download PDF).
 - Articles so far: Behavioral Interventions in CCBT (`pages/counselor/`), Free Will, Pain, and Suffering — counselor version (`belief-cards/articles/`).
 - To add an article: put the HTML (+ PDF) on GitHub, then add one entry to the list in `counselors/articles.html`. No Wix editing needed (the tab opens inside the existing Counselors' Room embeds).
+
+## Counselors' Room: drop-down menu and 3-step Process (Oct 22, 2026)
+- Top menu now uses drop-downs: Welcome · Learn (The Process, Theory Topics, Professional Tips) · Practice (Case Studies, The Course) · Resources (Clinical Library, Articles) · False Belief Finder ↗ · Public Site ↗. Built by `python3 tools/counselor_nav.py` (edit GROUPS there to add a page, then run it; it updates all counselors/*.html).
+- `counselors/process.html` rewritten for the simplified model: flow diagram Presenting Problem → Belief Mining → 1 Identify → 2 Challenge → 3 Replace → The Truth Sets You Free, with a loop note, then a section per part. The 8 steps are gone. PDF: `counselors/Belief-Counseling-Flow.pdf`. Page height now ~2500px at 1000 wide, ~4300px on phones.
+- "Eight steps" wording also changed on welcome, cases and course pages. The Course lesson list still follows the old 8 steps (lessons 5 and 7) and needs Brian's new outline.
