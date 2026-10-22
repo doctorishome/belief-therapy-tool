@@ -10,6 +10,8 @@ Later, each book's Amazon Associates link will be added, and a "Recommended Book
 3. Fill in each line after the colon. Leave a line as "(add later)" if you don't have it yet.
 4. Click **Commit changes** to save.
 
+**Shelf:** the topic shelf the book sits on in the Counselor's Room library, such as "Pain and Suffering" or "Marriage." Books with the same shelf name are grouped together.
+
 **Show on:** where the book appears. Write **cards** (on the belief cards), **counselors** (on the Counselor's Room book list), or **both**.
 
 **Cards:** list card numbers separated by commas, like this: SPR-106, BIO-061, INT-049.
@@ -20,6 +22,7 @@ You can also write a topic instead, such as "all pain and suffering cards," and 
 
 ## The Problem of Pain
 - Author: C.S. Lewis
+- Shelf: Pain and Suffering
 - Show on: both
 - Amazon link: (add later)
 - Why I recommend it: A classic Christian answer to the question of why a good and all-powerful God allows pain.
@@ -27,6 +30,7 @@ You can also write a topic instead, such as "all pain and suffering cards," and 
 
 ## When God Doesn't Make Sense
 - Author: Dr. James Dobson
+- Shelf: Pain and Suffering
 - Show on: both
 - Amazon link: (add later)
 - Why I recommend it: Help for believers whose suffering doesn't seem to fit what they expected of God.
@@ -34,6 +38,7 @@ You can also write a topic instead, such as "all pain and suffering cards," and 
 
 ## Pearls: Scriptures to Live By
 - Author: Dr. Brian Campbell
+- Shelf: Dr. Campbell's Books
 - Show on: both
 - Amazon link: (add later)
 - Why I recommend it: A mental-health concordance of the Bible: Scriptures organized into 172 topics for the struggles people bring to counseling.
@@ -41,6 +46,7 @@ You can also write a topic instead, such as "all pain and suffering cards," and 
 
 ## Godly Counsel: Scriptures for Today's World
 - Author: Dr. Brian Campbell
+- Shelf: Dr. Campbell's Books
 - Show on: both
 - Amazon link: (add later)
 - Why I recommend it: Scripture lessons on 33 of life's most common struggles, such as anxiety, depression, anger, and grief.
@@ -48,6 +54,7 @@ You can also write a topic instead, such as "all pain and suffering cards," and 
 
 ## Christlike: Walking the Walk
 - Author: Dr. Brian Campbell, in collaboration with Rev. Jim Angelakos
+- Shelf: Dr. Campbell's Books
 - Show on: both
 - Amazon link: (add later)
 - Why I recommend it: A picture of the mentally healthy Christian, based on the characteristics of Christ.
@@ -59,6 +66,7 @@ You can also write a topic instead, such as "all pain and suffering cards," and 
 
 ## Title
 - Author: 
+- Shelf: 
 - Show on: 
 - Amazon link: (add later)
 - Why I recommend it: 

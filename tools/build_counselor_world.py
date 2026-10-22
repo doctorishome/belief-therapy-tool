@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'counselors'; OUT.mkdir(exist_ok=True)
 SITE='https://doctorishome.wixstudio.com/website-6'
 PAGES=[('welcome','Welcome','blank-11'),('process','The Process','blank-12'),('tips','Professional Tips','blank-13'),
-       ('theory','Theory Topics','blank-14'),('cases','Case Studies','blank-15'),('course','The Course','blank-16'),('library','Clinical Library','blank-17')]
+       ('theory','Theory Topics','blank-14'),('cases','Case Studies','blank-15'),('course','The Course','blank-16'),('library','Clinical Library','blank-17'),('books','Recommended Books','')]
 CSS="""
 :root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -113,4 +113,66 @@ page('library','Clinical Library','Counselor-only background, tools, and referen
  '<h2>Clinical background for the belief cards</h2><p>Each public false-belief card links to a counselor note on origins, cognitive errors, and treatment approach. Members will find them organized by category: Spiritual/Religious, Psychological/Cognitive, Interpersonal, Socioeconomic, Sociocultural, and Biological/Physical.</p>'
  '<h2>Recommended reading</h2><ul class="clean"><li>Beck, Davis, and Freeman, <em>Cognitive Therapy of Personality Disorders</em></li><li>Beck Institute Personality Belief Questionnaire materials</li></ul>'
  '<div class="card"><span class="tag">Coming soon</span><h3>Library opens with membership</h3><p>Documents will be added here in stages.</p></div>')
+
+# 8 Recommended Books: a library page built from books/recommended-books.md ("Show on: counselors" or "both")
+import re as _re
+def _books():
+    text=(ROOT/'books/recommended-books.md').read_text(encoding='utf-8'); out=[]
+    for part in _re.split(r'^## ',text,flags=_re.M)[1:]:
+        title,_,rest=part.partition('\n'); title=title.strip()
+        f=dict(_re.findall(r'^- ([^:\n]+):[ \t]*(.*)$',rest,flags=_re.M))
+        if title in ('Title','How to add a book') or title.startswith('Sample') or 'Author' not in f: continue
+        show=(f.get('Show on','both').strip().lower() or 'both')
+        if show not in ('counselors','both'): continue
+        link=f.get('Amazon link','').strip()
+        out.append(dict(title=title,author=f['Author'].strip(),why=f.get('Why I recommend it','').strip(),
+                        shelf=f.get('Shelf','').strip() or 'More Recommended Reading',link=link if link.startswith('http') else ''))
+    return out
+COVERS=[('#1F3A5F','#16304f'),('#6B1F2A','#561721'),('#2E4A3B','#233a2e'),('#5A3A22','#472d1a'),('#3B4A5A','#2e3a47'),('#4A2E4F','#3a243e')]
+LIBCSS=('<style>'
+'.lib{background:linear-gradient(#5b3a22,#4a2e1a);border:10px solid #3b2414;border-radius:6px;padding:18px 14px 8px;box-shadow:inset 0 0 40px rgba(0,0,0,.45),0 6px 18px rgba(0,0,0,.25);margin:20px 0}'
+'.shelf{margin:0 0 22px}'
+'.plaque{display:inline-block;background:linear-gradient(#e6c97d,#b8913f);color:#3b2414;font-weight:bold;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;padding:4px 14px;border-radius:3px;box-shadow:0 1px 2px rgba(0,0,0,.5);margin:0 0 10px 6px}'
+'.row{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px;padding:0 10px;min-height:190px}'
+'.board{height:14px;background:linear-gradient(#9a6a3f,#6e4626);border-radius:2px;box-shadow:0 6px 8px rgba(0,0,0,.45)}'
+'.book{display:flex;flex-direction:column;justify-content:space-between;width:122px;height:176px;padding:14px 10px 10px;border-radius:2px 6px 6px 2px;text-decoration:none;color:#e9cf8a;box-shadow:inset 6px 0 0 rgba(0,0,0,.25),inset -1px 0 0 rgba(255,255,255,.08),3px 3px 6px rgba(0,0,0,.5);transition:transform .15s}'
+'.book:hover,.book:focus{transform:translateY(-6px)}'
+'.book .t{font-family:Georgia,serif;font-weight:bold;font-size:.86rem;line-height:1.25;text-align:center;border-top:1px solid rgba(233,207,138,.6);border-bottom:1px solid rgba(233,207,138,.6);padding:6px 0}'
+'.book .a{font-size:.68rem;text-align:center;letter-spacing:.5px;opacity:.9}'
+'.catalog{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:16px 0}'
+'.ccard{background:#fffdf6;border:1px solid #d8cfb8;border-radius:3px;padding:14px 16px 12px;font-family:"Courier New",Courier,monospace;font-size:.9rem;box-shadow:0 2px 4px rgba(0,0,0,.12);background-image:linear-gradient(#fffdf6 40px,#c9392b 40px,#c9392b 41px,#fffdf6 41px);background-repeat:no-repeat;scroll-margin-top:80px}'
+'.ccard:target{outline:3px solid var(--gold);box-shadow:0 0 0 6px rgba(201,162,39,.25)}'
+'.ccard h3{font-family:"Courier New",Courier,monospace;font-size:.98rem;margin:0 0 14px;color:var(--navy)}'
+'.ccard p{margin:4px 0;color:#333}.ccard .lbl{color:#777}'
+'.ccard .order{display:inline-block;margin-top:8px;padding:6px 14px;border-radius:4px;background:var(--navy);color:#fff;text-decoration:none;font-family:Georgia,serif;font-weight:bold}'
+'.ccard .soon{display:inline-block;margin-top:8px;color:#8a6d1f;font-style:italic;font-family:Georgia,serif}'
+'.discl{font-size:.8rem;color:var(--mut);text-align:center}'
+'@media(max-width:560px){.book{width:104px;height:150px}.row{gap:10px;padding:0 4px}}'
+'</style>')
+def _lib():
+    bs=_books(); shelves={}
+    for b in bs: shelves.setdefault(b['shelf'],[]).append(b)
+    order=sorted(shelves,key=lambda k:(k!="Dr. Campbell's Books",k))
+    slug=lambda t:_re.sub(r'[^a-z0-9]+','-',t.lower()).strip('-')
+    E=lambda x:html.escape(x,quote=True)
+    lib='<div class="lib" aria-label="Bookshelves">'; i=0
+    for sh in order:
+        lib+='<div class="shelf"><div class="plaque">%s</div><div class="row">'%E(sh)
+        for b in shelves[sh]:
+            c1,c2=COVERS[i%len(COVERS)]; i+=1
+            lib+='<a class="book" href="#%s" style="background:linear-gradient(90deg,%s,%s)" title="%s"><span class="t">%s</span><span class="a">%s</span></a>'%(slug(b['title']),c2,c1,E(b['title']),E(b['title']),E(b['author']))
+        lib+='</div><div class="board"></div></div>'
+    lib+='</div>'
+    cat='<h2>Card catalog</h2><p>Choose a book on the shelf to open its catalog card.</p><div class="catalog">'
+    for sh in order:
+        for b in shelves[sh]:
+            btn=('<a class="order" href="%s" target="_blank" rel="noopener sponsored">Order on Amazon</a>'%E(b['link'])) if b['link'] else '<span class="soon">Ordering link coming soon</span>'
+            cat+='<div class="ccard" id="%s"><h3>%s</h3><p><span class="lbl">Author:</span> %s</p><p><span class="lbl">Shelf:</span> %s</p>%s%s</div>'%(
+                slug(b['title']),E(b['title']),E(b['author']),E(b['shelf']),
+                ('<p><span class="lbl">Why I recommend it:</span> %s</p>'%E(b['why'])) if b['why'] else '',btn)
+    cat+='</div>'
+    disc='<p class="discl">As an Amazon Associate, I earn from qualifying purchases.</p>' if any(b['link'] for b in bs) else ''
+    return LIBCSS+'<p>Books Dr. Campbell recommends to counselors, arranged by topic. Many are also recommended to clients on the belief cards.</p>'+lib+cat+disc
+page('books','Recommended Books','Dr. Campbell’s library: books for your own growth and to recommend to your clients.',_lib(),eyebrow='The Counselors’ Library')
+
 print('built',[p[0] for p in PAGES])
