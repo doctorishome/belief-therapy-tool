@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Search for a False Belief</title>
+<!-- Public search of all false beliefs (reads ../lie-finder/master-list.json, built from the cards).
+     Shown inside the Help for You page (?embed=1) and usable on its own. -->
+<style>
+  :root{--navy:#1e3556;--gold:#a8864f;--cream:#fbf6ec;--line:#eadcc4;--ink:#2b2b2b;--muted:#5b6472}
+  *{box-sizing:border-box}
+  body{margin:0;padding:8px 16px 28px;color:var(--ink);background:#fff;font:17px/1.6 Georgia,"Times New Roman",serif}
+  .wrap{max-width:760px;margin:0 auto}
+  h1{font:bold 34px/1.2 Georgia,serif;color:var(--navy);margin:8px 0 6px}
+  .sub{color:var(--muted);margin:0 0 16px;font-size:17px}
+  .embed h1,.embed .sub{display:none}
+  .box{display:flex;gap:10px}
+  input[type=search]{flex:1;font:18px Arial,sans-serif;padding:12px 14px;border:1.5px solid var(--gold);border-radius:8px;outline:none}
+  input[type=search]:focus{box-shadow:0 0 0 3px rgba(168,134,79,.2)}
+  .levels{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
+  .levels button{font:14px Arial,sans-serif;border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:16px;padding:5px 12px;cursor:pointer}
+  .levels button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .hint{font:14px Arial,sans-serif;color:var(--muted);margin:8px 0 14px}
+  .hint a{color:var(--navy);cursor:pointer;text-decoration:underline;text-decoration-color:var(--gold)}
+  .r{border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 16px;margin:0 0 12px;background:#fff}
+  .r h3{margin:0 0 4px;font:bold 19px/1.35 Georgia,serif;color:var(--navy)}
+  .meta{font:13px Arial,sans-serif;color:var(--gold);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+  .says{font-size:15px;color:var(--muted);font-style:italic;margin:0 0 8px}
+  .r a.open{display:inline-block;font:bold 14px Arial,sans-serif;background:var(--gold);color:#fff;text-decoration:none;border-radius:4px;padding:7px 14px}
+  .r a.open:hover{background:#8f7142}
+  .nocard{font:13px Arial,sans-serif;color:var(--muted)}
+  .more{display:block;margin:6px auto 0;font:bold 15px Arial,sans-serif;background:#fff;color:var(--navy);border:1.5px solid var(--navy);border-radius:6px;padding:9px 18px;cursor:pointer}
+  .count{font:14px Arial,sans-serif;color:var(--muted);margin:0 0 10px}
+  .note{margin-top:22px;padding:12px 16px;border-left:3px solid var(--gold);background:var(--cream);font:13px/1.6 Arial,sans-serif;color:var(--muted)}
+</style></head>
+<body><div class="wrap">
+<h1>Search for a False Belief</h1>
+<p class="sub">Type a word or a thought you often have, such as <em>worthless</em>, <em>failure</em>, <em>God is angry</em>, or <em>afraid</em>.</p>
+<div class="box"><input id="q" type="search" placeholder="Type a word or a thought…" aria-label="Search false beliefs" autocomplete="off"/></div>
+<div class="levels" id="levels"></div>
+<p class="hint" id="hint">Try: <a>worthless</a> · <a>failure</a> · <a>alone</a> · <a>guilt</a> · <a>God</a> · <a>afraid</a> · <a>money</a> · <a>rejected</a></p>
+<p class="count" id="count"></p>
+<div id="results"></div>
+<button class="more" id="more" hidden>Show more</button>
+<p class="note">Each card explains where a belief often comes from, what Scripture teaches, and simple steps to challenge it. This is for education and self-help and is not a substitute for professional counseling. If you are in crisis, call or text 988.</p>
+</div>
+<script>
+if(new URLSearchParams(location.search).has('embed'))document.body.classList.add('embed');
+let all=[],level='All',shown=0,list=[];const PAGE=15;
+const $=id=>document.getElementById(id);
+const norm=s=>(s||'').toLowerCase().replace(/[’']/g,"'");
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function score(b,words){let t=0;for(const w of words){
+  const bel=norm(b.belief),top=norm(b.topic),say=norm((b.client_words||[]).join(' ')),org=norm(b.origins);
+  if(bel.includes(w))t+=5;else if(say.includes(w))t+=3;else if(top.includes(w))t+=3;else if(org.includes(w))t+=1;else return 0}return t}
+function run(){
+  const words=norm($('q').value).split(/\s+/).filter(w=>w.length>1);
+  let pool=level==='All'?all:all.filter(b=>b.level===level);
+  if(words.length){list=pool.map(b=>[score(b,words),b]).filter(x=>x[0]>0).sort((a,b)=>b[0]-a[0]).map(x=>x[1])}
+  else list=level==='All'?[]:pool;
+  shown=0;$('results').innerHTML='';
+  $('count').textContent=(words.length||level!=='All')?(list.length?list.length+' belief'+(list.length>1?'s':'')+' found':'No beliefs found. Try a different word.'):'';
+  more();
+}
+function more(){
+  const part=list.slice(shown,shown+PAGE);
+  $('results').insertAdjacentHTML('beforeend',part.map(b=>{
+    const says=(b.client_words||[]).slice(0,3).map(s=>'“'+esc(s)+'”').join(' ');
+    const link=b.card?`<a class="open" href="${esc(b.card)}" target="_blank" rel="noopener">Open this belief card →</a>`:'<span class="nocard">Card coming soon</span>';
+    return `<div class="r"><div class="meta">${esc(b.level)}${b.topic?' · '+esc(b.topic):''}</div><h3>“${esc(b.belief)}”</h3>${says?`<p class="says">People often say: ${says}</p>`:''}${link}</div>`}).join(''));
+  shown+=part.length;$('more').hidden=shown>=list.length;
+}
+fetch('../lie-finder/master-list.json').then(r=>r.json()).then(d=>{
+  all=d.beliefs||[];
+  const lv=['All',...new Set(all.map(b=>b.level))];
+  $('levels').innerHTML=lv.map(l=>`<button type="button"${l==='All'?' class="on"':''}>${esc(l==='All'?'All areas':l)}</button>`).join('');
+  [...$('levels').children].forEach((btn,i)=>btn.onclick=()=>{level=lv[i];[...$('levels').children].forEach(x=>x.classList.remove('on'));btn.classList.add('on');run()});
+  run();
+}).catch(()=>{$('count').textContent='The belief list could not be loaded. Please refresh the page.'});
+$('q').addEventListener('input',()=>{clearTimeout(window._t);window._t=setTimeout(run,200)});
+$('more').onclick=more;
+[...$('hint').querySelectorAll('a')].forEach(a=>a.onclick=()=>{$('q').value=a.textContent;run()});
+</script>
+</body></html>
