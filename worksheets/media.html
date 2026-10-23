@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toxic Messages from Media &amp; Culture | Belief Counseling</title>
+<style>
+  :root{--ink:#2f4357;--gold:#b08a4b;--goldtext:#a8742e;--line:#c9b48a;--body:#2b2b2b}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#f4f1ea;color:var(--body);font-family:Georgia,"Times New Roman",serif}
+  .bar{max-width:8.5in;margin:16px auto 0;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:0 16px}
+  .bar button{font-family:inherit;font-size:16px;padding:10px 22px;border-radius:6px;cursor:pointer;border:1px solid var(--ink)}
+  .bar .print{background:var(--ink);color:#fff}
+  .bar .clear{background:#fff;color:var(--ink)}
+  .tip{max-width:8.5in;margin:8px auto 0;text-align:center;font-size:14px;color:#6b6250;padding:0 16px}
+  .page{max-width:8.5in;margin:16px auto 24px;background:#fff;border:1.5px solid var(--gold);padding:.45in .5in .5in;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+  .page + .page{margin-top:0}
+  header{text-align:center}
+  header img{width:78px;height:auto}
+  h1{font-size:26px;color:var(--ink);margin:6px 0 2px}
+  .sub{font-style:italic;color:var(--goldtext);font-size:14px;margin:0}
+  .who{display:flex;gap:24px;margin:18px 0 6px;font-size:14px;font-weight:700}
+  .who label{display:flex;align-items:flex-end;gap:6px}
+  .who .name{flex:1}
+  .who input{flex:1;border:0;border-bottom:1px solid #555;font:inherit;font-weight:400;padding:2px 4px;min-width:120px;background:transparent}
+  .grid{display:grid;grid-template-columns:1fr 1fr;column-gap:28px;row-gap:26px;margin-top:16px}
+  section h2{font-size:17px;color:var(--ink);margin:0 0 8px;padding-bottom:4px;border-bottom:1.5px solid var(--line)}
+  .item{display:flex;align-items:flex-start;gap:6px;font-size:14px;line-height:1.35;margin:5px 0;cursor:pointer}
+  .item input{margin:3px 0 0;width:15px;height:15px;flex:none;accent-color:var(--ink)}
+  .note{font-style:italic;color:var(--goldtext);font-size:12.5px;margin:10px 0 4px}
+  textarea{width:100%;min-height:80px;font:14px/26px Georgia,serif;border:0;resize:vertical;padding:0 2px;
+    background:repeating-linear-gradient(to bottom,transparent 0,transparent 25px,#999 25px,#999 26px);}
+  .closing{margin-top:26px;text-align:center;font-size:14px;line-height:1.5;color:#3d3a35}
+  .verse{margin-top:12px;font-style:italic;color:var(--ink);font-size:15px}
+  .ref{font-size:13px;color:var(--goldtext);margin-top:2px}
+  .extra{margin-top:14px;font-size:13px;color:#3d3a35}
+  footer{margin-top:20px;text-align:center;font-size:13px;color:#555;font-style:italic}
+  .pgno{text-align:right;font-size:12px;color:#777;margin-bottom:10px}
+  @media (max-width:640px){
+    .page{padding:20px 16px;border-left:0;border-right:0}
+    .grid{grid-template-columns:1fr}
+    .who{flex-direction:column;gap:12px}
+  }
+  @media print{
+    @page{size:letter;margin:.35in}
+    html,body{background:#fff}
+    .bar,.tip{display:none}
+    .page{box-shadow:none;margin:0;width:100%;max-width:100%;padding:.3in .4in;border:1.5px solid var(--gold);page-break-after:always;break-after:page}
+    .page:last-child{page-break-after:auto;break-after:auto}
+    header img{width:58px}
+    h1{font-size:22px}
+    .who{margin:10px 0 4px}
+    .grid{grid-template-columns:1fr 1fr;row-gap:14px;margin-top:8px}
+    section h2{font-size:15px;margin-bottom:4px}
+    .item{font-size:12.5px;margin:2px 0}
+    .note{margin:6px 0 2px}
+    textarea{resize:none;min-height:54px}
+    section{break-inside:avoid}
+    .closing{margin-top:16px;font-size:12.5px}
+  }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <button class="print" onclick="window.print()">Print this form</button>
+    <button class="clear" onclick="clearForm()">Clear my answers</button>
+  </div>
+  <p class="tip">You can check boxes and type notes right on this page before printing, or print it blank and fill it in by hand.</p>
+
+  <div class="page">
+    <header>
+      <img src="../belief-counseling-logo.png" alt="Belief Counseling">
+      <h1>Toxic Messages from Media &amp; Culture</h1>
+      <p class="sub">Please check any message you have absorbed from TV, movies, music, advertising, or social media.</p>
+    </header>
+    <div class="who">
+      <label class="name">Name: <input type="text" aria-label="Name"></label>
+      <label>Date: <input type="text" aria-label="Date"></label>
+    </div>
+    <div class="grid">
+      <section>
+        <h2>Appearance &amp; the Body</h2>
+        <label class="item"><input type="checkbox">“Your worth depends on how you look.”</label>
+        <label class="item"><input type="checkbox">“Thin (or muscular) is beautiful; anything else is failure.”</label>
+        <label class="item"><input type="checkbox">“Aging is something to hide or fight.”</label>
+        <label class="item"><input type="checkbox">“Everyone else looks better than you.”</label>
+        <label class="item"><input type="checkbox">“Fix your appearance and your life will be better.”</label>
+        <label class="item"><input type="checkbox">“Filtered, edited images are what normal looks like.”</label>
+        <p class="note">If checked, what did you come to believe?</p>
+        <textarea aria-label="Appearance &amp; the Body notes"></textarea>
+      </section>
+      <section>
+        <h2>Success, Money &amp; Status</h2>
+        <label class="item"><input type="checkbox">“You are what you achieve.”</label>
+        <label class="item"><input type="checkbox">“More money and possessions will make you happy.”</label>
+        <label class="item"><input type="checkbox">“If you’re not successful by a certain age, you’ve failed.”</label>
+        <label class="item"><input type="checkbox">“Rest is laziness; always be productive.”</label>
+        <label class="item"><input type="checkbox">“Important people are famous, wealthy, or followed.”</label>
+        <label class="item"><input type="checkbox">“What you own shows who you are.”</label>
+        <p class="note">If checked, what did you come to believe?</p>
+        <textarea aria-label="Success, Money &amp; Status notes"></textarea>
+      </section>
+    </div>
+    <div class="grid">
+      <section>
+        <h2>Social Media &amp; Comparison</h2>
+        <label class="item"><input type="checkbox">“Everyone else’s life is better than yours.”</label>
+        <label class="item"><input type="checkbox">“Your value is measured in likes and followers.”</label>
+        <label class="item"><input type="checkbox">“If it isn’t posted, it didn’t matter.”</label>
+        <label class="item"><input type="checkbox">“You must always be available and connected.”</label>
+        <label class="item"><input type="checkbox">“Missing out means being left behind.”</label>
+        <label class="item"><input type="checkbox">“Others’ highlight reels are their real lives.”</label>
+        <p class="note">If checked, what did you come to believe?</p>
+        <textarea aria-label="Social Media &amp; Comparison notes"></textarea>
+      </section>
+      <section>
+        <h2>Love, Relationships &amp; Sexuality</h2>
+        <label class="item"><input type="checkbox">“The right person will complete you.”</label>
+        <label class="item"><input type="checkbox">“If love takes work, it isn’t real love.”</label>
+        <label class="item"><input type="checkbox">“Romance should always feel exciting.”</label>
+        <label class="item"><input type="checkbox">“Your worth depends on being desired.”</label>
+        <label class="item"><input type="checkbox">“Commitment is a trap.”</label>
+        <label class="item"><input type="checkbox">“Being single means something is wrong with you.”</label>
+        <p class="note">If checked, what did you come to believe?</p>
+        <textarea aria-label="Love, Relationships &amp; Sexuality notes"></textarea>
+      </section>
+    </div>
+  </div>
+  <div class="page">
+    <div class="pgno">Page 2</div>
+    <div class="grid">
+      <section>
+        <h2>Pleasure &amp; Indulgence</h2>
+        <label class="item"><input type="checkbox">“Go for the gusto.”</label>
+        <label class="item"><input type="checkbox">“It doesn’t get any better than this.”</label>
+        <label class="item"><input type="checkbox">“You only live once, so enjoy it now.”</label>
+        <label class="item"><input type="checkbox">“Treat yourself; you deserve it.”</label>
+        <label class="item"><input type="checkbox">“Alcohol makes you fun, relaxed, or accepted.”</label>
+        <label class="item"><input type="checkbox">“If it feels good, do it.”</label>
+        <p class="note">If checked, what did you come to believe?</p>
+        <textarea aria-label="Pleasure &amp; Indulgence notes"></textarea>
+      </section>
+      <section>
+        <h2>Happiness &amp; the Self</h2>
+        <label class="item"><input type="checkbox">“You should always be happy.”</label>
+        <label class="item"><input type="checkbox">“Follow your heart; your feelings are always right.”</label>
+        <label class="item"><input type="checkbox">“You deserve whatever you want.”</label>
+        <label class="item"><input type="checkbox">“Your truth is whatever feels right to you.”</label>
+        <label class="item"><input type="checkbox">“Anyone who disagrees with you is against you.”</label>
+        <label class="item"><input type="checkbox">“Instant results are normal; waiting is failure.”</label>
+        <p class="note">If checked, what did you come to believe?</p>
+        <textarea aria-label="Happiness &amp; the Self notes"></textarea>
+      </section>
+    </div>
+    <div class="grid">
+      <section>
+        <h2>Faith &amp; Morality</h2>
+        <label class="item"><input type="checkbox">“Faith is outdated or unintelligent.”</label>
+        <label class="item"><input type="checkbox">“Christians are hypocrites, so faith isn’t real.”</label>
+        <label class="item"><input type="checkbox">“Right and wrong are just personal opinions.”</label>
+        <label class="item"><input type="checkbox">“God, if He exists, is distant or uninvolved.”</label>
+        <label class="item"><input type="checkbox">“Spiritual things don’t matter in real life.”</label>
+        <label class="item"><input type="checkbox">“Sin is just a word for having fun.”</label>
+        <p class="note">If checked, what did you come to believe?</p>
+        <textarea aria-label="Faith &amp; Morality notes"></textarea>
+      </section>
+      <section>
+        <h2>Fear &amp; the World</h2>
+        <label class="item"><input type="checkbox">“The world is more dangerous than ever.”</label>
+        <label class="item"><input type="checkbox">“Disaster is always around the corner.”</label>
+        <label class="item"><input type="checkbox">“You can’t trust anyone.”</label>
+        <label class="item"><input type="checkbox">“People who are different are a threat.”</label>
+        <label class="item"><input type="checkbox">“Nothing will ever get better.”</label>
+        <p class="note">If checked, what did you come to believe?</p>
+        <textarea aria-label="Fear &amp; the World notes"></textarea>
+      </section>
+    </div>
+    <div class="closing">
+      <p>Some of these messages sound harmless, or even encouraging. Yet repeated often enough, they can quietly shape what we believe about ourselves, others, and God. What was absorbed can be examined, questioned, and replaced with truth.</p>
+      <div class="verse">“Do not conform to the pattern of this world, but be transformed by the renewing of your mind.”</div>
+      <div class="ref">Romans 12:2</div>
+    </div>
+    <footer>Thank you — this helps your counselor understand the beliefs behind what you’re experiencing. Your answers are confidential within your counseling relationship.</footer>
+  </div>
+
+<script>
+  function clearForm(){
+    if(!confirm('Clear all checked boxes and notes on this page?')) return;
+    document.querySelectorAll('input[type=checkbox]').forEach(function(c){c.checked=false;});
+    document.querySelectorAll('input[type=text],textarea').forEach(function(t){t.value='';});
+  }
+</script>
+</body>
+</html>

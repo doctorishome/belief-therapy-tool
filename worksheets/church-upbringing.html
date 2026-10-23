@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toxic Messages from Church &amp; Religion | Belief Counseling</title>
+<style>
+  :root{--ink:#2f4357;--gold:#b08a4b;--goldtext:#a8742e;--line:#c9b48a;--body:#2b2b2b}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#f4f1ea;color:var(--body);font-family:Georgia,"Times New Roman",serif}
+  .bar{max-width:8.5in;margin:16px auto 0;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:0 16px}
+  .bar button{font-family:inherit;font-size:16px;padding:10px 22px;border-radius:6px;cursor:pointer;border:1px solid var(--ink)}
+  .bar .print{background:var(--ink);color:#fff}
+  .bar .clear{background:#fff;color:var(--ink)}
+  .tip{max-width:8.5in;margin:8px auto 0;text-align:center;font-size:14px;color:#6b6250;padding:0 16px}
+  .page{max-width:8.5in;margin:16px auto 24px;background:#fff;border:1.5px solid var(--gold);padding:.45in .5in .5in;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+  .page + .page{margin-top:0}
+  header{text-align:center}
+  header img{width:78px;height:auto}
+  h1{font-size:26px;color:var(--ink);margin:6px 0 2px}
+  .sub{font-style:italic;color:var(--goldtext);font-size:14px;margin:0}
+  .who{display:flex;gap:24px;margin:18px 0 6px;font-size:14px;font-weight:700}
+  .who label{display:flex;align-items:flex-end;gap:6px}
+  .who .name{flex:1}
+  .who input{flex:1;border:0;border-bottom:1px solid #555;font:inherit;font-weight:400;padding:2px 4px;min-width:120px;background:transparent}
+  .grid{display:grid;grid-template-columns:1fr 1fr;column-gap:28px;row-gap:26px;margin-top:16px}
+  section h2{font-size:17px;color:var(--ink);margin:0 0 8px;padding-bottom:4px;border-bottom:1.5px solid var(--line)}
+  .item{display:flex;align-items:flex-start;gap:6px;font-size:14px;line-height:1.35;margin:5px 0;cursor:pointer}
+  .item input{margin:3px 0 0;width:15px;height:15px;flex:none;accent-color:var(--ink)}
+  .note{font-style:italic;color:var(--goldtext);font-size:12.5px;margin:10px 0 4px}
+  textarea{width:100%;min-height:80px;font:14px/26px Georgia,serif;border:0;resize:vertical;padding:0 2px;
+    background:repeating-linear-gradient(to bottom,transparent 0,transparent 25px,#999 25px,#999 26px);}
+  .closing{margin-top:26px;text-align:center;font-size:14px;line-height:1.5;color:#3d3a35}
+  .verse{margin-top:12px;font-style:italic;color:var(--ink);font-size:15px}
+  .ref{font-size:13px;color:var(--goldtext);margin-top:2px}
+  .extra{margin-top:14px;font-size:13px;color:#3d3a35}
+  footer{margin-top:20px;text-align:center;font-size:13px;color:#555;font-style:italic}
+  .pgno{text-align:right;font-size:12px;color:#777;margin-bottom:10px}
+  @media (max-width:640px){
+    .page{padding:20px 16px;border-left:0;border-right:0}
+    .grid{grid-template-columns:1fr}
+    .who{flex-direction:column;gap:12px}
+  }
+  @media print{
+    @page{size:letter;margin:.35in}
+    html,body{background:#fff}
+    .bar,.tip{display:none}
+    .page{box-shadow:none;margin:0;width:100%;max-width:100%;padding:.3in .4in;border:1.5px solid var(--gold);page-break-after:always;break-after:page}
+    .page:last-child{page-break-after:auto;break-after:auto}
+    header img{width:58px}
+    h1{font-size:22px}
+    .who{margin:10px 0 4px}
+    .grid{grid-template-columns:1fr 1fr;row-gap:14px;margin-top:8px}
+    section h2{font-size:15px;margin-bottom:4px}
+    .item{font-size:12.5px;margin:2px 0}
+    .note{margin:6px 0 2px}
+    textarea{resize:none;min-height:54px}
+    section{break-inside:avoid}
+    .closing{margin-top:16px;font-size:12.5px}
+  }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <button class="print" onclick="window.print()">Print this form</button>
+    <button class="clear" onclick="clearForm()">Clear my answers</button>
+  </div>
+  <p class="tip">You can check boxes and type notes right on this page before printing, or print it blank and fill it in by hand.</p>
+
+  <div class="page">
+    <header>
+      <img src="../belief-counseling-logo.png" alt="Belief Counseling">
+      <h1>Toxic Messages from Church &amp; Religion</h1>
+      <p class="sub">Please check any message you learned from church, religious teaching, or your spiritual upbringing.</p>
+    </header>
+    <div class="who">
+      <label class="name">Name: <input type="text" aria-label="Name"></label>
+      <label>Date: <input type="text" aria-label="Date"></label>
+    </div>
+    <div class="grid">
+      <section>
+        <h2>God’s Character</h2>
+        <label class="item"><input type="checkbox">“God is angry with me.”</label>
+        <label class="item"><input type="checkbox">“God is waiting for me to mess up.”</label>
+        <label class="item"><input type="checkbox">“God loves me only when I’m good.”</label>
+        <label class="item"><input type="checkbox">“God is disappointed in me.”</label>
+        <label class="item"><input type="checkbox">“God is too busy to care about me.”</label>
+        <p class="note">If checked, what did you come to believe about yourself?</p>
+        <textarea aria-label="God’s Character notes"></textarea>
+      </section>
+      <section>
+        <h2>Suffering &amp; Blessing</h2>
+        <label class="item"><input type="checkbox">“If I’m suffering, God is punishing me.”</label>
+        <label class="item"><input type="checkbox">“If I had more faith, I’d be healed.”</label>
+        <label class="item"><input type="checkbox">“God wants me healthy and wealthy.”</label>
+        <label class="item"><input type="checkbox">“If I give more, God must give me more.”</label>
+        <label class="item"><input type="checkbox">“Bad things mean I didn’t pray enough.”</label>
+        <p class="note">If checked, what did you come to believe about yourself?</p>
+        <textarea aria-label="Suffering &amp; Blessing notes"></textarea>
+      </section>
+    </div>
+    <div class="grid">
+      <section>
+        <h2>Sin &amp; Guilt</h2>
+        <label class="item"><input type="checkbox">“I’ve sinned too much to be forgiven.”</label>
+        <label class="item"><input type="checkbox">“If I feel guilty, I must be guilty.”</label>
+        <label class="item"><input type="checkbox">“Good Christians always feel guilty.”</label>
+        <label class="item"><input type="checkbox">“I’ve committed the unpardonable sin.”</label>
+        <label class="item"><input type="checkbox">“My body and its desires are dirty.”</label>
+        <p class="note">If checked, what did you come to believe about yourself?</p>
+        <textarea aria-label="Sin &amp; Guilt notes"></textarea>
+      </section>
+      <section>
+        <h2>Forgiveness</h2>
+        <label class="item"><input type="checkbox">“God forgives, but He never forgets.”</label>
+        <label class="item"><input type="checkbox">“I must pay for my sins.”</label>
+        <label class="item"><input type="checkbox">“I can never forgive myself.”</label>
+        <label class="item"><input type="checkbox">“Forgiving means I must trust them again.”</label>
+        <label class="item"><input type="checkbox">“I need a priest to be forgiven.”</label>
+        <p class="note">If checked, what did you come to believe about yourself?</p>
+        <textarea aria-label="Forgiveness notes"></textarea>
+      </section>
+    </div>
+  </div>
+  <div class="page">
+    <div class="pgno">Page 2</div>
+    <div class="grid">
+      <section>
+        <h2>Salvation &amp; Acceptance</h2>
+        <label class="item"><input type="checkbox">“I have to earn God’s acceptance.”</label>
+        <label class="item"><input type="checkbox">“I can never know if I’m really saved.”</label>
+        <label class="item"><input type="checkbox">“Going to church makes me right with God.”</label>
+        <label class="item"><input type="checkbox">“One more sin and God will give up on me.”</label>
+        <label class="item"><input type="checkbox">“I must suffer after death to be made pure.”</label>
+        <p class="note">If checked, what did you come to believe about yourself?</p>
+        <textarea aria-label="Salvation &amp; Acceptance notes"></textarea>
+      </section>
+      <section>
+        <h2>Faith &amp; Emotions</h2>
+        <label class="item"><input type="checkbox">“Doubt means I’m not a real Christian.”</label>
+        <label class="item"><input type="checkbox">“Strong emotions mean my faith is weak.”</label>
+        <label class="item"><input type="checkbox">“If I don’t feel close to God, He’s left me.”</label>
+        <label class="item"><input type="checkbox">“Depression means I don’t trust God.”</label>
+        <label class="item"><input type="checkbox">“Needing counseling means weak faith.”</label>
+        <p class="note">If checked, what did you come to believe about yourself?</p>
+        <textarea aria-label="Faith &amp; Emotions notes"></textarea>
+      </section>
+    </div>
+    <div class="grid">
+      <section>
+        <h2>Church &amp; Authority</h2>
+        <label class="item"><input type="checkbox">“Questioning my pastor is questioning God.”</label>
+        <label class="item"><input type="checkbox">“If my church teaches it, it must be biblical.”</label>
+        <label class="item"><input type="checkbox">“Good Christians don’t have problems.”</label>
+        <label class="item"><input type="checkbox">“My worth depends on how much I serve.”</label>
+        <label class="item"><input type="checkbox">“My needs and feelings don’t count.”</label>
+        <p class="note">If checked, what did you come to believe about yourself?</p>
+        <textarea aria-label="Church &amp; Authority notes"></textarea>
+      </section>
+      <section>
+        <h2>The Spiritual Realm</h2>
+        <label class="item"><input type="checkbox">“Satan has more power over me than God.”</label>
+        <label class="item"><input type="checkbox">“Every problem I have is a spiritual attack.”</label>
+        <label class="item"><input type="checkbox">“I’m under a family curse I can’t escape.”</label>
+        <label class="item"><input type="checkbox">“I need a saint to reach God for me.”</label>
+        <label class="item"><input type="checkbox">“No tongues means I don’t have the Spirit.”</label>
+        <p class="note">If checked, what did you come to believe about yourself?</p>
+        <textarea aria-label="The Spiritual Realm notes"></textarea>
+      </section>
+    </div>
+    <div class="closing">
+      <p>Not everything taught in the name of God is the truth of God. Our beliefs about God can teach powerful lessons about our worth, our guilt, and our future. What was learned can be examined, questioned, tested against Scripture, and replaced with truth.</p>
+      <div class="verse">“Then you will know the truth, and the truth will set you free.”</div>
+      <div class="ref">John 8:32</div>
+    </div>
+    <footer>Thank you — this helps your counselor understand the beliefs behind what you’re experiencing. Your answers are confidential within your counseling relationship.</footer>
+  </div>
+
+<script>
+  function clearForm(){
+    if(!confirm('Clear all checked boxes and notes on this page?')) return;
+    document.querySelectorAll('input[type=checkbox]').forEach(function(c){c.checked=false;});
+    document.querySelectorAll('input[type=text],textarea').forEach(function(t){t.value='';});
+  }
+</script>
+</body>
+</html>
