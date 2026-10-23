@@ -140,10 +140,9 @@ body.searching .welcome,body.searching .closing,body.searching .note,body.search
 <h2>Take the Next Step</h2>
 <p>Choose the option that feels right for you right now:</p>
 <div class="buttons">
-<button type="button" class="btn" id="searchBtn">Search for a False Belief<small>Find a belief by a word or a thought you have</small></button>
+<a class="btn" href="https://doctorishome.wixstudio.com/website-6/search-false-beliefs" target="_blank" rel="noopener">Search for a False Belief<small>Find a belief by a word or a thought you have</small></a>
 <a class="btn" href="https://doctorishome.wixstudio.com/website-6/beliefs" target="_blank" rel="noopener">Learn More About Beliefs<small>What a belief is and why it matters</small></a>
 </div>
-<div class="search-panel" id="searchPanel" hidden></div>
 <p class="welcome">Whether you are just beginning to explore or ready to take a concrete step, you are welcome here.</p>
 
 <div class="closing">“Then you will know the truth, and the truth will set you free.”<span>John 8:32</span></div>
@@ -151,7 +150,4 @@ body.searching .welcome,body.searching .closing,body.searching .note,body.search
 <p class="note">This website offers education and self-help resources. It is not a substitute for professional counseling. Scripture quotations are from the Berean Standard Bible.</p>
 
 </div>
-<script>
-document.getElementById("searchBtn").onclick=function(){var p=document.getElementById("searchPanel");if(p.hidden){if(!p.firstChild)p.innerHTML='<iframe src="belief-search.html?embed=1" title="Search for a False Belief"></iframe>';p.hidden=false;document.body.classList.add("searching");this.firstChild.textContent="Close the Search";this.lastChild.textContent="Hide the search box"}else{p.hidden=true;document.body.classList.remove("searching");this.firstChild.textContent="Search for a False Belief";this.lastChild.textContent="Find a belief by a word or a thought you have"}};
-</script>
 </body></html>
