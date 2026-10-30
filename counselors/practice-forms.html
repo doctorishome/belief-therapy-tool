@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Practice forms</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:54px 22px 46px;text-align:center}
+.hero h1{font-size:clamp(1.8rem,4.5vw,2.9rem);margin:0 0 10px;line-height:1.2}
+.hero p{max-width:740px;margin:0 auto;font-size:1.12rem;color:#dfe6f2}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.wrap{max-width:820px;margin:0 auto;padding:36px 20px 20px}
+h2{color:var(--navy);font-size:1.55rem;margin:34px 0 8px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+.card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:16px 18px;box-shadow:0 2px 6px rgba(18,40,76,.06)}
+.card p{margin:4px 0 0}
+.priv{color:var(--mut);font-size:.98rem;margin:0 0 8px}
+label,legend{color:var(--navy);font-weight:bold}
+.field{margin:16px 0 0}
+.field label,.field legend{display:block;margin:0 0 4px}
+.hint{color:var(--mut);font-weight:normal;font-size:.92rem}
+input[type=text],select{width:100%;font:inherit;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+input[type=text]:focus,select:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+fieldset{border:0;margin:16px 0 0;padding:0}
+.choices{display:flex;flex-wrap:wrap;gap:8px 18px;font-weight:normal;color:var(--ink)}
+.choices label{font-weight:normal;color:var(--ink);display:flex;align-items:center;gap:8px}
+.check{display:flex;gap:10px;align-items:flex-start;margin:14px 0;color:var(--ink);font-weight:normal}
+.check input,.choices input{accent-color:var(--navy);width:1.05rem;height:1.05rem;margin-top:4px;flex:0 0 auto}
+.sub{margin-top:8px;padding:12px 14px;background:var(--cream);border-radius:8px;border:1px solid var(--line)}
+.states{max-height:220px;overflow:auto;border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:#fff;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:2px 12px}
+.states label{font-weight:normal;color:var(--ink);display:flex;align-items:center;gap:8px;margin:3px 0}
+.notice{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:8px;padding:16px 18px;margin:12px 0}
+.notice p{margin:0}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 8px}
+.btn{font-family:Georgia,'Times New Roman',serif;background:var(--gold);color:var(--navy);font-weight:bold;border:0;border-radius:30px;padding:13px 22px;font-size:1.02rem;cursor:pointer}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+#status{min-height:1.4em}
+.foot{margin:40px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}
+@media(max-width:560px){.row{grid-template-columns:1fr}.hero{padding:40px 16px 32px}}
+</style>
+</head>
+<body>
+<!--standalone-->
+<div class="hero">
+  <div class="eyebrow">For counselors</div>
+  <h1>Practice forms</h1>
+  <p>Enter your practice details and download the New Client Packet and the Confidentiality Agreement as fillable PDFs. Your details are written in on this computer. Client lines stay empty.</p>
+</div>
+<div class="wrap">
+  <div class="card">
+    <p>Your practice details stay on this computer. This page does not upload them, store them on a server, or use analytics. The blank templates are loaded from this site, filled in your browser, and saved only as a download.</p>
+    <p class="priv">Remember on this computer keeps a copy in this browser only. Clearing this site’s data removes it.</p>
+  </div>
+
+  <h2>Your practice</h2>
+  <form id="practice" autocomplete="off" novalidate>
+    <div class="field">
+      <label for="counselorName">Counselor full name and credentials</label>
+      <input id="counselorName" name="counselorName" type="text" autocomplete="name" required>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label for="practiceName">Practice name <span class="hint">(optional)</span></label>
+        <input id="practiceName" name="practiceName" type="text" autocomplete="organization">
+      </div>
+      <div class="field">
+        <label for="state">State of practice</label>
+        <select id="state" name="state" required>
+          <option value="">Select a state</option>
+        </select>
+        <p class="hint">Printed on the form as the two-letter abbreviation.</p>
+      </div>
+    </div>
+    <div class="field">
+      <span class="hint">License or certification type and number (if applicable)</span>
+      <div class="row">
+        <div>
+          <label for="licenseType">Type</label>
+          <input id="licenseType" name="licenseType" type="text" placeholder="Licensed psychologist">
+        </div>
+        <div>
+          <label for="licenseNumber">Number</label>
+          <input id="licenseNumber" name="licenseNumber" type="text" placeholder="12345">
+        </div>
+      </div>
+    </div>
+    <label class="check" for="inTraining"><input id="inTraining" name="inTraining" type="checkbox"> I am a student / in training under supervision</label>
+    <div id="supervisorBlock" class="sub" hidden>
+      <div class="row">
+        <div class="field">
+          <label for="supervisorName">Supervisor's name</label>
+          <input id="supervisorName" name="supervisorName" type="text">
+        </div>
+        <div class="field">
+          <label for="supervisorLicense">Supervisor's license number</label>
+          <input id="supervisorLicense" name="supervisorLicense" type="text">
+        </div>
+      </div>
+    </div>
+    <fieldset>
+      <legend>Telehealth to clients in other states</legend>
+      <div class="choices">
+        <label for="teleYes"><input id="teleYes" type="radio" name="telehealth" value="yes"> Yes</label>
+        <label for="teleNo"><input id="teleNo" type="radio" name="telehealth" value="no"> No</label>
+      </div>
+    </fieldset>
+    <div id="otherStates" class="field" hidden>
+      <label id="statesLabel">Which states</label>
+      <div class="states" role="group" aria-labelledby="statesLabel"></div>
+      <p class="hint">Your practice state is not listed again. These templates have no line for other states, so this list is kept only if you choose Remember on this computer.</p>
+    </div>
+    <label class="check" for="remember"><input id="remember" name="remember" type="checkbox"> Remember on this computer</label>
+    <p class="hint">The PDFs receive your name, state abbreviation, license, and supervisor when you are in training. Practice name is kept only with Remember on this computer.</p>
+  </form>
+
+  <h2>Important Disclaimer – Notice to Counselor</h2>
+  <div class="notice">
+    <p>Confidentiality, duty-to-warn, mandated reporting, minors’ consent, and record-retention rules vary by state statute. These forms are general templates, not legal advice, and must be reviewed by an attorney familiar with the laws of your state and of any state where a telehealth client is located.</p>
+  </div>
+  <label class="check" for="notice"><input id="notice" name="notice" type="checkbox"> I have read and understand this notice</label>
+
+  <h2>Download</h2>
+  <p>Both files stay fillable. Client lines are left blank.</p>
+  <div class="actions">
+    <button type="button" class="btn" id="dlPacket" disabled>Download New Client Packet (fillable)</button>
+    <button type="button" class="btn" id="dlConf" disabled>Download Confidentiality Agreement (fillable)</button>
+  </div>
+  <p id="status" class="hint" role="status"></p>
+  <noscript><p>This page needs JavaScript to fill the PDFs on your computer. Your details are still not uploaded.</p></noscript>
+</div>
+<div class="foot">General templates for counselors. Not legal advice. Your entries stay on this computer. · © Brian Campbell, Ph.D.</div>
+<!-- pdf-lib 1.17.1, MIT. See forms/pdf-lib.LICENSE.md -->
+<script src="forms/pdf-lib.min.js"></script>
+<script>
+(function () {
+  var STATES = [
+    ['AL','Alabama'],['AK','Alaska'],['AZ','Arizona'],['AR','Arkansas'],['CA','California'],
+    ['CO','Colorado'],['CT','Connecticut'],['DE','Delaware'],['DC','District of Columbia'],['FL','Florida'],
+    ['GA','Georgia'],['HI','Hawaii'],['ID','Idaho'],['IL','Illinois'],['IN','Indiana'],
+    ['IA','Iowa'],['KS','Kansas'],['KY','Kentucky'],['LA','Louisiana'],['ME','Maine'],
+    ['MD','Maryland'],['MA','Massachusetts'],['MI','Michigan'],['MN','Minnesota'],['MS','Mississippi'],
+    ['MO','Missouri'],['MT','Montana'],['NE','Nebraska'],['NV','Nevada'],['NH','New Hampshire'],
+    ['NJ','New Jersey'],['NM','New Mexico'],['NY','New York'],['NC','North Carolina'],['ND','North Dakota'],
+    ['OH','Ohio'],['OK','Oklahoma'],['OR','Oregon'],['PA','Pennsylvania'],['RI','Rhode Island'],
+    ['SC','South Carolina'],['SD','South Dakota'],['TN','Tennessee'],['TX','Texas'],['UT','Utah'],
+    ['VT','Vermont'],['VA','Virginia'],['WA','Washington'],['WV','West Virginia'],['WI','Wisconsin'],
+    ['WY','Wyoming']
+  ];
+  var STORE_KEY = 'practiceForms.v1';
+  var TEMPLATES = {
+    packet: {url: 'forms/New-Client-Packet-fillable.pdf', file: 'New-Client-Packet'},
+    conf: {url: 'forms/Confidentiality-Agreement-fillable.pdf', file: 'Confidentiality-Agreement'}
+  };
+  var FILL = ['conf_counselor_name','conf_practice_state','conf_counselor_license','conf_supervisor_name','conf_supervisor_license'];
+  var $ = function (id) { return document.getElementById(id); };
+  var statusEl = $('status');
+  var stateSelect = $('state');
+  var statesBox = document.querySelector('#otherStates .states');
+
+  STATES.forEach(function (pair) {
+    var opt = document.createElement('option');
+    opt.value = pair[0];
+    opt.textContent = pair[1];
+    stateSelect.appendChild(opt);
+    var label = document.createElement('label');
+    var box = document.createElement('input');
+    box.type = 'checkbox';
+    box.value = pair[0];
+    box.name = 'teleState';
+    label.appendChild(box);
+    label.appendChild(document.createTextNode(' ' + pair[1]));
+    statesBox.appendChild(label);
+  });
+
+  function checkedRadio(name) {
+    var el = document.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : '';
+  }
+
+  function readForm() {
+    var teleStates = [];
+    document.querySelectorAll('input[name="teleState"]:checked').forEach(function (box) {
+      teleStates.push(box.value);
+    });
+    return {
+      counselorName: $('counselorName').value.trim(),
+      practiceName: $('practiceName').value.trim(),
+      state: stateSelect.value,
+      licenseType: $('licenseType').value.trim(),
+      licenseNumber: $('licenseNumber').value.trim(),
+      inTraining: $('inTraining').checked,
+      supervisorName: $('supervisorName').value.trim(),
+      supervisorLicense: $('supervisorLicense').value.trim(),
+      telehealth: checkedRadio('telehealth'),
+      telehealthStates: teleStates
+    };
+  }
+
+  function missing(data) {
+    var items = [];
+    if (!data.counselorName) items.push('your name');
+    if (!data.state) items.push('your state of practice');
+    if (data.inTraining && !data.supervisorName) items.push("your supervisor's name");
+    if (data.inTraining && !data.supervisorLicense) items.push("your supervisor's license number");
+    if (!data.telehealth) items.push('whether you see telehealth clients in other states');
+    if (data.telehealth === 'yes' && !data.telehealthStates.length) items.push('which other states');
+    if (!$('notice').checked) items.push('the notice');
+    return items;
+  }
+
+  function licenseLine(type, number) {
+    if (type && number) return number.charAt(0) === '#' ? (type + ' ' + number) : (type + ' #' + number);
+    return type || number || '';
+  }
+
+  function fileLastName(full) {
+    var cred = /^(ph\.?d|psy\.?d|ed\.?d|m\.?d|d\.?o|m\.?a|m\.?s|msw|lcsw|lpc|lmft|lmhc|lpcc|lcpc|ncc|aprn|pmhnp|rn|lp|llp|limhp|lisw|licsw|lmsw|ladc|cadc|bcba|jr|sr|ii|iii|iv|dr)$/i;
+    var s = String(full || '').trim().replace(/\s+/g, ' ');
+    if (s.indexOf(',') !== -1) s = s.slice(0, s.indexOf(',')).trim();
+    var words = s.split(' ').filter(function (word) {
+      var key = word.toLowerCase().replace(/\./g, '');
+      return key && !cred.test(key);
+    });
+    var last = words.length ? words[words.length - 1] : 'Counselor';
+    var safe = last.replace(/[^\p{L}\p{M}'’-]/gu, '');
+    return safe || 'Counselor';
+  }
+
+  function syncUI() {
+    var data = readForm();
+    $('supervisorBlock').hidden = !data.inTraining;
+    $('otherStates').hidden = data.telehealth !== 'yes';
+    document.querySelectorAll('input[name="teleState"]').forEach(function (box) {
+      var same = box.value === data.state;
+      box.parentElement.hidden = same;
+      box.disabled = same;
+      if (same) box.checked = false;
+    });
+    var gaps = missing(readForm());
+    var ready = gaps.length === 0;
+    $('dlPacket').disabled = !ready;
+    $('dlConf').disabled = !ready;
+    if (gaps.length === 1 && gaps[0] === 'the notice') {
+      statusEl.textContent = 'Downloads turn on after you check the notice.';
+    } else if (!ready) {
+      statusEl.textContent = 'Downloads turn on after you add ' + gaps.join(', ') + '.';
+    } else {
+      statusEl.textContent = 'Ready. The file is built in this browser and saved to your computer.';
+    }
+  }
+
+  function saveLocal() {
+    try {
+      if (!$('remember').checked) {
+        localStorage.removeItem(STORE_KEY);
+        return;
+      }
+      var data = readForm();
+      localStorage.setItem(STORE_KEY, JSON.stringify(data));
+    } catch (err) {
+      statusEl.textContent = 'This browser did not store the details. You can still download.';
+    }
+  }
+
+  function loadLocal() {
+    try {
+      var raw = localStorage.getItem(STORE_KEY);
+      if (!raw) return;
+      var data = JSON.parse(raw);
+      $('counselorName').value = data.counselorName || '';
+      $('practiceName').value = data.practiceName || '';
+      if (data.state) stateSelect.value = data.state;
+      $('licenseType').value = data.licenseType || '';
+      $('licenseNumber').value = data.licenseNumber || '';
+      $('inTraining').checked = !!data.inTraining;
+      $('supervisorName').value = data.supervisorName || '';
+      $('supervisorLicense').value = data.supervisorLicense || '';
+      if (data.telehealth === 'yes' || data.telehealth === 'no') {
+        document.querySelector('input[name="telehealth"][value="' + data.telehealth + '"]').checked = true;
+      }
+      var chosen = {};
+      (data.telehealthStates || []).forEach(function (code) { chosen[code] = true; });
+      document.querySelectorAll('input[name="teleState"]').forEach(function (box) {
+        box.checked = !!chosen[box.value];
+      });
+      $('remember').checked = true;
+    } catch (err) {
+      try { localStorage.removeItem(STORE_KEY); } catch (ignore) {}
+    }
+  }
+
+  function pdfValues(data) {
+    return {
+      conf_counselor_name: data.counselorName,
+      conf_practice_state: data.state,
+      conf_counselor_license: licenseLine(data.licenseType, data.licenseNumber),
+      conf_supervisor_name: data.inTraining ? data.supervisorName : '',
+      conf_supervisor_license: data.inTraining ? data.supervisorLicense : ''
+    };
+  }
+
+  async function fillAndDownload(kind) {
+    var data = readForm();
+    if (missing(data).length) {
+      syncUI();
+      return;
+    }
+    if (!window.PDFLib) {
+      statusEl.textContent = 'The form tool did not load. Refresh this page. Nothing was uploaded.';
+      return;
+    }
+    var spec = TEMPLATES[kind];
+    $('dlPacket').disabled = true;
+    $('dlConf').disabled = true;
+    statusEl.textContent = 'Preparing the file on this computer…';
+    try {
+      var res = await fetch(spec.url);
+      if (!res.ok) throw new Error('template');
+      var pdf = await PDFLib.PDFDocument.load(await res.arrayBuffer());
+      var form = pdf.getForm();
+      var font = await pdf.embedFont(PDFLib.StandardFonts.Helvetica);
+      var values = pdfValues(data);
+      FILL.forEach(function (name) {
+        var field = form.getTextField(name);
+        field.setText(values[name]);
+        field.setFontSize(10);
+      });
+      form.updateFieldAppearances(font);
+      var bytes = await pdf.save();
+      var blob = new Blob([bytes], {type: 'application/pdf'});
+      var link = document.createElement('a');
+      var name = spec.file + '-' + fileLastName(data.counselorName) + '.pdf';
+      link.href = URL.createObjectURL(blob);
+      link.download = name;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(function () { URL.revokeObjectURL(link.href); }, 10000);
+      statusEl.textContent = 'Saved ' + name + ' on this computer. Client lines were left blank, and the file is still fillable.';
+    } catch (err) {
+      statusEl.textContent = 'The file could not be prepared on this computer. Nothing was uploaded. Please try again.';
+    }
+    syncUI();
+  }
+
+  $('practice').addEventListener('input', function () { syncUI(); saveLocal(); });
+  $('practice').addEventListener('change', function () { syncUI(); saveLocal(); });
+  $('notice').addEventListener('change', syncUI);
+  $('remember').addEventListener('change', function () { saveLocal(); syncUI(); });
+  $('dlPacket').addEventListener('click', function () { fillAndDownload('packet'); });
+  $('dlConf').addEventListener('click', function () { fillAndDownload('conf'); });
+  loadLocal();
+  syncUI();
+})();
+</script>
+</body>
+</html>
