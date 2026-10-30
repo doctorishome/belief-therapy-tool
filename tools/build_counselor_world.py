@@ -195,7 +195,8 @@ page('library','Clinical Library','Counselor-only background, tools, and referen
  '<h2>Clinical background for the belief cards</h2><p>Each public false-belief card links to a counselor note on origins, cognitive errors, and treatment approach. Members will find them organized by category: Spiritual/Religious, Psychological/Cognitive, Interpersonal, Socioeconomic, Sociocultural, and Biological/Physical.</p>'
  '<h2>Recommended reading</h2><ul class="clean"><li>Beck, Davis, and Freeman, <em>Cognitive Therapy of Personality Disorders</em></li><li>Beck Institute Personality Belief Questionnaire materials</li></ul>'
  '<div class="card"><span class="tag">Coming soon</span><h3>Library opens with membership</h3><p>Documents will be added here in stages.</p></div>')
-# 8 Clinical Companion (member embed: no menu, no outside links, no script)
+# 8 Clinical Companion (member embed: no menu, no script).
+# The client-forms button opens practice-forms.html in a new tab so a Wix iframe does not block the download.
 CC_CSS = '''/*cc*/
 .card p{margin:0;color:var(--ink);font-size:1.02rem}
 .pill{display:inline-block;margin-top:14px;padding:7px 16px;border-radius:20px;background:#ece7da;color:#6d7686;font-size:.85rem;font-weight:bold;letter-spacing:.4px;border:1px solid #ddd4c0;cursor:default;user-select:none}
@@ -212,6 +213,11 @@ ol.clean li::before{content:counter(step);flex:0 0 42px;height:42px;border-radiu
 .faq details p{margin:0;padding:0 18px 16px;color:var(--navy)}
 .faq summary:hover{background:#fbf8f0}
 .faq summary:focus{outline:2px solid var(--gold);outline-offset:-2px}
+h2.forms-title{margin-top:22px}
+.forms{display:flex;gap:18px;align-items:center;justify-content:space-between;margin:2px 0 4px}
+.forms p{margin:0;flex:1 1 auto}
+.forms .btn{flex:0 0 auto;white-space:nowrap;padding:11px 22px}
+@media(max-width:640px){.forms{flex-direction:column;align-items:flex-start}.forms .btn{white-space:normal}}
 @media(max-width:560px){ol.clean li{flex-direction:column;align-items:flex-start}}
 /*/cc*/
 '''
@@ -238,6 +244,9 @@ page('clinical-companion','Clinical Companion',
  '<li>Sign in with your website member login.</li>'
  '<li>Try a practice case before using it with clients.</li>'
  '<li>Write your session notes, then ask for an analysis.</li></ol>'
+ '<h2 class="forms-title">Client Forms for Your Practice</h2>'
+ '<div class="forms"><p>Enter your practice details once and download a New Client Packet and Confidentiality Agreement pre-filled with them. Review them with an attorney in your state.</p>'
+ '<a class="btn" href="practice-forms.html" target="_blank" rel="noopener">Open client forms</a></div>'
  '<h2>Help</h2><p>Questions or problems? Contact us through the Contact page and we\'ll get back to you. For billing questions or special circumstances, contact us and we\'ll do our best to help.</p>'
  '<h2>Your account</h2><p>Manage your membership, payment method, or cancel anytime from My Account. Your access continues to the end of the month you\'ve paid for; the remainder of the month isn\'t refunded.</p>'
  + FAQ_HTML +
