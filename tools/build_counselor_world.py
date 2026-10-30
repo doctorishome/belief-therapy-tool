@@ -202,9 +202,32 @@ CC_CSS = '''/*cc*/
 ol.clean{list-style:none;margin:16px 0;padding:0;counter-reset:step}
 ol.clean li{counter-increment:step;display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:12px 0}
 ol.clean li::before{content:counter(step);flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.faq{margin:8px 0 4px}
+.faq details{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;margin:12px 0;box-shadow:0 2px 6px rgba(18,40,76,.06)}
+.faq summary{color:var(--navy);font-weight:bold;font-size:1.05rem;padding:14px 46px 14px 18px;cursor:pointer;list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::marker{content:""}
+.faq summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.35rem;font-weight:bold;line-height:1}
+.faq details[open] summary::after{content:"\u2212"}
+.faq details p{margin:0;padding:0 18px 16px;color:var(--navy)}
+.faq summary:hover{background:#fbf8f0}
+.faq summary:focus{outline:2px solid var(--gold);outline-offset:-2px}
 @media(max-width:560px){ol.clean li{flex-direction:column;align-items:flex-start}}
 /*/cc*/
 '''
+FAQS = [
+ ("How does the free week work?", "Your first 7 days are free. If you don't cancel before the week ends, your membership continues at $29.25 a month."),
+ ("How do I cancel?", "Sign in, open My Account, go to My Subscriptions, and choose Cancel. You can cancel anytime."),
+ ("Will I get a refund if I cancel?", "Your access continues to the end of the month you've paid for. The remainder of the month isn't refunded. If you have special circumstances, contact us."),
+ ("What happens to my access after I cancel?", "You keep full access until the end of your paid month. After that, the app and member resources are no longer available to you."),
+ ("What does 'fair use' mean?", "Clinical Companion is meant for your own professional caseload. Sharing your account, or very heavy automated use, isn't permitted."),
+ ("Who is Clinical Companion for?", "Professional counselors, psychologists, and students in training who want to integrate Christian belief counseling into their work."),
+ ("What do I need to run it?", "A Windows computer and an internet connection."),
+ ("Can I enter real client information?", "Use fictional or de-identified information unless your plan states otherwise."),
+ ("How do I get help?", "Contact us through the Contact page and we'll get back to you."),
+]
+FAQ_HTML = '<h2>Frequently asked questions</h2><div class="faq">' + ''.join(
+ '<details><summary>%s</summary><p>%s</p></details>' % pair for pair in FAQS) + '</div>'
 page('clinical-companion','Clinical Companion',
  "Welcome to your Clinical Companion member area. Here you'll find the app download, a quick-start guide, help, and your account.",
  '<h2>Download the app</h2>'
@@ -215,8 +238,9 @@ page('clinical-companion','Clinical Companion',
  '<li>Sign in with your website member login.</li>'
  '<li>Try a practice case before using it with clients.</li>'
  '<li>Write your session notes, then ask for an analysis.</li></ol>'
- '<h2>Help</h2><p>Questions or problems? Contact us through the Contact page and we\'ll get back to you.</p>'
+ '<h2>Help</h2><p>Questions or problems? Contact us through the Contact page and we\'ll get back to you. For billing questions or special circumstances, contact us and we\'ll do our best to help.</p>'
  '<h2>Your account</h2><p>Manage your membership, payment method, or cancel anytime from My Account. Your access continues to the end of the month you\'ve paid for; the remainder of the month isn\'t refunded.</p>'
+ + FAQ_HTML +
  '<h2>Terms of use</h2><p>Clinical Companion supports, and does not replace, your professional clinical judgment. Use fictional or de-identified information unless your plan states otherwise. Fair use applies; excessive use isn\'t permitted.</p>',
  eyebrow='MEMBERS', extra_css=CC_CSS, with_nav=False)
 print('built',[p[0] for p in PAGES]+['clinical-companion'])
