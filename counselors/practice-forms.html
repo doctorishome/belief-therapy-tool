@@ -46,9 +46,9 @@ fieldset{border:0;margin:16px 0 0;padding:0}
 <body>
 <!--standalone-->
 <div class="hero">
-  <div class="eyebrow">For counselors and ministers</div>
+  <div class="eyebrow">For clinicians and ministers</div>
   <h1>Practice forms</h1>
-  <p>Choose counselor or minister, enter your details, and download fillable forms with those details already in place. Your details are written in on this computer. Client lines stay empty.</p>
+  <p>Choose a clinical license or minister, enter your details, and download fillable forms with those details already in place. Your details are written in on this computer. Client lines stay empty.</p>
 </div>
 <div class="wrap">
   <div class="card">
@@ -61,13 +61,13 @@ fieldset{border:0;margin:16px 0 0;padding:0}
     <fieldset>
       <legend>Your role</legend>
       <div class="choices role-choices">
-        <label for="roleCounselor"><input id="roleCounselor" type="radio" name="role" value="counselor" checked> Licensed counselor or student in training</label>
+        <label for="roleCounselor"><input id="roleCounselor" type="radio" name="role" value="counselor" checked> Licensed clinician or student in training</label>
         <label for="roleMinister"><input id="roleMinister" type="radio" name="role" value="minister"> Licensed or ordained minister</label>
       </div>
     </fieldset>
     <div id="counselorFields">
     <div class="field">
-      <label for="counselorName">Counselor full name and credentials</label>
+      <label for="counselorName">Full name and credentials</label>
       <input id="counselorName" name="counselorName" type="text" autocomplete="name" required>
     </div>
     <div class="row">
@@ -84,29 +84,40 @@ fieldset{border:0;margin:16px 0 0;padding:0}
       </div>
     </div>
     <div class="field">
-      <span class="hint">License or certification type and number (if applicable)</span>
-      <div class="row">
-        <div>
-          <label for="licenseType">Type</label>
-          <input id="licenseType" name="licenseType" type="text" placeholder="Licensed psychologist">
-        </div>
-        <div>
-          <label for="licenseNumber">Number</label>
-          <input id="licenseNumber" name="licenseNumber" type="text" placeholder="12345">
-        </div>
-      </div>
+      <label for="licenseType">License type</label>
+      <select id="licenseType" name="licenseType">
+        <option value="">Select a license type</option>
+      </select>
+      <p class="hint">LMSW/LBSW social workers generally can't diagnose independently and should choose the supervised option.</p>
     </div>
-    <label class="check" for="inTraining"><input id="inTraining" name="inTraining" type="checkbox"> I am a student / in training under supervision</label>
+    <div class="field" id="licenseCodeField" hidden>
+      <label for="licenseCode">Abbreviation on the form</label>
+      <select id="licenseCode" name="licenseCode"></select>
+    </div>
+    <div class="field">
+      <label for="licenseNumber">License number <span class="hint">(if applicable)</span></label>
+      <input id="licenseNumber" name="licenseNumber" type="text" placeholder="12345">
+      <p class="hint">Printed beside the abbreviation, such as LMFT #12345.</p>
+    </div>
     <div id="supervisorBlock" class="sub" hidden>
-      <div class="row">
-        <div class="field">
-          <label for="supervisorName">Supervisor's name</label>
-          <input id="supervisorName" name="supervisorName" type="text">
-        </div>
-        <div class="field">
-          <label for="supervisorLicense">Supervisor's license number</label>
-          <input id="supervisorLicense" name="supervisorLicense" type="text">
-        </div>
+      <p class="hint">Required for an associate, supervised, or student license.</p>
+      <div class="field">
+        <label for="supervisorName">Supervisor's name</label>
+        <input id="supervisorName" name="supervisorName" type="text">
+      </div>
+      <div class="field">
+        <label for="supervisorLicenseType">Supervisor's license type</label>
+        <select id="supervisorLicenseType" name="supervisorLicenseType">
+          <option value="">Select a license type</option>
+        </select>
+      </div>
+      <div class="field" id="supervisorCodeField" hidden>
+        <label for="supervisorLicenseCode">Supervisor's abbreviation on the form</label>
+        <select id="supervisorLicenseCode" name="supervisorLicenseCode"></select>
+      </div>
+      <div class="field">
+        <label for="supervisorLicense">Supervisor's license number</label>
+        <input id="supervisorLicense" name="supervisorLicense" type="text" placeholder="12345">
       </div>
     </div>
     <fieldset>
@@ -184,7 +195,7 @@ fieldset{border:0;margin:16px 0 0;padding:0}
   <p id="status" class="hint" role="status"></p>
   <noscript><p>This page needs JavaScript to fill the PDFs on your computer. Your details are still not uploaded.</p></noscript>
 </div>
-<div class="foot">General templates for counselors and ministers. Not legal advice. Your entries stay on this computer. · © Brian Campbell, Ph.D.</div>
+<div class="foot">General templates for clinicians and ministers. Not legal advice. Your entries stay on this computer. · © Brian Campbell, Ph.D.</div>
 <!-- pdf-lib 1.17.1, MIT. See forms/pdf-lib.LICENSE.md -->
 <script src="forms/pdf-lib.min.js"></script>
 <script>
@@ -210,7 +221,15 @@ fieldset{border:0;margin:16px 0 0;padding:0}
   };
   var FILL = ['conf_counselor_name','conf_practice_state','conf_counselor_license','conf_supervisor_name','conf_supervisor_license'];
   var PAST_FILL = ['past_minister_name','past_practice_state','past_ordaining_body','past_credential_number','past_church_name','past_supervisor_name'];
-  var COUNSELOR_HINT = 'The PDFs receive your name, state abbreviation, license, and supervisor when you are in training. Practice name is kept only with Remember on this computer.';
+  var LICENSE_TYPES = [
+    {id:'lpc', label:'Licensed Professional Counselor (LPC/LPCC/LMHC)', codes:['LPC','LPCC','LMHC']},
+    {id:'lmft', label:'Licensed Marriage and Family Therapist (LMFT)', codes:['LMFT']},
+    {id:'lcsw', label:'Licensed Clinical Social Worker (LCSW/LICSW)', codes:['LCSW','LICSW']},
+    {id:'psych', label:'Licensed Psychologist (PhD/PsyD)', codes:['PhD','PsyD']},
+    {id:'associate', label:'Associate or supervised license (LPC-A, AMFT/MFT associate, LMSW, etc.)', codes:['LPC-A','AMFT','MFT associate','LMSW','LBSW'], supervised:true},
+    {id:'student', label:'Student in training under supervision', codes:['Student'], supervised:true}
+  ];
+  var COUNSELOR_HINT = 'The PDFs receive your name, state abbreviation, and license. A supervisor is added for an associate, supervised, or student license. Practice name is kept only with Remember on this computer.';
   var MINISTER_HINT = 'The agreement receives your name, state abbreviation, ordaining body, credential number, church or ministry, and supervisor or overseer if you enter one.';
   var $ = function (id) { return document.getElementById(id); };
   var statusEl = $('status');
@@ -228,6 +247,43 @@ fieldset{border:0;margin:16px 0 0;padding:0}
   }
   addStateOptions(stateSelect);
   addStateOptions(ministerState);
+  function addLicenseOptions(select, types) {
+    types.forEach(function (type) {
+      var opt = document.createElement('option');
+      opt.value = type.id;
+      opt.textContent = type.label;
+      select.appendChild(opt);
+    });
+  }
+  addLicenseOptions($('licenseType'), LICENSE_TYPES);
+  addLicenseOptions($('supervisorLicenseType'), LICENSE_TYPES.filter(function (type) { return !type.supervised; }));
+  function licenseById(id) {
+    for (var i = 0; i < LICENSE_TYPES.length; i++) {
+      if (LICENSE_TYPES[i].id === id) return LICENSE_TYPES[i];
+    }
+    return null;
+  }
+  function fillCodeSelect(select, codes) {
+    var current = select.value;
+    select.innerHTML = '';
+    var blank = document.createElement('option');
+    blank.value = '';
+    blank.textContent = 'Select';
+    select.appendChild(blank);
+    codes.forEach(function (code) {
+      var opt = document.createElement('option');
+      opt.value = code;
+      opt.textContent = code;
+      select.appendChild(opt);
+    });
+    if (codes.indexOf(current) !== -1) select.value = current;
+  }
+  function chosenCode(typeId, select) {
+    var type = licenseById(typeId);
+    if (!type) return '';
+    if (type.codes.length === 1) return type.codes[0];
+    return select.value;
+  }
   STATES.forEach(function (pair) {
     var label = document.createElement('label');
     var box = document.createElement('input');
@@ -258,10 +314,12 @@ fieldset{border:0;margin:16px 0 0;padding:0}
       counselorName: $('counselorName').value.trim(),
       practiceName: $('practiceName').value.trim(),
       state: stateSelect.value,
-      licenseType: $('licenseType').value.trim(),
+      licenseType: $('licenseType').value,
+      licenseCode: $('licenseCode').value,
       licenseNumber: $('licenseNumber').value.trim(),
-      inTraining: $('inTraining').checked,
       supervisorName: $('supervisorName').value.trim(),
+      supervisorLicenseType: $('supervisorLicenseType').value,
+      supervisorLicenseCode: $('supervisorLicenseCode').value,
       supervisorLicense: $('supervisorLicense').value.trim(),
       telehealth: checkedRadio('telehealth'),
       telehealthStates: teleStates,
@@ -284,10 +342,16 @@ fieldset{border:0;margin:16px 0 0;padding:0}
       if (!$('ministerNotice').checked) items.push('the notice');
       return items;
     }
+    var license = licenseById(data.licenseType);
+    var supervisor = licenseById(data.supervisorLicenseType);
     if (!data.counselorName) items.push('your name');
     if (!data.state) items.push('your state of practice');
-    if (data.inTraining && !data.supervisorName) items.push("your supervisor's name");
-    if (data.inTraining && !data.supervisorLicense) items.push("your supervisor's license number");
+    if (!license) items.push('your license type');
+    if (license && license.codes.length > 1 && !data.licenseCode) items.push('the abbreviation for your license');
+    if (license && license.supervised && !data.supervisorName) items.push("your supervisor's name");
+    if (license && license.supervised && !supervisor) items.push("your supervisor's license type");
+    if (license && license.supervised && supervisor && supervisor.codes.length > 1 && !data.supervisorLicenseCode) items.push("your supervisor's license abbreviation");
+    if (license && license.supervised && !data.supervisorLicense) items.push("your supervisor's license number");
     if (!data.telehealth) items.push('whether you see telehealth clients in other states');
     if (data.telehealth === 'yes' && !data.telehealthStates.length) items.push('which other states');
     if (!$('notice').checked) items.push('the notice');
@@ -329,7 +393,13 @@ fieldset{border:0;margin:16px 0 0;padding:0}
       ? 'The agreement stays fillable. The person’s lines are left blank.'
       : 'Both files stay fillable. Client lines are left blank.';
     $('rememberHint').textContent = minister ? MINISTER_HINT : COUNSELOR_HINT;
-    $('supervisorBlock').hidden = !data.inTraining;
+    var license = licenseById(data.licenseType);
+    var supervisor = licenseById(data.supervisorLicenseType);
+    $('licenseCodeField').hidden = !(license && license.codes.length > 1);
+    if (license && license.codes.length > 1) fillCodeSelect($('licenseCode'), license.codes);
+    $('supervisorBlock').hidden = !(license && license.supervised);
+    $('supervisorCodeField').hidden = !(supervisor && supervisor.codes.length > 1);
+    if (supervisor && supervisor.codes.length > 1) fillCodeSelect($('supervisorLicenseCode'), supervisor.codes);
     $('otherStates').hidden = data.telehealth !== 'yes';
     document.querySelectorAll('input[name="teleState"]').forEach(function (box) {
       var same = box.value === data.state;
@@ -372,10 +442,26 @@ fieldset{border:0;margin:16px 0 0;padding:0}
       $('counselorName').value = data.counselorName || '';
       $('practiceName').value = data.practiceName || '';
       if (data.state) stateSelect.value = data.state;
-      $('licenseType').value = data.licenseType || '';
+      if (licenseById(data.licenseType)) {
+        $('licenseType').value = data.licenseType;
+        var savedLicense = licenseById(data.licenseType);
+        if (savedLicense.codes.length > 1) {
+          fillCodeSelect($('licenseCode'), savedLicense.codes);
+          if (data.licenseCode) $('licenseCode').value = data.licenseCode;
+        }
+      } else if (data.inTraining) {
+        $('licenseType').value = 'student';
+      }
       $('licenseNumber').value = data.licenseNumber || '';
-      $('inTraining').checked = !!data.inTraining;
       $('supervisorName').value = data.supervisorName || '';
+      if (licenseById(data.supervisorLicenseType)) {
+        $('supervisorLicenseType').value = data.supervisorLicenseType;
+        var savedSupervisor = licenseById(data.supervisorLicenseType);
+        if (savedSupervisor.codes.length > 1) {
+          fillCodeSelect($('supervisorLicenseCode'), savedSupervisor.codes);
+          if (data.supervisorLicenseCode) $('supervisorLicenseCode').value = data.supervisorLicenseCode;
+        }
+      }
       $('supervisorLicense').value = data.supervisorLicense || '';
       if (data.telehealth === 'yes' || data.telehealth === 'no') {
         document.querySelector('input[name="telehealth"][value="' + data.telehealth + '"]').checked = true;
@@ -401,12 +487,14 @@ fieldset{border:0;margin:16px 0 0;padding:0}
   }
 
   function pdfValues(data) {
+    var license = licenseById(data.licenseType);
+    var supervised = !!(license && license.supervised);
     return {
       conf_counselor_name: data.counselorName,
       conf_practice_state: data.state,
-      conf_counselor_license: licenseLine(data.licenseType, data.licenseNumber),
-      conf_supervisor_name: data.inTraining ? data.supervisorName : '',
-      conf_supervisor_license: data.inTraining ? data.supervisorLicense : ''
+      conf_counselor_license: licenseLine(chosenCode(data.licenseType, $('licenseCode')), data.licenseNumber),
+      conf_supervisor_name: supervised ? data.supervisorName : '',
+      conf_supervisor_license: supervised ? licenseLine(chosenCode(data.supervisorLicenseType, $('supervisorLicenseCode')), data.supervisorLicense) : ''
     };
   }
 
