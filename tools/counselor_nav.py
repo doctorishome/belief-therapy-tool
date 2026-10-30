@@ -3,6 +3,8 @@
 The menu has drop-down groups. To add a page, add it to GROUPS below and run:
     python3 tools/counselor_nav.py
 Safe to run again: it replaces the menu, its styles and its script each time.
+
+Pages marked <!--standalone--> (a member embed with no menu) are left unchanged.
 """
 import pathlib, re
 
@@ -68,6 +70,9 @@ def nav(current):
 
 for p in sorted(ROOT.glob("*.html")):
     h = p.read_text(encoding="utf-8")
+    if "<!--standalone-->" in h:
+        print("menu skipped (standalone):", p.name)
+        continue
     if "<!--nav-->" in h:
         h = re.sub(r"<!--nav-->.*?<!--/nav-->", lambda m: nav(p.name), h, flags=re.S)
     else:

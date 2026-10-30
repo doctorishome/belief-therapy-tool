@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Clinical Companion</title><style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
+a{color:var(--navy2)}
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent}
+.nav a.l:hover{border-color:var(--gold)}.nav a.on{color:#fff;border-color:var(--gold)}
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:54px 22px 46px;text-align:center}
+.hero h1{font-size:clamp(1.8rem,4.5vw,2.9rem);margin:0 0 10px;line-height:1.2}.hero p{max-width:720px;margin:0 auto;font-size:1.12rem;color:#dfe6f2}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.wrap{max-width:1000px;margin:0 auto;padding:36px 20px 20px}
+h2{color:var(--navy);font-size:1.55rem;margin:34px 0 8px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+h3{color:var(--navy);margin:0 0 4px;font-size:1.12rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:16px 0}
+.card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:16px 18px;box-shadow:0 2px 6px rgba(18,40,76,.06)}
+.card p{margin:4px 0 0;color:var(--mut);font-size:.96rem}
+.step{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:12px 0}
+.num{flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.step p{margin:3px 0 0;color:var(--mut)}.step strong{color:var(--navy)}
+.cta{text-align:center;margin:36px 0 8px}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:13px 30px;border-radius:30px;font-size:1.05rem;border:0}
+.btn.soon{opacity:.85}.note{color:var(--mut);font-size:.9rem;text-align:center;margin-top:8px}
+.scrip{background:#fff;border-left:4px solid var(--gold);padding:10px 16px;margin:10px 0;font-style:italic}.scrip b{font-style:normal;color:var(--navy)}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;background:var(--navy);color:var(--gold);border-radius:12px;padding:2px 10px;margin-bottom:6px}
+.tag.free{background:var(--gold);color:var(--navy)}
+ul.clean{padding-left:20px}ul.clean li{margin:5px 0}
+.foot{margin:40px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:560px){.nav{padding:8px 12px}.nav a.l{font-size:.85rem}.step{flex-direction:column}}
+/*cc*/
+.card p{margin:0;color:var(--ink);font-size:1.02rem}
+.pill{display:inline-block;margin-top:14px;padding:7px 16px;border-radius:20px;background:#ece7da;color:#6d7686;font-size:.85rem;font-weight:bold;letter-spacing:.4px;border:1px solid #ddd4c0;cursor:default;user-select:none}
+ol.clean{list-style:none;margin:16px 0;padding:0;counter-reset:step}
+ol.clean li{counter-increment:step;display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:12px 0}
+ol.clean li::before{content:counter(step);flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+@media(max-width:560px){ol.clean li{flex-direction:column;align-items:flex-start}}
+/*/cc*/
+
+</style></head><body><!--standalone--><div class="hero"><div class="eyebrow">MEMBERS</div><h1>Clinical Companion</h1><p>Welcome to your Clinical Companion member area. Here you'll find the app download, a quick-start guide, help, and your account.</p></div><div class="wrap"><h2>Download the app</h2><div class="card"><p>The Windows download will be available here when your membership begins.</p><span class="pill">Coming soon</span></div><h2>Quick start</h2><ol class="clean"><li>Install Clinical Companion and open it.</li><li>Sign in with your website member login.</li><li>Try a practice case before using it with clients.</li><li>Write your session notes, then ask for an analysis.</li></ol><h2>Help</h2><p>Questions or problems? Contact us through the Contact page and we'll get back to you.</p><h2>Your account</h2><p>Manage your membership, payment method, or cancel anytime from My Account. Your access continues to the end of the month you've paid for; the remainder of the month isn't refunded.</p><h2>Terms of use</h2><p>Clinical Companion supports, and does not replace, your professional clinical judgment. Use fictional or de-identified information unless your plan states otherwise. Fair use applies; excessive use isn't permitted.</p></div><div class="foot">Educational training for counselors. Never enter real client names or details. · Scripture quotations: Berean Standard Bible (BSB), public domain. · © Brian Campbell, Ph.D.</div></body></html>
