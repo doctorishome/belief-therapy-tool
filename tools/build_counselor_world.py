@@ -93,10 +93,15 @@ def nav(active):
     out.append('</div><!--/nav-->')
     return ''.join(out)
 FOOT='<div class="foot">Educational training for counselors. Never enter real client names or details. · Scripture quotations: Berean Standard Bible (BSB), public domain. · © Brian Campbell, Ph.D.</div>'
-def page(key,title,hero_sub,body,eyebrow='Belief Counseling for Counselors', extra_css=''):
-    h='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>%s</title><style>%s%s%s'%(html.escape(title),CSS,extra_css,NAV_CSS)
+def page(key,title,hero_sub,body,eyebrow='Belief Counseling for Counselors', extra_css='', with_nav=True):
+    # with_nav=False is a standalone embed (no menu, no outside links, no script).
+    # counselor_nav.py leaves files marked <!--standalone--> alone.
+    nav_css = NAV_CSS if with_nav else ''
+    top = nav(key) if with_nav else '<!--standalone-->'
+    js = NAV_JS if with_nav else ''
+    h='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>%s</title><style>%s%s%s'%(html.escape(title),CSS,extra_css,nav_css)
     h+='\n</style></head><body>'
-    h+=nav(key)+'<div class="hero"><div class="eyebrow">%s</div><h1>%s</h1><p>%s</p></div><div class="wrap">%s</div>%s%s</body></html>'%(eyebrow,title,hero_sub,body,FOOT,NAV_JS)
+    h+=top+'<div class="hero"><div class="eyebrow">%s</div><h1>%s</h1><p>%s</p></div><div class="wrap">%s</div>%s%s</body></html>'%(eyebrow,title,hero_sub,body,FOOT,js)
     (OUT/('%s.html'%key)).write_text(h)
 def cards(items): return '<div class="grid">'+''.join('<div class="card"><h3>%s</h3><p>%s</p></div>'%i for i in items)+'</div>'
 JOIN='<div class="cta"><a class="btn soon" target="_blank" href="https://doctorishome.wixstudio.com/website-6/blank-11#clinical-companion" onclick="window.parent.postMessage({type:\'cc-start-free-week\'}, \'*\'); return false;">Start your free week</a><div class="note">One week free, then $29.25 a month.</div></div>'
@@ -190,4 +195,28 @@ page('library','Clinical Library','Counselor-only background, tools, and referen
  '<h2>Clinical background for the belief cards</h2><p>Each public false-belief card links to a counselor note on origins, cognitive errors, and treatment approach. Members will find them organized by category: Spiritual/Religious, Psychological/Cognitive, Interpersonal, Socioeconomic, Sociocultural, and Biological/Physical.</p>'
  '<h2>Recommended reading</h2><ul class="clean"><li>Beck, Davis, and Freeman, <em>Cognitive Therapy of Personality Disorders</em></li><li>Beck Institute Personality Belief Questionnaire materials</li></ul>'
  '<div class="card"><span class="tag">Coming soon</span><h3>Library opens with membership</h3><p>Documents will be added here in stages.</p></div>')
-print('built',[p[0] for p in PAGES])
+# 8 Clinical Companion (member embed: no menu, no outside links, no script)
+CC_CSS = '''/*cc*/
+.card p{margin:0;color:var(--ink);font-size:1.02rem}
+.pill{display:inline-block;margin-top:14px;padding:7px 16px;border-radius:20px;background:#ece7da;color:#6d7686;font-size:.85rem;font-weight:bold;letter-spacing:.4px;border:1px solid #ddd4c0;cursor:default;user-select:none}
+ol.clean{list-style:none;margin:16px 0;padding:0;counter-reset:step}
+ol.clean li{counter-increment:step;display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:12px 0}
+ol.clean li::before{content:counter(step);flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+@media(max-width:560px){ol.clean li{flex-direction:column;align-items:flex-start}}
+/*/cc*/
+'''
+page('clinical-companion','Clinical Companion',
+ "Welcome to your Clinical Companion member area. Here you'll find the app download, a quick-start guide, help, and your account.",
+ '<h2>Download the app</h2>'
+ '<div class="card"><p>The Windows download will be available here when your membership begins.</p>'
+ '<span class="pill">Coming soon</span></div>'
+ '<h2>Quick start</h2><ol class="clean">'
+ '<li>Install Clinical Companion and open it.</li>'
+ '<li>Sign in with your website member login.</li>'
+ '<li>Try a practice case before using it with clients.</li>'
+ '<li>Write your session notes, then ask for an analysis.</li></ol>'
+ '<h2>Help</h2><p>Questions or problems? Contact us through the Contact page and we\'ll get back to you.</p>'
+ '<h2>Your account</h2><p>Manage your membership, payment method, or cancel anytime from My Account. Your access continues to the end of the month you\'ve paid for; the remainder of the month isn\'t refunded.</p>'
+ '<h2>Terms of use</h2><p>Clinical Companion supports, and does not replace, your professional clinical judgment. Use fictional or de-identified information unless your plan states otherwise. Fair use applies; excessive use isn\'t permitted.</p>',
+ eyebrow='MEMBERS', extra_css=CC_CSS, with_nav=False)
+print('built',[p[0] for p in PAGES]+['clinical-companion'])
