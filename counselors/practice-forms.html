@@ -27,6 +27,7 @@ input[type=text]:focus,select:focus{outline:2px solid var(--gold);border-color:v
 fieldset{border:0;margin:16px 0 0;padding:0}
 .choices{display:flex;flex-wrap:wrap;gap:8px 18px;font-weight:normal;color:var(--ink)}
 .choices label{font-weight:normal;color:var(--ink);display:flex;align-items:center;gap:8px}
+.role-choices{flex-direction:column;align-items:flex-start;gap:10px}
 .check{display:flex;gap:10px;align-items:flex-start;margin:14px 0;color:var(--ink);font-weight:normal}
 .check input,.choices input{accent-color:var(--navy);width:1.05rem;height:1.05rem;margin-top:4px;flex:0 0 auto}
 .sub{margin-top:8px;padding:12px 14px;background:var(--cream);border-radius:8px;border:1px solid var(--line)}
@@ -45,9 +46,9 @@ fieldset{border:0;margin:16px 0 0;padding:0}
 <body>
 <!--standalone-->
 <div class="hero">
-  <div class="eyebrow">For counselors</div>
+  <div class="eyebrow">For counselors and ministers</div>
   <h1>Practice forms</h1>
-  <p>Enter your practice details and download the New Client Packet and the Confidentiality Agreement as fillable PDFs. Your details are written in on this computer. Client lines stay empty.</p>
+  <p>Choose counselor or minister, enter your details, and download fillable forms with those details already in place. Your details are written in on this computer. Client lines stay empty.</p>
 </div>
 <div class="wrap">
   <div class="card">
@@ -57,6 +58,14 @@ fieldset{border:0;margin:16px 0 0;padding:0}
 
   <h2>Your practice</h2>
   <form id="practice" autocomplete="off" novalidate>
+    <fieldset>
+      <legend>Your role</legend>
+      <div class="choices role-choices">
+        <label for="roleCounselor"><input id="roleCounselor" type="radio" name="role" value="counselor" checked> Licensed counselor or student in training</label>
+        <label for="roleMinister"><input id="roleMinister" type="radio" name="role" value="minister"> Licensed or ordained minister</label>
+      </div>
+    </fieldset>
+    <div id="counselorFields">
     <div class="field">
       <label for="counselorName">Counselor full name and credentials</label>
       <input id="counselorName" name="counselorName" type="text" autocomplete="name" required>
@@ -112,26 +121,70 @@ fieldset{border:0;margin:16px 0 0;padding:0}
       <div class="states" role="group" aria-labelledby="statesLabel"></div>
       <p class="hint">Your practice state is not listed again. These templates have no line for other states, so this list is kept only if you choose Remember on this computer.</p>
     </div>
+    </div>
+    <div id="ministerFields" hidden>
+      <div class="field">
+        <label for="ministerName">Minister name and title</label>
+        <input id="ministerName" name="ministerName" type="text" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="ordainingBody">Ordaining or licensing body / denomination</label>
+        <input id="ordainingBody" name="ordainingBody" type="text">
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="credentialNumber">Credential or ordination number <span class="hint">(optional)</span></label>
+          <input id="credentialNumber" name="credentialNumber" type="text">
+        </div>
+        <div class="field">
+          <label for="churchName">Church or ministry name</label>
+          <input id="churchName" name="churchName" type="text" autocomplete="organization">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="ministerState">State</label>
+          <select id="ministerState" name="ministerState">
+            <option value="">Select a state</option>
+          </select>
+          <p class="hint">Printed on the form as the two-letter abbreviation.</p>
+        </div>
+        <div class="field">
+          <label for="overseerName">Supervisor/overseer <span class="hint">(optional)</span></label>
+          <input id="overseerName" name="overseerName" type="text">
+        </div>
+      </div>
+    </div>
     <label class="check" for="remember"><input id="remember" name="remember" type="checkbox"> Remember on this computer</label>
-    <p class="hint">The PDFs receive your name, state abbreviation, license, and supervisor when you are in training. Practice name is kept only with Remember on this computer.</p>
+    <p class="hint" id="rememberHint">The PDFs receive your name, state abbreviation, license, and supervisor when you are in training. Practice name is kept only with Remember on this computer.</p>
   </form>
 
+  <div id="counselorNoticeBlock">
   <h2>Important Disclaimer – Notice to Counselor</h2>
   <div class="notice">
     <p>Confidentiality, duty-to-warn, mandated reporting, minors’ consent, and record-retention rules vary by state statute. These forms are general templates, not legal advice, and must be reviewed by an attorney familiar with the laws of your state and of any state where a telehealth client is located.</p>
   </div>
   <label class="check" for="notice"><input id="notice" name="notice" type="checkbox"> I have read and understand this notice</label>
+  </div>
+  <div id="ministerNoticeBlock" hidden>
+  <h2>Notice to Minister</h2>
+  <div class="notice">
+    <p>State laws vary. In many states, clergy are mandated reporters. Clergy privilege has limits and does not cover every conversation. Pastoral care is not licensed treatment: do not diagnose, and do not present yourself as a licensed counselor. Refer serious needs to a licensed professional. Have this agreement reviewed by an attorney in your state, and check it against your denomination’s policy.</p>
+  </div>
+  <label class="check" for="ministerNotice"><input id="ministerNotice" name="ministerNotice" type="checkbox"> I have read and understand this notice</label>
+  </div>
 
   <h2>Download</h2>
-  <p>Both files stay fillable. Client lines are left blank.</p>
+  <p id="downloadLead">Both files stay fillable. Client lines are left blank.</p>
   <div class="actions">
     <button type="button" class="btn" id="dlPacket" disabled>Download New Client Packet (fillable)</button>
     <button type="button" class="btn" id="dlConf" disabled>Download Confidentiality Agreement (fillable)</button>
+    <button type="button" class="btn" id="dlPastoral" hidden disabled>Download Pastoral Confidentiality Agreement (fillable)</button>
   </div>
   <p id="status" class="hint" role="status"></p>
   <noscript><p>This page needs JavaScript to fill the PDFs on your computer. Your details are still not uploaded.</p></noscript>
 </div>
-<div class="foot">General templates for counselors. Not legal advice. Your entries stay on this computer. · © Brian Campbell, Ph.D.</div>
+<div class="foot">General templates for counselors and ministers. Not legal advice. Your entries stay on this computer. · © Brian Campbell, Ph.D.</div>
 <!-- pdf-lib 1.17.1, MIT. See forms/pdf-lib.LICENSE.md -->
 <script src="forms/pdf-lib.min.js"></script>
 <script>
@@ -152,19 +205,30 @@ fieldset{border:0;margin:16px 0 0;padding:0}
   var STORE_KEY = 'practiceForms.v1';
   var TEMPLATES = {
     packet: {url: 'forms/New-Client-Packet-fillable.pdf', file: 'New-Client-Packet'},
-    conf: {url: 'forms/Confidentiality-Agreement-fillable.pdf', file: 'Confidentiality-Agreement'}
+    conf: {url: 'forms/Confidentiality-Agreement-fillable.pdf', file: 'Confidentiality-Agreement'},
+    pastoral: {url: 'forms/Pastoral-Confidentiality-Agreement-fillable.pdf', file: 'Pastoral-Confidentiality-Agreement'}
   };
   var FILL = ['conf_counselor_name','conf_practice_state','conf_counselor_license','conf_supervisor_name','conf_supervisor_license'];
+  var PAST_FILL = ['past_minister_name','past_practice_state','past_ordaining_body','past_credential_number','past_church_name','past_supervisor_name'];
+  var COUNSELOR_HINT = 'The PDFs receive your name, state abbreviation, license, and supervisor when you are in training. Practice name is kept only with Remember on this computer.';
+  var MINISTER_HINT = 'The agreement receives your name, state abbreviation, ordaining body, credential number, church or ministry, and supervisor or overseer if you enter one.';
   var $ = function (id) { return document.getElementById(id); };
   var statusEl = $('status');
   var stateSelect = $('state');
+  var ministerState = $('ministerState');
   var statesBox = document.querySelector('#otherStates .states');
 
+  function addStateOptions(select) {
+    STATES.forEach(function (pair) {
+      var opt = document.createElement('option');
+      opt.value = pair[0];
+      opt.textContent = pair[1];
+      select.appendChild(opt);
+    });
+  }
+  addStateOptions(stateSelect);
+  addStateOptions(ministerState);
   STATES.forEach(function (pair) {
-    var opt = document.createElement('option');
-    opt.value = pair[0];
-    opt.textContent = pair[1];
-    stateSelect.appendChild(opt);
     var label = document.createElement('label');
     var box = document.createElement('input');
     box.type = 'checkbox';
@@ -180,12 +244,17 @@ fieldset{border:0;margin:16px 0 0;padding:0}
     return el ? el.value : '';
   }
 
+  function role() {
+    return checkedRadio('role') || 'counselor';
+  }
+
   function readForm() {
     var teleStates = [];
     document.querySelectorAll('input[name="teleState"]:checked').forEach(function (box) {
       teleStates.push(box.value);
     });
     return {
+      role: role(),
       counselorName: $('counselorName').value.trim(),
       practiceName: $('practiceName').value.trim(),
       state: stateSelect.value,
@@ -195,12 +264,26 @@ fieldset{border:0;margin:16px 0 0;padding:0}
       supervisorName: $('supervisorName').value.trim(),
       supervisorLicense: $('supervisorLicense').value.trim(),
       telehealth: checkedRadio('telehealth'),
-      telehealthStates: teleStates
+      telehealthStates: teleStates,
+      ministerName: $('ministerName').value.trim(),
+      ordainingBody: $('ordainingBody').value.trim(),
+      credentialNumber: $('credentialNumber').value.trim(),
+      churchName: $('churchName').value.trim(),
+      ministerState: ministerState.value,
+      overseerName: $('overseerName').value.trim()
     };
   }
 
   function missing(data) {
     var items = [];
+    if (data.role === 'minister') {
+      if (!data.ministerName) items.push('your name and title');
+      if (!data.ordainingBody) items.push('your ordaining or licensing body');
+      if (!data.churchName) items.push('your church or ministry name');
+      if (!data.ministerState) items.push('your state');
+      if (!$('ministerNotice').checked) items.push('the notice');
+      return items;
+    }
     if (!data.counselorName) items.push('your name');
     if (!data.state) items.push('your state of practice');
     if (data.inTraining && !data.supervisorName) items.push("your supervisor's name");
@@ -216,21 +299,36 @@ fieldset{border:0;margin:16px 0 0;padding:0}
     return type || number || '';
   }
 
-  function fileLastName(full) {
+  function fileLastName(full, ministerial) {
     var cred = /^(ph\.?d|psy\.?d|ed\.?d|m\.?d|d\.?o|m\.?a|m\.?s|msw|lcsw|lpc|lmft|lmhc|lpcc|lcpc|ncc|aprn|pmhnp|rn|lp|llp|limhp|lisw|licsw|lmsw|ladc|cadc|bcba|jr|sr|ii|iii|iv|dr)$/i;
+    var titles = /^(rev|pastor|fr|father|bishop|elder|deacon|minister|rabbi|sister|brother)$/i;
     var s = String(full || '').trim().replace(/\s+/g, ' ');
     if (s.indexOf(',') !== -1) s = s.slice(0, s.indexOf(',')).trim();
     var words = s.split(' ').filter(function (word) {
       var key = word.toLowerCase().replace(/\./g, '');
-      return key && !cred.test(key);
+      if (!key || cred.test(key)) return false;
+      if (ministerial && titles.test(key)) return false;
+      return true;
     });
-    var last = words.length ? words[words.length - 1] : 'Counselor';
+    var last = words.length ? words[words.length - 1] : (ministerial ? 'Minister' : 'Counselor');
     var safe = last.replace(/[^\p{L}\p{M}'’-]/gu, '');
-    return safe || 'Counselor';
+    return safe || (ministerial ? 'Minister' : 'Counselor');
   }
 
   function syncUI() {
     var data = readForm();
+    var minister = data.role === 'minister';
+    $('counselorFields').hidden = minister;
+    $('ministerFields').hidden = !minister;
+    $('counselorNoticeBlock').hidden = minister;
+    $('ministerNoticeBlock').hidden = !minister;
+    $('dlPacket').hidden = minister;
+    $('dlConf').hidden = minister;
+    $('dlPastoral').hidden = !minister;
+    $('downloadLead').textContent = minister
+      ? 'The agreement stays fillable. The person’s lines are left blank.'
+      : 'Both files stay fillable. Client lines are left blank.';
+    $('rememberHint').textContent = minister ? MINISTER_HINT : COUNSELOR_HINT;
     $('supervisorBlock').hidden = !data.inTraining;
     $('otherStates').hidden = data.telehealth !== 'yes';
     document.querySelectorAll('input[name="teleState"]').forEach(function (box) {
@@ -241,8 +339,9 @@ fieldset{border:0;margin:16px 0 0;padding:0}
     });
     var gaps = missing(readForm());
     var ready = gaps.length === 0;
-    $('dlPacket').disabled = !ready;
-    $('dlConf').disabled = !ready;
+    $('dlPacket').disabled = minister || !ready;
+    $('dlConf').disabled = minister || !ready;
+    $('dlPastoral').disabled = !minister || !ready;
     if (gaps.length === 1 && gaps[0] === 'the notice') {
       statusEl.textContent = 'Downloads turn on after you check the notice.';
     } else if (!ready) {
@@ -286,6 +385,15 @@ fieldset{border:0;margin:16px 0 0;padding:0}
       document.querySelectorAll('input[name="teleState"]').forEach(function (box) {
         box.checked = !!chosen[box.value];
       });
+      $('ministerName').value = data.ministerName || '';
+      $('ordainingBody').value = data.ordainingBody || '';
+      $('credentialNumber').value = data.credentialNumber || '';
+      $('churchName').value = data.churchName || '';
+      if (data.ministerState) ministerState.value = data.ministerState;
+      $('overseerName').value = data.overseerName || '';
+      if (data.role === 'minister' || data.role === 'counselor') {
+        document.querySelector('input[name="role"][value="' + data.role + '"]').checked = true;
+      }
       $('remember').checked = true;
     } catch (err) {
       try { localStorage.removeItem(STORE_KEY); } catch (ignore) {}
@@ -302,6 +410,17 @@ fieldset{border:0;margin:16px 0 0;padding:0}
     };
   }
 
+  function pastoralValues(data) {
+    return {
+      past_minister_name: data.ministerName,
+      past_practice_state: data.ministerState,
+      past_ordaining_body: data.ordainingBody,
+      past_credential_number: data.credentialNumber,
+      past_church_name: data.churchName,
+      past_supervisor_name: data.overseerName
+    };
+  }
+
   async function fillAndDownload(kind) {
     var data = readForm();
     if (missing(data).length) {
@@ -312,9 +431,15 @@ fieldset{border:0;margin:16px 0 0;padding:0}
       statusEl.textContent = 'The form tool did not load. Refresh this page. Nothing was uploaded.';
       return;
     }
+    var ministerial = kind === 'pastoral';
+    if (ministerial ? data.role !== 'minister' : data.role === 'minister') {
+      syncUI();
+      return;
+    }
     var spec = TEMPLATES[kind];
     $('dlPacket').disabled = true;
     $('dlConf').disabled = true;
+    $('dlPastoral').disabled = true;
     statusEl.textContent = 'Preparing the file on this computer…';
     try {
       var res = await fetch(spec.url);
@@ -322,24 +447,28 @@ fieldset{border:0;margin:16px 0 0;padding:0}
       var pdf = await PDFLib.PDFDocument.load(await res.arrayBuffer());
       var form = pdf.getForm();
       var font = await pdf.embedFont(PDFLib.StandardFonts.Helvetica);
-      var values = pdfValues(data);
-      FILL.forEach(function (name) {
+      var values = ministerial ? pastoralValues(data) : pdfValues(data);
+      var fieldNames = ministerial ? PAST_FILL : FILL;
+      fieldNames.forEach(function (name) {
         var field = form.getTextField(name);
         field.setText(values[name]);
-        field.setFontSize(10);
+        field.setFontSize(ministerial ? 9 : 10);
       });
       form.updateFieldAppearances(font);
       var bytes = await pdf.save();
       var blob = new Blob([bytes], {type: 'application/pdf'});
       var link = document.createElement('a');
-      var name = spec.file + '-' + fileLastName(data.counselorName) + '.pdf';
+      var person = ministerial ? data.ministerName : data.counselorName;
+      var name = spec.file + '-' + fileLastName(person, ministerial) + '.pdf';
       link.href = URL.createObjectURL(blob);
       link.download = name;
       document.body.appendChild(link);
       link.click();
       link.remove();
       setTimeout(function () { URL.revokeObjectURL(link.href); }, 10000);
-      statusEl.textContent = 'Saved ' + name + ' on this computer. Client lines were left blank, and the file is still fillable.';
+      statusEl.textContent = ministerial
+        ? 'Saved ' + name + ' on this computer. The person’s lines were left blank, and the file is still fillable.'
+        : 'Saved ' + name + ' on this computer. Client lines were left blank, and the file is still fillable.';
     } catch (err) {
       statusEl.textContent = 'The file could not be prepared on this computer. Nothing was uploaded. Please try again.';
     }
@@ -349,9 +478,11 @@ fieldset{border:0;margin:16px 0 0;padding:0}
   $('practice').addEventListener('input', function () { syncUI(); saveLocal(); });
   $('practice').addEventListener('change', function () { syncUI(); saveLocal(); });
   $('notice').addEventListener('change', syncUI);
+  $('ministerNotice').addEventListener('change', syncUI);
   $('remember').addEventListener('change', function () { saveLocal(); syncUI(); });
   $('dlPacket').addEventListener('click', function () { fillAndDownload('packet'); });
   $('dlConf').addEventListener('click', function () { fillAndDownload('conf'); });
+  $('dlPastoral').addEventListener('click', function () { fillAndDownload('pastoral'); });
   loadLocal();
   syncUI();
 })();
