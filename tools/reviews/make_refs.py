@@ -89,7 +89,7 @@ def authors(lst):
         s = ", ".join(ns[:-1]) + ", & " + ns[-1]
     else:
         s = ", ".join(ns[:19]) + ", . . . " + ns[-1]
-    return s
+    return s if s.endswith(".") else s + "."
 
 
 def pages(p):
@@ -101,7 +101,8 @@ def pages(p):
         if len(b) < len(a):
             b = a[: len(a) - len(b)] + b
         return f"{a}–{b}"
-    return p.replace("-", "–") if re.match(r"^\d+-\d+$", p) else p
+    m = re.match(r"^([A-Za-z]*)(\d+)-([A-Za-z]*)(\d+)$", p)
+    return f"{m.group(1)}{m.group(2)}–{m.group(3)}{m.group(4)}" if m else p
 
 
 def main(folder):
