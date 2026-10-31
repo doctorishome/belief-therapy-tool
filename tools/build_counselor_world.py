@@ -116,7 +116,8 @@ WELCOME_CSS = '''/*reviews*/
 DSM_CARD = ('<div class="card"><h3>DSM-5-TR Reviews</h3>'
  '<p>Condensed teaching reviews of major DSM-5-TR disorders: key features, the most effective treatments with special attention to CBT, and research on Christian-integrated care, with full references.</p>'
  '<p class="pdfs"><a href="reviews/depression-teaching-overview.pdf" target="_blank" rel="noopener">Depression: A DSM-5-TR Teaching Overview (PDF)</a>'
- '<a href="reviews/anxiety-teaching-overview.pdf" target="_blank" rel="noopener">Anxiety Disorders: A DSM-5-TR Teaching Overview (PDF)</a></p></div>')
+ '<a href="reviews/anxiety-teaching-overview.pdf" target="_blank" rel="noopener">Anxiety Disorders: A DSM-5-TR Teaching Overview (PDF)</a>'
+ '<a href="reviews/ocd-teaching-overview.pdf" target="_blank" rel="noopener">Obsessive-Compulsive Disorder: A DSM-5-TR Teaching Overview (PDF)</a></p></div>')
 page('welcome','Welcome to the Counselors’ Room','Learn Christian cognitive-behavioral Belief Therapy from a psychologist with 35 years of clinical experience, and practice it on guided cases before you meet your next client.',
  '<h2>What you will find inside</h2>'+cards([
  ('Professional Tips','Short, practical teaching from Dr. Campbell’s years in practice, delivered weekly to your inbox and kept in a searchable archive.'),
