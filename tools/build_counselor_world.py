@@ -103,10 +103,20 @@ def page(key,title,hero_sub,body,eyebrow='Belief Counseling for Counselors', ext
     h+='\n</style></head><body>'
     h+=top+'<div class="hero"><div class="eyebrow">%s</div><h1>%s</h1><p>%s</p></div><div class="wrap">%s</div>%s%s</body></html>'%(eyebrow,title,hero_sub,body,FOOT,js)
     (OUT/('%s.html'%key)).write_text(h)
-def cards(items): return '<div class="grid">'+''.join('<div class="card"><h3>%s</h3><p>%s</p></div>'%i for i in items)+'</div>'
+def cards(items, extra=''): return '<div class="grid">'+''.join('<div class="card"><h3>%s</h3><p>%s</p></div>'%i for i in items)+extra+'</div>'
 JOIN='<div class="cta"><a class="btn soon" target="_blank" href="https://doctorishome.wixstudio.com/website-6/blank-11#clinical-companion" onclick="window.parent.postMessage({type:\'cc-start-free-week\'}, \'*\'); return false;">Start your free week</a><div class="note">One week free, then $29.25 a month.</div></div>'
 
 # 1 Welcome
+WELCOME_CSS = '''/*reviews*/
+.grid>.card:last-child{grid-column:1 / -1}
+.card .pdfs{margin:12px 0 0;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.card .pdfs a{color:var(--navy2);font-weight:bold}
+/*/reviews*/
+'''
+DSM_CARD = ('<div class="card"><h3>DSM-5-TR Reviews</h3>'
+ '<p>Condensed teaching reviews of major DSM-5-TR disorders: key features, the most effective treatments with special attention to CBT, and research on Christian-integrated care, with full references.</p>'
+ '<p class="pdfs"><a href="reviews/depression-teaching-overview.pdf" target="_blank" rel="noopener">Depression: A DSM-5-TR Teaching Overview (PDF)</a>'
+ '<a href="reviews/anxiety-teaching-overview.pdf" target="_blank" rel="noopener">Anxiety Disorders: A DSM-5-TR Teaching Overview (PDF)</a></p></div>')
 page('welcome','Welcome to the Counselors’ Room','Learn Christian cognitive-behavioral Belief Therapy from a psychologist with 35 years of clinical experience, and practice it on guided cases before you meet your next client.',
  '<h2>What you will find inside</h2>'+cards([
  ('Professional Tips','Short, practical teaching from Dr. Campbell’s years in practice, delivered weekly to your inbox and kept in a searchable archive.'),
@@ -114,13 +124,14 @@ page('welcome','Welcome to the Counselors’ Room','Learn Christian cognitive-be
  ('Theory Topics','A framework for understanding the great majority of psychological struggles: beliefs, personality, and the whole person.'),
  ('Case Studies','Practice on composite cases guided by an AI supervisor trained on Dr. Campbell’s method. Start with a free week; then $29.25 a month, cancel anytime.'),
  ('The Course','A step-by-step course in Christian Cognitive-Behavioral Therapy, with quizzes and a certificate of completion.'),
- ('Clinical Library','Counselor-only background, assessment tools, and references behind every false-belief card on the public site.')])+
+ ('Clinical Library','Counselor-only background, assessment tools, and references behind every false-belief card on the public site.')], DSM_CARD)+
  '<h2>How it works</h2>'
  '<div class="step"><div class="num">1</div><div><strong>Start with a free week; then $29.25 a month, cancel anytime.</strong><p>You get the tips, the library, and the theory topics right away.</p></div></div>'
  '<div class="step"><div class="num">2</div><div><strong>Try a practice case during your free week.</strong><p>Walk a composite client through Identify, Challenge, and Replace. Your supervisor pauses for your answer before showing the model approach.</p></div></div>'
  '<div class="step"><div class="num">3</div><div><strong>Keep growing.</strong><p>Add more cases in sets of five, work through the course, and earn your certificate of completion.</p></div></div>'
  '<h2>About Dr. Campbell</h2><p>Brian Campbell, Ph.D., has spent 35 years in private practice, teaching, and writing. Belief Therapy grew from that work: a Christian cognitive-behavioral approach that helps clients name the lies behind their pain and replace them with truth from God’s Word.</p>'
- '<div class="scrip">“Do not be conformed to this world, but be transformed by the renewing of your mind.” <b>Romans 12:2</b></div>'+JOIN)
+ '<div class="scrip">“Do not be conformed to this world, but be transformed by the renewing of your mind.” <b>Romans 12:2</b></div>'+JOIN,
+ extra_css=WELCOME_CSS)
 # 2 Process
 FLOW_CSS = r'''/*flow*/
 .flow{display:flex;align-items:stretch;margin:22px 0 10px}
