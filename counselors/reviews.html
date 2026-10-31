@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DSM-5-TR Reviews</title><style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
+a{color:var(--navy2)}
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent}
+.nav a.l:hover{border-color:var(--gold)}.nav a.on{color:#fff;border-color:var(--gold)}
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:54px 22px 46px;text-align:center}
+.hero h1{font-size:clamp(1.8rem,4.5vw,2.9rem);margin:0 0 10px;line-height:1.2}.hero p{max-width:720px;margin:0 auto;font-size:1.12rem;color:#dfe6f2}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.wrap{max-width:1000px;margin:0 auto;padding:36px 20px 20px}
+h2{color:var(--navy);font-size:1.55rem;margin:34px 0 8px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+h3{color:var(--navy);margin:0 0 4px;font-size:1.12rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:16px 0}
+.card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:16px 18px;box-shadow:0 2px 6px rgba(18,40,76,.06)}
+.card p{margin:4px 0 0;color:var(--mut);font-size:.96rem}
+.step{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:12px 0}
+.num{flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.step p{margin:3px 0 0;color:var(--mut)}.step strong{color:var(--navy)}
+.cta{text-align:center;margin:36px 0 8px}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:13px 30px;border-radius:30px;font-size:1.05rem;border:0}
+.btn.soon{opacity:.85}.note{color:var(--mut);font-size:.9rem;text-align:center;margin-top:8px}
+.scrip{background:#fff;border-left:4px solid var(--gold);padding:10px 16px;margin:10px 0;font-style:italic}.scrip b{font-style:normal;color:var(--navy)}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;background:var(--navy);color:var(--gold);border-radius:12px;padding:2px 10px;margin-bottom:6px}
+.tag.free{background:var(--gold);color:var(--navy)}
+ul.clean{padding-left:20px}ul.clean li{margin:5px 0}
+.foot{margin:40px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:560px){.nav{padding:8px 12px}.nav a.l{font-size:.85rem}.step{flex-direction:column}}
+.art{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:8px;padding:18px 22px;margin:16px 0;box-shadow:0 2px 6px rgba(18,40,76,.06)}
+.art h3{font-size:1.25rem;margin:4px 0 2px}.art .by{color:var(--mut);font-size:.9rem;margin:0 0 8px}
+.art p.sum{margin:0 0 12px;color:var(--ink)}
+.acts{display:flex;flex-wrap:wrap;gap:10px}
+.acts a{display:inline-block;text-decoration:none;font-weight:bold;font-size:.95rem;padding:8px 18px;border-radius:24px}
+.acts a.read{background:var(--navy);color:#fff}.acts a.pdf{border:1.5px solid var(--navy);color:var(--navy);background:#fff}
+.acts a:hover{opacity:.88}
+.rvgrp{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:6px 20px 8px;margin:18px 0;box-shadow:0 2px 6px rgba(18,40,76,.06)}
+.rvgrp h3{font-size:1.15rem;margin:12px 0 4px}
+.rv{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 0;border-top:1px solid var(--line)}
+.rv:first-of-type{border-top:0}
+.rv .t{color:var(--ink);font-size:1.02rem}
+.rv a.open{flex:0 0 auto;text-decoration:none;font-weight:bold;font-size:.9rem;padding:6px 16px;border-radius:20px;background:var(--navy);color:#fff}
+.rv a.open:hover{opacity:.88}
+.rv .soon{flex:0 0 auto;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;color:var(--mut);border:1px solid var(--line);border-radius:12px;padding:3px 10px;background:var(--cream)}
+@media(max-width:560px){.rv{flex-direction:column;align-items:flex-start;gap:6px}}
+/*nav*/
+.nav .dd{position:relative}
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
+.nav .dd>button::after{content:" \25BE";color:var(--gold);font-size:.8em}
+.nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
+.nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
+.nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
+.nav .menu a:hover{background:var(--cream)}
+.nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
+.nav .dd.open .menu{display:block}
+@media(hover:hover){.nav .dd:hover .menu{display:block}}
+@media(max-width:560px){.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.88rem}}
+/*/nav*/
+</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>For Counselors</small></div><a class="l" href="welcome.html">Welcome</a><div class="dd"><button type="button" aria-haspopup="true" aria-expanded="false">Learn</button><div class="menu"><a href="process.html">The Process</a><a href="theory.html">Theory Topics</a><a href="tips.html">Professional Tips</a></div></div><div class="dd"><button type="button" aria-haspopup="true" aria-expanded="false">Practice</button><div class="menu"><a href="cases.html">Case Studies</a><a href="course.html">The Course</a></div></div><div class="dd on"><button type="button" aria-haspopup="true" aria-expanded="false">Resources</button><div class="menu"><a href="library.html">Clinical Library</a><a href="articles.html">Articles</a><a class="on" href="reviews.html">DSM-5-TR Reviews</a></div></div><a class="pub" target="_blank" rel="noopener" href="https://doctorishome.wixstudio.com/website-6/false-belief-finder">False Belief Finder ↗</a><a class="pub" target="_blank" rel="noopener" href="https://doctorishome.wixstudio.com/website-6">Public Site ↗</a></div><!--/nav--><div class="hero"><div class="eyebrow">Belief Counseling for Counselors</div><h1>DSM-5-TR Reviews</h1><p>Condensed teaching reviews of major DSM-5-TR disorders: key features, the most effective treatments with special attention to CBT, and research on Christian-integrated care, with full references. Each review opens as a PDF in a new tab.</p></div><div class="wrap"><!-- To publish a review: put its PDF in counselors/reviews/, then replace that row's <span class="soon">Coming soon</span> with <a class="open" href="FULL PDF ADDRESS" target="_blank" rel="noopener">Open PDF</a> --><div class="rvgrp"><h3>Mood</h3><div class="rv"><span class="t">Depression (Major Depressive Disorder)</span><a class="open" href="https://doctorishome.github.io/belief-therapy-tool/counselors/reviews/depression-teaching-overview.pdf" target="_blank" rel="noopener">Open PDF</a></div><div class="rv"><span class="t">Bipolar Disorders</span><span class="soon">Coming soon</span></div></div><div class="rvgrp"><h3>Anxiety and Trauma</h3><div class="rv"><span class="t">Anxiety Disorders</span><a class="open" href="https://doctorishome.github.io/belief-therapy-tool/counselors/reviews/anxiety-teaching-overview.pdf" target="_blank" rel="noopener">Open PDF</a></div><div class="rv"><span class="t">Obsessive-Compulsive Disorder</span><a class="open" href="https://doctorishome.github.io/belief-therapy-tool/counselors/reviews/ocd-teaching-overview.pdf" target="_blank" rel="noopener">Open PDF</a></div><div class="rv"><span class="t">PTSD and Trauma-Related Disorders</span><span class="soon">Coming soon</span></div><div class="rv"><span class="t">Prolonged Grief Disorder</span><span class="soon">Coming soon</span></div></div><div class="rvgrp"><h3>Other Common Concerns</h3><div class="rv"><span class="t">Substance Use Disorders</span><span class="soon">Coming soon</span></div><div class="rv"><span class="t">Eating Disorders</span><span class="soon">Coming soon</span></div><div class="rv"><span class="t">ADHD (Children and Adults)</span><span class="soon">Coming soon</span></div><div class="rv"><span class="t">Adjustment Disorders</span><span class="soon">Coming soon</span></div><div class="rv"><span class="t">Somatic Symptom and Illness Anxiety Disorders</span><span class="soon">Coming soon</span></div></div><div class="rvgrp"><h3>More Serious or Complex</h3><div class="rv"><span class="t">Schizophrenia</span><a class="open" href="https://doctorishome.github.io/belief-therapy-tool/counselors/reviews/schizophrenia-teaching-overview.pdf" target="_blank" rel="noopener">Open PDF</a></div><div class="rv"><span class="t">Borderline and Other Personality Disorders</span><span class="soon">Coming soon</span></div><div class="rv"><span class="t">Autism Spectrum Disorder</span><span class="soon">Coming soon</span></div></div></div><div class="foot">Educational training for counselors. Never enter real client names or details. · Scripture quotations: Berean Standard Bible (BSB), public domain. · © Brian Campbell, Ph.D.</div><!--navjs--><script>
+document.querySelectorAll('.nav .dd>button').forEach(function(b){
+  b.addEventListener('click',function(e){
+    e.stopPropagation();var d=b.parentNode,o=!d.classList.contains('open');
+    document.querySelectorAll('.nav .dd').forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});
+    if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}
+  });
+});
+document.addEventListener('click',function(){document.querySelectorAll('.nav .dd.open').forEach(function(x){x.classList.remove('open');});});
+</script><!--/navjs--></body></html>

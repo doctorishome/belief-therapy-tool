@@ -19,7 +19,8 @@ GROUPS = [
     ("Practice", [("Case Studies", "cases.html"),
                   ("The Course", "course.html")]),
     ("Resources", [("Clinical Library", "library.html"),
-                   ("Articles", "articles.html")]),
+                   ("Articles", "articles.html"),
+                   ("DSM-5-TR Reviews", "reviews.html")]),
 ]
 OUTSIDE = [
     ("False Belief Finder ↗", "https://doctorishome.wixstudio.com/website-6/false-belief-finder"),
