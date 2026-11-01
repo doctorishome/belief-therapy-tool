@@ -1,0 +1,9 @@
+REFS = [
+    ('American Psychiatric Association.', 'American Psychiatric Association.', '2022', 'Diagnostic and statistical manual of mental disorders (5th ed., text rev.)', None, None, None, None, '10.1176/appi.books.9780890425787'),
+    ('Ano', 'Ano, G. G., & Vasconcelles, E. B.', '2005', 'Religious coping and psychological adjustment to stress: A meta-analysis', 'Journal of Clinical Psychology', '61', '4', '461–480', '10.1002/jclp.20049'),
+    ('Captari', 'Captari, L. E., Hook, J. N., Hoyt, W. T., Davis, D. E., McElroy-Heltzel, S. E., & Worthington, E. L.', '2018', "Integrating clients' religion and spirituality within psychotherapy: A comprehensive meta-analysis", 'Journal of Clinical Psychology', '74', '11', '1938–1951', '10.1002/jclp.22681'),
+    ('Grant', 'Grant, B. F., Hasin, D. S., Stinson, F. S., Dawson, D. A., Chou, S. P., Ruan, W. J., & Pickering, R. P.', '2004', 'Prevalence, correlates, and disability of personality disorders in the United States: Results from the National Epidemiologic Survey on Alcohol and Related Conditions', 'The Journal of Clinical Psychiatry', '65', '7', '948–958', '10.4088/JCP.v65n0711'),
+    ('Lampe', 'Lampe, L., & Malhi, G. S.', '2018', 'Avoidant personality disorder: Current insights', 'Psychology Research and Behavior Management', '11', None, '55–66', '10.2147/PRBM.S121073'),
+    ('Triebwasser', 'Triebwasser, J., Chemerinski, E., Roussos, P., & Siever, L. J.', '2012', 'Schizoid personality disorder', 'Journal of Personality Disorders', '26', '6', '919–926', '10.1521/pedi.2012.26.6.919'),
+    ('Volkert', 'Volkert, J., Gablonski, T.-C., & Rabung, S.', '2018', 'Prevalence of personality disorders in the general adult population in Western countries: Systematic review and meta-analysis', 'The British Journal of Psychiatry', '213', '6', '709–715', '10.1192/bjp.2018.202'),
+]

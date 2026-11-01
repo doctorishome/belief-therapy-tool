@@ -1,0 +1,9 @@
+REFS = [
+    ('American Psychiatric Association.', 'American Psychiatric Association.', '2022', 'Diagnostic and statistical manual of mental disorders (5th ed., text rev.)', None, None, None, None, '10.1176/appi.books.9780890425787'),
+    ('Ano', 'Ano, G. G., & Vasconcelles, E. B.', '2005', 'Religious coping and psychological adjustment to stress: A meta-analysis', 'Journal of Clinical Psychology', '61', '4', '461–480', '10.1002/jclp.20049'),
+    ('Bamelis', 'Bamelis, L. L. M., Evers, S. M. A. A., Spinhoven, P., & Arntz, A.', '2014', 'Results of a multicenter randomized controlled trial of the clinical effectiveness of schema therapy for personality disorders', 'American Journal of Psychiatry', '171', '3', '305–322', '10.1176/appi.ajp.2013.12040518'),
+    ('Captari', 'Captari, L. E., Hook, J. N., Hoyt, W. T., Davis, D. E., McElroy-Heltzel, S. E., & Worthington, E. L.', '2018', "Integrating clients' religion and spirituality within psychotherapy: A comprehensive meta-analysis", 'Journal of Clinical Psychology', '74', '11', '1938–1951', '10.1002/jclp.22681'),
+    ('Grant', 'Grant, B. F., Hasin, D. S., Stinson, F. S., Dawson, D. A., Chou, S. P., Ruan, W. J., & Pickering, R. P.', '2004', 'Prevalence, correlates, and disability of personality disorders in the United States: Results from the National Epidemiologic Survey on Alcohol and Related Conditions', 'The Journal of Clinical Psychiatry', '65', '7', '948–958', '10.4088/JCP.v65n0711'),
+    ('Novais', 'Novais, F., Araújo, A., & Godinho, P.', '2015', 'Historical roots of histrionic personality disorder', 'Frontiers in Psychology', '6', None, '1463', '10.3389/fpsyg.2015.01463'),
+    ('Volkert', 'Volkert, J., Gablonski, T.-C., & Rabung, S.', '2018', 'Prevalence of personality disorders in the general adult population in Western countries: Systematic review and meta-analysis', 'The British Journal of Psychiatry', '213', '6', '709–715', '10.1192/bjp.2018.202'),
+]

@@ -27,6 +27,7 @@ def load(name):
 REFS = load("refs").REFS
 C = load("content")
 VERIFIED = getattr(C, "VERIFIED", "Saturday, Oct 31, 2026")
+SRC = getattr(C, "SOURCES", "Crossref and PubMed")
 
 d = Document()
 for s in d.sections:
@@ -81,7 +82,7 @@ for kind, text in C.BODY:
 
 n = len(REFS)
 d.add_heading('Sources note', level=1)
-runs(d.add_paragraph(), f'All {n} references were checked against Crossref and PubMed ({VERIFIED.split(", ", 1)[1]}), and the figures quoted were checked against each study’s abstract. Each DOI is a live link to the publisher record.')
+runs(d.add_paragraph(), f'All {n} references were checked against {SRC} ({VERIFIED.split(", ", 1)[1]}), and the figures quoted were checked against each study’s abstract. Each DOI is a live link to the publisher record.')
 d.add_heading('References', level=1)
 S = 8.5
 for _, au, yr, ti, jo, vo, iss, pg, doi in REFS:
@@ -96,7 +97,7 @@ for _, au, yr, ti, jo, vo, iss, pg, doi in REFS:
         r = p.add_run(jo + (', ' + vo if vo else '')); r.italic = True; r.font.size = Pt(S)
         r = p.add_run((f'({iss})' if iss else '') + (f', {pg}' if pg else '') + '. '); r.font.size = Pt(S)
     link(p, 'https://doi.org/' + doi, 'https://doi.org/' + doi, S)
-runs(d.add_paragraph(), f'Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All {n} references and DOIs verified via Crossref and PubMed ({VERIFIED}). Effect sizes as reported in the cited sources.', size=8, italic=True)
+runs(d.add_paragraph(), f'Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All {n} references and DOIs verified via {SRC} ({VERIFIED}). Effect sizes as reported in the cited sources.', size=8, italic=True)
 for s in d.sections:
     fp = s.footer.paragraphs[0]; fp.alignment = WD_ALIGN_PARAGRAPH.CENTER
     r = fp.add_run(); f1 = OxmlElement('w:fldChar'); f1.set(qn('w:fldCharType'), 'begin'); r._r.append(f1)
