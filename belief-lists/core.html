@@ -32,7 +32,9 @@ h1{font-family:Inter,Arial,sans-serif;font-weight:700;font-size:40px;letter-spac
 .search{width:100%;max-width:795px;font-family:inherit;font-size:18px;padding:17px 20px;border:1px solid var(--card-border);border-radius:8px;background:var(--input);color:var(--ink);outline:none}
 .search:focus{border-color:var(--gold)}
 .search::placeholder{color:#8a8a8a}
-.results{margin:18px 0 0;max-width:1000px}
+.searchbox{position:relative;max-width:795px}
+.results{position:absolute;left:0;right:0;top:100%;z-index:20;margin-top:6px;max-height:330px;overflow:auto;background:#fff;border:1px solid var(--gold-line);border-radius:8px;box-shadow:0 8px 24px rgba(18,40,76,.15);padding:12px;display:none}
+.results.on{display:block}
 .results .count{font-family:Inter,Arial,sans-serif;font-size:15px;color:var(--muted);margin-bottom:10px}
 .result{background:var(--card);border:1px solid var(--card-border);border-radius:8px;padding:12px 16px;margin-bottom:8px;font-size:17px;line-height:1.5}
 .result .tag{display:block;font-family:Inter,Arial,sans-serif;font-size:13px;color:var(--gold);margin-top:4px}
@@ -42,7 +44,7 @@ h1{font-family:Inter,Arial,sans-serif;font-weight:700;font-size:40px;letter-spac
 .choose i{height:2px}
 .group-head{display:flex;align-items:center;gap:16px;margin:28px 0 16px}
 .group-head span{font-size:18px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);white-space:nowrap}
-.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .panel a{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
 .panel a:hover{color:var(--gold)}
 .result a{color:var(--navy)}
@@ -54,14 +56,16 @@ h1{font-family:Inter,Arial,sans-serif;font-weight:700;font-size:40px;letter-spac
 .card small{font-family:Inter,Arial,sans-serif;font-size:16px;color:var(--muted)}
 .card small b{font-size:11px;color:var(--gold);margin-left:8px;display:inline-block;transition:transform .15s}
 .card[aria-expanded="true"] small b{transform:rotate(180deg)}
-.panel{grid-column:1/-1;background:#fff;border:1px solid var(--gold-line);border-radius:10px;padding:20px 26px;display:none}
-.panel.open{display:block}
+.panel{position:fixed;inset:0;z-index:30;background:rgba(18,40,76,.35);display:none;align-items:center;justify-content:center;padding:16px}
+.panel.open{display:flex}
+.panel .box{position:relative;background:#fff;border:1px solid var(--gold-line);border-top:4px solid var(--gold);border-radius:10px;padding:22px 28px;width:100%;max-width:640px;max-height:calc(100vh - 32px);overflow:auto;box-shadow:0 12px 32px rgba(18,40,76,.25)}
+.panel .x{position:absolute;top:8px;right:10px;border:0;background:none;font-size:26px;line-height:1;color:var(--muted);cursor:pointer;padding:4px 8px}
+.panel .x:hover{color:var(--navy)}
 .panel h4{font-size:19px;color:var(--navy);margin:0 0 12px}
 .panel ul{margin:0;padding-left:22px}
 .panel li{font-size:18px;line-height:1.55;margin:6px 0}
 .crisis{font-family:Inter,Arial,sans-serif;font-size:15px;line-height:1.6;color:var(--ink);background:var(--note-bg);border:1px solid var(--gold-line);border-radius:8px;padding:14px 18px;margin:44px 0 0;max-width:1000px}
 .crisis strong{color:var(--navy)}
-@media (max-width:1050px){.grid{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){
   body{padding:4px 16px 30px}
@@ -71,7 +75,7 @@ h1{font-family:Inter,Arial,sans-serif;font-weight:700;font-size:40px;letter-spac
   .card h3{font-size:18px}
   .group-head span{font-size:15px;letter-spacing:1.2px;white-space:normal}
   .choose span{font-size:17px}
-  .panel{padding:16px 18px}
+  .panel .box{padding:18px 20px}
   .panel li{font-size:17px}
 }
 </style>
@@ -82,8 +86,8 @@ h1{font-family:Inter,Arial,sans-serif;font-weight:700;font-size:40px;letter-spac
 <p class="intro">Core false beliefs are the deep lies underneath much of our pain: lies about ourselves, other people, and the world. Choose a topic below, or search for a word or short sentence, to find the beliefs that may be driving what you feel.</p>
 
 <p class="label">Type a word or a short sentence</p>
-<input class="search" id="search" type="search" placeholder="For example: worthless, failure, perfect, trust, control, fault" autocomplete="off">
-<div class="results" id="results"></div>
+<div class="searchbox"><input class="search" id="search" type="search" placeholder="For example: worthless, failure, perfect, trust, control, fault" autocomplete="off">
+<div class="results" id="results"></div></div>
 
 <div class="choose"><span>Or choose a topic below</span><i></i></div>
 <div id="topics"></div>
@@ -147,6 +151,13 @@ var GROUPS = [
   var resultsEl = document.getElementById("results");
   var searchEl = document.getElementById("search");
   var openCard = null;
+  var panel = document.createElement("div");
+  panel.className = "panel";
+  panel.setAttribute("role","dialog");
+  panel.setAttribute("aria-modal","true");
+  document.body.appendChild(panel);
+  panel.addEventListener("click", function(e){ if (e.target === panel || e.target.className === "x") closeAll(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeAll(); });
 
   function item(b){
     return b.link ? '<a href="' + esc(CARD_BASE + b.link) + '" target="_blank" rel="noopener">' + esc(b.text) + '</a><span class="cardtag">Open belief card</span>' : esc(b.text);
@@ -165,9 +176,6 @@ var GROUPS = [
     grid.className = "grid";
     topicsEl.appendChild(grid);
 
-    var panel = document.createElement("div");
-    panel.className = "panel";
-
     g.topics.forEach(function(t, ti){
       var card = document.createElement("button");
       card.type = "button";
@@ -179,17 +187,14 @@ var GROUPS = [
         closeAll();
         if (wasOpen) return;
         card.setAttribute("aria-expanded","true");
-        panel.innerHTML = "<h4>" + esc(t.name) + "</h4><ul>" +
-          t.beliefs.map(function(b){return "<li>" + item(b) + "</li>";}).join("") + "</ul>";
-        var cards = grid.querySelectorAll(".card"), rowEnd = card;
-        for (var i = 0; i < cards.length; i++){ if (cards[i].offsetTop === card.offsetTop) rowEnd = cards[i]; }
-        rowEnd.parentNode.insertBefore(panel, rowEnd.nextSibling);
+        panel.innerHTML = '<div class="box"><button type="button" class="x" aria-label="Close">&times;</button><h4>' + esc(t.name) + "</h4><ul>" +
+          t.beliefs.map(function(b){return "<li>" + item(b) + "</li>";}).join("") + "</ul></div>";
         panel.classList.add("open");
+        panel.querySelector(".x").focus();
         openCard = card;
       });
       grid.appendChild(card);
     });
-    grid.appendChild(panel);
   });
 
   function closeAll(){
@@ -200,9 +205,12 @@ var GROUPS = [
 
   function norm(s){return s.toLowerCase().replace(/[’']/g,"").replace(/[^a-z0-9 ]+/g," ");}
 
+  document.addEventListener("click", function(e){ if (!e.target.closest(".searchbox")) resultsEl.classList.remove("on"); });
+  searchEl.addEventListener("focus", function(){ if (resultsEl.innerHTML) resultsEl.classList.add("on"); });
   searchEl.addEventListener("input", function(){
     var q = norm(searchEl.value).trim();
-    if (!q){ resultsEl.innerHTML = ""; return; }
+    if (!q){ resultsEl.innerHTML = ""; resultsEl.classList.remove("on"); return; }
+    resultsEl.classList.add("on");
     var words = q.split(/\s+/);
     var hits = [];
     GROUPS.forEach(function(g){
