@@ -56,7 +56,8 @@ def add_dispute(body, key):
             t += ' ' + e[3]
         add.append(('B2', t))
     intro = d.get('qintro', 'Have the client choose questions from the [Questioning False Beliefs]({form}) form that “speak to” the belief.')
-    add.append(('B', '**Questions to dispute the belief.** ' + intro.format(form=FORM) + ' Selected questions that fit the errors above:'))
+    video = ' To see how, watch Dr. Campbell’s video [Integrated Christian Counseling: Questioning Your Beliefs](https://www.youtube.com/watch?v=ZjR0Mx1zEMY).'
+    add.append(('B', '**Questions to dispute the belief.** ' + intro.format(form=FORM) + video + ' Selected questions that fit the errors above:'))
     for nums, target in d['questions']:
         nums = nums if isinstance(nums, tuple) else (nums,)
         add.append(('B2', ' and '.join(f'“{Q[n]}”' for n in nums) + f' *For:* {target}.'))

@@ -36,6 +36,8 @@ for s in d.sections:
 st = d.styles['Normal']; st.font.name = 'Calibri'; st.font.size = Pt(10)
 st.element.rPr.rFonts.set(qn('w:eastAsia'), 'Calibri')
 st.paragraph_format.space_after = Pt(4); st.paragraph_format.line_spacing = 1.05
+if getattr(C, 'TIGHT', False):  # optional: trims spacing slightly to avoid a near-empty last page
+    st.paragraph_format.space_after = Pt(3); st.paragraph_format.line_spacing = 1.03
 for nm in ('Title', 'Heading 1', 'Heading 2'):
     s = d.styles[nm]; s.font.name = 'Calibri'
     rf = s.element.rPr.rFonts

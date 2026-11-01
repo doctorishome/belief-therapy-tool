@@ -68,3 +68,5 @@ BODY = add_dispute(BODY, 'ptsd')
 from treatment_links import link_treatments
 from treatment_pairs import PAIRS
 BODY = link_treatments(BODY, PAIRS['ptsd'])
+
+TIGHT = True
