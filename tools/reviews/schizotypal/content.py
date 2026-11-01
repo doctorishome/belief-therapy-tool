@@ -56,3 +56,6 @@ BODY = [
 ('B', 'Low-dose risperidone has small-trial support; CBT methods for at-risk states and social-skills work are the main psychological tools.'),
 ('B', 'Religiosity is not schizotypy. "Test the spirits" gently, and replace fear and odd ideas with clear, shared truth.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['SPQ', 'PQB', 'APA_PSY', 'SCIDPD', 'PID5', 'MCMI4', 'MMPI3'], about='schizotypal personality disorder', use={'APA_PSY': 'Rating psychotic-like symptoms and watching for change toward psychosis.'}, takeaway='Screen traits with the free SPQ and watch for psychosis risk with the PQ-B.')

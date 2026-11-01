@@ -54,3 +54,6 @@ BODY = [
 ('B', 'DBT and structured care work; standard CBT alone is less clear; medication does not treat BPD itself. Most patients remit over time.'),
 ('B', 'Forgiveness and acceptance grow with recovery. Replace "everyone will leave me" with the truth that God will never forsake His children.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['MSI', 'BSL23', 'ZAN', 'SCIDPD', 'PID5', 'PAI', 'MCMI4', 'MMPI3', 'CSSRS'], about='borderline and other personality disorders', use={'PAI': 'Broad clinical and personality assessment; includes a borderline features scale.'}, takeaway='Screen for BPD with the free MSI-BPD, track change with the BSL-23, and confirm with a structured interview such as the SCID-5-PD.')

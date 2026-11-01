@@ -50,3 +50,6 @@ BODY = [
 ('B', 'Early developmental interventions help young children; CBT adapted for autism treats anxiety well. Be concrete, visual, and involve families.'),
 ('B', 'Faith matters to many autistic people and their parents. Replace "broken" and "burden" with the truth that God formed each person and that every member of the body is indispensable.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['MCHAT', 'AQ', 'APA_ASD', 'SCQ', 'SRS2', 'CARS2', 'ADOS2'], about='autism spectrum disorder', use={}, takeaway='Free screeners (M-CHAT-R/F, AQ) flag concern; formal diagnosis typically uses Level C tools such as the ADOS-2, which require specialized training.')

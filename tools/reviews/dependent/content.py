@@ -55,3 +55,6 @@ BODY = [
 ('B', 'No DPD-only trials; cognitive, dynamic, and schema therapies help Cluster C disorders. Hand responsibility back gradually.'),
 ('B', 'Replace "I can’t manage without someone to lean on" with God’s strengthening presence and the call to carry one’s own load.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['SCIDPD', 'PID5', 'PAI', 'MCMI4', 'MMPI3', 'PHQ9'], about='dependent personality disorder', use={'PHQ9': 'Screening for co-occurring depression.'}, takeaway='Confirm with a structured interview (SCID-5-PD) and screen for depression and for abuse in close relationships.')

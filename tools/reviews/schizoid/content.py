@@ -54,3 +54,6 @@ BODY = [
 ('B', 'No treatment trials exist; treat co-occurring problems and respect the client’s pace.'),
 ('B', 'Gently replace "I don’t need anyone" with the truth that "It is not good for the man to be alone," offered as invitation, not pressure.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['SCIDPD', 'PID5', 'AQ', 'PAI', 'MCMI4', 'MMPI3'], about='schizoid personality disorder', use={'AQ': 'Ruling out autism, which can look similar to schizoid detachment.'}, takeaway='Confirm with a structured interview (SCID-5-PD), and screen for autism (AQ) and depression, which can look similar.')

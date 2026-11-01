@@ -58,3 +58,6 @@ BODY = [
 ('B', 'Parent training for children; intensive family-based and CBT treatment for teens; stimulants or risperidone for aggression in some cases.'),
 ('B', 'Replace "I’m just a bad kid" with responsibility and the hope of a new heart, and surround the young person with steady mentors.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['APA_CD', 'ICU', 'SDQ', 'VAND', 'BASC3', 'CONN4', 'PCLYV'], about='conduct disorder', use={}, takeaway='Measure callous-unemotional traits (free ICU) to identify youth who need intensive, tailored treatment.')

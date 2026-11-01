@@ -17,6 +17,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 folder = pathlib.Path(sys.argv[1]).resolve()
 ROOT = pathlib.Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 
 
 def load(name):
@@ -24,8 +25,8 @@ def load(name):
     m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m); return m
 
 
-REFS = load("refs").REFS
 C = load("content")
+REFS = load("refs").REFS if (folder / "refs.py").exists() else []
 VERIFIED = getattr(C, "VERIFIED", "Saturday, Oct 31, 2026")
 SRC = getattr(C, "SOURCES", "Crossref and PubMed")
 
@@ -72,7 +73,7 @@ def link(p, url, text, size):
 d.add_paragraph(C.TITLE, style='Title')
 runs(d.add_paragraph(), 'Clinical Companion Knowledge Library: for counselors and counseling students', italic=True)
 STY = {'P': None, 'B': 'List Bullet', 'B2': 'List Bullet 2', 'N': 'List Number'}
-LINK_RE = re.compile(r'\[([^\]]+)\]\((https?://[^)]+)\)')
+LINK_RE = re.compile(r'\[([^\]]+)\]\((https?://(?:[^()\s]|\([^()\s]*\))+)\)')
 
 
 def cell_text(p, text, size, bold=False, color=None):
@@ -143,15 +144,24 @@ for kind, text in C.BODY:
     else:
         runs(d.add_paragraph(style=STY[kind]), text)
 
-n = len(REFS)
+n = len(getattr(C, 'RAW_REFS', None) or REFS)
 d.add_heading('Sources note', level=1)
 if hasattr(C, 'SOURCES_NOTE'):
-    runs(d.add_paragraph(), C.SOURCES_NOTE)
+    note = C.SOURCES_NOTE
+    if any(k == 'T' for k, _ in C.BODY) and 'Assessment instrument' not in note:
+        note += ' Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).'
+    runs(d.add_paragraph(), note)
 else:
-  runs(d.add_paragraph(), f'All {n} references were checked against {SRC} ({VERIFIED.split(", ", 1)[1]}), and the figures quoted were checked against each study’s abstract. Each DOI is a live link to the publisher record.')
+  runs(d.add_paragraph(), f'All {n} references were checked against {SRC} ({VERIFIED.split(", ", 1)[1]}), and the figures quoted were checked against each study’s abstract. Each DOI is a live link to the publisher record.'
+       + (' Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).' if any(k == 'T' for k, _ in C.BODY) else ''))
 d.add_heading('References', level=1)
 S = 8.5
-for _, au, yr, ti, jo, vo, iss, pg, doi in REFS:
+for raw, rdoi in getattr(C, 'RAW_REFS', []):
+    p = d.add_paragraph(); pf = p.paragraph_format
+    pf.left_indent = Inches(0.35); pf.first_line_indent = Inches(-0.35); pf.space_after = Pt(2); pf.line_spacing = 1.0
+    runs(p, raw + ' ', size=S)
+    if rdoi: link(p, 'https://doi.org/' + rdoi, 'https://doi.org/' + rdoi, S)
+for _, au, yr, ti, jo, vo, iss, pg, doi in ([] if getattr(C, 'RAW_REFS', None) else REFS):
     p = d.add_paragraph(); pf = p.paragraph_format
     pf.left_indent = Inches(0.35); pf.first_line_indent = Inches(-0.35); pf.space_after = Pt(2); pf.line_spacing = 1.0
     r = p.add_run(f'{au} ({yr}). '); r.font.size = Pt(S)

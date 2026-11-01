@@ -57,3 +57,6 @@ BODY = [
 ('B', 'CBT, motivational interviewing, contingency management, and 12-step facilitation all work; medication is essential for opioid use disorder and helpful for alcohol use disorder.'),
 ('B', 'Faith and fellowship are part of how recovery works. Replace shame and "I’ve blown it" thinking with the truth of God’s forgiveness and new mercies.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['AUDIT', 'ASSIST', 'DAST', 'CRAFFT', 'APA_SUB', 'SASSI', 'PHQ9'], about='substance use disorders', use={'PHQ9': 'Screening for co-occurring depression.'}, takeaway='Screen adults with the AUDIT or ASSIST and teens with the CRAFFT; all three are free.')

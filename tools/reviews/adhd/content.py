@@ -51,3 +51,6 @@ BODY = [
 ('B', 'Medication has the largest effect on core symptoms; parent training helps behavior and family life; CBT helps adults on medication.'),
 ('B', 'ADHD can make religious life harder and fuel shame. Replace "lazy" and "bad Christian" with the truth of God’s compassion and grace.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['ASRS', 'VAND', 'SNAP', 'CONN4', 'CAARS2', 'BRIEF2', 'BASC3'], about='ADHD', use={}, takeaway='Screen adults with the free ASRS and children with the free Vanderbilt scales; gather ratings from more than one setting before diagnosing.')

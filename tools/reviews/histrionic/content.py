@@ -55,3 +55,6 @@ BODY = [
 ('B', 'Evidence is thin; schema therapy helped a mixed group of personality disorders that included HPD.'),
 ('B', 'Replace "I am nothing unless noticed" with the truth that God sees the heart and already delights in His children.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['SCIDPD', 'PID5', 'PAI', 'MCMI4', 'MMPI3', 'PHQ9'], about='histrionic personality disorder', use={'PHQ9': 'Screening for co-occurring depression.'}, takeaway='Confirm with a structured interview (SCID-5-PD) rather than impressions alone, which helps guard against gender bias.')

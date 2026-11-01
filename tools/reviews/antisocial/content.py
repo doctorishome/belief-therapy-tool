@@ -58,3 +58,6 @@ BODY = [
 ('B', 'No treatment reliably changes ASPD; treat addiction, build structure and skills, and use schema or cognitive approaches.'),
 ('B', 'Pair grace with accountability: replace "rules are for other people" with confession, restitution, and a new heart, proven over time.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['SCIDPD', 'PID5', 'PAI', 'MCMI4', 'MMPI3', 'PCLR', 'AUDIT', 'DAST'], about='antisocial personality disorder', use={'AUDIT': 'Screening for alcohol problems, which commonly co-occur.', 'DAST': 'Screening for drug problems, which commonly co-occur.'}, takeaway='Confirm with a structured interview, screen for substance use (AUDIT, DAST-10), and leave psychopathy ratings (PCL-R) to specially trained clinicians.')

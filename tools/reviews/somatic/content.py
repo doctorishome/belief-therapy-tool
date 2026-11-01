@@ -51,3 +51,6 @@ BODY = [
 ('B', 'CBT has large effects for illness anxiety and smaller effects for somatic symptoms; medication evidence is weak. Coordinate with one physician.'),
 ('B', 'Challenge catastrophic and "God is punishing me" beliefs, reduce checking and reassurance, and replace them with trust that our times are in God’s hands.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['PHQ15', 'SSS8', 'HAI', 'APA_SSD', 'PHQ9', 'GAD7', 'PAI'], about='somatic symptom and illness anxiety disorders', use={'PHQ9': 'Screening for co-occurring depression.', 'GAD7': 'Screening for co-occurring anxiety.'}, takeaway='Track physical symptom burden with the PHQ-15 or SSS-8 and health anxiety with the Health Anxiety Inventory.')

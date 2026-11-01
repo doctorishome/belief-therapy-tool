@@ -55,3 +55,6 @@ BODY = [
 ('B', 'Parent training is first-line; CBT skills help; stimulants help when ADHD is present. Treat the relationship, not just the child.'),
 ('B', 'Replace harsh, angry discipline with calm, consistent training: "Do not provoke your children to wrath."'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['APA_ODD', 'ARI', 'VAND', 'SDQ', 'ECBI', 'BASC3', 'CONN4'], about='oppositional defiant disorder', use={}, takeaway='Use the free Vanderbilt or SDQ to screen, and the ECBI to track progress in parent training; rate behavior in more than one setting.')

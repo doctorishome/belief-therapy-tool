@@ -60,3 +60,6 @@ BODY = [
 ('B', 'No NPD-only trials; schema therapy and alliance-focused work are the best guides; change is slow but possible.'),
 ('B', 'Replace "I must be superior" and "God owes me" with grace that leaves no room for boasting, and practice humility and forgiveness.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['PNI', 'NPI16', 'SCIDPD', 'PID5', 'PAI', 'MCMI4', 'MMPI3'], about='narcissistic personality disorder', use={}, takeaway='The free PNI captures both grandiose and vulnerable narcissism; confirm a diagnosis with a structured interview.')

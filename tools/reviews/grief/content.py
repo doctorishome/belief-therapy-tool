@@ -49,3 +49,6 @@ BODY = [
 ('B', 'Grief-focused CBT with exposure and complicated grief treatment work; preventive counseling for everyone does not; antidepressants help depression, not grief.'),
 ('B', 'Faith usually helps, but spiritual grief is real. Challenge beliefs that grieving is faithless or that moving on is betrayal, and replace them with the hope of the resurrection.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['PG13R', 'ICG', 'PHQ9', 'PCL5', 'CSSRS'], about='prolonged grief', use={'PCL5': 'Checking for PTSD after a traumatic or violent death.'}, takeaway='Screen with the free PG-13-R, and check for depression, PTSD, and suicide risk alongside grief.')

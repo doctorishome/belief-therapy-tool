@@ -53,3 +53,6 @@ BODY = [
 ('B', 'CBT and CBT-E are first-line for bulimia and binge-eating disorder; family-based treatment for adolescent anorexia; adult anorexia needs a team approach.'),
 ('B', 'A secure, internalized faith is protective. Challenge beliefs that tie worth or holiness to weight, and replace them with the truth that God made the body good and sees the heart.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['SCOFF', 'EAT26', 'EDEQ', 'EDE', 'EDI3', 'BES', 'PHQ9'], about='eating disorders', use={'PHQ9': 'Screening for co-occurring depression and suicidal thoughts.'}, takeaway='Screen with the SCOFF or EAT-26 and track with the EDE-Q; any positive screen also calls for a medical evaluation.')

@@ -51,3 +51,6 @@ BODY = [
 ('B', 'Brief CBT (in person or online) has the best, though limited, evidence; routine medication is not supported. Do not overlook suicide risk.'),
 ('B', 'Faith buffers stress. Challenge "God is punishing me" and "I can’t handle this," and replace them with the truth of God’s presence and help.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['K10', 'PSS', 'PHQ9', 'GAD7', 'PCL5', 'WHODAS', 'CSSRS'], about='adjustment disorders', use={'PCL5': 'Checking for PTSD when the stressor was traumatic.'}, takeaway='Use brief free measures (K10, PHQ-9, GAD-7) to track distress, and the PCL-5 when a traumatic stressor may point to PTSD instead.')

@@ -58,3 +58,6 @@ BODY = [
 ('B', 'Trauma-focused CBT (CPT, cognitive therapy, prolonged exposure) is first-line, with large effects; medication helps less. Do not use single-session debriefing.'),
 ('B', 'Assess spiritual struggle and moral injury. Faith-integrated trauma groups show promising early results; challenge distorted blame and replace it with the truth of God’s presence and forgiveness.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['PCPTSD5', 'LEC5', 'PCL5', 'CAPS5', 'CAPSCA', 'TSCC', 'TSI2', 'CSSRS'], about='PTSD and trauma-related disorders', use={}, takeaway='Screen with the PC-PTSD-5, track with the free PCL-5, and use the CAPS-5 interview when a formal diagnosis is needed.')

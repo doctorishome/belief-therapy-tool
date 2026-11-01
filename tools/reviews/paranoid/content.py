@@ -54,3 +54,6 @@ BODY = [
 ('B', 'No PPD-specific trials exist; schema and cognitive therapy across personality disorders, built on a careful alliance, are the best evidence.'),
 ('B', 'Replace "people are out to get me" with the truth that God is a refuge, and with forgiveness that frees without requiring blind trust.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['GPTS', 'SCIDPD', 'PID5', 'PAI', 'MCMI4', 'MMPI3'], about='paranoid personality disorder', use={}, takeaway='Confirm with a structured interview (SCID-5-PD); the PAI, MCMI-IV, and MMPI-3 add detail but require Level C qualification.')

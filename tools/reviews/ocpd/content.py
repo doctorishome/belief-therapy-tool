@@ -57,3 +57,6 @@ BODY = [
 ('B', 'Cognitive, dynamic, and schema therapies help Cluster C disorders; a strong alliance predicts improvement.'),
 ('B', 'Replace "Mistakes are intolerable" with the gentle yoke of Christ and the rest He gives.'),
 ]
+
+from instruments import add_assessment
+BODY = add_assessment(BODY, ['SCIDPD', 'PID5', 'FMPS', 'YBOCS', 'PAI', 'MCMI4', 'MMPI3'], about='obsessive-compulsive personality disorder', use={'YBOCS': 'Checking whether OCD (unwanted obsessions and rituals) is also present.'}, takeaway='Measure perfectionism with the free FMPS, and use the Y-BOCS to check whether OCD is also present.')
