@@ -120,7 +120,7 @@ DSM_CARD = ('<div class="card"><h3>DSM-5-TR Reviews</h3>'
  '<a href="reviews/anxiety-teaching-overview.pdf" target="_blank" rel="noopener">Anxiety Disorders: A DSM-5-TR Teaching Overview (PDF)</a>'
  '<a href="reviews/ocd-teaching-overview.pdf" target="_blank" rel="noopener">Obsessive-Compulsive Disorder: A DSM-5-TR Teaching Overview (PDF)</a>'
  '<a href="reviews/schizophrenia-teaching-overview.pdf" target="_blank" rel="noopener">Schizophrenia: A DSM-5-TR Teaching Overview (PDF)</a></p></div>')
-page('welcome','Welcome to the Counselors’ Room','Learn Christian cognitive-behavioral Belief Therapy from a psychologist with 35 years of clinical experience, and practice it on guided cases before you meet your next client.',
+page('welcome','Welcome to the Counselors’ Room','Learn Christian cognitive-behavioral Belief Counseling from a psychologist with 35 years of clinical experience, and practice it on guided cases before you meet your next client.',
  '<h2>What you will find inside</h2>'+cards([
  ('Professional Tips','Short, practical teaching from Dr. Campbell’s years in practice, delivered weekly to your inbox and kept in a searchable archive.'),
  ('The Process','The three steps of Belief Counseling (Identify, Challenge, Replace), with the reason behind each one, from Assess through Reinforce.'),
@@ -133,7 +133,7 @@ page('welcome','Welcome to the Counselors’ Room','Learn Christian cognitive-be
  '<div class="step"><div class="num">1</div><div><strong>Start with a free week; then $29.25 a month, cancel anytime.</strong><p>You get the tips, the library, and the theory topics right away.</p></div></div>'
  '<div class="step"><div class="num">2</div><div><strong>Try a practice case during your free week.</strong><p>Walk a composite client through Identify, Challenge, and Replace. Your supervisor pauses for your answer before showing the model approach.</p></div></div>'
  '<div class="step"><div class="num">3</div><div><strong>Keep growing.</strong><p>Add more cases in sets of five, work through the course, and earn your certificate of completion.</p></div></div>'
- '<h2>About Dr. Campbell</h2><p>Brian Campbell, Ph.D., has spent 35 years in private practice, teaching, and writing. Belief Therapy grew from that work: a Christian cognitive-behavioral approach that helps clients name the lies behind their pain and replace them with truth from God’s Word.</p>'
+ '<h2>About Dr. Campbell</h2><p>Brian Campbell, Ph.D., has spent 35 years in private practice, teaching, and writing. Belief Counseling grew from that work: a Christian cognitive-behavioral approach that helps clients name the lies behind their pain and replace them with truth from God’s Word.</p>'
  '<div class="scrip">“Do not be conformed to this world, but be transformed by the renewing of your mind.” <b>Romans 12:2</b></div>'+JOIN,
  extra_css=WELCOME_CSS)
 # 2 Process
