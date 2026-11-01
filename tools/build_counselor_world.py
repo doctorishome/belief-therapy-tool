@@ -201,7 +201,7 @@ page('cases','Case Studies','Practice Identify, Challenge, and Replace on compos
  '<p><strong>Important:</strong> all cases are fictional composites. Never enter real client names or details.</p>')
 # 6 Course
 secs=['Welcome and How This Course Works','The Process: Identify, Challenge, Replace','Levels of Analysis: The Whole Person','Assess and Identify: Finding the Lies','Hypothesize and Question','Refute and Replace','Rehearse and Reinforce','Core Beliefs and Personality Patterns','Safety, Ethics, and Scope of Practice','Practice Cases and Final Review']
-page('course','Christian Cognitive-Behavioral Therapy: The Course','A step-by-step course in Belief Therapy, with quizzes, practice cases, and a certificate of completion.',
+page('course','Christian Cognitive-Behavioral Therapy: The Course','A step-by-step course in Belief Counseling, with quizzes, practice cases, and a certificate of completion.',
  '<h2>Course outline</h2>'+''.join('<div class="step"><div class="num">%d</div><div><strong>%s</strong></div></div>'%(i+1,s) for i,s in enumerate(secs))+
  '<div class="card"><span class="tag">Coming soon</span><h3>Certificate of completion</h3><p>Finish the lessons and quizzes to receive a certificate of completion from Dr. Campbell.</p></div>')
 # 7 Library
