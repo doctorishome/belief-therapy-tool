@@ -69,6 +69,7 @@ def nav(active):
         ("Welcome", [("Welcome", "welcome.html")]),
         ("Learn", [("The Process", "process.html"),
                    ("Theory Topics", "theory.html"),
+                   ("Core False Beliefs", "core-beliefs.html"),
                    ("Professional Tips", "tips.html")]),
         ("Practice", [("Case Studies", "cases.html"),
                       ("The Course", "course.html")]),
@@ -111,7 +112,7 @@ JOIN='<div class="cta"><a class="btn soon" target="_blank" href="https://doctori
 # 1 Welcome
 WELCOME_CSS = '''/*reviews*/
 .grid>.card:last-child{grid-column:1 / -1}
-@media (min-width:900px){.grid>.card:last-child{grid-column:span 2}}
+@media (min-width:900px){.grid>.card:last-child{grid-column:auto}}
 .card .pdfs{margin:12px 0 0;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
 .card .pdfs a{color:var(--navy2);font-weight:bold}
 /*/reviews*/
@@ -127,6 +128,7 @@ page('welcome','Welcome to the Counselors’ Room','Learn Christian cognitive-be
  ('Professional Tips','Short, practical teaching from Dr. Campbell’s years in practice, delivered weekly to your inbox and kept in a searchable archive.'),
  ('The Process','The three steps of Belief Counseling (Identify, Challenge, Replace), with the reason behind each one, from Assess through Reinforce.'),
  ('Theory Topics','A framework for understanding the great majority of psychological struggles: beliefs, personality, and the whole person.'),
+ ('Core False Beliefs','The deep-seated lies beneath much of our pain, how to unearth them, and the tools that help.'),
  ('Belief Counseling','The theory behind Belief Counseling, Dr. Campbell’s Christian cognitive-behavioral approach to understanding and changing false beliefs.'),
  ('Case Studies','Practice on composite cases guided by an AI supervisor trained on Dr. Campbell’s method. Start with a free week; then $29.25 a month, cancel anytime.'),
  ('The Course','A step-by-step course in Christian Cognitive-Behavioral Therapy, with quizzes and a certificate of completion.'),

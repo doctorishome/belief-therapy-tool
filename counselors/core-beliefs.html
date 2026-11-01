@@ -1,0 +1,75 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Core False Beliefs · Belief Counseling for Counselors</title><style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
+a{color:var(--navy2)}
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent}
+.nav a.l:hover{border-color:var(--gold)}.nav a.on{color:#fff;border-color:var(--gold)}
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:54px 22px 46px;text-align:center}
+.hero h1{font-size:clamp(1.8rem,4.5vw,2.9rem);margin:0 0 10px;line-height:1.2}.hero p{max-width:720px;margin:0 auto;font-size:1.12rem;color:#dfe6f2}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.wrap{max-width:1000px;margin:0 auto;padding:36px 20px 20px}
+h2{color:var(--navy);font-size:1.55rem;margin:34px 0 8px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+h3{color:var(--navy);margin:0 0 4px;font-size:1.12rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:16px 0}
+.card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:16px 18px;box-shadow:0 2px 6px rgba(18,40,76,.06)}
+.card p{margin:4px 0 0;color:var(--mut);font-size:.96rem}
+.step{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:12px 0}
+.num{flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.step p{margin:3px 0 0;color:var(--mut)}.step strong{color:var(--navy)}
+.cta{text-align:center;margin:36px 0 8px}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:13px 30px;border-radius:30px;font-size:1.05rem;border:0}
+.btn.soon{opacity:.85}.note{color:var(--mut);font-size:.9rem;text-align:center;margin-top:8px}
+.scrip{background:#fff;border-left:4px solid var(--gold);padding:10px 16px;margin:10px 0;font-style:italic}.scrip b{font-style:normal;color:var(--navy)}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;background:var(--navy);color:var(--gold);border-radius:12px;padding:2px 10px;margin-bottom:6px}
+.tag.free{background:var(--gold);color:var(--navy)}
+ul.clean{padding-left:20px}ul.clean li{margin:5px 0}
+.foot{margin:40px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:560px){.nav{padding:8px 12px}.nav a.l{font-size:.85rem}.step{flex-direction:column}}
+/*nav*/
+.nav .dd{position:relative}
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
+.nav .dd>button::after{content:" \25BE";color:var(--gold);font-size:.8em}
+.nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
+.nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
+.nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
+.nav .menu a:hover{background:var(--cream)}
+.nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
+.nav .dd.open .menu{display:block}
+.nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
+.nav .menu .x:hover{color:var(--navy);text-decoration:underline}
+@media(max-width:560px){.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.88rem}}
+/*/nav*/
+</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>For Counselors</small></div><a class="l" href="welcome.html">Welcome</a><div class="dd on"><button type="button" aria-haspopup="true" aria-expanded="false">Learn</button><div class="menu"><a href="process.html">The Process</a><a href="theory.html">Theory Topics</a><a class="on" href="core-beliefs.html">Core False Beliefs</a><a href="tips.html">Professional Tips</a><button type="button" class="x" aria-label="Close menu">Close &#10005;</button></div></div><div class="dd"><button type="button" aria-haspopup="true" aria-expanded="false">Practice</button><div class="menu"><a href="cases.html">Case Studies</a><a href="course.html">The Course</a><button type="button" class="x" aria-label="Close menu">Close &#10005;</button></div></div><div class="dd"><button type="button" aria-haspopup="true" aria-expanded="false">Resources</button><div class="menu"><a href="library.html">Clinical Library</a><a href="articles.html">Articles</a><a href="reviews.html">DSM-5-TR Reviews</a><a href="videos.html">Videos</a><button type="button" class="x" aria-label="Close menu">Close &#10005;</button></div></div><a class="pub" target="_blank" rel="noopener" href="https://doctorishome.wixstudio.com/website-6/false-belief-finder">False Belief Finder ↗</a><a class="pub" target="_blank" rel="noopener" href="https://doctorishome.wixstudio.com/website-6">Public Site ↗</a></div><!--/nav--><div class="hero"><div class="eyebrow">Belief Counseling for Counselors</div><h1>Core False Beliefs</h1><p>The deep-seated lies beneath much of our pain: lies about ourselves, other people, and the world.</p></div><div class="wrap">
+<h2>Digging deeper</h2>
+<p>Many false beliefs are deep-seated and are difficult to unearth. For deeper toxic beliefs, please see: <a href="https://www.beliefcounselor.com/core-beliefs" target="_blank" rel="noopener">Core Beliefs</a>, and <a href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf" target="_blank" rel="noopener">Parental Messages</a>.</p>
+<p>Core false beliefs do not belong to any one level of Belief Mining. They often sit underneath the beliefs a client first describes, so they are worth looking for in every case.</p>
+<h2>The 22 core false beliefs</h2>
+<p>Grouped by theme. Each belief opens its own belief card, where the belief is challenged and replaced with truth from Scripture.</p>
+<div class="grid"><div class="card"><h3>My Worth</h3><ul class="clean"><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/my-worth/Core-001-Something-Is-Wrong-With-Me.html" target="_blank" rel="noopener">Something is wrong with me.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/my-worth/Core-002-I-Am-Worthless.html" target="_blank" rel="noopener">I am worthless.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/my-worth/Core-003-I-Am-Not-Lovable.html" target="_blank" rel="noopener">I am not lovable.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/my-worth/Core-004-I-Am-A-Failure.html" target="_blank" rel="noopener">I am a failure.</a></li></ul></div><div class="card"><h3>My Strength</h3><ul class="clean"><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/my-strength/Core-005-I-Am-Powerless.html" target="_blank" rel="noopener">I am powerless.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/my-strength/Core-006-I-Cannot-Handle-This.html" target="_blank" rel="noopener">I cannot handle this.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/my-strength/Core-007-I-Cannot-Make-It-On-My-Own.html" target="_blank" rel="noopener">I cannot make it on my own.</a></li></ul></div><div class="card"><h3>Other People</h3><ul class="clean"><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/other-people/Core-008-I-Dont-Belong.html" target="_blank" rel="noopener">I don’t belong.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/other-people/Core-009-People-Will-Leave-Me.html" target="_blank" rel="noopener">People will leave me.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/other-people/Core-010-No-One-Will-Care-For-Me.html" target="_blank" rel="noopener">No one will care for me when I need them.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/other-people/Core-011-Nobody-Loves-Me.html" target="_blank" rel="noopener">Nobody loves me.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/other-people/Core-012-People-Cannot-Be-Trusted.html" target="_blank" rel="noopener">People cannot be trusted.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/other-people/Core-013-My-Needs-Dont-Matter.html" target="_blank" rel="noopener">My needs don’t matter.</a></li></ul></div><div class="card"><h3>The World &amp; the Future</h3><ul class="clean"><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/world-future/Core-014-Things-Will-Always-Go-Badly.html" target="_blank" rel="noopener">Things will always go badly.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/world-future/Core-015-The-World-Is-Unsafe.html" target="_blank" rel="noopener">The world is unsafe.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/world-future/Core-016-Something-Terrible-Is-Going-To-Happen.html" target="_blank" rel="noopener">Something terrible is going to happen.</a></li></ul></div><div class="card"><h3>Rules I Live By</h3><ul class="clean"><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/rules-i-live-by/Core-017-I-Must-Be-Perfect.html" target="_blank" rel="noopener">I must be perfect.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/rules-i-live-by/Core-018-I-Must-Have-Everyones-Approval.html" target="_blank" rel="noopener">I must have everyone’s approval.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/rules-i-live-by/Core-019-I-Must-Be-In-Control.html" target="_blank" rel="noopener">I must be in control.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/rules-i-live-by/Core-020-I-Must-Not-Make-Mistakes.html" target="_blank" rel="noopener">I must not make mistakes.</a></li></ul></div><div class="card"><h3>After Painful Experiences</h3><ul class="clean"><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/after-painful-experiences/Core-021-It-Was-My-Fault.html" target="_blank" rel="noopener">It was my fault.</a></li><li><a href="https://doctorishome.github.io/belief-therapy-tool/belief-cards/core/after-painful-experiences/Core-022-What-Happened-Makes-Me-Dirty-Or-Bad.html" target="_blank" rel="noopener">What happened makes me dirty or bad.</a></li></ul></div></div>
+<h2>Tools for unearthing core false beliefs</h2>
+<ul class="clean">
+<li><a href="https://www.beliefcounselor.com/core-beliefs" target="_blank" rel="noopener">Core False Beliefs list (public site) ↗</a>: search the beliefs or browse them by topic.</li>
+<li><a href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf" target="_blank" rel="noopener">Parental Messages Checklist (PDF)</a>: messages from parents and caretakers that often become core beliefs.</li>
+<li><a href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf" target="_blank" rel="noopener">Belief Counseling Cognitive Errors Checklist (PDF)</a>: the thinking habits that hold false beliefs in place.</li>
+<li><a href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf" target="_blank" rel="noopener">Questioning False Beliefs (PDF)</a>: questions that help a client dispute a belief once it is found.</li>
+<li><a href="videos.html">Videos</a>: including Dr. Campbell’s “Integrated Christian Counseling: Questioning Your Beliefs.”</li>
+</ul>
+</div><div class="foot">Educational training for counselors. Never enter real client names or details. · Scripture quotations: Berean Standard Bible (BSB), public domain. · © Brian Campbell, Ph.D.</div><!--navjs--><script>
+(function(){
+var dds=document.querySelectorAll('.nav .dd'),t;
+function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
+dds.forEach(function(d){
+  var b=d.firstChild;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll();if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}});
+  d.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();closeAll();b.focus();});
+  d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(closeAll,500);});
+  d.addEventListener('mouseenter',function(){clearTimeout(t);});
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+</script><!--/navjs--></body></html>
