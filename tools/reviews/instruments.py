@@ -125,6 +125,11 @@ I = {
  'PSYRATS': ('**PSYRATS** (Psychotic Symptom Rating Scales)', 'Rating delusions on conviction, preoccupation, distress, and disruption; the outcome measure in major delusion trials.', 'Clinician interview; delusions scale 6 items', 'No (free)', '★ Clinical interviewing skill; training recommended', doi('10.1017/S0033291799008661')),
  'PDI': ('**PDI-21** (Peters et al. Delusions Inventory)', 'Delusional ideas plus how distressing, preoccupying, and convincing they are.', 'Self-report, 21 items', 'No (free)', FREE_GEN, doi('10.1093/oxfordjournals.schbul.a007116')),
  'BABS': ('**BABS** (Brown Assessment of Beliefs Scale)', 'How fixed a belief is and how much insight the person has.', 'Clinician interview, 7 items', 'No (free)', '★ Clinical interviewing skill; training recommended', doi('10.1176/ajp.155.1.102')),
+ 'DAI': ('**DAI** (Disturbances of Attachment Interview)', 'Caregiver interview rating signs of RAD and DSED; used in the major research studies.', 'Clinician interview with the caregiver', 'No (free)', '★ Clinical interviewing skill; training recommended', doi('10.1097/00004583-200208000-00016')),
+ 'RPQ': ('**RPQ** (Relationship Problems Questionnaire)', 'Brief parent or teacher screen for inhibited and disinhibited attachment behaviors.', 'Parent- or teacher-report, 10 items', 'No (free)', FREE_GEN, doi('10.1002/mpr.127')),
+ 'TSCYC': ('**TSCYC** (Trauma Symptom Checklist for Young Children)', 'Caregiver report of trauma symptoms in children ages 3 to 12.', 'Caregiver-report, 90 items (screening form 20)', 'Yes', '★ Level B', '[PAR](https://www.parinc.com/products/TSCYC)'),
+ 'ASDS': ('**ASDS** (Acute Stress Disorder Scale)', 'Acute stress symptoms within the first month after trauma.', 'Self-report, 19 items', 'No (free)', FREE_GEN, doi('10.1037/1040-3590.12.1.61')),
+ 'APA_ACUTE': ('**APA Severity of Acute Stress Symptoms** (NSESS acute stress scale)', 'Rating acute stress symptoms in adults and ages 11 to 17.', 'Self-report, 7 items', 'No (free from the APA for clinical use)', FREE_GEN, '[APA assessment measures](' + APA + ')'),
  'FMPS': ('**FMPS** (Frost Multidimensional Perfectionism Scale)', 'Perfectionism (concern over mistakes, doubts, high standards, organization).', 'Self-report, 35 items', 'No (free)', FREE_GEN, doi('10.1007/BF01172967')),
 }
 

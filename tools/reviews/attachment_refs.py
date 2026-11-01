@@ -1,0 +1,22 @@
+"""Verified references shared by the RAD, DSED, and Acute Stress Disorder reviews (checked Nov 1, 2026)."""
+R = {
+ 'APA': ('American Psychiatric Association. (2022). *Diagnostic and statistical manual of mental disorders* (5th ed., text rev.).', '10.1176/appi.books.9780890425787'),
+ 'Ano': ('Ano, G. G., & Vasconcelles, E. B. (2005). Religious coping and psychological adjustment to stress: A meta-analysis. *Journal of Clinical Psychology, 61*(4), 461–480.', '10.1002/jclp.20049'),
+ 'Captari': ('Captari, L. E., Hook, J. N., Hoyt, W. T., Davis, D. E., McElroy-Heltzel, S. E., & Worthington, E. L., Jr. (2018). Integrating clients’ religion and spirituality within psychotherapy: A comprehensive meta-analysis. *Journal of Clinical Psychology, 74*(11), 1938–1951.', '10.1002/jclp.22681'),
+ 'Bakermans': ('Bakermans-Kranenburg, M. J., van IJzendoorn, M. H., & Juffer, F. (2003). Less is more: Meta-analyses of sensitivity and attachment interventions in early childhood. *Psychological Bulletin, 129*(2), 195–215.', '10.1037/0033-2909.129.2.195'),
+ 'Bernard': ('Bernard, K., Dozier, M., Bick, J., Lewis-Morrarty, E., Lindhiem, O., & Carlson, E. (2012). Enhancing attachment organization among maltreated children: Results of a randomized clinical trial. *Child Development, 83*(2), 623–636.', '10.1111/j.1467-8624.2011.01712.x'),
+ 'Chaffin': ('Chaffin, M., Hanson, R., Saunders, B. E., Nichols, T., Barnett, D., Zeanah, C., Berliner, L., Egeland, B., Newman, E., Lyon, T., Letourneau, E., & Miller-Perrin, C. (2006). Report of the APSAC task force on attachment therapy, reactive attachment disorder, and attachment problems. *Child Maltreatment, 11*(1), 76–89.', '10.1177/1077559505283699'),
+ 'Minnis': ('Minnis, H., Macmillan, S., Pritchett, R., Young, D., Wallace, B., Butcher, J., Sim, F., Baynham, K., Davidson, C., & Gillberg, C. (2013). Prevalence of reactive attachment disorder in a deprived population. *The British Journal of Psychiatry, 202*(5), 342–346.', '10.1192/bjp.bp.112.114074'),
+ 'Pritchett': ('Pritchett, R., Pritchett, J., Marshall, E., Davidson, C., & Minnis, H. (2013). Reactive attachment disorder in the general population: A hidden ESSENCE disorder. *The Scientific World Journal, 2013*, 818157.', '10.1155/2013/818157'),
+ 'Smyke': ('Smyke, A. T., Zeanah, C. H., Gleason, M. M., Drury, S. S., Fox, N. A., Nelson, C. A., & Guthrie, D. (2012). A randomized controlled trial comparing foster care and institutional care for children with signs of reactive attachment disorder. *American Journal of Psychiatry, 169*(5), 508–514.', '10.1176/appi.ajp.2011.11050748'),
+ 'ZeanahG': ('Zeanah, C. H., & Gleason, M. M. (2015). Annual research review: Attachment disorders in early childhood—clinical presentation, causes, correlates, and treatment. *Journal of Child Psychology and Psychiatry, 56*(3), 207–222.', '10.1111/jcpp.12347'),
+ 'ZeanahP': ('Zeanah, C. H., Chesher, T., Boris, N. W., & the American Academy of Child and Adolescent Psychiatry Committee on Quality Issues. (2016). Practice parameter for the assessment and treatment of children and adolescents with reactive attachment disorder and disinhibited social engagement disorder. *Journal of the American Academy of Child and Adolescent Psychiatry, 55*(11), 990–1003.', '10.1016/j.jaac.2016.08.004'),
+ 'Bryant2011': ('Bryant, R. A. (2011). Acute stress disorder as a predictor of posttraumatic stress disorder: A systematic review. *The Journal of Clinical Psychiatry, 72*(2), 233–239.', '10.4088/JCP.09r05072blu'),
+ 'Bryant2008': ('Bryant, R. A., Mastrodomenico, J., Felmingham, K. L., Hopwood, S., Kenny, L., Kandris, E., Cahill, C., & Creamer, M. (2008). Treatment of acute stress disorder: A randomized controlled trial. *Archives of General Psychiatry, 65*(6), 659–667.', '10.1001/archpsyc.65.6.659'),
+ 'Rose': ('Rose, S., Bisson, J., Churchill, R., & Wessely, S. (2002). Psychological debriefing for preventing post traumatic stress disorder (PTSD). *Cochrane Database of Systematic Reviews, 2002*(2), CD000560.', '10.1002/14651858.CD000560'),
+ 'Schuster': ('Schuster, M. A., Stein, B. D., Jaycox, L. H., Collins, R. L., Marshall, G. N., Elliott, M. N., Zhou, A. J., Kanouse, D. E., Morrison, J. L., & Berry, S. H. (2001). A national survey of stress reactions after the September 11, 2001, terrorist attacks. *New England Journal of Medicine, 345*(20), 1507–1512.', '10.1056/NEJM200111153452024'),
+}
+
+
+def refs(*keys):
+    return sorted((R[k] for k in keys), key=lambda r: r[0].lower())
