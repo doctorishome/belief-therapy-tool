@@ -84,7 +84,7 @@ BODY = [
 ('B2', '**Fortune telling** — predicting a bad outcome. *Feeds:* hopelessness, thoughts of death. *Sounds like:* “It will never get better, so why try?” Always ask about suicide when you hear this.'),
 ('B2', '**Helplessness** — outside forces control everything. *Feeds:* fatigue, low energy, withdrawal. *Sounds like:* “Nothing I do makes any difference.”'),
 ('B2', '**Unrealistic expectations** — expecting too much of myself or others. *Feeds:* spiritual guilt. *Sounds like:* “A good Christian wouldn’t struggle like this.”'),
-('B', '**Questions to dispute the belief.** Have the client choose questions from the [Questioning False Beliefs](https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf) form that “speak to” the belief. Selected questions that fit the errors above:'),
+('B', '**Questions to dispute the belief.** Have the client choose questions from the [Questioning False Beliefs](https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf) form that “speak to” the belief. To see how, watch Dr. Campbell’s video [Integrated Christian Counseling: Questioning Your Beliefs](https://www.youtube.com/watch?v=ZjR0Mx1zEMY). Selected questions that fit the errors above:'),
 ('B2', '“Doesn’t everyone have good points and bad points?” *For:* global labeling.'),
 ('B2', '“What’s the actual evidence for my belief?” *For:* emotional reasoning.'),
 ('B2', '“Have I overlooked some of the gifts that God has given me?” *For:* disqualifying the positive.'),

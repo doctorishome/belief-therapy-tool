@@ -73,7 +73,9 @@ def nav(active):
         ("Practice", [("Case Studies", "cases.html"),
                       ("The Course", "course.html")]),
         ("Resources", [("Clinical Library", "library.html"),
-                       ("Articles", "articles.html")]),
+                       ("Articles", "articles.html"),
+                       ("DSM-5-TR Reviews", "reviews.html"),
+                       ("Videos", "videos.html")]),
     ]
     outside = [
         ("False Belief Finder \u2197", SITE + "/false-belief-finder"),
