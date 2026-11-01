@@ -63,3 +63,7 @@ BODY = add_assessment(BODY, ['DAI', 'RPQ', 'SDQ', 'BASC3', 'TSCYC', 'VAND'], abo
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'rad')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['rad'])

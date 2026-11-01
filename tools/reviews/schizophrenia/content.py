@@ -123,3 +123,7 @@ BODY = add_assessment(BODY, ['APA_PSY', 'PQB', 'PANSS', 'BPRS', 'CDSS', 'CSSRS',
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'schizophrenia')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['schizophrenia'])

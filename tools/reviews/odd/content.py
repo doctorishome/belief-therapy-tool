@@ -61,3 +61,7 @@ BODY = add_assessment(BODY, ['APA_ODD', 'ARI', 'VAND', 'SDQ', 'ECBI', 'BASC3', '
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'odd')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['odd'])

@@ -107,3 +107,7 @@ BODY = [
 ('B', '**BA** is simple, scalable, and as effective as full CBT.'),
 ('B', '**Faith-integrated CBT** is a legitimate, client-centered option for religious clients. It performs about as well as standard CBT, with added spiritual benefits, but the evidence is modest.'),
 ]
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['depression'])

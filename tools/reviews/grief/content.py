@@ -55,3 +55,7 @@ BODY = add_assessment(BODY, ['PG13R', 'ICG', 'PHQ9', 'PCL5', 'CSSRS'], about='pr
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'grief')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['grief'])

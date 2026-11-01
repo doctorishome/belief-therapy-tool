@@ -60,3 +60,7 @@ BODY = add_assessment(BODY, ['SCIDPD', 'PID5', 'AQ', 'PAI', 'MCMI4', 'MMPI3'], a
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'schizoid')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['schizoid'])

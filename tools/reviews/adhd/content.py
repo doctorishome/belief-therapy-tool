@@ -57,3 +57,7 @@ BODY = add_assessment(BODY, ['ASRS', 'VAND', 'SNAP', 'CONN4', 'CAARS2', 'BRIEF2'
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'adhd')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['adhd'])

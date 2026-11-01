@@ -63,3 +63,7 @@ BODY = add_assessment(BODY, ['SCIDPD', 'PID5', 'FMPS', 'YBOCS', 'PAI', 'MCMI4', 
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'ocpd')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['ocpd'])

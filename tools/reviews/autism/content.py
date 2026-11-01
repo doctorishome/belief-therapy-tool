@@ -56,3 +56,7 @@ BODY = add_assessment(BODY, ['MCHAT', 'AQ', 'APA_ASD', 'SCQ', 'SRS2', 'CARS2', '
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'autism')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['autism'])

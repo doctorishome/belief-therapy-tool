@@ -112,3 +112,7 @@ BODY = add_assessment(BODY, ['GAD7', 'APA_ANX', 'PSWQ', 'BAI', 'STAI', 'SCARED',
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'anxiety')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['anxiety'])

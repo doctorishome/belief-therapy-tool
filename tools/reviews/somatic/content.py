@@ -57,3 +57,7 @@ BODY = add_assessment(BODY, ['PHQ15', 'SSS8', 'HAI', 'APA_SSD', 'PHQ9', 'GAD7', 
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'somatic')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['somatic'])

@@ -68,3 +68,7 @@ BODY = add_assessment(BODY, ['MDQ', 'ASRM', 'YMRS', 'PHQ9', 'CSSRS', 'MMPI3', 'M
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'bipolar')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['bipolar'])

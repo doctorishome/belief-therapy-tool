@@ -76,3 +76,7 @@ BODY = add_assessment(BODY, ['APA_PSY', 'PSYRATS', 'PDI', 'BABS', 'GPTS', 'BPRS'
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'delusional')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['delusional'])

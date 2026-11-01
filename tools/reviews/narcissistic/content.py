@@ -66,3 +66,7 @@ BODY = add_assessment(BODY, ['PNI', 'NPI16', 'SCIDPD', 'PID5', 'PAI', 'MCMI4', '
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'narcissistic')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['narcissistic'])

@@ -61,3 +61,7 @@ BODY = add_assessment(BODY, ['SCIDPD', 'PID5', 'PAI', 'MCMI4', 'MMPI3', 'PHQ9'],
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'dependent')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['dependent'])

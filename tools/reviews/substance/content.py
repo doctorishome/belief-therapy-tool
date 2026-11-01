@@ -63,3 +63,7 @@ BODY = add_assessment(BODY, ['AUDIT', 'ASSIST', 'DAST', 'CRAFFT', 'APA_SUB', 'SA
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'substance')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['substance'])

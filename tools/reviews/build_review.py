@@ -68,7 +68,9 @@ def link(p, url, text, size):
     u = OxmlElement('w:u'); u.set(qn('w:val'), 'single'); pr.append(u)
     if size:
         sz = OxmlElement('w:sz'); sz.set(qn('w:val'), str(int(size * 2))); pr.append(sz)
-    r.append(pr); t = OxmlElement('w:t'); t.text = text; r.append(t); h.append(r); p._p.append(h)
+    if text.startswith('**') and text.endswith('**') and len(text) > 4:
+        text = text[2:-2]; pr.insert(0, OxmlElement('w:b'))
+    r.append(pr); t = OxmlElement('w:t'); t.text = text; t.set(qn('xml:space'), 'preserve'); r.append(t); h.append(r); p._p.append(h)
 
 
 d.add_paragraph(C.TITLE, style='Title')

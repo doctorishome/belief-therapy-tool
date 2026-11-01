@@ -65,3 +65,7 @@ BODY = add_assessment(BODY, ['APA_ACUTE', 'ASDS', 'LEC5', 'PCPTSD5', 'PCL5', 'CS
 
 from dispute import add_dispute
 BODY = add_dispute(BODY, 'acute')
+
+from treatment_links import link_treatments
+from treatment_pairs import PAIRS
+BODY = link_treatments(BODY, PAIRS['acute'])
