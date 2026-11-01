@@ -122,6 +122,9 @@ I = {
  'SPQ': ('**SPQ** (Schizotypal Personality Questionnaire)', 'Schizotypal traits (odd beliefs, unusual experiences, social anxiety).', 'Self-report, 74 yes/no items', 'No (free)', FREE_GEN, doi('10.1093/schbul/17.4.555')),
  'PNI': ('**PNI** (Pathological Narcissism Inventory)', 'Both grandiose and vulnerable narcissism.', 'Self-report, 52 items', 'No (free)', FREE_GEN, doi('10.1037/a0016530')),
  'NPI16': ('**NPI-16** (Narcissistic Personality Inventory, short form)', 'Grandiose narcissistic traits.', 'Self-report, 16 forced-choice items', 'No (free)', FREE_GEN, doi('10.1016/j.jrp.2005.03.002')),
+ 'PSYRATS': ('**PSYRATS** (Psychotic Symptom Rating Scales)', 'Rating delusions on conviction, preoccupation, distress, and disruption; the outcome measure in major delusion trials.', 'Clinician interview; delusions scale 6 items', 'No (free)', '★ Clinical interviewing skill; training recommended', doi('10.1017/S0033291799008661')),
+ 'PDI': ('**PDI-21** (Peters et al. Delusions Inventory)', 'Delusional ideas plus how distressing, preoccupying, and convincing they are.', 'Self-report, 21 items', 'No (free)', FREE_GEN, doi('10.1093/oxfordjournals.schbul.a007116')),
+ 'BABS': ('**BABS** (Brown Assessment of Beliefs Scale)', 'How fixed a belief is and how much insight the person has.', 'Clinician interview, 7 items', 'No (free)', '★ Clinical interviewing skill; training recommended', doi('10.1176/ajp.155.1.102')),
  'FMPS': ('**FMPS** (Frost Multidimensional Perfectionism Scale)', 'Perfectionism (concern over mistakes, doubts, high standards, organization).', 'Self-report, 35 items', 'No (free)', FREE_GEN, doi('10.1007/BF01172967')),
 }
 
