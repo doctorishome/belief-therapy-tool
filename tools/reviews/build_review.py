@@ -75,6 +75,8 @@ def link(p, url, text, size):
 
 d.add_paragraph(C.TITLE, style='Title')
 runs(d.add_paragraph(), 'Clinical Companion Knowledge Library: for counselors and counseling students', italic=True)
+_p = d.add_paragraph(); _p.paragraph_format.space_after = Pt(0); runs(_p, '**Brian Campbell, Ph.D.**', size=10)
+runs(d.add_paragraph(), 'Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.', size=8.5, italic=True)
 STY = {'P': None, 'B': 'List Bullet', 'B2': 'List Bullet 2', 'N': 'List Number'}
 LINK_RE = re.compile(r'\[([^\]]+)\]\((https?://(?:[^()\s]|\([^()\s]*\))+)\)')
 
@@ -177,11 +179,13 @@ for _, au, yr, ti, jo, vo, iss, pg, doi in ([] if getattr(C, 'RAW_REFS', None) e
         r = p.add_run((f'({iss})' if iss else '') + (f', {pg}' if pg else '') + '. '); r.font.size = Pt(S)
     link(p, 'https://doi.org/' + doi, 'https://doi.org/' + doi, S)
 runs(d.add_paragraph(), getattr(C, 'FINAL_NOTE', f'Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All {n} references and DOIs verified via {SRC} ({VERIFIED}). Effect sizes as reported in the cited sources.'), size=8, italic=True)
+d.styles['Footer'].font.size = Pt(8)
 for s in d.sections:
     fp = s.footer.paragraphs[0]; fp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    r0 = fp.add_run('© 2026 Brian Campbell, Ph.D. All rights reserved.  ·  Page '); r0.font.size = Pt(8)
     r = fp.add_run(); f1 = OxmlElement('w:fldChar'); f1.set(qn('w:fldCharType'), 'begin'); r._r.append(f1)
     it = OxmlElement('w:instrText'); it.text = 'PAGE'; r._r.append(it)
-    f2 = OxmlElement('w:fldChar'); f2.set(qn('w:fldCharType'), 'end'); r._r.append(f2); r.font.size = Pt(9)
+    f2 = OxmlElement('w:fldChar'); f2.set(qn('w:fldCharType'), 'end'); r._r.append(f2); r.font.size = Pt(8)
 
 docx = folder / f'{C.FILE}.docx'
 d.save(docx)
