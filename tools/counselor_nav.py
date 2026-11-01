@@ -37,19 +37,25 @@ CSS = """/*nav*/
 .nav .menu a:hover{background:var(--cream)}
 .nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
 .nav .dd.open .menu{display:block}
-@media(hover:hover){.nav .dd:hover .menu{display:block}}
+.nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
+.nav .menu .x:hover{color:var(--navy);text-decoration:underline}
 @media(max-width:560px){.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.88rem}}
 /*/nav*/"""
 
 JS = """<!--navjs--><script>
-document.querySelectorAll('.nav .dd>button').forEach(function(b){
-  b.addEventListener('click',function(e){
-    e.stopPropagation();var d=b.parentNode,o=!d.classList.contains('open');
-    document.querySelectorAll('.nav .dd').forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});
-    if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}
-  });
+(function(){
+var dds=document.querySelectorAll('.nav .dd'),t;
+function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
+dds.forEach(function(d){
+  var b=d.firstChild;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll();if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}});
+  d.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();closeAll();b.focus();});
+  d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(closeAll,500);});
+  d.addEventListener('mouseenter',function(){clearTimeout(t);});
 });
-document.addEventListener('click',function(){document.querySelectorAll('.nav .dd.open').forEach(function(x){x.classList.remove('open');});});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
 </script><!--/navjs-->"""
 
 
@@ -62,7 +68,7 @@ def nav(current):
             continue
         here = any(f == current for _, f in pages)
         items = "".join(f'<a{" class=\"on\"" if f == current else ""} href="{f}">{t}</a>' for t, f in pages)
-        out.append(f'<div class="dd{" on" if here else ""}"><button type="button" aria-haspopup="true" aria-expanded="false">{label}</button><div class="menu">{items}</div></div>')
+        out.append(f'<div class="dd{" on" if here else ""}"><button type="button" aria-haspopup="true" aria-expanded="false">{label}</button><div class="menu">{items}<button type="button" class="x" aria-label="Close menu">Close &#10005;</button></div></div>')
     for t, u in OUTSIDE:
         out.append(f'<a class="pub" target="_blank" rel="noopener" href="{u}">{t}</a>')
     out.append('</div><!--/nav-->')
