@@ -73,3 +73,6 @@ from instruments import add_assessment
 BODY = add_assessment(BODY, ['APA_PSY', 'PSYRATS', 'PDI', 'BABS', 'GPTS', 'BPRS', 'PANSS', 'CSSRS'], about='delusional disorder',
                       use={'GPTS': 'Measuring persecutory ideas and ideas of reference.'},
                       takeaway='Rate the belief’s conviction, preoccupation, and distress with the PSYRATS or PDI, and its fixity with the BABS; track change over time rather than arguing about content.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'delusional')

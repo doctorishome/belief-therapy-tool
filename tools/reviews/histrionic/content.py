@@ -58,3 +58,6 @@ BODY = [
 
 from instruments import add_assessment
 BODY = add_assessment(BODY, ['SCIDPD', 'PID5', 'PAI', 'MCMI4', 'MMPI3', 'PHQ9'], about='histrionic personality disorder', use={'PHQ9': 'Screening for co-occurring depression.'}, takeaway='Confirm with a structured interview (SCID-5-PD) rather than impressions alone, which helps guard against gender bias.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'histrionic')

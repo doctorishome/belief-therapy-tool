@@ -60,3 +60,6 @@ BODY = [
 
 from instruments import add_assessment
 BODY = add_assessment(BODY, ['SCIDPD', 'PID5', 'APA_ANX', 'PAI', 'MCMI4', 'MMPI3'], about='avoidant personality disorder', use={'APA_ANX': 'The social anxiety scale tracks fear of others’ judgment; separate scales cover other anxiety disorders.'}, takeaway='Confirm with a structured interview, and use the free APA social anxiety measure to track fear of others’ judgment.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'avoidant')

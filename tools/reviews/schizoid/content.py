@@ -57,3 +57,6 @@ BODY = [
 
 from instruments import add_assessment
 BODY = add_assessment(BODY, ['SCIDPD', 'PID5', 'AQ', 'PAI', 'MCMI4', 'MMPI3'], about='schizoid personality disorder', use={'AQ': 'Ruling out autism, which can look similar to schizoid detachment.'}, takeaway='Confirm with a structured interview (SCID-5-PD), and screen for autism (AQ) and depression, which can look similar.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'schizoid')

@@ -63,3 +63,6 @@ BODY = [
 
 from instruments import add_assessment
 BODY = add_assessment(BODY, ['PNI', 'NPI16', 'SCIDPD', 'PID5', 'PAI', 'MCMI4', 'MMPI3'], about='narcissistic personality disorder', use={}, takeaway='The free PNI captures both grandiose and vulnerable narcissism; confirm a diagnosis with a structured interview.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'narcissistic')

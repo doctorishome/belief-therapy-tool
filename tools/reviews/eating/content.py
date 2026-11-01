@@ -56,3 +56,6 @@ BODY = [
 
 from instruments import add_assessment
 BODY = add_assessment(BODY, ['SCOFF', 'EAT26', 'EDEQ', 'EDE', 'EDI3', 'BES', 'PHQ9'], about='eating disorders', use={'PHQ9': 'Screening for co-occurring depression and suicidal thoughts.'}, takeaway='Screen with the SCOFF or EAT-26 and track with the EDE-Q; any positive screen also calls for a medical evaluation.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'eating')

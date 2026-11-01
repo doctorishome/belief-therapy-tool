@@ -59,3 +59,6 @@ BODY = [
 
 from instruments import add_assessment
 BODY = add_assessment(BODY, ['SPQ', 'PQB', 'APA_PSY', 'SCIDPD', 'PID5', 'MCMI4', 'MMPI3'], about='schizotypal personality disorder', use={'APA_PSY': 'Rating psychotic-like symptoms and watching for change toward psychosis.'}, takeaway='Screen traits with the free SPQ and watch for psychosis risk with the PQ-B.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'schizotypal')

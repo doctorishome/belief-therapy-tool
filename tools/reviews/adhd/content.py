@@ -54,3 +54,6 @@ BODY = [
 
 from instruments import add_assessment
 BODY = add_assessment(BODY, ['ASRS', 'VAND', 'SNAP', 'CONN4', 'CAARS2', 'BRIEF2', 'BASC3'], about='ADHD', use={}, takeaway='Screen adults with the free ASRS and children with the free Vanderbilt scales; gather ratings from more than one setting before diagnosing.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'adhd')

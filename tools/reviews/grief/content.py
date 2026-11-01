@@ -52,3 +52,6 @@ BODY = [
 
 from instruments import add_assessment
 BODY = add_assessment(BODY, ['PG13R', 'ICG', 'PHQ9', 'PCL5', 'CSSRS'], about='prolonged grief', use={'PCL5': 'Checking for PTSD after a traumatic or violent death.'}, takeaway='Screen with the free PG-13-R, and check for depression, PTSD, and suicide risk alongside grief.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'grief')

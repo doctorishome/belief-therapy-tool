@@ -61,3 +61,6 @@ BODY = [
 
 from instruments import add_assessment
 BODY = add_assessment(BODY, ['APA_CD', 'ICU', 'SDQ', 'VAND', 'BASC3', 'CONN4', 'PCLYV'], about='conduct disorder', use={}, takeaway='Measure callous-unemotional traits (free ICU) to identify youth who need intensive, tailored treatment.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'conduct')

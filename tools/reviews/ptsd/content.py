@@ -61,3 +61,6 @@ BODY = [
 
 from instruments import add_assessment
 BODY = add_assessment(BODY, ['PCPTSD5', 'LEC5', 'PCL5', 'CAPS5', 'CAPSCA', 'TSCC', 'TSI2', 'CSSRS'], about='PTSD and trauma-related disorders', use={}, takeaway='Screen with the PC-PTSD-5, track with the free PCL-5, and use the CAPS-5 interview when a formal diagnosis is needed.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'ptsd')

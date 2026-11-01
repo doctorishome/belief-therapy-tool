@@ -120,3 +120,6 @@ from instruments import add_assessment
 BODY = add_assessment(BODY, ['APA_PSY', 'PQB', 'PANSS', 'BPRS', 'CDSS', 'CSSRS', 'AUDIT', 'WHODAS'], about='schizophrenia',
                       use={'AUDIT': 'Screening for alcohol problems, which commonly co-occur and worsen outcomes.'},
                       takeaway='Rate symptoms with the free APA psychosis dimensions or BPRS, screen for depression (CDSS) and suicide risk, and leave the PANSS to trained raters.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'schizophrenia')

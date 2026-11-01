@@ -61,3 +61,6 @@ BODY = [
 
 from instruments import add_assessment
 BODY = add_assessment(BODY, ['SCIDPD', 'PID5', 'PAI', 'MCMI4', 'MMPI3', 'PCLR', 'AUDIT', 'DAST'], about='antisocial personality disorder', use={'AUDIT': 'Screening for alcohol problems, which commonly co-occur.', 'DAST': 'Screening for drug problems, which commonly co-occur.'}, takeaway='Confirm with a structured interview, screen for substance use (AUDIT, DAST-10), and leave psychopathy ratings (PCL-R) to specially trained clinicians.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'antisocial')

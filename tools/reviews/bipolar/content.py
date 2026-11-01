@@ -65,3 +65,6 @@ from instruments import add_assessment
 BODY = add_assessment(BODY, ['MDQ', 'ASRM', 'YMRS', 'PHQ9', 'CSSRS', 'MMPI3', 'MCMI4'], about='bipolar disorders',
                       use={'PHQ9': 'Tracking depressive episodes; always ask about past mania or hypomania as well.'},
                       takeaway='Screen every depressed client for past mania or hypomania (free MDQ), track current symptoms with the ASRM, and assess suicide risk with the C-SSRS.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'bipolar')

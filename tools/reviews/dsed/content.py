@@ -60,3 +60,6 @@ BODY = add_assessment(BODY, ['DAI', 'RPQ', 'SDQ', 'VAND', 'BASC3', 'TSCYC'], abo
                       use={'SDQ': 'Screening for co-occurring emotional, conduct, attention, and peer problems.', 'VAND': 'Screening for ADHD, which must be distinguished from DSED, ages 6 to 12.', 'BASC3': 'Broad behavioral and emotional assessment, ages 2 to 21.'},
                       extra='No single test diagnoses DSED; observe the child with caregivers and with unfamiliar adults.',
                       takeaway='Diagnose through caregiver interview (such as the DAI) and observation of how the child approaches strangers; rule out ADHD with the Vanderbilt scales.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'dsed')

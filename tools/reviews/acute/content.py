@@ -62,3 +62,6 @@ from instruments import add_assessment
 BODY = add_assessment(BODY, ['APA_ACUTE', 'ASDS', 'LEC5', 'PCPTSD5', 'PCL5', 'CSSRS', 'AUDIT', 'TSCYC'], about='acute stress disorder',
                       use={'PCL5': 'Tracking symptoms and re-screening for PTSD after 1 month.', 'AUDIT': 'Screening for drinking to cope, which raises risk after trauma.', 'TSCYC': 'Trauma symptoms in young children ages 3 to 12, by caregiver report.'},
                       takeaway='Screen early with the APA acute stress measure or ASDS, and re-screen with the PCL-5 after 1 month for PTSD.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'acute')

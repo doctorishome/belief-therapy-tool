@@ -55,7 +55,18 @@ BODY = [
 ('NI', '2|The evidence is **thinner for anxiety than for depression**. We found **no large, rigorous RCT of Christian-integrated CBT for a DSM-diagnosed anxiety disorder**. Most trials are small pilots, multifaith or other-faith protocols, subclinical or preventive samples, or short-term follow-up, with allegiance risk.'),
 ('NI', '3|**Clinical consensus cautions:** keep exposure central. Prayer, Scripture reading, or seeking reassurance from clergy can function as **safety behaviors** or compulsions (watch for scrupulosity, which belongs in the OCD chapter). Avoid framing anxiety as spiritual failure (e.g., misuse of "do not be anxious" texts), which adds shame.'),
 ('NI', '4|**Practice ethics (general consensus):** integrate faith only when the client prefers it and after a spiritual assessment. Stay within your competence and role, and never substitute integration for evidence-based structure or risk assessment.'),
-('H', '5. Quick classroom takeaways'),
+('H', '5. Practical Christian-integration notes'),
+('P', 'These apply Dr. Campbell’s identify, challenge, replace-with-Scripture method within exposure-based CBT. Clinical items rest on the research above. Pastoral items are theological application, not research findings.'),
+('B', '**Identify (clinical).** Listen for anxious predictions and for spiritual forms of anxiety: "If I really trusted God, I wouldn’t be anxious," "God won’t protect me," "Something terrible is going to happen." Ask whether prayer, Scripture reading, or seeking reassurance from clergy has become a way to escape fear rather than face it.'),
+('B', '**Challenge (clinical).** Turn beliefs into predictions and test them with exposure and behavioral experiments: "What did you predict? What actually happened?" (Craske et al., 2014).'),
+('B', '**Replace (pastoral).** Offer Scripture of God’s presence, without implying that anxiety means weak faith:'),
+('B2', '“Do not fear, for I am with you; do not be afraid, for I am your God. I will strengthen you; I will surely help you; I will uphold you with My right hand of righteousness.” (Isaiah 41:10)'),
+('B2', '“For God has not given us a spirit of fear, but of power, love, and self-control.” (2 Timothy 1:7)'),
+('B2', '“Cast all your anxiety on Him, because He cares for you.” (1 Peter 5:7). An invitation, not a rebuke.'),
+('B2', '“Therefore do not worry about tomorrow, for tomorrow will worry about itself. Today has enough trouble of its own.” (Matthew 6:34). For fortune telling and worry.'),
+('B', '**Faith community (clinical).** Church can be a place to practice approaching feared situations rather than avoiding them. Gently correct the misuse of "do not be anxious" texts to shame people.'),
+('B', '**Ministers:** normalize anxiety, avoid giving repeated reassurance, and refer people with panic, phobias, or worry that disrupts daily life to a clinician trained in exposure-based CBT.'),
+('H', '6. Quick classroom takeaways'),
 ('B', 'Diagnose by **focus of fear**, **duration** (most ≥6 months; panic ≥1 month of concern; separation ≥4 weeks in youth; selective mutism ≥1 month), **avoidance**, and **impairment**. Always rule out medical and substance causes and screen for depression and suicide risk.'),
 ('B', '**Exposure-based CBT** is first-line: in vivo exposure for phobias, interoceptive exposure for panic, cognitive therapy with behavioral experiments for social anxiety, and CBT for GAD. ACT and applied relaxation are alternatives.'),
 ('B', '**Faith-integrated care** is a legitimate, client-centered option that performs about as well as standard care, with spiritual benefits. The evidence is still modest, so keep exposure at the core.'),
@@ -98,3 +109,6 @@ from instruments import add_assessment
 BODY = add_assessment(BODY, ['GAD7', 'APA_ANX', 'PSWQ', 'BAI', 'STAI', 'SCARED', 'MASC2', 'PHQ9', 'CSSRS'], about='anxiety disorders',
                       use={'PHQ9': 'Screening for co-occurring depression, which is common with anxiety.', 'CSSRS': 'Screening for suicide risk; "just anxiety" does not mean low risk.'},
                       takeaway='Screen and track with the free GAD-7 and the APA anxiety severity measures; use the SCARED for children, and check for depression and suicide risk.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'anxiety')

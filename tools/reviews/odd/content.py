@@ -58,3 +58,6 @@ BODY = [
 
 from instruments import add_assessment
 BODY = add_assessment(BODY, ['APA_ODD', 'ARI', 'VAND', 'SDQ', 'ECBI', 'BASC3', 'CONN4'], about='oppositional defiant disorder', use={}, takeaway='Use the free Vanderbilt or SDQ to screen, and the ECBI to track progress in parent training; rate behavior in more than one setting.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'odd')

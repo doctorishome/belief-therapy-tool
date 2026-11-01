@@ -57,3 +57,6 @@ BODY = [
 
 from instruments import add_assessment
 BODY = add_assessment(BODY, ['GPTS', 'SCIDPD', 'PID5', 'PAI', 'MCMI4', 'MMPI3'], about='paranoid personality disorder', use={}, takeaway='Confirm with a structured interview (SCID-5-PD); the PAI, MCMI-IV, and MMPI-3 add detail but require Level C qualification.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'paranoid')

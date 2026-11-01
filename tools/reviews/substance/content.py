@@ -60,3 +60,6 @@ BODY = [
 
 from instruments import add_assessment
 BODY = add_assessment(BODY, ['AUDIT', 'ASSIST', 'DAST', 'CRAFFT', 'APA_SUB', 'SASSI', 'PHQ9'], about='substance use disorders', use={'PHQ9': 'Screening for co-occurring depression.'}, takeaway='Screen adults with the AUDIT or ASSIST and teens with the CRAFFT; all three are free.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'substance')

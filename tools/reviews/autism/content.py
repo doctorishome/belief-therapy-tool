@@ -53,3 +53,6 @@ BODY = [
 
 from instruments import add_assessment
 BODY = add_assessment(BODY, ['MCHAT', 'AQ', 'APA_ASD', 'SCQ', 'SRS2', 'CARS2', 'ADOS2'], about='autism spectrum disorder', use={}, takeaway='Free screeners (M-CHAT-R/F, AQ) flag concern; formal diagnosis typically uses Level C tools such as the ADOS-2, which require specialized training.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'autism')

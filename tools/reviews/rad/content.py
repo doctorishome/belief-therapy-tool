@@ -60,3 +60,6 @@ BODY = add_assessment(BODY, ['DAI', 'RPQ', 'SDQ', 'BASC3', 'TSCYC', 'VAND'], abo
                       use={'SDQ': 'Screening for co-occurring emotional, conduct, attention, and peer problems.', 'VAND': 'Screening for co-occurring ADHD in children ages 6 to 12.', 'BASC3': 'Broad behavioral and emotional assessment, ages 2 to 21.'},
                       extra='No single test diagnoses RAD; direct observation of the child with the caregiver is essential.',
                       takeaway='Diagnose through caregiver interview (such as the DAI) and direct observation; brief screens (RPQ, SDQ) flag concern but do not diagnose.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'rad')

@@ -100,3 +100,6 @@ from instruments import add_assessment
 BODY = add_assessment(BODY, ['YBOCS', 'CYBOCS', 'OCIR', 'DOCS', 'PIOS', 'FOCI', 'PHQ9', 'CSSRS'], about='OCD',
                       use={'PHQ9': 'Screening for co-occurring depression.'},
                       takeaway='Rate severity with the Y-BOCS, track with the free OCI-R or DOCS, and use the PIOS to measure religious scrupulosity.')
+
+from dispute import add_dispute
+BODY = add_dispute(BODY, 'ocd')
