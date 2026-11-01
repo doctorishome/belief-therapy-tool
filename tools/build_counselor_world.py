@@ -125,7 +125,7 @@ page('welcome','Welcome to the Counselors’ Room','Learn Christian cognitive-be
  ('Professional Tips','Short, practical teaching from Dr. Campbell’s years in practice, delivered weekly to your inbox and kept in a searchable archive.'),
  ('The Process','The three steps of Belief Counseling (Identify, Challenge, Replace), with the reason behind each one, from Assess through Reinforce.'),
  ('Theory Topics','A framework for understanding the great majority of psychological struggles: beliefs, personality, and the whole person.'),
- ('Belief Therapy','The theory behind Belief Therapy, Dr. Campbell’s Christian cognitive-behavioral approach to understanding and changing false beliefs.'),
+ ('Belief Counseling','The theory behind Belief Counseling, Dr. Campbell’s Christian cognitive-behavioral approach to understanding and changing false beliefs.'),
  ('Case Studies','Practice on composite cases guided by an AI supervisor trained on Dr. Campbell’s method. Start with a free week; then $29.25 a month, cancel anytime.'),
  ('The Course','A step-by-step course in Christian Cognitive-Behavioral Therapy, with quizzes and a certificate of completion.'),
  ('Clinical Library','Counselor-only background, assessment tools, and references behind every false-belief card on the public site.')], DSM_CARD)+
