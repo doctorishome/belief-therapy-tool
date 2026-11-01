@@ -66,7 +66,8 @@ def link(p, url, text, size):
     r = OxmlElement('w:r'); pr = OxmlElement('w:rPr')
     c = OxmlElement('w:color'); c.set(qn('w:val'), '1F4E79'); pr.append(c)
     u = OxmlElement('w:u'); u.set(qn('w:val'), 'single'); pr.append(u)
-    sz = OxmlElement('w:sz'); sz.set(qn('w:val'), str(int(size * 2))); pr.append(sz)
+    if size:
+        sz = OxmlElement('w:sz'); sz.set(qn('w:val'), str(int(size * 2))); pr.append(sz)
     r.append(pr); t = OxmlElement('w:t'); t.text = text; r.append(t); h.append(r); p._p.append(h)
 
 
@@ -142,7 +143,7 @@ for kind, text in C.BODY:
     elif kind == 'I':
         runs(d.add_paragraph(), text, italic=True)
     else:
-        runs(d.add_paragraph(style=STY[kind]), text)
+        cell_text(d.add_paragraph(style=STY[kind]), text, None)
 
 n = len(getattr(C, 'RAW_REFS', None) or REFS)
 d.add_heading('Sources note', level=1)
