@@ -1,0 +1,61 @@
+<!-- Wix custom code (Settings > Custom Code), added through the Wix Custom Embeds API.
+     Name: "Sociocultural page - Belief Mining Tools box". Position: Body end. Loads on every page,
+     but only acts on the Sociocultural level page (/blank). It hides the old placeholder lines at the
+     bottom of that page and adds the same Belief Mining Tools box the other level pages show
+     (level-pages/tools.html?level=sociocultural), including the Back / Forward bar.
+     To change the worksheets or buttons, edit level-pages/tools.html (no Wix editing needed). -->
+<script>
+(function () {
+  if (window.__bcSocioTools) return; window.__bcSocioTools = true;
+  var SRC = "https://doctorishome.github.io/belief-therapy-tool/level-pages/tools.html?level=sociocultural";
+  function onPage() { return location.pathname.replace(/\/+$/, "") === "/blank"; }
+  function apply() {
+    if (!onPage() || document.getElementById("bc-socio-tools")) return;
+    var main = document.querySelector("main"); if (!main) return;
+    var all = main.querySelectorAll("p, h1, h2, h3, h4, a, span");
+    var anchor = null, found = false;
+    for (var i = 0; i < all.length; i++) {
+      var el = all[i], t = (el.textContent || "").replace(/\s+/g, " ").trim();
+      if (/^Next: Sociocultural False Beliefs/.test(t)) { var c = el.closest('[id^="comp-"]'); (c || el).style.display = "none"; found = true; }
+      if (/^Sociocultural False Beliefs: Toxic messages/.test(t) && /^(P|H\d)$/.test(el.tagName)) { el.style.display = "none"; found = true; }
+      if (t === "Belief Mining Tools" && /^(P|H\d)$/.test(el.tagName)) { el.style.display = "none"; }
+    }
+    if (!found) return;  // page content not rendered yet; try again later
+    var sections = main.querySelectorAll("section");
+    anchor = sections[sections.length - 1]; if (!anchor) return;
+    var box = document.createElement("div");
+    box.id = "bc-socio-tools";
+    box.style.cssText = "padding:40px 16px 48px;background:#fff";
+    box.innerHTML = '<h2 style="text-align:center;margin:0 0 14px;font:700 40px/1.2 \'Helvetica Neue\',Helvetica,Arial,sans-serif;color:#000">Belief Mining Tools</h2>' +
+      '<iframe src="' + SRC + '" title="Belief Mining Tools" loading="lazy" style="display:block;width:100%;max-width:1060px;height:470px;margin:0 auto;border:0"></iframe>';
+    anchor.parentNode.insertBefore(box, anchor.nextSibling);
+    // The page is a grid: put the box in the row right after the section and move later rows down one.
+    var grid = box.parentElement; while (grid && getComputedStyle(grid).display === "contents") grid = grid.parentElement;
+    var row = parseInt(getComputedStyle(anchor).gridRowStart, 10);
+    if (grid && row > 0) {
+      var kids = grid.querySelectorAll(":scope > *, :scope > * > *");
+      for (var k = 0; k < kids.length; k++) {
+        if (kids[k].parentElement !== grid && getComputedStyle(kids[k].parentElement).display !== "contents") continue;
+        var cs = getComputedStyle(kids[k]); if (kids[k] === box || cs.display === "contents") continue;
+        var a = parseInt(cs.gridRowStart, 10), z = parseInt(cs.gridRowEnd, 10);
+        if (a > row) { kids[k].style.gridRowStart = a + 1; if (z > 0) kids[k].style.gridRowEnd = z + 1; }
+      }
+      box.style.gridRow = (row + 1) + " / " + (row + 2);
+      box.style.gridColumn = "1 / -1";
+    }
+  }
+  // Buttons inside the box ask this page to move to another page in the same window.
+  window.addEventListener("message", function (e) {
+    var d = e.data;
+    if (!onPage() || !d || d.type !== "navigate" || typeof d.path !== "string" || d.path.charAt(0) !== "/") return;
+    if (!/^https:\/\/doctorishome\.github\.io$/.test(e.origin)) return;
+    try { e.source.postMessage({ type: "navigate-ok" }, e.origin); } catch (x) {}
+    location.href = d.path;
+  });
+  var last = "";
+  setInterval(function () {
+    if (location.pathname !== last) { last = location.pathname; var old = document.getElementById("bc-socio-tools"); if (old && !onPage()) old.remove(); }
+    apply();
+  }, 700);
+})();
+</script>
