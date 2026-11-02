@@ -14,10 +14,10 @@ GitHub repository, Google Drive, or a folder on your computer) and load them int
 
 ## Part 1: What to bring over from the Claude Project ("Belief Therapy" on claude.ai)
 
-These live only in the Claude Project today. Bring them here.
+These live only in the Claude Project today. Gather them into one private folder.
 
 - [ ] **The Project instructions.** Open the Belief Therapy project on claude.ai, open its
-      instructions, select all of the text, copy it, and paste it into a new file:
+      instructions, select all of the text, copy it, and paste it into a new
       file named `instructions.md`, kept in your private folder (not this public repository).
       This is the most important item: it holds the voice, the Identify, Challenge, Replace
       steps, and how to coach a counselor.
