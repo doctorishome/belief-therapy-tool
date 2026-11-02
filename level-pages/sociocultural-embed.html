@@ -21,11 +21,15 @@
       if (t === "Belief Mining Tools" && /^(P|H\d)$/.test(el.tagName)) { el.style.display = "none"; }
     }
     if (!found) return;  // page content not rendered yet; try again later
+    // Hide the empty lines left at the end of the page text, so the box sits close to the last paragraph.
+    var hid = main.querySelector("p[style*=\"display: none\"], p[style*=\"display:none\"]");
+    var tb = hid && hid.closest('[id^="comp-"]');
+    if (tb) { var ps = tb.querySelectorAll("p, h1, h2, h3, h4"); for (var q = ps.length - 1; q >= 0; q--) { if (!ps[q].offsetParent) continue; if ((ps[q].textContent || "").replace(/[\s\u200b]/g, "") === "") { ps[q].style.display = "none"; continue; } break; } }
     var sections = main.querySelectorAll("section");
     anchor = sections[sections.length - 1]; if (!anchor) return;
     var box = document.createElement("div");
     box.id = "bc-socio-tools";
-    box.style.cssText = "padding:40px 16px 48px;background:#fff;pointer-events:auto";
+    box.style.cssText = "padding:20px 16px 48px;background:#fff;pointer-events:auto";
     box.innerHTML = '<h2 style="text-align:center;margin:0 0 14px;font:700 40px/1.2 \'Helvetica Neue\',Helvetica,Arial,sans-serif;color:#000">Belief Mining Tools</h2>' +
       '<iframe src="' + SRC + '" title="Belief Mining Tools" loading="lazy" style="display:block;width:100%;max-width:1060px;height:470px;margin:0 auto;border:0"></iframe>';
     anchor.parentNode.insertBefore(box, anchor.nextSibling);
