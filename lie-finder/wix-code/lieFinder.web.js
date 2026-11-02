@@ -5,7 +5,17 @@
 // instructions and the master list of lies (both read from GitHub), asks Claude for the
 // best-fitting lies, and sends the answer back to the page.
 //
-// Needs one secret in the Secrets Manager:  ANTHROPIC_API_KEY
+// WHICH AI: change PROVIDER below to 'claude' or 'grok'. Nothing else needs to change.
+// Needs one secret in the Secrets Manager, named to match the AI you chose:
+//   Claude -> ANTHROPIC_API_KEY      Grok -> XAI_API_KEY
+//
+// CACHING (saves about three-quarters of the cost when searches come close together):
+// the instructions and the full master list are sent first and always in the same order,
+// so the AI company can reuse them instead of charging full price each time.
+//   Claude: marked for caching on purpose (kept 5 minutes, renewed by each search).
+//   Grok: caches repeated openings automatically; a fixed conversation ID helps it match.
+// The levels the counselor checks are sent with the notes (not used to shorten the list),
+// so the cached part never changes.
 // Who can use it: right now only the site owner (Permissions.Admin), for testing.
 // When the Counselor's Room has members, change Permissions.Admin to Permissions.SiteMember.
 
@@ -15,7 +25,9 @@ import { secrets } from 'wix-secrets-backend.v2';
 import { elevate } from 'wix-auth';
 
 const GITHUB = 'https://doctorishome.github.io/belief-therapy-tool/lie-finder/';
-const MODEL = 'claude-sonnet-5-5';
+const PROVIDER = 'claude';               // 'claude' or 'grok'
+const MODELS = { claude: 'claude-sonnet-5-5', grok: 'grok-4.6' };
+const KEY_NAMES = { claude: 'ANTHROPIC_API_KEY', grok: 'XAI_API_KEY' };
 const ALL_LEVELS = ['Biological/Physical', 'Psychological/Cognitive', 'Interpersonal',
   'Socioeconomic', 'Sociocultural', 'Spiritual/Religious'];
 
@@ -36,10 +48,8 @@ function clip(text, max) {
   return String(text || '').slice(0, max).trim();
 }
 
-function listForPrompt(beliefs, levels) {
-  const use = levels.length ? levels : ALL_LEVELS;
+function listForPrompt(beliefs) {
   return beliefs
-    .filter((b) => b.level === 'Core False Beliefs' || use.includes(b.level))
     .map((b) => [
       b.id, b.level, b.topic, '"' + b.belief + '"',
       b.origins ? 'comes from: ' + b.origins : '',
@@ -54,6 +64,43 @@ function readJson(text) {
   const a = t.indexOf('{');
   const z = t.lastIndexOf('}');
   return JSON.parse(a >= 0 ? t.slice(a, z + 1) : t);
+}
+
+async function askClaude(apiKey, system, user) {
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'post',
+    headers: { 'content-type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
+    body: JSON.stringify({
+      model: MODELS.claude,
+      max_tokens: 3000,
+      system: [{ type: 'text', text: system, cache_control: { type: 'ephemeral' } }],
+      messages: [{ role: 'user', content: user }],
+    }),
+  });
+  const data = await res.json();
+  if (!res.ok) { console.error('False Belief Finder (Claude) error', res.status, JSON.stringify(data)); return null; }
+  if (data.usage) console.log('Claude usage', JSON.stringify(data.usage));
+  return (data.content || []).filter((c) => c.type === 'text').map((c) => c.text).join('');
+}
+
+async function askGrok(apiKey, system, user) {
+  const res = await fetch('https://api.x.ai/v1/chat/completions', {
+    method: 'post',
+    headers: {
+      'content-type': 'application/json',
+      authorization: 'Bearer ' + apiKey,
+      'x-grok-conv-id': 'belief-counseling-false-belief-finder',
+    },
+    body: JSON.stringify({
+      model: MODELS.grok,
+      max_tokens: 3000,
+      messages: [{ role: 'system', content: system }, { role: 'user', content: user }],
+    }),
+  });
+  const data = await res.json();
+  if (!res.ok) { console.error('False Belief Finder (Grok) error', res.status, JSON.stringify(data)); return null; }
+  if (data.usage) console.log('Grok usage', JSON.stringify(data.usage));
+  return (((data.choices || [])[0] || {}).message || {}).content || '';
 }
 
 export const findLies = webMethod(Permissions.Admin, async (input) => {
@@ -73,17 +120,20 @@ export const findLies = webMethod(Permissions.Admin, async (input) => {
     const { instructions, beliefs } = await loadFromGitHub();
     let apiKey = '';
     try {
-      const raw = await elevate(secrets.getSecretValue)('ANTHROPIC_API_KEY');
+      const raw = await elevate(secrets.getSecretValue)(KEY_NAMES[PROVIDER]);
       apiKey = typeof raw === 'string' ? raw : raw && raw.value;
     } catch (e) {
       apiKey = '';
     }
     if (!apiKey) return { error: 'The search is not set up yet (the AI key is missing).' };
 
+    // Fixed part (cached): instructions + the whole master list, same every time.
     const system = instructions +
       '\n\n## Master list of false beliefs (choose only from these; use the exact ID and wording)\n' +
-      listForPrompt(beliefs, levels);
+      '(Core False Beliefs are always considered. Prefer the levels the counselor checked; if none are checked, consider all levels.)\n' +
+      listForPrompt(beliefs);
 
+    // Changing part: this search's notes.
     const user =
       'Levels the counselor checked: ' + (levels.length ? levels.join(', ') : 'none checked (search all levels)') +
       '\n\nHunch: ' + (notes.hunch || '(not given)') +
@@ -92,26 +142,12 @@ export const findLies = webMethod(Permissions.Admin, async (input) => {
       '\n\nWhat the Mining Tools showed: ' + (notes.mining || '(not given)') +
       '\n\nReply with the JSON only.';
 
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'post',
-      headers: {
-        'content-type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({
-        model: MODEL,
-        max_tokens: 3000,
-        system,
-        messages: [{ role: 'user', content: user }],
-      }),
-    });
-    const data = await res.json();
-    if (!res.ok) {
-      console.error('Lie Finder AI error', res.status, JSON.stringify(data));
+    const text = PROVIDER === 'grok'
+      ? await askGrok(apiKey, system, user)
+      : await askClaude(apiKey, system, user);
+    if (text === null) {
       return { error: 'The search service is busy or unavailable. Please try again in a minute.' };
     }
-    const text = (data.content || []).filter((c) => c.type === 'text').map((c) => c.text).join('');
     const result = readJson(text);
     const known = new Set(beliefs.map((b) => b.id));
     result.beliefs = (result.beliefs || []).filter((b) => known.has(b.id));
