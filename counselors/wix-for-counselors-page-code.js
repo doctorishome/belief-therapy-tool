@@ -6,8 +6,7 @@
 //   cc-login           -> Wix log-in window
 //   navigate {path}    -> move to another page of this site (for example "/" = public home page)
 import { currentMember, authentication } from 'wix-members-frontend';
-import { orders } from 'wix-paid-plans-frontend';
-import { checkout } from 'wix-pricing-plans-frontend';
+import { checkout, orders } from 'wix-pricing-plans-frontend';
 import wixLocationFrontend from 'wix-location-frontend';
 
 const GH = 'https://doctorishome.github.io/belief-therapy-tool/counselors/';
