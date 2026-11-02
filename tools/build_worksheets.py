@@ -24,7 +24,7 @@ CSS = """
   .bar button{font-family:inherit;font-size:16px;padding:10px 22px;border-radius:6px;cursor:pointer;border:1px solid var(--ink)}
   .bar .print{background:var(--ink);color:#fff}
   .bar .clear{background:#fff;color:var(--ink)}
-  .tip{max-width:8.5in;margin:8px auto 0;text-align:center;font-size:14px;color:#6b6250;padding:0 16px}
+  .tip{max-width:8.5in;margin:8px auto 0;text-align:center;font-size:15px;line-height:1.55;color:#6b6250;padding:0 16px}.tip b{color:#2f4357}
   .page{max-width:8.5in;margin:16px auto 24px;background:#fff;border:1.5px solid var(--gold);padding:.45in .5in .5in;box-shadow:0 2px 10px rgba(0,0,0,.06)}
   .page + .page{margin-top:0}
   header{text-align:center}
@@ -123,7 +123,7 @@ def build(key, w):
     <button class="print" onclick="window.print()">Print this form</button>
     <button class="clear" onclick="clearForm()">Clear my answers</button>
   </div>
-  <p class="tip">You can check boxes and type notes right on this page before printing, or print it blank and fill it in by hand.</p>
+  <p class="tip"><b>This form is clickable.</b> Click a box to check it, and click on a line to type your notes. When you finish, click <b>Print this form</b>; to keep a copy on your computer, choose <b>Save as PDF</b> in the print window. Click <b>Clear my answers</b> to start over. Nothing you check or type is saved or sent anywhere; it disappears when you close or reload the page. You can also print the form blank and fill it in by hand.</p>
 
   <div class="page">
     <header>
