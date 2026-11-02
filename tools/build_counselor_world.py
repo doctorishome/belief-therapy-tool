@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'counselors'; OUT.mkdir(exist_ok=True)
 SITE='https://doctorishome.wixstudio.com/website-6'
 PAGES=[('welcome','Welcome','blank-11'),('process','The Process','blank-12'),('tips','Professional Tips','blank-13'),
-       ('theory','Theory Topics','blank-14'),('cases','Case Studies','blank-15'),('course','The Course','blank-16'),('library','Clinical Library','blank-17')]
+       ('theory','Theory','blank-14'),('cases','Case Studies','blank-15'),('course','The Course','blank-16'),('library','Clinical Library','blank-17')]
 CSS="""
 :root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -68,7 +68,7 @@ def nav(active):
     groups = [
         ("Welcome", [("Welcome", "welcome.html")]),
         ("Learn", [("The Process", "process.html"),
-                   ("Theory Topics", "theory.html"),
+                   ("Theory", "theory.html"),
                    ("Core False Beliefs", "core-beliefs.html"),
                    ("Professional Tips", "tips.html")]),
         ("Practice", [("Case Studies", "cases.html"),
@@ -127,7 +127,7 @@ page('welcome','Welcome to the Counselors’ Room','Learn Christian cognitive-be
  '<h2>What you will find inside</h2>'+cards([
  ('Professional Tips','Short, practical teaching from Dr. Campbell’s years in practice, delivered weekly to your inbox and kept in a searchable archive.'),
  ('The Process','The three steps of Belief Counseling (Identify, Challenge, Replace), with the reason behind each one, from Assess through Reinforce.'),
- ('Theory Topics','A framework for understanding the great majority of psychological struggles: beliefs, personality, and the whole person.'),
+ ('Theory','A framework for understanding the great majority of psychological struggles: beliefs, personality, and the whole person.'),
  ('Core False Beliefs','The deep-seated lies beneath much of our pain, how to unearth them, and the tools that help.'),
  ('Belief Counseling','The theory behind Belief Counseling, Dr. Campbell’s Christian cognitive-behavioral approach to understanding and changing false beliefs.'),
  ('Case Studies','Practice on composite cases guided by an AI supervisor trained on Dr. Campbell’s method. Start with a free week; then $29.25 a month, cancel anytime.'),
@@ -186,7 +186,7 @@ page('tips','Professional Tips','Practical teaching from 35 years of clinical ex
  '<h2>Topics you can expect</h2><ul class="clean"><li>Beliefs and how they shape feelings and behavior</li><li>Working with anxiety and depression</li><li>Parental messages and the beliefs children absorb</li><li>Core lies: worthlessness, abandonment, failure</li><li>Cognitive errors and how to name them</li><li>Using Scripture in counseling, wisely and well</li><li>Homework that clients actually do</li><li>Ethics, scope of practice, and knowing when to refer</li></ul>'
  '<div class="card"><span class="tag">Coming soon</span><h3>Your first tip</h3><p>The tip archive opens when membership begins.</p></div>')
 # 4 Theory
-page('theory','Theory Topics','A framework for understanding the great majority of psychological struggles.',
+page('theory','Theory','A framework for understanding the great majority of psychological struggles.',
  '<h2>The big ideas</h2>'+cards([('Beliefs Shape Personality','Personality as a set of beliefs passed on, learned, and changed; biology plays a part too.'),
  ('Levels of Analysis','The whole person: biological, psychological, interpersonal, socioeconomic, sociocultural, and spiritual.'),
  ('Parental Patterns','How the messages children receive become the beliefs adults live by.'),

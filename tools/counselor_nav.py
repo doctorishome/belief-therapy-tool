@@ -14,7 +14,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent / "counselors"
 GROUPS = [
     ("Welcome", [("Welcome", "welcome.html")]),
     ("Learn", [("The Process", "process.html"),
-               ("Theory Topics", "theory.html"),
+               ("Theory", "theory.html"),
                ("Professional Tips", "tips.html")]),
     ("Practice", [("Case Studies", "cases.html"),
                   ("The Course", "course.html")]),
