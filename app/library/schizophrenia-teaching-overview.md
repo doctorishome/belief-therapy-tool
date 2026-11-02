@@ -1,0 +1,375 @@
+Schizophrenia (DSM-5-TR): Teaching Overview
+
+Clinical Companion Knowledge Library: for counselors and counseling students
+
+Brian Campbell, Ph.D.
+
+Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.
+
+1. What it is
+
+Schizophrenia is a psychotic disorder: a break in how a person perceives, thinks, and relates to reality, with a lasting decline in work, relationships, or self-care. In DSM-5-TR it heads the chapter "Schizophrenia Spectrum and Other Psychotic Disorders" (American Psychiatric Association [APA], 2022).
+
+How common: the median lifetime morbid risk is about 7 per 1,000 people, and incidence is about 1.4 times higher in men (McGrath et al., 2008). Schizophrenia-spectrum onset peaks at about age 20.5, with a median of 25 (Solmi et al., 2022). People with schizophrenia lose an average of 14.5 years of life (Hjorthøj et al., 2017).
+
+Counselor framing: this is a serious medical-psychiatric illness. Psychiatric and medical care come first; counseling works alongside them, never instead of them.
+
+2. Core symptoms to watch for
+
+DSM-5-TR criteria, paraphrased (APA, 2022); use the manual itself for formal diagnosis.
+
+Symptoms: two or more of the following for a significant part of a month (less if treated), at least one from the first three: delusions (fixed false beliefs not shared by one's culture or faith community), hallucinations (most often voices), disorganized speech, grossly disorganized or catatonic behavior, and negative symptoms.
+
+Functioning and duration: a clear drop below the earlier level of functioning, and signs lasting at least 6 months, including at least 1 month of active symptoms.
+
+Exclusions: not better explained by schizoaffective or mood disorder, a substance or medication, or a medical condition.
+
+Specifiers: course is specified after one year (first or multiple episodes; acute, partial, or full remission; continuous). With catatonia may be added, and severity can be rated 0–4 per symptom dimension.
+
+Three symptom clusters: positive (delusions, hallucinations, disorganization); negative (affective flattening, alogia, avolition, anhedonia, attentional impairment; Andreasen, 1982); and cognitive (attention, memory, processing speed, executive function), which is not a criterion but drives much of the disability (APA, 2022).
+
+Differential diagnosis (APA, 2022):
+
+Brief psychotic disorder: 1 day to under 1 month, then full recovery. Schizophreniform: 1 to under 6 months. Schizoaffective: mood episodes fill most of the illness, plus 2 weeks or more of psychosis without mood symptoms. Mood disorder with psychotic features: psychosis only during mood episodes.
+
+Delusional disorder: delusions for 1 month or more without other psychotic symptoms; functioning often fairly intact.
+
+Substance- or medication-induced: one in four substance-induced psychoses later became schizophrenia, 34% after cannabis (Murrie et al., 2020).
+
+Medical causes (general clinical consensus): delirium, seizures, tumors, autoimmune or infectious illness, thyroid disease, and dementia. New psychosis always needs a medical workup.
+
+Assessment tools: the 30-item PANSS rates positive, negative, and general symptoms (Kay et al., 1987). The BPRS is a brief clinician rating of overall symptoms (Overall & Gorham, 1962). The SANS rates negative symptoms reliably (Andreasen, 1982), and its companion SAPS rates positive symptoms.
+
+Suicide risk: lifetime risk is about 5% (4.9% in one reexamination), highest near illness onset (Palmer et al., 2005). Strong risk factors are young age, male sex, higher education, prior attempts, depression, active hallucinations and delusions, and insight into the illness. The only consistent protective factor is receiving and adhering to effective treatment (Hor & Taylor, 2010). Ask directly about command hallucinations.
+
+When counselors must refer (general clinical consensus): refer for psychiatric and medical evaluation at any new or worsening psychosis. Use emergency services for danger to self or others, commands to harm, or inability to care for oneself. Coordinate care with a signed release; counselors do not manage medication.
+
+3. Frequently used assessment instruments
+
+These are among the most widely used measures for screening, rating severity, and tracking progress in schizophrenia. Screening tools do not diagnose; a positive screen calls for a clinical interview against DSM-5-TR criteria. Click an instrument’s website to find it.
+
+Instrument
+
+Best used for
+
+Format
+
+Purchase required?
+
+Training or qualification
+
+Where to find it
+
+APA Clinician-Rated Dimensions of Psychosis Symptom Severity
+
+Rating hallucinations, delusions, disorganization, negative symptoms, cognition, depression, and mania.
+
+Clinician-rated, 8 items
+
+No (free from the APA for clinical use)
+
+None beyond general clinical training
+
+APA assessment measures
+
+PQ-B (Prodromal Questionnaire-Brief)
+
+Screening for early psychosis risk.
+
+Self-report, 21 items
+
+No (free)
+
+None beyond general clinical training
+
+Original article
+
+PANSS (Positive and Negative Syndrome Scale)
+
+The standard rating of positive, negative, and general symptoms in schizophrenia.
+
+Clinician interview, 30 items, 45 to 50 minutes
+
+Yes (licensed by MHS)
+
+★ Specialized training required
+
+Original article
+
+BPRS (Brief Psychiatric Rating Scale)
+
+Quick clinician rating of overall psychiatric symptoms, including psychosis.
+
+Clinician interview, 18 items
+
+No (free)
+
+★ Clinical interviewing skill; training recommended
+
+Original article
+
+CDSS (Calgary Depression Scale for Schizophrenia)
+
+Depression in schizophrenia, separated from negative symptoms.
+
+Clinician interview, 9 items
+
+No (free for clinical use)
+
+★ Clinical interviewing skill; training recommended
+
+Original article
+
+C-SSRS (Columbia Suicide Severity Rating Scale)
+
+Screening and assessing suicide risk; brief screener and full versions.
+
+Clinician- or staff-asked questions, a few minutes
+
+No (free)
+
+Free online training offered and recommended
+
+Columbia Lighthouse Project
+
+AUDIT (Alcohol Use Disorders Identification Test)
+
+Screening for alcohol problems, which commonly co-occur and worsen outcomes.
+
+Self-report or interview, 10 items
+
+No (free)
+
+None beyond general clinical training
+
+World Health Organization
+
+WHODAS 2.0 (WHO Disability Assessment Schedule)
+
+How much symptoms interfere with daily life and functioning.
+
+Self- or proxy-report, 36 items
+
+No (free from the APA for clinical use)
+
+None beyond general clinical training
+
+APA assessment measures
+
+★ = requires professional qualification to purchase or specialized training. Publishers sell these tests only to qualified users. At Pearson, Level B generally means a master’s degree in a related field with formal assessment training, or a health care license; Level C means a doctorate in psychology or a related field with formal assessment training, or state licensure in a related field (Pearson qualifications policy). MHS, PAR, and WPS use similar levels. Check each publisher’s page before ordering. "Original article" links go to the published study that introduced a free scale that has no official website; the scale can usually be obtained there or from its authors.
+
+4. What works: treatment and the evidence
+
+Bottom line for class: antipsychotic medication is the foundation. CBT for psychosis (CBTp), family intervention, and coordinated specialty care add real but smaller benefits.
+
+Medication (referral notes). Relapse at 1 year was 27% on antipsychotics versus 64% on placebo (number needed to treat 3), with more weight gain, movement problems, and sedation (Leucht et al., 2012). Across 32 antipsychotics, clozapine had the largest effect, and side effects differed more than efficacy (Huhn et al., 2019).
+
+CBTp: how it is used
+
+Engage and normalize. Start from the client's goals and distress, not the diagnosis, and present experiences as understandable under stress (general clinical consensus).
+
+Formulate. Map how unusual experiences, appraisals, emotion, and reasoning biases form and maintain symptoms (Garety et al., 2001).
+
+Test beliefs about voices. Distress depends on beliefs about a voice's power and purpose more than on its content (Chadwick & Birchwood, 1994). In the COMMAND trial (n = 197), full compliance with harmful commands at 18 months was 28% with cognitive therapy versus 46% with usual care (Birchwood et al., 2014).
+
+Test delusions gently through shared evidence review and small experiments, never argument. Build coping and relapse plans (general clinical consensus).
+
+CBTp evidence (honest effect sizes): across 34 trials, the effect on target symptoms was 0.40 but about 0.22 in rigorous trials (Wykes et al., 2008). Another meta-analysis found small effects (0.33 overall, 0.25 positive symptoms) that shrank to 0.15 and 0.08 with masked raters (Jauhar et al., 2014). In 53 trials, CBT added to medication reduced positive symptoms more than usual care (SMD −0.30) or supportive therapy (−0.47) (Bighelli et al., 2018). A small trial (n = 74) found cognitive therapy lowered symptoms in people who had chosen not to take antipsychotics; it does not replace medication (Morrison et al., 2014).
+
+Family intervention and psychoeducation. Across 32 trials, family intervention cut relapse (RR 0.55, NNT 7) and improved medication adherence (Pharoah et al., 2010). In 72 trials, family interventions (OR 0.35), family psychoeducation, and CBT (OR 0.45) gave the most robust relapse protection at 1 year (Bighelli et al., 2021).
+
+Coordinated specialty care (first episode). In RAISE-ETP (n = 404), NAVIGATE team care improved quality of life, symptoms, and work or school involvement, more so with shorter untreated psychosis (Kane et al., 2016). Early intervention services beat usual care on all 13 outcomes across 10 trials (Correll et al., 2018). Longer untreated psychosis is modestly linked to worse outcomes (Marshall et al., 2005), so early referral matters.
+
+Rehabilitation: social skills training improved community functioning (d = 0.52) and negative symptoms (d = 0.40) (Kurtz & Mueser, 2008). Supported employment (IPS) led to competitive jobs for 61% versus 23% (Bond et al., 2008). Cognitive remediation brought small gains in cognition (d = 0.29) and functioning (d = 0.22), best alongside rehabilitation (Vita et al., 2021; Wykes et al., 2011).
+
+5. Religion, spirituality, and Christian integration: what the evidence shows
+
+Faith matters to most patients. Among 115 outpatients, religion gave hope and meaning for 71% but spiritual despair for 14%. It supported treatment adherence for 16% and opposed it for 15% (Mohr et al., 2006). Helpful spiritual coping predicted fewer negative symptoms and better functioning and quality of life 3 years later (Mohr et al., 2011). Nonadherent patients more often saw a conflict between their religion and medication: 31% versus 8% of adherent patients (Borras et al., 2007).
+
+Religious coping. In 47 patients with psychosis, spiritual struggle was linked to more suicidal ideation, and positive religious coping to larger drops in depression and anxiety (Rosmarin et al., 2013). A 35-study review also linked positive coping to better adherence and urged building faith into CBTp assessment and formulation (Westhead & Georgiades, 2025).
+
+Religious delusions. They appeared in 24% of 193 inpatients, who were more severely ill than patients with other delusions (Siddle et al., 2002). Rates vary by time, place, and probably personal religiosity (Cook, 2015). A second study found them no more severe, but these patients adhered less and got less support from their faith communities (Mohr et al., 2010).
+
+Spiritual experience versus psychosis. Members of new religious movements endorsed as many unusual beliefs as deluded inpatients but were far less distressed and preoccupied; Christian and nonreligious controls did not differ (Peters et al., 1999). Weigh conviction, preoccupation, distress, functioning, and whether one's faith community shares the belief, not content alone (Pierre, 2001). Culture shapes voices too: U.S. patients more often reported violent commands, and patients in India and Ghana more often described relationships with their voices (Luhrmann et al., 2015).
+
+Intervention studies (few; none are Christian-specific CBTp):
+
+Spiritual assessment (randomized, n = 78): it was well accepted and improved appointment attendance, with no change in adherence (Huguelet et al., 2011).
+
+Culturally informed family therapy (69 families): CIT-S, which includes religious coping, beat psychoeducation on symptoms. It ran 15 sessions versus 3, which confounds the result (Weisman de Mamani et al., 2014). Religious coping went with fewer sessions attended, and most dropouts left before the spiritual segment began (Gurak et al., 2017).
+
+Prayer camp plus medication (Ghana, n = 139): symptoms were lower than with prayer camp care alone (effect size −0.48) (Ofori-Atta et al., 2018).
+
+Faith healers with primary care (Nigeria and Ghana, n = 307): symptoms improved more than with enhanced usual care (PANSS −15.0) (Gureje et al., 2020).
+
+Culturally adapted CBTp (Pakistan, randomized pilot, n = 42): improved symptoms and insight versus usual care (Habib et al., 2015).
+
+Religiously modified CBT overall: 10 studies across depression, anxiety, and schizophrenia; not yet well established, but acceptable to strongly religious clients (Lim et al., 2014).
+
+Clergy. One-quarter of U.S. adults who ever sought help for a mental disorder went to clergy. Nearly a quarter of those seeing clergy each year had the most seriously impairing disorders, and most saw no other professional (Wang et al., 2003).
+
+Honest summary for teaching:
+
+1. Medication plus CBTp, family work, and coordinated care is the evidence base. Faith integration supports
+
+engagement and coping; it does not replace them.
+
+2. Evidence on religious adaptation is thin. We found no randomized trial of Christian-integrated CBT for
+
+psychosis. The best data show that pairing faith-based care with psychiatric care helps.
+
+3. Ethics (general consensus): integrate faith only with consent and a spiritual assessment, and coordinate with
+
+the psychiatrist.
+
+6. Practical Christian-integration notes
+
+These apply Dr. Campbell's identify, challenge, replace-with-Scripture method, used gently, after stabilization, and alongside psychiatric care. Clinical items rest on the research above. Pastoral items are theological application, not research findings.
+
+Identify (clinical). Take a spiritual history: is faith a comfort or a struggle, and how does the client view illness and medication (Borras et al., 2007; Huguelet et al., 2011)? To identify deeper false beliefs, see: Core Beliefs, Parental Messages, or use the Semantic Search Tool.
+
+Challenge (clinical). Do not dispute a delusion's religious content or the client's faith; that harms the alliance. Challenge distress-driving appraisals instead, such as a voice's claimed power or "medicine means weak faith" (Birchwood et al., 2014). Look beyond the label "religious delusion" (Mohr et al., 2010). Possible cognitive errors to watch for, with their definitions from the Belief Counseling Cognitive Errors Checklist and the symptoms they tend to feed:
+
+Jumping to conclusions — deciding without the facts. Feeds: delusional ideas. Sounds like: “That car followed me, so they’re watching me.”
+
+Emotional reasoning — I feel it, so it must be true. Feeds: fear of voices. Sounds like: “The voice feels powerful, so it must be.”
+
+Helplessness — outside forces control everything. Feeds: obeying or giving in to voices. Sounds like: “I have to do what the voice says.”
+
+Catastrophizing — expecting the worst possible outcome. Feeds: distress and safety behaviors. Sounds like: “If I don’t obey, something terrible will happen.”
+
+Global labeling — one mistake becomes who I am. Feeds: self-stigma and withdrawal. Sounds like: “I’m crazy; my life is over.”
+
+Fortune telling — predicting a bad outcome. Feeds: hopelessness. Sounds like: “I’ll never work or have friends.” Ask about suicide when you hear hopelessness.
+
+Questions to dispute the belief. Do not use these on the religious content of a delusion or on the client’s faith. Have the client choose questions from the Questioning False Beliefs form that “speak to” distress-driving beliefs about voices, illness, and the future. To see how, watch Dr. Campbell’s video Integrated Christian Counseling: Questioning Your Beliefs. Selected questions that fit the errors above:
+
+“Are there other ways of looking at this situation?” For: jumping to conclusions.
+
+“What’s the actual evidence for my belief?” and “Can my negative thoughts defeat the Creator of the universe?” For: emotional reasoning about a voice’s power.
+
+“Am I absolutely certain that nothing can be done about this problem or situation?” For: helplessness.
+
+“What are the odds that the thing I dread will actually happen?” For: catastrophizing.
+
+“Doesn’t everyone have good points and bad points?” For: global labeling.
+
+“Am I completely destined to stay this way my whole life?” For: fortune telling.
+
+Replace (pastoral). Offer Scriptures of God's care, not judgment: Psalm 34:18, Isaiah 41:10, Romans 8:38– 39, and 1 Peter 5:7. Luke, "the beloved physician" (Colossians 4:14), can frame medicine as compatible with faith. Avoid themes of demons, sin, or judgment when delusions involve persecution or guilt.
+
+Faith community (clinical). With a signed release, invite the pastor to support treatment rather than replace it (Gureje et al., 2020; Wang et al., 2003).
+
+Ministers: use this for referral awareness only. Ministers cannot diagnose; refer suspected psychosis promptly for psychiatric evaluation.
+
+7. Quick classroom takeaways
+
+Diagnose by 2 or more symptoms (one being delusions, hallucinations, or disorganized speech), 6 months' duration, and functional decline. Rule out substances, medical causes, and mood disorders.
+
+Medication is the foundation. CBTp gives small but real benefits; family work and early coordinated care cut relapse.
+
+Faith is often a resource and sometimes a struggle. Assess it, support positive coping, and never argue religious content. No Christian-specific CBTp trial exists yet.
+
+Rate symptoms with the free APA psychosis dimensions or BPRS, screen for depression (CDSS) and suicide risk, and leave the PANSS to trained raters.
+
+Sources note
+
+All references were checked against Crossref (Oct 30, 2026). Each DOI is a live link to the publisher record. Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).
+
+References
+
+American Psychiatric Association. (2022). Diagnostic and statistical manual of mental disorders (5th ed., text rev.). https://doi.org/10.1176/appi.books.9780890425787
+
+Andreasen, N. C. (1982). Negative symptoms in schizophrenia: Definition and reliability. Archives of General Psychiatry, 39(7), 784–788. https://doi.org/10.1001/archpsyc.1982.04290070020005
+
+Bighelli, I., Rodolico, A., García-Mieres, H., Pitschel-Walz, G., Hansen, W.-P., Schneider-Thoma, J., Siafis, S., Wu, H., Wang, D., Salanti, G., Furukawa, T. A., Barbui, C., & Leucht, S. (2021). Psychosocial and psychological interventions for relapse prevention in schizophrenia: A systematic review and network meta-analysis. The Lancet Psychiatry, 8(11), 969–980. https://doi.org/10.1016/S2215-0366(21)00243-1
+
+Bighelli, I., Salanti, G., Huhn, M., Schneider-Thoma, J., Krause, M., Reitmeir, C., Wallis, S., Schwermann, F., Pitschel-Walz, G., Barbui, C., Furukawa, T. A., & Leucht, S. (2018). Psychological interventions to reduce positive symptoms in schizophrenia: Systematic review and network meta-analysis. World Psychiatry, 17(3), 316–329. https://doi.org/10.1002/wps.20577
+
+Birchwood, M., Michail, M., Meaden, A., Tarrier, N., Lewis, S., Wykes, T., Davies, L., Dunn, G., & Peters, E. (2014). Cognitive behaviour therapy to prevent harmful compliance with command hallucinations (COMMAND): A randomised controlled trial. The Lancet Psychiatry, 1(1), 23–33. https://doi.org/10.1016/S2215-0366(14)70247-0
+
+Bond, G. R., Drake, R. E., & Becker, D. R. (2008). An update on randomized controlled trials of evidence-based supported employment. Psychiatric Rehabilitation Journal, 31(4), 280–290. https://doi.org/10.2975/31.4.2008.280.290
+
+Borras, L., Mohr, S., Brandt, P.-Y., Gilliéron, C., Eytan, A., & Huguelet, P. (2007). Religious beliefs in schizophrenia: Their relevance for adherence to treatment. Schizophrenia Bulletin, 33(5), 1238–1246. https://doi.org/10.1093/schbul/sbl070
+
+Chadwick, P., & Birchwood, M. (1994). The omnipotence of voices: A cognitive approach to auditory hallucinations. British Journal of Psychiatry, 164(2), 190–201. https://doi.org/10.1192/bjp.164.2.190
+
+Cook, C. C. H. (2015). Religious psychopathology: The prevalence of religious content of delusions and hallucinations in mental disorder. International Journal of Social Psychiatry, 61(4), 404–425. https://doi.org/10.1177/0020764015573089
+
+Correll, C. U., Galling, B., Pawar, A., Krivko, A., Bonetto, C., Ruggeri, M., Craig, T. J., Nordentoft, M., Srihari, V. H., Guloksuz, S., Hui, C. L. M., Chen, E. Y. H., Valencia, M., Juarez, F., Robinson, D. G., Schooler, N. R., Brunette, M. F., Mueser, K. T., Rosenheck, R. A., ... Kane, J. M. (2018). Comparison of early intervention services vs treatment as usual for early-phase psychosis: A systematic review, meta-analysis, and meta-regression. JAMA Psychiatry, 75(6), 555–565. https://doi.org/10.1001/jamapsychiatry.2018.0623
+
+Garety, P. A., Kuipers, E., Fowler, D., Freeman, D., & Bebbington, P. E. (2001). A cognitive model of the positive symptoms of psychosis. Psychological Medicine, 31(2), 189–195. https://doi.org/10.1017/S0033291701003312
+
+Gurak, K. K., Weisman de Mamani, A., & Ironson, G. (2017). Does religiosity predict attrition from a culturally-informed family treatment for schizophrenia that targets religious coping? Journal of Consulting and Clinical Psychology, 85(10), 937–949. https://doi.org/10.1037/ccp0000234
+
+Gureje, O., Appiah-Poku, J., Bello, T., Kola, L., Araya, R., Chisholm, D., Esan, O., Harris, B., Makanjuola, V., Othieno, C., Price, L., & Seedat, S. (2020). Effect of collaborative care between traditional and faith healers and primary health-care workers on psychosis outcomes in Nigeria and Ghana (COSIMPO): A cluster randomised controlled trial. The Lancet, 396(10251), 612–622. https://doi.org/10.1016/S0140-6736(20)30634-6
+
+Habib, N., Dawood, S., Kingdon, D., & Naeem, F. (2015). Preliminary evaluation of culturally adapted CBT for psychosis (CA-CBTp): Findings from Developing Culturally-Sensitive CBT Project (DCCP). Behavioural and Cognitive Psychotherapy, 43(2), 200–208. https://doi.org/10.1017/S1352465813000829
+
+Hjorthøj, C., Stürup, A. E., McGrath, J. J., & Nordentoft, M. (2017). Years of potential life lost and life expectancy in schizophrenia: A systematic review and meta-analysis. The Lancet Psychiatry, 4(4), 295–301. https://doi.org/10.1016/S2215-0366(17)30078-0
+
+Hor, K., & Taylor, M. (2010). Suicide and schizophrenia: A systematic review of rates and risk factors. Journal of Psychopharmacology, 24(4 Suppl.), 81–90. https://doi.org/10.1177/1359786810385490
+
+Huguelet, P., Mohr, S., Betrisey, C., Borras, L., Gillieron, C., Marie, A. M., Rieben, I., Perroud, N., & Brandt, P.-Y. (2011). A randomized trial of spiritual assessment of outpatients with schizophrenia: Patients' and clinicians' experience. Psychiatric Services, 62(1), 79–86. https://doi.org/10.1176/ps.62.1.pss6201_0079
+
+Huhn, M., Nikolakopoulou, A., Schneider-Thoma, J., Krause, M., Samara, M., Peter, N., Arndt, T., Bäckers, L., Rothe, P., Cipriani, A., Davis, J., Salanti, G., & Leucht, S. (2019). Comparative efficacy and tolerability of 32 oral antipsychotics for the acute treatment of adults with multi-episode schizophrenia: A systematic review and network meta-analysis. The Lancet, 394(10202), 939–951. https://doi.org/10.1016/S0140-6736(19)31135-3
+
+Jauhar, S., McKenna, P. J., Radua, J., Fung, E., Salvador, R., & Laws, K. R. (2014). Cognitive–behavioural therapy for the symptoms of schizophrenia: Systematic review and meta-analysis with examination of potential bias. British Journal of Psychiatry, 204(1), 20–29. https://doi.org/10.1192/bjp.bp.112.116285
+
+Kane, J. M., Robinson, D. G., Schooler, N. R., Mueser, K. T., Penn, D. L., Rosenheck, R. A., Addington, J., Brunette, M. F., Correll, C. U., Estroff, S. E., Marcy, P., Robinson, J., Meyer-Kalos, P. S., Gottlieb, J. D., Glynn, S. M., Lynde, D. W., Pipes, R., Kurian, B. T., Miller, A. L., ... Heinssen, R. K. (2016). Comprehensive versus usual community care for first-episode psychosis: 2-year outcomes from the NIMH RAISE Early Treatment Program. American Journal of Psychiatry, 173(4), 362–372. https://doi.org/10.1176/appi.ajp.2015.15050632
+
+Kay, S. R., Fiszbein, A., & Opler, L. A. (1987). The Positive and Negative Syndrome Scale (PANSS) for schizophrenia. Schizophrenia Bulletin, 13(2), 261–276. https://doi.org/10.1093/schbul/13.2.261
+
+Kurtz, M. M., & Mueser, K. T. (2008). A meta-analysis of controlled research on social skills training for schizophrenia. Journal of Consulting and Clinical Psychology, 76(3), 491–504. https://doi.org/10.1037/0022-006X.76.3.491
+
+Leucht, S., Tardy, M., Komossa, K., Heres, S., Kissling, W., Salanti, G., & Davis, J. M. (2012). Antipsychotic drugs versus placebo for relapse prevention in schizophrenia: A systematic review and meta-analysis. The Lancet, 379(9831), 2063– 2071. https://doi.org/10.1016/S0140-6736(12)60239-6
+
+Lim, C., Sim, K., Renjan, V., Sam, H. F., & Quah, S. L. (2014). Adapted cognitive-behavioral therapy for religious individuals with mental disorder: A systematic review. Asian Journal of Psychiatry, 9, 3–12. https://doi.org/10.1016/j.ajp.2013.12.011
+
+Luhrmann, T. M., Padmavati, R., Tharoor, H., & Osei, A. (2015). Differences in voice-hearing experiences of people with psychosis in the USA, India and Ghana: Interview-based study. British Journal of Psychiatry, 206(1), 41–44. https://doi.org/10.1192/bjp.bp.113.139048
+
+Marshall, M., Lewis, S., Lockwood, A., Drake, R., Jones, P., & Croudace, T. (2005). Association between duration of untreated psychosis and outcome in cohorts of first-episode patients: A systematic review. Archives of General Psychiatry, 62(9), 975–983. https://doi.org/10.1001/archpsyc.62.9.975
+
+McGrath, J., Saha, S., Chant, D., & Welham, J. (2008). Schizophrenia: A concise overview of incidence, prevalence, and mortality. Epidemiologic Reviews, 30(1), 67–76. https://doi.org/10.1093/epirev/mxn001
+
+Mohr, S., Borras, L., Betrisey, C., Brandt, P.-Y., Gilliéron, C., & Huguelet, P. (2010). Delusions with religious content in patients with psychosis: How they interact with spiritual coping. Psychiatry: Interpersonal and Biological Processes, 73(2), 158– 172. https://doi.org/10.1521/psyc.2010.73.2.158
+
+Mohr, S., Brandt, P.-Y., Borras, L., Gilliéron, C., & Huguelet, P. (2006). Toward an integration of spirituality and religiousness into the psychosocial dimension of schizophrenia. American Journal of Psychiatry, 163(11), 1952–1959. https://doi.org/10.1176/ajp.2006.163.11.1952
+
+Mohr, S., Perroud, N., Gillieron, C., Brandt, P.-Y., Rieben, I., Borras, L., & Huguelet, P. (2011). Spirituality and religiousness as predictive factors of outcome in schizophrenia and schizo-affective disorders. Psychiatry Research, 186(2–3), 177–182. https://doi.org/10.1016/j.psychres.2010.08.012
+
+Morrison, A. P., Turkington, D., Pyle, M., Spencer, H., Brabban, A., Dunn, G., Christodoulides, T., Dudley, R., Chapman, N., Callcott, P., Grace, T., Lumley, V., Drage, L., Tully, S., Irving, K., Cummings, A., Byrne, R., Davies, L. M., & Hutton, P. (2014). Cognitive therapy for people with schizophrenia spectrum disorders not taking antipsychotic drugs: A single-blind randomised controlled trial. The Lancet, 383(9926), 1395–1403. https://doi.org/10.1016/S0140-6736(13)62246-1
+
+Murrie, B., Lappin, J., Large, M., & Sara, G. (2020). Transition of substance-induced, brief, and atypical psychoses to schizophrenia: A systematic review and meta-analysis. Schizophrenia Bulletin, 46(3), 505–516. https://doi.org/10.1093/schbul/sbz102
+
+Ofori-Atta, A., Attafuah, J., Jack, H., Baning, F., Rosenheck, R., & the Joining Forces Research Consortium. (2018). Joining psychiatric care and faith healing in a prayer camp in Ghana: Randomised trial. British Journal of Psychiatry, 212(1), 34–41. https://doi.org/10.1192/bjp.2017.12
+
+Overall, J. E., & Gorham, D. R. (1962). The Brief Psychiatric Rating Scale. Psychological Reports, 10(3), 799–812. https://doi.org/10.2466/pr0.1962.10.3.799
+
+Palmer, B. A., Pankratz, V. S., & Bostwick, J. M. (2005). The lifetime risk of suicide in schizophrenia: A reexamination. Archives of General Psychiatry, 62(3), 247–253. https://doi.org/10.1001/archpsyc.62.3.247
+
+Peters, E., Day, S., McKenna, J., & Orbach, G. (1999). Delusional ideation in religious and psychotic populations. British Journal of Clinical Psychology, 38(1), 83–96. https://doi.org/10.1348/014466599162683
+
+Pharoah, F., Mari, J. J., Rathbone, J., & Wong, W. (2010). Family intervention for schizophrenia. Cochrane Database of Systematic Reviews, 2010(12), CD000088. https://doi.org/10.1002/14651858.CD000088.pub3
+
+Pierre, J. M. (2001). Faith or delusion? At the crossroads of religion and psychosis. Journal of Psychiatric Practice, 7(3), 163– 172. https://doi.org/10.1097/00131746-200105000-00004
+
+Rosmarin, D. H., Bigda-Peyton, J. S., Öngur, D., Pargament, K. I., & Björgvinsson, T. (2013). Religious coping among psychotic patients: Relevance to suicidality and treatment outcomes. Psychiatry Research, 210(1), 182–187. https://doi.org/10.1016/j.psychres.2013.03.023
+
+Siddle, R., Haddock, G., Tarrier, N., & Faragher, E. B. (2002). Religious delusions in patients admitted to hospital with schizophrenia. Social Psychiatry and Psychiatric Epidemiology, 37(3), 130–138. https://doi.org/10.1007/s001270200005
+
+Solmi, M., Radua, J., Olivola, M., Croce, E., Soardo, L., Salazar de Pablo, G., Il Shin, J., Kirkbride, J. B., Jones, P., Kim, J. H., Kim, J. Y., Carvalho, A. F., Seeman, M. V., Correll, C. U., & Fusar-Poli, P. (2022). Age at onset of mental disorders worldwide: Large-scale meta-analysis of 192 epidemiological studies. Molecular Psychiatry, 27(1), 281–295. https://doi.org/10.1038/s41380-021-01161-7
+
+Vita, A., Barlati, S., Ceraso, A., Nibbio, G., Ariu, C., Deste, G., & Wykes, T. (2021). Effectiveness, core elements, and moderators of response of cognitive remediation for schizophrenia: A systematic review and meta-analysis of randomized clinical trials. JAMA Psychiatry, 78(8), 848–858. https://doi.org/10.1001/jamapsychiatry.2021.0620
+
+Wang, P. S., Berglund, P. A., & Kessler, R. C. (2003). Patterns and correlates of contacting clergy for mental disorders in the United States. Health Services Research, 38(2), 647–673. https://doi.org/10.1111/1475-6773.00138
+
+Weisman de Mamani, A., Weintraub, M. J., Gurak, K., & Maura, J. (2014). A randomized clinical trial to test the efficacy of a family-focused, culturally informed therapy for schizophrenia. Journal of Family Psychology, 28(6), 800–810. https://doi.org/10.1037/fam0000021
+
+Westhead, M., & Georgiades, A. (2025). The role of spirituality and religiosity in the maintenance and recovery of psychosis: A systematic review. Early Intervention in Psychiatry, 19(7), e70061. https://doi.org/10.1111/eip.70061
+
+Wykes, T., Huddy, V., Cellard, C., McGurk, S. R., & Czobor, P. (2011). A meta-analysis of cognitive remediation for schizophrenia: Methodology and effect sizes. American Journal of Psychiatry, 168(5), 472–485. https://doi.org/10.1176/appi.ajp.2010.10060855
+
+Wykes, T., Steel, C., Everitt, B., & Tarrier, N. (2008). Cognitive behavior therapy for schizophrenia: Effect sizes, clinical models, and methodological rigor. Schizophrenia Bulletin, 34(3), 523–537. https://doi.org/10.1093/schbul/sbm114
+
+Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All 47 references and DOIs verified via Crossref (Friday, Oct 30, 2026). Effect sizes as reported in the cited sources.

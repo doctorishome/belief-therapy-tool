@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "bundledId": "starter:depression-teaching-overview",
+      "category": "Diagnoses",
+      "subcategory": "Mood disorders",
+      "label": "Depression (MDD): Teaching Overview",
+      "file": "depression-teaching-overview.md",
+      "href": "../counselors/reviews/depression-teaching-overview.pdf",
+      "starter": true
+    },
+    {
+      "bundledId": "starter:anxiety-teaching-overview",
+      "category": "Diagnoses",
+      "subcategory": "Anxiety disorders",
+      "label": "Anxiety Disorders (DSM-5-TR): Teaching Overview",
+      "file": "anxiety-teaching-overview.md",
+      "href": "../counselors/reviews/anxiety-teaching-overview.pdf",
+      "starter": true
+    },
+    {
+      "bundledId": "starter:ocd-teaching-overview",
+      "category": "Diagnoses",
+      "subcategory": "Obsessive-compulsive and related disorders",
+      "label": "Obsessive-Compulsive Disorder (DSM-5-TR): Teaching Overview",
+      "file": "ocd-teaching-overview.md",
+      "href": "../counselors/reviews/ocd-teaching-overview.pdf",
+      "starter": true
+    },
+    {
+      "bundledId": "starter:schizophrenia-teaching-overview",
+      "category": "Diagnoses",
+      "subcategory": "Schizophrenia spectrum",
+      "label": "Schizophrenia (DSM-5-TR): Teaching Overview",
+      "file": "schizophrenia-teaching-overview.md",
+      "href": "../counselors/reviews/schizophrenia-teaching-overview.pdf",
+      "starter": true
+    }
+  ]
+}
