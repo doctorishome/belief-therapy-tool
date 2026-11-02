@@ -25,7 +25,7 @@
     anchor = sections[sections.length - 1]; if (!anchor) return;
     var box = document.createElement("div");
     box.id = "bc-socio-tools";
-    box.style.cssText = "padding:40px 16px 48px;background:#fff";
+    box.style.cssText = "padding:40px 16px 48px;background:#fff;pointer-events:auto";
     box.innerHTML = '<h2 style="text-align:center;margin:0 0 14px;font:700 40px/1.2 \'Helvetica Neue\',Helvetica,Arial,sans-serif;color:#000">Belief Mining Tools</h2>' +
       '<iframe src="' + SRC + '" title="Belief Mining Tools" loading="lazy" style="display:block;width:100%;max-width:1060px;height:470px;margin:0 auto;border:0"></iframe>';
     anchor.parentNode.insertBefore(box, anchor.nextSibling);
