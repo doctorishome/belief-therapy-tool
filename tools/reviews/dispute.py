@@ -9,6 +9,9 @@ from dispute_data import DATA
 
 CHECKLIST = 'https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf'
 FORM = 'https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf'
+DEEPER = (' To identify deeper false beliefs, see: [Core Beliefs](https://doctorishome.github.io/belief-therapy-tool/counselors/core-beliefs.html), '
+          '[Parental Messages](https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf), '
+          'or use the [Semantic Search Tool](https://www.beliefcounselor.com/false-belief-finder).')
 
 DEF = {
     'Selective attention': 'noticing only what fits my belief',
@@ -43,6 +46,9 @@ Q = _f['spiritual'] + _f['general']
 
 def add_dispute(body, key):
     d = DATA[key]
+    j = next(n for n, (k, t) in enumerate(body) if k == 'B' and t.startswith('**Identify (clinical).**'))
+    if 'To identify deeper false beliefs' not in body[j][1]:
+        body[j] = ('B', body[j][1] + DEEPER)
     i = next(n for n, (k, t) in enumerate(body) if k == 'B' and t.startswith('**Challenge (clinical).**'))
     who = d.get('who', '')
     body[i] = ('B', body[i][1] + f' **Possible cognitive errors** to watch for{who}, with their definitions from the '

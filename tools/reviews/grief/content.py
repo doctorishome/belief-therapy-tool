@@ -59,3 +59,5 @@ BODY = add_dispute(BODY, 'grief')
 from treatment_links import link_treatments
 from treatment_pairs import PAIRS
 BODY = link_treatments(BODY, PAIRS['grief'])
+
+TIGHT = True
