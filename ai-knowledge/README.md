@@ -5,6 +5,11 @@ so the same materials can be loaded into Claude, Grok, or any other AI.
 
 Never put real client names or details in any file here.
 
+**Important: this GitHub repository is public.** Anyone can see what is uploaded here. Do not upload
+your book text (*Pearls*, *Godly Counsel*, *Christlike*), the Project instructions, or any
+unpublished material you want to keep private. Keep those in a private place instead (a private
+GitHub repository, Google Drive, or a folder on your computer) and load them into the AI from there.
+
 ---
 
 ## Part 1: What to bring over from the Claude Project ("Belief Therapy" on claude.ai)
@@ -13,12 +18,12 @@ These live only in the Claude Project today. Bring them here.
 
 - [ ] **The Project instructions.** Open the Belief Therapy project on claude.ai, open its
       instructions, select all of the text, copy it, and paste it into a new file:
-      `ai-knowledge/instructions.md`. This is the most important item: it holds the voice,
-      the Identify, Challenge, Replace steps, and how to coach a counselor.
+      file named `instructions.md`, kept in your private folder (not this public repository).
+      This is the most important item: it holds the voice, the Identify, Challenge, Replace
+      steps, and how to coach a counselor.
 - [ ] **The knowledge files (about 38).** The project's file list shows each document.
-      Gather the originals (from your computer, Google Drive, or the project itself) and put
-      them in `ai-knowledge/claude-project/`.
-      Upload on GitHub: open the folder, then **Add file > Upload files > Commit changes**.
+      Gather the originals (from your computer, Google Drive, or the project itself) into your
+      private folder. Only material already meant to be public belongs in this repository.
 - [ ] **A list of the files** (file name and one line on what each covers), so nothing is
       missed and duplicates can be spotted.
 - [ ] **Remove anything with real client information** before uploading.
