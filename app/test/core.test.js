@@ -6,6 +6,8 @@ import { sealObject, openEnvelope } from "../js/vault.js";
 import { prepareChat } from "../js/ai.js";
 import { standingText } from "../js/standing.js";
 import { mockReply } from "../js/mock.js";
+import { friendlyAiError } from "../js/ai.js";
+import { signMembershipToken, verifyMembershipToken } from "../wix-backend/cc-token.js";
 
 test("sample case is de-identified before preview", () => {
   const c = sampleCases()[0];
@@ -51,6 +53,22 @@ test("send preview shows the case text and hides standing instructions", async (
   assert.match(prepared.messages[0].content, /STANDING INSTRUCTIONS/);
   assert.match(prepared.preview.caseText, /\[CLIENT\]/);
   assert.ok(prepared.preview.standingWords > 10);
+});
+
+test("a missing membership or a dead proxy gets a plain sentence", () => {
+  const room = "Please open Clinical Companion from the Counselors' Room.";
+  assert.equal(friendlyAiError({ code: "MEMBER_REQUIRED" }), room);
+  assert.equal(friendlyAiError({ code: "NO_NETWORK" }), room);
+  assert.equal(/key|xai-/i.test(friendlyAiError({ code: "PROXY" })), false);
+});
+
+test("a staff membership token is signed and does not carry case text", async () => {
+  const secret = "not-the-api-key";
+  const token = await signMembershipToken("site-admin", secret, { staff: true });
+  assert.equal(token.includes("Jordan"), false);
+  const payload = await verifyMembershipToken(token, secret);
+  assert.equal(payload.staff, true);
+  assert.equal(await verifyMembershipToken(token, "wrong"), null);
 });
 
 test("mock diagnosis and treatment plan are fictional drafts", () => {

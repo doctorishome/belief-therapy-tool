@@ -85,13 +85,13 @@ async function memberFromWixSession() {
 async function membershipOk(request) {
   if (await memberFromWixSession()) return { ok: true };
   const match = /^Bearer\s+(\S+)/i.exec(header(request, "authorization") || "");
-  if (!match) return { ok: false, code: "MEMBER_REQUIRED", error: "Sign in on the Counselors page first." };
+  if (!match) return { ok: false, code: "MEMBER_REQUIRED", error: "Please open Clinical Companion from the Counselors' Room." };
   let secret = "";
   try { secret = secretString(await elevatedGetSecretValue("CC_MEMBERSHIP_SECRET")); }
   catch { return { ok: false, code: "NOT_CONFIGURED", error: "The membership check is not set up yet." }; }
   if (!secret) return { ok: false, code: "NOT_CONFIGURED", error: "The membership check is not set up yet." };
   const payload = await verifyMembershipToken(match[1], secret);
-  if (!payload) return { ok: false, code: "MEMBER_REQUIRED", error: "Sign in again on the Counselors page. This tab’s membership check has expired." };
+  if (!payload) return { ok: false, code: "MEMBER_REQUIRED", error: "Please open Clinical Companion from the Counselors' Room." };
   return { ok: true };
 }
 

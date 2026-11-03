@@ -83,6 +83,15 @@ export function rememberMembershipToken(token) {
   if (token) sessionStorage.setItem("cc-membership-token", token);
 }
 
+/** Plain sentence for a failed live call. Does not include keys or case text. */
+export function friendlyAiError(err) {
+  const code = err && err.code;
+  if (code === "MEMBER_REQUIRED" || code === "NO_NETWORK") {
+    return "Please open Clinical Companion from the Counselors' Room.";
+  }
+  return "Clinical Companion could not get an answer just now. Please try again.";
+}
+
 export async function complete(prepared) {
   if (isMock()) {
     await new Promise((r) => setTimeout(r, 350));
@@ -106,15 +115,16 @@ export async function complete(prepared) {
       }),
     });
   } catch {
-    const e = new Error("The AI service could not be reached. Check the internet connection and the proxy address in config.js.");
+    const e = new Error("Please open Clinical Companion from the Counselors' Room.");
     e.code = "NO_NETWORK";
     throw e;
   }
   let body = {};
   try { body = await res.json(); } catch { body = {}; }
   if (!res.ok) {
-    const e = new Error(body.error || "The AI service refused the request (" + res.status + ").");
-    e.code = body.code || "PROXY";
+    const code = body.code || (res.status === 401 || res.status === 403 ? "MEMBER_REQUIRED" : "PROXY");
+    const e = new Error(friendlyAiError({ code }));
+    e.code = code;
     throw e;
   }
   return { content: body.content || "", thinking: body.thinking || "", model: body.model || CONFIG.model, mock: false };

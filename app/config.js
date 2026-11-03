@@ -2,7 +2,7 @@
  * Clinical Companion (browser) — the one place to change site addresses.
  *
  * The xAI API key does not belong in this file. Live answers go to proxyUrl,
- * and that server holds the key. Leave mode as "mock" until the proxy is deployed.
+ * and that server holds the key.
  */
 export const CONFIG = {
   appName: "Clinical Companion",
@@ -17,15 +17,13 @@ export const CONFIG = {
   counselorsReturnUrl: "https://www.beliefcounselor.com/blank-11",
 
   /**
-   * AI proxy. Empty while mode is "mock" (canned answers; nothing leaves the browser).
-   * To go live, set mode to "live" and set this to one URL, for example:
-   *   https://www.beliefcounselor.com/_functions/clinicalCompanion
-   * Any other proxy that speaks the same JSON contract can be used instead.
+   * AI proxy. The xAI key stays on that server. Another proxy can be used by
+   * changing this one address. Fictional-cases-only stays on either way.
    */
-  proxyUrl: "",
+  proxyUrl: "https://www.beliefcounselor.com/_functions/clinicalCompanion",
 
-  /** "mock" = canned answers. "live" = call proxyUrl. */
-  mode: "mock",
+  /** "live" calls proxyUrl. "mock" uses canned answers and does not call the proxy. */
+  mode: "live",
 
   /**
    * Keep true until a Business Associate Agreement is signed AND zero data retention

@@ -3,7 +3,7 @@ import { esc, render as renderMd, toPlain } from "./md.js";
 import { findLeaks } from "./deidentify.js";
 import * as vault from "./vault.js";
 import { sampleCases } from "./samples.js";
-import { deidentify, prepareChat, preparePlan, complete, isMock, rememberMembershipToken } from "./ai.js";
+import { deidentify, prepareChat, preparePlan, complete, isMock, rememberMembershipToken, friendlyAiError } from "./ai.js";
 import { formatPlanRecord } from "./prompt.js";
 import { loadCatalog, loadBundledDoc } from "./library.js";
 
@@ -269,7 +269,7 @@ function renderAI() {
       <div class="ai-intro">
         <h3>Think a case through</h3>
         <p class="remote-note">Names, dates, phone numbers, emails, addresses, and ID numbers are removed before you are asked to send anything. You see the exact text and choose Send or Cancel.</p>
-        <p class="small">${isMock() ? "Mock mode is on. The answer is a canned fictional draft. Nothing leaves this browser." : "Live mode sends only the approved text to the proxy in config.js. This browser does not have the API key."}</p>
+        <p class="small">${isMock() ? "Mock mode is on. The answer is a canned fictional draft. Nothing leaves this browser." : "Live answers go through the website. Open this app with Start Clinical Companion in the Counselors' Room. This browser does not have the API key."}</p>
         <p class="small">The chat is temporary. Only what you add to the record is saved.</p>
         <button class="btn ai-primary" type="button" id="ai-start">Start AI session</button>
       </div>`;
@@ -423,7 +423,7 @@ async function sendQuestion(text) {
   } catch (err) {
     s.messages.pop();
     s.messages.pop();
-    s.messages.push({ role: "error", content: err.message });
+    s.messages.push({ role: "error", content: friendlyAiError(err) });
   } finally {
     s.busy = false;
     renderMessages();
@@ -538,7 +538,7 @@ async function planTen(caseId) {
     state.cases[state.cases.findIndex((x) => x.id === saved.id)] = saved;
     renderRecord(saved);
     toast("10-session plan saved in this encrypted case.");
-  } catch (err) { toast(err.message); }
+  } catch (err) { toast(friendlyAiError(err)); }
 }
 
 let recog = null;

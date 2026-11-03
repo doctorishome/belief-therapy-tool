@@ -276,6 +276,25 @@ CC_FOOT = (
  '<a href="https://www.beliefcounselor.com/my-subscriptions" target="_top">My Subscriptions</a> · '
  '<a href="%s" target="_top">Help</a></div>' % HELP_URL)
 CC_APP = 'https://doctorishome.github.io/belief-therapy-tool/app/'
+# Inside the Wix iframe this asks the parent page to mint a membership token and
+# open the app in the same tab. Outside an iframe the plain link still works.
+CC_START_JS = r'''<script>
+(function () {
+  var link = document.querySelector("a.btn.startcc");
+  if (!link) return;
+  link.addEventListener("click", function (event) {
+    var framed = false;
+    try { framed = window.parent && window.parent !== window; } catch (err) { framed = true; }
+    if (!framed) return;
+    event.preventDefault();
+    try { window.parent.postMessage({ type: "cc-open-app", source: "clinical-companion" }, "*"); } catch (err) {}
+    window.setTimeout(function () {
+      var href = link.href;
+      try { window.top.location.href = href; } catch (err) { window.location.href = href; }
+    }, 2500);
+  });
+})();
+</script>'''
 page('clinical-companion','Clinical Companion', '',
  '<h2>Open Clinical Companion</h2>'
  '<div class="card"><p>Clinical Companion runs in your web browser. Use Start Clinical Companion at the top of this page. It opens full screen in this tab. Use fictional cases only. This is not yet for real client data.</p></div>'
@@ -288,7 +307,7 @@ page('clinical-companion','Clinical Companion', '',
  '<div class="card"><p>Clinical Companion supports, and does not replace, your professional clinical judgment. Use fictional or de-identified information, and never enter real client names or details. It is meant for your own professional work.</p></div>'
  '<h2 class="forms-title">Client Forms for Your Practice</h2>'
  '<div class="forms"><p>Enter your practice details once. A New Client Packet and a Confidentiality Agreement open already filled in with those details. Review them with an attorney in your state.</p>'
- '<a class="btn" href="practice-forms.html" target="_blank" rel="noopener">Open client forms</a></div>',
+ '<a class="btn" href="practice-forms.html" target="_blank" rel="noopener">Open client forms</a></div>' + CC_START_JS,
  eyebrow='MEMBERS', extra_css=CC_CSS, with_nav=False, foot=CC_FOOT,
  hero_lead='<a class="btn startcc" href="%s" target="_top">Start Clinical Companion</a><p class="startnote">Practice mode. Use fictional cases only. This is not yet for real client data.</p>' % CC_APP,
  hero_extra='<p class="backline"><a class="back" href="%s" target="_top">← Back to the Counselors’ Room</a></p><a class="btn needhelp" href="%s" target="_top">Need Help?</a>' % (ROOM_PAGE, HELP_URL))

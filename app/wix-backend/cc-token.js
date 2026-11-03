@@ -24,8 +24,12 @@ async function hmacKey(secret, usages) {
   return crypto.subtle.importKey("raw", new TextEncoder().encode(secret), { name: "HMAC", hash: "SHA-256" }, false, usages);
 }
 
-export async function signMembershipToken(memberId, secret) {
-  const payload = JSON.stringify({ memberId: String(memberId), exp: Date.now() + TOKEN_MS });
+export async function signMembershipToken(memberId, secret, extras = {}) {
+  const payload = JSON.stringify({
+    memberId: String(memberId),
+    exp: Date.now() + TOKEN_MS,
+    staff: !!extras.staff,
+  });
   const key = await hmacKey(secret, ["sign"]);
   const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(payload));
   return bytesToB64Url(new TextEncoder().encode(payload)) + "." + bytesToB64Url(sig);
