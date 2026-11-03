@@ -3,7 +3,7 @@ import html
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'counselors'; OUT.mkdir(exist_ok=True)
-SITE='https://doctorishome.wixstudio.com/website-6'
+SITE='https://www.beliefcounselor.com'
 PAGES=[('welcome','Welcome','blank-11'),('process','The Process','blank-12'),('tips','Professional Tips','blank-13'),
        ('theory','Theory','blank-14'),('cases','Case Studies','blank-15'),('course','The Course','blank-16'),('library','Clinical Library','blank-17')]
 CSS="""
@@ -26,7 +26,7 @@ h3{color:var(--navy);margin:0 0 4px;font-size:1.12rem}
 .card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:16px 18px;box-shadow:0 2px 6px rgba(18,40,76,.06)}
 .card p{margin:4px 0 0;color:var(--mut);font-size:.96rem}
 .step{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:12px 0}
-.num{flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.num{flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
 .step p{margin:3px 0 0;color:var(--mut)}.step strong{color:var(--navy)}
 .cta{text-align:center;margin:36px 0 8px}
 .btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:13px 30px;border-radius:30px;font-size:1.05rem;border:0}
@@ -107,7 +107,7 @@ def page(key,title,hero_sub,body,eyebrow='Belief Counseling for Counselors', ext
     h+=top+'<div class="hero"><div class="eyebrow">%s</div><h1>%s</h1><p>%s</p></div><div class="wrap">%s</div>%s%s</body></html>'%(eyebrow,title,hero_sub,body,FOOT,js)
     (OUT/('%s.html'%key)).write_text(h)
 def cards(items, extra=''): return '<div class="grid">'+''.join('<div class="card"><h3>%s</h3><p>%s</p></div>'%i for i in items)+extra+'</div>'
-JOIN='<div class="cta"><a class="btn soon" target="_blank" href="https://doctorishome.wixstudio.com/website-6/blank-11#clinical-companion" onclick="window.parent.postMessage({type:\'cc-start-free-week\'}, \'*\'); return false;">Start your free week</a><div class="note">One week free, then $29.25 a month.</div></div>'
+JOIN='<div class="cta"><a class="btn soon" target="_blank" href="https://www.beliefcounselor.com/blank-11#clinical-companion" onclick="window.parent.postMessage({type:\'cc-start-free-week\'}, \'*\'); return false;">Start your free week</a><div class="note">One week free, then $29.95 a month.</div></div>'
 
 # 1 Welcome
 WELCOME_CSS = '''/*reviews*/
@@ -130,11 +130,11 @@ page('welcome','Welcome to the Counselors’ Room','Learn Christian cognitive-be
  ('Theory','A framework for understanding the great majority of psychological struggles: beliefs, personality, and the whole person.'),
  ('Core False Beliefs','The deep-seated lies beneath much of our pain, how to unearth them, and the tools that help.'),
  ('Belief Counseling','The theory behind Belief Counseling, Dr. Campbell’s Christian cognitive-behavioral approach to understanding and changing false beliefs.'),
- ('Case Studies','Practice on composite cases guided by an AI supervisor trained on Dr. Campbell’s method. Start with a free week; then $29.25 a month, cancel anytime.'),
+ ('Case Studies','Practice on composite cases guided by an AI supervisor trained on Dr. Campbell’s method. Start with a free week; then $29.95 a month, cancel anytime.'),
  ('The Course','A step-by-step course in Christian Cognitive-Behavioral Therapy, with quizzes and a certificate of completion.'),
  ('Clinical Library','Counselor-only background, assessment tools, and references behind every false-belief card on the public site.')], DSM_CARD)+
  '<h2>How it works</h2>'
- '<div class="step"><div class="num">1</div><div><strong>Start with a free week; then $29.25 a month, cancel anytime.</strong><p>You get the tips, the library, and the theory topics right away.</p></div></div>'
+ '<div class="step"><div class="num">1</div><div><strong>Start with a free week; then $29.95 a month, cancel anytime.</strong><p>You get the tips, the library, and the theory topics right away.</p></div></div>'
  '<div class="step"><div class="num">2</div><div><strong>Try a practice case during your free week.</strong><p>Walk a composite client through Identify, Challenge, and Replace. Your supervisor pauses for your answer before showing the model approach.</p></div></div>'
  '<div class="step"><div class="num">3</div><div><strong>Keep growing.</strong><p>Add more cases in sets of five, work through the course, and earn your certificate of completion.</p></div></div>'
  '<h2>About Dr. Campbell</h2><p>Brian Campbell, Ph.D., has spent 35 years in private practice, teaching, and writing. Belief Counseling grew from that work: a Christian cognitive-behavioral approach that helps clients name the lies behind their pain and replace them with truth from God’s Word.</p>'
@@ -218,10 +218,9 @@ page('library','Clinical Library','Counselor-only background, tools, and referen
 # The client-forms button opens practice-forms.html in a new tab so a Wix iframe does not block the download.
 CC_CSS = '''/*cc*/
 .card p{margin:0;color:var(--ink);font-size:1.02rem}
-.pill{display:inline-block;margin-top:14px;padding:7px 16px;border-radius:20px;background:#ece7da;color:#6d7686;font-size:.85rem;font-weight:bold;letter-spacing:.4px;border:1px solid #ddd4c0;cursor:default;user-select:none}
 ol.clean{list-style:none;margin:16px 0;padding:0;counter-reset:step}
 ol.clean li{counter-increment:step;display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:12px 0}
-ol.clean li::before{content:counter(step);flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+ol.clean li::before{content:counter(step);flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
 .faq{margin:8px 0 4px}
 .faq details{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;margin:12px 0;box-shadow:0 2px 6px rgba(18,40,76,.06)}
 .faq summary{color:var(--navy);font-weight:bold;font-size:1.05rem;padding:14px 46px 14px 18px;cursor:pointer;list-style:none;position:relative}
@@ -230,6 +229,8 @@ ol.clean li::before{content:counter(step);flex:0 0 42px;height:42px;border-radiu
 .faq summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.35rem;font-weight:bold;line-height:1}
 .faq details[open] summary::after{content:"\u2212"}
 .faq details p{margin:0;padding:0 18px 16px;color:var(--navy)}
+.faq ol{margin:0 18px 8px 38px;padding:0;color:var(--navy)}
+.faq ol li{margin:5px 0}
 .faq summary:hover{background:#fbf8f0}
 .faq summary:focus{outline:2px solid var(--gold);outline-offset:-2px}
 h2.forms-title{margin-top:22px}
@@ -240,26 +241,35 @@ h2.forms-title{margin-top:22px}
 @media(max-width:560px){ol.clean li{flex-direction:column;align-items:flex-start}}
 /*/cc*/
 '''
+FREE_WEEK = (
+ '<ol>'
+ '<li>Create your login with your email and a password.</li>'
+ '<li>Enter a credit card at checkout.</li>'
+ '<li>Nothing is charged during your 7-day free trial. Your membership starts at $29.95 a month on day 8 unless you cancel during the week. We\'ll email you a reminder 3 days before your free week ends.</li>'
+ '</ol>'
+ '<p>Cancel anytime in My Account \u2192 My Subscriptions. If you cancel after you\'ve been billed, you keep access until the end of that billing month, and you won\'t be billed again. The rest of that month isn\'t refunded.</p>'
+)
 FAQS = [
- ("How does the free week work?", "Your first 7 days are free. If you don't cancel before the week ends, your membership continues at $29.25 a month."),
+ ("How does the free week work?", FREE_WEEK),
  ("How do I cancel?", "Sign in, open My Account, go to My Subscriptions, and choose Cancel. You can cancel anytime."),
- ("Will I get a refund if I cancel?", "Your access continues to the end of the month you've paid for. The remainder of the month isn't refunded. If you have special circumstances, contact us."),
+ ("Will I get a refund if I cancel?", "If you cancel during your free week, you pay nothing. If you cancel after you've been billed, you keep access until the end of that billing month, and you won't be billed again. The rest of that month isn't refunded. If you have special circumstances, contact us."),
  ("What happens to my access after I cancel?", "You keep full access until the end of your paid month. After that, the app and member resources are no longer available to you."),
  ("What does 'fair use' mean?", "Clinical Companion is meant for your own professional caseload. Sharing your account, or very heavy automated use, isn't permitted."),
  ("Who is Clinical Companion for?", "Professional counselors, psychologists, and students in training who want to integrate Christian belief counseling into their work."),
- ("What do I need to run it?", "A Windows computer and an internet connection."),
+ ("What do I need to run it?", "A computer with an up-to-date web browser and an internet connection."),
  ("Can I enter real client information?", "Use fictional or de-identified information unless your plan states otherwise."),
  ("How do I get help?", "Contact us through the Contact page and we'll get back to you."),
 ]
+def faq_body(answer):
+    return answer if answer.lstrip().startswith('<') else '<p>%s</p>' % answer
 FAQ_HTML = '<h2>Frequently asked questions</h2><div class="faq">' + ''.join(
- '<details><summary>%s</summary><p>%s</p></details>' % pair for pair in FAQS) + '</div>'
+ '<details><summary>%s</summary>%s</details>' % (q, faq_body(a)) for q, a in FAQS) + '</div>'
 page('clinical-companion','Clinical Companion',
- "Welcome to your Clinical Companion member area. Here you'll find the app download, a quick-start guide, help, and your account.",
- '<h2>Download the app</h2>'
- '<div class="card"><p>The Windows download will be available here when your membership begins.</p>'
- '<span class="pill">Coming soon</span></div>'
+ "Welcome to your Clinical Companion member area. Here you'll find how to open Clinical Companion, a quick-start guide, help, and your account.",
+ '<h2>Open Clinical Companion</h2>'
+ '<div class="card"><p>Clinical Companion runs in your web browser. Open it from the Counselors\' Room.</p></div>'
  '<h2>Quick start</h2><ol class="clean">'
- '<li>Install Clinical Companion and open it.</li>'
+ '<li>Open Clinical Companion from the Counselors\' Room.</li>'
  '<li>Sign in with your website member login.</li>'
  '<li>Try a practice case before using it with clients.</li>'
  '<li>Write your session notes, then ask for an analysis.</li></ol>'

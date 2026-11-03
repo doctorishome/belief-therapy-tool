@@ -23,8 +23,8 @@ GROUPS = [
                    ("DSM-5-TR Reviews", "reviews.html")]),
 ]
 OUTSIDE = [
-    ("False Belief Finder ↗", "https://doctorishome.wixstudio.com/website-6/false-belief-finder"),
-    ("Public Site ↗", "https://doctorishome.wixstudio.com/website-6"),
+    ("False Belief Finder ↗", "https://www.beliefcounselor.com/false-belief-finder"),
+    ("Public Site ↗", "https://www.beliefcounselor.com"),
 ]
 
 CSS = """/*nav*/
