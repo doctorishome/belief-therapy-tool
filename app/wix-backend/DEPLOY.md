@@ -16,6 +16,7 @@ In the Wix editor: **Developer** → **Secrets Manager**. Create these two names
 | File in this folder | Where it goes in Wix |
 |---|---|
 | `http-functions.js` | Backend → `http-functions.js`. If that file already exists, copy `options_clinicalCompanion` and `post_clinicalCompanion` into it. Do not delete the rest of the file. |
+| `ai-budget.js` | Backend → new file `ai-budget.js` |
 | `cc-token.js` | Backend → new file `cc-token.js` |
 | `cc-membership.web.js` | Backend → new file `cc-membership.web.js` |
 | `clinical-companion-page-code.js` | The code panel of the Wix page whose address is `/clinical-companion` |
@@ -28,9 +29,15 @@ Start Clinical Companion is still a normal link, so it works if the page is open
 
 ## Order
 
-1. Paste the three backend files and the page code.
+1. Paste the four backend files and the page code. `ai-budget.js` holds the prices, the $10 cap, and the off-topic wording. If the token, membership, and page files are already published, paste only the updated `http-functions.js` and the new `ai-budget.js`.
 2. Add the two secrets.
 3. Publish the Wix site.
 4. Merge the pull request so GitHub Pages starts calling the proxy.
 
-The model name sent to xAI is **grok-4.7**, which is a current text model on the public xAI model list (https://docs.x.ai/developers/models).
+The model name sent to xAI is **grok-4.7**. A short clinical check uses **grok-4.20-0309-non-reasoning** only when the question is not already clearly clinical or clearly off-topic.
+
+## Monthly allowance
+
+Each member can use **$10** of AI in a calendar month (Eastern Time). That is `MEMBER_MONTHLY_AI_BUDGET_USD` in `ai-budget.js`. Site-owner tokens are not capped. Add a Wix member id to `ADMIN_UNLIMITED_MEMBER_IDS` in that same file if you want another uncapped person.
+
+Create a Wix collection named **ClinicalCompanionUsage** before relying on the cap. Fields: memberId (text), month (text), inputTokens (number), outputTokens (number), cachedTokens (number), costUsd (number). Set the collection so only you can see it in the dashboard. The backend writes to it and does not store question or answer text. If the collection is missing, the proxy will not send an answer, so the allowance cannot be skipped.

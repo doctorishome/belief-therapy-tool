@@ -89,6 +89,9 @@ export function rememberMembershipToken(token) {
 /** Plain sentence for a failed live call. Does not include keys or case text. */
 export function friendlyAiError(err) {
   const code = err && err.code;
+  if (code === "BUDGET") {
+    return "This month's Clinical Companion allowance has been used. It resets on the 1st.";
+  }
   if (code === "MEMBER_REQUIRED" || code === "NO_NETWORK") {
     return "Please open Clinical Companion from the Counselors' Room.";
   }
@@ -130,5 +133,31 @@ export async function complete(prepared) {
     e.code = code;
     throw e;
   }
-  return { content: body.content || "", thinking: body.thinking || "", model: body.model || CONFIG.model, mock: false };
+  return {
+    content: body.content || "",
+    thinking: body.thinking || "",
+    model: body.model || CONFIG.model,
+    mock: false,
+    offTopic: !!body.offTopic,
+    usage: body.usage || null,
+  };
+}
+
+export async function fetchUsage() {
+  if (isMock()) return null;
+  const headers = { "Content-Type": "application/json" };
+  const token = sessionStorage.getItem("cc-membership-token") || "";
+  if (token) headers.Authorization = "Bearer " + token;
+  try {
+    const res = await fetch(String(CONFIG.proxyUrl).trim(), {
+      method: "POST",
+      headers,
+      body: JSON.stringify({ action: "usage" }),
+    });
+    const body = await res.json().catch(() => ({}));
+    if (!res.ok) return null;
+    return body.usage || null;
+  } catch {
+    return null;
+  }
 }

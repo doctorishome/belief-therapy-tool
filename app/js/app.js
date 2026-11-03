@@ -3,7 +3,7 @@ import { esc, render as renderMd, toPlain } from "./md.js";
 import { findLeaks } from "./deidentify.js";
 import * as vault from "./vault.js";
 import { sampleCases } from "./samples.js";
-import { deidentify, prepareChat, preparePlan, complete, isMock, rememberMembershipToken, friendlyAiError } from "./ai.js";
+import { deidentify, prepareChat, preparePlan, complete, isMock, rememberMembershipToken, friendlyAiError, fetchUsage } from "./ai.js";
 import { formatPlanRecord } from "./prompt.js";
 import { loadCatalog, loadBundledDoc } from "./library.js";
 
@@ -87,6 +87,23 @@ function modal({ title, html, okLabel = "OK", cancelLabel = "Cancel", danger = f
 
 function confirmBox(title, text, okLabel, danger) {
   return modal({ title, html: `<p>${esc(text)}</p>`, okLabel, cancelLabel: "Cancel", danger });
+}
+
+function showUsage(usage) {
+  const box = $("#usage-meter");
+  if (!box) return;
+  if (!usage || isMock()) { box.hidden = true; return; }
+  const percent = Math.max(0, Math.min(100, Number(usage.percent) || 0));
+  box.hidden = false;
+  box.classList.toggle("warn", percent >= 70 && percent < 100);
+  box.classList.toggle("full", percent >= 100);
+  $("#usage-label").textContent = percent + "% of monthly allowance";
+  $("#usage-bar").style.width = percent + "%";
+  box.setAttribute("aria-label", percent + "% of this month's allowance used");
+}
+
+async function refreshUsage() {
+  try { showUsage(await fetchUsage()); } catch { /* the meter stays as it was */ }
 }
 
 function goCounselors() { location.href = CONFIG.counselorsReturnUrl; }
@@ -419,7 +436,9 @@ async function sendQuestion(text) {
   try {
     const result = await complete(prepared);
     reply.content = result.content || "(No answer.)";
+    reply.offTopic = !!result.offTopic;
     reply.streaming = false;
+    if (result.usage) showUsage(result.usage);
   } catch (err) {
     s.messages.pop();
     s.messages.pop();
@@ -707,6 +726,7 @@ function bind() {
       $("#setup-pw").value = "";
       $("#setup-pw2").value = "";
       showHome();
+      refreshUsage();
       toast("Encrypted records created in this browser. Three fictional cases are included.");
     } catch (ex) { $("#setup-error").textContent = ex.message; }
     finally { $("#setup-submit").disabled = false; $("#setup-submit").textContent = "Create encrypted records"; }
@@ -721,6 +741,7 @@ function bind() {
       $("#unlock-pw").value = "";
       state.cases = data.cases;
       showHome();
+      refreshUsage();
     } catch (ex) {
       $("#unlock-error").textContent = ex.code === "WRONG_PASSWORD" ? "That passphrase did not open these records." : ex.message;
     } finally { btn.disabled = false; btn.textContent = "Unlock"; }
