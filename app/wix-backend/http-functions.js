@@ -9,7 +9,7 @@
  * to the browser. Request text is not written to a collection.
  *
  * URL after you publish:
- *   https://doctorishome.wixstudio.com/website-6/_functions/clinicalCompanion
+ *   https://www.beliefcounselor.com/_functions/clinicalCompanion
  * Put that single URL in app/config.js (proxyUrl) and set mode to "live".
  * Any other server that accepts the same JSON can be used instead.
  */

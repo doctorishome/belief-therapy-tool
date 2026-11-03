@@ -16,8 +16,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOOLS = os.path.join(ROOT, "tools")
 OUT = os.path.join(ROOT, "belief-cards")
 CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
-PEARLS = "https://doctorishome.wixstudio.com/website-6/scriptures?topic="
-LIST_PAGE = "https://doctorishome.wixstudio.com/website-6/spiritual-religious-false-beliefs"
+PEARLS = "https://www.beliefcounselor.com/scriptures?topic="
+LIST_PAGE = "https://www.beliefcounselor.com/spiritual-religious-false-beliefs"
 TRANSLATION_NOTE = ("Scripture quotations are from the Berean Standard Bible (BSB), "
                     "which is in the public domain.")
 

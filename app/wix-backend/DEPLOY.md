@@ -20,7 +20,7 @@ If the site already has an `http-functions.js`, do not delete it. Copy `options_
 
 The address, after you publish, is:
 
-`https://doctorishome.wixstudio.com/website-6/_functions/clinicalCompanion`
+`https://www.beliefcounselor.com/_functions/clinicalCompanion`
 
 That is the only address the browser app needs. A different server can replace Wix later. Put its address in the same one place: `proxyUrl` in `app/config.js`.
 
@@ -93,4 +93,4 @@ Later, only after a signed BAA and zero data retention: **HIPAA-compliant proces
 
 ## Back to Counselors
 
-The app’s Back to Counselors button opens `https://doctorishome.wixstudio.com/website-6/blank-11`. That is the Wix page linked from the public home page (“Enter the Counselor’s Room”), and it is where `counselors/welcome.html` is embedded. If you rename that page, change `counselorsReturnUrl` in `app/config.js` only.
+The app’s Back to Counselors button opens `https://www.beliefcounselor.com/blank-11`, the Counselors’ Room. That page embeds `counselors/welcome.html`. If you rename it, change `counselorsReturnUrl` in `app/config.js` only.

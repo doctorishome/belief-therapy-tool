@@ -165,7 +165,7 @@ Base address: `https://doctorishome.github.io/belief-therapy-tool/belief-cards/`
 - Cards 1, 26, 41, 42, 45, 52 use slightly tighter print spacing on the belief page (`"print_tight": true`, style in `tools/print-tight.css`; card 1 has it in its HTML) so their PDFs keep their original page count. Phone view is unchanged.
 
 ## Psychological/Cognitive belief cards (started Oct 17, 2026)
-- Wix page: https://doctorishome.wixstudio.com/website-6/blank-7 ("Psychological/Cognitive False Beliefs", not yet in the menu). Its content is an HTML embed (#html1): 10 personality-disorder boxes, 5 beliefs each.
+- Wix page: https://www.beliefcounselor.com/blank-7 ("Psychological/Cognitive False Beliefs", not yet in the menu). Its content is an HTML embed (#html1): 10 personality-disorder boxes, 5 beliefs each.
 - Cards live in `belief-cards/psychological/` as hand-made HTML (no builder yet). Card #1: Psych-001-If-I-Let-My-Guard-Down.html (+ PDF), linked from the Paranoid belief "Relaxing my guard leaves me defenseless." via `<a class="cardlink">` in the embed code.
 - Next cards are drafted by ChatGPT from Brian's desktop file "Instructions for ChatGPT - Next Psych Card" (template = card #1); Brian uploads them here, then each is linked from its belief in the embed and the site republished.
 - To do: add page to menu + rename its address; make the page's belief wording match card titles.
@@ -189,7 +189,7 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - Search instructions: `lie-finder/search-instructions.md` (safety and real needs first, 5–7 lies in Strong fit / Likely / Worth checking, why it fits, confirming questions, ask for missing client words). Test 1 (single mother, can't feed five children) approved by Brian Oct 21.
 - Next: one or two more test cases, then the members-only search page on Pearls Working 5.
 - Oct 21: Lie Finder page built: `lie-finder/app.html` (shown on the Wix page inside an "Embed a site" element). Wix code to paste once: `lie-finder/wix-code/lieFinder.web.js` (backend, file `backend/lieFinder.web.js`) and `lie-finder/wix-code/page-code.js` (page code; element must be `#html1`). Needs secret `ANTHROPIC_API_KEY` in the Wix Secrets Manager. Search is owner-only (Permissions.Admin) until the Counselor's Room has members; then change to Permissions.SiteMember. Model: claude-sonnet-5-5. Instructions and master list are read from GitHub, so updates need no Wix editing.
-- Oct 21: Lie Finder is live at https://doctorishome.wixstudio.com/website-6/lie-finder (page "Lie Finder", not in the menu; backend file backend/lieFinder.web.js and page code are in place; embed element #html1, 1100 x 2400). Tested: page and backend connect; search waits only for the ANTHROPIC_API_KEY secret.
+- Oct 21: Lie Finder is live at https://www.beliefcounselor.com/lie-finder (page "Lie Finder", not in the menu; backend file backend/lieFinder.web.js and page code are in place; embed element #html1, 1100 x 2400). Tested: page and backend connect; search waits only for the ANTHROPIC_API_KEY secret.
 - Oct 21: Renamed the tool to **False Belief Finder** (Brian's choice). Wix page address: /false-belief-finder. Repository folder stays `lie-finder/`.
 
 ## Articles

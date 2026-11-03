@@ -11,16 +11,15 @@ export const CONFIG = {
   /**
    * "Back to Counselors" opens this address.
    * counselors/welcome.html in this repo is the Counselors Welcome page.
-   * The public home page sends counselors here ("Enter the Counselor's Room"),
-   * and that Wix page embeds the welcome file.
-   * If the live address changes, edit only this value.
+   * The public site sends counselors to the Counselors' Room, which embeds
+   * counselors/welcome.html. If that page address changes, edit only this value.
    */
-  counselorsReturnUrl: "https://doctorishome.wixstudio.com/website-6/blank-11",
+  counselorsReturnUrl: "https://www.beliefcounselor.com/blank-11",
 
   /**
    * AI proxy. Empty while mode is "mock" (canned answers; nothing leaves the browser).
    * To go live, set mode to "live" and set this to one URL, for example:
-   *   https://doctorishome.wixstudio.com/website-6/_functions/clinicalCompanion
+   *   https://www.beliefcounselor.com/_functions/clinicalCompanion
    * Any other proxy that speaks the same JSON contract can be used instead.
    */
   proxyUrl: "",
@@ -41,5 +40,5 @@ export const CONFIG = {
   reasoningEffort: "medium",
 
   /** Pages allowed to hand the app a short-lived membership token (not an API key). */
-  membershipTokenOrigins: ["https://doctorishome.wixstudio.com"],
+  membershipTokenOrigins: ["https://www.beliefcounselor.com", "https://beliefcounselor.com"],
 };

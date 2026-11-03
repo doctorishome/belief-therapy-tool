@@ -15,19 +15,30 @@ GROUPS = [
     ("Welcome", [("Welcome", "welcome.html")]),
     ("Learn", [("The Process", "process.html"),
                ("Theory", "theory.html"),
+               ("Core False Beliefs", "core-beliefs.html"),
                ("Professional Tips", "tips.html")]),
     ("Practice", [("Case Studies", "cases.html"),
                   ("The Course", "course.html")]),
     ("Resources", [("Clinical Library", "library.html"),
                    ("Articles", "articles.html"),
-                   ("DSM-5-TR Reviews", "reviews.html")]),
+                   ("DSM-5-TR Reviews", "reviews.html"),
+                   ("Videos", "videos.html")]),
+]
+# Plain bar links. These open in the whole browser window (the pages sit in a Wix embed).
+ACCOUNT = [
+    ("My Subscriptions", "https://www.beliefcounselor.com/my-subscriptions"),
+    ("My Account", "https://www.beliefcounselor.com/account-settings"),
 ]
 OUTSIDE = [
-    ("False Belief Finder ↗", "https://doctorishome.wixstudio.com/website-6/false-belief-finder"),
-    ("Public Site ↗", "https://doctorishome.wixstudio.com/website-6"),
+    ("False Belief Finder ↗", "https://www.beliefcounselor.com/false-belief-finder"),
+    ("Public Site ↗", "https://www.beliefcounselor.com"),
 ]
 
 CSS = """/*nav*/
+.nav a.l,.nav a.pub,.nav a.needhelp{white-space:nowrap}
+.nav .acct{display:inline-flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:6px 18px}
+.nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
+.nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
 .nav .dd{position:relative}
 .nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
 .nav .dd>button::after{content:" \\25BE";color:var(--gold);font-size:.8em}
@@ -39,7 +50,8 @@ CSS = """/*nav*/
 .nav .dd.open .menu{display:block}
 .nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
 .nav .menu .x:hover{color:var(--navy);text-decoration:underline}
-@media(max-width:560px){.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.88rem}}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:8px 12px}}
+@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem;white-space:nowrap}.nav a.pub{font-size:.78rem;padding:4px 10px;white-space:nowrap}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
 /*/nav*/"""
 
 JS = """<!--navjs--><script>
@@ -69,8 +81,15 @@ def nav(current):
         here = any(f == current for _, f in pages)
         items = "".join(f'<a{" class=\"on\"" if f == current else ""} href="{f}">{t}</a>' for t, f in pages)
         out.append(f'<div class="dd{" on" if here else ""}"><button type="button" aria-haspopup="true" aria-expanded="false">{label}</button><div class="menu">{items}<button type="button" class="x" aria-label="Close menu">Close &#10005;</button></div></div>')
+    if ACCOUNT:
+        out.append('<span class="acct">')
+        for t, u in ACCOUNT:
+            out.append(f'<a class="l" target="_top" href="{u}">{t}</a>')
+        out.append('</span>')
     for t, u in OUTSIDE:
         out.append(f'<a class="pub" target="_blank" rel="noopener" href="{u}">{t}</a>')
+    if current == "welcome.html":
+        out.append('<a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a>')
     out.append('</div><!--/nav-->')
     return "".join(out)
 
@@ -79,6 +98,9 @@ for p in sorted(ROOT.glob("*.html")):
     h = p.read_text(encoding="utf-8")
     if "<!--standalone-->" in h:
         print("menu skipped (standalone):", p.name)
+        continue
+    if "<!--nav-->" not in h and '<div class="nav">' not in h:
+        print("menu skipped (no menu):", p.name)
         continue
     if "<!--nav-->" in h:
         h = re.sub(r"<!--nav-->.*?<!--/nav-->", lambda m: nav(p.name), h, flags=re.S)

@@ -8,7 +8,7 @@ GC=json.loads((ROOT/'tools/godly-counsel-chapters.json').read_text())
 BIBLE=sys.path.insert(0,str(ROOT/'tools'))
 AUD={'Anxiety':('https://music.wixstatic.com/mp3/dbdded_f67d414544534727acf6973d58189443.mp3','about 18 minutes'),
      'Depression':('https://music.wixstatic.com/mp3/dbdded_149606a27908493da01ac9492fb18ab1.mp3','about 20 minutes')}
-PB='https://doctorishome.wixstudio.com/website-6/scriptures?topic='
+PB='https://www.beliefcounselor.com/scriptures?topic='
 GCB='https://doctorishome.github.io/belief-therapy-tool/belief-cards/godly-counsel/'
 head=TPL[:TPL.index('<div class="card belief">')]
 endmark='<div class="foot">✦ ✦ ✦</div></div></div>'

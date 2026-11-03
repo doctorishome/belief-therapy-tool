@@ -36,7 +36,7 @@ $w.onReady(async function () {
         wixLocationFrontend.to('/blank-11');
       } catch (e) {
         console.error('Checkout could not start', e);
-        wixLocationFrontend.to('/plans-pricing');
+        wixLocationFrontend.to('/blank-11');
       }
     } else if (d.type === 'cc-login') {
       try { await authentication.promptLogin(); } catch (e) {}

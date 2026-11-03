@@ -5,7 +5,7 @@
    data-stage: explore (the level page)  or  results (the level's False Beliefs page)
    data-bar="no" shows only the meter (used on level pages, which have their own bar). */
 (function () {
-  var SITE = "https://doctorishome.wixstudio.com/website-6";
+  var SITE = "https://www.beliefcounselor.com";
   var LEVELS = [
     { key: "bio",           name: "Biological/Physical",     explore: "/biological-physical",     results: "/biological-physical-false-beliefs" },
     { key: "psych",         name: "Psychological/Cognitive", explore: "/psychological-cognitive", results: "/blank-7" },

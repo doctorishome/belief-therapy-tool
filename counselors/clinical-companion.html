@@ -5,9 +5,9 @@ body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);backg
 a{color:var(--navy2)}
 .nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
 .brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
-.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent}
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
 .nav a.l:hover{border-color:var(--gold)}.nav a.on{color:#fff;border-color:var(--gold)}
-.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px}
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
 .hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:54px 22px 46px;text-align:center}
 .hero h1{font-size:clamp(1.8rem,4.5vw,2.9rem);margin:0 0 10px;line-height:1.2}.hero p{max-width:720px;margin:0 auto;font-size:1.12rem;color:#dfe6f2}
 .hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
@@ -18,39 +18,36 @@ h3{color:var(--navy);margin:0 0 4px;font-size:1.12rem}
 .card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:16px 18px;box-shadow:0 2px 6px rgba(18,40,76,.06)}
 .card p{margin:4px 0 0;color:var(--mut);font-size:.96rem}
 .step{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:12px 0}
-.num{flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.num{flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
 .step p{margin:3px 0 0;color:var(--mut)}.step strong{color:var(--navy)}
 .cta{text-align:center;margin:36px 0 8px}
 .btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:13px 30px;border-radius:30px;font-size:1.05rem;border:0}
+.hero a.needhelp{margin-top:18px}
 .btn.soon{opacity:.85}.note{color:var(--mut);font-size:.9rem;text-align:center;margin-top:8px}
 .scrip{background:#fff;border-left:4px solid var(--gold);padding:10px 16px;margin:10px 0;font-style:italic}.scrip b{font-style:normal;color:var(--navy)}
 .tag{display:inline-block;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;background:var(--navy);color:var(--gold);border-radius:12px;padding:2px 10px;margin-bottom:6px}
 .tag.free{background:var(--gold);color:var(--navy)}
 ul.clean{padding-left:20px}ul.clean li{margin:5px 0}
 .foot{margin:40px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
-@media(max-width:560px){.nav{padding:8px 12px}.nav a.l{font-size:.85rem}.step{flex-direction:column}}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
 /*cc*/
 .card p{margin:0;color:var(--ink);font-size:1.02rem}
-.pill{display:inline-block;margin-top:14px;padding:7px 16px;border-radius:20px;background:#ece7da;color:#6d7686;font-size:.85rem;font-weight:bold;letter-spacing:.4px;border:1px solid #ddd4c0;cursor:default;user-select:none}
 ol.clean{list-style:none;margin:16px 0;padding:0;counter-reset:step}
 ol.clean li{counter-increment:step;display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:12px 0}
-ol.clean li::before{content:counter(step);flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
-.faq{margin:8px 0 4px}
-.faq details{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;margin:12px 0;box-shadow:0 2px 6px rgba(18,40,76,.06)}
-.faq summary{color:var(--navy);font-weight:bold;font-size:1.05rem;padding:14px 46px 14px 18px;cursor:pointer;list-style:none;position:relative}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::marker{content:""}
-.faq summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.35rem;font-weight:bold;line-height:1}
-.faq details[open] summary::after{content:"−"}
-.faq details p{margin:0;padding:0 18px 16px;color:var(--navy)}
-.faq summary:hover{background:#fbf8f0}
-.faq summary:focus{outline:2px solid var(--gold);outline-offset:-2px}
+ol.clean li::before{content:counter(step);flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.hero .backline{margin:18px 0 0}
+.hero a.back{color:#fff;font-weight:bold;text-decoration:none;border-bottom:2px solid var(--gold);font-size:1.08rem}
+.hero a.back:hover{color:var(--gold)}
+a.btn.startcc{display:inline-block;margin:0 auto 8px;padding:18px 42px;font-size:1.35rem;letter-spacing:.2px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+a.btn.startcc:hover{background:#e0b83a}
+.hero .startnote{margin:0 auto 18px;max-width:640px;color:#f6e7b8;font-size:1.02rem}
 h2.forms-title{margin-top:22px}
 .forms{display:flex;gap:18px;align-items:center;justify-content:space-between;margin:2px 0 4px}
-.forms p{margin:0;flex:1 1 auto}
+.forms p{margin:0;flex:1 1 auto;color:var(--ink)}
 .forms .btn{flex:0 0 auto;white-space:nowrap;padding:11px 22px}
 @media(max-width:640px){.forms{flex-direction:column;align-items:flex-start}.forms .btn{white-space:normal}}
 @media(max-width:560px){ol.clean li{flex-direction:column;align-items:flex-start}}
 /*/cc*/
 
-</style></head><body><!--standalone--><div class="hero"><div class="eyebrow">MEMBERS</div><h1>Clinical Companion</h1><p>Welcome to your Clinical Companion member area. Here you'll find the app download, a quick-start guide, help, and your account.</p></div><div class="wrap"><h2>Download the app</h2><div class="card"><p>The Windows download will be available here when your membership begins.</p><span class="pill">Coming soon</span></div><h2>Open in your browser</h2><div class="card"><p>Clinical Companion also opens full screen in its own browser tab. Case notes stay on your computer, encrypted with a passphrase you choose. They are not saved on this website. Use fictional cases only. This is not yet for real client data.</p><p style="margin-top:14px"><a class="btn" href="https://doctorishome.github.io/belief-therapy-tool/app/" target="_blank" rel="noopener">Open Clinical Companion</a></p></div><h2>Quick start</h2><ol class="clean"><li>Install Clinical Companion and open it.</li><li>Sign in with your website member login.</li><li>Try a practice case before using it with clients.</li><li>Write your session notes, then ask for an analysis.</li></ol><h2 class="forms-title">Client Forms for Your Practice</h2><div class="forms"><p>Enter your practice details once and download a New Client Packet and Confidentiality Agreement pre-filled with them. Review them with an attorney in your state.</p><a class="btn" href="practice-forms.html" target="_blank" rel="noopener">Open client forms</a></div><h2>Help</h2><p>Questions or problems? Contact us through the Contact page and we'll get back to you. For billing questions or special circumstances, contact us and we'll do our best to help.</p><h2>Your account</h2><p>Manage your membership, payment method, or cancel anytime from My Account. Your access continues to the end of the month you've paid for; the remainder of the month isn't refunded.</p><h2>Frequently asked questions</h2><div class="faq"><details><summary>How does the free week work?</summary><p>Your first 7 days are free. If you don't cancel before the week ends, your membership continues at $29.25 a month.</p></details><details><summary>How do I cancel?</summary><p>Sign in, open My Account, go to My Subscriptions, and choose Cancel. You can cancel anytime.</p></details><details><summary>Will I get a refund if I cancel?</summary><p>Your access continues to the end of the month you've paid for. The remainder of the month isn't refunded. If you have special circumstances, contact us.</p></details><details><summary>What happens to my access after I cancel?</summary><p>You keep full access until the end of your paid month. After that, the app and member resources are no longer available to you.</p></details><details><summary>What does 'fair use' mean?</summary><p>Clinical Companion is meant for your own professional caseload. Sharing your account, or very heavy automated use, isn't permitted.</p></details><details><summary>Who is Clinical Companion for?</summary><p>Professional counselors, psychologists, and students in training who want to integrate Christian belief counseling into their work.</p></details><details><summary>What do I need to run it?</summary><p>A current web browser. The browser version opens from this page. A Windows download is still planned. Use fictional cases only until you are told otherwise.</p></details><details><summary>Can I enter real client information?</summary><p>No. Use fictional cases only. The app is not yet for real client data.</p></details><details><summary>How do I get help?</summary><p>Contact us through the Contact page and we'll get back to you.</p></details></div><h2>Terms of use</h2><p>Clinical Companion supports, and does not replace, your professional clinical judgment. Use fictional or de-identified information unless your plan states otherwise. Fair use applies; excessive use isn't permitted.</p></div><div class="foot">Educational training for counselors. Never enter real client names or details. · Scripture quotations: Berean Standard Bible (BSB), public domain. · © Brian Campbell, Ph.D.</div></body></html>
+</style></head><body><!--standalone--><div class="hero"><a class="btn startcc" href="https://doctorishome.github.io/belief-therapy-tool/app/" target="_top">Start Clinical Companion</a><p class="startnote">Practice mode. Use fictional cases only. This is not yet for real client data.</p><div class="eyebrow">MEMBERS</div><h1>Clinical Companion</h1><p class="backline"><a class="back" href="https://www.beliefcounselor.com/blank-11" target="_top">← Back to the Counselors’ Room</a></p><a class="btn needhelp" href="https://www.beliefcounselor.com/help" target="_top">Need Help?</a></div><div class="wrap"><h2>Open Clinical Companion</h2><div class="card"><p>Clinical Companion runs in your web browser. Use Start Clinical Companion at the top of this page. It opens full screen in this tab. Use fictional cases only. This is not yet for real client data.</p></div><h2>Quick start</h2><ol class="clean"><li>Choose Start Clinical Companion. It opens full screen in this browser tab.</li><li>Sign in with your member login.</li><li>Try a practice case before you use it with clients.</li><li>Write your session notes, then ask for an analysis.</li></ol><h2>Counselor information</h2><div class="card"><p>Clinical Companion supports, and does not replace, your professional clinical judgment. Use fictional or de-identified information, and never enter real client names or details. It is meant for your own professional work.</p></div><h2 class="forms-title">Client Forms for Your Practice</h2><div class="forms"><p>Enter your practice details once. A New Client Packet and a Confidentiality Agreement open already filled in with those details. Review them with an attorney in your state.</p><a class="btn" href="practice-forms.html" target="_blank" rel="noopener">Open client forms</a></div></div><div class="foot">Educational training for counselors. Never enter real client names or details. · <a href="https://www.beliefcounselor.com/account-settings" target="_top">My Account</a> · <a href="https://www.beliefcounselor.com/my-subscriptions" target="_top">My Subscriptions</a> · <a href="https://www.beliefcounselor.com/help" target="_top">Help</a></div></body></html>
