@@ -55,6 +55,8 @@ a.learn{color:var(--gold);font-size:.92rem;font-weight:bold;line-height:1.3}
 
 @media(min-width:1000px){.incl{grid-template-columns:repeat(4,1fr)}.frees{display:grid;grid-template-columns:1fr 1fr;gap:16px}.frees .free{margin:0}.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.steps3 .step{margin:0}}
 .lhero{padding:36px 22px 30px}.wrap{padding-top:16px}h2{margin-top:22px}.foot{margin-top:24px}.cta{margin:22px 0 4px}
+.lhero .helptop{margin:0 0 16px}
+.lhero .needhelp{box-shadow:0 2px 0 rgba(0,0,0,.15)}
 </style></head><body>
 <!--
   Counselors' landing page (public). Shown on the Wix "For Counselors" page to visitors who are not members.
@@ -62,7 +64,7 @@ a.learn{color:var(--gold);font-size:.92rem;font-weight:bold;line-height:1.3}
   Buttons send a message to the Wix page: cc-start-free-week (sign up and start the free week),
   cc-login (log in), navigate "/" (back to the public site).
 -->
-<div class="lhero"><div class="eyebrow">Belief Counseling for Counselors</div>
+<div class="lhero"><p class="helptop"><a class="btn needhelp" href="https://www.beliefcounselor.com/help" target="_top">Need Help?</a></p><div class="eyebrow">Belief Counseling for Counselors</div>
 <h1>Join the Counselors’ Room</h1>
 <p>Learn Christian cognitive-behavioral Belief Counseling from a psychologist with 35 years of clinical experience, and practice it on guided cases before you meet your next client.</p>
 <div class="actions"><div class="startcol"><a class="btn" href="#" data-msg="cc-start-free-week">Start your free week</a></div><a class="btn ghost" href="#" data-path="/">&larr; Back to the public site</a></div>
@@ -99,7 +101,7 @@ a.learn{color:var(--gold);font-size:.92rem;font-weight:bold;line-height:1.3}
 <div class="cta"><a class="btn" href="#" data-msg="cc-start-free-week">Start your free week</a> &nbsp; <a class="btn ghost dark" href="#" data-path="/">&larr; Back to the public site</a>
 <div class="note">One week free, then $29.95 a month. Cancel anytime.</div></div>
 </div>
-<div class="foot">Educational training for counselors. Never enter real client names or details. · Scripture quotations: Berean Standard Bible (BSB), public domain. · © Brian Campbell, Ph.D. · <a href="https://doctorishome.github.io/belief-therapy-tool/counselors/help.html" target="_top">Help &amp; Support</a></div>
+<div class="foot">Educational training for counselors. Never enter real client names or details. · Scripture quotations: Berean Standard Bible (BSB), public domain. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
 <script>
 document.querySelectorAll("a[data-msg],a[data-path]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();
   var m=a.getAttribute("data-msg"),p=a.getAttribute("data-path");

@@ -13,9 +13,9 @@ body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);backg
 a{color:var(--navy2)}
 .nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
 .brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
-.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent}
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
 .nav a.l:hover{border-color:var(--gold)}.nav a.on{color:#fff;border-color:var(--gold)}
-.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px}
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
 .hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:54px 22px 46px;text-align:center}
 .hero h1{font-size:clamp(1.8rem,4.5vw,2.9rem);margin:0 0 10px;line-height:1.2}.hero p{max-width:720px;margin:0 auto;font-size:1.12rem;color:#dfe6f2}
 .hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
@@ -30,15 +30,21 @@ h3{color:var(--navy);margin:0 0 4px;font-size:1.12rem}
 .step p{margin:3px 0 0;color:var(--mut)}.step strong{color:var(--navy)}
 .cta{text-align:center;margin:36px 0 8px}
 .btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:13px 30px;border-radius:30px;font-size:1.05rem;border:0}
+.hero a.needhelp{margin-top:18px}
 .btn.soon{opacity:.85}.note{color:var(--mut);font-size:.9rem;text-align:center;margin-top:8px}
 .scrip{background:#fff;border-left:4px solid var(--gold);padding:10px 16px;margin:10px 0;font-style:italic}.scrip b{font-style:normal;color:var(--navy)}
 .tag{display:inline-block;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;background:var(--navy);color:var(--gold);border-radius:12px;padding:2px 10px;margin-bottom:6px}
 .tag.free{background:var(--gold);color:var(--navy)}
 ul.clean{padding-left:20px}ul.clean li{margin:5px 0}
 .foot{margin:40px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
-@media(max-width:560px){.nav{padding:8px 12px}.nav a.l{font-size:.85rem}.step{flex-direction:column}}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
 """
 NAV_CSS = """/*nav*/
+.nav a.l,.nav a.pub,.nav a.needhelp{white-space:nowrap}
+.nav .acct{display:inline-flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:6px 18px}
+.nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
+.nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
 .nav .dd{position:relative}
 .nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
 .nav .dd>button::after{content:" \\25BE";color:var(--gold);font-size:.8em}
@@ -49,7 +55,8 @@ NAV_CSS = """/*nav*/
 .nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
 .nav .dd.open .menu{display:block}
 @media(hover:hover){.nav .dd:hover .menu{display:block}}
-@media(max-width:560px){.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.88rem}}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:8px 12px}}
+@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
 /*/nav*/"""
 NAV_JS = """<!--navjs--><script>
 document.querySelectorAll('.nav .dd>button').forEach(function(b){
@@ -63,6 +70,7 @@ document.addEventListener('click',function(){document.querySelectorAll('.nav .dd
 </script><!--/navjs-->"""
 def nav(active):
     # These pages sit in a Wix embed. Counselor links stay in the box. Public links open a new tab.
+    # My Subscriptions and My Account open in the whole browser window (target="_top").
     # The free-week button messages the parent page; the embed sandbox blocks target="_top".
     current = active + '.html'
     groups = [
@@ -82,6 +90,11 @@ def nav(active):
         ("False Belief Finder \u2197", SITE + "/false-belief-finder"),
         ("Public Site \u2197", SITE),
     ]
+    # Whole-window links. Plain bar links (same style as Welcome), not the gold buttons.
+    account = [
+        ("My Subscriptions", SITE + "/my-subscriptions"),
+        ("My Account", SITE + "/account-settings"),
+    ]
     out = ['<!--nav--><div class="nav"><div class="brand">Belief Counseling<small>For Counselors</small></div>']
     for label, pages in groups:
         if len(pages) == 1:
@@ -91,17 +104,24 @@ def nav(active):
         here = any(f == current for _, f in pages)
         items = ''.join('<a%s href="%s">%s</a>' % (' class="on"' if f == current else '', f, t) for t, f in pages)
         out.append('<div class="dd%s"><button type="button" aria-haspopup="true" aria-expanded="false">%s</button><div class="menu">%s</div></div>' % (' on' if here else '', label, items))
+    if account:
+        out.append('<span class="acct">')
+        for t, u in account:
+            out.append('<a class="l" target="_top" href="%s">%s</a>' % (u, t))
+        out.append('</span>')
     for t, u in outside:
         out.append('<a class="pub" target="_blank" rel="noopener" href="%s">%s</a>' % (u, t))
+    if active == 'welcome':
+        out.append('<a class="needhelp" target="_top" href="%s">Need Help?</a>' % HELP_URL)
     out.append('</div><!--/nav-->')
     return ''.join(out)
 FOOT='<div class="foot">Educational training for counselors. Never enter real client names or details. · Scripture quotations: Berean Standard Bible (BSB), public domain. · © Brian Campbell, Ph.D.</div>'
-HELP_URL='https://doctorishome.github.io/belief-therapy-tool/counselors/help.html'
+HELP_URL='https://www.beliefcounselor.com/help'
 HELP_A='<a href="%s" target="_top">Help &amp; Support</a>'%HELP_URL
 def foot_with_help(foot=None):
     base=FOOT if foot is None else foot
     return base.replace('</div>',' · %s</div>'%HELP_A,1)
-def page(key,title,hero_sub,body,eyebrow='Belief Counseling for Counselors', extra_css='', with_nav=True, foot=None):
+def page(key,title,hero_sub,body,eyebrow='Belief Counseling for Counselors', extra_css='', with_nav=True, foot=None, hero_extra=''):
     # with_nav=False is a standalone embed (no menu, no outside links, no script).
     # counselor_nav.py leaves files marked <!--standalone--> alone.
     nav_css = NAV_CSS if with_nav else ''
@@ -110,7 +130,7 @@ def page(key,title,hero_sub,body,eyebrow='Belief Counseling for Counselors', ext
     use_foot = FOOT if foot is None else foot
     h='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>%s</title><style>%s%s%s'%(html.escape(title),CSS,extra_css,nav_css)
     h+='\n</style></head><body>'
-    h+=top+'<div class="hero"><div class="eyebrow">%s</div><h1>%s</h1><p>%s</p></div><div class="wrap">%s</div>%s%s</body></html>'%(eyebrow,title,hero_sub,body,use_foot,js)
+    h+=top+'<div class="hero"><div class="eyebrow">%s</div><h1>%s</h1><p>%s</p>%s</div><div class="wrap">%s</div>%s%s</body></html>'%(eyebrow,title,hero_sub,hero_extra,body,use_foot,js)
     (OUT/('%s.html'%key)).write_text(h)
 def cards(items, extra=''): return '<div class="grid">'+''.join('<div class="card"><h3>%s</h3><p>%s</p></div>'%i for i in items)+extra+'</div>'
 JOIN='<div class="cta"><a class="btn soon" target="_blank" href="https://www.beliefcounselor.com/blank-11#clinical-companion" onclick="window.parent.postMessage({type:\'cc-start-free-week\'}, \'*\'); return false;">Start your free week</a><div class="note">One week free, then $29.95 a month.</div></div>'
@@ -286,7 +306,8 @@ page('clinical-companion','Clinical Companion',
  '<h2>Your account</h2><p>Manage your membership, payment method, or cancel anytime from My Account. Your access continues to the end of the month you\'ve paid for; the remainder of the month isn\'t refunded.</p>'
  + FAQ_HTML +
  '<h2>Terms of use</h2><p>Clinical Companion supports, and does not replace, your professional clinical judgment. Use fictional or de-identified information unless your plan states otherwise. Fair use applies; excessive use isn\'t permitted.</p>',
- eyebrow='MEMBERS', extra_css=CC_CSS, with_nav=False, foot=foot_with_help())
+ eyebrow='MEMBERS', extra_css=CC_CSS, with_nav=False, foot=foot_with_help(),
+ hero_extra='<a class="btn needhelp" href="%s" target="_top">Need Help?</a>'%HELP_URL)
 # 9 Help & Support (public). Linked with target="_top" because the counselor pages sit in a Wix iframe.
 HELP_CSS = '''/*help*/
 .faq{margin:8px 0 4px}
@@ -314,7 +335,9 @@ HELP_SIGNUP = (
 )
 HELP_FAQS = [
  ("How does sign-up and the free week work?", HELP_SIGNUP),
- ("How do I cancel?", "Sign in, then open My Account \u2192 My Subscriptions \u2192 Cancel. You can cancel anytime."),
+ ("How do I cancel?",
+  '<p>Sign in, then open My Account \u2192 My Subscriptions \u2192 Cancel. You can cancel anytime.</p>'
+  '<p>In the Counselors\u2019 Room, use <a href="https://www.beliefcounselor.com/my-subscriptions" target="_top">My Subscriptions</a> in the menu.</p>'),
  ("Will I get a refund if I cancel?", "If you cancel during your free week, you pay nothing. If you cancel after you\u2019ve been billed, you keep access until the end of that billing month, and you won\u2019t be billed again. The rest of that month isn\u2019t refunded. If you have special circumstances, contact us."),
  ("What do I need to run it?", "A computer with an up-to-date web browser and an internet connection."),
  ("Can I enter real client information?", "Use fictional or de-identified information unless your plan states otherwise."),
@@ -325,7 +348,8 @@ page('help','Help & Support',
  "Questions about signing up, your membership, or Clinical Companion? We\u2019re glad to help.",
  '<h2>Contact</h2>'
  '<div class="card"><h3>Email Brian</h3>'
- '<p>Write to <a href="mailto:brian@beliefcounselor.com">brian@beliefcounselor.com</a>. We aim to reply within 1-2 business days.</p></div>'
+ '<p>Write to <a href="mailto:brian@beliefcounselor.com">brian@beliefcounselor.com</a>. We aim to reply within 1-2 business days.</p>'
+ '<p>Prefer to type here? Use the Send us a Message form on this page.</p></div>'
  + HELP_FAQ_HTML +
  '<h2>Troubleshooting</h2>'
  '<div class="card"><h3>I can\u2019t sign in, or I forgot my password</h3>'
