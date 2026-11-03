@@ -36,6 +36,14 @@
       "file": "schizophrenia-teaching-overview.md",
       "href": "../counselors/reviews/schizophrenia-teaching-overview.pdf",
       "starter": true
+    },
+    {
+      "bundledId": "starter:cognitive-restructuring-christian-cbt",
+      "category": "Treatment approaches",
+      "subcategory": "Cognitive Restructuring",
+      "label": "Cognitive Restructuring and Christian CBT: Teaching Review",
+      "file": "cognitive-restructuring-christian-cbt.md",
+      "starter": true
     }
   ]
 }
