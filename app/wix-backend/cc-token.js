@@ -4,24 +4,20 @@
  *
  * Paste this file into the site Backend folder as cc-token.js.
  */
+import { createHmac, timingSafeEqual } from "crypto";
+import { Buffer } from "buffer";
 
 const TOKEN_MS = 8 * 60 * 60 * 1000;
 
-function bytesToB64Url(bytes) {
-  let s = "";
-  const u = new Uint8Array(bytes);
-  for (let i = 0; i < u.length; i++) s += String.fromCharCode(u[i]);
-  return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+function b64url(buf) {
+  return Buffer.from(buf).toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
 }
-function b64UrlToBytes(s) {
+function fromB64url(s) {
   const pad = s.length % 4 === 0 ? "" : "=".repeat(4 - (s.length % 4));
-  const raw = atob(s.replace(/-/g, "+").replace(/_/g, "/") + pad);
-  const u = new Uint8Array(raw.length);
-  for (let i = 0; i < raw.length; i++) u[i] = raw.charCodeAt(i);
-  return u;
+  return Buffer.from(s.replace(/-/g, "+").replace(/_/g, "/") + pad, "base64");
 }
-async function hmacKey(secret, usages) {
-  return crypto.subtle.importKey("raw", new TextEncoder().encode(secret), { name: "HMAC", hash: "SHA-256" }, false, usages);
+function hmac(secret, text) {
+  return createHmac("sha256", String(secret)).update(text, "utf8").digest();
 }
 
 export async function signMembershipToken(memberId, secret, extras = {}) {
@@ -30,23 +26,20 @@ export async function signMembershipToken(memberId, secret, extras = {}) {
     exp: Date.now() + TOKEN_MS,
     staff: !!extras.staff,
   });
-  const key = await hmacKey(secret, ["sign"]);
-  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(payload));
-  return bytesToB64Url(new TextEncoder().encode(payload)) + "." + bytesToB64Url(sig);
+  return b64url(Buffer.from(payload, "utf8")) + "." + b64url(hmac(secret, payload));
 }
 
 export async function verifyMembershipToken(token, secret) {
   const parts = String(token || "").split(".");
   if (parts.length !== 2) return null;
   let payloadText;
-  try { payloadText = new TextDecoder().decode(b64UrlToBytes(parts[0])); } catch { return null; }
-  const key = await hmacKey(secret, ["verify"]);
-  let ok = false;
-  try { ok = await crypto.subtle.verify("HMAC", key, b64UrlToBytes(parts[1]), new TextEncoder().encode(payloadText)); }
-  catch { return null; }
-  if (!ok) return null;
+  try { payloadText = fromB64url(parts[0]).toString("utf8"); } catch (e) { return null; }
+  const expected = hmac(secret, payloadText);
+  let given;
+  try { given = fromB64url(parts[1]); } catch (e) { return null; }
+  if (given.length !== expected.length || !timingSafeEqual(given, expected)) return null;
   let payload;
-  try { payload = JSON.parse(payloadText); } catch { return null; }
+  try { payload = JSON.parse(payloadText); } catch (e) { return null; }
   if (!payload || !payload.memberId || typeof payload.exp !== "number" || payload.exp < Date.now()) return null;
   return payload;
 }

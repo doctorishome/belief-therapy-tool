@@ -34,13 +34,14 @@ export const mintClinicalCompanionToken = webMethod(Permissions.Anyone, async ()
   let memberId = "";
   try {
     const current = await members.getCurrentMember();
+    /** @type {any} */
     const member = current && current.member ? current.member : current;
     memberId = member && member._id ? String(member._id) : "";
   } catch (e) { memberId = ""; }
   if (!memberId && !staff) throw new Error("Sign in on the website first.");
   if (!staff) {
     const list = await orders.memberListOrders();
-    const active = ((list && list.orders) || []).find((order) => order && (order.status === "ACTIVE" || order.statusNew === "ACTIVE"));
+    const active = ((list && list.orders) || []).find((/** @type {any} */ order) => order && (order.status === "ACTIVE" || order.statusNew === "ACTIVE"));
     if (!active) throw new Error("An active membership is required.");
   }
   const secret = secretString(await elevatedGetSecretValue("CC_MEMBERSHIP_SECRET"));

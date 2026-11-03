@@ -72,10 +72,10 @@ function secretString(value) {
 async function memberFromWixSession() {
   try {
     const list = await orders.memberListOrders();
-    return ((list && list.orders) || []).find((order) => {
+    return ((list && list.orders) || []).find((/** @type {any} */ order) => {
       if (!order || (order.status !== "ACTIVE" && order.statusNew !== "ACTIVE")) return false;
       if (!PLAN_NAME_INCLUDES) return true;
-      return String(order.planName || "").toLowerCase().includes(PLAN_NAME_INCLUDES.toLowerCase());
+      return String(order.planName || "").toLowerCase().includes(String(PLAN_NAME_INCLUDES).toLowerCase());
     }) || null;
   } catch {
     return null;

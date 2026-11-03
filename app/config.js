@@ -34,7 +34,7 @@ export const CONFIG = {
 
   /** Suggested model name. The proxy may use its own. */
   model: "grok-4.7",
-  maxTokens: 4000,
+  maxTokens: 3000,
   reasoningEffort: "medium",
 
   /** Pages allowed to hand the app a short-lived membership token (not an API key). */

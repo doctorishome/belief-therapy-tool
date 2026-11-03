@@ -4,7 +4,9 @@ import { deidentifyCase, findLeaks } from "../js/deidentify.js";
 import { sampleCases } from "../js/samples.js";
 import { sealObject, openEnvelope } from "../js/vault.js";
 import { prepareChat } from "../js/ai.js";
-import { standingText } from "../js/standing.js";
+import { buildMessages } from "../js/prompt.js";
+import { CONFIG } from "../config.js";
+import { loadStanding } from "../js/standing.js";
 import { mockReply } from "../js/mock.js";
 import { friendlyAiError } from "../js/ai.js";
 import { signMembershipToken, verifyMembershipToken } from "../wix-backend/cc-token.js";
@@ -47,12 +49,38 @@ test("send preview shows the case text and hides standing instructions", async (
     userDocs: [],
     question: "What diagnostic considerations apply?",
   });
+  const standing = await loadStanding();
+  const again = await prepareChat({
+    caseRecord: c,
+    caseText: deid.text,
+    history: [{ role: "user", content: "What diagnostic considerations apply?" }],
+    useLibrary: false,
+    userDocs: [],
+    question: "What diagnostic considerations apply?",
+  });
   const previewJson = JSON.stringify(prepared.preview);
   assert.equal(previewJson.includes("Sam Fictional"), false);
-  assert.equal(previewJson.includes(standingText().slice(0, 40)), false);
-  assert.match(prepared.messages[0].content, /STANDING INSTRUCTIONS/);
+  assert.equal(previewJson.includes("Prime Directives"), false);
+  assert.equal(prepared.messages[0].role, "system");
+  assert.equal(prepared.messages[0].content, standing);
+  assert.equal(again.messages[0].content, prepared.messages[0].content);
+  assert.match(prepared.messages[0].content, /AI assistant inside Clinical Companion/);
+  assert.equal(/local AI/i.test(prepared.messages[0].content), false);
+  assert.match(prepared.messages[1].content, /DE-IDENTIFIED CASE/);
+  assert.equal(prepared.messages[0].content.includes("REFERENCE MATERIAL"), false);
   assert.match(prepared.preview.caseText, /\[CLIENT\]/);
   assert.ok(prepared.preview.standingWords > 10);
+  assert.equal(prepared.messages[0].content.includes("maxTokens"), false);
+});
+
+test("library passages come after the standing instructions", async () => {
+  const standing = await loadStanding();
+  const messages = await buildMessages("DE-IDENTIFIED CASE", [], { text: "LIBRARY PASSAGE XYZ", sources: [] });
+  assert.equal(messages[0].role, "system");
+  assert.equal(messages[0].content, standing);
+  assert.equal(messages[0].content.includes("LIBRARY PASSAGE XYZ"), false);
+  assert.match(messages[1].content, /LIBRARY PASSAGE XYZ/);
+  assert.equal(CONFIG.maxTokens, 3000);
 });
 
 test("a missing membership or a dead proxy gets a plain sentence", () => {

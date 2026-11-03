@@ -5,7 +5,7 @@
 import { CONFIG } from "../config.js";
 import { deidentifyCase, findLeaks } from "./deidentify.js";
 import { buildMessages, buildPlanMessages } from "./prompt.js";
-import { standingWords } from "./standing.js";
+import { loadStanding, standingWords } from "./standing.js";
 import { searchDocs, contextFromHits, bundledSearchDocs } from "./library.js";
 import { mockReply } from "./mock.js";
 
@@ -32,20 +32,22 @@ export async function prepareChat({ caseRecord, caseText, history, useLibrary, u
   const hist = (history || []).filter((m) => m && (m.role === "user" || m.role === "assistant"));
   const concerns = (/Presenting concerns:\n([\s\S]*?)(\n\n|$)/.exec(caseText) || [])[1] || "";
   const context = await libraryContext((question + "\n" + concerns).slice(0, 1500), useLibrary, userDocs);
-  const messages = buildMessages(caseText, hist, context);
+  const standing = await loadStanding();
+  const messages = await buildMessages(caseText, hist, context);
   const leaks = findLeaks([caseText, ...hist.map((m) => m.content), question || "", context.text || ""].join("\n"), caseRecord);
   return {
     kind: "chat",
     messages,
     leaks,
     sources: context.sources,
-    preview: previewOf({ caseText, question, history: hist, context, leaks, kind: "chat" }),
+    preview: previewOf({ caseText, question, history: hist, context, leaks, kind: "chat", standingWords: standingWords(standing) }),
   };
 }
 
 export async function preparePlan({ caseRecord, caseText, useLibrary, userDocs }) {
   const context = await libraryContext(caseText.slice(0, 1500), useLibrary, userDocs);
-  const messages = buildPlanMessages(caseText, context.text);
+  const standing = await loadStanding();
+  const messages = await buildPlanMessages(caseText, context.text);
   const leaks = findLeaks([caseText, context.text || ""].join("\n"), caseRecord);
   return {
     kind: "plan",
@@ -59,11 +61,12 @@ export async function preparePlan({ caseRecord, caseText, useLibrary, userDocs }
       context,
       leaks,
       kind: "plan",
+      standingWords: standingWords(standing),
     }),
   };
 }
 
-function previewOf({ caseText, question, history, context, leaks, kind }) {
+function previewOf({ caseText, question, history, context, leaks, kind, standingWords: words = 0 }) {
   return {
     host: proxyLabel(),
     model: isMock() ? "mock-fictional" : CONFIG.model,
@@ -74,7 +77,7 @@ function previewOf({ caseText, question, history, context, leaks, kind }) {
     history: history || [],
     library: context.sources || [],
     libraryText: context.text || "",
-    standingWords: standingWords(),
+    standingWords: words,
     leaks,
   };
 }
