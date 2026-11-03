@@ -121,7 +121,7 @@ HELP_A='<a href="%s" target="_top">Help &amp; Support</a>'%HELP_URL
 def foot_with_help(foot=None):
     base=FOOT if foot is None else foot
     return base.replace('</div>',' · %s</div>'%HELP_A,1)
-def page(key,title,hero_sub,body,eyebrow='Belief Counseling for Counselors', extra_css='', with_nav=True, foot=None, hero_extra=''):
+def page(key,title,hero_sub,body,eyebrow='Belief Counseling for Counselors', extra_css='', with_nav=True, foot=None, hero_extra='', hero_lead=''):
     # with_nav=False is a standalone embed (no menu, no outside links, no script).
     # counselor_nav.py leaves files marked <!--standalone--> alone.
     nav_css = NAV_CSS if with_nav else ''
@@ -131,7 +131,7 @@ def page(key,title,hero_sub,body,eyebrow='Belief Counseling for Counselors', ext
     h='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>%s</title><style>%s%s%s'%(html.escape(title),CSS,extra_css,nav_css)
     h+='\n</style></head><body>'
     sub_html = ('<p>%s</p>' % hero_sub) if hero_sub else ''
-    h+=top+'<div class="hero"><div class="eyebrow">%s</div><h1>%s</h1>%s%s</div><div class="wrap">%s</div>%s%s</body></html>'%(eyebrow,title,sub_html,hero_extra,body,use_foot,js)
+    h+=top+'<div class="hero">%s<div class="eyebrow">%s</div><h1>%s</h1>%s%s</div><div class="wrap">%s</div>%s%s</body></html>'%(hero_lead,eyebrow,title,sub_html,hero_extra,body,use_foot,js)
     (OUT/('%s.html'%key)).write_text(h)
 def cards(items, extra=''): return '<div class="grid">'+''.join('<div class="card"><h3>%s</h3><p>%s</p></div>'%i for i in items)+extra+'</div>'
 # The only link to /clinical-companion is the Featured card on the Counselors' Room.
@@ -259,6 +259,9 @@ ol.clean li::before{content:counter(step);flex:0 0 42px;width:42px;height:42px;b
 .hero .backline{margin:18px 0 0}
 .hero a.back{color:#fff;font-weight:bold;text-decoration:none;border-bottom:2px solid var(--gold);font-size:1.08rem}
 .hero a.back:hover{color:var(--gold)}
+a.btn.startcc{display:inline-block;margin:0 auto 8px;padding:18px 42px;font-size:1.35rem;letter-spacing:.2px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+a.btn.startcc:hover{background:#e0b83a}
+.hero .startnote{margin:0 auto 18px;max-width:640px;color:#f6e7b8;font-size:1.02rem}
 h2.forms-title{margin-top:22px}
 .forms{display:flex;gap:18px;align-items:center;justify-content:space-between;margin:2px 0 4px}
 .forms p{margin:0;flex:1 1 auto;color:var(--ink)}
@@ -272,11 +275,12 @@ CC_FOOT = (
  '<a href="https://www.beliefcounselor.com/account-settings" target="_top">My Account</a> · '
  '<a href="https://www.beliefcounselor.com/my-subscriptions" target="_top">My Subscriptions</a> · '
  '<a href="%s" target="_top">Help</a></div>' % HELP_URL)
+CC_APP = 'https://doctorishome.github.io/belief-therapy-tool/app/'
 page('clinical-companion','Clinical Companion', '',
  '<h2>Open Clinical Companion</h2>'
- '<div class="card"><p>Clinical Companion runs in your web browser. Open it from the Counselors’ Room.</p></div>'
+ '<div class="card"><p>Clinical Companion runs in your web browser. Use Start Clinical Companion at the top of this page. It opens full screen in this tab. Use fictional cases only. This is not yet for real client data.</p></div>'
  '<h2>Quick start</h2><ol class="clean">'
- '<li>From the Counselors’ Room, open Clinical Companion. It runs in your browser.</li>'
+ '<li>Choose Start Clinical Companion. It opens full screen in this browser tab.</li>'
  '<li>Sign in with your member login.</li>'
  '<li>Try a practice case before you use it with clients.</li>'
  '<li>Write your session notes, then ask for an analysis.</li></ol>'
@@ -286,6 +290,7 @@ page('clinical-companion','Clinical Companion', '',
  '<div class="forms"><p>Enter your practice details once. A New Client Packet and a Confidentiality Agreement open already filled in with those details. Review them with an attorney in your state.</p>'
  '<a class="btn" href="practice-forms.html" target="_blank" rel="noopener">Open client forms</a></div>',
  eyebrow='MEMBERS', extra_css=CC_CSS, with_nav=False, foot=CC_FOOT,
+ hero_lead='<a class="btn startcc" href="%s" target="_top">Start Clinical Companion</a><p class="startnote">Practice mode. Use fictional cases only. This is not yet for real client data.</p>' % CC_APP,
  hero_extra='<p class="backline"><a class="back" href="%s" target="_top">← Back to the Counselors’ Room</a></p><a class="btn needhelp" href="%s" target="_top">Need Help?</a>' % (ROOM_PAGE, HELP_URL))
 # 9 Help & Support (public). Linked with target="_top" because the counselor pages sit in a Wix iframe.
 HELP_CSS = '''/*help*/

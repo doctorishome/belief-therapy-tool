@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clinical Companion</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="test-banner" class="test-banner" role="status">
+  Fictional cases only. This app is not yet for real client data. A Business Associate Agreement is not in place, and zero data retention is not confirmed. Do not enter real names, contact details, or identifiers.
+</div>
+<header id="topbar" hidden>
+  <button class="brand-btn" id="nav-home" type="button"><span class="logo sm">CC</span> Clinical Companion</button>
+  <nav class="top-nav">
+    <button class="btn ghost" id="nav-library" type="button">Library</button>
+    <button class="btn ghost" id="nav-forms" type="button">Forms</button>
+  </nav>
+  <div class="spacer"></div>
+  <button class="btn ghost" id="nav-back" type="button">← Back to Counselors</button>
+  <button class="btn ghost" id="nav-privacy" type="button">Privacy</button>
+  <button class="btn ghost" id="nav-settings" type="button">Settings</button>
+  <button class="btn ghost" id="nav-lock" type="button">Lock</button>
+</header>
+<div id="app">
+
+  <section id="view-setup" class="view auth-view" hidden>
+    <div class="auth-card">
+      <div class="brand"><span class="logo">CC</span><div><h1>Clinical Companion</h1><p class="muted">A thinking partner for Christian counselors</p></div></div>
+      <h2>Create a passphrase</h2>
+      <p>Case records are encrypted in this browser with this passphrase. They are not saved on the website.</p>
+      <div class="warning-box"><strong>Important:</strong> this passphrase cannot be recovered. If you forget it, the records in this browser cannot be opened. Write it down and keep it somewhere safe.</div>
+      <form id="setup-form" autocomplete="off">
+        <label>Passphrase (8 or more characters) <input type="password" id="setup-pw" minlength="8" required></label>
+        <label>Type it again <input type="password" id="setup-pw2" minlength="8" required></label>
+        <label class="check"><input type="checkbox" id="setup-ack" required> I understand this passphrase cannot be recovered.</label>
+        <p class="error" id="setup-error"></p>
+        <button class="btn primary big" type="submit" id="setup-submit">Create encrypted records</button>
+      </form>
+      <p class="center"><button class="btn ghost" id="setup-back" type="button">← Back to Counselors</button></p>
+    </div>
+  </section>
+
+  <section id="view-unlock" class="view auth-view" hidden>
+    <div class="auth-card narrow">
+      <div class="brand"><span class="logo">CC</span><div><h1>Clinical Companion</h1><p class="muted">Your records are locked</p></div></div>
+      <form id="unlock-form" autocomplete="off">
+        <label>Passphrase <input type="password" id="unlock-pw" required autofocus></label>
+        <p class="error" id="unlock-error"></p>
+        <button class="btn primary big" type="submit" id="unlock-submit">Unlock</button>
+      </form>
+      <p class="muted small center">Encrypted with AES-GCM · stored only in this browser</p>
+      <p class="center"><button class="btn ghost" id="unlock-back" type="button">← Back to Counselors</button></p>
+    </div>
+  </section>
+
+  <section id="view-home" class="view page" hidden>
+    <div class="page-head">
+      <h2>Cases</h2>
+      <div class="spacer"></div>
+      <input type="search" id="search" placeholder="Search by name or concerns…" autocomplete="off">
+      <button class="btn primary" id="new-case" type="button">+ New case</button>
+    </div>
+    <p class="hint" id="home-mode"></p>
+    <div id="case-list" class="case-list"></div>
+  </section>
+
+  <section id="view-edit" class="view page" hidden>
+    <div class="page-head">
+      <button class="btn ghost" id="edit-back" type="button">← Back</button>
+      <h2 id="edit-title">New case</h2>
+      <div class="spacer"></div>
+      <button class="btn" id="edit-cancel" type="button">Cancel</button>
+      <button class="btn primary" id="edit-save" type="button">Save</button>
+    </div>
+    <form id="case-form" class="case-form" autocomplete="off">
+      <fieldset>
+        <legend>Identifying information</legend>
+        <p class="hint">Stored only in this browser, encrypted. Removed automatically before any AI preview.</p>
+        <div class="grid2">
+          <label>Client name <input name="name" required></label>
+          <label>Preferred name <input name="preferredName"></label>
+          <label>Date of birth <input name="dob" type="date"></label>
+          <label>Phone <input name="phone"></label>
+          <label>Email <input name="email" type="email"></label>
+          <label>Client ID <input name="clientId"></label>
+          <label class="span2">Address <input name="address"></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Clinical information</legend>
+        <label>Presenting concerns <textarea name="presentingConcerns" rows="3"></textarea></label>
+        <label>History <textarea name="history" rows="4"></textarea></label>
+        <div class="grid2">
+          <label>Working diagnoses <textarea name="workingDiagnoses" rows="3"></textarea></label>
+          <label>Confirmed diagnoses <textarea name="confirmedDiagnoses" rows="3"></textarea></label>
+        </div>
+        <label>Treatment plan <textarea name="treatmentPlan" rows="4"></textarea></label>
+        <label>10-session plan <textarea name="sessionPlan" rows="6" placeholder="Use Plan 10 sessions on the case, or write it here."></textarea></label>
+      </fieldset>
+      <fieldset>
+        <legend>Session notes</legend>
+        <div id="notes-editor"></div>
+        <button type="button" class="btn" id="add-note">+ Add session note</button>
+      </fieldset>
+    </form>
+  </section>
+
+  <section id="view-case" class="view" hidden>
+    <div class="case-head">
+      <button class="btn ghost" id="case-back" type="button">← All cases</button>
+      <h2 id="case-title"></h2>
+      <span id="case-sample-badge" class="badge sample" hidden>SAMPLE · fictional</span>
+      <div class="spacer"></div>
+      <button class="btn" id="case-edit" type="button">Edit record</button>
+      <button class="btn danger-ghost" id="case-delete" type="button">Delete case</button>
+    </div>
+    <div class="two-panel">
+      <div class="panel record">
+        <div class="panel-label record-label">Permanent record <span class="muted small">— saved, encrypted, this browser only</span></div>
+        <div id="record-body" class="record-body"></div>
+      </div>
+      <div class="panel ai">
+        <div class="panel-label ai-label">AI workspace <span class="small">— temporary · nothing here is saved until you add it</span></div>
+        <div id="ai-body" class="ai-body"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-library" class="view page" hidden>
+    <div class="page-head"><h2>Knowledge Library</h2></div>
+    <p class="hint">Teaching notes ship with the app and match the public DSM-5-TR reviews on the counselors site. Your own added notes are encrypted with your cases. Passages can be attached to an AI request; you see them in the preview before anything is sent.</p>
+    <div class="row wrap-row">
+      <input type="search" id="lib-search" placeholder="Filter the library…" autocomplete="off">
+      <button class="btn" id="lib-add" type="button">+ Add a text file…</button>
+      <input type="file" id="lib-file" accept=".txt,.md,text/plain" hidden>
+    </div>
+    <div id="lib-tree"></div>
+    <article id="lib-reader" class="card reader" hidden></article>
+  </section>
+
+  <section id="view-forms" class="view page" hidden>
+    <div class="page-head"><h2>Forms</h2></div>
+    <p class="hint">Blank forms only. Filled client paperwork stays in your encrypted case or on paper. Nothing on this page is uploaded.</p>
+    <div class="form-list" id="form-list"></div>
+  </section>
+
+  <section id="view-settings" class="view page" hidden>
+    <div class="page-head"><button class="btn ghost" id="settings-back" type="button">← Back</button><h2>Settings</h2></div>
+    <div class="settings">
+      <div class="card">
+        <h3>AI</h3>
+        <p id="settings-mode"></p>
+        <p class="hint">The browser never holds the xAI key. Live answers use the single proxy address in <code>app/config.js</code>. Until that is set, Mock mode answers with canned fictional drafts.</p>
+        <label class="check"><input type="checkbox" id="set-library"> Use the Knowledge Library on AI requests</label>
+        <label>Lock after idle time
+          <select id="set-autolock">
+            <option value="5">5 minutes</option>
+            <option value="15">15 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="60">60 minutes</option>
+            <option value="0">Never</option>
+          </select>
+        </label>
+        <label class="check"><input type="checkbox" id="set-speech"> Browser speech-to-text <span class="hint">(off by default; uses this browser’s dictation. The app does not store a recording.)</span></label>
+        <button class="btn primary" id="set-save" type="button">Save settings</button>
+        <span id="set-msg" class="ok-msg"></span>
+      </div>
+      <div class="card">
+        <h3>Passphrase</h3>
+        <form id="pw-form" autocomplete="off">
+          <label>Current passphrase <input type="password" id="pw-old" required></label>
+          <label>New passphrase (8+) <input type="password" id="pw-new" minlength="8" required></label>
+          <label>New passphrase again <input type="password" id="pw-new2" minlength="8" required></label>
+          <p class="error" id="pw-error"></p>
+          <button class="btn primary" type="submit">Change passphrase and re-encrypt</button>
+        </form>
+      </div>
+      <div class="card">
+        <h3>Encrypted backup</h3>
+        <p>Download a copy of every case. The file stays encrypted. It opens only with the passphrase in use when you exported it.</p>
+        <button class="btn" id="backup-export" type="button">Export encrypted backup</button>
+        <span id="backup-msg" class="ok-msg"></span>
+        <hr>
+        <h4>Restore</h4>
+        <p class="hint">Replaces the cases in this browser with the cases in the file.</p>
+        <label>Passphrase of that backup <input type="password" id="restore-pw" autocomplete="off"></label>
+        <button class="btn" id="backup-restore" type="button">Choose backup file…</button>
+        <input type="file" id="restore-file" accept=".json,application/json" hidden>
+        <p class="error" id="restore-msg"></p>
+      </div>
+      <div class="card">
+        <h3>Fictional samples</h3>
+        <p class="hint">Three invented cases ship with a new vault. You can add them again if you deleted them.</p>
+        <button class="btn" id="add-samples" type="button">Add fictional sample cases</button>
+        <span id="samples-msg" class="ok-msg"></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-privacy" class="view page" hidden>
+    <div class="page-head"><button class="btn ghost" id="privacy-back" type="button">← Back</button><h2>Privacy</h2></div>
+    <div id="privacy-body" class="card privacy"></div>
+  </section>
+</div>
+
+<div id="modal-backdrop" hidden>
+  <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <h3 id="modal-title"></h3>
+    <div id="modal-body"></div>
+    <div class="modal-actions">
+      <button class="btn" id="modal-cancel" type="button">Cancel</button>
+      <button class="btn primary" id="modal-ok" type="button">Send</button>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast" hidden><span id="toast-msg"></span></div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
