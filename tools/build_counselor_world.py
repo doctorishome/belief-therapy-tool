@@ -96,15 +96,21 @@ def nav(active):
     out.append('</div><!--/nav-->')
     return ''.join(out)
 FOOT='<div class="foot">Educational training for counselors. Never enter real client names or details. · Scripture quotations: Berean Standard Bible (BSB), public domain. · © Brian Campbell, Ph.D.</div>'
-def page(key,title,hero_sub,body,eyebrow='Belief Counseling for Counselors', extra_css='', with_nav=True):
+HELP_URL='https://doctorishome.github.io/belief-therapy-tool/counselors/help.html'
+HELP_A='<a href="%s" target="_top">Help &amp; Support</a>'%HELP_URL
+def foot_with_help(foot=None):
+    base=FOOT if foot is None else foot
+    return base.replace('</div>',' · %s</div>'%HELP_A,1)
+def page(key,title,hero_sub,body,eyebrow='Belief Counseling for Counselors', extra_css='', with_nav=True, foot=None):
     # with_nav=False is a standalone embed (no menu, no outside links, no script).
     # counselor_nav.py leaves files marked <!--standalone--> alone.
     nav_css = NAV_CSS if with_nav else ''
     top = nav(key) if with_nav else '<!--standalone-->'
     js = NAV_JS if with_nav else ''
+    use_foot = FOOT if foot is None else foot
     h='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>%s</title><style>%s%s%s'%(html.escape(title),CSS,extra_css,nav_css)
     h+='\n</style></head><body>'
-    h+=top+'<div class="hero"><div class="eyebrow">%s</div><h1>%s</h1><p>%s</p></div><div class="wrap">%s</div>%s%s</body></html>'%(eyebrow,title,hero_sub,body,FOOT,js)
+    h+=top+'<div class="hero"><div class="eyebrow">%s</div><h1>%s</h1><p>%s</p></div><div class="wrap">%s</div>%s%s</body></html>'%(eyebrow,title,hero_sub,body,use_foot,js)
     (OUT/('%s.html'%key)).write_text(h)
 def cards(items, extra=''): return '<div class="grid">'+''.join('<div class="card"><h3>%s</h3><p>%s</p></div>'%i for i in items)+extra+'</div>'
 JOIN='<div class="cta"><a class="btn soon" target="_blank" href="https://www.beliefcounselor.com/blank-11#clinical-companion" onclick="window.parent.postMessage({type:\'cc-start-free-week\'}, \'*\'); return false;">Start your free week</a><div class="note">One week free, then $29.95 a month.</div></div>'
@@ -280,5 +286,55 @@ page('clinical-companion','Clinical Companion',
  '<h2>Your account</h2><p>Manage your membership, payment method, or cancel anytime from My Account. Your access continues to the end of the month you\'ve paid for; the remainder of the month isn\'t refunded.</p>'
  + FAQ_HTML +
  '<h2>Terms of use</h2><p>Clinical Companion supports, and does not replace, your professional clinical judgment. Use fictional or de-identified information unless your plan states otherwise. Fair use applies; excessive use isn\'t permitted.</p>',
- eyebrow='MEMBERS', extra_css=CC_CSS, with_nav=False)
-print('built',[p[0] for p in PAGES]+['clinical-companion'])
+ eyebrow='MEMBERS', extra_css=CC_CSS, with_nav=False, foot=foot_with_help())
+# 9 Help & Support (public). Linked with target="_top" because the counselor pages sit in a Wix iframe.
+HELP_CSS = '''/*help*/
+.faq{margin:8px 0 4px}
+.faq details{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;margin:12px 0;box-shadow:0 2px 6px rgba(18,40,76,.06)}
+.faq summary{color:var(--navy);font-weight:bold;font-size:1.05rem;padding:14px 46px 14px 18px;cursor:pointer;list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::marker{content:""}
+.faq summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.35rem;font-weight:bold;line-height:1}
+.faq details[open] summary::after{content:"\u2212"}
+.faq details p{margin:0;padding:0 18px 16px;color:var(--navy)}
+.faq ol{margin:0 18px 8px 38px;padding:0;color:var(--navy)}
+.faq ol li{margin:5px 0}
+.faq summary:hover{background:#fbf8f0}
+.faq summary:focus{outline:2px solid var(--gold);outline-offset:-2px}
+.card + .card{margin-top:12px}
+/*/help*/
+'''
+HELP_SIGNUP = (
+ '<ol>'
+ '<li>Create your login with your email and a password.</li>'
+ '<li>Enter a credit card at checkout.</li>'
+ '<li>Nothing is charged during your 7-day free trial. Your membership starts at $29.95 a month on day 8 unless you cancel during the week. We\u2019ll email you a reminder 3 days before your free week ends.</li>'
+ '</ol>'
+ '<p>Cancel anytime in My Account \u2192 My Subscriptions. If you cancel after you\u2019ve been billed, you keep access until the end of that billing month, and you won\u2019t be billed again. The rest of that month isn\u2019t refunded.</p>'
+)
+HELP_FAQS = [
+ ("How does sign-up and the free week work?", HELP_SIGNUP),
+ ("How do I cancel?", "Sign in, then open My Account \u2192 My Subscriptions \u2192 Cancel. You can cancel anytime."),
+ ("Will I get a refund if I cancel?", "If you cancel during your free week, you pay nothing. If you cancel after you\u2019ve been billed, you keep access until the end of that billing month, and you won\u2019t be billed again. The rest of that month isn\u2019t refunded. If you have special circumstances, contact us."),
+ ("What do I need to run it?", "A computer with an up-to-date web browser and an internet connection."),
+ ("Can I enter real client information?", "Use fictional or de-identified information unless your plan states otherwise."),
+]
+HELP_FAQ_HTML = '<h2>Frequently asked questions</h2><div class="faq">' + ''.join(
+ '<details><summary>%s</summary>%s</details>' % (q, faq_body(a)) for q, a in HELP_FAQS) + '</div>'
+page('help','Help & Support',
+ "Questions about signing up, your membership, or Clinical Companion? We\u2019re glad to help.",
+ '<h2>Contact</h2>'
+ '<div class="card"><h3>Email Brian</h3>'
+ '<p>Write to <a href="mailto:brian@beliefcounselor.com">brian@beliefcounselor.com</a>. We aim to reply within 1-2 business days.</p></div>'
+ + HELP_FAQ_HTML +
+ '<h2>Troubleshooting</h2>'
+ '<div class="card"><h3>I can\u2019t sign in, or I forgot my password</h3>'
+ '<p>On the Wix sign-in page, choose Forgot password.</p></div>'
+ '<div class="card"><h3>I signed up, but I can\u2019t get into the Counselors\u2019 Room</h3>'
+ '<p>Make sure you\u2019re signed in with the same email you used at checkout. If you still can\u2019t get in, email us at <a href="mailto:brian@beliefcounselor.com">brian@beliefcounselor.com</a>.</p></div>'
+ '<div class="card"><h3>I was charged by mistake, or I was charged twice</h3>'
+ '<p>Email us at <a href="mailto:brian@beliefcounselor.com">brian@beliefcounselor.com</a> with the date and the amount. We\u2019ll look into it.</p></div>'
+ '<div class="card"><h3>Clinical Companion is for practice</h3>'
+ '<p>Clinical Companion\u2019s AI is for practice, on fictional cases only. Try a practice case before using it with clients. The cases are fictional composites. Use fictional or de-identified information unless your plan states otherwise. Never enter real client names or details. Clinical Companion supports, and does not replace, your professional clinical judgment.</p></div>',
+ extra_css=HELP_CSS)
+print('built',[p[0] for p in PAGES]+['clinical-companion','help'])
