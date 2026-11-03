@@ -7,6 +7,8 @@ import { prepareChat } from "../js/ai.js";
 import { buildMessages } from "../js/prompt.js";
 import { CONFIG } from "../config.js";
 import { loadStanding } from "../js/standing.js";
+import { readFile } from "node:fs/promises";
+import { chunkText, searchDocs } from "../js/library.js";
 import { mockReply } from "../js/mock.js";
 import { friendlyAiError } from "../js/ai.js";
 import { signMembershipToken, verifyMembershipToken } from "../wix-backend/cc-token.js";
@@ -81,6 +83,19 @@ test("library passages come after the standing instructions", async () => {
   assert.equal(messages[0].content.includes("LIBRARY PASSAGE XYZ"), false);
   assert.match(messages[1].content, /LIBRARY PASSAGE XYZ/);
   assert.equal(CONFIG.maxTokens, 3000);
+});
+
+test("the APA measures guide is retrieved for a first-session question", async () => {
+  const text = await readFile(new URL("../library/apa-adult-measures-guide.md", import.meta.url), "utf8");
+  const title = "Free APA DSM-5-TR Assessment Measures for Adults — Guide and Links";
+  const chunks = chunkText(title, text);
+  const urls = text.match(/https:\/\/www\.psychiatry\.org\/\S+/g) || [];
+  assert.ok(urls.length >= 30);
+  const joined = chunks.map((c) => c.text).join("\n");
+  for (const url of urls) assert.ok(joined.includes(url), "missing url " + url);
+  const hits = searchDocs([{ title, text }], "which assessment measures should I give after the first session", 4);
+  assert.ok(hits.some((h) => h.title === title));
+  assert.match(hits.map((h) => h.text).join("\n"), /https:\/\/www\.psychiatry\.org\//);
 });
 
 test("a missing membership or a dead proxy gets a plain sentence", () => {

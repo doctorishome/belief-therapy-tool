@@ -18,17 +18,39 @@ function windows(text, size) {
   return out.length ? out : [String(text || "").slice(0, size)];
 }
 
+function keepLinksWhole(body) {
+  if (body.length <= 1400) return [body];
+  const lines = body.split("\n");
+  const out = [];
+  let cur = [];
+  const flush = () => {
+    if (cur.length) out.push(cur.join("\n"));
+    cur = [];
+  };
+  for (const line of lines) {
+    if (/^\s*[·•]/.test(line) && cur.join("\n").length > 500) flush();
+    cur.push(line);
+  }
+  flush();
+  return out.length ? out : [body];
+}
+
 export function chunkText(title, text) {
   const raw = String(text || "").trim();
   if (raw.length < 40) return [];
   const headed = raw.split(/\n(?=#{1,3} )/);
   const parts = headed.length > 1 ? headed : windows(raw, 1100);
-  return parts.map((part) => {
+  const chunks = [];
+  for (const part of parts) {
     const body = part.trim();
+    if (!body) continue;
     const heading = (/^#{1,3}\s+(.+)/.exec(body) || [])[1] || title;
-    const slice = body.length > 1400 ? body.slice(0, 1400).replace(/\s+\S*$/, "") + " …" : body;
-    return { title, loc: heading.replace(/\s+/g, " ").slice(0, 120), text: slice };
-  }).filter((c) => c.text.length >= 40);
+    const loc = heading.replace(/\s+/g, " ").slice(0, 160);
+    for (const piece of keepLinksWhole(body)) {
+      if (piece.trim().length >= 40) chunks.push({ title, loc, text: piece.trim() });
+    }
+  }
+  return chunks;
 }
 
 export function searchDocs(docs, query, k = 4) {
@@ -98,7 +120,9 @@ export async function bundledSearchDocs() {
   for (const item of cat.items || []) {
     if (!item.file) continue;
     try {
-      docs.push({ title: item.label, text: await loadBundledDoc(item), id: item.bundledId });
+      let text = await loadBundledDoc(item);
+      if (item.keywords) text += "\n\n" + item.keywords;
+      docs.push({ title: item.label, text, id: item.bundledId });
     } catch { /* skip a missing file */ }
   }
   return docs;

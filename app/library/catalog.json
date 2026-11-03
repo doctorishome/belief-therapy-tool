@@ -44,6 +44,15 @@
       "label": "Cognitive Restructuring and Christian CBT: Teaching Review",
       "file": "cognitive-restructuring-christian-cbt.md",
       "starter": true
+    },
+    {
+      "bundledId": "starter:apa-adult-measures-guide",
+      "category": "Assessment",
+      "subcategory": "DSM-5-TR measures",
+      "label": "Free APA DSM-5-TR Assessment Measures for Adults — Guide and Links",
+      "file": "apa-adult-measures-guide.md",
+      "keywords": "assessment measures which assessment measures should I give after the first session first diagnostic interview Level 1 Cross-Cutting WHODAS",
+      "starter": true
     }
   ]
 }
