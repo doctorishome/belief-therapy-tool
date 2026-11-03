@@ -130,10 +130,14 @@ def page(key,title,hero_sub,body,eyebrow='Belief Counseling for Counselors', ext
     use_foot = FOOT if foot is None else foot
     h='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>%s</title><style>%s%s%s'%(html.escape(title),CSS,extra_css,nav_css)
     h+='\n</style></head><body>'
-    h+=top+'<div class="hero"><div class="eyebrow">%s</div><h1>%s</h1><p>%s</p>%s</div><div class="wrap">%s</div>%s%s</body></html>'%(eyebrow,title,hero_sub,hero_extra,body,use_foot,js)
+    sub_html = ('<p>%s</p>' % hero_sub) if hero_sub else ''
+    h+=top+'<div class="hero"><div class="eyebrow">%s</div><h1>%s</h1>%s%s</div><div class="wrap">%s</div>%s%s</body></html>'%(eyebrow,title,sub_html,hero_extra,body,use_foot,js)
     (OUT/('%s.html'%key)).write_text(h)
 def cards(items, extra=''): return '<div class="grid">'+''.join('<div class="card"><h3>%s</h3><p>%s</p></div>'%i for i in items)+extra+'</div>'
-JOIN='<div class="cta"><a class="btn soon" target="_blank" href="https://www.beliefcounselor.com/blank-11#clinical-companion" onclick="window.parent.postMessage({type:\'cc-start-free-week\'}, \'*\'); return false;">Start your free week</a><div class="note">One week free, then $29.95 a month.</div></div>'
+# The only link to /clinical-companion is the Featured card on the Counselors' Room.
+CC_PAGE = 'https://www.beliefcounselor.com/clinical-companion'
+ROOM_PAGE = 'https://www.beliefcounselor.com/blank-11'
+TIP_LINE = 'Members get one professional tip by email each week, and past tips are kept in the Counselors’ Room.'
 
 # 1 Welcome
 WELCOME_CSS = '''/*reviews*/
@@ -141,31 +145,35 @@ WELCOME_CSS = '''/*reviews*/
 @media (min-width:900px){.grid>.card:last-child{grid-column:auto}}
 .card .pdfs{margin:12px 0 0;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
 .card .pdfs a{color:var(--navy2);font-weight:bold}
+a.card.feature{display:block;grid-column:1 / -1;text-decoration:none;color:inherit;border:2px solid var(--gold);background:#fffdf6;box-shadow:0 4px 16px rgba(201,162,39,.28)}
+a.card.feature:hover{background:#fff;box-shadow:0 6px 18px rgba(201,162,39,.42)}
+a.card.feature h3{color:var(--navy)}
+a.card.feature p{color:var(--mut)}
+a.card.feature .more{margin:12px 0 0;color:var(--navy);font-weight:bold}
 /*/reviews*/
 '''
-DSM_CARD = ('<div class="card"><h3>DSM-5-TR Reviews</h3>'
- '<p>Condensed teaching reviews of major DSM-5-TR disorders: key features, the most effective treatments with special attention to CBT, and research on Christian-integrated care, with full references.</p>'
- '<p class="pdfs"><a href="reviews/depression-teaching-overview.pdf" target="_blank" rel="noopener">Depression: A DSM-5-TR Teaching Overview (PDF)</a>'
- '<a href="reviews/anxiety-teaching-overview.pdf" target="_blank" rel="noopener">Anxiety Disorders: A DSM-5-TR Teaching Overview (PDF)</a>'
- '<a href="reviews/ocd-teaching-overview.pdf" target="_blank" rel="noopener">Obsessive-Compulsive Disorder: A DSM-5-TR Teaching Overview (PDF)</a>'
- '<a href="reviews/schizophrenia-teaching-overview.pdf" target="_blank" rel="noopener">Schizophrenia: A DSM-5-TR Teaching Overview (PDF)</a></p></div>')
+FEATURE_CARD = (
+ '<a class="card feature" target="_top" href="%s">'
+ '<span class="tag free">Featured</span>'
+ '<h3>Clinical Companion</h3>'
+ '<p>How to open Clinical Companion in your browser, a short quick start, counselor information, and client forms.</p>'
+ '<p class="more">Open &rarr;</p></a>' % CC_PAGE)
 page('welcome','Welcome to the Counselors’ Room','Learn Christian cognitive-behavioral Belief Counseling from a psychologist with 35 years of clinical experience, and practice it on guided cases before you meet your next client.',
- '<h2>What you will find inside</h2>'+cards([
- ('Professional Tips','Short, practical teaching from Dr. Campbell’s years in practice, delivered weekly to your inbox and kept in a searchable archive.'),
- ('The Process','The three steps of Belief Counseling (Identify, Challenge, Replace), with the reason behind each one, from Assess through Reinforce.'),
- ('Theory','A framework for understanding the great majority of psychological struggles: beliefs, personality, and the whole person.'),
- ('Core False Beliefs','The deep-seated lies beneath much of our pain, how to unearth them, and the tools that help.'),
- ('Belief Counseling','The theory behind Belief Counseling, Dr. Campbell’s Christian cognitive-behavioral approach to understanding and changing false beliefs.'),
- ('Case Studies','Practice on composite cases guided by an AI supervisor trained on Dr. Campbell’s method. Start with a free week; then $29.95 a month, cancel anytime.'),
- ('The Course','A step-by-step course in Christian Cognitive-Behavioral Therapy, with quizzes and a certificate of completion.'),
- ('Clinical Library','Counselor-only background, assessment tools, and references behind every false-belief card on the public site.')], DSM_CARD)+
- '<h2>How it works</h2>'
- '<div class="step"><div class="num">1</div><div><strong>Start with a free week; then $29.95 a month, cancel anytime.</strong><p>You get the tips, the library, and the theory topics right away.</p></div></div>'
- '<div class="step"><div class="num">2</div><div><strong>Try a practice case during your free week.</strong><p>Walk a composite client through Identify, Challenge, and Replace. Your supervisor pauses for your answer before showing the model approach.</p></div></div>'
- '<div class="step"><div class="num">3</div><div><strong>Keep growing.</strong><p>Add more cases in sets of five, work through the course, and earn your certificate of completion.</p></div></div>'
+ '<h2>What you will find inside</h2><div class="grid">' + FEATURE_CARD +
+ '<div class="card"><span class="tag free">Start here</span><h3>Introduction</h3><p>How the Counselors’ Room works: what each section offers, where to begin, and how to get the most from your membership.</p><p class="pdfs"><a href="#">Coming soon</a></p></div>'
+ '<div class="card"><h3>Professional Tips</h3><p>' + TIP_LINE + '</p></div>'
+ '<div class="card"><h3>The Process</h3><p>The three steps of Belief Counseling (Identify, Challenge, Replace), with the reason behind each one, from Assess through Reinforce.</p></div>'
+ '<div class="card"><h3>Theory</h3><p>A framework for understanding the great majority of psychological struggles: beliefs, personality, and the whole person.</p><p class="pdfs"><a href="theory.html">Read more &rarr;</a></p></div>'
+ '<div class="card"><span class="tag">Theory</span><h3>Belief Counseling</h3><p>The theory behind Belief Counseling, Dr. Campbell’s Christian cognitive-behavioral approach to understanding and changing false beliefs.</p></div>'
+ '<div class="card"><span class="tag">Theory</span><h3>Core False Beliefs</h3><p>The deep-seated lies beneath much of our pain, how to unearth them, and the tools that help.</p><p class="pdfs"><a href="core-beliefs.html">Read more &rarr;</a></p></div>'
+ '<div class="card"><h3>Case Studies</h3><p>Practice on composite cases guided by an AI supervisor trained on Dr. Campbell’s method. Included with your membership.</p></div>'
+ '<div class="card"><h3>The Course</h3><p>A step-by-step course in Christian Cognitive-Behavioral Therapy, with quizzes and a certificate of completion.</p></div>'
+ '<div class="card"><h3>Clinical Library</h3><p>Counselor-only background, assessment tools, and references behind every false-belief card on the public site.</p></div>'
+ '<div class="card"><h3>DSM-5-TR Reviews</h3><p>Condensed teaching reviews of major DSM-5-TR disorders: key features, the most effective treatments with special attention to CBT, and research on Christian-integrated care, with full references.</p><p class="pdfs"><a href="reviews.html">See all reviews &rarr;</a></p></div>'
+ '</div>'
  '<h2>About Dr. Campbell</h2><p>Brian Campbell, Ph.D., has spent 35 years in private practice, teaching, and writing. Belief Counseling grew from that work: a Christian cognitive-behavioral approach that helps clients name the lies behind their pain and replace them with truth from God’s Word.</p>'
- '<div class="scrip">“Do not be conformed to this world, but be transformed by the renewing of your mind.” <b>Romans 12:2</b></div>'+JOIN,
- extra_css=WELCOME_CSS)
+ '<div class="scrip">“Do not be conformed to this world, but be transformed by the renewing of your mind.” <b>Romans 12:2</b></div>',
+ extra_css=WELCOME_CSS, foot=foot_with_help())
 # 2 Process
 FLOW_CSS = r'''/*flow*/
 .flow{display:flex;align-items:stretch;margin:22px 0 10px}
@@ -207,8 +215,8 @@ PROCESS_BODY = '''<h2>The flow of Belief Counseling</h2><p>Every client moves th
 <h2>Key Scriptures</h2><div class="scrip">“Do not be conformed to this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what is the good, pleasing, and perfect will of God.” <b>Romans 12:2</b></div><div class="scrip">“We tear down arguments and every presumption set up against the knowledge of God; and we take captive every thought to make it obedient to Christ.” <b>2 Corinthians 10:5</b></div><div class="scrip">“Then you will know the truth, and the truth will set you free.” <b>John 8:32</b></div><div class="scrip">“I have hidden Your word in my heart that I might not sin against You.” <b>Psalm 119:11</b></div><div class="scrip">“All Scripture is God-breathed and is useful for instruction, for conviction, for correction, and for training in righteousness.” <b>2 Timothy 3:16</b></div><div class="cta"><a class="btn" href="cases.html">Practice the process on a case</a><a class="btn2" href="Belief-Counseling-Flow.pdf" target="_blank" rel="noopener">Download as PDF</a></div>'''
 page('process','The Process','Three steps: Identify, Challenge, and Replace. The result: the truth sets you free.',PROCESS_BODY,extra_css=FLOW_CSS)
 # 3 Tips
-page('tips','Professional Tips','Practical teaching from 35 years of clinical experience, delivered to you and kept here for reference.',
- '<h2>How the Tips work</h2><p>New tips arrive by email on a regular schedule, and every tip is saved here in a searchable archive, organized by topic.</p>'
+page('tips','Professional Tips',TIP_LINE,
+ '<h2>How the Tips work</h2><p>' + TIP_LINE + '</p>'
  '<h2>Topics you can expect</h2><ul class="clean"><li>Beliefs and how they shape feelings and behavior</li><li>Working with anxiety and depression</li><li>Parental messages and the beliefs children absorb</li><li>Core lies: worthlessness, abandonment, failure</li><li>Cognitive errors and how to name them</li><li>Using Scripture in counseling, wisely and well</li><li>Homework that clients actually do</li><li>Ethics, scope of practice, and knowing when to refer</li></ul>'
  '<div class="card"><span class="tag">Coming soon</span><h3>Your first tip</h3><p>The tip archive opens when membership begins.</p></div>')
 # 4 Theory
@@ -241,73 +249,44 @@ page('library','Clinical Library','Counselor-only background, tools, and referen
  '<h2>Recommended reading</h2><ul class="clean"><li>Beck, Davis, and Freeman, <em>Cognitive Therapy of Personality Disorders</em></li><li>Beck Institute Personality Belief Questionnaire materials</li></ul>'
  '<div class="card"><span class="tag">Coming soon</span><h3>Library opens with membership</h3><p>Documents will be added here in stages.</p></div>')
 # 8 Clinical Companion (member embed: no menu, no script).
-# The client-forms button opens practice-forms.html in a new tab so a Wix iframe does not block the download.
+# Reached only from the Featured card on welcome.html. No other page links here.
+# The client-forms button opens practice-forms.html in a new tab.
 CC_CSS = '''/*cc*/
 .card p{margin:0;color:var(--ink);font-size:1.02rem}
 ol.clean{list-style:none;margin:16px 0;padding:0;counter-reset:step}
 ol.clean li{counter-increment:step;display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:12px 0}
 ol.clean li::before{content:counter(step);flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
-.faq{margin:8px 0 4px}
-.faq details{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;margin:12px 0;box-shadow:0 2px 6px rgba(18,40,76,.06)}
-.faq summary{color:var(--navy);font-weight:bold;font-size:1.05rem;padding:14px 46px 14px 18px;cursor:pointer;list-style:none;position:relative}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::marker{content:""}
-.faq summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.35rem;font-weight:bold;line-height:1}
-.faq details[open] summary::after{content:"\u2212"}
-.faq details p{margin:0;padding:0 18px 16px;color:var(--navy)}
-.faq ol{margin:0 18px 8px 38px;padding:0;color:var(--navy)}
-.faq ol li{margin:5px 0}
-.faq summary:hover{background:#fbf8f0}
-.faq summary:focus{outline:2px solid var(--gold);outline-offset:-2px}
+.hero .backline{margin:18px 0 0}
+.hero a.back{color:#fff;font-weight:bold;text-decoration:none;border-bottom:2px solid var(--gold);font-size:1.08rem}
+.hero a.back:hover{color:var(--gold)}
 h2.forms-title{margin-top:22px}
 .forms{display:flex;gap:18px;align-items:center;justify-content:space-between;margin:2px 0 4px}
-.forms p{margin:0;flex:1 1 auto}
+.forms p{margin:0;flex:1 1 auto;color:var(--ink)}
 .forms .btn{flex:0 0 auto;white-space:nowrap;padding:11px 22px}
 @media(max-width:640px){.forms{flex-direction:column;align-items:flex-start}.forms .btn{white-space:normal}}
 @media(max-width:560px){ol.clean li{flex-direction:column;align-items:flex-start}}
 /*/cc*/
 '''
-FREE_WEEK = (
- '<ol>'
- '<li>Create your login with your email and a password.</li>'
- '<li>Enter a credit card at checkout.</li>'
- '<li>Nothing is charged during your 7-day free trial. Your membership starts at $29.95 a month on day 8 unless you cancel during the week. We\'ll email you a reminder 3 days before your free week ends.</li>'
- '</ol>'
- '<p>Cancel anytime in My Account \u2192 My Subscriptions. If you cancel after you\'ve been billed, you keep access until the end of that billing month, and you won\'t be billed again. The rest of that month isn\'t refunded.</p>'
-)
-FAQS = [
- ("How does the free week work?", FREE_WEEK),
- ("How do I cancel?", "Sign in, open My Account, go to My Subscriptions, and choose Cancel. You can cancel anytime."),
- ("Will I get a refund if I cancel?", "If you cancel during your free week, you pay nothing. If you cancel after you've been billed, you keep access until the end of that billing month, and you won't be billed again. The rest of that month isn't refunded. If you have special circumstances, contact us."),
- ("What happens to my access after I cancel?", "You keep full access until the end of your paid month. After that, the app and member resources are no longer available to you."),
- ("What does 'fair use' mean?", "Clinical Companion is meant for your own professional caseload. Sharing your account, or very heavy automated use, isn't permitted."),
- ("Who is Clinical Companion for?", "Professional counselors, psychologists, and students in training who want to integrate Christian belief counseling into their work."),
- ("What do I need to run it?", "A computer with an up-to-date web browser and an internet connection."),
- ("Can I enter real client information?", "Use fictional or de-identified information unless your plan states otherwise."),
- ("How do I get help?", "Contact us through the Contact page and we'll get back to you."),
-]
-def faq_body(answer):
-    return answer if answer.lstrip().startswith('<') else '<p>%s</p>' % answer
-FAQ_HTML = '<h2>Frequently asked questions</h2><div class="faq">' + ''.join(
- '<details><summary>%s</summary>%s</details>' % (q, faq_body(a)) for q, a in FAQS) + '</div>'
-page('clinical-companion','Clinical Companion',
- "Welcome to your Clinical Companion member area. Here you'll find how to open Clinical Companion, a quick-start guide, help, and your account.",
+CC_FOOT = (
+ '<div class="foot">Educational training for counselors. Never enter real client names or details. · '
+ '<a href="https://www.beliefcounselor.com/account-settings" target="_top">My Account</a> · '
+ '<a href="https://www.beliefcounselor.com/my-subscriptions" target="_top">My Subscriptions</a> · '
+ '<a href="%s" target="_top">Help</a></div>' % HELP_URL)
+page('clinical-companion','Clinical Companion', '',
  '<h2>Open Clinical Companion</h2>'
- '<div class="card"><p>Clinical Companion runs in your web browser. Open it from the Counselors\' Room.</p></div>'
+ '<div class="card"><p>Clinical Companion runs in your web browser. Open it from the Counselors’ Room.</p></div>'
  '<h2>Quick start</h2><ol class="clean">'
- '<li>Open Clinical Companion from the Counselors\' Room.</li>'
- '<li>Sign in with your website member login.</li>'
- '<li>Try a practice case before using it with clients.</li>'
+ '<li>From the Counselors’ Room, open Clinical Companion. It runs in your browser.</li>'
+ '<li>Sign in with your member login.</li>'
+ '<li>Try a practice case before you use it with clients.</li>'
  '<li>Write your session notes, then ask for an analysis.</li></ol>'
+ '<h2>Counselor information</h2>'
+ '<div class="card"><p>Clinical Companion supports, and does not replace, your professional clinical judgment. Use fictional or de-identified information, and never enter real client names or details. It is meant for your own professional work.</p></div>'
  '<h2 class="forms-title">Client Forms for Your Practice</h2>'
- '<div class="forms"><p>Enter your practice details once and download a New Client Packet and Confidentiality Agreement pre-filled with them. Review them with an attorney in your state.</p>'
- '<a class="btn" href="practice-forms.html" target="_blank" rel="noopener">Open client forms</a></div>'
- '<h2>Help</h2><p>Questions or problems? Contact us through the Contact page and we\'ll get back to you. For billing questions or special circumstances, contact us and we\'ll do our best to help.</p>'
- '<h2>Your account</h2><p>Manage your membership, payment method, or cancel anytime from My Account. Your access continues to the end of the month you\'ve paid for; the remainder of the month isn\'t refunded.</p>'
- + FAQ_HTML +
- '<h2>Terms of use</h2><p>Clinical Companion supports, and does not replace, your professional clinical judgment. Use fictional or de-identified information unless your plan states otherwise. Fair use applies; excessive use isn\'t permitted.</p>',
- eyebrow='MEMBERS', extra_css=CC_CSS, with_nav=False, foot=foot_with_help(),
- hero_extra='<a class="btn needhelp" href="%s" target="_top">Need Help?</a>'%HELP_URL)
+ '<div class="forms"><p>Enter your practice details once. A New Client Packet and a Confidentiality Agreement open already filled in with those details. Review them with an attorney in your state.</p>'
+ '<a class="btn" href="practice-forms.html" target="_blank" rel="noopener">Open client forms</a></div>',
+ eyebrow='MEMBERS', extra_css=CC_CSS, with_nav=False, foot=CC_FOOT,
+ hero_extra='<p class="backline"><a class="back" href="%s" target="_top">← Back to the Counselors’ Room</a></p><a class="btn needhelp" href="%s" target="_top">Need Help?</a>' % (ROOM_PAGE, HELP_URL))
 # 9 Help & Support (public). Linked with target="_top" because the counselor pages sit in a Wix iframe.
 HELP_CSS = '''/*help*/
 .faq{margin:8px 0 4px}
@@ -325,22 +304,30 @@ HELP_CSS = '''/*help*/
 .card + .card{margin-top:12px}
 /*/help*/
 '''
+def faq_body(answer):
+    return answer if answer.lstrip().startswith('<') else '<p>%s</p>' % answer
+SUBS_URL = 'https://www.beliefcounselor.com/my-subscriptions'
+BRIAN = 'brian@beliefcounselor.com'
 HELP_SIGNUP = (
  '<ol>'
  '<li>Create your login with your email and a password.</li>'
- '<li>Enter a credit card at checkout.</li>'
- '<li>Nothing is charged during your 7-day free trial. Your membership starts at $29.95 a month on day 8 unless you cancel during the week. We\u2019ll email you a reminder 3 days before your free week ends.</li>'
+ '<li>A credit card is required at sign-up.</li>'
+ '<li>Nothing is charged during the 7-day free trial. Starting on day 8, membership is $29.95 a month unless you cancel before then. We\u2019ll email you a reminder 3 days before the free week ends.</li>'
  '</ol>'
- '<p>Cancel anytime in My Account \u2192 My Subscriptions. If you cancel after you\u2019ve been billed, you keep access until the end of that billing month, and you won\u2019t be billed again. The rest of that month isn\u2019t refunded.</p>'
+ '<p>Cancel anytime from <a href="%s" target="_top">My Subscriptions</a>.</p>' % SUBS_URL
 )
 HELP_FAQS = [
  ("How does sign-up and the free week work?", HELP_SIGNUP),
  ("How do I cancel?",
-  '<p>Sign in, then open My Account \u2192 My Subscriptions \u2192 Cancel. You can cancel anytime.</p>'
-  '<p>In the Counselors\u2019 Room, use <a href="https://www.beliefcounselor.com/my-subscriptions" target="_top">My Subscriptions</a> in the menu.</p>'),
- ("Will I get a refund if I cancel?", "If you cancel during your free week, you pay nothing. If you cancel after you\u2019ve been billed, you keep access until the end of that billing month, and you won\u2019t be billed again. The rest of that month isn\u2019t refunded. If you have special circumstances, contact us."),
- ("What do I need to run it?", "A computer with an up-to-date web browser and an internet connection."),
- ("Can I enter real client information?", "Use fictional or de-identified information unless your plan states otherwise."),
+  '<p>Cancel from <a href="%s" target="_top">My Subscriptions</a>. Sign in, open My Subscriptions, and choose Cancel. You can cancel anytime.</p>'
+  '<p>In the Counselors\u2019 Room, My Subscriptions is in the menu and opens the same page.</p>' % SUBS_URL),
+ ("Will I get a refund if I cancel?",
+  '<p>If you cancel during the 7-day free trial, you pay nothing. If you cancel after you\u2019ve been billed, there is no refund for the rest of that billing month. You keep access until the end of that month, and you are not billed again. After that month, Clinical Companion and the member resources are no longer available.</p>'
+  '<p>For a special circumstance, email <a href="mailto:%s">%s</a>.</p>' % (BRIAN, BRIAN)),
+ ("What do I need to run it?", "A computer with an up-to-date web browser and an internet connection. Clinical Companion runs in the browser."),
+ ("Can I enter real client information?", "Use fictional or de-identified information unless your plan states otherwise. Never enter real client names or details. Try a practice case before using Clinical Companion with clients. It supports, and does not replace, your professional clinical judgment."),
+ ("What does 'fair use' mean?", "Clinical Companion is meant for your own professional caseload. Sharing your account, or very heavy automated use, isn't permitted."),
+ ("Who is Clinical Companion for?", "Professional counselors, psychologists, and students in training who want to integrate Christian belief counseling into their work."),
 ]
 HELP_FAQ_HTML = '<h2>Frequently asked questions</h2><div class="faq">' + ''.join(
  '<details><summary>%s</summary>%s</details>' % (q, faq_body(a)) for q, a in HELP_FAQS) + '</div>'
@@ -357,8 +344,6 @@ page('help','Help & Support',
  '<div class="card"><h3>I signed up, but I can\u2019t get into the Counselors\u2019 Room</h3>'
  '<p>Make sure you\u2019re signed in with the same email you used at checkout. If you still can\u2019t get in, email us at <a href="mailto:brian@beliefcounselor.com">brian@beliefcounselor.com</a>.</p></div>'
  '<div class="card"><h3>I was charged by mistake, or I was charged twice</h3>'
- '<p>Email us at <a href="mailto:brian@beliefcounselor.com">brian@beliefcounselor.com</a> with the date and the amount. We\u2019ll look into it.</p></div>'
- '<div class="card"><h3>Clinical Companion is for practice</h3>'
- '<p>Clinical Companion\u2019s AI is for practice, on fictional cases only. Try a practice case before using it with clients. The cases are fictional composites. Use fictional or de-identified information unless your plan states otherwise. Never enter real client names or details. Clinical Companion supports, and does not replace, your professional clinical judgment.</p></div>',
+ '<p>Email us at <a href="mailto:brian@beliefcounselor.com">brian@beliefcounselor.com</a> with the date and the amount. We\u2019ll look into it.</p></div>',
  extra_css=HELP_CSS)
 print('built',[p[0] for p in PAGES]+['clinical-companion','help'])
