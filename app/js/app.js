@@ -3,7 +3,7 @@ import { esc, render as renderMd, toPlain } from "./md.js";
 import { findLeaks } from "./deidentify.js";
 import * as vault from "./vault.js";
 import { sampleCases } from "./samples.js";
-import { deidentify, prepareChat, preparePlan, complete, isMock, rememberMembershipToken } from "./ai.js";
+import { deidentify, prepareChat, preparePlan, complete, isMock, rememberMembershipToken, friendlyAiError, fetchUsage } from "./ai.js";
 import { formatPlanRecord } from "./prompt.js";
 import { loadCatalog, loadBundledDoc } from "./library.js";
 
@@ -87,6 +87,23 @@ function modal({ title, html, okLabel = "OK", cancelLabel = "Cancel", danger = f
 
 function confirmBox(title, text, okLabel, danger) {
   return modal({ title, html: `<p>${esc(text)}</p>`, okLabel, cancelLabel: "Cancel", danger });
+}
+
+function showUsage(usage) {
+  const box = $("#usage-meter");
+  if (!box) return;
+  if (!usage || isMock()) { box.hidden = true; return; }
+  const percent = Math.max(0, Math.min(100, Number(usage.percent) || 0));
+  box.hidden = false;
+  box.classList.toggle("warn", percent >= 70 && percent < 100);
+  box.classList.toggle("full", percent >= 100);
+  $("#usage-label").textContent = percent + "% of monthly allowance";
+  $("#usage-bar").style.width = percent + "%";
+  box.setAttribute("aria-label", percent + "% of this month's allowance used");
+}
+
+async function refreshUsage() {
+  try { showUsage(await fetchUsage()); } catch { /* the meter stays as it was */ }
 }
 
 function goCounselors() { location.href = CONFIG.counselorsReturnUrl; }
@@ -269,7 +286,7 @@ function renderAI() {
       <div class="ai-intro">
         <h3>Think a case through</h3>
         <p class="remote-note">Names, dates, phone numbers, emails, addresses, and ID numbers are removed before you are asked to send anything. You see the exact text and choose Send or Cancel.</p>
-        <p class="small">${isMock() ? "Mock mode is on. The answer is a canned fictional draft. Nothing leaves this browser." : "Live mode sends only the approved text to the proxy in config.js. This browser does not have the API key."}</p>
+        <p class="small">${isMock() ? "Mock mode is on. The answer is a canned fictional draft. Nothing leaves this browser." : "Live answers go through the website. Open this app with Start Clinical Companion in the Counselors' Room. This browser does not have the API key."}</p>
         <p class="small">The chat is temporary. Only what you add to the record is saved.</p>
         <button class="btn ai-primary" type="button" id="ai-start">Start AI session</button>
       </div>`;
@@ -419,11 +436,13 @@ async function sendQuestion(text) {
   try {
     const result = await complete(prepared);
     reply.content = result.content || "(No answer.)";
+    reply.offTopic = !!result.offTopic;
     reply.streaming = false;
+    if (result.usage) showUsage(result.usage);
   } catch (err) {
     s.messages.pop();
     s.messages.pop();
-    s.messages.push({ role: "error", content: err.message });
+    s.messages.push({ role: "error", content: friendlyAiError(err) });
   } finally {
     s.busy = false;
     renderMessages();
@@ -445,7 +464,7 @@ function showSendPreview(preview) {
         ? "Mock mode. If you press Send, a canned draft is written in this browser. This text is not transmitted."
         : "If you press Send, this text goes to <b>" + esc(preview.host) + "</b>. The API key stays on that server."}</p>
       <p class="small">Model <b>${esc(preview.model)}</b>. Standing instructions (${preview.standingWords} words) and the clinical instructions are included. They contain no client information and are not shown here.</p>
-      ${leaks.length ? `<div class="leak-warn"><b>Possible identifying details:</b> ${leaks.map((l) => "<code>" + esc(l) + "</code>").join(", ")}. Cancel unless they are fictional.</div>` : ""}
+      ${leaks.length ? `<div class="leak-warn"><b>Possible identifying details:</b> ${leaks.map((l) => "<code>" + esc(l) + "</code>").join(", ")}. Practice mode is still on. Cancel unless these details are fictional.</div>` : ""}
       ${question ? `<p><b>Your question</b></p><div class="add-preview">${esc(question)}</div>` : `<p><b>Request</b></p><div class="add-preview">${esc(preview.question || "")}</div>`}
       <p><b>De-identified case</b> (${(preview.caseText || "").length.toLocaleString()} characters)</p>
       <div class="add-preview">${esc(preview.caseText || "")}</div>
@@ -538,7 +557,7 @@ async function planTen(caseId) {
     state.cases[state.cases.findIndex((x) => x.id === saved.id)] = saved;
     renderRecord(saved);
     toast("10-session plan saved in this encrypted case.");
-  } catch (err) { toast(err.message); }
+  } catch (err) { toast(friendlyAiError(err)); }
 }
 
 let recog = null;
@@ -631,8 +650,7 @@ function renderForms() {
 
 function renderPrivacy() {
   $("#privacy-body").innerHTML = `
-    <div class="pv warn"><b>Not yet for real client data</b><p>Use fictional cases only. A Business Associate Agreement is not signed, and zero data retention is not confirmed. Do not type real names or identifiers.</p>
-    <p>The wording to use later, after a signed BAA and zero data retention, is “HIPAA-compliant processing under a signed BAA.” That is not true of this app today.</p></div>
+    <div class="pv warn"><b>Practice mode (temporary)</b><p>Practice mode for now: please use fictional cases until our privacy agreements are finalized. Real client records will be supported once they are in place.</p></div>
     <div class="pv"><b>Records stay in this browser</b><p>Cases are encrypted with AES-GCM. The key is derived from your passphrase with PBKDF2 (600,000 rounds) and is kept in memory only while the app is unlocked. The website and Wix do not receive case text.</p></div>
     <div class="pv"><b>What an AI request contains</b><p>You see the exact de-identified text, your question, and any library passages, then press Send or Cancel. Standing instructions are added by the program and are not shown or editable. In mock mode nothing is transmitted. In live mode the text goes only to the proxy address in config.js, which holds the API key.</p></div>
     <div class="pv"><b>Backups</b><p>Export writes an encrypted file. Import replaces the cases in this browser. The file does not help if you forget the passphrase.</p></div>`;
@@ -707,6 +725,7 @@ function bind() {
       $("#setup-pw").value = "";
       $("#setup-pw2").value = "";
       showHome();
+      refreshUsage();
       toast("Encrypted records created in this browser. Three fictional cases are included.");
     } catch (ex) { $("#setup-error").textContent = ex.message; }
     finally { $("#setup-submit").disabled = false; $("#setup-submit").textContent = "Create encrypted records"; }
@@ -721,6 +740,7 @@ function bind() {
       $("#unlock-pw").value = "";
       state.cases = data.cases;
       showHome();
+      refreshUsage();
     } catch (ex) {
       $("#unlock-error").textContent = ex.code === "WRONG_PASSWORD" ? "That passphrase did not open these records." : ex.message;
     } finally { btn.disabled = false; btn.textContent = "Unlock"; }

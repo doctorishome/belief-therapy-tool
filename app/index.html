@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="test-banner" class="test-banner" role="status">
-  Fictional cases only. This app is not yet for real client data. A Business Associate Agreement is not in place, and zero data retention is not confirmed. Do not enter real names, contact details, or identifiers.
+  Practice mode for now: please use fictional cases until our privacy agreements are finalized. Real client records will be supported once they are in place.
 </div>
 <header id="topbar" hidden>
   <button class="brand-btn" id="nav-home" type="button"><span class="logo sm">CC</span> Clinical Companion</button>
@@ -17,6 +17,10 @@
     <button class="btn ghost" id="nav-forms" type="button">Forms</button>
   </nav>
   <div class="spacer"></div>
+  <div id="usage-meter" class="usage-meter" hidden role="status" aria-live="polite">
+    <span id="usage-label">0% of monthly allowance</span>
+    <div class="usage-track" aria-hidden="true"><div id="usage-bar"></div></div>
+  </div>
   <button class="btn ghost" id="nav-back" type="button">← Back to Counselors</button>
   <button class="btn ghost" id="nav-privacy" type="button">Privacy</button>
   <button class="btn ghost" id="nav-settings" type="button">Settings</button>

@@ -1,96 +1,43 @@
-# Put Clinical Companion’s AI proxy on the Wix site
+# Turn on live answers (do this before merging the pull request)
 
-The browser app is in the `app` folder. It opens from GitHub Pages. Case notes stay in the counselor’s browser. They are not stored on GitHub or on Wix.
+The app on GitHub Pages is set to call `https://www.beliefcounselor.com/_functions/clinicalCompanion`. That address does nothing until you paste the files below into Wix and publish. Do that first, then merge the pull request. Merging first would make the app ask a server that is not there yet.
 
-Right now the app is in **mock mode**. It answers with canned drafts so you can try the screens with fictional cases. Nothing is sent to an AI service, and the app does not contain an API key.
+Case notes still stay in the counselor’s browser. The yellow banner stays up. This is still not for real client data. The xAI key is never put in GitHub and is never sent back to the browser. The backend does not save the message text.
 
-Do not turn on live answers until you have pasted the backend files below and published the site. Merging this folder does not turn on the paid AI by itself.
+## Secrets
 
-## What you are adding
+In the Wix editor: **Developer** → **Secrets Manager**. Create these two names:
 
-Three backend files. Paste them into the Wix editor’s Backend section. They do not run from GitHub Pages.
+1. **XAI_API_KEY** — the key from the xAI console.
+2. **CC_MEMBERSHIP_SECRET** — a long random phrase you make up. It only signs the short-lived membership token. It is not the xAI key.
 
-| File in this repo | Where it goes in Wix |
+## Files to paste
+
+| File in this folder | Where it goes in Wix |
 |---|---|
-| `http-functions.js` | Backend → `http-functions.js` |
-| `cc-token.js` | Backend → `cc-token.js` |
-| `cc-membership.web.js` | Backend → `cc-membership.web.js` |
+| `http-functions.js` | Backend → `http-functions.js`. If that file already exists, copy `options_clinicalCompanion` and `post_clinicalCompanion` into it. Do not delete the rest of the file. |
+| `ai-budget.js` | Backend → new file `ai-budget.js` |
+| `cc-token.js` | Backend → new file `cc-token.js` |
+| `cc-membership.web.js` | Backend → new file `cc-membership.web.js` |
+| `clinical-companion-page-code.js` | The code panel of the Wix page whose address is `/clinical-companion` |
 
-If the site already has an `http-functions.js`, do not delete it. Copy `options_clinicalCompanion` and `post_clinicalCompanion` into the existing file.
+The page code expects the HTML embed on that page to be named **html1** (the element id `#html1`). That embed is the one that shows `counselors/clinical-companion.html`. If the embed has another name, rename it to html1, or change `#html1` in the page code to match.
 
-The address, after you publish, is:
+## What the button does
 
-`https://www.beliefcounselor.com/_functions/clinicalCompanion`
+Start Clinical Companion is still a normal link, so it works if the page is opened outside Wix. Inside the Wix embed it asks the parent page for a membership token. The page code mints that token (active plan, or the site owner/admin) and opens the app in the **same tab**. The token is only in the `#cct=` part of the address. The app saves it for that tab and removes it from the address bar. It is not the API key, and it lasts 8 hours.
 
-That is the only address the browser app needs. A different server can replace Wix later. Put its address in the same one place: `proxyUrl` in `app/config.js`.
+## Order
 
-## Secrets (the key never goes in GitHub)
+1. Paste the four backend files and the page code. `ai-budget.js` holds the prices, the $10 cap, and the off-topic wording. If the token, membership, and page files are already published, paste only the updated `http-functions.js` and the new `ai-budget.js`.
+2. Add the two secrets.
+3. Publish the Wix site.
+4. Merge the pull request so GitHub Pages starts calling the proxy.
 
-In the Wix editor, open **Developer** → **Secrets Manager** and create two secrets:
+The model name sent to xAI is **grok-4.7**. A short clinical check uses **grok-4.20-0309-non-reasoning** only when the question is not already clearly clinical or clearly off-topic.
 
-1. **XAI_API_KEY** — the key from the xAI console. Only the backend reads it. Do not paste it into a page, into `config.js`, or into GitHub.
-2. **CC_MEMBERSHIP_SECRET** — any long random phrase you make up. It signs a short-lived “this member may call the AI” token. It is not the xAI key.
+## Monthly allowance
 
-## Membership check
+Each member can use **$10** of AI in a calendar month (Eastern Time). That is `MEMBER_MONTHLY_AI_BUDGET_USD` in `ai-budget.js`. Site-owner tokens are not capped. Add a Wix member id to `ADMIN_UNLIMITED_MEMBER_IDS` in that same file if you want another uncapped person.
 
-Each AI call checks that the person has an **active Pricing Plan** order (`status` ACTIVE). The free week counts, because that order is active too.
-
-The app runs on GitHub Pages, which is a different website from Wix, so the member’s Wix login cookie is not sent with the AI call. The Counselors page has to hand the open tab a short-lived token. The token lasts 8 hours, lives in that browser tab only, and is not an API key.
-
-On the Wix page where members open the app, add a button and this page code:
-
-```javascript
-import { mintClinicalCompanionToken } from 'backend/cc-membership.web';
-
-$w('#openClinicalCompanion').onClick(async () => {
-  const { token } = await mintClinicalCompanionToken();
-  const app = 'https://doctorishome.github.io/belief-therapy-tool/app/';
-  const tab = window.open(app, '_blank');
-  setTimeout(() => {
-    tab.postMessage({ type: 'cc-membership', token }, 'https://doctorishome.github.io');
-  }, 1200);
-});
-```
-
-## Turn live answers on
-
-In `app/config.js`:
-
-- Set `proxyUrl` to the `_functions/clinicalCompanion` address above.
-- Set `mode` to `"live"`.
-
-Leave `fictionalOnly` set to `true` until both of these are true: a Business Associate Agreement is signed, and zero data retention is confirmed on the xAI account. Until then the yellow banner stays up and the app is for fictional cases only.
-
-Publish the Wix site after the backend files change. GitHub Pages updates when this folder is merged. Do not merge until you have looked at the screens.
-
-## If you later use a different server
-
-The browser sends one JSON POST:
-
-```json
-{
-  "action": "chat",
-  "model": "grok-4.7",
-  "maxTokens": 4000,
-  "reasoningEffort": "medium",
-  "messages": [{ "role": "system", "content": "..." }, { "role": "user", "content": "..." }]
-}
-```
-
-A successful reply is JSON: `{ "content": "...", "thinking": "", "model": "..." }`.
-
-Refusals use `{ "error": "plain sentence", "code": "MEMBER_REQUIRED" }` with HTTP 403 when there is no active membership.
-
-The server holds the key, checks membership, and does not store the message text. The browser never sees the key.
-
-## Words to use
-
-Do not say the app is “HIPAA approved” or “HIPAA certified.”
-
-Today: it is **not yet for real client data**.
-
-Later, only after a signed BAA and zero data retention: **HIPAA-compliant processing under a signed BAA**.
-
-## Back to Counselors
-
-The app’s Back to Counselors button opens `https://www.beliefcounselor.com/blank-11`, the Counselors’ Room. That page embeds `counselors/welcome.html`. If you rename it, change `counselorsReturnUrl` in `app/config.js` only.
+Create a Wix collection named **ClinicalCompanionUsage** before relying on the cap. Fields: memberId (text), month (text), inputTokens (number), outputTokens (number), cachedTokens (number), costUsd (number). Set the collection so only you can see it in the dashboard. The backend writes to it and does not store question or answer text. If the collection is missing, the proxy will not send an answer, so the allowance cannot be skipped.

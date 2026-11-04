@@ -1,21 +1,25 @@
 /**
- * Standing instructions from the program author.
- * Loaded into the system prompt. Counselors do not see or edit this text.
- * Same default as Clinical Companion 1.2.0-beta (Windows).
+ * Brian's standing instructions. Counselors do not see or edit this text.
+ * The words live in app/standing-instructions.txt so a new version can replace that one file.
+ * The loaded text is cached so every live request starts with the same system message.
  */
-export const MAX_CHARS = 60000;
+let cached = null;
 
-export const STANDING_INSTRUCTIONS = `Standing instructions for Clinical Companion:
-- Support the licensed counselor; never replace clinical judgment; never present output as a final diagnosis.
-- Prefer CBT and evidence-based, insurance-typical outpatient planning (often about 10 sessions unless the record says otherwise).
-- Tie planned questions and interventions to symptoms, differential diagnosis, history, observations, and intake material provided.
-- For each session, prompt the counselor to listen for and gently explore faulty or unhelpful beliefs linked to the client's diagnostic symptoms (e.g. worthlessness with depression, catastrophic predictions with anxiety) without inventing facts not in the record.
-- Keep language practical for session-by-session use in the permanent record.`;
-
-export function standingText() {
-  return STANDING_INSTRUCTIONS.slice(0, MAX_CHARS);
+export async function loadStanding() {
+  if (cached != null) return cached;
+  const url = new URL("../standing-instructions.txt", import.meta.url);
+  try {
+    const { readFile } = await import("node:fs/promises");
+    cached = await readFile(url, "utf8");
+    return cached;
+  } catch {
+    const res = await fetch(url.href);
+    if (!res.ok) throw new Error("Standing instructions could not be loaded.");
+    cached = await res.text();
+    return cached;
+  }
 }
 
-export function standingWords() {
-  return (standingText().match(/\S+/g) || []).length;
+export function standingWords(text) {
+  return (String(text || "").match(/\S+/g) || []).length;
 }

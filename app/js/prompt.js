@@ -1,4 +1,4 @@
-import { standingText } from "./standing.js";
+import { loadStanding } from "./standing.js";
 
 const SYSTEM_PROMPT = `You are a clinical reasoning assistant supporting a licensed mental-health counselor. The counselor is the clinician and makes every diagnostic and treatment decision; you never make the diagnosis and never present your output as a diagnosis. You help the counselor think.
 
@@ -17,28 +17,24 @@ How you write:
 - Use clear headings and short bullet lists.
 - End substantive answers with a one-line reminder that this is a draft for the counselor's clinical judgment.`;
 
-function standingBlock(standing) {
-  const t = String(standing || "").trim();
-  return t
-    ? "--- STANDING INSTRUCTIONS (from the program author; follow them for every request) ---\n" + t + "\n--- END OF STANDING INSTRUCTIONS ---\n\n"
-    : "";
-}
-
-export function buildMessages(caseText, history, context) {
-  let system = standingBlock(standingText()) + SYSTEM_PROMPT + "\n\n--- DE-IDENTIFIED CASE (approved by counselor) ---\n" + caseText;
+export async function buildMessages(caseText, history, context) {
+  const standing = await loadStanding();
+  let follow = SYSTEM_PROMPT + "\n\n--- DE-IDENTIFIED CASE (approved by counselor) ---\n" + caseText;
   if (context && context.text) {
-    system += "\n\n--- REFERENCE MATERIAL (from the counselor's Knowledge Library; cite as [S1], [S2]…) ---\nUse these passages only where relevant. When you use one, cite it like [S1]. Do not invent sources.\n\n" + context.text;
+    follow += "\n\n--- REFERENCE MATERIAL (from the counselor's Knowledge Library; cite as [S1], [S2]…) ---\nUse these passages only where relevant. When you use one, cite it like [S1]. Do not invent sources.\n\n" + context.text;
   }
   return [
-    { role: "system", content: system },
+    { role: "system", content: standing },
+    { role: "system", content: follow },
     ...history.map((m) => ({ role: m.role, content: m.content })),
   ];
 }
 
-export function buildPlanMessages(caseText, libraryText) {
-  let system = standingBlock(standingText()) + "You draft session-by-session CBT plans for a licensed counselor. Output only the plan in the requested format. No preface.";
+export async function buildPlanMessages(caseText, libraryText) {
+  const standing = await loadStanding();
+  let follow = "You draft session-by-session CBT plans for a licensed counselor. Output only the plan in the requested format. No preface.";
   if (libraryText) {
-    system += "\n\n--- REFERENCE MATERIAL (counselor's Knowledge Library; cite [S1], [S2] if used) ---\n" + libraryText;
+    follow += "\n\n--- REFERENCE MATERIAL (counselor's Knowledge Library; cite [S1], [S2] if used) ---\n" + libraryText;
   }
   const user = `Draft a practical ~10-session CBT plan for this client for the counselor's permanent record.
 
@@ -62,7 +58,8 @@ The case is de-identified: keep placeholders such as [CLIENT] exactly as written
 ${caseText}
 `;
   return [
-    { role: "system", content: system },
+    { role: "system", content: standing },
+    { role: "system", content: follow },
     { role: "user", content: user },
   ];
 }

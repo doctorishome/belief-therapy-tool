@@ -5,7 +5,7 @@
 import { CONFIG } from "../config.js";
 import { deidentifyCase, findLeaks } from "./deidentify.js";
 import { buildMessages, buildPlanMessages } from "./prompt.js";
-import { standingWords } from "./standing.js";
+import { loadStanding, standingWords } from "./standing.js";
 import { searchDocs, contextFromHits, bundledSearchDocs } from "./library.js";
 import { mockReply } from "./mock.js";
 
@@ -32,20 +32,22 @@ export async function prepareChat({ caseRecord, caseText, history, useLibrary, u
   const hist = (history || []).filter((m) => m && (m.role === "user" || m.role === "assistant"));
   const concerns = (/Presenting concerns:\n([\s\S]*?)(\n\n|$)/.exec(caseText) || [])[1] || "";
   const context = await libraryContext((question + "\n" + concerns).slice(0, 1500), useLibrary, userDocs);
-  const messages = buildMessages(caseText, hist, context);
+  const standing = await loadStanding();
+  const messages = await buildMessages(caseText, hist, context);
   const leaks = findLeaks([caseText, ...hist.map((m) => m.content), question || "", context.text || ""].join("\n"), caseRecord);
   return {
     kind: "chat",
     messages,
     leaks,
     sources: context.sources,
-    preview: previewOf({ caseText, question, history: hist, context, leaks, kind: "chat" }),
+    preview: previewOf({ caseText, question, history: hist, context, leaks, kind: "chat", standingWords: standingWords(standing) }),
   };
 }
 
 export async function preparePlan({ caseRecord, caseText, useLibrary, userDocs }) {
   const context = await libraryContext(caseText.slice(0, 1500), useLibrary, userDocs);
-  const messages = buildPlanMessages(caseText, context.text);
+  const standing = await loadStanding();
+  const messages = await buildPlanMessages(caseText, context.text);
   const leaks = findLeaks([caseText, context.text || ""].join("\n"), caseRecord);
   return {
     kind: "plan",
@@ -59,11 +61,12 @@ export async function preparePlan({ caseRecord, caseText, useLibrary, userDocs }
       context,
       leaks,
       kind: "plan",
+      standingWords: standingWords(standing),
     }),
   };
 }
 
-function previewOf({ caseText, question, history, context, leaks, kind }) {
+function previewOf({ caseText, question, history, context, leaks, kind, standingWords: words = 0 }) {
   return {
     host: proxyLabel(),
     model: isMock() ? "mock-fictional" : CONFIG.model,
@@ -74,13 +77,25 @@ function previewOf({ caseText, question, history, context, leaks, kind }) {
     history: history || [],
     library: context.sources || [],
     libraryText: context.text || "",
-    standingWords: standingWords(),
+    standingWords: words,
     leaks,
   };
 }
 
 export function rememberMembershipToken(token) {
   if (token) sessionStorage.setItem("cc-membership-token", token);
+}
+
+/** Plain sentence for a failed live call. Does not include keys or case text. */
+export function friendlyAiError(err) {
+  const code = err && err.code;
+  if (code === "BUDGET") {
+    return "This month's Clinical Companion allowance has been used. It resets on the 1st.";
+  }
+  if (code === "MEMBER_REQUIRED" || code === "NO_NETWORK") {
+    return "Please open Clinical Companion from the Counselors' Room.";
+  }
+  return "Clinical Companion could not get an answer just now. Please try again.";
 }
 
 export async function complete(prepared) {
@@ -106,16 +121,43 @@ export async function complete(prepared) {
       }),
     });
   } catch {
-    const e = new Error("The AI service could not be reached. Check the internet connection and the proxy address in config.js.");
+    const e = new Error("Please open Clinical Companion from the Counselors' Room.");
     e.code = "NO_NETWORK";
     throw e;
   }
   let body = {};
   try { body = await res.json(); } catch { body = {}; }
   if (!res.ok) {
-    const e = new Error(body.error || "The AI service refused the request (" + res.status + ").");
-    e.code = body.code || "PROXY";
+    const code = body.code || (res.status === 401 || res.status === 403 ? "MEMBER_REQUIRED" : "PROXY");
+    const e = new Error(friendlyAiError({ code }));
+    e.code = code;
     throw e;
   }
-  return { content: body.content || "", thinking: body.thinking || "", model: body.model || CONFIG.model, mock: false };
+  return {
+    content: body.content || "",
+    thinking: body.thinking || "",
+    model: body.model || CONFIG.model,
+    mock: false,
+    offTopic: !!body.offTopic,
+    usage: body.usage || null,
+  };
+}
+
+export async function fetchUsage() {
+  if (isMock()) return null;
+  const headers = { "Content-Type": "application/json" };
+  const token = sessionStorage.getItem("cc-membership-token") || "";
+  if (token) headers.Authorization = "Bearer " + token;
+  try {
+    const res = await fetch(String(CONFIG.proxyUrl).trim(), {
+      method: "POST",
+      headers,
+      body: JSON.stringify({ action: "usage" }),
+    });
+    const body = await res.json().catch(() => ({}));
+    if (!res.ok) return null;
+    return body.usage || null;
+  } catch {
+    return null;
+  }
 }
