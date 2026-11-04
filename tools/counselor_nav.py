@@ -20,6 +20,9 @@ GROUPS = [
     ("Practice", [("Case Studies", "cases.html"),
                   ("The Course", "course.html")]),
     ("Resources", [("Clinical Library", "library.html"),
+                   ("Books (Recommended)", "books.html"),
+                   ("Professional Tips", "tips.html"),
+                   ("  Ethics", "tips-ethics.html"),
                    ("Articles", "articles.html"),
                    ("DSM-5-TR Reviews", "reviews.html"),
                    ("Videos", "videos.html")]),
@@ -46,6 +49,8 @@ CSS = """/*nav*/
 .nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
 .nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
 .nav .menu a:hover{background:var(--cream)}
+.nav .menu a.sub{padding-left:38px;font-size:.92rem}.nav .menu a.sub::before{content:"\\21B3  ";color:var(--gold)}
+.nav .menu a.sub.on{padding-left:35px}
 .nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
 .nav .dd.open .menu{display:block}
 .nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
@@ -79,7 +84,12 @@ def nav(current):
             out.append(f'<a class="l{" on" if f == current else ""}" href="{f}">{t}</a>')
             continue
         here = any(f == current for _, f in pages)
-        items = "".join(f'<a{" class=\"on\"" if f == current else ""} href="{f}">{t}</a>' for t, f in pages)
+        def item(t, f):
+            # A label starting with two spaces is a sub-item (shown indented under the one above).
+            cls = (["on"] if f == current else []) + (["sub"] if t.startswith("  ") else [])
+            c = f' class="{" ".join(cls)}"' if cls else ""
+            return f'<a{c} href="{f}">{t.strip()}</a>'
+        items = "".join(item(t, f) for t, f in pages)
         out.append(f'<div class="dd{" on" if here else ""}"><button type="button" aria-haspopup="true" aria-expanded="false">{label}</button><div class="menu">{items}<button type="button" class="x" aria-label="Close menu">Close &#10005;</button></div></div>')
     if ACCOUNT:
         out.append('<span class="acct">')

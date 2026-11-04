@@ -82,6 +82,9 @@ def nav(active):
         ("Practice", [("Case Studies", "cases.html"),
                       ("The Course", "course.html")]),
         ("Resources", [("Clinical Library", "library.html"),
+                       ("Books (Recommended)", "books.html"),
+                       ("Professional Tips", "tips.html"),
+                       ("Ethics", "tips-ethics.html"),
                        ("Articles", "articles.html"),
                        ("DSM-5-TR Reviews", "reviews.html"),
                        ("Videos", "videos.html")]),
@@ -216,6 +219,7 @@ PROCESS_BODY = '''<h2>The flow of Belief Counseling</h2><p>Every client moves th
 page('process','The Process','Three steps: Identify, Challenge, and Replace. The result: the truth sets you free.',PROCESS_BODY,extra_css=FLOW_CSS)
 # 3 Tips
 page('tips','Professional Tips',TIP_LINE,
+ '''<style>.catgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin:12px 0 8px}a.card.cat{display:block;text-decoration:none;color:inherit}a.card.cat:hover{box-shadow:0 6px 16px rgba(18,40,76,.14)}a.card.cat .more{color:var(--navy);font-weight:bold;margin-top:8px}</style><h2>Tip categories</h2><div class="catgrid"><a class="card cat" href="tips-ethics.html"><h3>Ethics</h3><p>Ethics, confidentiality, consent, scope of practice, and knowing when to refer.</p><p class="more">Open &rarr;</p></a></div><p style="color:var(--mut)">More categories will be added as tips are posted.</p>'''
  '<h2>How the Tips work</h2><p>' + TIP_LINE + '</p>'
  '<h2>Topics you can expect</h2><ul class="clean"><li>Beliefs and how they shape feelings and behavior</li><li>Working with anxiety and depression</li><li>Parental messages and the beliefs children absorb</li><li>Core lies: worthlessness, abandonment, failure</li><li>Cognitive errors and how to name them</li><li>Using Scripture in counseling, wisely and well</li><li>Homework that clients actually do</li><li>Ethics, scope of practice, and knowing when to refer</li></ul>'
  '<div class="card"><span class="tag">Coming soon</span><h3>Your first tip</h3><p>The tip archive opens when membership begins.</p></div>')
