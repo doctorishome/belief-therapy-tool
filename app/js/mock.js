@@ -3,7 +3,7 @@
  * Every answer is a fictional draft and keeps [CLIENT] placeholders.
  */
 
-const CLOSE = "\n\nDraft for the counselor's clinical judgment. Fictional-cases practice only — not a diagnosis.";
+const CLOSE = "\n\nPractice mode — draft for the counselor's clinical judgment, not a diagnosis.";
 
 function sourcesLine(sources) {
   if (!sources || !sources.length) return "";

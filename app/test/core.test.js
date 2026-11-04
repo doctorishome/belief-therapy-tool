@@ -144,7 +144,7 @@ test("mock diagnosis and treatment plan are fictional drafts", () => {
     const reply = mockReply({ kind: "chat", question, sources: [] });
     assert.match(reply.content, /consider|Treatment plan/i);
     assert.match(reply.content, /\[CLIENT\]/);
-    assert.match(reply.content, /Fictional-cases practice only/);
+    assert.match(reply.content, /Practice mode — draft for the counselor's clinical judgment, not a diagnosis/);
     assert.equal(/HIPAA (approved|certified)/i.test(reply.content), false);
   }
 });

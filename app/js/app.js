@@ -464,7 +464,7 @@ function showSendPreview(preview) {
         ? "Mock mode. If you press Send, a canned draft is written in this browser. This text is not transmitted."
         : "If you press Send, this text goes to <b>" + esc(preview.host) + "</b>. The API key stays on that server."}</p>
       <p class="small">Model <b>${esc(preview.model)}</b>. Standing instructions (${preview.standingWords} words) and the clinical instructions are included. They contain no client information and are not shown here.</p>
-      ${leaks.length ? `<div class="leak-warn"><b>Possible identifying details:</b> ${leaks.map((l) => "<code>" + esc(l) + "</code>").join(", ")}. Cancel unless they are fictional.</div>` : ""}
+      ${leaks.length ? `<div class="leak-warn"><b>Possible identifying details:</b> ${leaks.map((l) => "<code>" + esc(l) + "</code>").join(", ")}. Practice mode is still on. Cancel unless these details are fictional.</div>` : ""}
       ${question ? `<p><b>Your question</b></p><div class="add-preview">${esc(question)}</div>` : `<p><b>Request</b></p><div class="add-preview">${esc(preview.question || "")}</div>`}
       <p><b>De-identified case</b> (${(preview.caseText || "").length.toLocaleString()} characters)</p>
       <div class="add-preview">${esc(preview.caseText || "")}</div>
@@ -650,8 +650,7 @@ function renderForms() {
 
 function renderPrivacy() {
   $("#privacy-body").innerHTML = `
-    <div class="pv warn"><b>Not yet for real client data</b><p>Use fictional cases only. A Business Associate Agreement is not signed, and zero data retention is not confirmed. Do not type real names or identifiers.</p>
-    <p>The wording to use later, after a signed BAA and zero data retention, is “HIPAA-compliant processing under a signed BAA.” That is not true of this app today.</p></div>
+    <div class="pv warn"><b>Practice mode (temporary)</b><p>Practice mode for now: please use fictional cases until our privacy agreements are finalized. Real client records will be supported once they are in place.</p></div>
     <div class="pv"><b>Records stay in this browser</b><p>Cases are encrypted with AES-GCM. The key is derived from your passphrase with PBKDF2 (600,000 rounds) and is kept in memory only while the app is unlocked. The website and Wix do not receive case text.</p></div>
     <div class="pv"><b>What an AI request contains</b><p>You see the exact de-identified text, your question, and any library passages, then press Send or Cancel. Standing instructions are added by the program and are not shown or editable. In mock mode nothing is transmitted. In live mode the text goes only to the proxy address in config.js, which holds the API key.</p></div>
     <div class="pv"><b>Backups</b><p>Export writes an encrypted file. Import replaces the cases in this browser. The file does not help if you forget the passphrase.</p></div>`;

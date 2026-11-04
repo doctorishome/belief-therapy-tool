@@ -115,7 +115,7 @@ def nav(active):
         out.append('<a class="needhelp" target="_top" href="%s">Need Help?</a>' % HELP_URL)
     out.append('</div><!--/nav-->')
     return ''.join(out)
-FOOT='<div class="foot">Educational training for counselors. Never enter real client names or details. · Scripture quotations: Berean Standard Bible (BSB), public domain. · © Brian Campbell, Ph.D.</div>'
+FOOT='<div class="foot">Educational training for counselors. · Scripture quotations: Berean Standard Bible (BSB), public domain. · © Brian Campbell, Ph.D.</div>'
 HELP_URL='https://www.beliefcounselor.com/help'
 HELP_A='<a href="%s" target="_top">Help &amp; Support</a>'%HELP_URL
 def foot_with_help(foot=None):
@@ -236,7 +236,7 @@ page('cases','Case Studies','Practice Identify, Challenge, and Replace on compos
  '<div class="step"><div class="num">3</div><div><strong>You keep a clean summary.</strong><p>Each case ends with a summary of the model path and a short quiz you can review later.</p></div></div>'
  '<h2>Pricing</h2><div class="grid"><div class="card"><span class="tag free">Free</span><h3>Your first case</h3><p>Included with membership.</p></div><div class="card"><span class="tag">Sets of five</span><h3>More cases</h3><p>Add cases in sets of five whenever you are ready. Pricing to be announced.</p></div></div>'
  '<h2>Case categories</h2><ul class="clean">'+''.join('<li>%s</li>'%c for c in cats)+'</ul>'
- '<p><strong>Important:</strong> all cases are fictional composites. Never enter real client names or details.</p>')
+ '<p><strong>Important:</strong> all cases are fictional composites.</p>')
 # 6 Course
 secs=['Welcome and How This Course Works','The Process: Identify, Challenge, Replace','Levels of Analysis: The Whole Person','Assess and Identify: Finding the Lies','Hypothesize and Question','Refute and Replace','Rehearse and Reinforce','Core Beliefs and Personality Patterns','Safety, Ethics, and Scope of Practice','Practice Cases and Final Review']
 page('course','Christian Cognitive-Behavioral Therapy: The Course','A step-by-step course in Belief Counseling, with quizzes, practice cases, and a certificate of completion.',
@@ -271,7 +271,7 @@ h2.forms-title{margin-top:22px}
 /*/cc*/
 '''
 CC_FOOT = (
- '<div class="foot">Educational training for counselors. Never enter real client names or details. · '
+ '<div class="foot">Educational training for counselors. · '
  '<a href="https://www.beliefcounselor.com/account-settings" target="_top">My Account</a> · '
  '<a href="https://www.beliefcounselor.com/my-subscriptions" target="_top">My Subscriptions</a> · '
  '<a href="%s" target="_top">Help</a></div>' % HELP_URL)
@@ -297,19 +297,19 @@ CC_START_JS = r'''<script>
 </script>'''
 page('clinical-companion','Clinical Companion', '',
  '<h2>Open Clinical Companion</h2>'
- '<div class="card"><p>Clinical Companion runs in your web browser. Use Start Clinical Companion at the top of this page. It opens full screen in this tab. Use fictional cases only. This is not yet for real client data.</p></div>'
+ '<div class="card"><p>Clinical Companion runs in your web browser. Use Start Clinical Companion at the top of this page. It opens full screen in this tab. Practice mode for now: please use fictional cases until our privacy agreements are finalized. Real client records will be supported once they are in place.</p></div>'
  '<h2>Quick start</h2><ol class="clean">'
  '<li>Choose Start Clinical Companion. It opens full screen in this browser tab.</li>'
  '<li>Sign in with your member login.</li>'
  '<li>Try a practice case before you use it with clients.</li>'
  '<li>Write your session notes, then ask for an analysis.</li></ol>'
  '<h2>Counselor information</h2>'
- '<div class="card"><p>Clinical Companion supports, and does not replace, your professional clinical judgment. Use fictional or de-identified information, and never enter real client names or details. It is meant for your own professional work.</p></div>'
+ '<div class="card"><p>Clinical Companion supports, and does not replace, your professional clinical judgment. For now, please use fictional cases until our privacy agreements are finalized. Real client records will be supported once they are in place. It is meant for your own professional work.</p></div>'
  '<h2 class="forms-title">Client Forms for Your Practice</h2>'
  '<div class="forms"><p>Enter your practice details once. A New Client Packet and a Confidentiality Agreement open already filled in with those details. Review them with an attorney in your state.</p>'
  '<a class="btn" href="practice-forms.html" target="_blank" rel="noopener">Open client forms</a></div>' + CC_START_JS,
  eyebrow='MEMBERS', extra_css=CC_CSS, with_nav=False, foot=CC_FOOT,
- hero_lead='<a class="btn startcc" href="%s" target="_top">Start Clinical Companion</a><p class="startnote">Practice mode. Use fictional cases only. This is not yet for real client data.</p>' % CC_APP,
+ hero_lead='<a class="btn startcc" href="%s" target="_top">Start Clinical Companion</a><p class="startnote">Practice mode for now: please use fictional cases until our privacy agreements are finalized. Real client records will be supported once they are in place.</p>' % CC_APP,
  hero_extra='<p class="backline"><a class="back" href="%s" target="_top">← Back to the Counselors’ Room</a></p><a class="btn needhelp" href="%s" target="_top">Need Help?</a>' % (ROOM_PAGE, HELP_URL))
 # 9 Help & Support (public). Linked with target="_top" because the counselor pages sit in a Wix iframe.
 HELP_CSS = '''/*help*/
@@ -349,7 +349,7 @@ HELP_FAQS = [
   '<p>If you cancel during the 7-day free trial, you pay nothing. If you cancel after you\u2019ve been billed, there is no refund for the rest of that billing month. You keep access until the end of that month, and you are not billed again. After that month, Clinical Companion and the member resources are no longer available.</p>'
   '<p>For a special circumstance, email <a href="mailto:%s">%s</a>.</p>' % (BRIAN, BRIAN)),
  ("What do I need to run it?", "A computer with an up-to-date web browser and an internet connection. Clinical Companion runs in the browser."),
- ("Can I enter real client information?", "Use fictional or de-identified information unless your plan states otherwise. Never enter real client names or details. Try a practice case before using Clinical Companion with clients. It supports, and does not replace, your professional clinical judgment."),
+ ("Can I enter real client information?", "Not yet. Practice mode is temporary: please use fictional cases until our privacy agreements are finalized. Real client records will be supported once they are in place. Try a practice case before using Clinical Companion with clients. It supports, and does not replace, your professional clinical judgment."),
  ("What does 'fair use' mean?", "Clinical Companion is meant for your own professional caseload. Sharing your account, or very heavy automated use, isn't permitted."),
  ("Who is Clinical Companion for?", "Professional counselors, psychologists, and students in training who want to integrate Christian belief counseling into their work."),
 ]
