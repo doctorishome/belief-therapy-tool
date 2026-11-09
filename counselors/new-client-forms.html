@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>New Client Forms · Clinical Companion</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6;--teal:#0f6b5c;--red:#a3271f}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;background:var(--cream);color:var(--ink);font-size:18px;line-height:1.5}
+.hero{background:var(--navy);color:#fff;padding:22px 20px 18px;text-align:center}
+.hero h1{margin:4px 0 2px;font-size:28px}
+.eyebrow{letter-spacing:.15em;font-size:13px;color:var(--gold)}
+.wrap{max-width:760px;margin:0 auto;padding:10px 18px 40px}
+.note{background:#fff7d6;border:1px solid #e6cf7a;border-radius:8px;padding:10px 14px;font-size:15px;margin:16px 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+h2{color:var(--navy);font-size:22px;margin:4px 0 8px}
+h3{color:var(--navy2);font-size:18px;margin:22px 0 6px;border-bottom:1px solid var(--line);padding-bottom:4px}
+.item{padding:12px 0;border-bottom:1px solid #eee}
+.item:last-child{border-bottom:0}
+.item p{margin:0 0 6px}
+.btn{display:inline-block;background:var(--navy);color:#fff;border:0;border-radius:8px;padding:11px 18px;font-size:16px;font-family:inherit;cursor:pointer;text-decoration:none;margin:6px 8px 0 0}
+.btn.gold{background:var(--gold);color:var(--navy)}
+.btn.light{background:#fff;color:var(--navy);border:1px solid var(--navy)}
+.done{color:var(--teal);font-weight:bold}
+.soon{color:var(--mut);font-style:italic;font-size:15px}
+.f{margin:14px 0}
+.f > label.t{display:block;margin-bottom:6px}
+.f small{color:var(--mut);font-size:14px}
+input[type=text],input[type=email],input[type=tel],input[type=date],textarea{font:inherit;font-size:17px;padding:9px 10px;border:1px solid #bbb;border-radius:6px;width:100%}
+textarea{min-height:84px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{flex:1 1 130px;border:1px solid #c9c2ad;border-radius:8px;padding:9px 10px;text-align:center;cursor:pointer;font-size:15px;background:#fff}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts label.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.yn label{flex:0 1 110px}
+.req{color:var(--red)}
+.err{color:var(--red);font-size:15px}
+.alert{background:#fdecea;border:2px solid var(--red);border-radius:10px;padding:14px 16px;margin:14px 0}
+.alert b{color:var(--red)}
+table{border-collapse:collapse;width:100%;font-size:16px}
+td,th{border-bottom:1px solid #eee;padding:7px;text-align:left;vertical-align:top}
+.status{font-size:14px;color:var(--mut)}
+.foot{text-align:center;font-size:13px;color:var(--mut);padding:20px}
+.progress{font-size:15px;color:var(--mut);margin-top:4px}
+</style></head><body>
+<div class="hero"><div class="eyebrow">WELCOME</div><h1>New Client Forms</h1></div>
+<div class="wrap">
+<div class="note"><b>Practice sample.</b> Use made-up information only. Your answers are not saved or sent anywhere.</div>
+
+<div id="home">
+<div class="card">
+<p>Welcome. We look forward to meeting you. Please complete the forms below before your first visit. Altogether they take about 15–20 minutes. You may skip any question in the Brief History you do not wish to answer; we can talk about it in session.</p>
+<p class="status">These forms are not watched around the clock. If you are in danger, call 911 or go to the nearest emergency room. For a mental-health crisis, call or text 988.</p>
+<div id="list"></div>
+<p class="progress" id="progress"></p>
+</div>
+</div>
+
+<div id="formarea"></div>
+<div class="alert" id="crisis" style="display:none"><b>Thank you for telling us.</b> If you are in danger right now, call 911 or go to the nearest emergency room. You can call or text <b>988</b> (Suicide &amp; Crisis Lifeline) at any time, day or night. Please also tell your counselor right away. These forms are not watched around the clock.</div>
+<div id="finished"></div>
+<div id="summary"></div>
+</div>
+<div class="foot">Belief Counseling · Clinical Companion · Practice sample. Never enter real client names or details.</div>
+
+<script>
+const YN=['No','Yes'];
+const FORMS=[
+ {id:'about',name:'About You',time:'about 5 minutes',sections:[
+  ['Your information',[
+   {k:'name',t:'Full name',type:'text',req:1},
+   {k:'dob',t:'Date of birth',type:'date',req:1},
+   {k:'pref',t:'Preferred name',type:'text'},
+   {k:'addr',t:'Street address',type:'text'},
+   {k:'city',t:'City, state, ZIP',type:'text'},
+   {k:'cell',t:'Cell phone',type:'tel',req:1},
+   {k:'email',t:'Email',type:'email',req:1},
+   {k:'contact',t:'Best way to reach you',type:'one',opts:['Cell call','Text','Email','Other phone']},
+   {k:'msg',t:'Is it OK to leave a detailed message?',type:'one',opts:['Voicemail','Text','Email','No, call-back request only']},
+   {k:'rel',t:'Relationship status',type:'one',opts:['Single','Married/partnered','Separated/divorced','Widowed','Other']},
+   {k:'live',t:'Living situation',type:'one',opts:['Alone','With partner/family','Shared or supported housing','Unstable housing','Other']},
+   {k:'occ',t:'Occupation (optional)',type:'text'}]],
+  ['Emergency contact',[
+   {k:'ec',t:'Name and relationship',type:'text',req:1},
+   {k:'ecph',t:'Phone',type:'tel',req:1},
+   {k:'ecok',t:'May we contact this person in an emergency?',type:'one',opts:YN}]],
+  ['Payment',[
+   {k:'pay',t:'How will you pay?',type:'one',opts:['Insurance','Self-pay','Out-of-network (I file my own claims)'],req:1},
+   {k:'ins',t:'Insurance company and member ID (if using insurance)',type:'text'},
+   {k:'cards',t:'Photos of your insurance card and photo ID',type:'one',opts:['I will bring them to my first visit','Self-pay, not needed'],help:'In the real system you will be able to upload photos here.'},
+   {k:'heard',t:'How did you hear about us?',type:'text'}]]]},
+ {id:'history',name:'Brief History',time:'about 10–15 minutes',intro:'Please do not enter the names of other people. You may skip any question you do not wish to answer.',sections:[
+  ['Present concerns',[
+   {k:'concern',t:'What are the main concerns for which you are seeking help?',type:'long'},
+   {k:'howlong',t:'About how long have these concerns been present?',type:'text'},
+   {k:'interf',t:'How much are they interfering with your daily life?',type:'one',opts:['Slightly','Moderately','Seriously','Extremely']},
+   {k:'goal',t:'What would you most like to change or accomplish?',type:'long'},
+   {k:'diff',t:'Current difficulties: check any that apply now',type:'many',opts:['Anxiety, fear, or panic','Depression, sadness, or loss of interest','Anger or irritability','Grief or loss','Relationship or family problems','Traumatic experiences or distressing memories','Unwanted thoughts or repetitive behaviors','Problems with sleep, appetite, energy, or concentration','Unusually elevated mood, impulsivity, or little need for sleep','Hearing, seeing, or strongly believing things others do not','Work, school, financial, housing, or legal stress','Spiritual or religious concerns','Other']},
+   {k:'diffother',t:'Other (describe)',type:'text'}]],
+  ['Safety',[
+   {k:'s1',t:'Are you currently thinking about killing or seriously harming yourself?',type:'one',opts:YN,yn:1,flag:1},
+   {k:'s2',t:'Have you ever attempted suicide or intentionally seriously harmed yourself?',type:'one',opts:YN,yn:1,flag:2},
+   {k:'s3',t:'Are you currently thinking about seriously harming someone else?',type:'one',opts:YN,yn:1,flag:1},
+   {k:'s4',t:'Do you presently feel unsafe, threatened, abused, controlled, or exploited by anyone?',type:'one',opts:YN,yn:1,flag:1},
+   {k:'s5',t:'Do you currently have access to a firearm or another potentially lethal means?',type:'one',opts:YN,yn:1,flag:2}]],
+  ['Treatment and health history',[
+   {k:'prior',t:'Have you previously received counseling, psychiatric treatment, or hospitalization?',type:'one',opts:YN,yn:1},
+   {k:'priorx',t:'If yes, briefly describe what was helpful or unhelpful',type:'long'},
+   {k:'meds',t:'Current medications (emotional, psychiatric, sleep, pain, or other): name and dose',type:'long'},
+   {k:'prescr',t:'Prescriber and primary care physician (names and phone numbers)',type:'text'},
+   {k:'med',t:'Any medical, neurological, hormonal, sleep-related, or pain condition that may affect your emotional health?',type:'one',opts:YN,yn:1},
+   {k:'medx',t:'If yes, please describe',type:'text'},
+   {k:'fam',t:'Have close biological relatives had significant mental-health or substance-use problems?',type:'one',opts:['No','Yes','Unsure']}]],
+  ['Alcohol and other substances',[
+   {k:'sub',t:'During the past year, has your use of alcohol, cannabis, prescription medication, or another substance concerned you or someone close to you, become hard to control, or caused health, relationship, work, legal, or spiritual problems?',type:'one',opts:YN,yn:1},
+   {k:'subx',t:'If yes, briefly explain',type:'text'}]],
+  ['Important life experiences',[
+   {k:'life',t:'Have you experienced abuse, neglect, violence, disaster, combat, serious loss, discrimination, or another event that continues to affect you?',type:'one',opts:['No','Yes','Prefer not to answer']}]],
+  ['Faith and support (optional)',[
+   {k:'faith',t:'Are religious faith, spiritual beliefs, or a faith community important to understanding your concerns or helping you address them?',type:'one',opts:['No','Yes','Unsure']},
+   {k:'church',t:'Faith background or church (optional)',type:'text'},
+   {k:'faithhow',t:'If yes, how should faith be included in counseling?',type:'long'},
+   {k:'support',t:'Who or what presently provides you with meaningful support?',type:'long'},
+   {k:'strength',t:'What personal strengths, coping methods, relationships, or beliefs have helped you?',type:'long'}]]]},
+ {id:'consent',name:'Agreements and Consent Forms',soon:'Consent for treatment, confidentiality, release of information, and the Client Handbook. Being prepared; your counselor will go over these with you.'}
+];
+const answers={};const done={};
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function renderList(){
+ document.getElementById('list').innerHTML=FORMS.map((f,i)=>{
+  if(f.soon)return `<div class="item"><p><b>${i+1}. ${f.name}</b></p><p class="soon">${f.soon}</p></div>`;
+  return `<div class="item"><p><b>${i+1}. ${f.name}</b> ${done[f.id]?'<span class="done">✓ Done</span>':`<span class="status">(${f.time})</span>`}</p><button class="btn${done[f.id]?' light':''}" onclick="openForm('${f.id}')">${done[f.id]?'Review':'Start'}</button></div>`;}).join('');
+ const n=FORMS.filter(f=>!f.soon).length,d=Object.keys(done).length;
+ document.getElementById('progress').textContent=`${d} of ${n} forms complete.`;
+}
+function field(q){
+ const v=answers[q.k];const r=q.req?' <span class="req">*</span>':'';
+ let h=`<div class="f"><label class="t" for="${q.k}">${esc(q.t)}${r}</label>`;
+ if(q.type==='long')h+=`<textarea id="${q.k}">${esc(v||'')}</textarea>`;
+ else if(q.type==='one'||q.type==='many'){
+  const ty=q.type==='one'?'radio':'checkbox';
+  h+=`<div class="opts${q.yn?' yn':''}">`+q.opts.map(o=>{const on=q.type==='one'?v===o:(v||[]).includes(o);
+   return `<label class="${on?'on':''}"><input type="${ty}" name="${q.k}" value="${esc(o)}" ${on?'checked':''} onchange="mark(this)">${esc(o)}</label>`;}).join('')+'</div>';}
+ else h+=`<input type="${q.type}" id="${q.k}" value="${esc(v||'')}">`;
+ if(q.help)h+=`<small>${esc(q.help)}</small>`;
+ return h+'</div>';
+}
+function mark(el){const box=el.closest('.opts');
+ if(el.type==='radio')box.querySelectorAll('label').forEach(l=>l.classList.toggle('on',l.contains(el)));
+ else el.parentElement.classList.toggle('on',el.checked);}
+function openForm(id){
+ const f=FORMS.find(x=>x.id===id);
+ let h=`<div class="card" id="fc"><h2>${f.name}</h2>${f.intro?`<p class="status">${f.intro}</p>`:''}`;
+ if(f.sections.some(s=>s[1].some(q=>q.req)))h+='<p class="status"><span class="req">*</span> Required</p>';
+ f.sections.forEach(([title,qs])=>{h+=`<h3>${title}</h3>`+qs.map(field).join('');});
+ h+=`<p class="err" id="err"></p><button class="btn gold" onclick="save('${id}')">Save and finish this form</button> <button class="btn light" onclick="back()">Back to my forms</button></div>`;
+ document.getElementById('home').style.display='none';
+ document.getElementById('finished').innerHTML='';
+ document.getElementById('formarea').innerHTML=h;window.scrollTo(0,0);
+}
+function back(){document.getElementById('formarea').innerHTML='';document.getElementById('home').style.display='block';renderList();window.scrollTo(0,0);}
+function save(id){
+ const f=FORMS.find(x=>x.id===id);let missing=null;
+ f.sections.forEach(([,qs])=>qs.forEach(q=>{
+  let v;
+  if(q.type==='one'){const c=document.querySelector(`input[name="${q.k}"]:checked`);v=c?c.value:'';}
+  else if(q.type==='many'){v=[...document.querySelectorAll(`input[name="${q.k}"]:checked`)].map(c=>c.value);}
+  else v=document.getElementById(q.k).value.trim();
+  answers[q.k]=v;
+  if(q.req&&(!v||!v.length)&&!missing)missing=q.t;
+ }));
+ if(missing){document.getElementById('err').textContent='Please answer: '+missing;return;}
+ done[id]=1;
+ const danger=FORMS[1].sections.flatMap(s=>s[1]).some(q=>q.flag===1&&answers[q.k]==='Yes');
+ document.getElementById('crisis').style.display=danger?'block':'none';
+ back();
+ const n=FORMS.filter(f=>!f.soon).length;
+ if(Object.keys(done).length===n)document.getElementById('finished').innerHTML='<div class="card"><p class="done">Thank you. Your forms are complete.</p><p>Your counselor will review them before your first visit. We look forward to meeting you.</p></div>';
+ renderSummary();
+}
+function renderSummary(){
+ const hist=FORMS[1].sections.flatMap(s=>s[1]);
+ let h='<div class="card"><h2>Counselor view (practice only)</h2><p class="status">In the real system, only the counselor would see this. The answers would go into the client\'s file, and the AI would start the Assessment Report (step 4).</p>';
+ const urgent=hist.filter(q=>q.flag===1&&answers[q.k]==='Yes'),hist2=hist.filter(q=>q.flag===2&&answers[q.k]==='Yes');
+ if(urgent.length)h+='<div class="alert"><b>Safety flag: contact the client before the first visit.</b><br>'+urgent.map(q=>'• '+esc(q.t)).join('<br>')+'</div>';
+ if(hist2.length)h+='<div class="alert" style="border-width:1px"><b>Review at the first interview:</b><br>'+hist2.map(q=>'• '+esc(q.t)).join('<br>')+'</div>';
+ if(answers.faith==='Yes')h+='<p>✓ <b>Faith included.</b> Consider the spiritual screens and the Christian Experiences and Beliefs checklist at step 9.</p>';
+ if((answers.diff||[]).some(d=>/Anxiety|Depression/.test(d)))h+='<p>✓ <b>Anxiety or depression checked.</b> Consider the GAD-7 and PHQ-9 at step 9.</p>';
+ h+='<table>';
+ FORMS.filter(f=>!f.soon&&done[f.id]).forEach(f=>{h+=`<tr><th colspan="2" style="padding-top:14px">${f.name}</th></tr>`;
+  f.sections.flatMap(s=>s[1]).forEach(q=>{let v=answers[q.k];if(Array.isArray(v))v=v.join('; ');if(v)h+=`<tr><td>${esc(q.t)}</td><td>${esc(v)}</td></tr>`;});});
+ document.getElementById('summary').innerHTML=h+'</table></div>';
+}
+renderList();
+</script>
+</body></html>
