@@ -174,6 +174,25 @@ function openEdit(id) {
   show("edit");
 }
 
+function addBlankNote() {
+  state.editNotes.push({ id: crypto.randomUUID(), date: new Date().toISOString().slice(0, 10), text: "" });
+  state.editDirty = true;
+  renderNotesEditor();
+  const areas = document.querySelectorAll("#notes-editor textarea");
+  const last = areas[areas.length - 1];
+  if (last) last.focus();
+}
+
+function addSessionNoteFromCase() {
+  if (!state.currentId) return;
+  openEdit(state.currentId);
+  addBlankNote();
+  requestAnimationFrame(() => {
+    const fs = document.getElementById("notes-fieldset");
+    if (fs) fs.scrollIntoView({ block: "start" });
+  });
+}
+
 function renderNotesEditor() {
   const box = $("#notes-editor");
   box.innerHTML = state.editNotes.map((n, i) => `
@@ -229,6 +248,15 @@ function hasDxOrPlan(c) {
 function renderRecord(c) {
   const age = ageLine(c.dob);
   const notes = (c.notes || []).slice().sort((a, b) => String(a.date).localeCompare(String(b.date)));
+  const noteCount = notes.length;
+  $("#record-tools").innerHTML = `
+    <button type="button" class="btn sm" id="jump-notes">Session notes${noteCount ? " (" + noteCount + ")" : ""}</button>
+    <button type="button" class="btn sm primary" id="add-note-case">+ Add session note</button>`;
+  $("#jump-notes").onclick = () => {
+    const el = document.getElementById("session-notes");
+    if (el) el.scrollIntoView({ block: "start" });
+  };
+  $("#add-note-case").onclick = () => addSessionNoteFromCase();
   $("#record-body").innerHTML = `
     <div class="rec-section"><h4>Client</h4>
       <dl class="id-grid">
@@ -254,7 +282,7 @@ function renderRecord(c) {
            <button class="btn ai-primary" type="button" id="plan-ten">Plan 10 sessions</button>`
         : `<p class="hint">Add a working diagnosis or a treatment plan first, then this button appears.</p>`}
     </div>
-    <div class="rec-section"><h4>Session notes</h4>
+    <div class="rec-section" id="session-notes"><h4>Session notes</h4>
       ${notes.length ? notes.map((n) => `<div class="rec-note"><div class="date">${esc(n.date || "Undated")}</div><div class="val">${esc(n.text || "")}</div></div>`).join("") : `<div class="val empty-val">No session notes yet.</div>`}
     </div>`;
   const planBtn = $("#plan-ten");
@@ -694,11 +722,7 @@ function bind() {
   $("#edit-back").onclick = cancelEdit;
   $("#edit-cancel").onclick = cancelEdit;
   $("#edit-save").onclick = () => saveEdit().catch((e) => toast(e.message));
-  $("#add-note").onclick = () => {
-    state.editNotes.push({ id: crypto.randomUUID(), date: new Date().toISOString().slice(0, 10), text: "" });
-    state.editDirty = true;
-    renderNotesEditor();
-  };
+  $("#add-note").onclick = () => addBlankNote();
   $("#case-form").oninput = () => { state.editDirty = true; };
   $("#case-back").onclick = showHome;
   $("#case-edit").onclick = () => state.currentId && openEdit(state.currentId);

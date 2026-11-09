@@ -102,7 +102,7 @@
         <label>Treatment plan <textarea name="treatmentPlan" rows="4"></textarea></label>
         <label>10-session plan <textarea name="sessionPlan" rows="6" placeholder="Use Plan 10 sessions on the case, or write it here."></textarea></label>
       </fieldset>
-      <fieldset>
+      <fieldset id="notes-fieldset">
         <legend>Session notes</legend>
         <div id="notes-editor"></div>
         <button type="button" class="btn" id="add-note">+ Add session note</button>
@@ -122,6 +122,7 @@
     <div class="two-panel">
       <div class="panel record">
         <div class="panel-label record-label">Permanent record <span class="muted small">— saved, encrypted, this browser only</span></div>
+        <div class="record-tools" id="record-tools"></div>
         <div id="record-body" class="record-body"></div>
       </div>
       <div class="panel ai">
