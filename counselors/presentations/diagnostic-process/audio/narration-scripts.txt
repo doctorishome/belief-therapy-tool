@@ -1,0 +1,193 @@
+Basic Diagnostic and Coding Procedures (DSM-5-TR)
+Narration scripts: one clip per slide. Save each recording as slide-01.mp3, slide-02.mp3, and so on.
+
+=== Slide 1 of 19: Basic Diagnostic and Coding Procedures  (save as slide-01.mp3) ===
+Welcome. In this presentation, we'll walk through the basic steps for making a diagnosis with the DSM-5-TR, the current edition of the Diagnostic and Statistical Manual of Mental Disorders, and for writing that diagnosis with the correct codes.
+
+I'm Dr. Brian Campbell. Over many years of teaching and private practice, I've found that a clear, step-by-step process makes diagnosis far less intimidating. So we'll take it one step at a time. There are nine steps in all.
+
+As we go, I encourage you to keep your own copy of the DSM-5-TR by your side, so you can see where each part of the process is found in the manual.
+
+=== Slide 2 of 19: Why diagnostic codes matter  (save as slide-02.mp3) ===
+Why do diagnostic codes matter? There are three main reasons.
+
+First, medical records. A diagnostic code gives the client's record a clear, standard description of the problem that any professional can understand.
+
+Second, research and statistics. Because everyone uses the same codes, clinics, researchers, and health agencies can count and compare how often different conditions occur.
+
+And third, insurance. Medicare, Medicaid, and private insurance companies all use diagnostic codes to decide which services they will pay for. So if your clients use insurance, an accurate code is essential.
+
+=== Slide 3 of 19: The coding system behind the DSM-5-TR  (save as slide-03.mp3) ===
+The codes you'll find in the DSM-5-TR come from a system called the ICD-10-CM. That stands for the International Classification of Diseases, Tenth Revision, Clinical Modification. It's the official code set used for diagnosis and billing in the United States.
+
+You may hear about ICD-11. The World Health Organization adopted the eleventh revision in 2022. However, the DSM-5-TR hasn't adopted it, and U.S. billing still uses ICD-10-CM. So for now, the codes printed in your DSM-5-TR are the ones you'll use.
+
+=== Slide 4 of 19: Working with insurance companies  (save as slide-04.mp3) ===
+If you plan to work with insurance, here are six practical points to keep in mind.
+
+First, insurance companies pay only for certain diagnostic codes. Personality disorders, for example, are often not reimbursed.
+
+Second, you have a choice about who files the claim. You can give clients a receipt with the diagnostic code and let them submit it themselves, or your office can file the claims for them. Most clients will expect you to offer that service.
+
+Third, to file claims directly, you'll usually apply to join the insurance company's panel of providers. Once accepted, you're an in-network provider. Some companies will also accept claims from out-of-network providers.
+
+Fourth, licensed professional counselors can now bill Medicare and Medicaid.
+
+Fifth, many insurers require preauthorization before certain services, such as psychological testing. And different services are paid at different rates.
+
+Finally, most insurers require claims to be filed electronically. That means billing software, or a billing company that handles the process for you. Those companies can be helpful, but they can also be expensive.
+
+=== Slide 5 of 19: The nine-step diagnostic process  (save as slide-05.mp3) ===
+Here is the whole process at a glance. There are nine steps.
+
+One: explore whether the client may have a major mental disorder.
+Two: check every one of the criteria for the disorder you're considering.
+Three: add any subtypes and specifiers.
+Four: add course and severity, when they apply.
+Five: if the full criteria aren't met, consider an "other specified" or "unspecified" diagnosis.
+Six: consider a provisional diagnosis when you don't yet have enough information.
+Seven: look for any co-occurring disorders.
+Eight: identify other conditions that may need clinical attention, known as Z codes.
+And nine: decide which diagnosis is the principal diagnosis, or the reason for the visit.
+
+Let's go through them one at a time.
+
+=== Slide 6 of 19: The diagnostic flow chart  (save as slide-06.mp3) ===
+Before we look at each step in detail, here is the flow chart I use to picture the whole process. You may find it helpful to come back to this chart as we go, and follow along. The small numbered tags on the boxes show which of the nine steps each box belongs to.
+
+We begin at Start, by checking everything we know about the client: the clinical records, the client's history, the reason for referral, the initial interview, and any previous or current test results.
+
+From there, we consider whether the client may have a major mental disorder, and whether there may be a co-occurring diagnosis as well.
+
+Next, we check the criteria. Then we come to the key decision point, the black diamond: does the client meet all of the criteria?
+
+If the answer is yes, we follow the path upward and consider all the subtypes and specifiers, including course and severity.
+
+If the answer is no, we follow the path downward and consider an unspecified, other specified, or provisional diagnosis.
+
+Both paths then lead to the same place: considering other conditions that may be a focus of clinical attention, the Z codes. And finally, we determine the principal diagnosis or reason for visit, and we've reached the end.
+
+Now let's walk through each of these steps, one at a time.
+
+=== Slide 7 of 19: Step 1 · Explore for a major mental disorder  (save as slide-07.mp3) ===
+Step one is to explore the possibility that the client has a major mental disorder.
+
+Before you decide anything, gather all the information available to you. That includes the client's background information and history, the reason the client was referred, what you learned in the initial interview, and any test results, both from earlier testing and from testing you've done yourself.
+
+Taken together, these sources point you toward the disorder or disorders you need to consider.
+
+=== Slide 8 of 19: Step 2 · Check every criterion  (save as slide-08.mp3) ===
+Step two is the heart of the process: check the criteria.
+
+To diagnose a major mental disorder, you must confirm that the client meets every criterion the DSM-5-TR lists for that disorder. Most disorders have several criteria, so take your time and go through each one.
+
+As you do, you may find you need more information. You might go back to the client's background, the test data, or your clinical records. Or you may need to ask the client further questions about a particular criterion.
+
+Don't skip ahead. If you're unsure whether a criterion is met, find out before you make the diagnosis.
+
+=== Slide 9 of 19: Step 3 · Add subtypes and specifiers  (save as slide-09.mp3) ===
+Step three: once you've confirmed that all the criteria are met, add any subtypes and specifiers listed for that disorder.
+
+Here's how to recognize them in the manual. Subtypes are marked in the criteria by the instruction "specify whether." Specifiers are marked by "specify" or "specify if." A disorder can have more than one specifier, so be sure to consider every one that's listed.
+
+Here's an example. F43.10, posttraumatic stress disorder, with dissociative symptoms, with delayed expression. In this example, "with dissociative symptoms" is the subtype, and "with delayed expression" is the specifier.
+
+=== Slide 10 of 19: Step 4 · Add course and severity  (save as slide-10.mp3) ===
+Step four: when they apply, add course and severity specifiers.
+
+The course describes how the disorder has unfolded over time. For example, persistent, in partial remission, or in full remission. The severity describes how intense it is right now, such as mild, moderate, severe, or extreme. Not every disorder has these options, so check the manual.
+
+These are listed after the name of the disorder. For example: F94.2, disinhibited social engagement disorder, persistent, severe. "Persistent" is the course, and "severe" is the severity.
+
+One important caution. Use course and severity only when the full criteria are met. If your diagnosis is provisional, leave them off, even if the manual offers them for that disorder.
+
+=== Slide 11 of 19: Step 5 · Other specified or unspecified  (save as slide-11.mp3) ===
+Step five: what if the client clearly has a significant problem, but doesn't meet the full criteria for any specific disorder? Then you consider an "unspecified" or an "other specified" diagnosis.
+
+Use "unspecified" when the client looks as though they have a disorder in that category but doesn't technically meet all the criteria, and you choose not to say why. For example: F44.9, unspecified dissociative disorder.
+
+Use "other specified" when you know the reason the criteria aren't met, and you choose to state it. You record the name of the category, followed by the reason. For example, a client with significant depressive symptoms for four weeks, but with too few symptoms for a major depressive episode, would be recorded as F32.89, other specified depressive disorder, depressive episode with insufficient symptoms.
+
+=== Slide 12 of 19: Remembering the difference: the duck analogy  (save as slide-12.mp3) ===
+Here's a simple way I like to remember the difference. Picture a duck.
+
+It looks like a duck in every way. But it doesn't have webbed feet, and webbed feet are one of the criteria for calling something a duck. So technically, it doesn't meet the criteria.
+
+If I use the "unspecified" label, I don't mention the feet at all. I simply call it "duck, unspecified." It looks like a duck, but it doesn't meet every criterion, and I'm not saying why.
+
+If I use the "other specified" label, I state the reason. I call it "other specified duck, duck without webbed feet."
+
+So: unspecified means you don't give the reason, and other specified means you do.
+
+=== Slide 13 of 19: Step 6 · Consider a provisional diagnosis  (save as slide-13.mp3) ===
+Step six: consider a provisional diagnosis. This is how you express diagnostic uncertainty.
+
+You place the word "provisional" in parentheses after the diagnosis in three situations.
+
+First, when you don't yet have enough information to make a firm diagnosis, but it looks like the disorder, and you believe more information would confirm it.
+
+Second, when the client can't give an adequate history, but you believe the criteria would be met if that history were available.
+
+And third, when the diagnosis depends on how long a symptom has lasted, and you don't yet know whether it has lasted long enough.
+
+For example: F44.81, dissociative identity disorder, provisional. And remember from step four: don't add course or severity to a provisional diagnosis.
+
+=== Slide 14 of 19: Step 7 · Look for co-occurring disorders  (save as slide-14.mp3) ===
+Step seven: look for co-occurring disorders, also called comorbid diagnoses.
+
+Clients often have more than one major mental disorder. When you suspect another one, put it through the same steps we've just covered. Check it against its own criteria, then add any subtypes, specifiers, course, and severity that apply.
+
+Each additional disorder you confirm becomes part of the diagnosis and will shape your treatment plan.
+
+=== Slide 15 of 19: Step 8 · Identify other conditions (Z codes)  (save as slide-15.mp3) ===
+Step eight: identify other conditions that may be a focus of clinical attention. These are coded with Z codes.
+
+Z codes are not mental disorders. They describe psychosocial and environmental problems that affect a person's diagnosis, course, prognosis, or treatment. You can use them alongside a mental disorder, or on their own when no disorder is diagnosed.
+
+Use a Z code when the problem is a reason for the current visit, when it explains the need for a test, procedure, or treatment, when it helped start or worsen a mental disorder, or when it should be considered in the overall treatment plan.
+
+The DSM-5-TR groups them into categories, such as relational problems, abuse and neglect, and educational, occupational, housing, and economic problems. Others cover the social environment, the legal system, access to health care, and personal history. There are also codes for suicidal behavior and nonsuicidal self-injury. You'll find them in the chapter called "Other Conditions That May Be a Focus of Clinical Attention."
+
+A practical tip: limit yourself to one to four Z codes. Use more than that, and they start to lose their meaning. If you list more than one, put the most important first.
+
+=== Slide 16 of 19: Step 9 · Choose the principal diagnosis  (save as slide-16.mp3) ===
+Step nine: decide which diagnosis comes first. What you call it depends on the setting.
+
+In a hospital, or inpatient, setting, it's the principal diagnosis: the condition that was chiefly responsible for the client being admitted.
+
+In an outpatient setting, it's the reason for visit: the condition chiefly responsible for the services you're providing. In most cases, it's also the main focus of treatment. Sometimes the choice is difficult, for example when a substance use disorder occurs together with another serious disorder. Use your best clinical judgment.
+
+List that diagnosis first, and then list the others in order of their focus in treatment. You can add "(principal diagnosis)" or "(reason for visit)" after it to make it clear.
+
+One exception: when a mental disorder is caused by a medical condition, coding rules require the medical condition to be listed first, with the mental disorder that results from it listed next.
+
+And if no mental disorder is diagnosed, a Z code can be listed first as the principal diagnosis or reason for visit.
+
+=== Slide 17 of 19: Writing the diagnosis clearly  (save as slide-17.mp3) ===
+The DSM-5-TR doesn't spell out exactly how to write a diagnosis, so here are the formats I recommend for clarity.
+
+Start with the code, followed by the name of the disorder. Place the severity immediately after the name of the disorder. That avoids confusion, even though the manual lists severity last. Capitalize only the first word of the diagnosis, in keeping with APA style, and write the specifiers in lowercase. And when there's more than one diagnosis, mark which one is the principal diagnosis or the reason for visit.
+
+Here's what a complete outpatient diagnosis might look like.
+F41.1, generalized anxiety disorder, reason for visit.
+F81.0, specific learning disorder, mild, with impairment in reading.
+Z62.820, parent-child relational problem, parent-biological child.
+And Z63.0, relationship distress with spouse or intimate partner.
+
+Notice the order: the reason for visit comes first, then the other mental disorder, and then the Z codes.
+
+=== Slide 18 of 19: Three examples  (save as slide-18.mp3) ===
+Let's look at three more examples.
+
+In the first, the client has a single disorder: F32.0, major depressive disorder, single episode, mild, with anxious distress. With only one disorder, it's assumed to be the principal diagnosis, so you don't need to label it.
+
+In the second, the client has two mental disorders and one Z code. Generalized anxiety disorder is listed first as the principal diagnosis, followed by the specific learning disorder, and then the Z code, problems related to unwanted pregnancy. Notice there are no specifiers for generalized anxiety disorder.
+
+In the third, the client has no major mental disorder, but two Z codes apply. The parent-child relational problem is listed first as the principal diagnosis, followed by problems related to unwanted pregnancy.
+
+=== Slide 19 of 19: Nine steps, one careful process  (save as slide-19.mp3) ===
+Let's pull it all together.
+
+Diagnosis with the DSM-5-TR is one careful process. First, gather everything you know about the client. Then check every criterion for the disorder you're considering. Add the subtypes, specifiers, course, and severity that apply. If the full picture isn't clear, use an other specified, unspecified, or provisional diagnosis to express that uncertainty honestly. Look for co-occurring disorders and the Z codes that matter. And finally, put everything in the right order, with the principal diagnosis or reason for visit first.
+
+An accurate diagnosis is the foundation for a good treatment plan. So keep your DSM-5-TR by your side, and take it one step at a time. Thank you.
