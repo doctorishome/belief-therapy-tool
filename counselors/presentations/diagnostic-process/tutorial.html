@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tutorial: DSM-5-TR Diagnosis and Coding · Belief Counseling</title>
+<style>
+:root{--navy:#1F3A5F;--gold:#C9A227;--tint:#EEF2F7;--ink:#1F2937;--mut:#6B7280;--ok:#2E7D4F;--no:#A33B3B}
+*{box-sizing:border-box}
+body{margin:0;font-family:Calibri,Arial,sans-serif;color:var(--ink);background:#f6f8fb}
+header{background:var(--navy);color:#fff;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header h1{font-family:Cambria,Georgia,serif;font-size:1.15rem;margin:0}
+header nav{display:flex;gap:16px;flex-wrap:wrap}
+header a{color:var(--gold);font-weight:bold;text-decoration:none;font-size:.95rem}
+main{max-width:860px;margin:0 auto;padding:16px 12px 30px}
+.prog{height:8px;background:#dde3ea;border-radius:4px;overflow:hidden}
+.prog div{height:100%;background:var(--gold);width:0;transition:width .3s}
+.meta{display:flex;justify-content:space-between;color:var(--mut);font-size:.9rem;margin:6px 2px 12px;gap:8px;flex-wrap:wrap}
+.card{background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(18,40,76,.10);padding:20px 22px}
+.sec{display:inline-block;background:var(--navy);color:var(--gold);font-weight:bold;font-size:.85rem;border-radius:14px;padding:4px 12px;margin-bottom:10px}
+.q{font-family:Cambria,Georgia,serif;font-size:1.3rem;line-height:1.4;color:var(--navy);margin:0 0 14px}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{text-align:left;font:inherit;font-size:1.05rem;padding:11px 14px;border:1px solid #cfd6e0;border-radius:10px;background:#fff;color:var(--ink);cursor:pointer}
+.opt:hover{border-color:var(--navy)}
+.opt.right{background:#E7F4EC;border-color:var(--ok);font-weight:bold}
+.opt.wrong{background:#F8E9E9;border-color:var(--no);text-decoration:line-through;color:#7a4b4b}
+.opt:disabled{cursor:default}
+.fb{display:none;margin-top:14px;border-radius:10px;padding:12px 16px;line-height:1.55;font-size:1.02rem}
+.fb.on{display:block}
+.fb.ok{background:#E7F4EC;border:1px solid #bfe0cb}
+.fb.no{background:#FFF7E3;border:1px solid #f0dca6}
+.fb b{display:block;margin-bottom:4px}
+.ref{color:var(--mut);font-size:.9rem;margin-top:8px}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.btn{font:inherit;cursor:pointer;border-radius:22px;border:1px solid var(--navy);background:#fff;color:var(--navy);font-weight:bold;padding:8px 16px;font-size:.98rem;text-decoration:none;display:inline-block}
+.btn.primary{background:var(--navy);color:#fff}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.btn:disabled{opacity:.35;cursor:default}
+.bar{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:8px}
+.end{text-align:center}
+.end h2{font-family:Cambria,Georgia,serif;color:var(--navy)}
+.ov{position:fixed;inset:0;background:rgba(15,25,45,.82);display:none;align-items:center;justify-content:center;padding:14px;z-index:10}
+.ov.on{display:flex}
+.box{background:#fff;border-radius:10px;max-width:1200px;width:100%;max-height:100%;overflow:auto;padding:12px 14px}
+.box .top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+.box b{color:var(--navy);font-size:1.05rem}
+.box .scroll{overflow-x:auto}
+.box img{display:block;width:100%;min-width:640px;height:auto}
+.box .tip{color:var(--mut);font-size:.85rem;margin-top:6px}
+footer{color:var(--mut);font-size:.82rem;text-align:center;padding:10px}
+</style></head><body>
+<header><h1>Tutorial: DSM-5-TR Diagnosis and Coding</h1>
+<nav><a href="index.html" target="_blank" rel="noopener">Step-by-step slides ↗</a><a href="https://doctorishome.github.io/belief-therapy-tool/counselors/reviews.html">&#8592; DSM-5-TR Reviews</a></nav></header>
+<main>
+<div class="prog" aria-hidden="true"><div id="pbar"></div></div>
+<div class="meta"><span id="count"></span><span id="score"></span></div>
+<div class="card" id="card"></div>
+<div class="bar"><button class="btn" id="prev" type="button">&#9664; Back</button><button class="btn primary" id="next" type="button">Next &#9654;</button></div>
+</main>
+<div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="ovTitle"><div class="box">
+ <div class="top"><b id="ovTitle"></b><button id="ovClose" class="btn primary" type="button">Close &#10005;</button></div>
+ <div class="scroll"><img id="ovImg" alt=""></div>
+ <div class="tip">On a phone, turn it sideways or slide the chart left and right.</div>
+</div></div>
+<footer>Prepared by Dr. Brian Campbell. Not graded, and nothing you choose is saved or sent anywhere. Keep your DSM-5-TR by your side. · © Brian Campbell, Ph.D.</footer>
+<script>
+const Q = [{"sec": "Codes and insurance", "q": "Which coding system is currently used in the United States, and listed in the DSM-5-TR?", "opts": ["ICD-9-CM", "ICD-10-CM", "ICD-11", "A separate DSM-5 coding system"], "ans": 1, "hint": "The World Health Organization has adopted a newer revision, but the U.S. hasn't switched yet.", "explain": "The U.S. uses the ICD-10-CM, the International Classification of Diseases, Tenth Revision, Clinical Modification. The World Health Organization adopted ICD-11 in 2022, but the DSM-5-TR and U.S. billing still use ICD-10-CM codes.", "slide": 3, "step": 0, "ref": ""}, {"sec": "Codes and insurance", "q": "True or false: The DSM-5-TR lists one ICD-10-CM code for each disorder. (The 2013 DSM-5 listed two codes, an ICD-9-CM code and an ICD-10-CM code.)", "opts": ["True", "False"], "ans": 0, "hint": "Think about what changed between the 2013 DSM-5 and the DSM-5-TR.", "explain": "True. The 2013 DSM-5 listed two codes, with the ICD-10-CM code in parentheses. The DSM-5-TR lists only the ICD-10-CM code, which is the one you use for records and billing. For example, the code for selective mutism is F94.0.", "slide": 3, "step": 0, "ref": ""}, {"sec": "Codes and insurance", "q": "The codes that accompany each disorder in the DSM-5-TR are mainly used for:", "opts": ["Making sure that every disorder is accounted for", "Data collection and billing", "Setting up the criteria for each disorder"], "ans": 1, "hint": "Who uses the codes outside your office?", "explain": "Codes are used for records, data collection, and billing. Medicare, Medicaid, and private insurers use them to decide what they will pay for. Keep in mind that insurers don't pay for every diagnosis. Most, for example, don't reimburse personality disorders.", "slide": 2, "step": 0, "ref": ""}, {"sec": "Step 1 · Explore for a major mental disorder", "q": "Before deciding on a diagnosis, which sources of information should you gather?", "opts": ["The client's history and the reason for referral", "The initial interview", "Prior and current test results", "All of the above"], "ans": 3, "hint": "Step 1 is about gathering everything you know.", "explain": "All of the above. Step 1 is to gather everything: background information, the client's history, the reason for referral, the initial interview, and any prior or current test results. Together they point you toward the disorders you need to consider.", "slide": 7, "step": 1, "ref": ""}, {"sec": "Step 2 · Check every criterion", "q": "In general, to diagnose a disorder, the client must:", "opts": ["Meet all of the required criteria for that disorder", "Meet the majority of the criteria", "Meet the most important criteria"], "ans": 0, "hint": "A diagnosis made \"without qualifications\" needs the full criteria.", "explain": "The client must meet every required criterion (A, B, C, and so on). Note that a single criterion may itself require only a certain number of symptoms, such as five of nine. When the full criteria aren't met, you have other options: provisional, other specified, or unspecified.", "slide": 8, "step": 2, "ref": "DSM-5-TR: the criteria set for the disorder you're considering"}, {"sec": "Step 3 · Add subtypes and specifiers", "q": "Once a client meets the criteria for posttraumatic stress disorder, which specifiers should you consider?", "opts": ["Persistent avoidance of stimuli", "With dissociative symptoms; with delayed expression", "Negative alterations in cognitions"], "ans": 1, "hint": "Two of these choices are actually criteria, not specifiers.", "explain": "For PTSD, consider \"with dissociative symptoms\" and \"with delayed expression,\" if they apply. The other two choices are part of the criteria themselves.", "slide": 9, "step": 3, "ref": "DSM-5-TR, p. 303 (PTSD)"}, {"sec": "Step 3 · Add subtypes and specifiers", "q": "Some disorders have many specifiers, while others, such as generalized anxiety disorder, have none. Which of these is NOT a specifier for bipolar I disorder?", "opts": ["With anxious distress", "With mixed features", "With rapid cycling", "With melancholic features", "With atypical features", "With euphoric features", "With catatonia", "With seasonal pattern", "In partial remission or in full remission", "Current severity (mild, moderate, severe)"], "ans": 5, "hint": "One of these was made up.", "explain": "\"With euphoric features\" is not a specifier for bipolar I disorder. All the others are specifiers to consider.", "slide": 9, "step": 3, "ref": "DSM-5-TR: bipolar I disorder, specifiers"}, {"sec": "Step 4 · Add course and severity", "q": "Persistent depressive disorder has three severity specifiers. They are:", "opts": ["Low, medium, high", "Mild, intense, unbearable", "Mild, moderate, severe"], "ans": 2, "hint": "These three words are used for severity across much of the DSM-5-TR.", "explain": "If the client meets all the criteria for persistent depressive disorder, specify the current severity as mild, moderate, or severe.", "slide": 10, "step": 4, "ref": "DSM-5-TR: persistent depressive disorder, severity"}, {"sec": "Step 4 · Add course and severity", "q": "True or false: Use severity specifiers only when the full criteria for the disorder are met.", "opts": ["True", "False"], "ans": 0, "hint": "Think about a provisional diagnosis.", "explain": "True. Don't add severity, or course, when the full criteria aren't met, including when the diagnosis is provisional.", "slide": 10, "step": 4, "ref": ""}, {"sec": "Step 4 · Add course and severity", "q": "True or false: A diagnosis and its code usually describe the client's current presentation, not a past one.", "opts": ["True", "False"], "ans": 0, "hint": "What are you treating today?", "explain": "True. Your diagnosis is usually based on how the client presents now, not on a past episode.", "slide": 10, "step": 4, "ref": "DSM-5-TR: Use of the Manual section"}, {"sec": "Step 4 · Add course and severity", "q": "If you include a past presentation of a disorder, you should describe its course with specifiers such as:", "opts": ["\"In partial remission\" or \"in full remission\"", "\"Not currently present\"", "\"Unknown\""], "ans": 0, "hint": "The course specifiers are listed in the criteria sets.", "explain": "The most common course specifiers are \"in partial remission\" and \"in full remission.\"", "slide": 10, "step": 4, "ref": "DSM-5-TR: Use of the Manual section"}, {"sec": "Step 5 · Other specified or unspecified", "q": "A client doesn't meet all the criteria for a disorder. You know the reason, and you choose to state it. Which category do you use?", "opts": ["Other specified disorder", "Unspecified disorder"], "ans": 0, "hint": "Remember the duck: one name says why, the other doesn't.", "explain": "\"Other specified\" lets you record the specific reason the presentation falls short, written after the name. \"Unspecified\" is for when you choose not to give the reason.", "slide": 11, "step": 5, "ref": "DSM-5-TR: Use of the Manual section"}, {"sec": "Step 5 · Other specified or unspecified", "q": "A client has had a depressed mood for more than two weeks, along with only one or two other symptoms of a major depressive episode, causing significant distress. They have never met the criteria for any other depressive or bipolar disorder. Which is the correct diagnosis?", "opts": ["F32.89 Other specified depressive disorder, depressive episode with insufficient symptoms", "F32.89 Other specified depressive disorder, recurrent brief depression", "F32.89 Other specified depressive disorder, short-duration depressive episode (4–13 days)"], "ans": 0, "hint": "This is a tough one. Focus on what's missing: the number of symptoms, or the duration?", "explain": "The mood has lasted long enough, but there are too few symptoms, so this is a depressive episode with insufficient symptoms. The other two choices describe episodes that are too brief.", "slide": 11, "step": 5, "ref": "DSM-5-TR, p. 209 (other specified depressive disorder)"}, {"sec": "Step 5 · Other specified or unspecified", "q": "A client shows some signs of bipolar disorder but doesn't meet all the criteria, and you choose not to state the reason. Which diagnosis would you give?", "opts": ["F31.89 Other specified bipolar and related disorder", "F31.0 Bipolar I disorder, current or most recent episode hypomanic", "F31.9 Unspecified bipolar and related disorder"], "ans": 2, "hint": "Choosing not to state the reason points to one of these labels.", "explain": "When you choose not to give the reason, use the unspecified category. This often happens when there isn't enough information yet, for example in an emergency room.", "slide": 12, "step": 5, "ref": "DSM-5-TR: unspecified bipolar and related disorder"}, {"sec": "Step 6 · Consider a provisional diagnosis", "q": "Use the specifier (provisional) when:", "opts": ["Not enough information is available yet to make a firm diagnosis", "The client can't give an adequate history to show the criteria are met", "The diagnosis depends on how long a symptom has lasted, and you don't know yet", "All of the above", "None of the above"], "ans": 3, "hint": "Each of the first three is a reason for diagnostic uncertainty.", "explain": "All three situations call for (provisional), written in parentheses after the diagnosis.", "slide": 13, "step": 6, "ref": "DSM-5-TR: Use of the Manual section"}, {"sec": "Step 7 · Look for co-occurring disorders", "q": "True or false: When you suspect a client has a second disorder, you check it against its own criteria, just as you did for the first one.", "opts": ["True", "False"], "ans": 0, "hint": "Each disorder stands on its own criteria.", "explain": "True. Put each co-occurring disorder through the same steps: check its criteria, then add any specifiers, course, and severity.", "slide": 14, "step": 7, "ref": ""}, {"sec": "Step 8 · Identify other conditions (Z codes)", "q": "True or false: Along with mental disorders, you should also consider, and code, other conditions that may be a focus of clinical attention.", "opts": ["True", "False"], "ans": 0, "hint": "Think of relational, occupational, or housing problems.", "explain": "True. A complete diagnosis considers not only mental disorders, but also the problems that affect the client's diagnosis, course, or treatment.", "slide": 15, "step": 8, "ref": "DSM-5-TR, pp. 821–836 (Other Conditions That May Be a Focus of Clinical Attention)"}, {"sec": "Step 8 · Identify other conditions (Z codes)", "q": "Other conditions that may be a focus of clinical attention are usually coded with Z codes. When should you use one?", "opts": ["When the problem is a reason for the current visit", "When it helps explain the need for a test, procedure, or treatment", "When it may affect the diagnosis, course, prognosis, or treatment of a mental disorder", "All of the above"], "ans": 3, "hint": "Each of these is a valid reason.", "explain": "All three are reasons to include a Z code. A Z code may also be used when a problem helped start or worsen a mental disorder.", "slide": 15, "step": 8, "ref": "DSM-5-TR, pp. 821–836"}, {"sec": "Step 8 · Identify other conditions (Z codes)", "q": "True or false: Z codes describe mental disorders.", "opts": ["True", "False"], "ans": 1, "hint": "Z codes appear in a chapter called \"Other Conditions.\"", "explain": "False. Z codes are not mental disorders. They describe psychosocial and environmental problems that affect a client's care. As a practical tip, limit yourself to one to four.", "slide": 15, "step": 8, "ref": "DSM-5-TR, pp. 821–836"}, {"sec": "Step 9 · Choose the principal diagnosis", "q": "True or false: Clients normally meet the criteria for only one diagnosis, and that one diagnosis is called the \"principal diagnosis.\"", "opts": ["True", "False"], "ans": 1, "hint": "Think about how often clients have more than one problem.", "explain": "False. Many clients meet the criteria for more than one disorder. The term \"principal diagnosis\" is used when there is more than one diagnosis.", "slide": 16, "step": 9, "ref": "DSM-5-TR: Use of the Manual section"}, {"sec": "Step 9 · Choose the principal diagnosis", "q": "True or false: In an outpatient setting, when more than one diagnosis is given, the reason for visit is the condition chiefly responsible for the services provided, usually the main focus of treatment.", "opts": ["True", "False"], "ans": 0, "hint": "Outpatient means the client comes to you for services.", "explain": "True. In an outpatient setting, the reason for visit is the condition chiefly responsible for the care you're providing, which is usually also the main focus of treatment.", "slide": 16, "step": 9, "ref": "DSM-5-TR: Use of the Manual section"}, {"sec": "Step 9 · Choose the principal diagnosis", "q": "In a hospital (inpatient) setting, when you've diagnosed more than one disorder, the principal diagnosis is:", "opts": ["The disorder the client thinks is most important", "The disorder most likely to be covered by insurance", "The disorder chiefly responsible for the client being admitted", "The disorder the clinician wants to treat first"], "ans": 2, "hint": "Why did the client come to the hospital?", "explain": "In a hospital setting, the principal diagnosis is the condition chiefly responsible for the admission.", "slide": 16, "step": 9, "ref": "DSM-5-TR: Use of the Manual section"}, {"sec": "Step 9 · Choose the principal diagnosis", "q": "True or false: Mark the principal diagnosis by listing it first and adding \"(principal diagnosis)\" after it.", "opts": ["True", "False"], "ans": 0, "hint": "Two things show which diagnosis is principal.", "explain": "True. List it first and follow it with (principal diagnosis), or (reason for visit) in an outpatient setting.", "slide": 16, "step": 9, "ref": ""}, {"sec": "Step 9 · Choose the principal diagnosis", "q": "True or false: If you diagnose only one disorder, you don't need to add (principal diagnosis) or (reason for visit).", "opts": ["True", "False"], "ans": 0, "hint": "With only one, is there any doubt which comes first?", "explain": "True. A single disorder is assumed to be the principal diagnosis or reason for visit.", "slide": 18, "step": 9, "ref": ""}, {"sec": "Step 9 · Choose the principal diagnosis", "q": "Which is spelled correctly?", "opts": ["(principle diagnosis)", "(principel diagnosis)", "(principal diagnosis)"], "ans": 2, "hint": "A \"principle\" is a rule. Which word means \"main\"?", "explain": "\"Principal\" means main or chief. A \"principle\" is a rule or belief.", "slide": 16, "step": 9, "ref": ""}, {"sec": "Step 9 · Choose the principal diagnosis", "q": "After the principal diagnosis, the remaining disorders are listed in order of:", "opts": ["The disorders most likely to be reimbursed", "Their focus of attention in treatment", "The disorders the client feels are most important"], "ans": 1, "hint": "Order follows your treatment plan.", "explain": "List the principal diagnosis first, then the others in order of their focus in treatment. Some disorders you diagnose may not be a focus of treatment at all.", "slide": 16, "step": 9, "ref": ""}, {"sec": "Step 9 · Choose the principal diagnosis", "q": "True or false: It can be difficult, and somewhat arbitrary, to choose the principal diagnosis, for example when alcohol use disorder occurs together with schizophrenia.", "opts": ["True", "False"], "ans": 0, "hint": "Sometimes two disorders are equally important.", "explain": "True. In such cases, use your best clinical judgment about which condition is chiefly responsible for the visit or treatment.", "slide": 16, "step": 9, "ref": "DSM-5-TR: Use of the Manual section"}, {"sec": "Step 9 · Choose the principal diagnosis", "q": "True or false: When the principal diagnosis is a mental disorder caused by another medical condition (such as Alzheimer's disease), coding rules require the medical condition to be listed first.", "opts": ["True", "False"], "ans": 0, "hint": "This is the one exception to listing the principal diagnosis first.", "explain": "True. The medical condition that causes the disorder is listed first, followed by the mental disorder that results from it.", "slide": 16, "step": 9, "ref": "DSM-5-TR: Use of the Manual section"}, {"sec": "Writing the diagnosis", "q": "The APA Publication Manual (7th ed.) says not to capitalize the names of disorders in your writing. When listing diagnoses, Dr. Campbell recommends capitalizing only the first word. Which of these is correct?", "opts": ["F32.0 Major depressive disorder, mild, single episode", "F32.0 major depressive disorder, mild, single episode", "296.21 Major depressive disorder, mild, single episode", "F32.0 Major Depressive Disorder, Mild, Single Episode"], "ans": 0, "hint": "Check two things: the type of code, and the capital letters.", "explain": "Use the ICD-10-CM code (F32.0, not the old ICD-9 code 296.21), and capitalize only the first word of the disorder's name. Placing the severity right after the name follows Dr. Campbell's recommended format.", "slide": 17, "step": 0, "ref": "APA Publication Manual (7th ed.): capitalization of disorders"}];
+const STEP_NAMES = {1:"Explore for a major mental disorder",2:"Check every criterion",3:"Add subtypes and specifiers",4:"Add course and severity",5:"Other specified or unspecified",6:"Consider a provisional diagnosis",7:"Look for co-occurring disorders",8:"Identify other conditions (Z codes)",9:"Choose the principal diagnosis"};
+const STEP_X = {1:220,2:760,3:900,4:900,5:900,6:900,7:445,8:1210,9:1490};
+const state = Q.map(() => ({ tried: [], done: false, firstTry: null }));
+let i = 0;
+const $ = id => document.getElementById(id);
+function esc(t){return String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));}
+function render(){
+  if (i >= Q.length) return renderEnd();
+  const q = Q[i], st = state[i];
+  $("pbar").style.width = (100 * i / Q.length) + "%";
+  $("count").textContent = "Question " + (i+1) + " of " + Q.length;
+  const right = state.filter(s => s.firstTry === true).length;
+  $("score").textContent = right + " right on the first try";
+  let h = '<span class="sec">' + esc(q.sec) + '</span><p class="q" id="qtext">' + esc(q.q) + '</p><div class="opts" role="group" aria-labelledby="qtext">';
+  q.opts.forEach((o, k) => {
+    let cls = "opt";
+    if (st.done && k === q.ans) cls += " right";
+    else if (st.tried.includes(k)) cls += " wrong";
+    h += '<button type="button" class="' + cls + '" data-k="' + k + '"' + (st.done || st.tried.includes(k) ? " disabled" : "") + '>' + esc(o) + '</button>';
+  });
+  h += '</div><div class="fb" id="fb" aria-live="polite"></div><div class="links">';
+  h += '<a class="btn" href="index.html#' + q.slide + '" target="_blank" rel="noopener">Review this slide ↗</a>';
+  if (q.step) h += '<button class="btn gold" type="button" id="chartBtn">See it on the flow chart</button>';
+  h += '</div>';
+  $("card").innerHTML = h;
+  $("card").querySelectorAll(".opt").forEach(b => b.onclick = () => answer(+b.dataset.k));
+  if (q.step) $("chartBtn").onclick = openChart;
+  if (st.done) showFb(true); else if (st.tried.length) showFb(false);
+  $("prev").disabled = i === 0;
+  $("next").textContent = i === Q.length - 1 ? "Finish ▶" : "Next ▶";
+}
+function answer(k){
+  const q = Q[i], st = state[i];
+  if (st.done) return;
+  const ok = k === q.ans;
+  if (st.firstTry === null) st.firstTry = ok;
+  if (ok) st.done = true; else st.tried.push(k);
+  render();
+  const fb = $("fb"); if (fb) fb.scrollIntoView({block:"nearest", behavior:"smooth"});
+}
+function showFb(ok){
+  const q = Q[i], fb = $("fb");
+  fb.className = "fb on " + (ok ? "ok" : "no");
+  fb.innerHTML = ok
+    ? "<b>Correct!</b>" + esc(q.explain) + (q.ref ? '<div class="ref">Look it up: ' + esc(q.ref) + "</div>" : "")
+    : "<b>Not quite. Try again.</b>Hint: " + esc(q.hint);
+}
+function renderEnd(){
+  $("pbar").style.width = "100%";
+  $("count").textContent = "Finished";
+  const right = state.filter(s => s.firstTry === true).length;
+  $("score").textContent = "";
+  $("card").innerHTML = '<div class="end"><h2>Well done. You\'ve finished the tutorial!</h2><p>You answered <b>' + right + ' of ' + Q.length + '</b> questions correctly on the first try.</p><p>To review any step, go back through the questions, or open the step-by-step slides.</p><div class="links" style="justify-content:center"><a class="btn primary" href="index.html" target="_blank" rel="noopener">Step-by-step slides ↗</a><button class="btn" type="button" id="again">Start over</button></div></div>';
+  $("again").onclick = () => { state.forEach(s => { s.tried = []; s.done = false; s.firstTry = null; }); i = 0; render(); };
+  $("prev").disabled = false; $("next").disabled = true;
+}
+function openChart(){
+  const k = Q[i].step;
+  $("ovTitle").textContent = "Step " + k + " on the flow chart: " + STEP_NAMES[k];
+  $("ovImg").src = "charts/step" + k + ".png";
+  $("ovImg").alt = "The diagnostic flow chart with step " + k + " highlighted.";
+  $("ov").classList.add("on"); $("ovClose").focus();
+  const sc = document.querySelector(".box .scroll");
+  const fit = () => { sc.scrollLeft = Math.max(0, STEP_X[k] / 1620 * sc.scrollWidth - sc.clientWidth / 2); };
+  if ($("ovImg").complete) fit(); $("ovImg").onload = fit;
+}
+function closeChart(){ $("ov").classList.remove("on"); const b = $("chartBtn"); if (b) b.focus(); }
+$("ovClose").onclick = closeChart;
+$("ov").onclick = e => { if (e.target === $("ov")) closeChart(); };
+document.addEventListener("keydown", e => { if (e.key === "Escape" && $("ov").classList.contains("on")) closeChart(); });
+$("prev").onclick = () => { if (i > 0) { i--; $("next").disabled = false; render(); window.scrollTo(0,0); } };
+$("next").onclick = () => { if (i < Q.length) { i++; render(); window.scrollTo(0,0); } };
+render();
+</script>
+</body></html>
