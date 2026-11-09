@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Forms to Complete · Clinical Companion</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6;--teal:#0f6b5c;--red:#a3271f}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;background:var(--cream);color:var(--ink);font-size:18px;line-height:1.5}
+.hero{background:var(--navy);color:#fff;padding:22px 20px 18px;text-align:center}
+.hero h1{margin:4px 0 2px;font-size:28px}
+.eyebrow{letter-spacing:.15em;font-size:13px;color:var(--gold)}
+.note{background:#fff7d6;border:1px solid #e6cf7a;border-radius:8px;padding:10px 14px;font-size:15px;margin:16px 0}
+.wrap{max-width:760px;margin:0 auto;padding:10px 18px 40px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+h2{color:var(--navy);font-size:22px;margin:22px 0 6px}
+h3{color:var(--navy2);font-size:18px;margin:16px 0 6px;border-bottom:1px solid var(--line);padding-bottom:4px}
+label.pick{display:flex;gap:12px;align-items:flex-start;padding:9px 6px;border-radius:8px;cursor:pointer}
+label.pick:hover{background:#f6f2e4}
+label.pick input{width:22px;height:22px;margin-top:3px;flex:none}
+.pick small{display:block;color:var(--mut);font-size:14px}
+.pick.off{opacity:.55;cursor:not-allowed}
+.btn{display:inline-block;background:var(--navy);color:#fff;border:0;border-radius:8px;padding:11px 18px;font-size:16px;font-family:inherit;cursor:pointer;text-decoration:none;margin:6px 8px 0 0}
+.btn.gold{background:var(--gold);color:var(--navy)}
+.btn.light{background:#fff;color:var(--navy);border:1px solid var(--navy)}
+input[type=text]{font:inherit;font-size:16px;padding:8px 10px;border:1px solid #bbb;border-radius:6px;width:100%}
+#linkbox{display:none;margin-top:14px}
+#linkbox input{font-size:14px}
+.q{padding:12px 0;border-bottom:1px solid #eee}
+.q p{margin:0 0 8px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{flex:1 1 140px;border:1px solid #c9c2ad;border-radius:8px;padding:9px 10px;text-align:center;cursor:pointer;font-size:15px;background:#fff}
+.opts input{position:absolute;opacity:0}
+.opts label.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.status{font-size:14px;color:var(--mut)}
+.done{color:var(--teal);font-weight:bold}
+.alert{background:#fdecea;border:2px solid var(--red);border-radius:10px;padding:14px 16px;margin:14px 0}
+.alert b{color:var(--red)}
+table{border-collapse:collapse;width:100%;font-size:16px}
+td,th{border-bottom:1px solid #eee;padding:8px;text-align:left}
+.foot{text-align:center;font-size:13px;color:var(--mut);padding:20px}
+.credit{font-size:13px;color:var(--mut);margin-top:10px}
+@media print{.noprint{display:none!important}body{background:#fff}.card{border:1px solid #999}}
+</style></head><body>
+<div class="hero"><div class="eyebrow">CLINICAL COMPANION · STEP 9</div><h1 id="title">Forms to Complete</h1></div>
+<div class="wrap">
+
+<!-- ============ COUNSELOR VIEW ============ -->
+<div id="counselor">
+<div class="note noprint"><b>Practice sample.</b> Use fictional clients only. In this sample, answers stay on the screen and are not saved or sent anywhere. Saving answers to a real client's file will need a secure, HIPAA-compliant system.</div>
+<div class="card">
+<p>At the end of the session, check the forms this client should complete. Then either create a link for the client to complete them online, or print this card for a client who uses paper.</p>
+<label class="pick" style="padding-left:0"><span style="flex:1">Client (first name or initials only):<input type="text" id="who" placeholder="e.g., J.D."></span></label>
+
+<h3>Symptom screens</h3>
+<label class="pick"><input type="checkbox" value="phq9"><span>PHQ-9: Depression<small>9 questions · about 2 minutes · scored online</small></span></label>
+<label class="pick"><input type="checkbox" value="gad7"><span>GAD-7: Anxiety<small>7 questions · about 2 minutes · scored online</small></span></label>
+
+<h3>Spiritual screens (if faith is included)</h3>
+<label class="pick off"><input type="checkbox" value="rss5" disabled><span>RSS-5: Spiritual Struggles<small>5 questions · offer routinely · <i>not yet online: waiting for author permission</i></small></span></label>
+<label class="pick off"><input type="checkbox" value="rcope" disabled><span>Brief RCOPE: Religious Coping<small>14 questions · when a specific stressor is central · <i>not yet online: waiting for permission</i></small></span></label>
+<label class="pick off"><input type="checkbox" value="sai" disabled><span>SAI: Spiritual Assessment Inventory<small>47 items · in-depth work · <i>not yet online: author permission needed</i></small></span></label>
+<label class="pick"><input type="checkbox" value="ceb"><span>Christian Experiences and Beliefs (counselor-guided)<small>Printable form · reviewed together in session</small></span></label>
+
+<h3>Belief mining</h3>
+<label class="pick"><input type="checkbox" value="leb"><span>Life Events &amp; Beliefs Screening<small>General mining tool</small></span></label>
+<label class="pick"><span style="flex:1">Other forms (write in):<input type="text" id="other" placeholder="e.g., level checklist, diagnostic form"></span></label>
+
+<div class="noprint">
+<button class="btn" onclick="makeLink()">Create client link</button>
+<button class="btn light" onclick="window.print()">Print card for paper</button>
+</div>
+<div id="linkbox" class="noprint">
+<p>Send this link to the client (by secure email or text). It opens only the forms you checked:</p>
+<input type="text" id="link" readonly onclick="this.select()">
+<p><button class="btn gold" onclick="copyLink()">Copy link</button> <a class="btn light" id="trylink" target="_blank" rel="noopener">Try it as the client ↗</a> <span id="copied" class="status"></span></p>
+</div>
+</div>
+</div>
+
+<!-- ============ CLIENT VIEW ============ -->
+<div id="client" style="display:none">
+<div class="note">This is a practice sample. Your answers are not saved or sent anywhere.</div>
+<div class="card"><p>Your counselor has asked you to complete the forms below before your next session. Choose a form to begin. Each one takes only a few minutes.</p><div id="list"></div></div>
+<div id="formarea"></div>
+<div class="alert" id="crisis" style="display:none"><b>If you are thinking of hurting yourself, please reach out now.</b> Call or text <b>988</b> (the Suicide &amp; Crisis Lifeline), call 911, or go to the nearest emergency room. Please also let your counselor know right away.</div>
+<div id="summary"></div>
+</div>
+
+</div>
+<div class="foot">Belief Counseling · Clinical Companion · Practice sample. Never enter real client names or details.</div>
+
+<script>
+const BASE='https://doctorishome.github.io/belief-therapy-tool/';
+const FREQ=['Not at all','Several days','More than half the days','Nearly every day'];
+const DIFF=['Not difficult at all','Somewhat difficult','Very difficult','Extremely difficult'];
+const FORMS={
+ phq9:{name:'PHQ-9: Depression',stem:'Over the last 2 weeks, how often have you been bothered by any of the following problems?',
+  items:['Little interest or pleasure in doing things','Feeling down, depressed, or hopeless','Trouble falling or staying asleep, or sleeping too much','Feeling tired or having little energy','Poor appetite or overeating','Feeling bad about yourself — or that you are a failure or have let yourself or your family down','Trouble concentrating on things, such as reading the newspaper or watching television','Moving or speaking so slowly that other people could have noticed? Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual','Thoughts that you would be better off dead or of hurting yourself in some way'],
+  bands:[[0,4,'Minimal'],[5,9,'Mild'],[10,14,'Moderate'],[15,19,'Moderately severe'],[20,27,'Severe']]},
+ gad7:{name:'GAD-7: Anxiety',stem:'Over the last 2 weeks, how often have you been bothered by the following problems?',
+  items:['Feeling nervous, anxious, or on edge','Not being able to stop or control worrying','Worrying too much about different things','Trouble relaxing','Being so restless that it is hard to sit still','Becoming easily annoyed or irritable','Feeling afraid as if something awful might happen'],
+  bands:[[0,4,'Minimal'],[5,9,'Mild'],[10,14,'Moderate'],[15,21,'Severe']]},
+ ceb:{name:'Christian Experiences and Beliefs',pdf:BASE+'counselors/forms/Belief-Counseling-Christian-Experiences-and-Beliefs-Checklist.pdf'},
+ leb:{name:'Life Events & Beliefs Screening',pdf:BASE+'Life_Events_Beliefs_Screening.html'}
+};
+const CREDIT='PHQ-9 and GAD-7 developed by Drs. Robert L. Spitzer, Janet B.W. Williams, Kurt Kroenke and colleagues, with an educational grant from Pfizer Inc. No permission required to reproduce, translate, display or distribute.';
+const results={};
+
+function makeLink(){
+ const picks=[...document.querySelectorAll('#counselor input[type=checkbox]:checked')].map(c=>c.value);
+ if(!picks.length){alert('Please check at least one form.');return;}
+ const url=location.href.split('?')[0]+'?forms='+picks.join(',');
+ document.getElementById('link').value=url;document.getElementById('trylink').href=url;
+ document.getElementById('linkbox').style.display='block';
+}
+function copyLink(){const i=document.getElementById('link');i.select();
+ (navigator.clipboard?navigator.clipboard.writeText(i.value):Promise.reject()).then(()=>show(),()=>{document.execCommand('copy');show()});
+ function show(){document.getElementById('copied').textContent='Copied.';}}
+
+function band(f,s){for(const b of FORMS[f].bands) if(s>=b[0]&&s<=b[1]) return b[2];return '';}
+function renderList(picks){
+ document.getElementById('list').innerHTML=picks.map(k=>{
+  const f=FORMS[k];if(!f)return'';
+  const st=results[k]?'<span class="done">✓ Done</span>':'';
+  const act=f.pdf?`<a class="btn light" href="${f.pdf}" target="_blank" rel="noopener">Open form ↗</a>`:`<button class="btn" onclick="openForm('${k}')">${results[k]?'Review':'Start'}</button>`;
+  return `<div class="q"><p><b>${f.name}</b> ${st}</p>${act}${f.pdf&&k==='ceb'?'<p class="status">Your counselor will go over this form with you.</p>':''}</div>`;}).join('');
+}
+function radios(name,labels){return '<div class="opts">'+labels.map((l,v)=>`<label><input type="radio" name="${name}" value="${v}" onchange="mark(this)">${l}</label>`).join('')+'</div>';}
+function mark(el){el.closest('.opts').querySelectorAll('label').forEach(l=>l.classList.toggle('on',l.contains(el)&&el.checked));}
+function openForm(k){
+ const f=FORMS[k];
+ let h=`<div class="card" id="fc"><h2>${f.name}</h2><p>${f.stem}</p>`;
+ f.items.forEach((t,i)=>{h+=`<div class="q"><p>${i+1}. ${t}</p>${radios(k+i,FREQ)}</div>`;});
+ h+=`<div class="q"><p>If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?</p>${radios(k+'d',DIFF)}</div>`;
+ h+=`<p id="err" class="status"></p><button class="btn gold" onclick="finish('${k}')">Finish this form</button><p class="credit">${CREDIT}</p></div>`;
+ document.getElementById('formarea').innerHTML=h;document.getElementById('fc').scrollIntoView({behavior:'smooth'});
+}
+function finish(k){
+ const f=FORMS[k];let s=0,ans=[];
+ for(let i=0;i<f.items.length;i++){const c=document.querySelector(`input[name="${k}${i}"]:checked`);
+  if(!c){document.getElementById('err').textContent='Please answer question '+(i+1)+'.';return;} ans.push(+c.value);s+=+c.value;}
+ const d=document.querySelector(`input[name="${k}d"]:checked`);
+ results[k]={score:s,band:band(k,s),diff:d?DIFF[d.value]:'(not answered)',item9:k==='phq9'?ans[8]:null};
+ if(k==='phq9'&&ans[8]>0)document.getElementById('crisis').style.display='block';
+ document.getElementById('formarea').innerHTML='<div class="card"><p class="done">Thank you. This form is complete.</p></div>';
+ renderList(PICKS);renderSummary();
+}
+function renderSummary(){
+ const keys=Object.keys(results);if(!keys.length)return;
+ let h='<div class="card"><h2>Counselor view (practice only)</h2><p class="status">In the real system, only the counselor would see this, in the client\'s file.</p><table><tr><th>Form</th><th>Score</th><th>Range</th><th>Difficulty</th></tr>';
+ keys.forEach(k=>{const r=results[k];h+=`<tr><td>${FORMS[k].name}</td><td>${r.score}</td><td>${r.band}</td><td>${r.diff}</td></tr>`;});
+ h+='</table>';
+ if(results.phq9&&results.phq9.item9>0)h+='<div class="alert"><b>Safety flag:</b> PHQ-9 question 9 (thoughts of being better off dead or of self-harm) was answered above "Not at all." Contact the client promptly to assess safety. Do not wait for the next session.</div>';
+ h+='<p class="status">Scores are screening results, not a diagnosis. Confirm with the clinical interview and DSM-5-TR criteria.</p></div>';
+ document.getElementById('summary').innerHTML=h;
+}
+const qs=new URLSearchParams(location.search);const PICKS=(qs.get('forms')||'').split(',').filter(k=>FORMS[k]);
+if(PICKS.length){document.getElementById('counselor').style.display='none';document.getElementById('client').style.display='block';document.getElementById('title').textContent='Your Forms';renderList(PICKS);}
+</script>
+</body></html>
