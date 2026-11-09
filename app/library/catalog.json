@@ -2,6 +2,23 @@
   "version": 1,
   "items": [
     {
+      "bundledId": "starter:flow-of-care",
+      "category": "Using the Clinical Companion",
+      "subcategory": "Flow of care",
+      "label": "The Clinical Companion: Flow of Care (14 steps)",
+      "file": "flow-of-care.md",
+      "href": "../counselors/forms/Clinical-Companion-Flow-of-Care.pdf",
+      "starter": true
+    },
+    {
+      "bundledId": "starter:follow-up-forms-and-screens",
+      "category": "Using the Clinical Companion",
+      "subcategory": "Flow of care",
+      "label": "Step 9: Follow-up Forms and Screens (PHQ-9, GAD-7, spiritual screens)",
+      "file": "follow-up-forms-and-screens.md",
+      "starter": true
+    },
+    {
       "bundledId": "starter:depression-teaching-overview",
       "category": "Diagnoses",
       "subcategory": "Mood disorders",

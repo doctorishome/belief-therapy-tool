@@ -616,6 +616,8 @@ async function renderLibrary() {
 
 function renderForms() {
   const forms = [
+    ["Flow of Care chart", "The 14 steps of care, from the first phone call to belief cards. Printable PDF.", "../counselors/forms/Clinical-Companion-Flow-of-Care.pdf"],
+    ["Forms to Complete card (Step 9)", "At the end of a session, check off the follow-up forms (PHQ-9, GAD-7, spiritual screens, and more), then send the client one link or print the card. Practice sample: fictional clients only.", "../counselors/followup-forms.html"],
     ["New Client Packet", "Fill practice details in the browser and download a packet. Review it with an attorney in your state.", "../counselors/practice-forms.html"],
     ["Confidentiality agreement", "Blank fillable PDF.", "../counselors/forms/Confidentiality-Agreement-fillable.pdf"],
     ["Pastoral confidentiality agreement", "Blank fillable PDF.", "../counselors/forms/Pastoral-Confidentiality-Agreement-fillable.pdf"],
