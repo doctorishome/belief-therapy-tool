@@ -14,6 +14,8 @@ Foundations 1: The Basics. Read the public pages first: What Is a Belief?, What 
 
 Foundations 2: Counselor Reading. From CBT to Christian CBT (history); Ethical Considerations When Choosing Treatment Modalities; How Beliefs Influence Personality. This section also covers competence and the ethics of making referrals.
 
+Foundations 3: Assessment Skills. Learn these before the first client: the nine-step DSM-5-TR diagnostic process (narrated slides, flow chart, PowerPoint) and the DSM-5-TR diagnosis and coding practice tutorial; the functional analysis tutorial for the presenting problem (being written); and the guide to the screening forms (see "Step 9: Follow-up Forms and Screens").
+
 With the client
 
 1. Telephone intake. A trained intake person takes the call with a blank Telephone Intake form open on the computer. The practice serves adults only. The intake person records basic information (name, email, phone, insurance), asks the caller to describe the general problem, and screens for fit using the counselor's own list of problems the counselor does not treat. Callers who are not a fit are referred to local specialists. The intake person explains that the counselor specializes in helping people who want their Christian faith integrated into treatment. If the caller is a good fit, the intake person schedules the first appointment, sends the link to the intake forms, and asks whether the client will complete the forms online or would prefer paper.
@@ -37,7 +39,7 @@ With the client
 
 9. Follow-up tests or assessments. At the end of the session, the counselor checks off the follow-up forms on the Forms to Complete card and sends the client one link (or prints the card for a paper client). Options include the PHQ-9 (depression), GAD-7 (anxiety), optional spiritual screens if faith is included (RSS-5, Brief RCOPE, SAI), the Christian Experiences and Beliefs checklist (counselor-guided), level checklists, and diagnostic forms. See the Knowledge Library note "Step 9: Follow-up Forms and Screens."
 
-10. Diagnosis + Identify. DSM-5-TR diagnosis while identifying the client's false beliefs. Guide: the nine-step DSM-5-TR diagnostic process (narrated slides, flow chart, PowerPoint, and practice tutorial) on the Counselors' Room DSM-5-TR Reviews page.
+10. Diagnosis + Identify. DSM-5-TR diagnosis while identifying the client's false beliefs. Refresher: the nine-step DSM-5-TR diagnostic process from Foundations 3.
 
 11. Treatment plan, built from the diagnosis and the false beliefs.
 
