@@ -196,7 +196,7 @@ def build():
 <p class="backline"><a class="back" href="https://www.beliefcounselor.com/blank-11" target="_top">← Back to the Counselors’ Room</a></p>
 <a class="needhelp" href="https://www.beliefcounselor.com/help" target="_top">Need Help?</a></div>
 <div class="wrap">{jump}
-<div class="card"><p>Clinical Companion supports, and does not replace, your professional clinical judgment. Use fictional or de-identified information, and never enter real client names or details. Links open in a new tab.</p></div>
+<div class="card"><p>Clinical Companion supports, and does not replace, your professional clinical judgment. Client information is safeguarded: case files are encrypted, and secure, protected connections are being completed. Until they are finished, please practice with fictional cases. Links open in a new tab.</p></div>
 {''.join(parts)}
 </div>
 <div class="foot">Educational training for counselors. Never enter real client names or details. · © 2026 Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/account-settings" target="_top">My Account</a> · <a href="https://www.beliefcounselor.com/my-subscriptions" target="_top">My Subscriptions</a> · <a href="https://www.beliefcounselor.com/help" target="_top">Help</a></div>
