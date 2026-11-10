@@ -56,7 +56,11 @@ GROUPS = [
     ("Sessions", [
         ("6", "Initial Interview", "Belief mining begins: a counselor-led functional analysis of the presenting problem, safety issues, and a review of the intake forms.", [
             ("Presenting Problem Assessment (counselor's interview guide)", None),
-            ("Mining Tools for each of the six levels", "../level-pages/tools.html"),
+            ("Mining Tools for all six levels (table on The Process page)", "process.html"),
+            ("Anxious Thoughts & Beliefs Checklist (PDF)", "forms/Belief-Counseling-Anxious-Thoughts-and-Beliefs-Checklist.pdf"),
+            ("Depressive Thoughts & Beliefs Checklist (PDF)", "forms/Belief-Counseling-Depressive-Thoughts-and-Beliefs-Checklist.pdf"),
+            ("Deeper Issues: A Checklist of Core Beliefs (PDF)", "forms/Belief-Counseling-Deeper-Issues-Checklist-of-Core-Beliefs.pdf"),
+            ("Discover the Lies (PDF)", "forms/Belief-Counseling-Discover-the-Lies.pdf"),
             ("Parental Messages Checklist (PDF)", "forms/Belief-Counseling-Parental-Messages-Checklist.pdf"),
             ("Adult History (only when needed)", None),
         ]),
@@ -71,8 +75,6 @@ GROUPS = [
             ("Life Events and Beliefs Screening", "../Life_Events_Beliefs_Screening.html"),
             ("Christian Experiences and Beliefs Checklist (PDF)", "forms/Belief-Counseling-Christian-Experiences-and-Beliefs-Checklist.pdf"),
             ("Christian Experiences and Beliefs Checklist (Word)", "forms/Belief-Counseling-Christian-Experiences-and-Beliefs-Checklist.docx"),
-            ("Anxious and Depressive Thoughts and Beliefs checklists", None),
-            ("Discover the Lies worksheet", None),
         ]),
     ]),
     ("Diagnosis and treatment", [
