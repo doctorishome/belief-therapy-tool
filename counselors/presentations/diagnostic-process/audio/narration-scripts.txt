@@ -4,9 +4,9 @@ Narration scripts: one clip per slide. Save each recording as slide-01.mp3, slid
 === Slide 1 of 19: Basic Diagnostic and Coding Procedures  (save as slide-01.mp3) ===
 Welcome. In this presentation, we'll walk through the basic steps for making a diagnosis with the DSM-5-TR, the current edition of the Diagnostic and Statistical Manual of Mental Disorders, and for writing that diagnosis with the correct codes.
 
-I'm Dr. Brian Campbell. Over many years of teaching and private practice, I've found that a clear, step-by-step process makes diagnosis far less intimidating. So we'll take it one step at a time. There are nine steps in all.
+This presentation was prepared by Dr. Brian Campbell. Over many years of teaching and private practice, he found that a clear, step-by-step process makes diagnosis far less intimidating. So we'll take it one step at a time. There are nine steps in all.
 
-As we go, I encourage you to keep your own copy of the DSM-5-TR by your side, so you can see where each part of the process is found in the manual.
+As we go, keep your own copy of the DSM-5-TR by your side, so you can see where each part of the process is found in the manual.
 
 === Slide 2 of 19: Why diagnostic codes matter  (save as slide-02.mp3) ===
 Why do diagnostic codes matter? There are three main reasons.
@@ -53,7 +53,7 @@ And nine: decide which diagnosis is the principal diagnosis, or the reason for t
 Let's go through them one at a time.
 
 === Slide 6 of 19: The diagnostic flow chart  (save as slide-06.mp3) ===
-Before we look at each step in detail, here is the flow chart I use to picture the whole process. You may find it helpful to come back to this chart as we go, and follow along. The small numbered tags on the boxes show which of the nine steps each box belongs to.
+Before we look at each step in detail, here is the flow chart Dr. Campbell uses to picture the whole process. You may find it helpful to come back to this chart as we go, and follow along. The small numbered tags on the boxes show which of the nine steps each box belongs to.
 
 We begin at Start, by checking everything we know about the client: the clinical records, the client's history, the reason for referral, the initial interview, and any previous or current test results.
 
@@ -109,7 +109,7 @@ Use "unspecified" when the client looks as though they have a disorder in that c
 Use "other specified" when you know the reason the criteria aren't met, and you choose to state it. You record the name of the category, followed by the reason. For example, a client with significant depressive symptoms for four weeks, but with too few symptoms for a major depressive episode, would be recorded as F32.89, other specified depressive disorder, depressive episode with insufficient symptoms.
 
 === Slide 12 of 19: Remembering the difference: the duck analogy  (save as slide-12.mp3) ===
-Here's a simple way I like to remember the difference. Picture a duck.
+Here's a simple way to remember the difference. Picture a duck.
 
 It looks like a duck in every way. But it doesn't have webbed feet, and webbed feet are one of the criteria for calling something a duck. So technically, it doesn't meet the criteria.
 
@@ -164,7 +164,7 @@ One exception: when a mental disorder is caused by a medical condition, coding r
 And if no mental disorder is diagnosed, a Z code can be listed first as the principal diagnosis or reason for visit.
 
 === Slide 17 of 19: Writing the diagnosis clearly  (save as slide-17.mp3) ===
-The DSM-5-TR doesn't spell out exactly how to write a diagnosis, so here are the formats I recommend for clarity.
+The DSM-5-TR doesn't spell out exactly how to write a diagnosis, so here are the formats Dr. Campbell recommends for clarity.
 
 Start with the code, followed by the name of the disorder. Place the severity immediately after the name of the disorder. That avoids confusion, even though the manual lists severity last. Capitalize only the first word of the diagnosis, in keeping with APA style, and write the specifiers in lowercase. And when there's more than one diagnosis, mark which one is the principal diagnosis or the reason for visit.
 
