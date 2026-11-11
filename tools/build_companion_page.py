@@ -28,7 +28,6 @@ FOUNDATIONS = [
         ("The DSM-5-TR diagnostic process: step-by-step slides (narrated)", "presentations/diagnostic-process/index.html"),
         ("Practice tutorial: DSM-5-TR diagnosis and coding", "presentations/diagnostic-process/tutorial.html"),
         ("The diagnostic process flow chart", "reviews/dsm5tr-flow-chart.html"),
-        ("Download the PowerPoint", "reviews/dsm5tr-diagnostic-process.pptx"),
         ("Functional analysis of the presenting problem (tutorial)", None),
         ("Guide to the screening forms: in the Clinical Companion app, Library › Step 9: Follow-up Forms and Screens", APP),
     ]),
