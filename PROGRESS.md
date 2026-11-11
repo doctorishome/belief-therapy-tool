@@ -241,3 +241,8 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - Welcome page box now shows only the description and "See all reviews →".
 
 - Nov 1, 2026: False Belief Finder backend (`lie-finder/wix-code/lieFinder.web.js`) now works with Claude or Grok (set PROVIDER at the top; secret ANTHROPIC_API_KEY or XAI_API_KEY) and uses prompt caching (full master list always sent first in fixed order; Claude cache_control 5-min; Grok automatic + x-grok-conv-id). Wix Secrets Manager had 0 secrets as of Nov 1, so searches cannot run until a key is added.
+
+## Counselors' Introduction page for visitors (Nov 11, 2026)
+- `counselors/landing.html` is now Brian's Introduction page (who the site is for, why Belief Counseling, what is inside, Clinical Companion, about Dr. Campbell, short Membership section). The Wix "For Counselors" page still shows landing.html to visitors, so no Wix change was needed.
+- The old "Join the Counselors' Room" page (price box, sign-up steps, what membership includes) is kept as `counselors/membership.html`, not linked yet. It is meant for the future "Membership" menu item inside the Counselors' Room.
+- "See what's inside" (top and bottom) links to welcome.html, so visitors can enter the Counselors' Room. There is no visitor limit yet: every reading page is open until Brian chooses which pages visitors may see. To build then: visitor view with locked pages, plus the Membership menu item.

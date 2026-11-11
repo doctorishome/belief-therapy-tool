@@ -1,0 +1,109 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Join the Counselors’ Room</title><style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
+a{color:var(--navy2)}
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent}
+.nav a.l:hover{border-color:var(--gold)}.nav a.on{color:#fff;border-color:var(--gold)}
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:54px 22px 46px;text-align:center}
+.hero h1{font-size:clamp(1.8rem,4.5vw,2.9rem);margin:0 0 10px;line-height:1.2}.hero p{max-width:720px;margin:0 auto;font-size:1.12rem;color:#dfe6f2}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.wrap{max-width:1000px;margin:0 auto;padding:36px 20px 20px}
+h2{color:var(--navy);font-size:1.55rem;margin:34px 0 8px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+h3{color:var(--navy);margin:0 0 4px;font-size:1.12rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:16px 0}
+.card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:16px 18px;box-shadow:0 2px 6px rgba(18,40,76,.06)}
+.card p{margin:4px 0 0;color:var(--mut);font-size:.96rem}
+.step{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:12px 0}
+.num{flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:bold;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.step p{margin:3px 0 0;color:var(--mut)}.step strong{color:var(--navy)}
+.cta{text-align:center;margin:36px 0 8px}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:13px 30px;border-radius:30px;font-size:1.05rem;border:0}
+.btn.soon{opacity:.85}.note{color:var(--mut);font-size:.9rem;text-align:center;margin-top:8px}
+.scrip{background:#fff;border-left:4px solid var(--gold);padding:10px 16px;margin:10px 0;font-style:italic}.scrip b{font-style:normal;color:var(--navy)}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;background:var(--navy);color:var(--gold);border-radius:12px;padding:2px 10px;margin-bottom:6px}
+.tag.free{background:var(--gold);color:var(--navy)}
+ul.clean{padding-left:20px}ul.clean li{margin:5px 0}
+.foot{margin:40px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:560px){.nav{padding:8px 12px}.nav a.l{font-size:.85rem}.step{flex-direction:column}}
+/*reviews*/
+.grid>.card:last-child{grid-column:1 / -1}
+@media (min-width:900px){.grid>.card:last-child{grid-column:auto}}
+.card .pdfs{margin:12px 0 0;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.card .pdfs a{color:var(--navy2);font-weight:bold}
+/*/reviews*/
+
+
+.lhero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:56px 22px 48px;text-align:center}
+.lhero h1{font-size:clamp(1.9rem,4.6vw,3rem);margin:0 0 12px;line-height:1.18}.lhero p{max-width:740px;margin:0 auto;font-size:1.14rem;color:#dfe6f2}
+.lhero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.8rem;margin-bottom:10px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:flex-start;margin-top:26px}
+.startcol{display:flex;flex-direction:column;align-items:center;gap:10px}
+a.learn{color:var(--gold);font-size:.92rem;font-weight:bold;line-height:1.3}
+.btn.ghost{background:transparent;color:#fff;border:2px solid var(--gold)}
+.btn.ghost.dark{color:var(--navy)}
+.price{max-width:560px;margin:26px auto 6px;background:#fff;border:2px solid var(--gold);border-radius:12px;padding:22px 24px;text-align:center;box-shadow:0 4px 14px rgba(18,40,76,.08)}
+.price .big{font-size:2.2rem;color:var(--navy);font-weight:bold;line-height:1.1}.price .big small{font-size:1rem;color:var(--mut);font-weight:normal}
+.price p{margin:8px 0 0;color:var(--mut)}
+.free{background:var(--navy);color:#fff;border-radius:10px;padding:18px 22px;margin:18px 0}
+.free h3{color:var(--gold)}.free p{color:#dfe6f2;margin:4px 0 0}
+.login{text-align:center;margin:14px 0 0;color:var(--mut);font-size:.95rem}
+.login a{font-weight:bold}
+
+@media(min-width:1000px){.incl{grid-template-columns:repeat(4,1fr)}.frees{display:grid;grid-template-columns:1fr 1fr;gap:16px}.frees .free{margin:0}.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.steps3 .step{margin:0}}
+.lhero{padding:36px 22px 30px}.wrap{padding-top:16px}h2{margin-top:22px}.foot{margin-top:24px}.cta{margin:22px 0 4px}
+.lhero .helptop{margin:0 0 16px}
+.lhero .needhelp{box-shadow:0 2px 0 rgba(0,0,0,.15)}
+</style></head><body>
+<!--
+  Counselors' landing page (public). Shown on the Wix "For Counselors" page to visitors who are not members.
+  Members see welcome.html instead (the Wix page code chooses which one to show).
+  Buttons send a message to the Wix page: cc-start-free-week (sign up and start the free week),
+  cc-login (log in), navigate "/" (back to the public site).
+-->
+<div class="lhero"><p class="helptop"><a class="btn needhelp" href="https://www.beliefcounselor.com/help" target="_top">Need Help?</a></p><div class="eyebrow">Belief Counseling for Counselors</div>
+<h1>Join the Counselors’ Room</h1>
+<p>Learn Christian cognitive-behavioral Belief Counseling from a psychologist with 35 years of clinical experience, and practice it on guided cases before you meet your next client.</p>
+<div class="actions"><div class="startcol"><a class="btn" href="#" data-msg="cc-start-free-week">Start your free week</a></div><a class="btn ghost" href="#" data-path="/">&larr; Back to the public site</a></div>
+<p class="login" style="color:#dfe6f2">Already a member? <a href="#" data-msg="cc-login" style="color:var(--gold)">Log in</a></p></div>
+<div class="wrap">
+<div class="price"><div class="big">1 week free <small>then</small> $29.95<small> a month</small></div></div>
+<h2>How sign-up works</h2>
+<div class="step"><div class="num">1</div><div><strong>Create your login with your email and a password.</strong></div></div>
+<div class="step"><div class="num">2</div><div><strong>Enter a credit card at checkout.</strong></div></div>
+<div class="step"><div class="num">3</div><div><strong>Nothing is charged during your 7-day free trial. Your membership starts at $29.95 a month on day 8 unless you cancel during the week.</strong></div></div>
+<p>Cancel anytime in My Account → My Subscriptions. We’ll email you a reminder 3 days before your free week ends.</p>
+<p>If you cancel after you’ve been billed, you keep access until the end of that billing month, and you won’t be billed again. The rest of that month isn’t refunded.</p>
+
+<h2>What membership includes</h2>
+<div class="grid incl">
+<div class="card"><h3>The Process</h3><p>The three steps of Belief Counseling (Identify, Challenge, Replace), with the reason behind each one.</p></div>
+<div class="card"><h3>Theory and Core False Beliefs</h3><p>A framework for understanding most psychological struggles, and the deep-seated lies beneath much of our clients’ pain, with the research behind them.</p></div>
+<div class="card"><h3>Case Studies</h3><p>Practice on composite cases guided by an AI supervisor trained on Dr. Campbell’s method. It pauses for your answer before showing the model approach.</p></div>
+<div class="card"><h3>The Course</h3><p>A step-by-step course in Christian cognitive-behavioral counseling, with quizzes and a certificate of completion.</p></div>
+<div class="card"><h3>Clinical Library and Forms</h3><p>Assessment tools, checklists, and a ready-to-use New Client Packet (consent, confidentiality, history) filled in with your practice details.</p></div>
+<div class="card"><h3>DSM-5-TR Reviews</h3><p>Condensed teaching reviews of major disorders: key features, assessment instruments, the most effective treatments, and research on Christian-integrated care.</p></div>
+<div class="card"><h3>Clinical Companion</h3><p>A browser tool, opened from the Counselors’ Room, that reads your (de-identified) session notes and helps you think through diagnosis, false beliefs, and next steps.</p></div>
+<div class="card"><h3>False Belief Finder</h3><p>Describe what a client is facing and find the false beliefs that may lie beneath it, with links to belief cards, questions, and Scripture.</p></div>
+</div>
+
+<h2>Free with your membership</h2>
+<div class="free"><h3>Weekly professional tip</h3><p>Members get one professional tip by email each week, and past tips are kept in the Counselors’ Room.</p></div>
+
+<h2>About Dr. Campbell</h2>
+<p>Brian Campbell, Ph.D., has spent 35 years in private practice, teaching, and writing. Belief Counseling grew from that work: a Christian cognitive-behavioral approach that helps clients name the lies behind their pain and replace them with truth from God’s Word.</p>
+<div class="scrip">“Do not be conformed to this world, but be transformed by the renewing of your mind.” <b>Romans 12:2</b></div>
+<div class="cta"><a class="btn" href="#" data-msg="cc-start-free-week">Start your free week</a> &nbsp; <a class="btn ghost dark" href="#" data-path="/">&larr; Back to the public site</a>
+<div class="note">One week free, then $29.95 a month. Cancel anytime.</div></div>
+</div>
+<div class="foot">Educational training for counselors. Never enter real client names or details. · Scripture quotations: Berean Standard Bible (BSB), public domain. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
+<script>
+document.querySelectorAll("a[data-msg],a[data-path]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();
+  var m=a.getAttribute("data-msg"),p=a.getAttribute("data-path");
+  window.parent.postMessage(m?{type:m}:{type:"navigate",path:p},"*");
+  if(p&&window.parent===window) location.href="https://www.beliefcounselor.com"+p;});});
+</script>
+</body></html>
