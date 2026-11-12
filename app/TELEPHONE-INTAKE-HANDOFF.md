@@ -42,7 +42,7 @@ One record per call. The names on the left are the field names already used in t
 | `forms`, `formsDate` | `online` or `paper`; date the link was sent or the paper forms were given |
 | `notes` | Anything else |
 
-Dates are `YYYY-MM-DD`. Times are 24-hour `HH:MM`. The counselor's referral list (16 lines) is a practice
+Dates are `YYYY-MM-DD`. Times are 24-hour `HH:MM`. The counselor's referral list (14 lines) is a practice
 setting, not part of the client record, and stays on the intake computer.
 
 In the form's code, `read()` already returns exactly this record as one object.
