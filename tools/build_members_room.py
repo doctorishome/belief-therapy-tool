@@ -1,4 +1,4 @@
-"""Build the Member's Room from Brian's "Basic Organization" outline (Nov 12, 2026).
+"""Build the Counselors' Room from Brian's "Basic Organization" outline (Nov 12, 2026).
 
     python3 tools/build_members_room.py
 
@@ -15,7 +15,7 @@ import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "members"
-ROOM = "Member’s Room"
+ROOM = "Counselors’ Room"
 SITE = "https://www.beliefcounselor.com"
 GH = "https://doctorishome.github.io/belief-therapy-tool/"
 F = "C/forms/Belief-Counseling-"
@@ -123,7 +123,8 @@ PAGES = {
         ("", "This section shows what the assessment process looks like, including the forms your client "
              "will see and complete online. You carry it out with your own clients in the Clinical Companion.", [
             ("The Flow: Start Here", "A narrated presentation that walks through the whole process, "
-                                     "from the first phone call to the treatment plan. Watch this first.", []),
+                                     "from the first phone call on. Watch this first.",
+             [("Open the slide show", "C/presentations/flow-of-care/index.html")]),
         ]),
         ("DSM-5-TR", "", [
             ("Training", "The DSM-5-TR diagnostic process, step by step (narrated slides).",
@@ -184,7 +185,8 @@ PAGES = {
         ("", "The Clinical Companion is where you work your own cases. It opens once your membership is paid.", [
             ("Introduction", "", []),
             ("Watch the Flow Again", "A refresher before your first case: the same narrated presentation "
-                                     "shown under Traditional Assessment.", []),
+                                     "shown under Traditional Assessment.",
+             [("Open the slide show", "C/presentations/flow-of-care/index.html")]),
             ("Start: Telephone Intake", "The Companion begins at step 1, the telephone intake.",
              [("Open the Clinical Companion", SITE + "/clinical-companion")]),
         ]),

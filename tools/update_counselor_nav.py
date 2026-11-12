@@ -1,10 +1,10 @@
-"""Writes the Member's Room menu into every counselors/*.html page that has a <!--nav-->...<!--/nav--> block.
+"""Writes the Counselors' Room menu into every counselors/*.html page that has a <!--nav-->...<!--/nav--> block.
 
 Edit MENU below, then run:  python3 tools/update_counselor_nav.py
 """
 import glob, os, re
 
-# The menu matches the Member's Room (members/, built by tools/build_members_room.py).
+# The menu matches the Counselors' Room (members/, built by tools/build_members_room.py).
 M = "../members/"
 MENU = [("index.html", "Welcome"), ("belief-counseling.html", "Belief Counseling"), ("process.html", "The Process"),
         ("assessment.html", "Traditional Assessment"), ("tips.html", "Professional Tips"), ("library.html", "Library")]
@@ -16,7 +16,7 @@ SECTION = {"core-beliefs.html": "process.html", "reviews.html": "assessment.html
 
 
 def nav(page):
-    h = ['<!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Member’s Room</small></div>']
+    h = ['<!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div>']
     for f, label in MENU:
         h.append(f'<a class="l{" on" if SECTION.get(page) == f else ""}" href="{M}{f}">{label}</a>')
     h.append(f'<a class="l cc" href="{M}clinical-companion.html" style="color:var(--navy);background:var(--gold);border:0;border-radius:20px;padding:4px 14px;font-weight:bold">Clinical Companion</a>')

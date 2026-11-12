@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Flow of Care · Belief Counseling</title>
+<!-- Slide show for Traditional Assessment: the flow, a narration script for each step, and the
+     documents used at that step. DRAFT for Dr. Campbell's review (Nov 12, 2026). No voice-over yet:
+     when the narration is approved, add one audio clip per slide (see AUDIO below).
+     To change a slide, edit the SLIDES list near the bottom of this file. -->
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6;
+--client:#e1f3ea;--clientb:#2f8f6b;--ai:#eceafb;--aib:#6a5fc4}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.55}
+header{background:var(--navy);border-bottom:3px solid var(--gold);color:#fff;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+header h1{font-size:1.15rem;margin:0}header h1 small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+header a{color:var(--gold);text-decoration:none;font-size:.9rem;border:1px solid var(--gold);border-radius:20px;padding:3px 12px}
+.draft{background:var(--gold);color:var(--navy);text-align:center;font:bold .85rem Arial,Helvetica,sans-serif;padding:5px 12px}
+main{max-width:1080px;margin:0 auto;padding:16px 14px 30px}
+.stage{display:grid;grid-template-columns:270px 1fr;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 2px 10px rgba(18,40,76,.1);overflow:hidden;min-height:520px}
+.flow{background:#f6f1e2;border-right:1px solid var(--line);padding:12px 10px;display:flex;flex-direction:column;gap:3px}
+.flow h2{font:bold .7rem Arial,Helvetica,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--mut);margin:0 0 4px 4px}
+.flow button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;font:.8rem/1.25 Arial,Helvetica,sans-serif;color:var(--ink);background:var(--client);border:1.5px solid transparent;border-left:4px solid var(--clientb);border-radius:6px;padding:5px 8px;cursor:pointer}
+.flow button.ai{background:var(--ai);border-left-color:var(--aib)}
+.flow button b{flex:0 0 20px;height:20px;border-radius:50%;background:#fff;color:var(--navy);font-size:.72rem;display:flex;align-items:center;justify-content:center}
+.flow button:hover{border-color:var(--navy)}
+.flow button.on{background:var(--navy);color:#fff;border-color:var(--gold);border-left-color:var(--gold);font-weight:bold}
+.flow button.on b{background:var(--gold)}
+.flow .key{margin-top:8px;font:.7rem Arial,Helvetica,sans-serif;color:var(--mut);display:flex;gap:12px;padding-left:4px}
+.flow .key i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.slide{padding:26px 30px}
+.slide .eyebrow{font:bold .78rem Arial,Helvetica,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.slide h2{color:var(--navy);font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.2;margin:4px 0 4px}
+.slide .who{font:bold .78rem Arial,Helvetica,sans-serif;display:inline-block;border-radius:12px;padding:2px 10px;background:var(--client);color:#1c5c44;margin-bottom:10px}
+.slide .who.ai{background:var(--ai);color:#3f3690}
+.slide ul{margin:8px 0 0;padding-left:22px;font-size:1.08rem}.slide li{margin:6px 0}
+.docs{margin-top:20px;border-top:2px solid var(--gold);padding-top:10px}
+.docs h3,.narr h3{font:bold .78rem Arial,Helvetica,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);margin:0 0 8px}
+.docs a,.docs span{display:inline-block;margin:0 8px 8px 0;font:bold .85rem Arial,Helvetica,sans-serif;text-decoration:none;border-radius:20px;padding:5px 13px}
+.docs a{color:var(--navy);border:1.5px solid var(--navy);background:#fff}
+.docs a:hover{background:var(--gold);border-color:var(--gold)}
+.docs span{color:var(--mut);border:1.5px dashed var(--line);font-weight:normal}
+.docs p{margin:0;color:var(--mut);font-size:.95rem}
+.bar{display:flex;align-items:center;justify-content:center;gap:12px;margin:14px 0}
+.bar button{font:bold 1rem Arial,Helvetica,sans-serif;cursor:pointer;border-radius:22px;border:1.5px solid var(--navy);background:#fff;color:var(--navy);padding:8px 20px}
+.bar button.next{background:var(--navy);color:#fff}.bar button:disabled{opacity:.35;cursor:default}
+.count{min-width:120px;text-align:center;color:var(--mut);font:.95rem Arial,Helvetica,sans-serif}
+.narr{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 20px;font-size:1.06rem}
+.narr p{margin:0 0 10px}.narr p:last-child{margin:0}
+.narr .note{font:.8rem Arial,Helvetica,sans-serif;color:var(--mut)}
+footer{color:var(--mut);font-size:.82rem;text-align:center;padding:14px}
+@media(max-width:760px){.stage{grid-template-columns:1fr}.flow{border-right:0;border-bottom:1px solid var(--line);flex-direction:row;flex-wrap:wrap}.flow h2,.flow .key{flex:1 0 100%}.flow button{width:auto}.flow button span{display:none}.flow button.on span{display:inline}.slide{padding:18px}}
+</style></head>
+<body>
+<header><h1>The Flow of Care<small>Traditional Assessment · Belief Counseling</small></h1>
+<a href="../../../members/assessment.html">&#8592; Traditional Assessment</a></header>
+<div class="draft">Draft for Dr. Campbell’s review. The narration is shown as text; the voice-over has not been recorded.</div>
+<main>
+<div class="stage">
+  <nav class="flow" id="flow" aria-label="The flow of care"></nav>
+  <section class="slide" id="slide" aria-live="polite"></section>
+</div>
+<div class="bar"><button id="prev" type="button">&#9664; Back</button><span class="count" id="count"></span><button id="next" class="next" type="button">Next &#9654;</button></div>
+<div class="narr"><h3>Narration</h3><div id="narr"></div></div>
+</main>
+<footer>Educational training for counselors. · © 2026 Brian Campbell, Ph.D. All rights reserved.</footer>
+<script>
+var C = "../../";                                              // the counselors/ folder
+var GH = "https://doctorishome.github.io/belief-therapy-tool/";
+var SITE = "https://www.beliefcounselor.com";
+var FORM = C + "forms/Belief-Counseling-";
+// When the voice-over is recorded: put audio/slide-00.mp3 ... beside this file and set AUDIO = true.
+var AUDIO = false;
+
+// Each slide: flow = label in the flow list (empty for the opening and closing slides); ai = built by the AI;
+// points = on-screen bullets; say = narration paragraphs; docs = [label, address] (no address = not ready yet).
+var SLIDES = [
+ {title:"The Flow of Care", eyebrow:"Overview",
+  points:["Fourteen steps, from the first phone call to homework with the belief cards.",
+          "Green steps are done with the client. Purple steps are built by the AI in the Clinical Companion.",
+          "Select any step on the left to jump to it."],
+  say:["Welcome. This presentation walks you through the flow of care in Belief Counseling, one step at a time. There are fourteen steps. They begin with the first phone call and end with the belief cards your client uses as homework.",
+       "On each slide you will see where you are in the flow, what happens at that step, and the documents that are used there. You can open any document by selecting it.",
+       "Everything you see here is carried out with your own clients inside the Clinical Companion."],
+  docs:[["Printable flow chart (PDF)", C+"forms/Clinical-Companion-Flow-of-Care.pdf"]]},
+
+ {flow:"Telephone Intake", title:"Telephone Intake",
+  points:["A trained intake person takes the call, with a blank Telephone Intake form open.",
+          "Record name, email, phone, and insurance. Ask the caller to describe the general problem.",
+          "Screen and refer: check the problem against the list of problems the counselor does not treat.",
+          "If the caller is a good fit, schedule the first appointment and send the link to the intake forms.",
+          "Ask: online or paper forms?"],
+  say:["Care begins with the first phone call. A trained intake person, such as your office manager, takes the call with a blank Telephone Intake form open on the computer.",
+       "The intake person records the caller’s name, email, phone number, and insurance, and asks the caller to describe the general problem. Then comes screening. Counselors may treat only what they are competent to treat, so the intake person checks the problem against your own list of problems you do not treat. A caller who is not a good fit is referred to a local specialist, much as a doctor’s office would do.",
+       "The intake person also explains that you specialize in helping people who want their Christian faith to be part of their treatment. If the caller is a good fit, the first appointment is scheduled and the caller is sent the link to the intake forms."],
+  docs:[["Telephone Intake Form"],["Screen & Refer list"]]},
+
+ {flow:"Online (or Paper) Intake", title:"Online (or Paper) Intake",
+  points:["The client completes the intake forms before the first visit. Online is the normal way.",
+          "Client Basic Information · Consent for Treatment · Insurance Information · Confidentiality · Release of Records",
+          "Adult History and the Life Events & Beliefs Screening",
+          "Paper forms match the online forms, for clients who prefer paper."],
+  say:["Before the first visit, the client completes the intake forms. Most clients do this online, using the link they received after the phone call.",
+       "The forms gather the client’s basic information and insurance, and they include the consent for treatment, the confidentiality agreement, and the release of records. The client also completes the Adult History and the Life Events and Beliefs Screening.",
+       "Paper forms are available for clients who do not have a computer or phone, or who simply prefer paper. They match the online forms question for question."],
+  docs:[["New Client Forms: what the client sees", C+"new-client-forms.html"],
+        ["New Client Packet (paper)", C+"practice-forms.html"],
+        ["Confidentiality Agreement (PDF)", C+"forms/Confidentiality-Agreement-fillable.pdf"],
+        ["Pastoral Confidentiality Agreement (PDF)", C+"forms/Pastoral-Confidentiality-Agreement-fillable.pdf"],
+        ["Life Events & Beliefs Screening", GH+"Life_Events_Beliefs_Screening.html"]]},
+
+ {flow:"Schedule First Visit", title:"Schedule First Visit",
+  points:["Set the first appointment.","Allow time for the forms to be completed and reviewed before the visit."],
+  say:["Next, the first appointment is set. Leave enough time for the client to complete the forms, and for you to review them, before you meet."],
+  docs:[]},
+
+ {flow:"Assessment Report Begins", ai:true, title:"Assessment Report Begins",
+  points:["The intake information goes into the client’s file.","The AI starts the Assessment Report from that information."],
+  say:["Once the forms are in, the client’s information goes into the client’s file in the Clinical Companion, and the AI begins the Assessment Report. This report is the first part of what the Clinical Companion produces for you, and it grows as the case goes on."],
+  docs:[]},
+
+ {flow:"Review Intake Information", title:"Review Intake Information",
+  points:["Before the first interview, review everything, including the AI’s report.",
+          "Form an initial hypothesis about the diagnosis.","Form an initial hypothesis about toxic beliefs."],
+  say:["Before the first interview, review all of the intake information yourself, including the report the AI has started.",
+       "As you read, begin to form two initial hypotheses: one about the diagnosis, and one about the toxic beliefs that may lie beneath the client’s problem. You will test both of them when you meet the client."],
+  docs:[["Life Events & Beliefs Screening", GH+"Life_Events_Beliefs_Screening.html"]]},
+
+ {flow:"Initial Interview", title:"Initial Interview",
+  points:["Belief mining begins.",
+          "Functional analysis of the presenting problem, led by the counselor.",
+          "Consider safety issues.",
+          "Review the Life Events & Beliefs Screening and the Adult History with the client."],
+  say:["The initial interview is where belief mining begins.",
+       "Start by clarifying the presenting problem. This is a functional analysis, and you lead it. The client does not fill out a form; you go through the presenting problem questions together. Safety questions belong here too.",
+       "Then review the Life Events and Beliefs Screening and the Adult History with the client, listening for the experiences where false beliefs may have started."],
+  docs:[["Presenting Problem Assessment"],["Functional analysis tutorial"],
+        ["Mining Tools for the six levels", "../../../members/process.html"]]},
+
+ {flow:"Develop Hypotheses", title:"Develop Hypotheses",
+  points:["Hypotheses about the diagnosis.","Hypotheses about possible false beliefs."],
+  say:["After the interview, develop your hypotheses. What diagnosis best fits what you have seen and heard? And which false beliefs may be driving the client’s distress? These are still hypotheses. You will keep refining them as you learn more."],
+  docs:[["DSM-5-TR diagnostic process (narrated slides)", C+"presentations/diagnostic-process/index.html"],
+        ["Diagnostic process flow chart", C+"reviews/dsm5tr-flow-chart.html"]]},
+
+ {flow:"Counselor Enters First Case Note", ai:true, title:"Counselor Enters First Case Note",
+  points:["Dictate your hypotheses and the functional analysis findings into the case note.",
+          "The AI adds the interview findings to the Assessment Report.",
+          "The AI suggests DSM-5-TR questions and belief questions for the next session.",
+          "Steps 6 through 8 repeat after each session."],
+  say:["Now enter your first case note. You can dictate it. Include your hypotheses and what you found in the functional analysis.",
+       "The AI adds your interview findings to the Assessment Report. It then suggests questions for the next session: the DSM-5-TR questions still needed for the diagnosis, and questions that help identify core false beliefs. You decide which ones to ask.",
+       "The interview, the hypotheses, and the case note repeat after every session."],
+  docs:[]},
+
+ {flow:"Follow-up Tests or Assessments", title:"Follow-up Tests or Assessments",
+  points:["At the end of the session, check off forms on the “Forms to Complete” card. The client receives one link.",
+          "Short screens: PHQ-9 (depression) and GAD-7 (anxiety).",
+          "Optional spiritual screens, if faith is included: RSS-5, Brief RCOPE, SAI.",
+          "Christian Experiences and Beliefs (counselor-guided), level checklists, and diagnostic forms."],
+  say:["At the end of the session, decide which follow-up forms would help. Check them off on the Forms to Complete card, and the client receives a single link.",
+       "Short screens for depression and anxiety are useful with most clients. If faith is part of the work, there are optional spiritual screens as well, along with the Christian Experiences and Beliefs checklist, which you go through with the client.",
+       "You can also assign a checklist for any belief mining level you think is important for this client."],
+  docs:[["Forms to Complete card", C+"followup-forms.html"],
+        ["Christian Experiences and Beliefs (PDF)", FORM+"Christian-Experiences-and-Beliefs-Checklist.pdf"],
+        ["Anxious Thoughts & Beliefs (PDF)", FORM+"Anxious-Thoughts-and-Beliefs-Checklist.pdf"],
+        ["Depressive Thoughts & Beliefs (PDF)", FORM+"Depressive-Thoughts-and-Beliefs-Checklist.pdf"],
+        ["Mining Tools for the six levels", "../../../members/process.html"],
+        ["RSS-5"],["Brief RCOPE"],["SAI"]]},
+
+ {flow:"Diagnosis + Identify", title:"Diagnosis + Identify",
+  points:["Make the DSM-5-TR diagnosis.","At the same time, identify the client’s false beliefs.",
+          "Use the False Belief Finder to find the beliefs and their belief cards."],
+  say:["With the interviews and the follow-up forms in hand, make the DSM-5-TR diagnosis. If you would like a refresher, the nine-step diagnostic process and the practice tutorial are one click away.",
+       "At the same time, identify the client’s false beliefs. This is Step 1 of the Process: Identify. The False Belief Finder helps you find the beliefs that fit what your client has told you."],
+  docs:[["DSM-5-TR diagnostic process (narrated slides)", C+"presentations/diagnostic-process/index.html"],
+        ["Practice tutorial", C+"presentations/diagnostic-process/tutorial.html"],
+        ["DSM-5-TR disorder reviews", C+"reviews.html"],
+        ["False Belief Finder", SITE+"/false-belief-finder"],
+        ["Core False Beliefs", C+"core-beliefs.html"]]},
+
+ {flow:"Treatment Plan", title:"Treatment Plan",
+  points:["Built from the diagnosis and the false beliefs."],
+  say:["The treatment plan is built from two things: the diagnosis, and the false beliefs you have identified. It sets out what you and the client will work on together."],
+  docs:[["Treatment Plan"]]},
+
+ {flow:"Challenge", title:"Challenge",
+  points:["Step 2 of the Process.","Question the false belief, refute it, and test it.","Secular and Christian techniques are used together."],
+  say:["Now treatment begins. This is Step 2 of the Process: Challenge. You help the client question the false belief, refute it, and test it in real life, using both secular and Christian techniques."],
+  docs:[["Questioning False Beliefs (PDF)", FORM+"Questioning-False-Beliefs.pdf"],
+        ["Cognitive Errors Checklist (PDF)", FORM+"Cognitive-Errors-Checklist.pdf"],
+        ["Behavioral Experiments", SITE+"/blank-5"],
+        ["Behavioral Interventions (article)", GH+"pages/counselor/behavioral-interventions-ccbt.html"]]},
+
+ {flow:"Replace", title:"Replace",
+  points:["Step 3 of the Process.","False beliefs are replaced with the truth."],
+  say:["Step 3 of the Process is Replace. The false belief is replaced with the truth, and the truth comes from Scripture. The Scripture Search helps you and your client find the verses that speak to each belief."],
+  docs:[["Pearls Scripture Search", SITE+"/scriptures"]]},
+
+ {flow:"Belief Cards", title:"Belief Cards",
+  points:["The public belief cards are used as homework.","Each card has the truth from Scripture, questions, actions, and a homework page."],
+  say:["Finally, the belief cards. Each false belief has its own card on the public site, and the cards are used as homework. Your client can read the card, work through the homework page, and bring it back to the next session."],
+  docs:[["Search the belief cards", SITE+"/search-false-beliefs"]]},
+
+ {title:"That Is the Flow", eyebrow:"Summary",
+  points:["Before the first visit: telephone intake, intake forms, scheduling, and your review.",
+          "In session: the interview, your hypotheses, the case note, and follow-up forms. These repeat.",
+          "Then: diagnosis and false beliefs, the treatment plan, Challenge, Replace, and the belief cards."],
+  say:["That is the flow of care, from the first phone call to the belief cards.",
+       "In the Clinical Companion, each of these steps is waiting for you in order, with its forms and tools at the step where you use them. When you are ready, begin with step one, the telephone intake."],
+  docs:[["Clinical Companion", "../../../members/clinical-companion.html"],
+        ["Printable flow chart (PDF)", C+"forms/Clinical-Companion-Flow-of-Care.pdf"]]}
+];
+
+var at = 0, steps = SLIDES.filter(function(s){return s.flow;});
+function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function show(i){
+  at = Math.max(0, Math.min(SLIDES.length-1, i));
+  var s = SLIDES[at], n = steps.indexOf(s) + 1, h = "";
+  var f = '<h2>The flow</h2>';
+  steps.forEach(function(x, k){
+    f += '<button type="button" data-i="'+SLIDES.indexOf(x)+'" class="'+(x.ai?'ai ':'')+(x===s?'on':'')+'"><b>'+(k+1)+'</b><span>'+esc(x.flow)+'</span></button>';
+  });
+  f += '<div class="key"><span><i style="background:#2f8f6b"></i>With the client</span><span><i style="background:#6a5fc4"></i>Built by the AI</span></div>';
+  document.getElementById("flow").innerHTML = f;
+  h += '<div class="eyebrow">'+(n ? "Step "+n+" of "+steps.length : esc(s.eyebrow))+'</div><h2>'+esc(s.title)+'</h2>';
+  if (n) h += '<div class="who'+(s.ai?' ai':'')+'">'+(s.ai?'Built by the AI':'With the client')+'</div>';
+  h += '<ul>'+s.points.map(function(p){return '<li>'+esc(p)+'</li>';}).join("")+'</ul>';
+  h += '<div class="docs"><h3>Documents for this step</h3>';
+  if (!s.docs.length) h += '<p>No documents at this step.</p>';
+  s.docs.forEach(function(d){
+    h += d[1] ? '<a target="_blank" rel="noopener" href="'+d[1]+'">'+esc(d[0])+' ↗</a>' : '<span>'+esc(d[0])+' (coming)</span>';
+  });
+  document.getElementById("slide").innerHTML = h + '</div>';
+  var a = AUDIO ? '<audio controls src="audio/slide-'+("0"+at).slice(-2)+'.mp3" style="width:100%;margin-bottom:10px"></audio>' : '';
+  document.getElementById("narr").innerHTML = a + s.say.map(function(p){return '<p>'+esc(p)+'</p>';}).join("");
+  document.getElementById("count").textContent = "Slide "+(at+1)+" of "+SLIDES.length;
+  document.getElementById("prev").disabled = at === 0;
+  document.getElementById("next").disabled = at === SLIDES.length-1;
+}
+document.getElementById("flow").addEventListener("click", function(e){
+  var b = e.target.closest("button"); if (b) show(+b.getAttribute("data-i"));
+});
+document.getElementById("prev").onclick = function(){show(at-1);};
+document.getElementById("next").onclick = function(){show(at+1);};
+document.addEventListener("keydown", function(e){
+  if (e.key === "ArrowRight") show(at+1); if (e.key === "ArrowLeft") show(at-1);
+});
+show(0);
+</script>
+</body></html>
