@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Telephone Intake Form · Belief Counseling</title>
+<!--standalone-->
+<!-- On-screen Telephone Intake Form (Nov 12, 2026). The intake person types into it during the first call.
+     "Hold this form" keeps the form in this browser on this computer only (nothing is sent anywhere).
+     The counselor's referral list is kept the same way and stays when the form is cleared.
+     National numbers were checked on Nov 12, 2026: edit the HOTLINES and HELPLINES lists near the bottom to change them. -->
+<style>
+:root{--navy:#12284c;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#d9d0b6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.5}
+.top{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.top b{color:#fff;margin-right:auto;font-size:1.05rem}
+button{font:bold .9rem Arial,Helvetica,sans-serif;cursor:pointer;border-radius:20px;border:1.5px solid var(--gold);background:var(--gold);color:var(--navy);padding:7px 16px}
+button.plain{background:transparent;color:#fff;border-color:#fff}
+#msg{flex:1 0 100%;color:var(--gold);font:.85rem Arial,Helvetica,sans-serif;min-height:1.2em}
+.page{max-width:860px;margin:18px auto;background:#fff;border:1px solid var(--line);border-radius:8px;padding:26px 30px 30px}
+.head{text-align:center;border-bottom:3px solid var(--gold);padding-bottom:10px;margin-bottom:14px}
+.head img{width:70px;height:auto}
+h1{color:var(--navy);font-size:1.8rem;margin:4px 0 2px}
+.head p{margin:0;color:var(--mut);font-style:italic;font-size:.95rem}
+h2{color:var(--navy);font-size:1.2rem;margin:26px 0 10px;border-bottom:2px solid var(--gold);padding-bottom:4px}
+h2 span{color:var(--gold);margin-right:8px}
+.note{color:var(--mut);font-style:italic;font-size:.93rem;margin:-4px 0 10px}
+.safety{border:2px solid var(--navy);border-radius:8px;overflow:hidden;margin:0 0 16px}
+.safety h3{margin:0;background:var(--navy);color:#fff;font-size:1rem;padding:7px 12px}
+.safety p{margin:0;padding:8px 12px;font-weight:bold;color:var(--navy);font-size:.95rem;background:#fff7dd}
+.safety table{width:100%;border-collapse:collapse;font:.9rem Arial,Helvetica,sans-serif}
+.safety td{border-top:1px solid var(--line);padding:5px 12px;vertical-align:top}
+.safety td:last-child{font-weight:bold;color:var(--navy);white-space:nowrap}
+.safety.other{border-color:var(--line)}.safety.other h3{background:var(--cream);color:var(--navy);border-bottom:2px solid var(--gold)}
+.safety small{display:block;font-weight:normal;color:var(--mut);white-space:normal}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}
+.full{grid-column:1/-1}
+label.f{display:block;font:bold .8rem Arial,Helvetica,sans-serif;color:var(--navy)}
+input[type=text],input[type=date],input[type=time],input[type=email],input[type=tel],textarea{display:block;width:100%;margin-top:3px;font:1rem Arial,Helvetica,sans-serif;color:var(--ink);padding:7px 9px;border:1.5px solid var(--line);border-radius:6px;background:#fffdf7}
+input:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.2)}
+textarea{min-height:92px;resize:vertical}
+fieldset{border:0;padding:0;margin:0}
+legend{font:bold .8rem Arial,Helvetica,sans-serif;color:var(--navy);padding:0;margin-bottom:3px}
+.opts{display:flex;flex-wrap:wrap;gap:6px 18px;font:.98rem Arial,Helvetica,sans-serif}
+.opts label{cursor:pointer}.opts input{margin-right:5px;transform:scale(1.2)}
+.refer{border:1.5px solid var(--navy);border-radius:8px;overflow:hidden}
+.refer h3{margin:0;background:var(--navy);color:#fff;font-size:1rem;padding:7px 12px}
+.refer .cols{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;padding:10px 12px}
+.refer .cols div{display:flex;align-items:center;gap:6px;font:.9rem Arial,Helvetica,sans-serif;color:var(--mut)}
+.refer input{margin:0}
+.say{background:var(--cream);border-left:4px solid var(--gold);padding:10px 14px;margin:0 0 10px;border-radius:0 8px 8px 0}
+.foot{margin-top:24px;border-top:1px solid var(--gold);padding-top:8px;text-align:center;color:var(--mut);font-size:.8rem}
+@media(max-width:640px){.grid,.refer .cols{grid-template-columns:1fr}.page{padding:18px 14px}}
+@media print{
+  body{background:#fff}.top{display:none}.page{border:0;margin:0;max-width:none;padding:0}
+  input[type=text],input[type=date],input[type=time],input[type=email],input[type=tel],textarea{border:0;border-bottom:1px solid #999;border-radius:0;background:#fff;padding:2px 4px}
+  h2{break-after:avoid}.refer,.safety,fieldset,.grid>*{break-inside:avoid}
+}
+</style></head>
+<body>
+<div class="top"><b>Telephone Intake Form</b>
+<button type="button" id="hold">Hold this form</button>
+<button type="button" id="print">Print or save as PDF</button>
+<button type="button" id="clear" class="plain">Clear for a new caller</button>
+<div id="msg" aria-live="polite"></div></div>
+
+<form class="page" id="form" autocomplete="off">
+<div class="head"><img src="../../belief-counseling-logo.png" alt="Belief Counseling"><h1>Telephone Intake Form</h1>
+<p>For the person who takes the first call. Complete this form during the call.</p></div>
+
+<div class="safety"><h3>National Safety Numbers</h3>
+<p>If the caller is in immediate danger, stop the intake and tell the caller to call 911.</p>
+<table id="hotlines"></table></div>
+
+<div class="safety other"><h3>Other National Help Lines (not for emergencies)</h3>
+<table id="helplines"></table></div>
+
+<div class="grid">
+ <label class="f">Date of call<input type="date" name="callDate"></label>
+ <label class="f">Time<input type="time" name="callTime"></label>
+ <label class="f full">Call taken by<input type="text" name="takenBy"></label>
+</div>
+
+<h2><span>1.</span>Caller Information</h2>
+<div class="grid">
+ <label class="f">Client’s last name<input type="text" name="last"></label>
+ <label class="f">First and middle name<input type="text" name="first"></label>
+ <fieldset><legend>Who is calling?</legend><div class="opts">
+  <label><input type="radio" name="who" value="client">The client</label>
+  <label><input type="radio" name="who" value="other">Someone else</label></div></fieldset>
+ <label class="f">If someone else: name and relationship<input type="text" name="whoOther"></label>
+ <fieldset class="full"><legend>Is the client age 18 or older?</legend><div class="opts">
+  <label><input type="radio" name="adult" value="yes">Yes</label>
+  <label><input type="radio" name="adult" value="no">No (this practice serves adults only: refer)</label></div></fieldset>
+ <label class="f">Date of birth<input type="date" name="dob"></label>
+ <label class="f">Referred by<input type="text" name="referredBy"></label>
+ <label class="f">Best phone<input type="tel" name="phone"></label>
+ <label class="f">Alternate phone<input type="tel" name="phone2"></label>
+ <fieldset><legend>Best phone is</legend><div class="opts">
+  <label><input type="radio" name="phoneType" value="cell">Cell</label>
+  <label><input type="radio" name="phoneType" value="home">Home</label>
+  <label><input type="radio" name="phoneType" value="work">Work</label></div></fieldset>
+ <fieldset><legend>OK to leave a message?</legend><div class="opts">
+  <label><input type="radio" name="message" value="yes">Yes</label>
+  <label><input type="radio" name="message" value="no">No</label></div></fieldset>
+ <label class="f full">Email address (needed to send the link to the intake forms)<input type="email" name="email"></label>
+ <label class="f full">Address (street, apartment number, city, state, zip)<input type="text" name="address"></label>
+</div>
+
+<h2><span>2.</span>Insurance</h2>
+<div class="grid">
+ <fieldset class="full"><legend>Does the client have insurance?</legend><div class="opts">
+  <label><input type="radio" name="insured" value="yes">Yes</label>
+  <label><input type="radio" name="insured" value="no">No</label>
+  <label><input type="radio" name="insured" value="private">Will pay privately</label></div></fieldset>
+ <label class="f full">Insurance company<input type="text" name="insurer"></label>
+ <label class="f full">Policy holder’s name (only if the client is not the policy holder)<input type="text" name="holder"></label>
+ <label class="f">Policy holder’s date of birth<input type="date" name="holderDob"></label>
+ <label class="f">Policy holder’s relationship to the client<input type="text" name="holderRel"></label>
+</div>
+
+<h2><span>3.</span>Reason for Calling</h2>
+<p class="note">Ask the caller to describe the general problem in a few sentences. Write it in the caller’s own words.</p>
+<div class="grid">
+ <label class="f full">Nature of the problem<textarea name="problem"></textarea></label>
+ <label class="f">Physician<input type="text" name="physician"></label>
+ <label class="f">Last medical exam<input type="text" name="lastExam"></label>
+ <label class="f full">Medical conditions<input type="text" name="conditions"></label>
+ <label class="f full">Present medications<input type="text" name="medications"></label>
+</div>
+
+<h2><span>4.</span>Screen and Refer</h2>
+<p class="note">Counselors may treat only what they are competent to treat. The counselor lists here the disorders and problems that this practice refers to other providers. Compare the caller’s problem with this list. The list stays on this computer when the form is cleared.</p>
+<div class="refer"><h3>Disorders and problems that will be referred</h3><div class="cols" id="referList"></div></div>
+<div class="grid" style="margin-top:12px">
+ <fieldset class="full"><legend>Is the caller’s problem on the list?</legend><div class="opts">
+  <label><input type="radio" name="onList" value="no">No: continue to Section 5</label>
+  <label><input type="radio" name="onList" value="yes">Yes: refer the caller</label></div></fieldset>
+ <label class="f full">Referred to (name and phone number of the provider or agency)<input type="text" name="referredTo"></label>
+</div>
+
+<h2><span>5.</span>Our Approach</h2>
+<p class="say">Explain to the caller: “Our counselor specializes in helping people who want their Christian faith to be part of their treatment.”</p>
+<div class="grid">
+ <fieldset><legend>Explained to the caller?</legend><div class="opts">
+  <label><input type="checkbox" name="explained">Yes</label></div></fieldset>
+ <fieldset><legend>Does the caller want faith included?</legend><div class="opts">
+  <label><input type="radio" name="faith" value="yes">Yes</label>
+  <label><input type="radio" name="faith" value="no">No</label>
+  <label><input type="radio" name="faith" value="unsure">Unsure</label></div></fieldset>
+</div>
+
+<h2><span>6.</span>Next Steps</h2>
+<div class="grid">
+ <label class="f">First appointment date<input type="date" name="apptDate"></label>
+ <label class="f">Time<input type="time" name="apptTime"></label>
+ <fieldset><legend>Intake forms</legend><div class="opts">
+  <label><input type="radio" name="forms" value="online">Online</label>
+  <label><input type="radio" name="forms" value="paper">Paper</label></div></fieldset>
+ <label class="f">Date the link was sent or the paper forms were given<input type="date" name="formsDate"></label>
+ <label class="f full">Notes<textarea name="notes"></textarea></label>
+</div>
+
+<div class="foot">Belief Counseling · Telephone Intake Form · © 2026 Brian Campbell, Ph.D. All rights reserved. · Confidential when completed</div>
+</form>
+
+<script>
+// National safety numbers, checked Nov 12, 2026.
+var HOTLINES = [
+ ["Emergency: immediate danger", "911", ""],
+ ["Suicide or mental health crisis", "988", "988 Suicide & Crisis Lifeline. Call or text."],
+ ["Veterans in crisis", "988, then press 1", "Veterans Crisis Line. Or text 838255."],
+ ["Domestic violence", "1-800-799-7233", "National Domestic Violence Hotline. Or text START to 88788."],
+ ["Child abuse", "1-800-422-4453", "Childhelp National Child Abuse Hotline."],
+ ["Elder abuse", "1-800-677-1116", "Eldercare Locator: gives the local number for reporting. Weekdays."],
+ ["Sexual assault", "1-800-656-4673", "National Sexual Assault Hotline. Or text HOPE to 64673."],
+ ["Alcohol and drugs", "1-800-662-4357", "SAMHSA National Helpline."]
+];
+// Other national help lines (not crisis lines), checked Nov 12, 2026. National numbers only.
+var HELPLINES = [
+ ["Pornography or sexual addiction", "1-866-424-8777", "Sexaholics Anonymous. Weekday office hours. Refers to meetings."],
+ ["Pornography or sexual addiction", "1-800-477-8191", "Sex Addicts Anonymous. Weekday office hours. Refers to meetings."],
+ ["Christian counseling consultation", "1-855-771-4357", "Focus on the Family. One free consultation and referrals. Weekdays."],
+ ["Concern about sexual thoughts or behavior toward children", "1-888-773-8368", "Stop It Now. Confidential helpline. Limited weekday hours."],
+ ["LGBT young people, ages 13 to 24", "1-866-488-7386", "The Trevor Project. Open 24 hours. Or text START to 678-678."],
+ ["LGBT peer support, all ages", "1-888-843-4564", "LGBT National Hotline. Afternoons and evenings."],
+ ["LGBT older adults", "1-877-360-5428", "SAGE LGBT Elder Hotline."]
+];
+function rows(list){ return list.map(function(h){
+  return "<tr><td>"+h[0]+(h[2]?"<small>"+h[2]+"</small>":"")+"</td><td>"+h[1]+"</td></tr>";
+}).join(""); }
+document.getElementById("hotlines").innerHTML = rows(HOTLINES);
+document.getElementById("helplines").innerHTML = rows(HELPLINES);
+
+var list = document.getElementById("referList"), html = "";
+for (var i = 1; i <= 16; i++) html += '<div>'+i+'.<input type="text" data-refer="'+i+'" aria-label="Referred problem '+i+'"></div>';
+list.innerHTML = html;
+
+var KEY = "bc-telephone-intake-held", LISTKEY = "bc-telephone-intake-refer-list";
+var form = document.getElementById("form"), msg = document.getElementById("msg");
+function say(t){ msg.textContent = t; }
+function store(k, v){ try { v === null ? localStorage.removeItem(k) : localStorage.setItem(k, JSON.stringify(v)); return true; } catch(e){ return false; } }
+function load(k){ try { return JSON.parse(localStorage.getItem(k) || "null"); } catch(e){ return null; } }
+function fields(){ return [].slice.call(form.querySelectorAll("[name]")); }
+function refers(){ return [].slice.call(form.querySelectorAll("[data-refer]")); }
+
+function read(){
+  var d = {};
+  fields().forEach(function(f){
+    if (f.type === "radio") { if (f.checked) d[f.name] = f.value; }
+    else if (f.type === "checkbox") d[f.name] = f.checked;
+    else d[f.name] = f.value;
+  });
+  return d;
+}
+function fill(d){
+  fields().forEach(function(f){
+    if (f.type === "radio") f.checked = d[f.name] === f.value;
+    else if (f.type === "checkbox") f.checked = !!d[f.name];
+    else f.value = d[f.name] || "";
+  });
+}
+function saveList(){ store(LISTKEY, refers().map(function(f){ return f.value; })); }
+
+var savedList = load(LISTKEY);
+if (savedList) refers().forEach(function(f, k){ f.value = savedList[k] || ""; });
+list.addEventListener("input", saveList);
+
+var held = load(KEY);
+if (held) { fill(held); say("A held form was found on this computer and has been opened. Choose “Clear for a new caller” to start fresh."); }
+else {
+  var now = new Date(), p = function(n){ return ("0"+n).slice(-2); };
+  form.callDate.value = now.getFullYear()+"-"+p(now.getMonth()+1)+"-"+p(now.getDate());
+  form.callTime.value = p(now.getHours())+":"+p(now.getMinutes());
+}
+
+document.getElementById("hold").onclick = function(){
+  say(store(KEY, read())
+    ? "Held. This form is kept on this computer only, in this browser, until you clear it."
+    : "This browser would not hold the form. Use “Print or save as PDF” instead.");
+};
+document.getElementById("print").onclick = function(){ window.print(); };
+document.getElementById("clear").onclick = function(){
+  if (!document.getElementById("clear").dataset.sure) {
+    document.getElementById("clear").dataset.sure = "1";
+    document.getElementById("clear").textContent = "Select again to clear";
+    say("This erases the caller’s information from the form and from this computer. The referral list stays.");
+    return;
+  }
+  store(KEY, null); form.reset(); saveListBack(); location.reload();
+};
+function saveListBack(){ var l = load(LISTKEY); if (l) refers().forEach(function(f, k){ f.value = l[k] || ""; }); }
+</script>
+</body></html>
