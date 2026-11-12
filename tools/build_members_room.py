@@ -1,8 +1,10 @@
-"""Build the new Member's Room (preview) from Brian's "Basic Organization" outline (Nov 12, 2026).
+"""Build the Member's Room from Brian's "Basic Organization" outline (Nov 12, 2026).
 
     python3 tools/build_members_room.py
 
-Writes members/*.html. The current Counselors' Room (counselors/) is not touched.
+Writes members/*.html, and turns the old room's pages in counselors/ (FORWARD below) into
+short forwarders, so the Wix pages that still load them show the new room.
+The menu on the kept counselors/ pages comes from tools/update_counselor_nav.py.
 To change the room: edit PAGES below and run again. To rename the room: change ROOM.
 
 An item is (title, description, links). links is a list of (label, address); an empty
@@ -119,7 +121,10 @@ PAGES = {
     ],
     "assessment.html": [
         ("", "This section shows what the assessment process looks like, including the forms your client "
-             "will see and complete online. You carry it out with your own clients in the Clinical Companion.", []),
+             "will see and complete online. You carry it out with your own clients in the Clinical Companion.", [
+            ("The Flow: Start Here", "A narrated presentation that walks through the whole process, "
+                                     "from the first phone call to the treatment plan. Watch this first.", []),
+        ]),
         ("DSM-5-TR", "", [
             ("Training", "The DSM-5-TR diagnostic process, step by step (narrated slides).",
              [("Open slides", "C/presentations/diagnostic-process/index.html"),
@@ -178,7 +183,8 @@ PAGES = {
     "clinical-companion.html": [
         ("", "The Clinical Companion is where you work your own cases. It opens once your membership is paid.", [
             ("Introduction", "", []),
-            ("The Flow", "A narrated presentation that walks through the whole process, from the first phone call on.", []),
+            ("Watch the Flow Again", "A refresher before your first case: the same narrated presentation "
+                                     "shown under Traditional Assessment.", []),
             ("Start: Telephone Intake", "The Companion begins at step 1, the telephone intake.",
              [("Open the Clinical Companion", SITE + "/clinical-companion")]),
         ]),
@@ -189,7 +195,6 @@ CSS = """
 :root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
 *{box-sizing:border-box}
 body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
-.preview{background:var(--gold);color:var(--navy);text-align:center;font-size:.85rem;font-weight:bold;padding:5px 12px}
 .nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
 .brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
 .brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
@@ -234,6 +239,13 @@ a.card.cc h3{color:var(--gold)}a.card.cc p{color:#dfe6f2}
 
 e = html.escape
 
+# Old room pages that now only forward to the new room (old page -> new page).
+FORWARD = {"welcome.html": "index.html", "intro.html": "index.html", "process.html": "process.html",
+           "library.html": "library.html", "course.html": "index.html"}
+# counselors/ pages that carry the room menu: these open in the same tab.
+IN_ROOM = {"books.html", "articles.html", "cases.html", "core-beliefs.html", "reviews.html", "theory.html",
+           "tips.html", "tips-ethics.html", "tip-ethics-treatment-modalities.html", "videos.html"}
+
 
 def href(a):
     return "../counselors/" + a[2:] if a.startswith("C/") else a
@@ -259,7 +271,8 @@ def item(it):
     if not links:
         return '<div class="item soon"><h4>%s<span class="chip">Coming</span></h4>%s</div>' % (
             e(title), "<p>%s</p>" % e(desc) if desc else "")
-    ls = "".join('<a target="_blank" rel="noopener" href="%s">%s</a>' % (e(href(a)), e(l)) for l, a in links)
+    ls = "".join('<a%s href="%s">%s</a>' % (
+        "" if a[2:] in IN_ROOM else ' target="_blank" rel="noopener"', e(href(a)), e(l)) for l, a in links)
     return '<div class="item"><h4>%s</h4>%s<div class="links">%s</div></div>' % (
         e(title), "<p>%s</p>" % e(desc) if desc else "", ls)
 
@@ -282,13 +295,13 @@ def page(f, label, heading, summary):
             body = '<div class="lock">🔒 No access until membership is paid for.</div>' + body
     return ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1">'
-            '<meta name="robots" content="noindex"><title>%s</title><style>%s</style></head><body>'
-            '<div class="preview">Preview of the new %s. The current room is unchanged.</div>%s'
+            '<title>%s</title><style>%s</style></head><body>'
+            '%s'
             '<div class="hero"><div class="eyebrow">Belief Counseling for Counselors</div><h1>%s</h1><p>%s</p></div>'
             '<div class="wrap">%s</div>'
             '<div class="foot">Educational training for counselors. Never enter real client names or details. · '
             '© Brian Campbell, Ph.D. · <a href="%s/help" target="_top">Help &amp; Support</a></div></body></html>'
-            % (e(heading), CSS, e(ROOM), nav(f), e(heading), e(summary), body, SITE))
+            % (e(heading), CSS, nav(f), e(heading), e(summary), body, SITE))
 
 
 def main():
@@ -296,6 +309,14 @@ def main():
     for f, label, heading, summary in MENU:
         (OUT / f).write_text(page(f, label, heading, summary), encoding="utf-8")
         print("wrote members/" + f)
+    for old, new in FORWARD.items():
+        to = "../members/" + new
+        (ROOT / "counselors" / old).write_text(
+            '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>%s</title>'
+            '<meta http-equiv="refresh" content="0; url=%s"><script>location.replace("%s")</script></head>'
+            '<body><p><a href="%s">Continue to the %s</a></p></body></html>' % (e(ROOM), to, to, to, e(ROOM)),
+            encoding="utf-8")
+        print("forwarder counselors/" + old)
 
 
 if __name__ == "__main__":
