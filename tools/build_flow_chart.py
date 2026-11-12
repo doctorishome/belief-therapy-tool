@@ -14,7 +14,8 @@ OUT = pathlib.Path(__file__).resolve().parent.parent / "counselors" / "forms" / 
 DATE = "November 12, 2026"
 STEPS = [
     ("1. Telephone Intake", "First contact with the client", ["Ask: online or paper forms?"], False),
-    ("2. Online (or Paper) Intake", "About You and Brief History (consent forms to come)", [], False),
+    ("2. Online (or Paper) Intake", "The client completes the forms before the first visit",
+     ["About You and Brief History", "Agreements and consent forms, signed on screen"], False),
     ("3. Schedule First Visit", "Set the first appointment", [], False),
     ("4. Assessment Report Begins", "AI starts the report from the intake information", [], True),
     ("5. Review Intake Information", "Before the first interview",
