@@ -266,3 +266,4 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - The Telephone Intake slide carries a reminder button for Brian, "hand-off to the Clinical Companion" (`counselors/forms/telephone-intake-handoff.html`, a web copy of the write-up). Remove that button before the slide show is shown to counselors.
 - Nov 12 (later): Brian does not want the national numbers on printed copies. They show only on screen at the top of the on-screen form (hidden when printing); the Word/PDF copies are back to two pages without them.
 - Telephone Intake referral list is 14 spaces (was 16), at Brian's request; the on-screen form now prints on two pages.
+- Nov 12 (later): on the on-screen Telephone Intake Form the two boxes of national numbers are at the bottom (Brian's request), with a one-line 911/988 notice at the top that jumps down to them.

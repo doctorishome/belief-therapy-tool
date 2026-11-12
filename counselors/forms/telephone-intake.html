@@ -24,6 +24,8 @@ h1{color:var(--navy);font-size:1.8rem;margin:4px 0 2px}
 h2{color:var(--navy);font-size:1.2rem;margin:26px 0 10px;border-bottom:2px solid var(--gold);padding-bottom:4px}
 h2 span{color:var(--gold);margin-right:8px}
 .note{color:var(--mut);font-style:italic;font-size:.93rem;margin:-4px 0 10px}
+.urgent{margin:0 0 16px;padding:9px 13px;background:#fff7dd;border:2px solid var(--navy);border-radius:8px;font-weight:bold;color:var(--navy);font-size:.95rem}.urgent a{color:var(--navy)}
+#numbers{scroll-margin-top:110px}
 .safety{border:2px solid var(--navy);border-radius:8px;overflow:hidden;margin:0 0 16px}
 .safety h3{margin:0;background:var(--navy);color:#fff;font-size:1rem;padding:7px 12px}
 .safety p{margin:0;padding:8px 12px;font-weight:bold;color:var(--navy);font-size:.95rem;background:#fff7dd}
@@ -51,7 +53,7 @@ legend{font:bold .8rem Arial,Helvetica,sans-serif;color:var(--navy);padding:0;ma
 .foot{margin-top:24px;border-top:1px solid var(--gold);padding-top:8px;text-align:center;color:var(--mut);font-size:.8rem}
 @media(max-width:640px){.grid,.refer .cols{grid-template-columns:1fr}.page{padding:18px 14px}}
 @media print{
-  body{background:#fff}.top,.safety{display:none}.page{border:0;margin:0;max-width:none;padding:0}
+  body{background:#fff}.top,.safety,.noprint,.urgent a{display:none}.urgent{padding:4px 8px;margin-bottom:6px;font-size:.8rem}.page{border:0;margin:0;max-width:none;padding:0}
   input[type=text],input[type=date],input[type=time],input[type=email],input[type=tel],textarea{border:0;border-bottom:1px solid #999;border-radius:0;background:#fff;padding:2px 4px}
   h2{break-after:avoid}.refer,fieldset,.grid>*{break-inside:avoid}
   @page{margin:.5in}
@@ -73,12 +75,7 @@ legend{font:bold .8rem Arial,Helvetica,sans-serif;color:var(--navy);padding:0;ma
 <div class="head"><img src="../../belief-counseling-logo.png" alt="Belief Counseling"><h1>Telephone Intake Form</h1>
 <p>For the person who takes the first call. Complete this form during the call.</p></div>
 
-<div class="safety"><h3>National Safety Numbers</h3>
-<p>If the caller is in immediate danger, stop the intake and tell the caller to call 911.</p>
-<table id="hotlines"></table></div>
-
-<div class="safety other"><h3>Other National Help Lines (not for emergencies)</h3>
-<table id="helplines"></table></div>
+<p class="urgent">If the caller is in immediate danger or is thinking about suicide, stop the intake and direct the caller to 911 or to the 988 Suicide &amp; Crisis Lifeline (call or text 988). <a href="#numbers">More national numbers are at the bottom of this form.</a></p>
 
 <div class="grid">
  <label class="f">Date of call<input type="date" name="callDate"></label>
@@ -165,6 +162,14 @@ legend{font:bold .8rem Arial,Helvetica,sans-serif;color:var(--navy);padding:0;ma
  <label class="f">Date the link was sent or the paper forms were given<input type="date" name="formsDate"></label>
  <label class="f full">Notes<textarea name="notes"></textarea></label>
 </div>
+
+<h2 class="noprint">National Numbers</h2>
+<div class="safety" id="numbers"><h3>National Safety Numbers</h3>
+<p>If the caller is in immediate danger, stop the intake and tell the caller to call 911.</p>
+<table id="hotlines"></table></div>
+
+<div class="safety other"><h3>Other National Help Lines (not for emergencies)</h3>
+<table id="helplines"></table></div>
 
 <div class="foot">Belief Counseling · Telephone Intake Form · © 2026 Brian Campbell, Ph.D. All rights reserved. · Confidential when completed</div>
 </form>
