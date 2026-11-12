@@ -29,6 +29,22 @@ def sign(prefix):
 
 
 CONSENT = [
+    {"id": "life", "name": "Life Events & Beliefs Screening", "time": "about 5 minutes",
+     "intro": "Please check anything that applies to you, past or present. This helps your counselor understand the full picture behind what you're experiencing. Your answers are confidential within your counseling relationship.",
+     "sections": [
+        ["Biological", [{"k": "le_biol", "t": "Check anything that applies", "type": "many", "opts": ["Diagnosed with a genetic or chronic medical disorder", "Serious injury or accident", "Serious or life-threatening illness", "Currently under a doctor's care for an ongoing condition", "Taking medication that affects mood, sleep, or energy", "Family history of significant illness"]},
+            {"k": "le_biol_note", "t": "If checked, briefly note the emotional/mental impact", "type": "long"}]],
+        ["Psychological", [{"k": "le_psyc", "t": "Check anything that applies", "type": "many", "opts": ["Ever diagnosed with a mental health condition", "Received counseling or therapy before", "Long-lasting fear, worry, or sadness", "A difficult or painful childhood memory that still affects you", "Difficulty controlling anger or intense emotions", "Significant anxiety", "Significant depression"]},
+            {"k": "le_psyc_note", "t": "If checked, briefly note the emotional/mental impact", "type": "long"}]],
+        ["Interpersonal", [{"k": "le_inte", "t": "Check anything that applies", "type": "many", "opts": ["Parents divorced, separated, or absent", "Grew up with conflict, harsh discipline, or emotional distance", "Significant relationship loss (death, breakup, estrangement)", "History of abuse — emotional, physical, or sexual", "Current conflict or dissatisfaction in a close relationship"]},
+            {"k": "le_inte_note", "t": "If checked, briefly note the emotional/mental impact", "type": "long"}]],
+        ["Socioeconomic", [{"k": "le_soci", "t": "Check anything that applies", "type": "many", "opts": ["Significant financial hardship, past or present", "Job loss or major career disruption", "Major life-stage pressure (new parent, retirement, caregiving)", "Housing instability at any point"]},
+            {"k": "le_soci_note", "t": "If checked, briefly note the emotional/mental impact", "type": "long"}]],
+        ["Sociocultural", [{"k": "le_soci", "t": "Check anything that applies", "type": "many", "opts": ["Raised in a community with strong expectations that still weigh on you", "Experienced discrimination or exclusion because of your background", "Significant cultural or generational conflict with family"]},
+            {"k": "le_soci_note", "t": "If checked, briefly note the emotional/mental impact", "type": "long"}]],
+        ["Spiritual", [{"k": "le_spir", "t": "Check anything that applies", "type": "many", "opts": ["Raised in a religious or Christian home", "Currently feel distant from God, or experiencing a crisis of faith", "Belief that God is disappointed in or punishing you", "A church or faith community experience that hurt you"]},
+            {"k": "le_spir_note", "t": "If checked, briefly note the emotional/mental impact", "type": "long"}]]]},
+
     {"group": "Agreements and Consent Forms",
      "note": "Please read each one and sign. Your counselor will go over them with you and answer any questions."},
 
@@ -258,9 +274,9 @@ def main():
                ".agree input{flex:none;width:20px;height:20px;margin-top:3px}\n.opts.wide label{flex:1 1 100%;text-align:left}\n")
         s = s.replace("</style>", css + "</style>", 1)
     s = add_signature_pad(s)
-    old = "Altogether they take about 15–20 minutes."
-    if old in s:
-        s = s.replace(old, "About You and the Brief History take about 15–20 minutes; then please read and sign the agreements.")
+    for old in ("Altogether they take about 15–20 minutes.", "About You and the Brief History take about 15–20 minutes; then please read and sign the agreements."):
+        if old in s:
+            s = s.replace(old, "The first three forms take about 20–25 minutes; then please read and sign the agreements.")
     PAGE.write_text(s, encoding="utf-8")
     print("updated", PAGE.name)
 

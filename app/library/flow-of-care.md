@@ -20,7 +20,7 @@ With the client
 
 1. Telephone intake. A trained intake person takes the call with a blank Telephone Intake form open on the computer. The practice serves adults only. The intake person records basic information (name, email, phone, insurance), asks the caller to describe the general problem, and screens for fit using the counselor's own list of problems the counselor does not treat. Callers who are not a fit are referred to local specialists. The intake person explains that the counselor specializes in helping people who want their Christian faith integrated into treatment. If the caller is a good fit, the intake person schedules the first appointment, sends the link to the intake forms, and asks whether the client will complete the forms online or would prefer paper.
 
-2. Online (or paper) intake. Online is the normal way. To keep the load light before the first visit, the client completes only two forms through the New Client Forms link: About You (contact, emergency contact, and payment information) and the Brief History (present concerns, current difficulties, safety questions, treatment and health history, substances, life experiences, and faith and support). The consent forms (consent for treatment, confidentiality, release of information, and the Client Handbook) will be added. The Life Events & Beliefs Screening moves to after the first session, and the full Adult History is used only when needed. Paper forms are available for clients without a computer or phone, or who prefer paper; they match the online forms question for question. Staff can go through the forms with clients who struggle with reading or writing.
+2. Online (or paper) intake. Online is the normal way. Before the first visit the client completes three short forms through the New Client Forms link: About You (contact, emergency contact, and payment information), the Brief History (present concerns, current difficulties, safety questions, treatment and health history, substances, life experiences, and faith and support), and the Life Events & Beliefs Screening. The client then reads and signs the agreements and consent forms on screen: Informed Consent for Treatment, the Confidentiality Agreement, the Notice of Privacy Practices acknowledgment, the Financial Policy, the Telehealth Consent, and the Good Faith Estimate Notice. A Release of Information form and the Client Handbook will be added. The Brief History is used in place of the full Adult History. Paper forms are available for clients without a computer or phone, or who prefer paper. Staff can go through the forms with clients who struggle with reading or writing.
 
 3. Schedule the first visit.
 
@@ -31,7 +31,7 @@ With the client
 6. Initial interview. Belief mining begins.
 - Functional analysis of the presenting problem, led by the counselor. The client does not fill out a presenting problem form; the counselor goes through the Presenting Problem Assessment questions with the client.
 - Consider safety issues.
-- Review the Mining levels form and the Adult History.
+- Review the Life Events & Beliefs Screening and the Brief History.
 
 7. Develop hypotheses about the diagnosis and possible false beliefs.
 

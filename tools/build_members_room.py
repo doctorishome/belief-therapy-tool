@@ -144,8 +144,8 @@ PAGES = {
              [("See what the client sees", "C/new-client-forms.html")]),
         ]),
         ("Online Assessment", "The forms the client completes before the first visit.", [
-            ("Client forms", "Client Basic Information · Consent for Treatment · Insurance Information · "
-                             "Confidentiality · Release of Records · Adult History",
+            ("Client forms", "About You · Brief History · Life Events & Beliefs Screening · "
+                             "Agreements and consent forms, signed on screen",
              [("Open the client forms", "C/new-client-forms.html")]),
             ("Life Events & Beliefs Screening", "A one-page checklist of life events that may lie beneath painful beliefs.",
              [("Open", GH + "Life_Events_Beliefs_Screening.html")]),
