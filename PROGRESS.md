@@ -248,3 +248,11 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - "See what's inside" (top and bottom) links to welcome.html, so visitors can enter the Counselors' Room. There is no visitor limit yet: every reading page is open until Brian chooses which pages visitors may see. To build then: visitor view with locked pages, plus the Membership menu item.
 - Nov 11: temporary gold "Under construction" strip added at the top of `counselors/landing.html` (class `construct`). Remove it when the Counselors' Room structure is finished.
 - Nov 11: temporary gold "Under construction" strip also added to the home page (`site/home.html`, class `construct`). It sits on top of the hero picture (position:absolute), so the page height and the Wix embed box heights are unchanged. Remove both strips when the Counselors' Room structure is finished.
+
+## New Member's Room, preview (Nov 12, 2026)
+- Built from Brian's "Basic Organization" outline. Preview only: `members/` (start at `members/index.html`). The current Counselors' Room (`counselors/`) is unchanged and still live; nothing on Wix points to `members/` yet.
+- Six sections, one page each: Belief Counseling · The Process · Traditional Assessment · Professional Tips · Library · Clinical Companion (gold, paid members).
+- Built by `python3 tools/build_members_room.py`. Edit PAGES in that file and run it again. Items with no link show a "Coming" label. Room name is the ROOM line at the top (assumed "Member's Room"; Brian has not confirmed the name).
+- The room's links open the existing files in `counselors/` (forms, reviews, videos, articles), which still carry the old menu.
+- Brian's plan: a narrated PowerPoint walks through the Clinical Companion flow (replaces the flow chart inside the Companion). The Companion starts at step 1, Telephone Intake; the old Foundations 1 to 3 are now the room itself.
+- To go live after Brian approves: move `counselors/` pages aside, give the kept pages the new menu, point the Wix embeds at `members/`, remove the gold "Preview" strip.
