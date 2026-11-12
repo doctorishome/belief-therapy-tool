@@ -134,8 +134,11 @@ PAGES = {
              [("Open tutorial", "C/presentations/diagnostic-process/tutorial.html")]),
         ]),
         ("Intake Process", "", [
-            ("Telephone Intake Form", "", []),
-            ("Screen & Refer", "", []),
+            ("Telephone Intake Form", "The form the intake person completes during the first call.",
+             [("Open (PDF)", F + "Telephone-Intake-Form.pdf"), ("Word", F + "Telephone-Intake-Form.docx")]),
+            ("Screen & Refer", "Section 4 of the Telephone Intake Form: the counselor’s own list of disorders "
+                               "and problems that will be referred.",
+             [("Open the form (PDF)", F + "Telephone-Intake-Form.pdf")]),
             ("Provide Link to Online Assessment", "The link the client receives after the call.",
              [("See what the client sees", "C/new-client-forms.html")]),
         ]),
