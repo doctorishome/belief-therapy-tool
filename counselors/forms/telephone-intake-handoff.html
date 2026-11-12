@@ -1,0 +1,166 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Telephone Intake: hand-off to the Clinical Companion</title>
+<!-- Made from app/TELEPHONE-INTAKE-HANDOFF.md (Nov 12, 2026). If that file changes, remake this page from it. -->
+<style>body{margin:0;background:#faf6ec;color:#1f2a3a;font:17px/1.6 Georgia,serif}main{max-width:860px;margin:20px auto;background:#fff;border:1px solid #e3dcc6;border-top:4px solid #c9a227;border-radius:8px;padding:24px 30px}
+h1{color:#12284c;font-size:1.7rem;line-height:1.25}h2{color:#12284c;font-size:1.2rem;border-bottom:2px solid #c9a227;padding-bottom:4px;margin-top:28px}
+table{border-collapse:collapse;width:100%;font:.9rem Arial,sans-serif}th{background:#12284c;color:#fff;text-align:left}th,td{border:1px solid #e3dcc6;padding:6px 9px;vertical-align:top}
+code{background:#faf6ec;padding:1px 4px;border-radius:3px;font-size:.9em}.tag{font:bold .8rem Arial,sans-serif;color:#12284c;background:#c9a227;display:inline-block;border-radius:12px;padding:2px 12px}</style></head>
+<body><main><span class="tag">Note for the developer · not for counselors</span><h1
+id="telephone-intake-form-hand-off-to-the-clinical-companion">Telephone
+Intake Form: hand-off to the Clinical Companion</h1>
+<p>Written November 12, 2026, for whoever builds the secure connection
+for client information (Dr. Campbell’s Grok helper or another
+developer).</p>
+<h2 id="what-dr.-campbell-wants">What Dr. Campbell wants</h2>
+<p>The intake person takes the first call on one computer and fills in
+the on-screen Telephone Intake Form
+(<code>counselors/forms/telephone-intake.html</code>). The counselor
+works on a different computer. When the call is finished, the intake
+person presses one button, and the intake appears in the counselor’s
+Clinical Companion as a new client file. Nothing is retyped.</p>
+<h2 id="where-things-stand">Where things stand</h2>
+<ul>
+<li>The form works today. It can hold a call in the browser on the
+intake person’s computer, print, and save a PDF.</li>
+<li>It does not send anything anywhere. There is no server yet.</li>
+<li>The Clinical Companion (<code>app/</code>) keeps cases in an
+encrypted store in the counselor’s own browser
+(<code>app/js/vault.js</code>: AES-GCM, key derived from the counselor’s
+password, ciphertext in IndexedDB).</li>
+<li>Because the two computers are different, the browser cannot pass the
+form across by itself. It has to go through the secure connection. Until
+that exists, the intake person prints or saves the PDF for the
+counselor.</li>
+</ul>
+<h2 id="what-the-form-would-send">What the form would send</h2>
+<p>One record per call. The names on the left are the field names
+already used in the form.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>callDate</code>, <code>callTime</code>,
+<code>takenBy</code></td>
+<td>When the call came in and who took it</td>
+</tr>
+<tr class="even">
+<td><code>last</code>, <code>first</code></td>
+<td>Client’s last name; first and middle name</td>
+</tr>
+<tr class="odd">
+<td><code>who</code>, <code>whoOther</code></td>
+<td><code>client</code> or <code>other</code>; if other, the caller’s
+name and relationship</td>
+</tr>
+<tr class="even">
+<td><code>adult</code></td>
+<td><code>yes</code> or <code>no</code> (the practice serves adults
+only)</td>
+</tr>
+<tr class="odd">
+<td><code>dob</code>, <code>referredBy</code></td>
+<td>Date of birth; who referred the caller</td>
+</tr>
+<tr class="even">
+<td><code>phone</code>, <code>phone2</code>, <code>phoneType</code>,
+<code>message</code></td>
+<td>Best phone, alternate phone,
+<code>cell</code>/<code>home</code>/<code>work</code>, OK to leave a
+message <code>yes</code>/<code>no</code></td>
+</tr>
+<tr class="odd">
+<td><code>email</code>, <code>address</code></td>
+<td>Email (the link to the intake forms goes here) and mailing
+address</td>
+</tr>
+<tr class="even">
+<td><code>insured</code>, <code>insurer</code></td>
+<td><code>yes</code>/<code>no</code>/<code>private</code>; insurance
+company</td>
+</tr>
+<tr class="odd">
+<td><code>holder</code>, <code>holderDob</code>,
+<code>holderRel</code></td>
+<td>Policy holder, if not the client</td>
+</tr>
+<tr class="even">
+<td><code>problem</code></td>
+<td>Nature of the problem, in the caller’s words</td>
+</tr>
+<tr class="odd">
+<td><code>physician</code>, <code>lastExam</code>,
+<code>conditions</code>, <code>medications</code></td>
+<td>Medical background</td>
+</tr>
+<tr class="even">
+<td><code>onList</code>, <code>referredTo</code></td>
+<td>Whether the problem is on the counselor’s referral list; who the
+caller was referred to</td>
+</tr>
+<tr class="odd">
+<td><code>explained</code>, <code>faith</code></td>
+<td>Faith-integrated approach explained
+(<code>true</code>/<code>false</code>); caller wants faith included
+<code>yes</code>/<code>no</code>/<code>unsure</code></td>
+</tr>
+<tr class="even">
+<td><code>apptDate</code>, <code>apptTime</code></td>
+<td>First appointment</td>
+</tr>
+<tr class="odd">
+<td><code>forms</code>, <code>formsDate</code></td>
+<td><code>online</code> or <code>paper</code>; date the link was sent or
+the paper forms were given</td>
+</tr>
+<tr class="even">
+<td><code>notes</code></td>
+<td>Anything else</td>
+</tr>
+</tbody>
+</table>
+<p>Dates are <code>YYYY-MM-DD</code>. Times are 24-hour
+<code>HH:MM</code>. The counselor’s referral list (16 lines) is a
+practice setting, not part of the client record, and stays on the intake
+computer.</p>
+<p>In the form’s code, <code>read()</code> already returns exactly this
+record as one object.</p>
+<h2 id="what-the-connection-has-to-do">What the connection has to
+do</h2>
+<ol type="1">
+<li><strong>Sign-in.</strong> Only a signed-in intake person of that
+practice can send. Only that practice’s counselor can receive.</li>
+<li><strong>Encrypted in transit and at rest.</strong> HTTPS for the
+trip. On the server, the record stays encrypted and is held only until
+the counselor’s Companion collects it, then it is deleted from the
+server.</li>
+<li><strong>Covered by the Business Associate Agreement.</strong> This
+record is client information. It must not pass through or rest on any
+service the agreement does not cover. GitHub Pages and the browser’s own
+storage are not covered.</li>
+<li><strong>Delivery into the vault.</strong> When the counselor unlocks
+the Companion, it collects waiting intakes, creates a new case from each
+(name, contact, insurance, reason for calling, appointment), saves it
+through <code>vault.js</code>, and confirms to the server so the waiting
+copy is erased.</li>
+<li><strong>Clear the intake computer.</strong> After a successful send,
+the form erases its held copy (the same thing “Clear for a new caller”
+does now).</li>
+<li><strong>No send if not a fit.</strong> If <code>adult</code> is
+<code>no</code> or <code>onList</code> is <code>yes</code>, the caller
+was referred elsewhere. The practice should decide whether those calls
+are sent at all or only printed for its own records.</li>
+</ol>
+<h2 id="on-the-form-itself">On the form itself</h2>
+<p>Add a “Send to Clinical Companion” button beside “Hold this form”
+once the connection exists. It should say plainly whether the send
+worked, and keep the form on screen if it did not.</p>
+</main></body></html>
