@@ -23,7 +23,8 @@ def check(k, t, req=1):
 
 
 def sign(prefix):
-    return [{"k": prefix + "_sig", "t": "Type your full name as your signature", "type": "text", "req": 1},
+    return [{"k": prefix + "_sig", "t": "Printed name", "type": "text", "req": 1},
+            {"k": prefix + "_pen", "t": "Signature", "type": "sig", "req": 1},
             {"k": prefix + "_date", "t": "Date", "type": "date", "req": 1}]
 
 
@@ -179,6 +180,49 @@ function field(q){
 """
 
 
+SIG_JS = r"""
+function sigInit(){
+ document.querySelectorAll('canvas.sig').forEach(c=>{
+  const x=c.getContext('2d');x.lineWidth=2.2;x.lineCap='round';x.lineJoin='round';x.strokeStyle='#12284c';
+  const old=answers[c.id];
+  if(old){const im=new Image();im.onload=()=>x.drawImage(im,0,0);im.src=old;c.dataset.signed='1';}
+  let down=false;
+  const at=e=>{const r=c.getBoundingClientRect();return [(e.clientX-r.left)*c.width/r.width,(e.clientY-r.top)*c.height/r.height];};
+  c.addEventListener('pointerdown',e=>{down=true;c.setPointerCapture(e.pointerId);const [a,b]=at(e);x.beginPath();x.moveTo(a,b);x.lineTo(a+.1,b+.1);x.stroke();c.dataset.signed='1';e.preventDefault();});
+  c.addEventListener('pointermove',e=>{if(!down)return;const [a,b]=at(e);x.lineTo(a,b);x.stroke();});
+  ['pointerup','pointercancel'].forEach(n=>c.addEventListener(n,()=>{down=false;}));
+ });
+}
+function sigClear(id){const c=document.getElementById(id);c.getContext('2d').clearRect(0,0,c.width,c.height);delete c.dataset.signed;}
+"""
+
+
+def add_signature_pad(s):
+    """Signature boxes the client signs with a mouse or finger (added Nov 12, 2026). Safe to run again."""
+    if "function sigInit" in s:
+        return s
+    def rep(old, new):
+        nonlocal s
+        assert old in s, old[:60]
+        s = s.replace(old, new, 1)
+    rep(" if(q.type==='check')return `<div class=\"f agree\">",
+        " if(q.type==='sig')return `<div class=\"f\"><label class=\"t\">${esc(q.t)}${r}</label><canvas class=\"sig\" id=\"${q.k}\" width=\"700\" height=\"170\"></canvas>"
+        "<div><button type=\"button\" class=\"btn light\" onclick=\"sigClear('${q.k}')\">Clear signature</button></div>"
+        "<small>Sign in the box with your mouse, or with your finger on a phone or tablet.</small></div>`;\n"
+        " if(q.type==='check')return `<div class=\"f agree\">")
+    rep("document.getElementById('formarea').innerHTML=h;", "document.getElementById('formarea').innerHTML=h;sigInit();")
+    rep("  if(q.type==='check')v=document.getElementById(q.k).checked;",
+        "  if(q.type==='check')v=document.getElementById(q.k).checked;\n"
+        "  else if(q.type==='sig'){const c=document.getElementById(q.k);v=c.dataset.signed?c.toDataURL():'';}")
+    rep("if(v)h+=`<tr><td>${esc(q.t)}</td><td>${esc(v)}</td></tr>`;",
+        "if(v)h+=`<tr><td>${esc(q.t)}</td><td>${q.type==='sig'?`<img class=\"sigimg\" src=\"${v}\" alt=\"Signature\">`:esc(v)}</td></tr>`;")
+    rep("function mark(el)", SIG_JS.strip() + "\nfunction mark(el)")
+    rep("</style>", "canvas.sig{display:block;width:100%;max-width:700px;height:auto;aspect-ratio:700/170;background:#fff;border:1.5px solid #999;"
+                    "border-bottom:2.5px solid var(--navy);border-radius:6px;touch-action:none;cursor:crosshair}\n"
+                    ".sigimg{max-width:260px;height:auto;border-bottom:1px solid #999}\n</style>")
+    return s
+
+
 def main():
     s = PAGE.read_text(encoding="utf-8")
     data = ",\n ".join(json.dumps(f, ensure_ascii=False) for f in CONSENT)
@@ -213,6 +257,7 @@ def main():
                ".agree label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;background:#fbf8ef;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:16px}\n"
                ".agree input{flex:none;width:20px;height:20px;margin-top:3px}\n.opts.wide label{flex:1 1 100%;text-align:left}\n")
         s = s.replace("</style>", css + "</style>", 1)
+    s = add_signature_pad(s)
     old = "Altogether they take about 15–20 minutes."
     if old in s:
         s = s.replace(old, "About You and the Brief History take about 15–20 minutes; then please read and sign the agreements.")
