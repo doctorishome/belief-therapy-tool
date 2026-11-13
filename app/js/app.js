@@ -1021,6 +1021,18 @@ function bind() {
       $("#unlock-error").textContent = ex.code === "WRONG_PASSWORD" ? "That passphrase did not open these records." : ex.message;
     } finally { btn.disabled = false; btn.textContent = "Unlock"; }
   };
+  $("#forgot-open").onclick = () => { $("#forgot-box").hidden = !$("#forgot-box").hidden; };
+  $("#forgot-ack").onchange = () => { $("#forgot-erase").disabled = !$("#forgot-ack").checked; };
+  $("#forgot-erase").onclick = async () => {
+    if (!$("#forgot-ack").checked) return;
+    try {
+      await vault.eraseVault();
+      state.cases = [];
+      $("#forgot-ack").checked = false; $("#forgot-erase").disabled = true; $("#forgot-box").hidden = true;
+      $("#unlock-pw").value = "";
+      show("setup");
+    } catch (ex) { $("#forgot-error").textContent = "The records could not be erased: " + ex.message; }
+  };
   $("#set-save").onclick = () => {
     savePrefs({ useLibrary: $("#set-library").checked, speech: $("#set-speech").checked, autoLockMin: Number($("#set-autolock").value) });
     $("#set-msg").textContent = "Saved on this browser.";

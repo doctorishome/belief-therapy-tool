@@ -165,6 +165,18 @@ export async function unlockVault(password) {
   return session.data;
 }
 
+/** Forgotten passphrase: erase the encrypted records in this browser so a new passphrase can be created. Cannot be undone. */
+export async function eraseVault() {
+  lockVault();
+  const db = await idb();
+  await new Promise((resolve, reject) => {
+    const tx = db.transaction(STORE, "readwrite");
+    tx.objectStore(STORE).delete("envelope");
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+  });
+}
+
 export function lockVault() {
   session.key = null;
   session.salt = null;

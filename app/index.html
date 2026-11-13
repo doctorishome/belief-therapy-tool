@@ -50,6 +50,13 @@
         <button class="btn primary big" type="submit" id="unlock-submit">Unlock</button>
       </form>
       <p class="muted small center">Encrypted with AES-GCM · stored only in this browser</p>
+      <p class="center"><button class="btn ghost" id="forgot-open" type="button">Forgot your passphrase?</button></p>
+      <div id="forgot-box" hidden>
+        <div class="warning-box"><strong>A forgotten passphrase cannot be recovered.</strong> The only way forward is to start over. Starting over permanently erases every case record stored in this browser. You then create a new passphrase. If you have a backup file and know its passphrase, you can restore it afterward in Settings.</div>
+        <label class="check"><input type="checkbox" id="forgot-ack"> I understand that all case records in this browser will be erased.</label>
+        <p class="error" id="forgot-error"></p>
+        <p class="center"><button class="btn primary" id="forgot-erase" type="button" disabled>Erase records and start over</button></p>
+      </div>
       <p class="center"><button class="btn ghost" id="unlock-back" type="button">← Back to Counselors</button></p>
     </div>
   </section>
