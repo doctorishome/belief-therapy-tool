@@ -1,0 +1,24 @@
+{
+ "num": 35,
+ "file": "Im-a-Complete-Failure",
+ "group": "Depression",
+ "belief": "“I’m a complete failure.”",
+ "belief_plain": "I’m a complete failure",
+ "origins": "A harsh parent, a public mistake, a lost job, a broken marriage, or a faith that measured love by performance can turn one collapse into a name: failure. Depression then gathers every shortcoming into a single sentence about the whole person. The events may be real. Calling your entire self a complete failure erases what is still good, still growing, and still held by God.",
+ "self": [
+  "Everything I touch falls apart.",
+  "I am the reason things go wrong.",
+  "There is no point describing me any other way.",
+  "Successful people are a different kind of person.",
+  "God must be disappointed every time He looks at me.",
+  "I should stop pretending I can do anything well."
+ ],
+ "songs": [
+  "wins",
+  "name",
+  "broken",
+  "amazing"
+ ],
+ "key": "Romans 8:1",
+ "replacement": "I have failed at things, and that does not make me a complete failure. In Christ I am not condemned, and I can begin again."
+}

@@ -1,0 +1,24 @@
+{
+ "num": 34,
+ "file": "Nobody-Really-Cares-About-Me",
+ "group": "Depression",
+ "belief": "“Nobody really cares about me.”",
+ "belief_plain": "Nobody really cares about me",
+ "origins": "People who were overlooked, criticized, or left to manage pain alone often decide that care is something other people receive. A busy family, a cold church, friends who drifted, or a depression that makes every face look indifferent can all feed the conclusion. Sometimes care was truly missing. The lie is the leap from “I have been missed” to “nobody, including God, really cares.”",
+ "self": [
+  "If anyone cared, I would be able to tell.",
+  "People only stay until they know me.",
+  "I am on my own. That is just how it is.",
+  "God has more important people to look after.",
+  "Asking for care would only bother someone.",
+  "No one would notice if I disappeared."
+ ],
+ "songs": [
+  "alone",
+  "stays",
+  "who",
+  "lovesme"
+ ],
+ "key": "1 Peter 5:7",
+ "replacement": "Feeling uncared for is not the same as being forgotten. God cares for me, and I can let a safe person care for me too."
+}
