@@ -204,3 +204,9 @@ header#topbar{display:flex;align-items:center;gap:.25em;padding:.55rem .9rem;bac
   header#topbar .btn{padding:.35em .45em}
   .panel{min-height:0}
 }
+
+/* Recovery key (Nov 12, 2026) */
+.rk-code{font:700 1.35rem/1.5 ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;letter-spacing:.06em;text-align:center;background:#fff;border:2px dashed var(--warn-line,#d9b65c);border-radius:10px;padding:16px 10px;margin:14px 0;word-break:break-word;user-select:all}
+#forgot-box h3{margin:1.2em 0 .4em;font-size:1.05rem}
+#backup-reminder .btn{margin-left:.5em}
+@media print{#view-recovery .btn,#view-recovery label.check{display:none}}

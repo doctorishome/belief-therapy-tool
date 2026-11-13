@@ -29,15 +29,28 @@
       <div class="brand"><span class="logo">CC</span><div><h1>Clinical Companion</h1><p class="muted">A thinking partner for Christian counselors</p></div></div>
       <h2>Create a passphrase</h2>
       <p>Case records are encrypted in this browser with this passphrase. They are not saved on the website.</p>
-      <div class="warning-box"><strong>Important:</strong> this passphrase cannot be recovered. If you forget it, the records in this browser cannot be opened. Write it down and keep it somewhere safe.</div>
+      <div class="warning-box"><strong>Important:</strong> write this passphrase down and keep it somewhere safe. On the next screen you will also get a recovery key. If you forget the passphrase, the recovery key lets you set a new one. If you lose both, the records in this browser cannot be opened.</div>
       <form id="setup-form" autocomplete="off">
         <label>Passphrase (8 or more characters) <input type="password" id="setup-pw" minlength="8" required></label>
         <label>Type it again <input type="password" id="setup-pw2" minlength="8" required></label>
-        <label class="check"><input type="checkbox" id="setup-ack" required> I understand this passphrase cannot be recovered.</label>
+        <label class="check"><input type="checkbox" id="setup-ack" required> I will keep my passphrase and my recovery key in a safe place.</label>
         <p class="error" id="setup-error"></p>
         <button class="btn primary big" type="submit" id="setup-submit">Create encrypted records</button>
       </form>
       <p class="center"><button class="btn ghost" id="setup-back" type="button">← Back to Counselors</button></p>
+    </div>
+  </section>
+
+  <section id="view-recovery" class="view auth-view" hidden>
+    <div class="auth-card">
+      <div class="brand"><span class="logo">CC</span><div><h1>Clinical Companion</h1><p class="muted">Your recovery key</p></div></div>
+      <h2>Write down your recovery key</h2>
+      <p>If you ever forget your passphrase, this key lets you set a new one without losing any records.</p>
+      <div class="rk-code" id="rk-code" aria-label="Recovery key"></div>
+      <p class="center"><button class="btn" id="rk-print" type="button">Print this page</button> <button class="btn" id="rk-copy" type="button">Copy the key</button> <span id="rk-msg" class="ok-msg"></span></p>
+      <div class="warning-box"><strong>Keep it somewhere safe, away from this computer.</strong> Anyone who has this key can open your records. It is shown only once. If you lose it, you can create a new one in Settings while your records are unlocked.</div>
+      <label class="check"><input type="checkbox" id="rk-ack"> I have printed or written down my recovery key.</label>
+      <p class="center"><button class="btn primary big" id="rk-continue" type="button" disabled>Continue</button></p>
     </div>
   </section>
 
@@ -52,7 +65,18 @@
       <p class="muted small center">Encrypted with AES-GCM · stored only in this browser</p>
       <p class="center"><button class="btn ghost" id="forgot-open" type="button">Forgot your passphrase?</button></p>
       <div id="forgot-box" hidden>
-        <div class="warning-box"><strong>A forgotten passphrase cannot be recovered.</strong> The only way forward is to start over. Starting over permanently erases every case record stored in this browser. You then create a new passphrase. If you have a backup file and know its passphrase, you can restore it afterward in Settings.</div>
+        <form id="recover-form" autocomplete="off" hidden>
+          <h3>Reset your passphrase with your recovery key</h3>
+          <p class="hint">Type the recovery key you printed or wrote down. Capital letters and dashes do not matter. Your records are kept.</p>
+          <label>Recovery key <input type="text" id="recover-code" autocomplete="off" spellcheck="false" required></label>
+          <label>New passphrase (8 or more characters) <input type="password" id="recover-pw" minlength="8" required></label>
+          <label>Type it again <input type="password" id="recover-pw2" minlength="8" required></label>
+          <p class="error" id="recover-error"></p>
+          <button class="btn primary big" type="submit" id="recover-submit">Set new passphrase</button>
+        </form>
+        <p class="hint" id="recover-none" hidden>These records were created before recovery keys existed, so there is no recovery key for them.</p>
+        <h3>No recovery key? Start over</h3>
+        <div class="warning-box"><strong>This is the last resort.</strong> Without the passphrase or the recovery key, the records cannot be opened. Starting over permanently erases every case record stored in this browser. You then create a new passphrase. If you have a backup file and know its passphrase or recovery key, you can restore it afterward in Settings.</div>
         <label class="check"><input type="checkbox" id="forgot-ack"> I understand that all case records in this browser will be erased.</label>
         <p class="error" id="forgot-error"></p>
         <p class="center"><button class="btn primary" id="forgot-erase" type="button" disabled>Erase records and start over</button></p>
@@ -69,6 +93,7 @@
       <button class="btn primary" id="new-case" type="button">+ New case</button>
     </div>
     <p class="hint" id="home-mode"></p>
+    <div class="warning-box" id="backup-reminder" hidden><strong>Back up your records.</strong> <span id="backup-reminder-text"></span> These records exist only in this browser on this computer. If the computer fails or the browser’s saved data is cleared, they are gone unless you have a backup. <button class="btn sm" id="backup-now" type="button">Download a backup now</button></div>
     <div id="case-list" class="case-list"></div>
   </section>
 
@@ -193,14 +218,20 @@
         </form>
       </div>
       <div class="card">
+        <h3>Recovery key</h3>
+        <p>Your recovery key lets you set a new passphrase if you forget yours, without losing any records. If you have lost the key, or someone else may have seen it, create a new one. The old key then stops working.</p>
+        <button class="btn" id="rk-new" type="button">Create a new recovery key</button>
+        <span id="rk-new-msg" class="ok-msg"></span>
+      </div>
+      <div class="card">
         <h3>Encrypted backup</h3>
-        <p>Download a copy of every case. The file stays encrypted. It opens only with the passphrase in use when you exported it.</p>
+        <p>Download a copy of every case and keep it somewhere other than this computer. The file stays encrypted. It opens with the passphrase or the recovery key in use when you exported it.</p>
         <button class="btn" id="backup-export" type="button">Export encrypted backup</button>
         <span id="backup-msg" class="ok-msg"></span>
         <hr>
         <h4>Restore</h4>
         <p class="hint">Replaces the cases in this browser with the cases in the file.</p>
-        <label>Passphrase of that backup <input type="password" id="restore-pw" autocomplete="off"></label>
+        <label>Passphrase (or recovery key) of that backup <input type="password" id="restore-pw" autocomplete="off"></label>
         <button class="btn" id="backup-restore" type="button">Choose backup file…</button>
         <input type="file" id="restore-file" accept=".json,application/json" hidden>
         <p class="error" id="restore-msg"></p>

@@ -50,7 +50,7 @@ function show(name) {
   document.querySelectorAll(".view").forEach((v) => { v.hidden = true; });
   const el = $("#view-" + name);
   if (el) el.hidden = false;
-  $("#topbar").hidden = name === "setup" || name === "unlock";
+  $("#topbar").hidden = name === "setup" || name === "unlock" || name === "recovery";
   state.view = name;
   if ((name === "settings" || name === "privacy") && prev && prev !== "settings" && prev !== "privacy") {
     state.returnView = prev;
@@ -123,7 +123,34 @@ function showHome() {
   show("home");
 }
 
+/** After the records are opened: show a newly created recovery key first, if there is one. */
+function enterAfterOpen() {
+  const code = vault.takeNewRecoveryCode();
+  if (code) showRecoveryKey(code);
+  else showHome();
+}
+function showRecoveryKey(code) {
+  $("#rk-code").textContent = code;
+  $("#rk-ack").checked = false;
+  $("#rk-continue").disabled = true;
+  $("#rk-msg").textContent = "";
+  show("recovery");
+}
+const BACKUP_REMIND_DAYS = 14;
+function renderBackupReminder() {
+  const last = state.prefs.lastBackupAt ? new Date(state.prefs.lastBackupAt) : null;
+  const days = last ? Math.floor((Date.now() - last.getTime()) / 86400000) : null;
+  const due = state.cases.length > 0 && (days === null || days >= BACKUP_REMIND_DAYS);
+  $("#backup-reminder").hidden = !due;
+  if (due) {
+    $("#backup-reminder-text").textContent = days === null
+      ? "No backup has been downloaded from this browser yet."
+      : "Your last backup was " + days + " days ago.";
+  }
+}
+
 function renderHome() {
+  renderBackupReminder();
   const q = ($("#search").value || "").trim().toLowerCase();
   const list = state.cases
     .filter((c) => !q || (c.name + " " + (c.presentingConcerns || "")).toLowerCase().includes(q))
@@ -952,7 +979,9 @@ async function exportBackup() {
   a.download = "clinical-companion-backup-" + new Date().toISOString().slice(0, 10) + ".json";
   a.click();
   URL.revokeObjectURL(a.href);
+  savePrefs({ lastBackupAt: new Date().toISOString() });
   $("#backup-msg").textContent = "Encrypted backup downloaded.";
+  renderBackupReminder();
 }
 
 function bind() {
@@ -1002,7 +1031,7 @@ function bind() {
       state.cases = data.cases;
       $("#setup-pw").value = "";
       $("#setup-pw2").value = "";
-      showHome();
+      enterAfterOpen();
       toast("Encrypted records created in this browser. Three fictional cases are included.");
     } catch (ex) { $("#setup-error").textContent = ex.message; }
     finally { $("#setup-submit").disabled = false; $("#setup-submit").textContent = "Create encrypted records"; }
@@ -1016,12 +1045,51 @@ function bind() {
       const data = await vault.unlockVault($("#unlock-pw").value);
       $("#unlock-pw").value = "";
       state.cases = data.cases;
-      showHome();
+      enterAfterOpen();
     } catch (ex) {
       $("#unlock-error").textContent = ex.code === "WRONG_PASSWORD" ? "That passphrase did not open these records." : ex.message;
     } finally { btn.disabled = false; btn.textContent = "Unlock"; }
   };
-  $("#forgot-open").onclick = () => { $("#forgot-box").hidden = !$("#forgot-box").hidden; };
+  $("#forgot-open").onclick = async () => {
+    $("#forgot-box").hidden = !$("#forgot-box").hidden;
+    if ($("#forgot-box").hidden) return;
+    let has = false;
+    try { has = await vault.hasRecoveryKey(); } catch { has = false; }
+    $("#recover-form").hidden = !has;
+    $("#recover-none").hidden = has;
+  };
+  $("#recover-form").onsubmit = async (e) => {
+    e.preventDefault();
+    const a = $("#recover-pw").value, b = $("#recover-pw2").value;
+    $("#recover-error").textContent = "";
+    if (a.length < 8) { $("#recover-error").textContent = "Use 8 or more characters."; return; }
+    if (a !== b) { $("#recover-error").textContent = "The two passphrases do not match."; return; }
+    const btn = $("#recover-submit");
+    btn.disabled = true; btn.textContent = "Opening your records…";
+    try {
+      const data = await vault.recoverVault($("#recover-code").value, a);
+      state.cases = data.cases;
+      $("#recover-form").reset(); $("#forgot-box").hidden = true; $("#unlock-pw").value = "";
+      enterAfterOpen();
+      toast("Your passphrase is reset. Your records are unchanged. Here is your new recovery key.");
+    } catch (ex) {
+      $("#recover-error").textContent = ex.code === "WRONG_CODE" ? "That recovery key did not open these records. Check each character and try again." : ex.message;
+    } finally { btn.disabled = false; btn.textContent = "Set new passphrase"; }
+  };
+  $("#rk-ack").onchange = () => { $("#rk-continue").disabled = !$("#rk-ack").checked; };
+  $("#rk-continue").onclick = () => { $("#rk-code").textContent = ""; showHome(); };
+  $("#rk-print").onclick = () => window.print();
+  $("#rk-copy").onclick = async () => {
+    try { await navigator.clipboard.writeText($("#rk-code").textContent); $("#rk-msg").textContent = "Copied."; }
+    catch { $("#rk-msg").textContent = "Could not copy. Please write it down."; }
+  };
+  $("#rk-new").onclick = async () => {
+    $("#rk-new").disabled = true; $("#rk-new-msg").textContent = "Creating…";
+    try { showRecoveryKey(await vault.renewRecoveryCode()); $("#rk-new-msg").textContent = ""; }
+    catch (ex) { $("#rk-new-msg").textContent = ex.message; }
+    finally { $("#rk-new").disabled = false; }
+  };
+  $("#backup-now").onclick = () => exportBackup().catch((err) => toast(err.message));
   $("#forgot-ack").onchange = () => { $("#forgot-erase").disabled = !$("#forgot-ack").checked; };
   $("#forgot-erase").onclick = async () => {
     if (!$("#forgot-ack").checked) return;
