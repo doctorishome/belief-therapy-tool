@@ -1,4 +1,9 @@
-"""Build depression belief cards from tools/psych-depression/*.json using Psych-012 as the page skeleton."""
+"""Build depression belief cards from tools/psych-depression/*.json.
+
+Card 031 is maintained as HTML copied from the Core-001 template
+(belief-cards/core/my-worth/Core-001-Something-Is-Wrong-With-Me.html).
+This script skips any page marked <!-- template: Core-001 -->.
+"""
 import json,re,glob,html,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -71,4 +76,6 @@ def build(d):
     return t+body+hw+hw2+tail
 for f in sorted(glob.glob(str(ROOT/'tools/psych-depression/*.json'))):
     d=json.load(open(f));out=ROOT/('belief-cards/psychological/Psych-%03d-%s.html'%(d['num'],d['file']))
+    if out.exists() and 'template: Core-001' in out.read_text(encoding='utf-8'):
+        print('skip', out.name, '(Core-001 template)'); continue
     out.write_text(build(d));print(out.name)
