@@ -1,0 +1,24 @@
+{
+ "num": 33,
+ "file": "No-Use-Trying-Ill-Only-Fail-Again",
+ "group": "Depression",
+ "belief": "“There’s no use trying. I’ll only fail again.”",
+ "belief_plain": "There’s no use trying. I’ll only fail again",
+ "origins": "Failure leaves a mark. A test, a job, a relationship, a habit, or a spiritual effort that collapsed can teach the next try to feel pointless before it starts. Depression adds a heavy voice: “You already know how this ends.” Quitting then feels like wisdom. It is often the lie protecting you from another disappointment, and it also keeps you from the very step that could go differently.",
+ "self": [
+  "I already know I will fail.",
+  "Trying just sets me up.",
+  "People like me do not get back up.",
+  "Effort is a waste.",
+  "If I do not try, at least I cannot fail.",
+  "I should quit before I am embarrassed again."
+ ],
+ "songs": [
+  "voice",
+  "greater",
+  "battle",
+  "victory"
+ ],
+ "key": "Galatians 6:9",
+ "replacement": "One failure is not a reason to stop. I can take the next small step, and God gives strength to get up again."
+}

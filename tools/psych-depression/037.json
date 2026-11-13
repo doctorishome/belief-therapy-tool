@@ -1,0 +1,24 @@
+{
+ "num": 37,
+ "file": "Nobody-Could-Possibly-Like-Me",
+ "group": "Depression",
+ "belief": "“Nobody could possibly like me.”",
+ "belief_plain": "Nobody could possibly like me",
+ "origins": "Rejection, teasing, betrayal, or the sense of being odd can harden into a rule: if people really knew me, liking me would be impossible. Depression makes that rule feel obvious. It confuses “some people have not liked me” with “no one could.” It also forgets that being liked is not the same thing as being loved by God, who already knows you and has not turned away.",
+ "self": [
+  "If they knew the real me, they would leave.",
+  "I am too much, or not enough, for anyone to enjoy.",
+  "People are only being polite.",
+  "I should stay quiet so no one has a reason to dislike me.",
+  "Love is for other personalities.",
+  "Even God merely puts up with me."
+ ],
+ "songs": [
+  "body",
+  "knows",
+  "love",
+  "friend"
+ ],
+ "key": "Romans 5:8",
+ "replacement": "Not everyone will like me, and that is not the same as nobody could. God loves me, and there are people who can know me and stay."
+}

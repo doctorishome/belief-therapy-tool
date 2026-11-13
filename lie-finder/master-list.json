@@ -1700,6 +1700,150 @@
    "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-031-My-Situation-Is-Hopeless.html"
   },
   {
+   "id": "PSY-032",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "Things will never get better",
+   "origins": "When a hard season goes on and on, the mind starts to treat today as a forecast. Illness that does not lift, grief that stays heavy, money that does not ease, or prayers that seem unanswered can teach a person to say, “It will always be like this.” Depression darkens that forecast, so the future looks closed before…",
+   "client_words": [
+    "This is never going to change.",
+    "I have already seen the future, and it is more of the same.",
+    "Good days are over for me.",
+    "If it were going to get better, it would have by now.",
+    "There is no point in looking ahead.",
+    "Other people get relief. I will not."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-032-Things-Will-Never-Get-Better.html"
+  },
+  {
+   "id": "PSY-033",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "There’s no use trying. I’ll only fail again",
+   "origins": "Failure leaves a mark. A test, a job, a relationship, a habit, or a spiritual effort that collapsed can teach the next try to feel pointless before it starts.",
+   "client_words": [
+    "I already know I will fail.",
+    "Trying just sets me up.",
+    "People like me do not get back up.",
+    "Effort is a waste.",
+    "If I do not try, at least I cannot fail.",
+    "I should quit before I am embarrassed again."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-033-No-Use-Trying-Ill-Only-Fail-Again.html"
+  },
+  {
+   "id": "PSY-034",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "Nobody really cares about me",
+   "origins": "People who were overlooked, criticized, or left to manage pain alone often decide that care is something other people receive. A busy family, a cold church, friends who drifted, or a depression that makes every face look indifferent can all feed the conclusion.",
+   "client_words": [
+    "If anyone cared, I would be able to tell.",
+    "People only stay until they know me.",
+    "I am on my own. That is just how it is.",
+    "God has more important people to look after.",
+    "Asking for care would only bother someone.",
+    "No one would notice if I disappeared."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-034-Nobody-Really-Cares-About-Me.html"
+  },
+  {
+   "id": "PSY-035",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "I’m a complete failure",
+   "origins": "A harsh parent, a public mistake, a lost job, a broken marriage, or a faith that measured love by performance can turn one collapse into a name: failure. Depression then gathers every shortcoming into a single sentence about the whole person.",
+   "client_words": [
+    "Everything I touch falls apart.",
+    "I am the reason things go wrong.",
+    "There is no point describing me any other way.",
+    "Successful people are a different kind of person.",
+    "God must be disappointed every time He looks at me.",
+    "I should stop pretending I can do anything well."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-035-Im-a-Complete-Failure.html"
+  },
+  {
+   "id": "PSY-036",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "I’m no good. I never have been",
+   "origins": "Some people hear “you are no good” so early that they cannot remember a time before it. Criticism, comparison, abuse, shame, or a home where love had to be earned can plant the sentence in childhood.",
+   "client_words": [
+    "There has never been anything good in me.",
+    "I was a mistake from the start.",
+    "Other people were born worthwhile. I was not.",
+    "Any good I do is fake.",
+    "God regrets making me.",
+    "I should not take up anyone’s time."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-036-Im-No-Good-I-Never-Have-Been.html"
+  },
+  {
+   "id": "PSY-037",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "Nobody could possibly like me",
+   "origins": "Rejection, teasing, betrayal, or the sense of being odd can harden into a rule: if people really knew me, liking me would be impossible. Depression makes that rule feel obvious.",
+   "client_words": [
+    "If they knew the real me, they would leave.",
+    "I am too much, or not enough, for anyone to enjoy.",
+    "People are only being polite.",
+    "I should stay quiet so no one has a reason to dislike me.",
+    "Love is for other personalities.",
+    "Even God merely puts up with me."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-037-Nobody-Could-Possibly-Like-Me.html"
+  },
+  {
+   "id": "PSY-038",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "I’ll never get over this",
+   "origins": "Some wounds are so large that “getting over it” sounds like an insult. A death, a betrayal, an illness, a public shame, or a depression that has lasted for years can make recovery seem like a fairy tale.",
+   "client_words": [
+    "This will always feel exactly like it does today.",
+    "If I were going to heal, I would have by now.",
+    "People who say it gets better do not understand.",
+    "I am not allowed to feel any relief.",
+    "My life stopped, and it cannot start again.",
+    "Comfort is for milder problems than mine."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-038-Ill-Never-Get-Over-This.html"
+  },
+  {
+   "id": "PSY-039",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "My sins are unforgivable",
+   "origins": "A shameful act, a repeated habit, a cruel word, or a religious voice that used guilt as a weapon can convince a person they have crossed a line God will not cross back. Depression turns proper sorrow into a closed case: not “I need forgiveness,” but “forgiveness cannot apply to me.” Sin is real.",
+   "client_words": [
+    "God might forgive others, but not this.",
+    "I have asked too many times.",
+    "If people knew, they would agree I am past hope.",
+    "Confession will not reach what I did.",
+    "I have to pay for this myself.",
+    "I should stay away from God so I do not insult Him."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-039-My-Sins-Are-Unforgivable.html"
+  },
+  {
+   "id": "PSY-040",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "God has forsaken me",
+   "origins": "Unanswered prayer, a long depression, a loss, injustice, or a season when worship feels empty can make the soul say what the psalms also said: God has turned away. The feeling of absence is real and is not a sin by itself.",
+   "client_words": [
+    "If God were with me, I would feel Him.",
+    "He answers other people and has given up on me.",
+    "My prayers hit the ceiling because He left.",
+    "This darkness means I am abandoned.",
+    "I must have driven Him away.",
+    "There is no point praying to someone who is gone."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-040-God-Has-Forsaken-Me.html"
+  },
+  {
    "id": "PSY-X01",
    "level": "Psychological/Cognitive",
    "topic": "Unusual Thinking and Social Unease",
@@ -1920,87 +2064,6 @@
    "level": "Psychological/Cognitive",
    "topic": "Perfectionism and Control",
    "belief": "My standards should govern everyone’s behavior.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X27",
-   "level": "Psychological/Cognitive",
-   "topic": "Depression",
-   "belief": "Things will never get better.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X28",
-   "level": "Psychological/Cognitive",
-   "topic": "Depression",
-   "belief": "There’s no use trying. I’ll only fail again.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X29",
-   "level": "Psychological/Cognitive",
-   "topic": "Depression",
-   "belief": "Nobody really cares about me.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X30",
-   "level": "Psychological/Cognitive",
-   "topic": "Depression",
-   "belief": "I’m a complete failure.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X31",
-   "level": "Psychological/Cognitive",
-   "topic": "Depression",
-   "belief": "I’m no good. I never have been.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X32",
-   "level": "Psychological/Cognitive",
-   "topic": "Depression",
-   "belief": "Nobody could possibly like me.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X33",
-   "level": "Psychological/Cognitive",
-   "topic": "Depression",
-   "belief": "I’ll never get over this.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X34",
-   "level": "Psychological/Cognitive",
-   "topic": "Depression",
-   "belief": "My sins are unforgivable.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X35",
-   "level": "Psychological/Cognitive",
-   "topic": "Depression",
-   "belief": "God has forsaken me.",
    "origins": "",
    "client_words": [],
    "card": null

@@ -1,0 +1,24 @@
+{
+ "num": 32,
+ "file": "Things-Will-Never-Get-Better",
+ "group": "Depression",
+ "belief": "“Things will never get better.”",
+ "belief_plain": "Things will never get better",
+ "origins": "When a hard season goes on and on, the mind starts to treat today as a forecast. Illness that does not lift, grief that stays heavy, money that does not ease, or prayers that seem unanswered can teach a person to say, “It will always be like this.” Depression darkens that forecast, so the future looks closed before another day has been lived. The pain can be real. The prediction that nothing can ever improve is still a prediction.",
+ "self": [
+  "This is never going to change.",
+  "I have already seen the future, and it is more of the same.",
+  "Good days are over for me.",
+  "If it were going to get better, it would have by now.",
+  "There is no point in looking ahead.",
+  "Other people get relief. I will not."
+ ],
+ "songs": [
+  "storm",
+  "again",
+  "worn",
+  "lives"
+ ],
+ "key": "Psalm 30:5",
+ "replacement": "A hard season is not the whole story. God can bring change I cannot see yet, and I can take the next day as it comes."
+}

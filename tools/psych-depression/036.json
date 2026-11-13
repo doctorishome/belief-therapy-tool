@@ -1,0 +1,24 @@
+{
+ "num": 36,
+ "file": "Im-No-Good-I-Never-Have-Been",
+ "group": "Depression",
+ "belief": "“I’m no good. I never have been.”",
+ "belief_plain": "I’m no good. I never have been",
+ "origins": "Some people hear “you are no good” so early that they cannot remember a time before it. Criticism, comparison, abuse, shame, or a home where love had to be earned can plant the sentence in childhood. Later mistakes seem only to confirm an old verdict. Depression treats the verdict as history: not “I did wrong,” but “I have never been any good.” That is a story about the whole past, and it leaves out how God made you and how He loves you.",
+ "self": [
+  "There has never been anything good in me.",
+  "I was a mistake from the start.",
+  "Other people were born worthwhile. I was not.",
+  "Any good I do is fake.",
+  "God regrets making me.",
+  "I should not take up anyone’s time."
+ ],
+ "songs": [
+  "yousay",
+  "father",
+  "clean",
+  "great"
+ ],
+ "key": "Psalm 139:14",
+ "replacement": "I am not worthless. God made me and calls me His workmanship, even with my failures and wounds."
+}
