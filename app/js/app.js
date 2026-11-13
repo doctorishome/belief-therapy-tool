@@ -6,6 +6,10 @@ import { sampleCases } from "./samples.js";
 import { deidentify, prepareChat, preparePlan, complete, isMock, rememberMembershipToken } from "./ai.js";
 import { formatPlanRecord } from "./prompt.js";
 import { loadCatalog, loadBundledDoc } from "./library.js";
+import {
+  INSTRUMENTS, RSS5_ID, RCOPE_ID, instrumentById, flatItems, anchorLabel,
+  scoreInstrument, missingPieces, resultCopy,
+} from "./spiritual-screens.js";
 
 const $ = (s) => document.querySelector(s);
 const FIELDS = ["name", "preferredName", "dob", "phone", "email", "clientId", "address", "presentingConcerns", "history", "workingDiagnoses", "confirmedDiagnoses", "treatmentPlan", "sessionPlan"];
@@ -27,6 +31,8 @@ const state = {
   session: null,
   prefs: loadPrefs(),
   returnView: "home",
+  screen: null,
+  screenDirty: false,
 };
 
 function loadPrefs() {
@@ -95,6 +101,7 @@ function goBack() {
   if (dest === "case" && state.currentId) openCase(state.currentId);
   else if (dest === "library") renderLibrary().catch((e) => toast(e.message));
   else if (dest === "forms") renderForms();
+  else if (dest === "screen" && state.currentId) openCase(state.currentId);
   else showHome();
 }
 
@@ -134,7 +141,7 @@ function renderHome() {
     <button class="case-card" type="button" data-id="${esc(c.id)}">
       <h3>${esc(c.name || "Untitled")}${c.sample ? ' <span class="badge sample">Fictional</span>' : ""}</h3>
       <div class="concerns">${esc(c.presentingConcerns || "No presenting concerns yet.")}</div>
-      <div class="meta">${c.updatedAt ? "Updated " + esc(c.updatedAt.slice(0, 10)) : ""}</div>
+      <div class="meta">${c.updatedAt ? "Updated " + esc(c.updatedAt.slice(0, 10)) : ""}${(c.assessments || []).length ? " · spiritual screen on file" : ""}</div>
     </button>`).join("");
   box.querySelectorAll(".case-card").forEach((b) => { b.onclick = () => openCase(b.dataset.id); });
 }
@@ -228,13 +235,72 @@ function hasDxOrPlan(c) {
   return !!(String(c.workingDiagnoses || "").trim() || String(c.confirmedDiagnoses || "").trim() || String(c.treatmentPlan || "").trim());
 }
 
+function screenWhen(iso) {
+  const day = String(iso || "").slice(0, 10);
+  return day || "Undated";
+}
+
+function renderScreenSection(c) {
+  const list = (Array.isArray(c.assessments) ? c.assessments : [])
+    .slice()
+    .sort((a, b) => String(b.completedAt || "").localeCompare(String(a.completedAt || "")));
+  const saved = list.map((a) => {
+    const inst = instrumentById(a.instrument);
+    const copy = resultCopy(a.instrument, a.answers, a.stressor);
+    if (!inst || !copy) return "";
+    const headline = a.instrument === RSS5_ID
+      ? `Total ${copy.scores.total} of 5–25`
+      : `Positive ${copy.scores.positive} of 0–21 · Negative ${copy.scores.negative} of 0–21`;
+    const detail = copy.lines.map((line) => `<div>${esc(line)}</div>`).join("");
+    const flags = (copy.explore || []).map((item) => `<div>${esc(item.domain)}: ${item.value} ${esc(item.label)} — ${esc(item.text)}</div>`).join("");
+    return `<div class="saved-screen">
+      <div class="date">${esc(inst.short)} · ${esc(screenWhen(a.completedAt))}</div>
+      <div><b>${esc(headline)}</b></div>
+      ${detail}
+      ${flags}
+      <div class="row" style="margin-top:.4rem">
+        <button type="button" class="btn sm" data-open-screen="${esc(a.id)}">Review</button>
+        <button type="button" class="btn sm danger-ghost" data-del-screen="${esc(a.id)}">Remove from record</button>
+      </div>
+    </div>`;
+  }).join("");
+  return `<div class="rec-section" id="spiritual-screens">
+    <h4>Spiritual assessment</h4>
+    <p class="hint">Optional intake screens for adult clients. Completed here with the client. Answers stay in this encrypted record and are not uploaded.</p>
+    ${saved || `<div class="val empty-val">No spiritual screen saved on this record yet.</div>`}
+    <div class="row wrap-row" style="margin-top:.6rem">
+      <button type="button" class="btn sm primary" id="new-rss5">Complete RSS-5</button>
+      <button type="button" class="btn sm primary" id="new-rcope">Complete Brief RCOPE</button>
+    </div>
+  </div>`;
+}
+
+function bindScreenSection(c) {
+  const start = (id) => openScreen(c.id, id, null);
+  const rss = $("#new-rss5");
+  const rcope = $("#new-rcope");
+  if (rss) rss.onclick = () => start(RSS5_ID);
+  if (rcope) rcope.onclick = () => start(RCOPE_ID);
+  document.querySelectorAll("[data-open-screen]").forEach((b) => {
+    b.onclick = () => openScreen(c.id, null, b.dataset.openScreen);
+  });
+  document.querySelectorAll("[data-del-screen]").forEach((b) => {
+    b.onclick = () => removeScreen(c.id, b.dataset.delScreen);
+  });
+}
+
 function renderRecord(c) {
   const age = ageLine(c.dob);
   const notes = (c.notes || []).slice().sort((a, b) => String(a.date).localeCompare(String(b.date)));
   const noteCount = notes.length;
   $("#record-tools").innerHTML = `
+    <button type="button" class="btn sm" id="jump-screens">Spiritual screens</button>
     <button type="button" class="btn sm" id="jump-notes">Session notes${noteCount ? " (" + noteCount + ")" : ""}</button>
     <button type="button" class="btn sm primary" id="add-note-case">+ Add session note</button>`;
+  $("#jump-screens").onclick = () => {
+    const el = document.getElementById("spiritual-screens");
+    if (el) el.scrollIntoView({ block: "start" });
+  };
   $("#jump-notes").onclick = () => {
     const el = document.getElementById("session-notes");
     if (el) el.scrollIntoView({ block: "start" });
@@ -254,6 +320,7 @@ function renderRecord(c) {
     </div>
     ${sec("Presenting concerns", c.presentingConcerns)}
     ${sec("History", c.history)}
+    ${renderScreenSection(c)}
     ${sec("Working diagnoses", c.workingDiagnoses)}
     ${sec("Confirmed diagnoses", c.confirmedDiagnoses)}
     ${sec("Treatment plan", c.treatmentPlan)}
@@ -270,6 +337,7 @@ function renderRecord(c) {
     </div>`;
   const planBtn = $("#plan-ten");
   if (planBtn) planBtn.onclick = () => planTen(c.id);
+  bindScreenSection(c);
 }
 
 function openCase(id) {
@@ -282,6 +350,186 @@ function openCase(id) {
   renderRecord(c);
   renderAI();
   show("case");
+}
+
+function openScreen(caseId, instrumentId, adminId) {
+  const c = caseById(caseId);
+  if (!c) return showHome();
+  let admin = null;
+  if (adminId) {
+    admin = (c.assessments || []).find((a) => a.id === adminId);
+    if (!admin) { toast("That screen is no longer on this record."); return; }
+    instrumentId = admin.instrument;
+  }
+  const inst = instrumentById(instrumentId);
+  if (!inst) return;
+  state.currentId = caseId;
+  state.screen = {
+    caseId,
+    instrument: inst.id,
+    adminId: admin ? admin.id : null,
+    answers: admin ? admin.answers.slice() : flatItems(inst).map(() => null),
+    stressor: admin ? (admin.stressor || "") : "",
+  };
+  state.screenDirty = false;
+  renderScreen();
+  show("screen");
+}
+
+function renderScreen() {
+  const s = state.screen;
+  const inst = s && instrumentById(s.instrument);
+  if (!inst) return;
+  const c = caseById(s.caseId);
+  $("#screen-title").textContent = inst.short;
+  const items = flatItems(inst);
+  let n = 0;
+  const groups = inst.groups.map((g) => {
+    const cards = g.items.map((item) => {
+      const i = n++;
+      const opts = inst.anchors.map((a) => {
+        const on = s.answers[i] === a.value ? " on" : "";
+        return `<label class="${on.trim()}"><input type="radio" name="item-${i}" value="${a.value}" ${s.answers[i] === a.value ? "checked" : ""}><small>${a.value}</small>${esc(a.label)}</label>`;
+      }).join("");
+      const domain = item.domain ? `<div class="domain-tag">${esc(item.domain)}</div>` : "";
+      return `<div class="item-card">${domain}<p><b>${i + 1}.</b> ${esc(item.text)}</p><div class="scale-opts">${opts}</div></div>`;
+    }).join("");
+    return `<div class="screen-card"><h3>${esc(g.heading)}</h3><p class="hint">${esc(g.note)}</p>${cards}</div>`;
+  }).join("");
+  const copy = resultCopy(inst.id, s.answers, s.stressor);
+  const missing = missingPieces(inst.id, s.answers, s.stressor);
+  const scoreHtml = copy ? scorePanel(inst, copy) : `<div class="score-panel"><h3>Score</h3><p>${esc(missing[0] || "Answer every item to see the official score.")}</p><p>Nothing is written into the record until you press Save.</p></div>`;
+  const stressor = inst.needsStressor ? `<label>Critical life event (the stressor this screen is about)
+      <input id="screen-stressor" type="text" maxlength="500" value="${esc(s.stressor)}" autocomplete="off" placeholder="Name the event before the items">
+    </label>` : "";
+  $("#screen-body").innerHTML = `
+    <div class="screen-banner">
+      <div class="domain-tag" style="color:var(--gold-ink)">Clinical Companion · adult clients</div>
+      <h3>${esc(inst.title)}</h3>
+      <p>${esc(inst.intro)}</p>
+      <p class="adult-note">For an adult client, completed with the counselor. Answers stay in this encrypted record on this computer. They are not uploaded.</p>
+    </div>
+    <div class="screen-card">
+      <p>${esc(inst.scaleNote)}</p>
+      ${stressor}
+      ${c ? `<p class="hint">Record: ${esc(c.name || "Untitled")}</p>` : ""}
+    </div>
+    ${groups}
+    ${scoreHtml}
+    <p class="error" id="screen-error"></p>
+    <div class="row wrap-row">
+      <button type="button" class="btn primary" id="screen-save">Save into this record</button>
+      <button type="button" class="btn" id="screen-cancel">Cancel</button>
+    </div>
+    <p class="credit-line">${linkifyCredit(inst.credit)}</p>`;
+  $("#screen-body").querySelectorAll(".scale-opts input").forEach((input) => {
+    input.onchange = () => {
+      const i = Number(input.name.replace("item-", ""));
+      s.answers[i] = Number(input.value);
+      state.screenDirty = true;
+      const y = window.scrollY;
+      renderScreen();
+      window.scrollTo(0, y);
+    };
+  });
+  const stressorInput = $("#screen-stressor");
+  if (stressorInput) {
+    stressorInput.oninput = () => { s.stressor = stressorInput.value; state.screenDirty = true; updateLiveScore(); };
+  }
+  $("#screen-save").onclick = () => saveScreen().catch((e) => toast(e.message));
+  $("#screen-cancel").onclick = () => leaveScreen();
+}
+
+function linkifyCredit(text) {
+  return esc(text).replace(/https?:\/\/[^\s)]+/g, (url) => `<a href="${url}" target="_blank" rel="noopener">${url}</a>`);
+}
+
+function scorePanel(inst, copy) {
+  let nums = "";
+  if (inst.id === RSS5_ID) {
+    nums = `<div class="score-num"><b>${copy.scores.total}</b><span>Total, range 5–25</span></div>`;
+  } else {
+    nums = `<div class="score-num"><b>${copy.scores.positive}</b><span>Positive religious coping, 0–21</span></div>
+      <div class="score-num"><b>${copy.scores.negative}</b><span>Negative religious coping, 0–21</span></div>`;
+  }
+  const explore = (copy.explore || []).map((item) => `<li><b>${esc(item.domain)}</b> · ${item.value} ${esc(item.label)}: ${esc(item.text)}</li>`).join("");
+  return `<div class="score-panel" aria-live="polite"><h3>Counselor’s result</h3><div class="score-nums">${nums}</div>
+    ${copy.lines.map((line) => `<p>${esc(line)}</p>`).join("")}
+    ${explore ? `<ul class="explore-list">${explore}</ul>` : ""}
+  </div>`;
+}
+
+function updateLiveScore() {
+  const s = state.screen;
+  const inst = instrumentById(s.instrument);
+  const panel = document.querySelector("#screen-body .score-panel");
+  if (!panel || !inst) return;
+  const copy = resultCopy(inst.id, s.answers, s.stressor);
+  const missing = missingPieces(inst.id, s.answers, s.stressor);
+  panel.outerHTML = copy
+    ? scorePanel(inst, copy)
+    : `<div class="score-panel" aria-live="polite"><h3>Score</h3><p>${esc(missing[0] || "Answer every item to see the official score.")}</p><p>Nothing is written into the record until you press Save.</p></div>`;
+}
+
+async function saveScreen() {
+  const s = state.screen;
+  const c = caseById(s.caseId);
+  const inst = instrumentById(s.instrument);
+  if (!c || !inst) return;
+  const missing = missingPieces(inst.id, s.answers, s.stressor);
+  if (missing.length) {
+    $("#screen-error").textContent = missing[0];
+    return;
+  }
+  const scores = scoreInstrument(inst.id, s.answers);
+  const copy = JSON.parse(JSON.stringify(c));
+  copy.assessments = Array.isArray(copy.assessments) ? copy.assessments : [];
+  const record = {
+    id: s.adminId || crypto.randomUUID(),
+    instrument: inst.id,
+    completedAt: new Date().toISOString(),
+    answers: s.answers.slice(),
+    stressor: inst.needsStressor ? s.stressor.trim() : "",
+    scores,
+  };
+  const i = copy.assessments.findIndex((a) => a.id === record.id);
+  if (i >= 0) copy.assessments[i] = record;
+  else copy.assessments.push(record);
+  const saved = await vault.saveCase(copy);
+  state.cases[state.cases.findIndex((x) => x.id === saved.id)] = saved;
+  state.screenDirty = false;
+  toast(inst.short + " saved in this encrypted record.");
+  openCase(saved.id);
+  requestAnimationFrame(() => {
+    const el = document.getElementById("spiritual-screens");
+    if (el) el.scrollIntoView({ block: "start" });
+  });
+}
+
+async function removeScreen(caseId, adminId) {
+  if (!(await confirmBox("Remove this screen?", "The answers will be deleted from this record on this computer.", "Remove", true))) return;
+  const c = caseById(caseId);
+  if (!c) return;
+  const copy = JSON.parse(JSON.stringify(c));
+  copy.assessments = (copy.assessments || []).filter((a) => a.id !== adminId);
+  const saved = await vault.saveCase(copy);
+  state.cases[state.cases.findIndex((x) => x.id === saved.id)] = saved;
+  renderRecord(saved);
+  toast("Removed from this record.");
+}
+
+async function leaveScreen() {
+  if (!(await leaveScreenIfNeeded())) return;
+  if (state.currentId) openCase(state.currentId);
+  else showHome();
+}
+
+async function leaveScreenIfNeeded() {
+  if (state.view !== "screen") return true;
+  if (state.screenDirty && !(await confirmBox("Leave this screen?", "Answers you have not saved will stay off the record.", "Leave without saving", true))) return false;
+  state.screenDirty = false;
+  state.screen = null;
+  return true;
 }
 
 function endSession(silent) {
@@ -643,20 +891,37 @@ async function renderLibrary() {
 }
 
 function renderForms() {
+  const local = [
+    [RSS5_ID, "RSS-5: Spiritual struggles", INSTRUMENTS[RSS5_ID].blurb + " Complete it inside a client record."],
+    [RCOPE_ID, "Brief RCOPE: Religious coping", INSTRUMENTS[RCOPE_ID].blurb + " Complete it inside a client record."],
+  ];
   const forms = [
     ["Flow of Care chart", "The 14 steps of care, from the first phone call to belief cards. Printable PDF.", "../counselors/forms/Clinical-Companion-Flow-of-Care.pdf"],
     ["New Client Forms (Step 2)", "The link the intake person sends after the phone call: About You and the Brief History, completed online before the first visit. Practice sample: fictional clients only.", "../counselors/new-client-forms.html"],
-    ["Forms to Complete card (Step 9)", "At the end of a session, check off the follow-up forms (PHQ-9, GAD-7, spiritual screens, and more), then send the client one link or print the card. Practice sample: fictional clients only.", "../counselors/followup-forms.html"],
+    ["Forms to Complete card (Step 9)", "At the end of a session, check off the follow-up forms (PHQ-9, GAD-7, and more), then send the client one link or print the card. RSS-5 and Brief RCOPE are completed in the client record, not on that public card. Practice sample: fictional clients only.", "../counselors/followup-forms.html"],
     ["New Client Packet", "Fill practice details in the browser and download a packet. Review it with an attorney in your state.", "../counselors/practice-forms.html"],
     ["Confidentiality agreement", "Blank fillable PDF.", "../counselors/forms/Confidentiality-Agreement-fillable.pdf"],
     ["Pastoral confidentiality agreement", "Blank fillable PDF.", "../counselors/forms/Pastoral-Confidentiality-Agreement-fillable.pdf"],
     ["Questioning false beliefs", "Blank Belief Counseling worksheet.", "../counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf"],
     ["Cognitive errors checklist", "Blank Belief Counseling worksheet.", "../counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf"],
-    ["Christian experiences and beliefs", "Blank Belief Counseling checklist.", "../counselors/forms/Belief-Counseling-Christian-Experiences-and-Beliefs-Checklist.pdf"],
+    ["Christian experiences and beliefs", "Blank Belief Counseling checklist. Counselor-guided, separate from the scored screens.", "../counselors/forms/Belief-Counseling-Christian-Experiences-and-Beliefs-Checklist.pdf"],
   ];
-  $("#form-list").innerHTML = forms.map(([title, blurb, href]) => `
+  const localHtml = local.map(([id, title, blurb]) => `
+    <div class="card form-card"><h3>${esc(title)}</h3><p>${esc(blurb)}</p>
+    <button type="button" class="btn primary" data-local-screen="${esc(id)}">Open in the client record</button></div>`).join("");
+  $("#form-list").innerHTML = localHtml + forms.map(([title, blurb, href]) => `
     <div class="card form-card"><h3>${esc(title)}</h3><p>${esc(blurb)}</p>
     <a class="btn" href="${esc(href)}" target="_blank" rel="noopener">Open</a></div>`).join("");
+  $("#form-list").querySelectorAll("[data-local-screen]").forEach((b) => {
+    b.onclick = () => {
+      if (!state.currentId || !caseById(state.currentId)) {
+        toast("Open a client record first. The screen is saved there, on this computer.");
+        showHome();
+        return;
+      }
+      openScreen(state.currentId, b.dataset.localScreen, null);
+    };
+  });
   show("forms");
 }
 
@@ -691,13 +956,17 @@ async function exportBackup() {
 }
 
 function bind() {
-  $("#nav-home").onclick = showHome;
-  $("#nav-library").onclick = () => renderLibrary().catch((e) => toast(e.message));
-  $("#nav-forms").onclick = renderForms;
+  $("#nav-home").onclick = async () => { if (await leaveScreenIfNeeded()) showHome(); };
+  $("#nav-library").onclick = async () => { if (await leaveScreenIfNeeded()) renderLibrary().catch((e) => toast(e.message)); };
+  $("#nav-forms").onclick = async () => { if (await leaveScreenIfNeeded()) renderForms(); };
   $("#nav-back").onclick = goCounselors;
-  $("#nav-privacy").onclick = renderPrivacy;
-  $("#nav-settings").onclick = renderSettings;
-  $("#nav-lock").onclick = () => { endSession(true); vault.lockVault(); $("#unlock-pw").value = ""; show("unlock"); };
+  $("#nav-privacy").onclick = async () => { if (await leaveScreenIfNeeded()) renderPrivacy(); };
+  $("#nav-settings").onclick = async () => { if (await leaveScreenIfNeeded()) renderSettings(); };
+  $("#nav-lock").onclick = async () => {
+    if (!(await leaveScreenIfNeeded())) return;
+    endSession(true); vault.lockVault(); $("#unlock-pw").value = ""; show("unlock");
+  };
+  $("#screen-back").onclick = () => leaveScreen();
   $("#setup-back").onclick = goCounselors;
   $("#unlock-back").onclick = goCounselors;
   $("#settings-back").onclick = goBack;

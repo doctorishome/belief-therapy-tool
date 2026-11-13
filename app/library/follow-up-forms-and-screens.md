@@ -14,7 +14,7 @@ What the client sees: a page titled "Your Forms" with a Start button for each fo
 
 What the counselor sees: each score, its severity range, and the client's rating of how much the problems interfere with daily life. A red safety flag appears if PHQ-9 question 9 is answered above "Not at all."
 
-Current status: practice sample only. Use fictional clients. Answers are not saved or sent. Real client use will require a secure, HIPAA-compliant system and a way to alert the counselor promptly when a safety flag appears.
+Current status: the public card is a practice sample only. Use fictional clients. Answers on that card are not saved or sent. Real client use of the public card will require a secure, HIPAA-compliant system and a way to alert the counselor promptly when a safety flag appears. The RSS-5 and Brief RCOPE are separate: the counselor completes them inside the client record in Clinical Companion, where the answers are encrypted in that browser and are not uploaded. The Spiritual Assessment Inventory is not included.
 
 2. Symptom screens
 
@@ -38,11 +38,11 @@ Scores are screening results, not a diagnosis. Confirm with the clinical intervi
 
 3. Optional spiritual screens (if the client has chosen to include faith)
 
-RSS-5, Religious and Spiritual Struggles Scale-5 (Salcone et al., 2025). Offer routinely. Five items, about 2 minutes, one for each kind of struggle: doubt, struggle with God, ultimate meaning, interpersonal (with religious people), and moral. Answers range from 1 (Not at all) to 5 (A great deal); total 5 to 25. No clinical cutoff has been published, so use it to guide exploration rather than as pass or fail. The item about feeling abandoned by God connects directly to the core lie "God has abandoned me." Spiritual struggle has been linked to suicidal thoughts beyond depression and anxiety, so high scores call for prompt review. Not yet online: waiting for permission from the authors.
+RSS-5, Religious and Spiritual Struggles Scale-5 (Salcone et al., 2025). Offer routinely. Five items, about 2 minutes, one for each kind of struggle: divine, interpersonal, moral, doubt, and ultimate meaning. The demonic subscale is not on this short form. Answers range from 1 (Not at all) to 5 (A great deal); total 5 to 25. No clinical cutoff has been published, so use it to guide exploration rather than as pass or fail. The item about feeling abandoned by God connects directly to the core lie "God has abandoned me." Spiritual struggle has been linked to suicidal thoughts beyond depression and anxiety, so high scores call for prompt review. Completed in the client record in Clinical Companion. The article is open access under a Creative Commons Attribution 4.0 license.
 
-Brief RCOPE (Pargament, Feuille & Burdzy, 2011). Fourteen items measuring positive and negative religious coping with a major life stressor. Use when a specific stressor is central. The negative religious coping items (for example, feeling punished or abandoned by God) often point to false beliefs. Can be repeated later to show change. Not yet online: confirming permission for online scoring.
+Brief RCOPE (Pargament, Feuille & Burdzy, 2011). Fourteen items measuring positive and negative religious coping with a major life stressor. Use when a specific stressor is central. The form asks for that stressor and scores the two subscales separately. The negative religious coping items (for example, feeling punished or abandoned by God) often point to false beliefs. Can be repeated later to show change. Completed in the client record in Clinical Companion. The article is open access under a Creative Commons Attribution license.
 
-SAI, Spiritual Assessment Inventory (Hall & Edwards, 2002). Forty-seven items, about 10 to 15 minutes, written from a Judeo-Christian view of the person's relationship with God. Reserve for in-depth work when the client's relationship with God is the main issue. Not yet online: author permission needed.
+SAI, Spiritual Assessment Inventory (Hall & Edwards, 2002). Forty-seven items, about 10 to 15 minutes, written from a Judeo-Christian view of the person's relationship with God. Reserve for in-depth work when the client's relationship with God is the main issue. Not included.
 
 4. Christian Experiences and Beliefs checklist
 
