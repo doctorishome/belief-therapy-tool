@@ -20,6 +20,7 @@ def nav(page):
     for f, label in MENU:
         h.append(f'<a class="l{" on" if SECTION.get(page) == f else ""}" href="{M}{f}">{label}</a>')
     h.append(f'<a class="l cc" href="{M}clinical-companion.html" style="color:var(--navy);background:var(--gold);border:0;border-radius:20px;padding:4px 14px;font-weight:bold">Clinical Companion</a>')
+    h.append(f'<a class="l" href="../counselors/membership.html">Membership</a>')
     h.append('<span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a>'
              '<a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span>'
              '<a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a>'

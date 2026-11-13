@@ -241,6 +241,10 @@ a.card h3{margin:0 0 4px;color:var(--navy);font-size:1.15rem}
 a.card p{margin:0;color:var(--mut);font-size:.96rem}
 a.card.cc{background:var(--navy);border-color:var(--gold)}
 a.card.cc h3{color:var(--gold)}a.card.cc p{color:#dfe6f2}
+.start{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:6px 0 4px}
+.start a{display:block;text-decoration:none;background:var(--navy);border-left:5px solid var(--gold);border-radius:0 8px 8px 0;padding:13px 18px}
+.start a b{display:block;color:var(--gold);font-size:1.1rem}.start a span{color:#dfe6f2;font-size:.95rem}
+.start a:hover{background:var(--navy2)}
 .lock{background:#fff;border:1px solid var(--gold);border-radius:8px;padding:14px 18px;margin:14px 0;color:var(--navy);font-weight:bold}
 .foot{margin:40px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}
 .foot a{color:var(--gold)}
@@ -267,6 +271,7 @@ def nav(current):
     for f, label, _, _ in MENU:
         cls = [c for c in ("cc" if f == "clinical-companion.html" else "", "on" if f == current else "") if c]
         out.append('<a%s href="%s">%s</a>' % (' class="%s"' % " ".join(cls) if cls else "", f, e(label)))
+    out.append('<a href="../counselors/membership.html">Membership</a>')
     out.append('<a class="pub" target="_blank" rel="noopener" href="%s">Public Site ↗</a></div>' % SITE)
     return "".join(out)
 
@@ -292,7 +297,11 @@ def page(f, label, heading, summary):
     if f == "index.html":
         cards = "".join('<a class="card%s" href="%s"><h3>%s</h3><p>%s</p></a>' % (
             " cc" if g == "clinical-companion.html" else "", g, e(l), e(s)) for g, l, _, s in MENU[1:])
-        body = '<div class="grid">%s</div>' % cards
+        start = ('<div class="start"><a href="../counselors/landing.html"><b>Start here: Introduction</b>'
+                 '<span>What this site is for, an overview, and how to find your way around.</span></a>'
+                 '<a href="../counselors/membership.html"><b>Membership</b>'
+                 '<span>One week free, then $29.95 a month. How sign-up works and what is included.</span></a></div>')
+        body = start + '<div class="grid">%s</div>' % cards
     else:
         parts = []
         for title, lead, items in PAGES[f]:
