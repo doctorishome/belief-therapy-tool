@@ -262,40 +262,40 @@
  "sections": [
   {
    "heading": "Common Struggles — Associated Beliefs",
-   "hint": "Choose a box to show its beliefs. Click again to close it.",
+   "hint": "Choose a box to show ten beliefs. Click again to close it.",
    "groups": [
     {
      "name": "Depression",
      "beliefs": [
       [
-       "I’m worthless unless I succeed at everything."
+       "My situation is hopeless."
       ],
       [
-       "I’m a failure as a person, not just someone who made a mistake."
+       "Things will never get better."
       ],
       [
-       "I don’t deserve love or care."
+       "There’s no use trying. I’ll only fail again."
       ],
       [
-       "Nothing good ever happens for me."
+       "Nobody really cares about me."
       ],
       [
-       "Asking for help is pointless, because no one really cares."
+       "I’m a complete failure."
       ],
       [
-       "Life is empty, and the things I used to care about don’t matter anymore."
+       "I’m no good. I never have been."
       ],
       [
-       "Things will never get better, no matter what I do."
+       "Nobody could possibly like me."
       ],
       [
-       "My future is already ruined."
+       "I’ll never get over this."
       ],
       [
-       "I’ll always feel this hopeless."
+       "My sins are unforgivable."
       ],
       [
-       "Because I feel sad and tired, my life must be as bad as it feels."
+       "God has forsaken me."
       ]
      ]
     },
@@ -351,6 +351,21 @@
       ],
       [
        "My future holds only more pain. I will never feel safe or whole again."
+      ],
+      [
+       "I have no control. If it happened once, nothing I do can stop it from happening again."
+      ],
+      [
+       "Other people can see that I am different now, and they will keep their distance."
+      ],
+      [
+       "When my body reacts, the danger is happening now. I am not safe even here."
+      ],
+      [
+       "If I talk about it, I will fall apart, so I have to keep it locked inside."
+      ],
+      [
+       "If I care about someone, they will be hurt, or I will lose them."
       ]
      ]
     },
@@ -371,6 +386,21 @@
       ],
       [
        "I have to keep this secret. Speaking up would only make everything worse."
+      ],
+      [
+       "I should have fought harder or left sooner. Because I didn’t, I must have agreed to it."
+      ],
+      [
+       "Kindness is a trap. If someone is gentle with me, they are getting ready to hurt me."
+      ],
+      [
+       "I have to keep them calm. If they get angry, it is my job to fix it."
+      ],
+      [
+       "I don’t get to decide what happens to my body. Saying no doesn’t count."
+      ],
+      [
+       "Other people had it worse, so what was done to me doesn’t really count."
       ]
      ]
     },
@@ -391,6 +421,21 @@
       ],
       [
        "This is the only thing that makes me feel okay, and nothing else will work."
+      ],
+      [
+       "A little doesn’t count. I can keep it small and still be in control."
+      ],
+      [
+       "Other people are the reason I use. If they treated me better, I wouldn’t need it."
+      ],
+      [
+       "I don’t hurt anybody else, so this is my choice and it is fine."
+      ],
+      [
+       "I’ve already messed things up, so there is no point in stopping now."
+      ],
+      [
+       "I can’t be myself around people unless I use first."
       ]
      ]
     }
