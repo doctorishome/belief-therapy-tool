@@ -1,3 +1,5 @@
+import { plainSummary } from "./spiritual-screens.js";
+
 // De-identification of a case record. Same rules as Clinical Companion 1.2.0-beta.
 // (1) drop direct-identifier fields; (2) replace literal identifiers in free text;
 // (3) regex-scrub remaining phones, emails, dates, SSN-like numbers, long IDs,
@@ -152,6 +154,17 @@ export function deidentifyCase(c, opts = {}) {
   section("Counselor's working diagnoses", c.workingDiagnoses);
   section("Confirmed diagnoses", c.confirmedDiagnoses);
   section("Current treatment plan", c.treatmentPlan);
+  const screens = (Array.isArray(c.assessments) ? c.assessments : [])
+    .map((a) => ({ when: String(a.completedAt || "").slice(0, 10), text: plainSummary(a) }))
+    .filter((a) => a.text);
+  if (screens.length) {
+    lines.push("");
+    lines.push("Spiritual assessment screens (saved in this local record):");
+    screens
+      .slice()
+      .sort((a, b) => a.when.localeCompare(b.when))
+      .forEach((a) => lines.push(`- Screen ${relativeDate(a.when, now)}: ${S(a.text)}`));
+  }
   const notes = (c.notes || []).filter((n) => (n.text || "").trim()).slice().sort((a, b) => String(a.date).localeCompare(String(b.date)));
   if (notes.length) {
     lines.push("");
