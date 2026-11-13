@@ -63,7 +63,7 @@ p{margin:0 0 14px}
 <div class="eyebrow">Belief Counseling for Counselors</div>
 <h1>Welcome to the Counselors’ Room</h1>
 <p>Training in Christian cognitive-behavioral counseling for licensed counselors, psychologists, students in training, and ministers who counsel.</p>
-<div class="actions"><a class="btn" href="#" data-msg="cc-start-free-week">Start your free week</a><a class="btn ghost" href="welcome.html">See what’s inside</a></div>
+<div class="actions"><a class="btn" href="#" data-msg="cc-start-free-week">Start your free week</a><a class="btn ghost" href="../members/index.html">See what’s inside</a></div>
 <p class="login">Already a member? <a href="#" data-msg="cc-login">Log in</a></p>
 </div>
 
@@ -122,7 +122,7 @@ p{margin:0 0 14px}
 <p>Professionals who would like to review the Counselors’ Room may have limited access before deciding whether to sign up for one free week of complete access.</p>
 <p>The free week opens everything in the Counselors’ Room, including the Clinical Companion. You enter a credit card when you sign up, and nothing is charged during the week. We email you a reminder 3 days before the week ends. Cancel before then and you pay nothing. After the free week, membership is $29.95 a month, and you can cancel anytime.</p>
 </div>
-<div class="cta"><a class="btn ghost dark" href="welcome.html">See what’s inside</a><a class="btn" href="#" data-msg="cc-start-free-week">Start your free week</a><a class="btn ghost dark" href="#" data-path="/">&larr; Back to the public site</a></div>
+<div class="cta"><a class="btn ghost dark" href="../members/index.html">See what’s inside</a><a class="btn" href="#" data-msg="cc-start-free-week">Start your free week</a><a class="btn ghost dark" href="#" data-path="/">&larr; Back to the public site</a></div>
 
 <div class="scrip">“Then you will know the truth, and the truth will set you free.” <b>John 8:32</b></div>
 </div>
@@ -134,4 +134,5 @@ document.querySelectorAll("a[data-msg],a[data-path]").forEach(function(a){a.addE
   window.parent.postMessage(m?{type:m}:{type:"navigate",path:p},"*");
   if(p&&window.parent===window) location.href="https://www.beliefcounselor.com"+p;});});
 </script>
+<script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script>
 </body></html>

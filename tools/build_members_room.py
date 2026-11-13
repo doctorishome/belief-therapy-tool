@@ -319,7 +319,7 @@ def page(f, label, heading, summary):
             '<div class="hero"><div class="eyebrow">Belief Counseling for Counselors</div><h1>%s</h1><p>%s</p></div>'
             '<div class="wrap">%s</div>'
             '<div class="foot">Educational training for counselors. Never enter real client names or details. · '
-            '© Brian Campbell, Ph.D. · <a href="%s/help" target="_top">Help &amp; Support</a></div></body></html>'
+            '© Brian Campbell, Ph.D. · <a href="%s/help" target="_top">Help &amp; Support</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:\"start\"});}}catch(e){}})();</script></body></html>'
             % (e(heading), CSS, nav(f), e(heading), e(summary), body, SITE))
 
 

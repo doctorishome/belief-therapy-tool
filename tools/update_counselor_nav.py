@@ -24,7 +24,7 @@ def nav(page):
     h.append('<span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a>'
              '<a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span>'
              '<a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a>'
-             '<a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><!--/nav-->')
+             '<a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->')
     return "".join(h)
 
 
