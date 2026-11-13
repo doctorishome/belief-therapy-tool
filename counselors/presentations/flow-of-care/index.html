@@ -169,7 +169,8 @@ var SLIDES = [
         ["Depressive Thoughts & Beliefs (PDF)", FORM+"Depressive-Thoughts-and-Beliefs-Checklist.pdf"],
         ["Mining Tools for the six levels", "../../../members/process.html"],
         ["RSS-5 (client record)", C+"../app/"],
-        ["Brief RCOPE (client record)", C+"../app/"]]},
+        ["Brief RCOPE (client record)", C+"../app/"],
+        ["SAI: waiting for author permission", "", 1]]},
 
  {flow:"Diagnosis + Identify", title:"Diagnosis + Identify",
   points:["Make the DSM-5-TR diagnosis.","At the same time, identify the client’s false beliefs.",
@@ -232,7 +233,7 @@ function show(i){
   h += '<div class="docs"><h3>Documents for this step</h3>';
   if (!s.docs.length) h += '<p>No documents at this step.</p>';
   s.docs.forEach(function(d){
-    h += d[1] ? '<a target="_blank" rel="noopener" href="'+d[1]+'">'+esc(d[0])+' ↗</a>' : '<span>'+esc(d[0])+' (coming)</span>';
+    h += d[1] ? '<a target="_blank" rel="noopener" href="'+d[1]+'">'+esc(d[0])+' ↗</a>' : '<span>'+esc(d[0])+(d[2]?'':' (coming)')+'</span>';
   });
   document.getElementById("slide").innerHTML = h + '</div>';
   var a = AUDIO ? '<audio controls src="audio/slide-'+("0"+at).slice(-2)+'.mp3" style="width:100%;margin-bottom:10px"></audio>' : '';

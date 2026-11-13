@@ -31,6 +31,7 @@ STEPS = [
      ["Check off forms on the “Forms to Complete” card", "Short screens: PHQ-9 (depression), GAD-7 (anxiety)",
       "Optional spiritual screens (if faith is included):", "    – RSS-5, about 2 minutes (in the client record)",
       "    – Brief RCOPE, for a specific stressor (in the client record)",
+      "    – SAI, for in-depth work (waiting for author permission)",
       "    – Christian Experiences and Beliefs (counselor-guided)"], False),
     ("10. Diagnosis + Identify", "DSM-5-TR and false beliefs",
      ["Refresher: the DSM-5-TR diagnostic process"], False),

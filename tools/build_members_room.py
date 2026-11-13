@@ -97,6 +97,8 @@ PAGES = {
             ("Brief RCOPE", "A short measure of religious coping, for when a specific stressor is central. Optional. "
                             "Completed with the client inside the client record in the Clinical Companion.",
              [("About the Clinical Companion", "clinical-companion.html")]),
+            ("SAI", "Spiritual Assessment Inventory (Hall & Edwards, 2002), for in-depth work. Optional. "
+                    "Waiting for author permission.", []),
             ("group", "Core False Beliefs"),
             ("Core False Beliefs", "The 22 deep-seated beliefs that are especially important to mine.",
              [("Open page", "C/core-beliefs.html")]),
