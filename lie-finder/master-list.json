@@ -1684,6 +1684,22 @@
    "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-030-If-Ive-Been-Wronged-I-Have-the-Right-to-Get-Even.html"
   },
   {
+   "id": "PSY-031",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "My situation is hopeless.",
+   "origins": "Hard seasons teach the mind to expect more of the same. A long illness, a loss, a failed effort, money trouble, or a relationship that will not mend can make “this will never change” feel like a fact.",
+   "client_words": [
+    "Nothing about this can change.",
+    "I am stuck, and there is no way through.",
+    "Hope is for other people, not for me.",
+    "Whatever I try, it will not matter.",
+    "This is as good as life will get.",
+    "I might as well stop looking for a way forward."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-031-My-Situation-Is-Hopeless.html"
+  },
+  {
    "id": "PSY-X01",
    "level": "Psychological/Cognitive",
    "topic": "Unusual Thinking and Social Unease",
@@ -1904,15 +1920,6 @@
    "level": "Psychological/Cognitive",
    "topic": "Perfectionism and Control",
    "belief": "My standards should govern everyone’s behavior.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X26",
-   "level": "Psychological/Cognitive",
-   "topic": "Depression",
-   "belief": "My situation is hopeless.",
    "origins": "",
    "client_words": [],
    "card": null
