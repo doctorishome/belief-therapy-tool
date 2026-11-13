@@ -1,12 +1,12 @@
 {
- "intro": "Each of us has habits of thinking that developed from our experiences, our relationships, and the world around us. This page looks at ten common patterns of belief, such as mistrust, perfectionism, and fear of rejection, and at the false beliefs that often go with them. It is an educational resource, not a test. Recognizing a belief in yourself does not mean something is wrong with you, and it is not a way to label others. These patterns are based on the work of Aaron Beck and other cognitive therapists, written here in plain language. Beliefs overlap, and each person’s story, culture, and faith matter. Our purpose is to notice beliefs that may be inaccurate or too rigid, question them thoughtfully, and replace them with more truthful and constructive ways of thinking.",
+ "intro": "Each of us has habits of thinking that developed from our experiences, our relationships, and the world around us. This page looks at ten common patterns of belief, such as mistrust, perfectionism, and fear of rejection, and at the false beliefs that often go with them. Further down, it also lists false beliefs that often go with depression, anxiety, trauma, abuse, and substance use. It is an educational resource, not a test. Recognizing a belief in yourself does not mean something is wrong with you, and it is not a way to label others. These patterns are based on the work of Aaron Beck and other cognitive therapists, written here in plain language. Beliefs overlap, and each person’s story, culture, and faith matter. Our purpose is to notice beliefs that may be inaccurate or too rigid, question them thoughtfully, and replace them with more truthful and constructive ways of thinking.",
  "aside": "Use these examples for learning and reflection, not to label yourself or others or replace professional assessment. A preference is not inherently faulty; the target is an inaccurate generalization or rigid rule. Shared religious beliefs are not, by themselves, a sign that something is wrong.",
  "search_label": "Type a word or a short sentence",
- "placeholder": "For example: trust, rejection, perfection, abandonment",
+ "placeholder": "For example: trust, rejection, perfection, hopeless",
  "heading": "Personality Patterns — Associated Beliefs",
  "hint": "Choose a box to show five beliefs. Click again to close it.",
  "card_base": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/",
- "footer": "Sources: DSM-5-TR (categories); Beck, Davis, &amp; Freeman (Eds.), <em>Cognitive Therapy of Personality Disorders</em> (3rd ed., 2015), and Beck Institute personality-belief materials (themes). These examples are not a validated assessment or a ranked top-five list. Schizotypal examples are educational syntheses, not an original PBQ scale. OCPD is distinct from OCD.",
+ "footer": "Sources: DSM-5-TR (categories); Beck, Davis, &amp; Freeman (Eds.), <em>Cognitive Therapy of Personality Disorders</em> (3rd ed., 2015), and Beck Institute personality-belief materials (themes). These examples are not a validated assessment or a ranked top-five list. Schizotypal examples are educational syntheses, not an original PBQ scale. OCPD is distinct from OCD. The Common Struggles examples are plain-language educational syntheses of widely taught cognitive themes: a harsh view of oneself, one’s life, and the future; overestimated danger and underestimated ability to cope; trauma-related beliefs about safety, trust, self-blame, and the future; survivor beliefs after abuse; and permission-giving or relief-seeking beliefs about substance use. They are not a diagnosis, a treatment plan, or a validated scale.",
  "groups": [
   {
    "name": "Mistrusting Others",
@@ -256,6 +256,144 @@
     [
      "My standards should govern everyone’s behavior."
     ]
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "heading": "Common Struggles — Associated Beliefs",
+   "hint": "Choose a box to show its beliefs. Click again to close it.",
+   "groups": [
+    {
+     "name": "Depression",
+     "beliefs": [
+      [
+       "I’m worthless unless I succeed at everything."
+      ],
+      [
+       "I’m a failure as a person, not just someone who made a mistake."
+      ],
+      [
+       "I don’t deserve love or care."
+      ],
+      [
+       "Nothing good ever happens for me."
+      ],
+      [
+       "Asking for help is pointless, because no one really cares."
+      ],
+      [
+       "Life is empty, and the things I used to care about don’t matter anymore."
+      ],
+      [
+       "Things will never get better, no matter what I do."
+      ],
+      [
+       "My future is already ruined."
+      ],
+      [
+       "I’ll always feel this hopeless."
+      ],
+      [
+       "Because I feel sad and tired, my life must be as bad as it feels."
+      ]
+     ]
+    },
+    {
+     "name": "Anxiety",
+     "beliefs": [
+      [
+       "Something terrible is about to happen."
+      ],
+      [
+       "If I feel anxious, that means I am in real danger."
+      ],
+      [
+       "I can’t cope if the worst happens."
+      ],
+      [
+       "I have to stay on guard, or I will miss the danger."
+      ],
+      [
+       "Not knowing what will happen means something is wrong."
+      ],
+      [
+       "If I don’t worry, I won’t be prepared."
+      ],
+      [
+       "These feelings in my body mean I’m about to lose control."
+      ],
+      [
+       "If people see me anxious, I won’t be able to handle it."
+      ],
+      [
+       "One small problem will turn into a disaster."
+      ],
+      [
+       "I can’t relax until I am sure everything is safe."
+      ]
+     ]
+    },
+    {
+     "name": "PTSD",
+     "beliefs": [
+      [
+       "Nowhere is really safe. Danger is about to happen again."
+      ],
+      [
+       "I can’t trust anyone. If I let my guard down, I’ll be hurt again."
+      ],
+      [
+       "What happened was my fault. I should have seen it coming and stopped it."
+      ],
+      [
+       "I’m permanently damaged by what happened, and I will never be myself again."
+      ],
+      [
+       "My future holds only more pain. I will never feel safe or whole again."
+      ]
+     ]
+    },
+    {
+     "name": "Abuse",
+     "beliefs": [
+      [
+       "What was done to me was my fault. I must have caused it."
+      ],
+      [
+       "I’m damaged and ashamed, as if what was done to me made me worthless."
+      ],
+      [
+       "If I tell someone, they won’t believe me, or they will blame me."
+      ],
+      [
+       "I don’t deserve to be safe or treated kindly."
+      ],
+      [
+       "I have to keep this secret. Speaking up would only make everything worse."
+      ]
+     ]
+    },
+    {
+     "name": "Substance Abuse",
+     "beliefs": [
+      [
+       "I can control it. I can stop whenever I want."
+      ],
+      [
+       "I need it to get through the day. I can’t cope without it."
+      ],
+      [
+       "I’ve earned it. After what I’ve been through, I deserve the relief."
+      ],
+      [
+       "One more time won’t matter. I’ll quit tomorrow."
+      ],
+      [
+       "This is the only thing that makes me feel okay, and nothing else will work."
+      ]
+     ]
+    }
    ]
   }
  ]
