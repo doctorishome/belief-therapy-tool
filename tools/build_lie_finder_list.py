@@ -136,6 +136,11 @@ for g in groups:
             for e in entries:  # card already added from its .json: use the website's group name as topic
                 if e['card'] and e['card'].endswith('/' + link):
                     e['topic'] = g['name']
+            # Cards 031 and after used to be card-less list items (PSY-X numbers).
+            # Reserve that slot so the remaining card-less beliefs keep their ids.
+            m_res = re.match(r'Psych-(\d+)', link or '')
+            if m_res and int(m_res.group(1)) >= 31:
+                next_num += 1
             continue
         origins, words = '', []
         num = None
