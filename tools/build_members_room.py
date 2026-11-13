@@ -211,8 +211,7 @@ body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);backg
 .brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
 .nav a{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
 .nav a:hover,.nav a.on{color:#fff;border-color:var(--gold)}
-.nav a.cc{color:var(--navy);background:var(--gold);border:0;border-radius:20px;padding:4px 14px;font-weight:bold}
-.nav a.cc.on{box-shadow:0 0 0 2px #fff}
+.nav a.on{color:var(--gold);font-weight:bold;border-bottom-width:3px}
 .nav a.pub{color:var(--gold);font-size:.85rem;border:1px solid var(--gold);border-radius:20px;padding:3px 12px}
 .hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:44px 22px 38px;text-align:center}
 .hero h1{font-size:clamp(1.8rem,4.5vw,2.7rem);margin:0 0 8px;line-height:1.2}
@@ -269,7 +268,7 @@ def href(a):
 def nav(current):
     out = ['<div class="nav"><div class="brand">Belief Counseling<small>%s</small></div>' % e(ROOM)]
     for f, label, _, _ in MENU:
-        cls = [c for c in ("cc" if f == "clinical-companion.html" else "", "on" if f == current else "") if c]
+        cls = ["on"] if f == current else []
         out.append('<a%s href="%s">%s</a>' % (' class="%s"' % " ".join(cls) if cls else "", f, e(label)))
     out.append('<a href="../counselors/membership.html">Membership</a>')
     out.append('<a class="pub" target="_blank" rel="noopener" href="%s">Public Site ↗</a></div>' % SITE)
