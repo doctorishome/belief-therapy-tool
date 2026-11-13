@@ -9,6 +9,7 @@ Writes:
 Each entry: id, level, topic, belief, origins (short), client_words (what clients typically say), card link.
 Sources: the card .json files in tools/<set>/, plus tools/lists/psychological.json for
 psychological beliefs (older psychological cards have no .json, so their text is read from the card page).
+Groups in optional "sections" on that list are included after the main groups.
 Re-run after adding cards; nothing here needs editing by hand.
 """
 import json, re, html
@@ -125,7 +126,10 @@ for page in sorted((ROOT / 'belief-cards').glob('Belief-*.html')):
 lst = json.loads((ROOT / 'tools/lists/psychological.json').read_text(encoding='utf-8'))
 psy_nums = {e['num'] for e in entries if e['level'] == 'PSY'}
 next_num = 1000
-for g in lst['groups']:
+groups = list(lst['groups'])
+for sec in lst.get('sections') or []:
+    groups.extend(sec['groups'])
+for g in groups:
     for b in g['beliefs']:
         link = b[1] if len(b) > 1 else None
         if link and link in seen:

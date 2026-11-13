@@ -1,7 +1,7 @@
 {
  "title": "Belief Counseling - Lie Finder master list",
  "note": "Built by tools/build_lie_finder_list.py from the belief cards. Do not edit by hand; re-run the script.",
- "count": 447,
+ "count": 497,
  "beliefs": [
   {
    "id": "BIO-001",
@@ -1904,6 +1904,456 @@
    "level": "Psychological/Cognitive",
    "topic": "Perfectionism and Control",
    "belief": "My standards should govern everyone’s behavior.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X26",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "My situation is hopeless.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X27",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "Things will never get better.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X28",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "There’s no use trying. I’ll only fail again.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X29",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "Nobody really cares about me.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X30",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "I’m a complete failure.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X31",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "I’m no good. I never have been.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X32",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "Nobody could possibly like me.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X33",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "I’ll never get over this.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X34",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "My sins are unforgivable.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X35",
+   "level": "Psychological/Cognitive",
+   "topic": "Depression",
+   "belief": "God has forsaken me.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X36",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "Something terrible is about to happen.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X37",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "If I feel anxious, that means I am in real danger.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X38",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "I can’t cope if the worst happens.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X39",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "I have to stay on guard, or I will miss the danger.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X40",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "Not knowing what will happen means something is wrong.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X41",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "If I don’t worry, I won’t be prepared.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X42",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "These feelings in my body mean I’m about to lose control.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X43",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "If people see me anxious, I won’t be able to handle it.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X44",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "One small problem will turn into a disaster.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X45",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "I can’t relax until I am sure everything is safe.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X46",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "Nowhere is really safe. Danger is about to happen again.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X47",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "I can’t trust anyone. If I let my guard down, I’ll be hurt again.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X48",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "What happened was my fault. I should have seen it coming and stopped it.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X49",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "I’m permanently damaged by what happened, and I will never be myself again.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X50",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "My future holds only more pain. I will never feel safe or whole again.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X51",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "I have no control. If it happened once, nothing I do can stop it from happening again.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X52",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "Other people can see that I am different now, and they will keep their distance.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X53",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "When my body reacts, the danger is happening now. I am not safe even here.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X54",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "If I talk about it, I will fall apart, so I have to keep it locked inside.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X55",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "If I care about someone, they will be hurt, or I will lose them.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X56",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "What was done to me was my fault. I must have caused it.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X57",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "I’m damaged and ashamed, as if what was done to me made me worthless.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X58",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "If I tell someone, they won’t believe me, or they will blame me.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X59",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "I don’t deserve to be safe or treated kindly.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X60",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "I have to keep this secret. Speaking up would only make everything worse.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X61",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "I should have fought harder or left sooner. Because I didn’t, I must have agreed to it.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X62",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "Kindness is a trap. If someone is gentle with me, they are getting ready to hurt me.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X63",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "I have to keep them calm. If they get angry, it is my job to fix it.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X64",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "I don’t get to decide what happens to my body. Saying no doesn’t count.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X65",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "Other people had it worse, so what was done to me doesn’t really count.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X66",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "I can control it. I can stop whenever I want.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X67",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "I need it to get through the day. I can’t cope without it.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X68",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "I’ve earned it. After what I’ve been through, I deserve the relief.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X69",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "One more time won’t matter. I’ll quit tomorrow.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X70",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "This is the only thing that makes me feel okay, and nothing else will work.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X71",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "A little doesn’t count. I can keep it small and still be in control.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X72",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "Other people are the reason I use. If they treated me better, I wouldn’t need it.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X73",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "I don’t hurt anybody else, so this is my choice and it is fine.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X74",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "I’ve already messed things up, so there is no point in stopping now.",
+   "origins": "",
+   "client_words": [],
+   "card": null
+  },
+  {
+   "id": "PSY-X75",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "I can’t be myself around people unless I use first.",
    "origins": "",
    "client_words": [],
    "card": null
