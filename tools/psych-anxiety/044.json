@@ -1,0 +1,24 @@
+{
+ "num": 44,
+ "file": "I-Have-to-Stay-on-Guard",
+ "group": "Anxiety",
+ "belief": "“I have to stay on guard, or I will miss the danger.”",
+ "belief_plain": "I have to stay on guard, or I will miss the danger",
+ "origins": "Some people learned that if they stopped watching, something bad got through: a parent’s mood, a child’s safety, a mistake at work, a health scare. Vigilance worked often enough to become a rule. Anxiety then calls rest dangerous. The lie says that the only thing standing between you and harm is your own attention, so you may never come off duty.",
+ "self": [
+  "If I stop watching, that is when it will happen.",
+  "Rest is for people whose lives are simpler.",
+  "I have to check one more time.",
+  "Nobody else will notice the danger.",
+  "Sleep is unsafe.",
+  "If I relax, I am failing the people I love."
+ ],
+ "songs": [
+  "held",
+  "already",
+  "soul",
+  "assurance"
+ ],
+ "key": "Psalm 121:3–4",
+ "replacement": "Staying on guard is not what keeps me safe. God does not slumber, and I am allowed to rest."
+}

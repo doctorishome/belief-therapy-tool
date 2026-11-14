@@ -1,0 +1,24 @@
+{
+ "num": 50,
+ "file": "I-Cant-Relax-Until-Everything-Is-Safe",
+ "group": "Anxiety",
+ "belief": "“I can’t relax until I am sure everything is safe.”",
+ "belief_plain": "I can’t relax until I am sure everything is safe",
+ "origins": "Safety is good. Anxiety turns it into a condition that can never be met. There is always one more lock, one more test, one more reassurance, one more corner of the future that has not been inspected. People who lived with real unpredictability, or who love people they cannot fully protect, are especially vulnerable to this rule. The lie says rest is allowed only after certainty. Certainty about everything never arrives, so rest never arrives either.",
+ "self": [
+  "I will relax when I know everyone is safe.",
+  "There is always one more thing to check.",
+  "Resting now would be selfish or careless.",
+  "If I feel any doubt, I am not allowed to stop.",
+  "Other people can live with risk. I cannot.",
+  "God wants me to be certain before I am peaceful."
+ ],
+ "songs": [
+  "ourgod",
+  "amen",
+  "held",
+  "tender"
+ ],
+ "key": "Psalm 4:8",
+ "replacement": "I will never be sure of every danger. I can rest before I have certainty, because God is my safety."
+}
