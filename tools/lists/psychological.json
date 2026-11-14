@@ -1,12 +1,12 @@
 {
- "intro": "Each of us has habits of thinking that developed from our experiences, our relationships, and the world around us. This page looks at ten common patterns of belief, such as mistrust, perfectionism, and fear of rejection, and at the false beliefs that often go with them. Further down, it also lists false beliefs that often go with depression, anxiety, trauma, abuse, and substance use. It is an educational resource, not a test. Recognizing a belief in yourself does not mean something is wrong with you, and it is not a way to label others. These patterns are based on the work of Aaron Beck and other cognitive therapists, written here in plain language. Beliefs overlap, and each person’s story, culture, and faith matter. Our purpose is to notice beliefs that may be inaccurate or too rigid, question them thoughtfully, and replace them with more truthful and constructive ways of thinking.",
+ "intro": "Each of us has habits of thinking that developed from our experiences, our relationships, and the world around us. This page looks at ten common patterns of belief, such as mistrust, perfectionism, and fear of rejection, and at the false beliefs that often go with them. Further down, it also lists false beliefs that often go with depression, anxiety, trauma, abuse, substance use, and grief. It is an educational resource, not a test. Recognizing a belief in yourself does not mean something is wrong with you, and it is not a way to label others. These patterns are based on the work of Aaron Beck and other cognitive therapists, written here in plain language. Beliefs overlap, and each person’s story, culture, and faith matter. Our purpose is to notice beliefs that may be inaccurate or too rigid, question them thoughtfully, and replace them with more truthful and constructive ways of thinking.",
  "aside": "Use these examples for learning and reflection, not to label yourself or others or replace professional assessment. A preference is not inherently faulty; the target is an inaccurate generalization or rigid rule. Shared religious beliefs are not, by themselves, a sign that something is wrong.",
  "search_label": "Type a word or a short sentence",
  "placeholder": "For example: trust, rejection, perfection, hopeless",
  "heading": "Personality Patterns — Associated Beliefs",
  "hint": "Choose a box to show five beliefs. Click again to close it.",
  "card_base": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/",
- "footer": "Sources: DSM-5-TR (categories); Beck, Davis, &amp; Freeman (Eds.), <em>Cognitive Therapy of Personality Disorders</em> (3rd ed., 2015), and Beck Institute personality-belief materials (themes). These examples are not a validated assessment or a ranked top-five list. Schizotypal examples are educational syntheses, not an original PBQ scale. OCPD is distinct from OCD. The Common Struggles examples are plain-language educational syntheses of widely taught cognitive themes: a harsh view of oneself, one’s life, and the future; overestimated danger and underestimated ability to cope; trauma-related beliefs about safety, trust, self-blame, and the future; survivor beliefs after abuse; and permission-giving or relief-seeking beliefs about substance use. They are not a diagnosis, a treatment plan, or a validated scale.",
+ "footer": "Sources: DSM-5-TR (categories); Beck, Davis, &amp; Freeman (Eds.), <em>Cognitive Therapy of Personality Disorders</em> (3rd ed., 2015), and Beck Institute personality-belief materials (themes). These examples are not a validated assessment or a ranked top-five list. Schizotypal examples are educational syntheses, not an original PBQ scale. OCPD is distinct from OCD. The Common Struggles examples are plain-language educational syntheses of widely taught cognitive themes: a harsh view of oneself, one’s life, and the future; overestimated danger and underestimated ability to cope; trauma-related beliefs about safety, trust, self-blame, and the future; survivor beliefs after abuse; permission-giving or relief-seeking beliefs about substance use; and grief beliefs that blame the mourner, treat sorrow as permanent, or treat deep grief as a failure of faith. They are not a diagnosis, a treatment plan, or a validated scale.",
  "groups": [
   {
    "name": "Mistrusting Others",
@@ -486,6 +486,41 @@
       [
        "I can’t be myself around people unless I use first.",
        "Psych-080-I-Cant-Be-Myself-Unless-I-Use.html"
+      ]
+     ]
+    },
+    {
+     "name": "Death/Sorrow",
+     "beliefs": [
+      [
+       "If I stop hurting, it means I didn’t really love them."
+      ],
+      [
+       "I should have done more. Their death is my fault."
+      ],
+      [
+       "I’ll never feel joy again. This sorrow is permanent."
+      ],
+      [
+       "I should be finished grieving by now. Taking this long means something is wrong with me."
+      ],
+      [
+       "Remembering them will only hurt me, so I have to keep the memories shut away."
+      ],
+      [
+       "If I laugh or enjoy anything, I am betraying them."
+      ],
+      [
+       "No one understands what I lost. I have to carry this alone."
+      ],
+      [
+       "If I had prayed harder, they wouldn’t have died."
+      ],
+      [
+       "Grieving this much means I don’t trust God."
+      ],
+      [
+       "A real faith wouldn’t feel this sad, or this angry, after a death."
       ]
      ]
     }
