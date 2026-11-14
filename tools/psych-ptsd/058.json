@@ -1,0 +1,25 @@
+{
+ "num": 58,
+ "file": "When-My-Body-Reacts-the-Danger-Is-Now",
+ "group": "PTSD",
+ "belief": "“When my body reacts, the danger is happening now. I am not safe even here.”",
+ "belief_plain": "When my body reacts, the danger is happening now. I am not safe even here",
+ "origins": "The body remembers. A smell, a tone of voice, a posture, or a sudden sensation can bring a wave of fear, numbness, or the urge to flee, even when the room is safe. That reaction is not you being dramatic. The lie is the interpretation: “Because my body reacts, the danger is happening now, and I am not safe even here.” A counselor can help you tell a memory in the body from a threat in the room, without making you relive anything. A counselor can help you work with this at a pace that is safe. You do not have to do it alone, or all at once.",
+ "self": [
+  "It is happening again.",
+  "I have to get out or I will not survive this feeling.",
+  "If my heart is racing, I am in danger.",
+  "I am not safe in my own home, my church, or my car.",
+  "I should be over these reactions by now.",
+  "God is far away when I feel like this."
+ ],
+ "songs": [
+  "liar",
+  "held",
+  "worn",
+  "tender"
+ ],
+ "key": "Psalm 94:19",
+ "replacement": "My body can react to a memory without the danger being here now. I can be startled and still be safe, and God is with me.",
+ "crisis": false
+}

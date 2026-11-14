@@ -1,0 +1,25 @@
+{
+ "num": 51,
+ "file": "Nowhere-Is-Really-Safe",
+ "group": "PTSD",
+ "belief": "“Nowhere is really safe. Danger is about to happen again.”",
+ "belief_plain": "Nowhere is really safe. Danger is about to happen again",
+ "origins": "After something overwhelming, the nervous system often stays on duty. A sudden noise, a crowded room, or a quiet night can all feel like the moment before it happens again. That alarm once made sense. The lie is the conclusion that nowhere is really safe, and that danger is certainly about to return. Safety can be wise. A whole world with no safe place is a belief, not a map. A counselor can help you work with this at a pace that is safe. You do not have to do it alone, or all at once.",
+ "self": [
+  "It is about to happen again.",
+  "I cannot let my guard down anywhere.",
+  "Safe people do not understand.",
+  "If I relax, I am asking for it.",
+  "Every reminder is a warning.",
+  "There is no point going out."
+ ],
+ "songs": [
+  "fear",
+  "battle",
+  "storm",
+  "lives"
+ ],
+ "key": "Psalm 46:1",
+ "replacement": "The world is not perfectly safe, and I am not without a refuge. God is with me, and I can look for safety one real place at a time.",
+ "crisis": false
+}

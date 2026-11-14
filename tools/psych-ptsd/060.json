@@ -1,0 +1,25 @@
+{
+ "num": 60,
+ "file": "If-I-Care-They-Will-Be-Hurt",
+ "group": "PTSD",
+ "belief": "“If I care about someone, they will be hurt, or I will lose them.”",
+ "belief_plain": "If I care about someone, they will be hurt, or I will lose them",
+ "origins": "Some people come to believe that their love is dangerous. If they care, the other person will be hurt, leave, or be taken. Sometimes loss taught that lesson with terrible force. The lie says your affection is the cause, so the safe life is a life without closeness. Love is not a weapon you are carrying. You can care, with wisdom and with help, without deciding that your heart puts people in harm’s way. A counselor can help you untangle grief from this rule. A counselor can help you work with this at a pace that is safe. You do not have to do it alone, or all at once.",
+ "self": [
+  "If I love them, something bad will happen to them.",
+  "I should keep my distance for their sake.",
+  "People are safer when I do not care.",
+  "Getting close is selfish.",
+  "I destroy what I love.",
+  "God’s love is for other people, not for someone like me."
+ ],
+ "songs": [
+  "love",
+  "jesus",
+  "want",
+  "eyes"
+ ],
+ "key": "1 John 4:18",
+ "replacement": "Caring about someone does not put them in danger. I can love, with wisdom, without calling my heart the cause of harm.",
+ "crisis": false
+}

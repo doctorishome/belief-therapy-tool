@@ -2004,6 +2004,166 @@
    "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-050-I-Cant-Relax-Until-Everything-Is-Safe.html"
   },
   {
+   "id": "PSY-051",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "Nowhere is really safe. Danger is about to happen again",
+   "origins": "After something overwhelming, the nervous system often stays on duty. A sudden noise, a crowded room, or a quiet night can all feel like the moment before it happens again.",
+   "client_words": [
+    "It is about to happen again.",
+    "I cannot let my guard down anywhere.",
+    "Safe people do not understand.",
+    "If I relax, I am asking for it.",
+    "Every reminder is a warning.",
+    "There is no point going out."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-051-Nowhere-Is-Really-Safe.html"
+  },
+  {
+   "id": "PSY-052",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "I can’t trust anyone. If I let my guard down, I’ll be hurt again",
+   "origins": "Trust breaks when someone who should have been safe was not. After that, keeping everyone out can feel like the only wisdom left.",
+   "client_words": [
+    "If I let anyone close, I will be hurt again.",
+    "Kindness is a setup.",
+    "I can only count on myself.",
+    "God let it happen, so He is not safe either.",
+    "Needing people is how I got hurt.",
+    "I would rather be alone than risk it."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-052-I-Cant-Trust-Anyone.html"
+  },
+  {
+   "id": "PSY-053",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "What happened was my fault. I should have seen it coming and stopped it",
+   "origins": "People who were hurt often search for a reason they could have controlled. “If it was my fault, then I can make sure it never happens again.” That search feels like safety.",
+   "client_words": [
+    "I should have known.",
+    "If I had been smarter, braver, or quieter, it would not have happened.",
+    "A good person would have stopped it.",
+    "God must think it was my fault too.",
+    "I do not deserve comfort.",
+    "If I blame myself, at least the world makes sense."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-053-What-Happened-Was-My-Fault.html"
+  },
+  {
+   "id": "PSY-054",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "I’m permanently damaged by what happened, and I will never be myself again",
+   "origins": "Harm can leave real marks: fear, numbness, shame, a life that does not feel like the one you had. Those marks matter.",
+   "client_words": [
+    "I am ruined.",
+    "The real me is gone.",
+    "People who heal were not hurt like I was.",
+    "If I am not better yet, I never will be.",
+    "I should not hope. It will only hurt.",
+    "God cannot do anything with someone this damaged."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-054-Im-Permanently-Damaged.html"
+  },
+  {
+   "id": "PSY-055",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "My future holds only more pain. I will never feel safe or whole again",
+   "origins": "When pain has lasted, the mind protects itself by expecting more of the same. “If I do not hope, I cannot be disappointed.” That can feel like realism.",
+   "client_words": [
+    "The rest of my life will feel like this.",
+    "Hoping is a trick.",
+    "I will never feel safe or whole, so I should stop wanting that.",
+    "Good things are for people who were not hurt.",
+    "If God loved me, the future would already look different.",
+    "I should not make plans."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-055-My-Future-Holds-Only-More-Pain.html"
+  },
+  {
+   "id": "PSY-056",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "I have no control. If it happened once, nothing I do can stop it from happening again",
+   "origins": "Helplessness is one of the hardest parts of being hurt. If you could not stop it, the mind may decide you can never stop anything like it.",
+   "client_words": [
+    "If it happened once, it will happen no matter what I do.",
+    "Trying is pointless.",
+    "I am a passenger in my own life.",
+    "Other people have choices. I do not.",
+    "Safety depends on me controlling everything, and I cannot.",
+    "I should not bother."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-056-I-Have-No-Control.html"
+  },
+  {
+   "id": "PSY-057",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "Other people can see that I am different now, and they will keep their distance",
+   "origins": "Being hurt can change how you carry yourself. You may feel marked, odd, or easy to spot.",
+   "client_words": [
+    "They can tell.",
+    "If they knew, they would step back.",
+    "I should stay away so I do not make people uncomfortable.",
+    "I am too different to belong.",
+    "Looking fine is the only way to be tolerated.",
+    "God is probably keeping His distance too."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-057-Other-People-Can-See-I-Am-Different.html"
+  },
+  {
+   "id": "PSY-058",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "When my body reacts, the danger is happening now. I am not safe even here",
+   "origins": "The body remembers. A smell, a tone of voice, a posture, or a sudden sensation can bring a wave of fear, numbness, or the urge to flee, even when the room is safe.",
+   "client_words": [
+    "It is happening again.",
+    "I have to get out or I will not survive this feeling.",
+    "If my heart is racing, I am in danger.",
+    "I am not safe in my own home, my church, or my car.",
+    "I should be over these reactions by now.",
+    "God is far away when I feel like this."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-058-When-My-Body-Reacts-the-Danger-Is-Now.html"
+  },
+  {
+   "id": "PSY-059",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "If I talk about it, I will fall apart, so I have to keep it locked inside",
+   "origins": "Silence often kept you going. Talking can feel like opening a door you cannot shut, as if one sentence would undo you in front of someone.",
+   "client_words": [
+    "If I start, I will not be able to stop.",
+    "No one can handle hearing it, and neither can I.",
+    "Keeping it inside is the only adult thing to do.",
+    "Needing to talk means I am weak.",
+    "One word will ruin the rest of my day, or my life.",
+    "God wants me to pretend I am fine."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-059-If-I-Talk-About-It-I-Will-Fall-Apart.html"
+  },
+  {
+   "id": "PSY-060",
+   "level": "Psychological/Cognitive",
+   "topic": "PTSD",
+   "belief": "If I care about someone, they will be hurt, or I will lose them",
+   "origins": "Some people come to believe that their love is dangerous. If they care, the other person will be hurt, leave, or be taken.",
+   "client_words": [
+    "If I love them, something bad will happen to them.",
+    "I should keep my distance for their sake.",
+    "People are safer when I do not care.",
+    "Getting close is selfish.",
+    "I destroy what I love.",
+    "God’s love is for other people, not for someone like me."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-060-If-I-Care-They-Will-Be-Hurt.html"
+  },
+  {
    "id": "PSY-X01",
    "level": "Psychological/Cognitive",
    "topic": "Unusual Thinking and Social Unease",
@@ -2224,96 +2384,6 @@
    "level": "Psychological/Cognitive",
    "topic": "Perfectionism and Control",
    "belief": "My standards should govern everyone’s behavior.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X46",
-   "level": "Psychological/Cognitive",
-   "topic": "PTSD",
-   "belief": "Nowhere is really safe. Danger is about to happen again.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X47",
-   "level": "Psychological/Cognitive",
-   "topic": "PTSD",
-   "belief": "I can’t trust anyone. If I let my guard down, I’ll be hurt again.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X48",
-   "level": "Psychological/Cognitive",
-   "topic": "PTSD",
-   "belief": "What happened was my fault. I should have seen it coming and stopped it.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X49",
-   "level": "Psychological/Cognitive",
-   "topic": "PTSD",
-   "belief": "I’m permanently damaged by what happened, and I will never be myself again.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X50",
-   "level": "Psychological/Cognitive",
-   "topic": "PTSD",
-   "belief": "My future holds only more pain. I will never feel safe or whole again.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X51",
-   "level": "Psychological/Cognitive",
-   "topic": "PTSD",
-   "belief": "I have no control. If it happened once, nothing I do can stop it from happening again.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X52",
-   "level": "Psychological/Cognitive",
-   "topic": "PTSD",
-   "belief": "Other people can see that I am different now, and they will keep their distance.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X53",
-   "level": "Psychological/Cognitive",
-   "topic": "PTSD",
-   "belief": "When my body reacts, the danger is happening now. I am not safe even here.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X54",
-   "level": "Psychological/Cognitive",
-   "topic": "PTSD",
-   "belief": "If I talk about it, I will fall apart, so I have to keep it locked inside.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X55",
-   "level": "Psychological/Cognitive",
-   "topic": "PTSD",
-   "belief": "If I care about someone, they will be hurt, or I will lose them.",
    "origins": "",
    "client_words": [],
    "card": null
