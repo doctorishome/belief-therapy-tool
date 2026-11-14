@@ -1,0 +1,25 @@
+{
+ "num": 68,
+ "file": "I-Have-to-Keep-Them-Calm",
+ "group": "Abuse",
+ "belief": "“I have to keep them calm. If they get angry, it is my job to fix it.”",
+ "belief_plain": "I have to keep them calm. If they get angry, it is my job to fix it",
+ "origins": "If someone’s anger was dangerous, you may have learned to watch their face and smooth every wave. Keeping them calm felt like keeping yourself, or the children, alive. That skill was survival. The lie says their feelings are your job, and that if they get angry, you failed and you caused the harm. You are not the manager of another adult’s emotions. You are allowed to be a person, not a shock absorber. If their anger is still dangerous, the next step is safety, not better calming. If you are not safe right now, call 911. You can also call the National Domestic Violence Hotline at 1-800-799-7233. If a child is being hurt, call Childhelp at 1-800-422-4453. A counselor can help you at a pace that is safe. You do not have to do this alone, or all at once.",
+ "self": [
+  "If I say the wrong thing, it is my fault when they explode.",
+  "A good partner, child, or Christian keeps them calm.",
+  "I have to read the room or someone gets hurt.",
+  "My needs make them angry, so my needs are the problem.",
+  "If I were better, they would be peaceful.",
+  "Leaving would be cruel because they need me to regulate them."
+ ],
+ "songs": [
+  "fear",
+  "battle",
+  "power",
+  "lives"
+ ],
+ "key": "Psalm 118:6",
+ "replacement": "Their feelings are not my job. I am not the cause of their anger, and I am allowed to be safe instead of keeping them calm.",
+ "crisis": false
+}

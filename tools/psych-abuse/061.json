@@ -1,0 +1,25 @@
+{
+ "num": 61,
+ "file": "What-Was-Done-to-Me-Was-My-Fault",
+ "group": "Abuse",
+ "belief": "“What was done to me was my fault. I must have caused it.”",
+ "belief_plain": "What was done to me was my fault. I must have caused it",
+ "origins": "People who were harmed often hunt for a reason they could have controlled. “If it was my fault, I can keep it from happening again.” That search feels like safety. It is a lie that adds shame to harm. What was done to you was someone else’s choice or someone else’s failure to protect you. You did not cause it by existing, by trusting, or by being unable to stop it. You do not have to describe it in order to lay this sentence down. If you are not safe right now, call 911. You can also call the National Domestic Violence Hotline at 1-800-799-7233. If a child is being hurt, call Childhelp at 1-800-422-4453. A counselor can help you at a pace that is safe. You do not have to do this alone, or all at once.",
+ "self": [
+  "I must have done something to make it happen.",
+  "If I had been different, it would not have happened.",
+  "A better person would have prevented it.",
+  "I do not deserve comfort because I let it happen.",
+  "God agrees that it was my fault.",
+  "If I stop blaming myself, I will not be safe."
+ ],
+ "songs": [
+  "younger",
+  "clean",
+  "cross",
+  "glory"
+ ],
+ "key": "Romans 8:1",
+ "replacement": "What was done to me was not my fault. I did not cause it, and I do not have to carry blame that belongs to someone else.",
+ "crisis": false
+}

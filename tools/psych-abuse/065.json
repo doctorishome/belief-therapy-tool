@@ -1,0 +1,25 @@
+{
+ "num": 65,
+ "file": "I-Have-to-Keep-This-Secret",
+ "group": "Abuse",
+ "belief": "“I have to keep this secret. Speaking up would only make everything worse.”",
+ "belief_plain": "I have to keep this secret. Speaking up would only make everything worse",
+ "origins": "Secrets often start as survival. Someone said telling would ruin the family, the church, or you. Or you learned that speaking made things worse. Silence can be wise when a person is not safe to tell. The lie says you must keep the secret forever, and that speaking up will only destroy everything. You are allowed to tell a safe person. You are allowed to tell only what you choose. Telling a counselor, a hotline, or the police is not betrayal. It is a way to get help. If you are not safe right now, call 911. You can also call the National Domestic Violence Hotline at 1-800-799-7233. If a child is being hurt, call Childhelp at 1-800-422-4453. A counselor can help you at a pace that is safe. You do not have to do this alone, or all at once.",
+ "self": [
+  "If I tell, everything will fall apart.",
+  "I would be betraying the family or the church.",
+  "No one can know.",
+  "Speaking up would only make it worse for me.",
+  "Good people keep this kind of thing quiet.",
+  "God wants me to protect their reputation."
+ ],
+ "songs": [
+  "speak",
+  "even",
+  "forgive",
+  "faithful"
+ ],
+ "key": "Galatians 6:2",
+ "replacement": "I do not have to keep this secret from every safe person. I can tell a counselor or a helper, say only what I choose, and ask for protection.",
+ "crisis": false
+}
