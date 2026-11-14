@@ -1844,6 +1844,166 @@
    "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-040-God-Has-Forsaken-Me.html"
   },
   {
+   "id": "PSY-041",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "Something terrible is about to happen",
+   "origins": "Anxiety is a body alarm that learned to ring early. A scare, a loss, a parent who always expected the worst, or a season of real danger can teach the mind to treat a quiet moment as the pause before disaster.",
+   "client_words": [
+    "I can feel it. Something awful is next.",
+    "If I relax, that is when it will hit.",
+    "My dread has always been right.",
+    "Other people are naïve. I see what is coming.",
+    "I should cancel the plan so I stay safe.",
+    "Peace would be careless."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-041-Something-Terrible-Is-About-to-Happen.html"
+  },
+  {
+   "id": "PSY-042",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "If I feel anxious, that means I am in real danger",
+   "origins": "The body was made to signal real danger. A racing heart, a tight chest, or a wave of dread once meant “move.” After enough scares, or in a season of anxiety, the same signal fires when the room is safe.",
+   "client_words": [
+    "If I feel this scared, something must be wrong.",
+    "My body would not lie to me.",
+    "Calm people are the ones who are safe. I am not calm, so I am not safe.",
+    "I have to get out of here.",
+    "This feeling is an emergency.",
+    "Trusting God would make the feeling stop, and it has not stopped."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-042-Feeling-Anxious-Means-I-Am-in-Real-Danger.html"
+  },
+  {
+   "id": "PSY-043",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "I can’t cope if the worst happens",
+   "origins": "People who have been through a real crisis, or who grew up without enough help, often practice the worst in their minds so they will not be surprised. The practice becomes a belief: if the worst arrived, I would not be able to stand it.",
+   "client_words": [
+    "I would fall apart.",
+    "I cannot even think about it.",
+    "Other people could handle it. I could not.",
+    "If I imagine it enough, maybe I will be ready, but I never feel ready.",
+    "God helps strong people. I am not one of them.",
+    "The only safe plan is to make sure the worst never happens."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-043-I-Cant-Cope-If-the-Worst-Happens.html"
+  },
+  {
+   "id": "PSY-044",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "I have to stay on guard, or I will miss the danger",
+   "origins": "Some people learned that if they stopped watching, something bad got through: a parent’s mood, a child’s safety, a mistake at work, a health scare. Vigilance worked often enough to become a rule.",
+   "client_words": [
+    "If I stop watching, that is when it will happen.",
+    "Rest is for people whose lives are simpler.",
+    "I have to check one more time.",
+    "Nobody else will notice the danger.",
+    "Sleep is unsafe.",
+    "If I relax, I am failing the people I love."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-044-I-Have-to-Stay-on-Guard.html"
+  },
+  {
+   "id": "PSY-045",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "Not knowing what will happen means something is wrong",
+   "origins": "Some minds treat a blank space as a threat. If the test result is not back, the text is unanswered, or next year is unclear, anxiety fills the blank with “something is wrong.” Uncertainty was often punished in childhood, or a surprise once really was bad news.",
+   "client_words": [
+    "If I do not know, it is bad.",
+    "I cannot rest until I know.",
+    "Silence means something is wrong.",
+    "Other people can tolerate mystery. I cannot.",
+    "I have to keep searching until the feeling stops.",
+    "God would not leave me without an answer if things were all right."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-045-Not-Knowing-Means-Something-Is-Wrong.html"
+  },
+  {
+   "id": "PSY-046",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "If I don’t worry, I won’t be prepared",
+   "origins": "Worry can masquerade as love or responsibility. A person who was surprised by hardship, or praised for always being prepared, may believe that worry is the work that keeps people safe.",
+   "client_words": [
+    "If I stop worrying, I am being careless.",
+    "Somebody has to worry, and it is me.",
+    "My worry is how I love people.",
+    "The moment I feel calm, I have forgotten something.",
+    "Planning is not enough. I have to feel the weight.",
+    "God helps those who worry hard enough."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-046-If-I-Dont-Worry-I-Wont-Be-Prepared.html"
+  },
+  {
+   "id": "PSY-047",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "These feelings in my body mean I’m about to lose control",
+   "origins": "Panic teaches the body to fear itself. A racing heart, dizziness, a tight throat, or a sudden heat can feel like the beginning of collapse, fainting, or “going crazy.” Once that interpretation sticks, the sensation becomes the emergency.",
+   "client_words": [
+    "I am about to faint, die, or lose my mind.",
+    "I have to escape or it will get worse forever.",
+    "If people see this, I will completely fall apart.",
+    "My body is warning me of something terrible.",
+    "I cannot trust myself when I feel this way.",
+    "Calm is the only proof I am all right."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-047-Body-Feelings-Mean-Im-Losing-Control.html"
+  },
+  {
+   "id": "PSY-048",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "If people see me anxious, I won’t be able to handle it",
+   "origins": "Many people were taught that anxiety should be hidden: do not cry, do not shake, do not let them see you struggle. A time they were judged, or a time they felt humiliated, sealed the rule.",
+   "client_words": [
+    "If they see my hands shake, it is over.",
+    "I have to look fine or I will fall apart.",
+    "Everyone will think I am weak or strange.",
+    "I should cancel so no one sees me like this.",
+    "I cannot speak if I might cry or blush.",
+    "God is disappointed that I cannot hide this better."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-048-If-People-See-Me-Anxious-I-Wont-Handle-It.html"
+  },
+  {
+   "id": "PSY-049",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "One small problem will turn into a disaster",
+   "origins": "Catastrophizing is anxiety’s shortcut. A strange noise, a mistake at work, a child’s cough, a bill, or a cool tone in someone’s voice is treated as the first step of a chain that ends in ruin.",
+   "client_words": [
+    "This is how it starts. It always ends badly.",
+    "If I do not treat this as serious, I will be sorry.",
+    "A small leak means the house is coming down.",
+    "I cannot tell the difference anymore.",
+    "People who stay calm are not paying attention.",
+    "One mistake will cost me everything."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-049-One-Small-Problem-Will-Be-a-Disaster.html"
+  },
+  {
+   "id": "PSY-050",
+   "level": "Psychological/Cognitive",
+   "topic": "Anxiety",
+   "belief": "I can’t relax until I am sure everything is safe",
+   "origins": "Safety is good. Anxiety turns it into a condition that can never be met.",
+   "client_words": [
+    "I will relax when I know everyone is safe.",
+    "There is always one more thing to check.",
+    "Resting now would be selfish or careless.",
+    "If I feel any doubt, I am not allowed to stop.",
+    "Other people can live with risk. I cannot.",
+    "God wants me to be certain before I am peaceful."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-050-I-Cant-Relax-Until-Everything-Is-Safe.html"
+  },
+  {
    "id": "PSY-X01",
    "level": "Psychological/Cognitive",
    "topic": "Unusual Thinking and Social Unease",
@@ -2064,96 +2224,6 @@
    "level": "Psychological/Cognitive",
    "topic": "Perfectionism and Control",
    "belief": "My standards should govern everyone’s behavior.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X36",
-   "level": "Psychological/Cognitive",
-   "topic": "Anxiety",
-   "belief": "Something terrible is about to happen.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X37",
-   "level": "Psychological/Cognitive",
-   "topic": "Anxiety",
-   "belief": "If I feel anxious, that means I am in real danger.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X38",
-   "level": "Psychological/Cognitive",
-   "topic": "Anxiety",
-   "belief": "I can’t cope if the worst happens.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X39",
-   "level": "Psychological/Cognitive",
-   "topic": "Anxiety",
-   "belief": "I have to stay on guard, or I will miss the danger.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X40",
-   "level": "Psychological/Cognitive",
-   "topic": "Anxiety",
-   "belief": "Not knowing what will happen means something is wrong.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X41",
-   "level": "Psychological/Cognitive",
-   "topic": "Anxiety",
-   "belief": "If I don’t worry, I won’t be prepared.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X42",
-   "level": "Psychological/Cognitive",
-   "topic": "Anxiety",
-   "belief": "These feelings in my body mean I’m about to lose control.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X43",
-   "level": "Psychological/Cognitive",
-   "topic": "Anxiety",
-   "belief": "If people see me anxious, I won’t be able to handle it.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X44",
-   "level": "Psychological/Cognitive",
-   "topic": "Anxiety",
-   "belief": "One small problem will turn into a disaster.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X45",
-   "level": "Psychological/Cognitive",
-   "topic": "Anxiety",
-   "belief": "I can’t relax until I am sure everything is safe.",
    "origins": "",
    "client_words": [],
    "card": null
