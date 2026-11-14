@@ -1,0 +1,25 @@
+{
+ "num": 75,
+ "file": "Nothing-Else-Will-Work",
+ "group": "Substance Abuse",
+ "belief": "“This is the only thing that makes me feel okay, and nothing else will work.”",
+ "belief_plain": "This is the only thing that makes me feel okay, and nothing else will work",
+ "origins": "When something is the only thing that has made you feel okay, the mind draws a hard line: nothing else will work. Depression, panic, grief, and withdrawal can all make that line feel like a wall. It is a painful belief, and it is also a hopeless one. You are not foolish for having found one thing that numbed the pain. You are also not stuck with the conclusion that God, people, medicine, and time have nothing left for you. If this belief comes with thoughts of dying, that is an emergency, not a private philosophy. Please tell someone today. If you want help, call the SAMHSA National Helpline at 1-800-662-4357. Do not try to stop or withdraw on your own if that could make you sick. A doctor can help you do it safely, and a counselor can walk with you. Needing that help is not a failure. If you are thinking about ending your life, call or text 988 in the United States, or tell someone near you right away.",
+ "self": [
+  "This is the only thing that works.",
+  "I have tried, and nothing else touches it.",
+  "If I cannot feel hope, there is no hope.",
+  "God has already decided not to help me.",
+  "People who talk about other options do not know my pain.",
+  "I might as well give up."
+ ],
+ "songs": [
+  "hope",
+  "forever",
+  "heaven",
+  "assurance"
+ ],
+ "key": "Psalm 42:11",
+ "replacement": "This is not the only thing that can help me. God is near, other help exists, and I can ask even when I cannot feel that yet.",
+ "crisis": true
+}

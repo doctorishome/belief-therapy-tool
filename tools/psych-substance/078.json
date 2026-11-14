@@ -1,0 +1,25 @@
+{
+ "num": 78,
+ "file": "I-Dont-Hurt-Anybody-Else",
+ "group": "Substance Abuse",
+ "belief": "“I don’t hurt anybody else, so this is my choice and it is fine.”",
+ "belief_plain": "I don’t hurt anybody else, so this is my choice and it is fine",
+ "origins": "“I don’t hurt anybody else, so this is my choice and it is fine” can come from a real desire not to be a burden, or from a wish to keep this private. Sometimes it is also a way to end the conversation. You do not need a list of people you have harmed in order to be worth helping. Your own life matters. And lives are connected: the people who love you are affected even when you are careful, even when you cannot see it, even when you are trying not to hurt them. This is not a speech to make you feel like a destroyer. It is an invitation to let your life count, including to you. If you want help, call the SAMHSA National Helpline at 1-800-662-4357. Do not try to stop or withdraw on your own if that could make you sick. A doctor can help you do it safely, and a counselor can walk with you. Needing that help is not a failure.",
+ "self": [
+  "It is my body and my business.",
+  "Nobody else is affected.",
+  "If they do not know, it does not count.",
+  "I am not hurting them, so I should be left alone.",
+  "Getting help would worry people, so hiding is kinder.",
+  "I do not matter enough for this to be a problem."
+ ],
+ "songs": [
+  "body",
+  "love",
+  "who",
+  "lovesme"
+ ],
+ "key": "Romans 14:7",
+ "replacement": "My life matters, to God and to people who love me. I can get help because I am worth caring for.",
+ "crisis": false
+}
