@@ -1,0 +1,25 @@
+{
+ "num": 52,
+ "file": "I-Cant-Trust-Anyone",
+ "group": "PTSD",
+ "belief": "“I can’t trust anyone. If I let my guard down, I’ll be hurt again.”",
+ "belief_plain": "I can’t trust anyone. If I let my guard down, I’ll be hurt again",
+ "origins": "Trust breaks when someone who should have been safe was not. After that, keeping everyone out can feel like the only wisdom left. The lie stretches a real betrayal into a rule about every person, and often about God too. Caution with unsafe people is not the same thing as “I can’t trust anyone.” A counselor can help you sort who is unsafe from who might be safe, without rushing you. A counselor can help you work with this at a pace that is safe. You do not have to do it alone, or all at once.",
+ "self": [
+  "If I let anyone close, I will be hurt again.",
+  "Kindness is a setup.",
+  "I can only count on myself.",
+  "God let it happen, so He is not safe either.",
+  "Needing people is how I got hurt.",
+  "I would rather be alone than risk it."
+ ],
+ "songs": [
+  "stays",
+  "alone",
+  "knows",
+  "friend"
+ ],
+ "key": "Psalm 118:6",
+ "replacement": "I was hurt, and that does not mean I can never trust anyone. I can trust God, and I can test trust slowly with safe people.",
+ "crisis": false
+}

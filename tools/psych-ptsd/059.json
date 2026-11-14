@@ -1,0 +1,25 @@
+{
+ "num": 59,
+ "file": "If-I-Talk-About-It-I-Will-Fall-Apart",
+ "group": "PTSD",
+ "belief": "“If I talk about it, I will fall apart, so I have to keep it locked inside.”",
+ "belief_plain": "If I talk about it, I will fall apart, so I have to keep it locked inside",
+ "origins": "Silence often kept you going. Talking can feel like opening a door you cannot shut, as if one sentence would undo you in front of someone. That fear deserves respect. The lie says any word will make you fall apart, so the only safe choice is to lock it all inside. Many people find that a small, chosen sentence, with a counselor, does not destroy them. You never have to tell everything. You never have to tell it before you are ready. A counselor can help you work with this at a pace that is safe. You do not have to do it alone, or all at once.",
+ "self": [
+  "If I start, I will not be able to stop.",
+  "No one can handle hearing it, and neither can I.",
+  "Keeping it inside is the only adult thing to do.",
+  "Needing to talk means I am weak.",
+  "One word will ruin the rest of my day, or my life.",
+  "God wants me to pretend I am fine."
+ ],
+ "songs": [
+  "speak",
+  "younger",
+  "even",
+  "glory"
+ ],
+ "key": "2 Corinthians 1:3–4",
+ "replacement": "I do not have to tell everything. One careful sentence, with a safe person or my counselor, does not have to make me fall apart.",
+ "crisis": false
+}

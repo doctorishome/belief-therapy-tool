@@ -358,34 +358,44 @@
      "name": "PTSD",
      "beliefs": [
       [
-       "Nowhere is really safe. Danger is about to happen again."
+       "Nowhere is really safe. Danger is about to happen again.",
+       "Psych-051-Nowhere-Is-Really-Safe.html"
       ],
       [
-       "I can’t trust anyone. If I let my guard down, I’ll be hurt again."
+       "I can’t trust anyone. If I let my guard down, I’ll be hurt again.",
+       "Psych-052-I-Cant-Trust-Anyone.html"
       ],
       [
-       "What happened was my fault. I should have seen it coming and stopped it."
+       "What happened was my fault. I should have seen it coming and stopped it.",
+       "Psych-053-What-Happened-Was-My-Fault.html"
       ],
       [
-       "I’m permanently damaged by what happened, and I will never be myself again."
+       "I’m permanently damaged by what happened, and I will never be myself again.",
+       "Psych-054-Im-Permanently-Damaged.html"
       ],
       [
-       "My future holds only more pain. I will never feel safe or whole again."
+       "My future holds only more pain. I will never feel safe or whole again.",
+       "Psych-055-My-Future-Holds-Only-More-Pain.html"
       ],
       [
-       "I have no control. If it happened once, nothing I do can stop it from happening again."
+       "I have no control. If it happened once, nothing I do can stop it from happening again.",
+       "Psych-056-I-Have-No-Control.html"
       ],
       [
-       "Other people can see that I am different now, and they will keep their distance."
+       "Other people can see that I am different now, and they will keep their distance.",
+       "Psych-057-Other-People-Can-See-I-Am-Different.html"
       ],
       [
-       "When my body reacts, the danger is happening now. I am not safe even here."
+       "When my body reacts, the danger is happening now. I am not safe even here.",
+       "Psych-058-When-My-Body-Reacts-the-Danger-Is-Now.html"
       ],
       [
-       "If I talk about it, I will fall apart, so I have to keep it locked inside."
+       "If I talk about it, I will fall apart, so I have to keep it locked inside.",
+       "Psych-059-If-I-Talk-About-It-I-Will-Fall-Apart.html"
       ],
       [
-       "If I care about someone, they will be hurt, or I will lose them."
+       "If I care about someone, they will be hurt, or I will lose them.",
+       "Psych-060-If-I-Care-They-Will-Be-Hurt.html"
       ]
      ]
     },

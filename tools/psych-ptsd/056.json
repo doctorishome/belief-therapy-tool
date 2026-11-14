@@ -1,0 +1,25 @@
+{
+ "num": 56,
+ "file": "I-Have-No-Control",
+ "group": "PTSD",
+ "belief": "“I have no control. If it happened once, nothing I do can stop it from happening again.”",
+ "belief_plain": "I have no control. If it happened once, nothing I do can stop it from happening again",
+ "origins": "Helplessness is one of the hardest parts of being hurt. If you could not stop it, the mind may decide you can never stop anything like it. “I have no control” feels true because, in that moment, you did not. The lie makes that moment the rule for every future moment. You still cannot control other people’s choices. You can have choices now: a boundary, a call, a counselor, a next step. Those are small, and they are real. A counselor can help you work with this at a pace that is safe. You do not have to do it alone, or all at once.",
+ "self": [
+  "If it happened once, it will happen no matter what I do.",
+  "Trying is pointless.",
+  "I am a passenger in my own life.",
+  "Other people have choices. I do not.",
+  "Safety depends on me controlling everything, and I cannot.",
+  "I should not bother."
+ ],
+ "songs": [
+  "greater",
+  "power",
+  "conquer",
+  "victory"
+ ],
+ "key": "Isaiah 43:2",
+ "replacement": "I could not control what happened. I am not powerless now. God is with me, and I can take one real step today.",
+ "crisis": false
+}

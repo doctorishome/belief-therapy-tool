@@ -1,0 +1,25 @@
+{
+ "num": 54,
+ "file": "Im-Permanently-Damaged",
+ "group": "PTSD",
+ "belief": "“I’m permanently damaged by what happened, and I will never be myself again.”",
+ "belief_plain": "I’m permanently damaged by what happened, and I will never be myself again",
+ "origins": "Harm can leave real marks: fear, numbness, shame, a life that does not feel like the one you had. Those marks matter. The lie is the word “permanently,” and the claim that you will never be yourself again. Healing is often slow and incomplete in the way people wish, and it is not the same as being finished as a person. You do not have to describe what happened in order to question this sentence. A counselor can walk with you. A counselor can help you work with this at a pace that is safe. You do not have to do it alone, or all at once. If you are thinking about ending your life, call or text 988 in the United States, or tell someone near you right away.",
+ "self": [
+  "I am ruined.",
+  "The real me is gone.",
+  "People who heal were not hurt like I was.",
+  "If I am not better yet, I never will be.",
+  "I should not hope. It will only hurt.",
+  "God cannot do anything with someone this damaged."
+ ],
+ "songs": [
+  "allnew",
+  "broken",
+  "yousay",
+  "assurance"
+ ],
+ "key": "Psalm 147:3",
+ "replacement": "I was hurt, and I am not permanently ruined. God is healing what I cannot rush, and I can still be myself in His hands.",
+ "crisis": true
+}

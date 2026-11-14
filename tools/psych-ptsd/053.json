@@ -1,0 +1,25 @@
+{
+ "num": 53,
+ "file": "What-Happened-Was-My-Fault",
+ "group": "PTSD",
+ "belief": "“What happened was my fault. I should have seen it coming and stopped it.”",
+ "belief_plain": "What happened was my fault. I should have seen it coming and stopped it",
+ "origins": "People who were hurt often search for a reason they could have controlled. “If it was my fault, then I can make sure it never happens again.” That search feels like safety. It is usually a lie that piles shame on top of harm. You did not have to see it coming. You did not have to stop what someone else chose, or what you had no power to prevent. A counselor can help you lay down a blame that was never yours, without forcing the details. A counselor can help you work with this at a pace that is safe. You do not have to do it alone, or all at once.",
+ "self": [
+  "I should have known.",
+  "If I had been smarter, braver, or quieter, it would not have happened.",
+  "A good person would have stopped it.",
+  "God must think it was my fault too.",
+  "I do not deserve comfort.",
+  "If I blame myself, at least the world makes sense."
+ ],
+ "songs": [
+  "voice",
+  "east",
+  "name",
+  "amazing"
+ ],
+ "key": "Romans 8:1",
+ "replacement": "What happened was not mine to stop just because I wish I had. I am not condemned, and I do not have to carry blame that is not mine.",
+ "crisis": false
+}
