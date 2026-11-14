@@ -2324,6 +2324,166 @@
    "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-070-Other-People-Had-It-Worse.html"
   },
   {
+   "id": "PSY-071",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "I can control it. I can stop whenever I want",
+   "origins": "I can stop whenever I want” often protects a person from having to look closely. If you are still in control, you do not have to tell anyone, see a doctor, or feel afraid.",
+   "client_words": [
+    "I can quit any time, so this is not a problem.",
+    "If I needed help, I would already have asked.",
+    "People who need help are the ones who have really lost it. I have not.",
+    "I will not tell anyone, because then it becomes real.",
+    "God helps people who have already stopped.",
+    "Admitting I need help means I am a failure."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-071-I-Can-Control-It.html"
+  },
+  {
+   "id": "PSY-072",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "I need it to get through the day. I can’t cope without it",
+   "origins": "Many people start using because a day was too heavy: pain, fear, grief, a mind that would not quiet, a life that asked for more than they had. The relief was real.",
+   "client_words": [
+    "I cannot get through a normal day without it.",
+    "Other people cope. I am the one who cannot.",
+    "If I do not use, I will fall apart, so I have no choice.",
+    "God expects me to white-knuckle this.",
+    "Asking for another way means I am weak.",
+    "Nothing a counselor says will work on a real day."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-072-I-Cant-Cope-Without-It.html"
+  },
+  {
+   "id": "PSY-073",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "I’ve earned it. After what I’ve been through, I deserve the relief",
+   "origins": "If you have suffered, relief can feel like something you are owed. A hard childhood, a loss, a body in pain, a mind that will not rest: of course you want the pain to stop.",
+   "client_words": [
+    "After what I have been through, I deserve this.",
+    "Anyone in my place would use.",
+    "If I stop, I am refusing myself the only kindness I get.",
+    "God does not understand how tired I am.",
+    "Comfort that comes with a cost is still mine to keep.",
+    "People who tell me to get help do not know what I have survived."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-073-Ive-Earned-the-Relief.html"
+  },
+  {
+   "id": "PSY-074",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "One more time won’t matter. I’ll quit tomorrow",
+   "origins": "One more time won’t matter. I’ll quit tomorrow” is a kind sentence people tell themselves so today does not have to change.",
+   "client_words": [
+    "This time does not count.",
+    "I will be different tomorrow.",
+    "I have said it before, so saying it again is pointless.",
+    "Today is already ruined, so I might as well.",
+    "If I ask for help today, I have admitted I cannot quit on my own schedule.",
+    "God is keeping score of every delay."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-074-One-More-Time-Wont-Matter.html"
+  },
+  {
+   "id": "PSY-075",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "This is the only thing that makes me feel okay, and nothing else will work",
+   "origins": "When something is the only thing that has made you feel okay, the mind draws a hard line: nothing else will work. Depression, panic, grief, and withdrawal can all make that line feel like a wall.",
+   "client_words": [
+    "This is the only thing that works.",
+    "I have tried, and nothing else touches it.",
+    "If I cannot feel hope, there is no hope.",
+    "God has already decided not to help me.",
+    "People who talk about other options do not know my pain.",
+    "I might as well give up."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-075-Nothing-Else-Will-Work.html"
+  },
+  {
+   "id": "PSY-076",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "A little doesn’t count. I can keep it small and still be in control",
+   "origins": "A little doesn’t count” is how a lot of people stay out of the conversation. If it is small, it is not a problem, and you are still in control.",
+   "client_words": [
+    "It is only a little. People are overreacting.",
+    "I can keep it at this level forever.",
+    "If I am not using as much as someone else, I do not need help.",
+    "Admitting the little makes me a hypocrite.",
+    "I am still in charge because I chose the amount.",
+    "God does not care about something this small."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-076-A-Little-Doesnt-Count.html"
+  },
+  {
+   "id": "PSY-077",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "Other people are the reason I use. If they treated me better, I wouldn’t need it",
+   "origins": "Other people really can be part of the story. Stress, cruelty, loneliness, a house that was never safe, a loss someone else caused: those things hurt, and using may have been how you got through them.",
+   "client_words": [
+    "If they were kinder, I would not use.",
+    "This is on them, so I do not have to look at it.",
+    "Nothing will change until they change.",
+    "Getting help means I am letting them off the hook.",
+    "I am only doing what they drove me to.",
+    "God should fix them first."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-077-Other-People-Are-the-Reason.html"
+  },
+  {
+   "id": "PSY-078",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "I don’t hurt anybody else, so this is my choice and it is fine",
+   "origins": "I don’t hurt anybody else, so this is my choice and it is fine” can come from a real desire not to be a burden, or from a wish to keep this private. Sometimes it is also a way to end the conversation.",
+   "client_words": [
+    "It is my body and my business.",
+    "Nobody else is affected.",
+    "If they do not know, it does not count.",
+    "I am not hurting them, so I should be left alone.",
+    "Getting help would worry people, so hiding is kinder.",
+    "I do not matter enough for this to be a problem."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-078-I-Dont-Hurt-Anybody-Else.html"
+  },
+  {
+   "id": "PSY-079",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "I’ve already messed things up, so there is no point in stopping now",
+   "origins": "I’ve already messed things up, so there is no point in stopping now” is hopelessness wearing the clothes of realism. The past may be genuinely damaged: trust, health, money, time, relationships.",
+   "client_words": [
+    "It is too late.",
+    "I have already ruined it, so more does not matter.",
+    "Mercy is for people who stopped sooner.",
+    "God is done with me.",
+    "There is no point in a doctor now.",
+    "I might as well disappear."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-079-No-Point-in-Stopping-Now.html"
+  },
+  {
+   "id": "PSY-080",
+   "level": "Psychological/Cognitive",
+   "topic": "Substance Abuse",
+   "belief": "I can’t be myself around people unless I use first",
+   "origins": "Some people use because being with others feels impossible without a buffer. The room is too bright, the words will not come, or the real self feels like too much or not enough.",
+   "client_words": [
+    "Nobody wants the sober version of me.",
+    "I am boring, or too much, unless I use.",
+    "I cannot talk to people without it.",
+    "If I do not use first, they will see the real me and leave.",
+    "This is just my personality.",
+    "God is disappointed by the self I am in a quiet room."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-080-I-Cant-Be-Myself-Unless-I-Use.html"
+  },
+  {
    "id": "PSY-X01",
    "level": "Psychological/Cognitive",
    "topic": "Unusual Thinking and Social Unease",
@@ -2544,96 +2704,6 @@
    "level": "Psychological/Cognitive",
    "topic": "Perfectionism and Control",
    "belief": "My standards should govern everyone’s behavior.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X66",
-   "level": "Psychological/Cognitive",
-   "topic": "Substance Abuse",
-   "belief": "I can control it. I can stop whenever I want.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X67",
-   "level": "Psychological/Cognitive",
-   "topic": "Substance Abuse",
-   "belief": "I need it to get through the day. I can’t cope without it.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X68",
-   "level": "Psychological/Cognitive",
-   "topic": "Substance Abuse",
-   "belief": "I’ve earned it. After what I’ve been through, I deserve the relief.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X69",
-   "level": "Psychological/Cognitive",
-   "topic": "Substance Abuse",
-   "belief": "One more time won’t matter. I’ll quit tomorrow.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X70",
-   "level": "Psychological/Cognitive",
-   "topic": "Substance Abuse",
-   "belief": "This is the only thing that makes me feel okay, and nothing else will work.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X71",
-   "level": "Psychological/Cognitive",
-   "topic": "Substance Abuse",
-   "belief": "A little doesn’t count. I can keep it small and still be in control.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X72",
-   "level": "Psychological/Cognitive",
-   "topic": "Substance Abuse",
-   "belief": "Other people are the reason I use. If they treated me better, I wouldn’t need it.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X73",
-   "level": "Psychological/Cognitive",
-   "topic": "Substance Abuse",
-   "belief": "I don’t hurt anybody else, so this is my choice and it is fine.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X74",
-   "level": "Psychological/Cognitive",
-   "topic": "Substance Abuse",
-   "belief": "I’ve already messed things up, so there is no point in stopping now.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X75",
-   "level": "Psychological/Cognitive",
-   "topic": "Substance Abuse",
-   "belief": "I can’t be myself around people unless I use first.",
    "origins": "",
    "client_words": [],
    "card": null

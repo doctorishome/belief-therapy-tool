@@ -448,34 +448,44 @@
      "name": "Substance Abuse",
      "beliefs": [
       [
-       "I can control it. I can stop whenever I want."
+       "I can control it. I can stop whenever I want.",
+       "Psych-071-I-Can-Control-It.html"
       ],
       [
-       "I need it to get through the day. I can’t cope without it."
+       "I need it to get through the day. I can’t cope without it.",
+       "Psych-072-I-Cant-Cope-Without-It.html"
       ],
       [
-       "I’ve earned it. After what I’ve been through, I deserve the relief."
+       "I’ve earned it. After what I’ve been through, I deserve the relief.",
+       "Psych-073-Ive-Earned-the-Relief.html"
       ],
       [
-       "One more time won’t matter. I’ll quit tomorrow."
+       "One more time won’t matter. I’ll quit tomorrow.",
+       "Psych-074-One-More-Time-Wont-Matter.html"
       ],
       [
-       "This is the only thing that makes me feel okay, and nothing else will work."
+       "This is the only thing that makes me feel okay, and nothing else will work.",
+       "Psych-075-Nothing-Else-Will-Work.html"
       ],
       [
-       "A little doesn’t count. I can keep it small and still be in control."
+       "A little doesn’t count. I can keep it small and still be in control.",
+       "Psych-076-A-Little-Doesnt-Count.html"
       ],
       [
-       "Other people are the reason I use. If they treated me better, I wouldn’t need it."
+       "Other people are the reason I use. If they treated me better, I wouldn’t need it.",
+       "Psych-077-Other-People-Are-the-Reason.html"
       ],
       [
-       "I don’t hurt anybody else, so this is my choice and it is fine."
+       "I don’t hurt anybody else, so this is my choice and it is fine.",
+       "Psych-078-I-Dont-Hurt-Anybody-Else.html"
       ],
       [
-       "I’ve already messed things up, so there is no point in stopping now."
+       "I’ve already messed things up, so there is no point in stopping now.",
+       "Psych-079-No-Point-in-Stopping-Now.html"
       ],
       [
-       "I can’t be myself around people unless I use first."
+       "I can’t be myself around people unless I use first.",
+       "Psych-080-I-Cant-Be-Myself-Unless-I-Use.html"
       ]
      ]
     }

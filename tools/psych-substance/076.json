@@ -1,0 +1,25 @@
+{
+ "num": 76,
+ "file": "A-Little-Doesnt-Count",
+ "group": "Substance Abuse",
+ "belief": "“A little doesn’t count. I can keep it small and still be in control.”",
+ "belief_plain": "A little doesn’t count. I can keep it small and still be in control",
+ "origins": "“A little doesn’t count” is how a lot of people stay out of the conversation. If it is small, it is not a problem, and you are still in control. Sometimes the amount really is small. The lie is the rule that small means harmless, and that you can keep it small forever by deciding to. You do not need a dramatic story to be allowed to get help. You also do not need to call yourself a terrible person because the amount was not huge. Honesty about the little is an act of care, not a confession that you are worthless. If you want help, call the SAMHSA National Helpline at 1-800-662-4357. Do not try to stop or withdraw on your own if that could make you sick. A doctor can help you do it safely, and a counselor can walk with you. Needing that help is not a failure.",
+ "self": [
+  "It is only a little. People are overreacting.",
+  "I can keep it at this level forever.",
+  "If I am not using as much as someone else, I do not need help.",
+  "Admitting the little makes me a hypocrite.",
+  "I am still in charge because I chose the amount.",
+  "God does not care about something this small."
+ ],
+ "songs": [
+  "voice",
+  "truth",
+  "conquer",
+  "eyes"
+ ],
+ "key": "1 Corinthians 6:12",
+ "replacement": "A little can still matter. I can be honest about it, and I can get help before I have to prove I lost control.",
+ "crisis": false
+}

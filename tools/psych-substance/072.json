@@ -1,0 +1,25 @@
+{
+ "num": 72,
+ "file": "I-Cant-Cope-Without-It",
+ "group": "Substance Abuse",
+ "belief": "“I need it to get through the day. I can’t cope without it.”",
+ "belief_plain": "I need it to get through the day. I can’t cope without it",
+ "origins": "Many people start using because a day was too heavy: pain, fear, grief, a mind that would not quiet, a life that asked for more than they had. The relief was real. The lie comes later, when the relief is renamed the only way to cope. “I can’t get through the day without it.” That sentence feels like a fact because the day is hard and the other tools are rusty. It is still a belief, not a life sentence. You are allowed to need help learning another way. You are also allowed to be honest that stopping may need a doctor, not a burst of willpower. If you want help, call the SAMHSA National Helpline at 1-800-662-4357. Do not try to stop or withdraw on your own if that could make you sick. A doctor can help you do it safely, and a counselor can walk with you. Needing that help is not a failure.",
+ "self": [
+  "I cannot get through a normal day without it.",
+  "Other people cope. I am the one who cannot.",
+  "If I do not use, I will fall apart, so I have no choice.",
+  "God expects me to white-knuckle this.",
+  "Asking for another way means I am weak.",
+  "Nothing a counselor says will work on a real day."
+ ],
+ "songs": [
+  "held",
+  "worn",
+  "power",
+  "faithful"
+ ],
+ "key": "2 Corinthians 12:9",
+ "replacement": "I have used this to get through the day, and it is not my only help. God is with me, and I can learn another way with a doctor and a counselor.",
+ "crisis": false
+}

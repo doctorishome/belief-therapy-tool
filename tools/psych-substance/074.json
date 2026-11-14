@@ -1,0 +1,25 @@
+{
+ "num": 74,
+ "file": "One-More-Time-Wont-Matter",
+ "group": "Substance Abuse",
+ "belief": "“One more time won’t matter. I’ll quit tomorrow.”",
+ "belief_plain": "One more time won’t matter. I’ll quit tomorrow",
+ "origins": "“One more time won’t matter. I’ll quit tomorrow” is a kind sentence people tell themselves so today does not have to change. Tomorrow stays clean because it never arrives. This is not proof that you are a liar or a hopeless case. It is a very common way to lower the fear of stopping. The mercy in it, if you can hear it, is that you already know you want a different day. The lie is that today is too small to matter and that a promise about tomorrow is the same thing as a plan. A plan includes a person who can help, and a doctor if stopping could make you sick. If you want help, call the SAMHSA National Helpline at 1-800-662-4357. Do not try to stop or withdraw on your own if that could make you sick. A doctor can help you do it safely, and a counselor can walk with you. Needing that help is not a failure.",
+ "self": [
+  "This time does not count.",
+  "I will be different tomorrow.",
+  "I have said it before, so saying it again is pointless.",
+  "Today is already ruined, so I might as well.",
+  "If I ask for help today, I have admitted I cannot quit on my own schedule.",
+  "God is keeping score of every delay."
+ ],
+ "songs": [
+  "even",
+  "again",
+  "thrive",
+  "lives"
+ ],
+ "key": "Proverbs 27:1",
+ "replacement": "One more time does matter, and tomorrow is not a plan. I can take one honest step today, with help.",
+ "crisis": false
+}

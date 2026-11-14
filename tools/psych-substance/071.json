@@ -1,0 +1,25 @@
+{
+ "num": 71,
+ "file": "I-Can-Control-It",
+ "group": "Substance Abuse",
+ "belief": "“I can control it. I can stop whenever I want.”",
+ "belief_plain": "I can control it. I can stop whenever I want",
+ "origins": "“I can stop whenever I want” often protects a person from having to look closely. If you are still in control, you do not have to tell anyone, see a doctor, or feel afraid. Sometimes the sentence is true for a while, and then it becomes the reason you do not ask for help after it stops being true. You are not a weak person if stopping is harder than you expected. Strength here looks like honesty, not like proving you can quit without anyone. If you want help, call the SAMHSA National Helpline at 1-800-662-4357. Do not try to stop or withdraw on your own if that could make you sick. A doctor can help you do it safely, and a counselor can walk with you. Needing that help is not a failure.",
+ "self": [
+  "I can quit any time, so this is not a problem.",
+  "If I needed help, I would already have asked.",
+  "People who need help are the ones who have really lost it. I have not.",
+  "I will not tell anyone, because then it becomes real.",
+  "God helps people who have already stopped.",
+  "Admitting I need help means I am a failure."
+ ],
+ "songs": [
+  "battle",
+  "greater",
+  "ourgod",
+  "victory"
+ ],
+ "key": "John 8:36",
+ "replacement": "I do not have to prove I can stop alone. If this is harder than I thought, I can tell the truth and ask for help.",
+ "crisis": false
+}
