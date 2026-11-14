@@ -1,0 +1,25 @@
+{
+ "num": 64,
+ "file": "I-Dont-Deserve-to-Be-Safe",
+ "group": "Abuse",
+ "belief": "“I don’t deserve to be safe or treated kindly.”",
+ "belief_plain": "I don’t deserve to be safe or treated kindly",
+ "origins": "Harm can teach a person that safety and kindness are for other people. If you were not protected, it is easy to decide you did not deserve protection. That is the lie. Safety is not a wage. Kindness is not something you qualify for by being unhurt or by being perfect. You are allowed to want safety, to ask for it, and to leave what is unsafe. You do not have to explain why you are worth protecting. If you are not safe right now, call 911. You can also call the National Domestic Violence Hotline at 1-800-799-7233. If a child is being hurt, call Childhelp at 1-800-422-4453. A counselor can help you at a pace that is safe. You do not have to do this alone, or all at once.",
+ "self": [
+  "I probably deserved it.",
+  "Safe homes are for other kinds of people.",
+  "If I ask for kindness, I am being greedy.",
+  "I should be grateful it was not worse.",
+  "Protecting myself would hurt them, so I should not.",
+  "God helps people who deserve it. I do not."
+ ],
+ "songs": [
+  "held",
+  "soul",
+  "worn",
+  "assurance"
+ ],
+ "key": "Psalm 46:1",
+ "replacement": "I deserve to be safe and treated kindly. Safety is not something I have to earn, and what was done to me did not remove my right to it.",
+ "crisis": false
+}

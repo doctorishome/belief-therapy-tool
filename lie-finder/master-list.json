@@ -2164,6 +2164,166 @@
    "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-060-If-I-Care-They-Will-Be-Hurt.html"
   },
   {
+   "id": "PSY-061",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "What was done to me was my fault. I must have caused it",
+   "origins": "People who were harmed often hunt for a reason they could have controlled. “If it was my fault, I can keep it from happening again.” That search feels like safety.",
+   "client_words": [
+    "I must have done something to make it happen.",
+    "If I had been different, it would not have happened.",
+    "A better person would have prevented it.",
+    "I do not deserve comfort because I let it happen.",
+    "God agrees that it was my fault.",
+    "If I stop blaming myself, I will not be safe."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-061-What-Was-Done-to-Me-Was-My-Fault.html"
+  },
+  {
+   "id": "PSY-062",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "I’m damaged and ashamed, as if what was done to me made me worthless",
+   "origins": "Harm can leave shame that feels like a stain: damaged, ashamed, worthless. That feeling is common, and it is a lie about your worth.",
+   "client_words": [
+    "I am ruined and dirty.",
+    "If people knew, they would be disgusted.",
+    "I will never be worth kindness.",
+    "The shame is proof that I am the problem.",
+    "I should hide so I do not contaminate anyone.",
+    "God cannot look at me."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-062-Im-Damaged-and-Ashamed.html"
+  },
+  {
+   "id": "PSY-063",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "If I tell someone, they won’t believe me, or they will blame me",
+   "origins": "Many people stay quiet because they expect disbelief or blame. Sometimes that fear comes from already having been dismissed.",
+   "client_words": [
+    "No one will believe me.",
+    "They will say I caused it.",
+    "I should keep quiet so I am not put on trial.",
+    "If I cannot prove it, it does not count.",
+    "Telling will only make me the problem.",
+    "Even God would take their side."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-063-They-Wont-Believe-Me.html"
+  },
+  {
+   "id": "PSY-064",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "I don’t deserve to be safe or treated kindly",
+   "origins": "Harm can teach a person that safety and kindness are for other people. If you were not protected, it is easy to decide you did not deserve protection.",
+   "client_words": [
+    "I probably deserved it.",
+    "Safe homes are for other kinds of people.",
+    "If I ask for kindness, I am being greedy.",
+    "I should be grateful it was not worse.",
+    "Protecting myself would hurt them, so I should not.",
+    "God helps people who deserve it. I do not."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-064-I-Dont-Deserve-to-Be-Safe.html"
+  },
+  {
+   "id": "PSY-065",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "I have to keep this secret. Speaking up would only make everything worse",
+   "origins": "Secrets often start as survival. Someone said telling would ruin the family, the church, or you.",
+   "client_words": [
+    "If I tell, everything will fall apart.",
+    "I would be betraying the family or the church.",
+    "No one can know.",
+    "Speaking up would only make it worse for me.",
+    "Good people keep this kind of thing quiet.",
+    "God wants me to protect their reputation."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-065-I-Have-to-Keep-This-Secret.html"
+  },
+  {
+   "id": "PSY-066",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "I should have fought harder or left sooner. Because I didn’t, I must have agreed to it",
+   "origins": "After harm, people torture themselves with the exit they can see now. “I should have fought harder.",
+   "client_words": [
+    "I agreed because I stayed.",
+    "If I had been braver, it would have stopped.",
+    "A strong person would have left the first time.",
+    "I have no right to complain now.",
+    "God wanted me to endure it.",
+    "Leaving now would prove I could have left then, so I must not."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-066-I-Should-Have-Fought-or-Left.html"
+  },
+  {
+   "id": "PSY-067",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "Kindness is a trap. If someone is gentle with me, they are getting ready to hurt me",
+   "origins": "If gentleness was once the doorway to harm, kindness itself starts to feel like bait. A soft voice, a favor, or patience can make your body brace.",
+   "client_words": [
+    "If they are nice, they want something.",
+    "Gentleness is how it starts.",
+    "I should reject help before it turns.",
+    "No one is kind unless they are planning harm.",
+    "I would rather be harsh than fooled.",
+    "Even God’s kindness is a trick."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-067-Kindness-Is-a-Trap.html"
+  },
+  {
+   "id": "PSY-068",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "I have to keep them calm. If they get angry, it is my job to fix it",
+   "origins": "If someone’s anger was dangerous, you may have learned to watch their face and smooth every wave. Keeping them calm felt like keeping yourself, or the children, alive.",
+   "client_words": [
+    "If I say the wrong thing, it is my fault when they explode.",
+    "A good partner, child, or Christian keeps them calm.",
+    "I have to read the room or someone gets hurt.",
+    "My needs make them angry, so my needs are the problem.",
+    "If I were better, they would be peaceful.",
+    "Leaving would be cruel because they need me to regulate them."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-068-I-Have-to-Keep-Them-Calm.html"
+  },
+  {
+   "id": "PSY-069",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "I don’t get to decide what happens to my body. Saying no doesn’t count",
+   "origins": "When someone treats your body as if it belonged to them, you can start to believe the treatment. “I don’t get to decide.",
+   "client_words": [
+    "I do not get a vote about my own body.",
+    "Saying no just makes it worse, so it does not count.",
+    "If I froze, I agreed.",
+    "My body is already ruined, so boundaries are pointless.",
+    "Other people’s wants matter more than my no.",
+    "God expects me to submit even when I am afraid."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-069-I-Dont-Get-to-Decide-About-My-Body.html"
+  },
+  {
+   "id": "PSY-070",
+   "level": "Psychological/Cognitive",
+   "topic": "Abuse",
+   "belief": "Other people had it worse, so what was done to me doesn’t really count",
+   "origins": "Comparison is a way to keep going: “Other people had it worse, so mine doesn’t count.” Sometimes other people said that to silence you. Minimizing can feel humble or tough.",
+   "client_words": [
+    "I should be over it because others had it worse.",
+    "Complaining would be selfish.",
+    "It was not that bad.",
+    "If I get help, I am taking it from someone who needs it more.",
+    "I have no right to call it abuse.",
+    "God is busy with bigger suffering."
+   ],
+   "card": "https://doctorishome.github.io/belief-therapy-tool/belief-cards/psychological/Psych-070-Other-People-Had-It-Worse.html"
+  },
+  {
    "id": "PSY-X01",
    "level": "Psychological/Cognitive",
    "topic": "Unusual Thinking and Social Unease",
@@ -2384,96 +2544,6 @@
    "level": "Psychological/Cognitive",
    "topic": "Perfectionism and Control",
    "belief": "My standards should govern everyone’s behavior.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X56",
-   "level": "Psychological/Cognitive",
-   "topic": "Abuse",
-   "belief": "What was done to me was my fault. I must have caused it.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X57",
-   "level": "Psychological/Cognitive",
-   "topic": "Abuse",
-   "belief": "I’m damaged and ashamed, as if what was done to me made me worthless.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X58",
-   "level": "Psychological/Cognitive",
-   "topic": "Abuse",
-   "belief": "If I tell someone, they won’t believe me, or they will blame me.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X59",
-   "level": "Psychological/Cognitive",
-   "topic": "Abuse",
-   "belief": "I don’t deserve to be safe or treated kindly.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X60",
-   "level": "Psychological/Cognitive",
-   "topic": "Abuse",
-   "belief": "I have to keep this secret. Speaking up would only make everything worse.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X61",
-   "level": "Psychological/Cognitive",
-   "topic": "Abuse",
-   "belief": "I should have fought harder or left sooner. Because I didn’t, I must have agreed to it.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X62",
-   "level": "Psychological/Cognitive",
-   "topic": "Abuse",
-   "belief": "Kindness is a trap. If someone is gentle with me, they are getting ready to hurt me.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X63",
-   "level": "Psychological/Cognitive",
-   "topic": "Abuse",
-   "belief": "I have to keep them calm. If they get angry, it is my job to fix it.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X64",
-   "level": "Psychological/Cognitive",
-   "topic": "Abuse",
-   "belief": "I don’t get to decide what happens to my body. Saying no doesn’t count.",
-   "origins": "",
-   "client_words": [],
-   "card": null
-  },
-  {
-   "id": "PSY-X65",
-   "level": "Psychological/Cognitive",
-   "topic": "Abuse",
-   "belief": "Other people had it worse, so what was done to me doesn’t really count.",
    "origins": "",
    "client_words": [],
    "card": null

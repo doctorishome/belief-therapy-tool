@@ -1,0 +1,25 @@
+{
+ "num": 63,
+ "file": "They-Wont-Believe-Me",
+ "group": "Abuse",
+ "belief": "“If I tell someone, they won’t believe me, or they will blame me.”",
+ "belief_plain": "If I tell someone, they won’t believe me, or they will blame me",
+ "origins": "Many people stay quiet because they expect disbelief or blame. Sometimes that fear comes from already having been dismissed. The lie says that telling anyone will fail: they will not believe you, or they will make it your fault. Some people are unsafe to tell. That does not mean there is no one who can hear you. You choose who, and how much. A counselor is one place to start, and you can stop whenever you need to. If you are not safe right now, call 911. You can also call the National Domestic Violence Hotline at 1-800-799-7233. If a child is being hurt, call Childhelp at 1-800-422-4453. A counselor can help you at a pace that is safe. You do not have to do this alone, or all at once.",
+ "self": [
+  "No one will believe me.",
+  "They will say I caused it.",
+  "I should keep quiet so I am not put on trial.",
+  "If I cannot prove it, it does not count.",
+  "Telling will only make me the problem.",
+  "Even God would take their side."
+ ],
+ "songs": [
+  "truth",
+  "body",
+  "stays",
+  "friend"
+ ],
+ "key": "Psalm 34:18",
+ "replacement": "Some people may not believe me, and that does not mean no one will. I can choose a safe person, say only what I want, and stop.",
+ "crisis": false
+}
