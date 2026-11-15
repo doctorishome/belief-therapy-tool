@@ -26,7 +26,7 @@ import { elevate } from 'wix-auth';
 
 const GITHUB = 'https://doctorishome.github.io/belief-therapy-tool/lie-finder/';
 const PROVIDER = 'claude';               // 'claude' or 'grok'
-const MODELS = { claude: 'claude-sonnet-5-5', grok: 'grok-4.6' };
+const MODELS = { claude: 'claude-haiku-5-5', grok: 'grok-4.6' };
 const KEY_NAMES = { claude: 'ANTHROPIC_API_KEY', grok: 'XAI_API_KEY' };
 const ALL_LEVELS = ['Biological/Physical', 'Psychological/Cognitive', 'Interpersonal',
   'Socioeconomic', 'Sociocultural', 'Spiritual/Religious'];
