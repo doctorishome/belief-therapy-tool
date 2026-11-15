@@ -300,18 +300,21 @@ def live_practice():
     fiction = "Every client is fictional. This is training, not clinical care."
     page_href = e(href("C/cases/case-01-walt-page.html"))
     file_href = e(href("C/cases/case-01-walt.txt"))
+    # target=_blank is the fallback when a sandboxed iframe ignores download.
+    save = ('<a href="%s" download="Walt-AI-Case-File.txt" target="_blank" rel="noopener">'
+            'Save the AI case file</a>' % file_href)
     steps = [
-        ('Print the <a target="_blank" rel="noopener" href="%s">case page</a>, and have a pen and paper ready so you can take notes.'
-         % page_href),
-        ('Open a free AI account of your choice, such as '
-         '<a href="https://grok.com" target="_blank" rel="noopener">Grok</a>, '
+        ('Open <a target="_blank" rel="noopener" href="%s">Walt’s case page</a> and click Print, '
+         'so you have the case in front of you. Have a pen and paper ready for notes.' % page_href),
+        ("Click ‘%s.’ It saves to your computer’s Downloads folder (on a phone, to your Files)." % save),
+        ('Open <a href="https://grok.com" target="_blank" rel="noopener">Grok</a>, '
          '<a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT</a>, or '
-         '<a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>.'),
-        ('Start a new chat and upload the <a download="case-01-walt.txt" href="%s">case file</a>. '
-         'Use the paperclip or attach button.' % file_href),
-        ("Type OK and follow the Supervisor. Each reply starts with “Walt says:” or “Supervisor here:”. "
-         "Type COACH anytime you want help. If your messages run out, copy the “PICK UP HERE FOR SESSION 2” "
-         "block into a new chat. You can type, or you can use voice."),
+         '<a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> and sign in to a free account.'),
+        "Start a new chat. Click the paperclip or ‘+’ beside the message box and choose Walt-AI-Case-File.txt from Downloads.",
+        ("Type OK and press Enter. The Supervisor welcomes you and the interview begins. "
+         "Each reply starts with “Walt says:” or “Supervisor here:”. Type COACH anytime for help. "
+         "If your messages run out, copy the “PICK UP HERE FOR SESSION 2” block into a new chat. "
+         "You can type or use voice."),
     ]
     lis = ["<li>%s</li>" % step for step in steps]
     photo = e(href("C/cases/case-01-walt.jpg"))
@@ -326,7 +329,7 @@ def live_practice():
     walt = ('<strong>Walt</strong> <span class="chip keep free">Free sample case</span>'
             "<p>58-year-old band director, referred by his doctor. He says he is “just tired.”</p>"
             '<div class="links"><a target="_blank" rel="noopener" href="%s">Open case</a>'
-            '<a download="case-01-walt.txt" href="%s">AI case file</a></div>' % (page_href, file_href))
+            '<a href="%s" download="Walt-AI-Case-File.txt" target="_blank" rel="noopener">Save the AI case file</a></div>' % (page_href, file_href))
     cases = [row(1, portrait, walt)]
     for n in range(2, 11):
         cases.append(row(n, blank, 'Coming soon <span class="chip keep">Members</span>'))
