@@ -16,10 +16,16 @@ body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);backg
 .bar a{color:var(--gold);border:1px solid var(--gold)}
 .sheet{max-width:740px;margin:0 auto;padding:28px 22px 64px}
 .who{display:flex;gap:16px;align-items:flex-start}
-.portrait{flex:0 0 72px;width:72px;height:72px;border-radius:50%;overflow:hidden;background:#f4efe3;border:2px solid var(--gold)}
+.shot{flex:0 0 96px;width:96px;margin:0}
+.portrait{display:block;width:72px;height:72px;margin:0 auto;border-radius:50%;overflow:hidden;background:#f4efe3;border:2px solid var(--gold)}
 .portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.shot figcaption{margin:6px 0 0;font:11px/1.3 Arial,Helvetica,sans-serif;color:var(--mut);text-align:center}
 h1{color:var(--navy);font-size:clamp(1.6rem,4vw,2.15rem);line-height:1.25;margin:0 0 8px}
-.copy{color:var(--mut);margin:0 0 22px;font-size:.98rem}
+.copy{color:var(--mut);margin:0 0 8px;font-size:.98rem}
+.instruct{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin:18px 0 8px}
+.instruct h2{margin:0 0 6px;border:0;padding:0;font-size:1.05rem}
+.instruct p{margin:0}
+.instruct a{color:var(--navy2)}
 h2{color:var(--navy);font-size:1.2rem;margin:26px 0 8px;border-bottom:2px solid var(--gold);padding-bottom:4px}
 p{margin:0 0 12px}
 @media(max-width:560px){
@@ -27,14 +33,16 @@ p{margin:0 0 12px}
   .sheet{padding:22px 16px 48px}
   .bar button,.bar a{width:auto}
   .who{gap:12px}
-  .portrait{flex-basis:56px;width:56px;height:56px}
+  .shot{flex-basis:72px}
+  .portrait{width:56px;height:56px}
 }
 @media print{
   .noprint{display:none}
   body{background:#fff}
   .sheet{max-width:none;padding:0}
   h1,h2{color:#000}
-  a{color:inherit;text-decoration:none}
+  a{color:inherit}
+  .instruct{border:1px solid #c8b88a;background:#fff}
 }
 </style>
 </head>
@@ -43,16 +51,23 @@ p{margin:0 0 12px}
   <div class="brand">Belief Counseling<small>Counselors’ Room</small></div>
   <button type="button" onclick="window.print()">Print</button>
   <a download="case-01-walt.pdf" href="case-01-walt.pdf">Save a copy</a>
+  <a download="case-01-walt.txt" href="case-01-walt.txt">AI case file</a>
   <a href="../../members/assessment.html">Back</a>
 </div>
 <article class="sheet">
   <div class="who">
-    <!-- Drop the approved portrait in as counselors/cases/case-01-walt.jpg -->
-    <span class="portrait"><img alt="" src="case-01-walt.jpg" onerror="this.remove()"></span>
+    <figure class="shot">
+      <span class="portrait"><img alt="Walt (fictional client, AI-generated image)" src="case-01-walt.jpg"></span>
+      <figcaption>Fictional client. AI-generated image.</figcaption>
+    </figure>
     <div>
       <h1>Belief Counseling Training Case 1: “Walt”</h1>
       <p class="copy">(c) Dr. Brian Campbell, Belief Counseling. BeliefCounselor.com</p>
     </div>
+  </div>
+  <div class="instruct">
+    <h2>Instructions</h2>
+    <p>Use this information during your initial interview with the client. Upload the <a download="case-01-walt.txt" href="case-01-walt.txt">AI case file</a> to your AI of choice (such as Grok, ChatGPT, or Claude), then type OK. During the interview, take notes as you clarify the presenting problem and gather important DSM-5-TR diagnostic information and Belief Counseling information. At the end, you will have the option of printing the entire initial interview and the first counseling session.</p>
   </div>
   <h2>Reason for Referral</h2>
   <p>Walter “Walt” Hendricks, 58, was referred by his family physician after a routine physical in October. The doctor found nothing medically wrong but wrote, “Patient seems flat and has lost weight. Says he is ‘just tired.’ Recommend counseling.” Walt asked for a Christian counselor. On the phone he said, “I’m only coming because my daughter made me promise.”</p>
