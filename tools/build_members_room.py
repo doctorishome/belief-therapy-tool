@@ -138,16 +138,8 @@ PAGES = {
             ("Tutorial", "Practice tutorial: DSM-5-TR diagnosis and coding.",
              [("Open tutorial", "C/presentations/diagnostic-process/tutorial.html")]),
         ]),
-        ("Intake Process", "", [
-            ("Telephone Intake Form", "The form the intake person completes during the first call.",
-             [("Fill in on screen", "C/forms/telephone-intake.html"),
-              ("PDF to print", F + "Telephone-Intake-Form.pdf"), ("Word", F + "Telephone-Intake-Form.docx")]),
-            ("Screen & Refer", "Section 4 of the Telephone Intake Form: the counselor’s own list of disorders "
-                               "and problems that will be referred.",
-             [("Open the form", "C/forms/telephone-intake.html")]),
-            ("Provide Link to Online Assessment", "The link the client receives after the call.",
-             [("See what the client sees", "C/new-client-forms.html")]),
-        ]),
+        # Replaces the Intake Process boxes. The form files stay in counselors/forms/.
+        ("LIVE_PRACTICE", "", []),
         ("Online Assessment", "The forms the client completes before the first visit.", [
             ("Client forms", "About You · Brief History · Life Events & Beliefs Screening · "
                              "Agreements and consent forms, signed on screen",
@@ -251,6 +243,22 @@ a.card.cc h3{color:var(--gold)}a.card.cc p{color:#dfe6f2}
 @media(max-width:560px){.nav{padding:8px 12px;gap:6px 10px}.nav a{font-size:.82rem}}
 """
 
+# Extra styles for the Live Interactive Diagnosis Practice section only.
+PRACTICE_CSS = """
+.item ol.steps{margin:8px 0 0;padding-left:1.3em;list-style:decimal}
+.item ol.cases{margin:8px 0 0;padding-left:0;list-style:none}
+.item ol li{margin:10px 0}
+.item ol a{color:var(--navy2)}
+.item .fine{margin:12px 0 0;font-size:.92rem}
+.chip.keep{text-transform:none;letter-spacing:0;font-size:.75rem}
+.chip.free{color:var(--navy);border-color:var(--gold);background:#f8f1d8}
+.caserow{display:flex;gap:12px;align-items:center}
+.casenum{flex:0 0 1.4em;text-align:right;font-weight:bold;color:var(--navy)}
+.portrait{flex:0 0 48px;width:48px;height:48px;border-radius:50%;overflow:hidden;background:#f4efe3;border:2px solid var(--gold)}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.casetext{min-width:0}
+"""
+
 e = html.escape
 
 # Old room pages that now only forward to the new room (old page -> new page).
@@ -273,6 +281,63 @@ def nav(current):
     out.append('<a href="../counselors/membership.html">Membership</a>')
     out.append('<a class="pub" target="_blank" rel="noopener" href="%s">Public Site ↗</a></div>' % SITE)
     return "".join(out)
+
+
+def live_practice():
+    """Section that takes the place of Intake Process on Traditional Assessment."""
+    intro = (
+        "You interview a fictional client, played by an AI, and practice the work as you would in the room. "
+        "You walk through the DSM-5-TR diagnostic process, and you practice Belief Counseling: identify a false belief, "
+        "challenge it, and replace it with Scripture. An AI supervisor coaches you along the way, with questions to ask, "
+        "feedback, and help with the diagnosis."
+    )
+    sessions = (
+        "There are two sessions. Session 1 is the first interview: a functional analysis, a safety check, a diagnostic "
+        "hypothesis, belief mining, the first false beliefs, and the assessment tools. Session 2 finishes the diagnosis, "
+        "challenges and replaces the main false belief, and chooses the belief cards that fit. At the end, the AI gives "
+        "you the diagnosis, feedback, and a report you can print."
+    )
+    fiction = "Every client is fictional. This is training, not clinical care."
+    page_href = e(href("C/cases/case-01-walt-page.html"))
+    file_href = e(href("C/cases/case-01-walt.txt"))
+    steps = [
+        ('Print the <a target="_blank" rel="noopener" href="%s">case page</a>, and have a pen and paper ready so you can take notes.'
+         % page_href),
+        ('Open a free AI account of your choice, such as '
+         '<a href="https://grok.com" target="_blank" rel="noopener">Grok</a>, '
+         '<a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT</a>, or '
+         '<a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>.'),
+        ('Start a new chat and upload the <a download="case-01-walt.txt" href="%s">case file</a>. '
+         'Use the paperclip or attach button.' % file_href),
+        ("Type OK and follow the Supervisor. Each reply starts with “Walt says:” or “Supervisor here:”. "
+         "Type COACH anytime you want help. If your messages run out, copy the “PICK UP HERE FOR SESSION 2” "
+         "block into a new chat. You can type, or you can use voice."),
+    ]
+    lis = ["<li>%s</li>" % step for step in steps]
+    photo = e(href("C/cases/case-01-walt.jpg"))
+    alt = e("Walt (fictional client, AI-generated image)")
+    portrait = '<span class="portrait"><img alt="%s" src="%s"></span>' % (alt, photo)
+    blank = '<span class="portrait"></span>'
+
+    def row(n, photo_html, body):
+        return ('<li><span class="caserow"><span class="casenum">%d.</span>%s'
+                '<span class="casetext">%s</span></span></li>' % (n, photo_html, body))
+
+    walt = ('<strong>Walt</strong> <span class="chip keep free">Free sample case</span>'
+            "<p>58-year-old band director, referred by his doctor. He says he is “just tired.”</p>"
+            '<div class="links"><a target="_blank" rel="noopener" href="%s">Open case</a>'
+            '<a download="case-01-walt.txt" href="%s">AI case file</a></div>' % (page_href, file_href))
+    cases = [row(1, portrait, walt)]
+    for n in range(2, 11):
+        cases.append(row(n, blank, 'Coming soon <span class="chip keep">Members</span>'))
+    note = "One case is free for everyone. Members ($14.95) get the full case list."
+    return (
+        "<h2>Live Interactive Diagnosis Practice</h2>"
+        '<div class="item"><h4>AI-assisted practice cases</h4><p>%s</p><p>%s</p><p>%s</p></div>'
+        '<div class="item"><h4>How to start a case</h4><ol class="steps">%s</ol></div>'
+        '<div class="item"><h4>Practice Cases</h4><ol class="cases">%s</ol><p class="fine">%s</p></div>'
+        % (e(intro), e(sessions), e(fiction), "".join(lis), "".join(cases), e(note))
+    )
 
 
 def item(it):
@@ -304,6 +369,9 @@ def page(f, label, heading, summary):
     else:
         parts = []
         for title, lead, items in PAGES[f]:
+            if title == "LIVE_PRACTICE":
+                parts.append(live_practice())
+                continue
             if title:
                 parts.append("<h2>%s</h2>" % e(title))
             if lead:
@@ -320,7 +388,7 @@ def page(f, label, heading, summary):
             '<div class="wrap">%s</div>'
             '<div class="foot">Educational training for counselors. Never enter real client names or details. · '
             '© Brian Campbell, Ph.D. · <a href="%s/help" target="_top">Help &amp; Support</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:\"start\"});}}catch(e){}})();</script></body></html>'
-            % (e(heading), CSS, nav(f), e(heading), e(summary), body, SITE))
+            % (e(heading), CSS + (PRACTICE_CSS if f == "assessment.html" else ""), nav(f), e(heading), e(summary), body, SITE))
 
 
 def main():
