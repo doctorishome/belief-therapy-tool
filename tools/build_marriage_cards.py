@@ -23,6 +23,8 @@ for p in sorted((ROOT/'tools/marriage').glob('*.json')):
  page=page.replace('<p class="why">Do one thing that tests the lie in real life.</p>', '<p class="why">Do one thing that tests the lie in real life.</p>'+safe)
  base=f'Marriage-{d["num"]:03d}-{d["file"]}';d['base']=base
  page=page.replace('<div class="printbar">','<div class="printbar"><p><a href="'+base+'.pdf" target="_blank" rel="noopener">Download Card and Homework (PDF)</a> · <a href="'+base+'-Homework.pdf" target="_blank" rel="noopener">Download Homework Only (PDF)</a></p>')
+ from email_share import rel_script
+ page=page.replace('__EMAIL_SHARE_JS__', rel_script(OUT))
  for k in ['marriage','marriage-guidance']:assert '?topic='+k in page
  assert page.count('class="song"')==4
  (OUT/(base+'.html')).write_text(page);DATA.append(d)
