@@ -58,7 +58,7 @@
     if (h) return h;
     return (document.title || "Belief Counseling").replace(/\s+/g, " ").trim();
   }
-  var PROCESS = "https://doctorishome.github.io/belief-therapy-tool/members/process.html";
+  var PROCESS = SITE + "/the-process";
   function keyVerse() {
     var k = document.querySelector(".key");
     if (!k) return "";
@@ -74,7 +74,8 @@
     body += "\n\nThe lie: \"" + belief + "\"";
     if (truth) body += "\n\nThe truth: " + truth;
     if (verse) body += "\n\nScripture: " + verse;
-    body += "\n\nRead more here:\n" + cardAddress();
+    var num = cardNumber();
+    body += "\n\nRead more here:\n" + (num ? SITE + "/card-" + num : cardAddress());
     body += "\n\nFor a general overview of Belief Counseling, see:\n" + PROCESS;
     body += "\n\n" + DISCLAIMER;
     return { subject: "Belief Counseling information you may find helpful", body: body };
