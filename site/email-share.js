@@ -58,15 +58,40 @@
     if (h) return h;
     return (document.title || "Belief Counseling").replace(/\s+/g, " ").trim();
   }
-  function cardDraft() {
+  var PROCESS = "https://doctorishome.github.io/belief-therapy-tool/members/process.html";
+  function keyVerse() {
+    var k = document.querySelector(".key");
+    if (!k) return "";
+    var q = text(k.querySelector("q")), r = text(k.querySelector(".ref"));
+    if (!q) return "";
+    return "\u201c" + q + "\u201d" + (r ? " " + r : "");
+  }
+  function sharedDraft() {
+    var belief = clip(beliefText(), 300);
+    var truth = clip(truthText(), 400);
+    var verse = clip(keyVerse(), 400);
+    var body = "I pray that this Belief Counseling information might be helpful:";
+    body += "\n\nThe lie: \"" + belief + "\"";
+    if (truth) body += "\n\nThe truth: " + truth;
+    if (verse) body += "\n\nScripture: " + verse;
+    body += "\n\nRead more here:\n" + cardAddress();
+    body += "\n\nFor a general overview of Belief Counseling, see:\n" + PROCESS;
+    body += "\n\n" + DISCLAIMER;
+    return { subject: "Belief Counseling information you may find helpful", body: body };
+  }
+  function cardAddress() {
+    return location.origin + location.pathname;
+  }
+  function cardDraft(direct) {
     var num = cardNumber();
     var belief = clip(beliefText(), 400);
     var truth = clip(truthText(), 500);
-    var link = publicPage() + (num ? "#card-" + num : "");
+    var link = direct ? cardAddress() : publicPage() + (num ? "#card-" + num : "");
     var body = "I thought this Belief Counseling card might be helpful:\n\n\"" + belief + "\"";
     if (truth) body += "\n\n" + truth;
     body += "\n\nRead more here:\n" + link;
     if (num) body += "\n\nThis is card #" + num + ".";
+    if (direct) body += "\n\nVisit the Belief Counseling website:\n" + SITE;
     body += "\n\n" + DISCLAIMER;
     if (body.length > MAX) {
       body = "I thought this Belief Counseling card might be helpful:\n\n\"" + clip(belief, 240) + "\"";
@@ -97,8 +122,8 @@
     a.click();
     a.remove();
   }
-  window.beliefEmailDraft = function (kind) {
-    var draft = kind === "page" ? pageDraft() : cardDraft();
+  window.beliefEmailDraft = function (kind, direct) {
+    var draft = kind === "page" ? pageDraft() : (direct ? sharedDraft() : cardDraft(false));
     draft.href = mailto(draft);
     return draft;
   };
@@ -117,7 +142,7 @@
     var a = e.target.closest ? e.target.closest("a[data-email]") : null;
     if (!a) return;
     e.preventDefault();
-    var draft = window.beliefEmailDraft(a.getAttribute("data-email"));
+    var draft = window.beliefEmailDraft(a.getAttribute("data-email"), a.getAttribute("data-link") === "card");
     openMail(draft.href);
   });
 
