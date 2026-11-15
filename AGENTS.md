@@ -31,7 +31,10 @@ Public pages avoid clinical terms.
 3. Build the PDFs: `python3 tools/print_socio_cards.py <output-subfolder> "<Group Title>"`
 4. Link each belief on its page list. The list files are in `belief-lists/` (for example `belief-lists/socioeconomic.html`).
    Add the card URLs to the card-link map in that file. Beliefs without a card stay plain text.
-5. Commit and push. The Wix pages show the new GitHub files automatically. No Wix edit is needed.
+5. Add the "Share this information" email button: `python3 tools/add_share_buttons.py`
+   (rebuilding a card removes its button, so always run this after any build). It also writes the
+   card's short link page in `card/` (for example beliefcounselor.com/card/psych-61). No Wix edit is needed.
+6. Commit and push. The Wix pages show the new GitHub files automatically. No Wix edit is needed.
 
 Other card families (Psychological, Marriage) use their own builders in `tools/` (`build_cards.py`, `build_marriage_cards.py`).
 
