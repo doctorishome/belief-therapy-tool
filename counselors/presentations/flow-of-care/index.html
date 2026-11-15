@@ -8,7 +8,7 @@
      To change a slide, edit the SLIDES list near the bottom of this file. -->
 <style>
 :root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6;
---client:#e1f3ea;--clientb:#2f8f6b;--ai:#eceafb;--aib:#6a5fc4}
+--client:#e1f3ea;--clientb:#2f8f6b;--ai:#e7eef8;--aib:#2d5aa0}
 *{box-sizing:border-box}
 body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.55}
 header{background:var(--navy);border-bottom:3px solid var(--gold);color:#fff;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
@@ -31,7 +31,7 @@ main{max-width:1080px;margin:0 auto;padding:16px 14px 30px}
 .slide .eyebrow{font:bold .78rem Arial,Helvetica,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
 .slide h2{color:var(--navy);font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.2;margin:4px 0 4px}
 .slide .who{font:bold .78rem Arial,Helvetica,sans-serif;display:inline-block;border-radius:12px;padding:2px 10px;background:var(--client);color:#1c5c44;margin-bottom:10px}
-.slide .who.ai{background:var(--ai);color:#3f3690}
+.slide .who.ai{background:var(--ai);color:#1d3a6b}
 .slide ul{margin:8px 0 0;padding-left:22px;font-size:1.08rem}.slide li{margin:6px 0}
 .docs{margin-top:20px;border-top:2px solid var(--gold);padding-top:10px}
 .docs h3,.narr h3{font:bold .78rem Arial,Helvetica,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);margin:0 0 8px}
@@ -71,40 +71,40 @@ var FORM = C + "forms/Belief-Counseling-";
 // When the voice-over is recorded: put audio/slide-00.mp3 ... beside this file and set AUDIO = true.
 var AUDIO = false;
 
-// Each slide: flow = label in the flow list (empty for the opening and closing slides); ai = built by the AI;
+// Each slide: flow = label in the flow list (empty for the opening and closing slides); own = the counselor’s own work (shown in blue);
 // points = on-screen bullets; say = narration paragraphs; docs = [label, address] (no address = not ready yet).
 var SLIDES = [
  {title:"The Flow of Care", eyebrow:"Overview",
-  points:["Fourteen steps, from the first phone call to homework with the belief cards.",
-          "Green steps are done with the client. Purple steps are built by the AI in the Clinical Companion.",
+  points:["Thirteen steps, from the first phone call to homework with the belief cards.",
+          "Green steps are done with the client. Blue steps are your own work as the counselor.",
           "Select any step on the left to jump to it."],
-  say:["Welcome. This presentation walks you through the flow of care in Belief Counseling, one step at a time. There are fourteen steps. They begin with the first phone call and end with the belief cards your client uses as homework.",
+  say:["Welcome. This presentation walks you through the flow of care in Belief Counseling, one step at a time. There are thirteen steps. They begin with the first phone call and end with the belief cards your client uses as homework.",
        "On each slide you will see where you are in the flow, what happens at that step, and the documents that are used there. You can open any document by selecting it.",
+       "Green steps are done with the client. Blue steps are your own work as the counselor, such as reviewing the intake forms, forming your hypotheses, and writing your case notes.",
        "You carry out each step with your own clients in your own practice."],
-  docs:[["Printable flow chart (PDF)", C+"forms/Clinical-Companion-Flow-of-Care.pdf"]]},
+  docs:[["Printable flow chart (PDF)", C+"forms/Belief-Counseling-Flow-of-Care.pdf"]]},
 
  {flow:"Telephone Intake", title:"Telephone Intake",
   points:["A trained intake person takes the call, with a blank Telephone Intake form open.",
           "Record name, email, phone, and insurance. Ask the caller to describe the general problem.",
           "Screen and refer: check the problem against the counselor’s list of problems that will be referred (Section 4 of the form).",
           "If the caller is a good fit, schedule the first appointment and send the link to the intake forms.",
-          "Ask: online or paper forms?"],
+          "Ask: on-screen or paper forms?"],
   say:["Care begins with the first phone call. A trained intake person, such as your office manager, takes the call with a blank Telephone Intake form open on the computer.",
        "The intake person records the caller’s name, email, phone number, and insurance, and asks the caller to describe the general problem. Then comes screening. Counselors may treat only what they are competent to treat, so the intake person checks the problem against your own list of problems you do not treat. A caller who is not a good fit is referred to a local specialist, much as a doctor’s office would do.",
-       "The intake person also explains that you specialize in helping people who want their Christian faith to be part of their treatment. If the caller is a good fit, the first appointment is scheduled and the caller is sent the link to the intake forms."],
+       "The intake person also explains that you specialize in helping people who want their Christian faith to be part of their treatment. If the caller is a good fit, the first appointment is scheduled, and the caller is sent the intake forms, either as a link to fill in on screen or on paper."],
   docs:[["Telephone Intake Form (fill in on screen)", C+"forms/telephone-intake.html"],
         ["PDF to print", FORM+"Telephone-Intake-Form.pdf"],
-        ["Word copy", FORM+"Telephone-Intake-Form.docx"],
-        ["Reminder for Dr. Campbell: hand-off to the Clinical Companion", C+"forms/telephone-intake-handoff.html"]]},
+        ["Word copy", FORM+"Telephone-Intake-Form.docx"]]},
 
- {flow:"Online (or Paper) Intake", title:"Online (or Paper) Intake",
-  points:["The client completes the intake forms before the first visit. Online is the normal way.",
+ {flow:"Intake Forms", title:"Intake Forms",
+  points:["The client completes the intake forms before the first visit.",
           "About You, the Brief History, and the Life Events & Beliefs Screening.",
-          "Agreements and consent forms, read and signed on screen.",
-          "Paper forms match the online forms, for clients who prefer paper."],
-  say:["Before the first visit, the client completes the intake forms. Most clients do this online, using the link they received after the phone call.",
-       "There are three short forms: About You, the Brief History, and the Life Events and Beliefs Screening. The client then reads and signs the agreements and consent forms on screen, including the consent for treatment and the confidentiality agreement.",
-       "Paper forms are available for clients who do not have a computer or phone, or who simply prefer paper. They match the online forms question for question."],
+          "Agreements and consent forms, read and signed.",
+          "The forms can be filled in on screen and printed, or completed on paper."],
+  say:["Before the first visit, the client completes the intake forms.",
+       "There are three short forms: About You, the Brief History, and the Life Events and Beliefs Screening. The client also reads and signs the agreements and consent forms, including the consent for treatment and the confidentiality agreement.",
+       "The forms can be filled in on screen and printed, or completed on paper, whichever the client prefers. The client brings them to the first visit, or returns them beforehand so you can review them."],
   docs:[["New Client Forms: what the client sees", C+"new-client-forms.html"],
         ["New Client Packet (paper)", C+"practice-forms.html"],
         ["Confidentiality Agreement (PDF)", C+"forms/Confidentiality-Agreement-fillable.pdf"],
@@ -116,15 +116,11 @@ var SLIDES = [
   say:["Next, the first appointment is set. Leave enough time for the client to complete the forms, and for you to review them, before you meet."],
   docs:[]},
 
- {flow:"Assessment Report Begins", ai:true, title:"Assessment Report Begins",
-  points:["The intake information goes into the client’s file.","The AI starts the Assessment Report from that information."],
-  say:["Once the forms are in, the client’s information goes into the client’s file in the Clinical Companion, and the AI begins the Assessment Report. This report is the first part of what the Clinical Companion produces for you, and it grows as the case goes on."],
-  docs:[]},
 
- {flow:"Review Intake Information", title:"Review Intake Information",
-  points:["Before the first interview, review everything, including the AI’s report.",
+ {flow:"Review Intake Information", own:true, title:"Review Intake Information",
+  points:["Before the first interview, review all of the intake forms.",
           "Form an initial hypothesis about the diagnosis.","Form an initial hypothesis about toxic beliefs."],
-  say:["Before the first interview, review all of the intake information yourself, including the report the AI has started.",
+  say:["Before the first interview, review all of the intake information yourself.",
        "As you read, begin to form two initial hypotheses: one about the diagnosis, and one about the toxic beliefs that may lie beneath the client’s problem. You will test both of them when you meet the client."],
   docs:[["Life Events & Beliefs Screening", GH+"Life_Events_Beliefs_Screening.html"]]},
 
@@ -139,40 +135,40 @@ var SLIDES = [
   docs:[["Presenting Problem Assessment"],["Functional analysis tutorial"],
         ["Mining Tools for the six levels", "../../../members/process.html"]]},
 
- {flow:"Develop Hypotheses", title:"Develop Hypotheses",
+ {flow:"Develop Hypotheses", own:true, title:"Develop Hypotheses",
   points:["Hypotheses about the diagnosis.","Hypotheses about possible false beliefs."],
   say:["After the interview, develop your hypotheses. What diagnosis best fits what you have seen and heard? And which false beliefs may be driving the client’s distress? These are still hypotheses. You will keep refining them as you learn more."],
   docs:[["DSM-5-TR diagnostic process (narrated slides)", C+"presentations/diagnostic-process/index.html"],
         ["Diagnostic process flow chart", C+"reviews/dsm5tr-flow-chart.html"]]},
 
- {flow:"Counselor Enters First Case Note", ai:true, title:"Counselor Enters First Case Note",
-  points:["Dictate your hypotheses and the functional analysis findings into the case note.",
-          "The AI adds the interview findings to the Assessment Report.",
-          "The AI suggests DSM-5-TR questions and belief questions for the next session.",
-          "Steps 6 through 8 repeat after each session."],
-  say:["Now enter your first case note. You can dictate it. Include your hypotheses and what you found in the functional analysis.",
-       "The AI adds your interview findings to the Assessment Report. It then suggests questions for the next session: the DSM-5-TR questions still needed for the diagnosis, and questions that help identify core false beliefs. You decide which ones to ask.",
+ {flow:"Write the Case Note", own:true, title:"Write the Case Note",
+  points:["Write your case note after the session. You can dictate it.",
+          "Record the functional analysis findings and your hypotheses.",
+          "Note the DSM-5-TR questions still needed and the questions that may uncover core false beliefs.",
+          "Steps 5 through 7 repeat after each session."],
+  say:["After the session, write your case note. You can dictate it if you prefer. Include what you found in the functional analysis and your hypotheses about the diagnosis and the false beliefs.",
+       "Then plan the next session. Note the DSM-5-TR questions you still need to ask for the diagnosis, and the questions that may help uncover the client’s core false beliefs.",
        "The interview, the hypotheses, and the case note repeat after every session."],
   docs:[]},
 
  {flow:"Follow-up Tests or Assessments", title:"Follow-up Tests or Assessments",
   points:["At the end of the session, check off forms on the “Forms to Complete” card. The client receives one link.",
           "Short screens: PHQ-9 (depression) and GAD-7 (anxiety).",
-          "Optional spiritual screens, if faith is included: RSS-5 and Brief RCOPE, completed in the client record. The Spiritual Assessment Inventory is not included.",
+          "Optional spiritual screens, if faith is included: RSS-5 and Brief RCOPE. The Spiritual Assessment Inventory is waiting for the author’s permission.",
           "Christian Experiences and Beliefs (counselor-guided), level checklists, and diagnostic forms."],
   say:["At the end of the session, decide which follow-up forms would help. Check them off on the Forms to Complete card, and the client receives a single link.",
-       "Short screens for depression and anxiety are useful with most clients. If faith is part of the work, the RSS-5 and Brief RCOPE can be completed in the client record, along with the Christian Experiences and Beliefs checklist, which you go through with the client.",
+       "Short screens for depression and anxiety are useful with most clients. If faith is part of the work, the RSS-5 and Brief RCOPE are short optional screens, and the Christian Experiences and Beliefs checklist is one you go through with the client.",
        "You can also assign a checklist for any belief mining level you think is important for this client."],
   docs:[["Forms to Complete card", C+"followup-forms.html"],
         ["Christian Experiences and Beliefs (PDF)", FORM+"Christian-Experiences-and-Beliefs-Checklist.pdf"],
         ["Anxious Thoughts & Beliefs (PDF)", FORM+"Anxious-Thoughts-and-Beliefs-Checklist.pdf"],
         ["Depressive Thoughts & Beliefs (PDF)", FORM+"Depressive-Thoughts-and-Beliefs-Checklist.pdf"],
         ["Mining Tools for the six levels", "../../../members/process.html"],
-        ["RSS-5 (client record)", C+"../app/"],
-        ["Brief RCOPE (client record)", C+"../app/"],
+        ["RSS-5"],
+        ["Brief RCOPE"],
         ["SAI: waiting for author permission", "", 1]]},
 
- {flow:"Diagnosis + Identify", title:"Diagnosis + Identify",
+ {flow:"Diagnosis + Identify", own:true, title:"Diagnosis + Identify",
   points:["Make the DSM-5-TR diagnosis.","At the same time, identify the client’s false beliefs.",
           "Use the Lie Finder to find the beliefs and their belief cards."],
   say:["With the interviews and the follow-up forms in hand, make the DSM-5-TR diagnosis. If you would like a refresher, the nine-step diagnostic process and the practice tutorial are one click away.",
@@ -208,11 +204,11 @@ var SLIDES = [
 
  {title:"That Is the Flow", eyebrow:"Summary",
   points:["Before the first visit: telephone intake, intake forms, scheduling, and your review.",
-          "In session: the interview, your hypotheses, the case note, and follow-up forms. These repeat.",
+          "With each session: the interview, your hypotheses, the case note, and follow-up forms. These repeat.",
           "Then: diagnosis and false beliefs, the treatment plan, Challenge, Replace, and the belief cards."],
   say:["That is the flow of care, from the first phone call to the belief cards.",
        "Each step lists its forms and tools, so you can use them in your own practice. When you are ready, begin with step one, the telephone intake."],
-  docs:[["Printable flow chart (PDF)", C+"forms/Clinical-Companion-Flow-of-Care.pdf"]]}
+  docs:[["Printable flow chart (PDF)", C+"forms/Belief-Counseling-Flow-of-Care.pdf"]]}
 ];
 
 var at = 0, steps = SLIDES.filter(function(s){return s.flow;});
@@ -222,12 +218,12 @@ function show(i){
   var s = SLIDES[at], n = steps.indexOf(s) + 1, h = "";
   var f = '<h2>The flow</h2>';
   steps.forEach(function(x, k){
-    f += '<button type="button" data-i="'+SLIDES.indexOf(x)+'" class="'+(x.ai?'ai ':'')+(x===s?'on':'')+'"><b>'+(k+1)+'</b><span>'+esc(x.flow)+'</span></button>';
+    f += '<button type="button" data-i="'+SLIDES.indexOf(x)+'" class="'+(x.own?'ai ':'')+(x===s?'on':'')+'"><b>'+(k+1)+'</b><span>'+esc(x.flow)+'</span></button>';
   });
-  f += '<div class="key"><span><i style="background:#2f8f6b"></i>With the client</span><span><i style="background:#6a5fc4"></i>Built by the AI</span></div>';
+  f += '<div class="key"><span><i style="background:#2f8f6b"></i>With the client</span><span><i style="background:#2d5aa0"></i>Counselor’s own work</span></div>';
   document.getElementById("flow").innerHTML = f;
   h += '<div class="eyebrow">'+(n ? "Step "+n+" of "+steps.length : esc(s.eyebrow))+'</div><h2>'+esc(s.title)+'</h2>';
-  if (n) h += '<div class="who'+(s.ai?' ai':'')+'">'+(s.ai?'Built by the AI':'With the client')+'</div>';
+  if (n) h += '<div class="who'+(s.own?' ai':'')+'">'+(s.own?'Counselor’s own work':'With the client')+'</div>';
   h += '<ul>'+s.points.map(function(p){return '<li>'+esc(p)+'</li>';}).join("")+'</ul>';
   h += '<div class="docs"><h3>Documents for this step</h3>';
   if (!s.docs.length) h += '<p>No documents at this step.</p>';
