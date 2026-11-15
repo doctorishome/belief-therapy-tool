@@ -138,9 +138,23 @@
     "@media print{.emailshare{display:none !important}}";
   document.head.appendChild(css);
 
+  function fillDirect() {
+    var links = document.querySelectorAll('a[data-email][data-link="card"]');
+    for (var i = 0; i < links.length; i++) {
+      links[i].href = window.beliefEmailDraft(links[i].getAttribute("data-email"), true).href;
+      links[i].target = "_top";
+    }
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fillDirect);
+  else fillDirect();
+
   document.addEventListener("click", function (e) {
     var a = e.target.closest ? e.target.closest("a[data-email]") : null;
     if (!a) return;
+    if (a.getAttribute("data-link") === "card") {
+      a.href = window.beliefEmailDraft(a.getAttribute("data-email"), true).href;
+      return;
+    }
     e.preventDefault();
     var draft = window.beliefEmailDraft(a.getAttribute("data-email"), a.getAttribute("data-link") === "card");
     openMail(draft.href);
