@@ -111,12 +111,15 @@ async function askWix(system, user, maxTokens) {
     console.error('Lie Finder: elevated Wix AI call failed, trying without elevation', e);
     res = await httpClient.fetchWithAuth(url, request);
   }
-  const data = /** @type {any} */ (await res.json());
+  const raw = await res.text();
+  if (!raw) throw new Error('Wix AI sent back an empty answer (status ' + res.status + ')');
+  const data = /** @type {any} */ (JSON.parse(raw));
   if (!res.ok) {
     console.error('Lie Finder (Wix AI) error', res.status, JSON.stringify(data));
     throw new Error('Wix AI answered ' + res.status + ': ' + JSON.stringify(data).slice(0, 200));
   }
   if (data.usage) console.log('Wix AI usage', JSON.stringify(data.usage));
+  if (data.stop_reason === 'max_tokens') throw new Error('The AI answer was cut off before it finished');
   return (data.content || []).filter((c) => c.type === 'text').map((c) => c.text).join('');
 }
 
@@ -206,11 +209,17 @@ export const findLies = webMethod(Permissions.Admin, async (input) => {
       '\n\nWhat the Mining Tools showed: ' + (notes.mining || '(not given)') +
       '\n\nReply with the JSON only.';
 
-    const text = await ask(apiKey, system, user, 3000);
+    const text = await ask(apiKey, system, user, 8000);
     if (text === null) {
       return { error: 'The search service is busy or unavailable. Please try again in a minute.' };
     }
-    const result = readJson(text);
+    let result;
+    try {
+      result = readJson(text);
+    } catch (e) {
+      console.error('Lie Finder: answer was not readable', String(text).slice(0, 500));
+      throw new Error('The AI answer could not be read (' + String(text || '').length + ' characters)');
+    }
     const known = new Set(beliefs.map((b) => b.id));
     result.beliefs = (result.beliefs || []).filter((b) => known.has(b.id));
     result.levels_searched = searchLevels;
