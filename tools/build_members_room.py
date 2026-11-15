@@ -254,7 +254,8 @@ PRACTICE_CSS = """
 .chip.free{color:var(--navy);border-color:var(--gold);background:#f8f1d8}
 .caserow{display:flex;gap:12px;align-items:center}
 .casenum{flex:0 0 1.4em;text-align:right;font-weight:bold;color:var(--navy)}
-.portrait{flex:0 0 48px;width:48px;height:48px;border-radius:50%;overflow:hidden;background:#f4efe3;border:2px solid var(--gold)}
+.portrait{flex:0 0 88px;width:88px;height:88px;border-radius:50%;overflow:hidden;background:#f4efe3;border:2px solid var(--gold)}
+@media(max-width:560px){.portrait{flex-basis:72px;width:72px;height:72px}}
 .portrait img{width:100%;height:100%;object-fit:cover;display:block}
 .casetext{min-width:0}
 .banner{margin:8px 0 16px}
