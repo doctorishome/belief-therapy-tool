@@ -29,13 +29,11 @@ MENU = [
     ("process.html", "The Process", "The Process",
      "Three steps: Identify, Challenge, and Replace."),
     ("assessment.html", "Traditional Assessment", "Traditional Assessment",
-     "Diagnosis, intake, the forms your client completes, and the first interview."),
+     "Diagnosis, intake, sample forms, and the first interview."),
     ("tips.html", "Professional Tips", "Professional Tips",
      "Tips, case studies, theory, and insights from 35 years of practice."),
     ("library.html", "Library", "Library",
      "Books, videos, and articles."),
-    ("clinical-companion.html", "Clinical Companion", "Clinical Companion",
-     "The working tool for your own cases, from the first phone call on. For paid members."),
 ]
 
 
@@ -91,12 +89,8 @@ PAGES = {
             ("Christian Experiences and Beliefs", "Church background, family faith, and present beliefs. Counselor-guided.",
              [("Open (PDF)", F + "Christian-Experiences-and-Beliefs-Checklist.pdf"),
               ("Word", F + "Christian-Experiences-and-Beliefs-Checklist.docx")]),
-            ("RSS-5", "Religious and Spiritual Struggles Scale, five-question short form. Optional. "
-                      "Completed with the client inside the client record in the Clinical Companion.",
-             [("About the Clinical Companion", "clinical-companion.html")]),
-            ("Brief RCOPE", "A short measure of religious coping, for when a specific stressor is central. Optional. "
-                            "Completed with the client inside the client record in the Clinical Companion.",
-             [("About the Clinical Companion", "clinical-companion.html")]),
+            ("RSS-5", "Religious and Spiritual Struggles Scale, five-question short form. Optional.", []),
+            ("Brief RCOPE", "A short measure of religious coping, for when a specific stressor is central. Optional.", []),
             ("SAI", "Spiritual Assessment Inventory (Hall & Edwards, 2002), for in-depth work. Optional. "
                     "Waiting for author permission.", []),
             ("group", "Core False Beliefs"),
@@ -125,8 +119,8 @@ PAGES = {
         ]),
     ],
     "assessment.html": [
-        ("", "This section shows what the assessment process looks like, including the forms your client "
-             "will see and complete online. You carry it out with your own clients in the Clinical Companion.", [
+        ("", "This section shows what the assessment process looks like in private practice, "
+             "with sample forms for each step.", [
             ("The Flow: Start Here", "A narrated presentation that walks through the whole process, "
                                      "from the first phone call on. Watch this first.",
              [("Open the slide show", "C/presentations/flow-of-care/index.html")]),
@@ -180,16 +174,6 @@ PAGES = {
             ("Books", "Books Dr. Campbell recommends for counselors and clients.", [("Open", "C/books.html")]),
             ("Videos", "Teaching videos, with the forms that go with them.", [("Open", "C/videos.html")]),
             ("Articles", "All of Dr. Campbell’s articles for counselors in one place.", [("Open", "C/articles.html")]),
-        ]),
-    ],
-    "clinical-companion.html": [
-        ("", "The Clinical Companion is where you work your own cases. It opens once your membership is paid.", [
-            ("Introduction", "", []),
-            ("Watch the Flow Again", "A refresher before your first case: the same narrated presentation "
-                                     "shown under Traditional Assessment.",
-             [("Open the slide show", "C/presentations/flow-of-care/index.html")]),
-            ("Start: Telephone Intake", "The Companion begins at step 1, the telephone intake.",
-             [("Open the Clinical Companion", SITE + "/clinical-companion")]),
         ]),
     ],
 }

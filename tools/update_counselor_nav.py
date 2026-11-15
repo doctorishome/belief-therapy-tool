@@ -25,7 +25,6 @@ def nav(page):
         h.append(f'<a class="l{" on" if SECTION.get(page) == f else ""}" href="{M}{f}">{label}</a>')
         if f == "index.html":
             h.append(LIE_FINDER)
-    h.append(f'<a class="l" href="{M}clinical-companion.html">Clinical Companion</a>')
     h.append(f'<a class="l" href="../counselors/membership.html">Membership</a>')
     h.append('<span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a>'
              '<a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span>'

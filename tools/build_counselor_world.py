@@ -331,17 +331,17 @@ HELP_FAQS = [
   '<p>Cancel from <a href="%s" target="_top">My Subscriptions</a>. Sign in, open My Subscriptions, and choose Cancel. You can cancel anytime.</p>'
   '<p>In the Counselors\u2019 Room, My Subscriptions is in the menu and opens the same page.</p>' % SUBS_URL),
  ("Will I get a refund if I cancel?",
-  '<p>If you cancel after you\u2019ve been billed, there is no refund for the rest of that billing month. You keep access until the end of that month, and you are not billed again. After that month, Clinical Companion and the member resources are no longer available.</p>'
+  '<p>If you cancel after you\u2019ve been billed, there is no refund for the rest of that billing month. You keep access until the end of that month, and you are not billed again. After that month, the Lie Finder and the member resources are no longer available.</p>'
   '<p>For a special circumstance, email <a href="mailto:%s">%s</a>.</p>' % (BRIAN, BRIAN)),
- ("What do I need to run it?", "A computer with an up-to-date web browser and an internet connection. Clinical Companion runs in the browser."),
- ("Can I enter real client information?", "Use fictional or de-identified information unless your plan states otherwise. Never enter real client names or details. Try a practice case before using Clinical Companion with clients. It supports, and does not replace, your professional clinical judgment."),
- ("What does 'fair use' mean?", "Clinical Companion is meant for your own professional caseload. Sharing your account, or very heavy automated use, isn't permitted."),
- ("Who is Clinical Companion for?", "Professional counselors, psychologists, and students in training who want to integrate Christian belief counseling into their work."),
+ ("What do I need to run it?", "A computer, tablet, or phone with an up-to-date web browser and an internet connection. Everything in the Counselors’ Room, including the Lie Finder, runs in the browser."),
+ ("Can I enter real client information?", "Use fictional or de-identified information unless your plan states otherwise. Never enter real client names or details. Try a practice case before using the Lie Finder with clients. It supports, and does not replace, your professional clinical judgment."),
+ ("What does 'fair use' mean?", "The Lie Finder is meant for your own professional caseload. Sharing your account, or very heavy automated use, isn't permitted."),
+ ("Who is the Counselors’ Room for?", "Professional counselors, psychologists, and students in training who want to integrate Christian belief counseling into their work."),
 ]
 HELP_FAQ_HTML = '<h2>Frequently asked questions</h2><div class="faq">' + ''.join(
  '<details><summary>%s</summary>%s</details>' % (q, faq_body(a)) for q, a in HELP_FAQS) + '</div>'
 page('help','Help & Support',
- "Questions about signing up, your membership, or Clinical Companion? We\u2019re glad to help.",
+ "Questions about signing up, your membership, or the Lie Finder? We\u2019re glad to help.",
  '<h2>Contact</h2>'
  '<div class="card"><h3>Email Brian</h3>'
  '<p>Write to <a href="mailto:brian@beliefcounselor.com">brian@beliefcounselor.com</a>. We aim to reply within 1-2 business days.</p>'
