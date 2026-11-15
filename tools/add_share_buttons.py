@@ -48,7 +48,7 @@ PREFIX = {
 NAME = re.compile(r"^(%s)-(\d+)-.*\.html$" % "|".join(PREFIX))
 
 STYLE = (
-    "<style>.emailshare{margin:10px 0 14px;font:14px/1.3 Arial,Helvetica,sans-serif}"
+    "<style>.emailshare{margin:10px 0 14px;font:14px/1.3 Arial,Helvetica,sans-serif;display:flex;flex-wrap:wrap;gap:10px}"
     ".emailshare-btn{display:inline-flex;align-items:center;gap:6px;color:#1e3556;text-decoration:none;"
     "border:1px solid #c4b48a;background:#fffdf8;border-radius:999px;padding:5px 12px}"
     ".emailshare-btn:hover{border-color:#a8864f;color:#a8864f}.emailshare-btn svg{display:block}"
@@ -58,6 +58,13 @@ ICON = (
     '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" '
     'focusable="false"><rect x="3" y="5" width="18" height="14" rx="1.5" fill="none" stroke="currentColor" '
     'stroke-width="1.7"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>'
+)
+
+
+PLAY = (
+    '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" '
+    'focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/>'
+    '<path d="M10 8.5v7l6-3.5z" fill="currentColor"/></svg>'
 )
 
 
@@ -116,7 +123,10 @@ def share_block(page, short):
         START + STYLE
         + '<p class="emailshare noprint"><a class="emailshare-btn" target="_top" href="'
         + html.escape(href, quote=True)
-        + '" aria-label="Share this information by email">' + ICON + " Share this information</a></p>"
+        + '" aria-label="Share this information by email">' + ICON + " Share this information</a>"
+        + '<a class="emailshare-btn" href="' + PROCESS + '" target="_blank" rel="noopener" '
+        + 'aria-label="Overview of Belief Counseling (videos open in a new tab)">' + PLAY
+        + " Overview of Belief Counseling</a></p>"
         + END + "\n"
     )
 
