@@ -112,11 +112,6 @@ a.btn.disabled{opacity:.5;cursor:not-allowed}
         <p class="help">Write down what the client actually said, word for word. This is the most helpful part of your search.</p>
         <textarea id="words" rows="3" maxlength="2000"></textarea>
       </div>
-      <div class="step">
-        <div class="stephead"><span class="num">5</span><label class="steptitle" for="mining">What the Mining Tools showed <span class="opt">(optional)</span></label></div>
-        <p class="help">If the client completed a Mining Tool, note the answers that stood out.</p>
-        <textarea id="mining" rows="3" maxlength="2000"></textarea>
-      </div>
       <div class="row">
         <button type="submit" class="btn primary" id="go">Find the likely lies</button>
         <span class="status" id="status" role="status" aria-live="polite"></span>
@@ -220,8 +215,7 @@ a.btn.disabled{opacity:.5;cursor:not-allowed}
       levels: LEVELS.map(function(l){return l[0];}).filter(function(n){return checked[n];}),
       hunch: $('hunch').value.trim(),
       experiences: $('origin').value.trim(),
-      words: $('words').value.trim(),
-      mining: $('mining').value.trim()
+      words: $('words').value.trim()
     };
     if(!input.hunch && !input.experiences && !input.words){
       showError('Please fill in at least your hunch, the client’s experiences, or the client’s words.'); return;
