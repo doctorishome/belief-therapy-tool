@@ -136,6 +136,10 @@ def write_stub(short, path):
     out = ROOT / "card" / (short + ".html")
     out.parent.mkdir(exist_ok=True)
     out.write_text(STUB.format(url=url), encoding="utf-8")
+    # Folder copy too, so the address works with or without ".html" on every web host.
+    folder = ROOT / "card" / short
+    folder.mkdir(exist_ok=True)
+    (folder / "index.html").write_text(STUB.format(url=url), encoding="utf-8")
 
 
 def strip_old(page):
