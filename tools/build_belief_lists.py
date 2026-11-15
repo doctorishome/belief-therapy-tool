@@ -2,7 +2,7 @@
 Edit tools/lists/<page>.json (add a belief, add a card link), run this, then push; no Wix editing needed.
 A belief is [text] or [text, "Card-file.html"]; a card link makes it a clickable 'Open belief card' link.
 Optional "sections" is a list of {heading, hint, groups} drawn the same way, under the main groups."""
-import json,sys,html
+import json,sys,html,re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 CSS=('body{margin:16px;color:#2b2b2b;font:18px/1.7 Georgia,serif}h2{color:#a8864f;font-size:24px;border-bottom:1px solid #d9c7a3}aside{padding:16px;border-left:3px solid #a8864f;background:#fbf6ec;font:14px/1.6 Arial;color:#5b6472}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}details{border:1px solid #eadcc4;border-radius:12px;background:#f6eee2;overflow:hidden}summary{padding:22px;cursor:pointer;color:#1e3556;font:bold 18px/1.4 Georgia;min-height:65px}summary small{display:block;font:12px Arial;color:#5b6472;margin-top:8px}ol{background:#fdfaf4;margin:0;padding:15px 25px 20px 42px;font-size:16px}li{padding:8px 0}input{box-sizing:border-box;width:100%;padding:16px;background:#fdfaf4;border:1px solid #eadcc4;border-radius:8px;font:17px Georgia;margin:12px 0 20px}label{font:17px Arial;color:#1e3556}footer{font:13px/1.6 Arial;color:#5b6472;margin-top:25px}section.group{margin:0;padding:0}section.group+section.group{margin-top:22px}@media(max-width:600px){.grid{grid-template-columns:1fr}}a.cardlink{color:#1e3556;text-decoration:underline;text-decoration-color:#a8864f;text-underline-offset:3px}a.cardlink:hover{color:#a8864f}.cardtag{font:12px Arial;color:#a8864f;white-space:nowrap}')
@@ -11,7 +11,10 @@ def build(name):
     d=json.loads((ROOT/'tools/lists'/(name+'.json')).read_text(encoding='utf-8'))
     e=html.escape
     def li(b):
-        if len(b)>1: return '<li><a class="cardlink" href="%s%s" target="_blank" rel="noopener">“%s”</a> <small class="cardtag">Open belief card</small></li>'%(d['card_base'],b[1],e(b[0],quote=False))
+        if len(b)>1:
+            m=re.search(r'(?:Psych|Socio|Cult|Bio|Core|Belief|Marriage|Inter)-(\d+)', b[1])
+            cid=' id="card-%d"'%int(m.group(1)) if m else ''
+            return '<li%s><a class="cardlink" href="%s%s" target="_blank" rel="noopener">“%s”</a> <small class="cardtag">Open belief card</small></li>'%(cid,d['card_base'],b[1],e(b[0],quote=False))
         return '<li>“%s”</li>'%e(b[0],quote=False)
     def grid(groups):
         return ''.join('<details><summary>%s<small>%d beliefs</small></summary><ol>%s</ol></details>'%(e(g['name'],quote=False),len(g['beliefs']),''.join(li(b) for b in g['beliefs'])) for g in groups)
@@ -20,7 +23,8 @@ def build(name):
     sections=block(d['heading'], d['hint'], d['groups'])
     for s in d.get('sections') or []:
         sections+=block(s['heading'], s['hint'], s['groups'])
-    page=('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>%s</title><style>%s</style></head><body><p>%s</p><aside>%s</aside><p><label for="search">%s</label><input id="search" type="search" placeholder="%s"></p>%s<footer>%s</footer><script>%s</script></body></html>'
-      %(e(d['heading'],quote=False),CSS,d['intro'],d['aside'],d['search_label'],e(d['placeholder']),sections,d['footer'],SCRIPT))
+    share='<p class="emailshare noprint"><a class="emailshare-btn" data-email="page" href="mailto:" aria-label="Email this page to a friend">Email this page to a friend</a></p><script src="../site/email-share.js"></script>'
+    page=('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>%s</title><style>%s</style></head><body><p>%s</p><aside>%s</aside><p><label for="search">%s</label><input id="search" type="search" placeholder="%s"></p>%s%s<footer>%s</footer><script>%s</script></body></html>'
+      %(e(d['heading'],quote=False),CSS,d['intro'],d['aside'],d['search_label'],e(d['placeholder']),sections,share,d['footer'],SCRIPT))
     out=ROOT/'belief-lists'/(name+'.html');out.write_text(page,encoding='utf-8');print(out.name,len(page))
 for n in (sys.argv[1:] or [p.stem for p in (ROOT/'tools/lists').glob('*.json')]): build(n)
