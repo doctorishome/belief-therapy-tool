@@ -257,6 +257,9 @@ PRACTICE_CSS = """
 .portrait{flex:0 0 48px;width:48px;height:48px;border-radius:50%;overflow:hidden;background:#f4efe3;border:2px solid var(--gold)}
 .portrait img{width:100%;height:100%;object-fit:cover;display:block}
 .casetext{min-width:0}
+.banner{margin:8px 0 16px}
+.banner img{display:block;width:100%;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(18,40,76,.12)}
+.banner figcaption{margin:6px 0 0;font:13px/1.4 Arial,Helvetica,sans-serif;color:var(--mut)}
 """
 
 e = html.escape
@@ -334,12 +337,16 @@ def live_practice():
     for n in range(2, 11):
         cases.append(row(n, blank, 'Coming soon <span class="chip keep">Members</span>'))
     note = "One case is free for everyone. Members ($14.95) get the full case list."
+    banner = e(href("C/cases/diagnosis-practice-banner.jpg"))
+    banner_alt = e("A counselor in training takes notes while interviewing a fictional AI client on her laptop.")
     return (
         "<h2>Live Interactive Diagnosis Practice</h2>"
+        '<figure class="banner"><img alt="%s" src="%s">'
+        '<figcaption>AI-generated image.</figcaption></figure>'
         '<div class="item"><h4>AI-assisted practice cases</h4><p>%s</p><p>%s</p><p>%s</p></div>'
         '<div class="item"><h4>How to start a case</h4><ol class="steps">%s</ol></div>'
         '<div class="item"><h4>Practice Cases</h4><ol class="cases">%s</ol><p class="fine">%s</p></div>'
-        % (e(intro), e(sessions), e(fiction), "".join(lis), "".join(cases), e(note))
+        % (banner_alt, banner, e(intro), e(sessions), e(fiction), "".join(lis), "".join(cases), e(note))
     )
 
 
