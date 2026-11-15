@@ -26,7 +26,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CARDS = ROOT / "belief-cards"
 SITE = "https://www.beliefcounselor.com"
 PAGES = "https://doctorishome.github.io/belief-therapy-tool/"
-PROCESS = SITE + "/the-process"
+PROCESS = SITE + "/overview"
 DISCLAIMER = "This educational resource is not a diagnosis or a substitute for professional care."
 SUBJECT = "Belief Counseling information you may find helpful"
 MARK = "<!-- ============ CARD ============ -->"
