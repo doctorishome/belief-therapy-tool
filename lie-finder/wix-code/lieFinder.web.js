@@ -5,17 +5,15 @@
 // instructions and the master list of lies (both read from GitHub), asks Claude for the
 // best-fitting lies, and sends the answer back to the page.
 //
-// WHICH AI: change PROVIDER below to 'claude' or 'grok'. Nothing else needs to change.
-// Needs one secret in the Secrets Manager, named to match the AI you chose:
-//   Claude -> ANTHROPIC_API_KEY      Grok -> XAI_API_KEY
+// WHICH AI: change PROVIDER below. Nothing else needs to change.
+//   'wix'    -> Claude Haiku through Wix's built-in AI (no key needed; Wix handles billing)
+//   'claude' -> Claude Haiku through your own Anthropic account (secret ANTHROPIC_API_KEY)
+//   'grok'   -> Grok through your own xAI account (secret XAI_API_KEY)
 //
-// CACHING (saves about three-quarters of the cost when searches come close together):
-// the instructions and the full master list are sent first and always in the same order,
-// so the AI company can reuse them instead of charging full price each time.
-//   Claude: marked for caching on purpose (kept 5 minutes, renewed by each search).
-//   Grok: caches repeated openings automatically; a fixed conversation ID helps it match.
-// The levels the counselor checks are sent with the notes (not used to shorten the list),
-// so the cached part never changes.
+// LEVELS FIRST: only the beliefs from the levels the counselor checked (plus the Core
+// False Beliefs) are sent. If no level is checked, a small first request asks the AI to
+// pick the 1-3 levels that fit best. This keeps each search small and inexpensive.
+//
 // Who can use it: right now only the site owner (Permissions.Admin), for testing.
 // When the Counselor's Room has members, change Permissions.Admin to Permissions.SiteMember.
 
@@ -23,13 +21,23 @@ import { Permissions, webMethod } from 'wix-web-module';
 import { fetch } from 'wix-fetch';
 import { secrets } from 'wix-secrets-backend.v2';
 import { elevate } from 'wix-auth';
+import { httpClient, auth } from '@wix/essentials';
 
 const GITHUB = 'https://doctorishome.github.io/belief-therapy-tool/lie-finder/';
-const PROVIDER = 'claude';               // 'claude' or 'grok'
-const MODELS = { claude: 'claude-haiku-5-5', grok: 'grok-4.6' };
+const PROVIDER = 'wix';                  // 'wix', 'claude' or 'grok'
+const MODELS = { wix: 'claude-haiku-5-5', claude: 'claude-haiku-5-5', grok: 'grok-4.6' };
 const KEY_NAMES = { claude: 'ANTHROPIC_API_KEY', grok: 'XAI_API_KEY' };
 const ALL_LEVELS = ['Biological/Physical', 'Psychological/Cognitive', 'Interpersonal',
   'Socioeconomic', 'Sociocultural', 'Spiritual/Religious'];
+const CORE = 'Core False Beliefs';
+const LEVEL_HINTS = {
+  'Biological/Physical': 'illness, injury, pain, the body, aging, disability, brain chemistry, medication',
+  'Psychological/Cognitive': 'thinking patterns, mood, depression, anxiety, trauma, abuse, addiction, personality patterns, self-talk',
+  'Interpersonal': 'parents, family, marriage, dating, friendships, church relationships, grief and loss, work relationships',
+  'Socioeconomic': 'money, debt, job loss, work and calling, class, provision, life-stage pressures',
+  'Sociocultural': 'culture, family heritage, community, media, race, gender roles, politics, status, mental-health stigma',
+  'Spiritual/Religious': 'God, sin, guilt, forgiveness, prayer, the church, heaven and hell, spiritual warfare, suffering',
+};
 
 let cache = { at: 0, instructions: '', beliefs: [] };
 
@@ -78,9 +86,44 @@ async function askClaude(apiKey, system, user) {
     }),
   });
   const data = await res.json();
-  if (!res.ok) { console.error('False Belief Finder (Claude) error', res.status, JSON.stringify(data)); return null; }
+  if (!res.ok) { console.error('Lie Finder (Claude) error', res.status, JSON.stringify(data)); return null; }
   if (data.usage) console.log('Claude usage', JSON.stringify(data.usage));
   return (data.content || []).filter((c) => c.type === 'text').map((c) => c.text).join('');
+}
+
+// Claude through Wix's built-in AI. Wix signs the request; no key is needed.
+async function askWix(system, user, maxTokens) {
+  const send = auth.elevate(httpClient.fetchWithAuth);
+  const res = await send('https://www.wixapis.com/anthropic/v1/messages', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', 'anthropic-version': '2023-06-01' },
+    body: JSON.stringify({
+      model: MODELS.wix,
+      max_tokens: maxTokens || 3000,
+      system,
+      messages: [{ role: 'user', content: user }],
+    }),
+  });
+  const data = await res.json();
+  if (!res.ok) { console.error('Lie Finder (Wix AI) error', res.status, JSON.stringify(data)); return null; }
+  if (data.usage) console.log('Wix AI usage', JSON.stringify(data.usage));
+  return (data.content || []).filter((c) => c.type === 'text').map((c) => c.text).join('');
+}
+
+async function ask(apiKey, system, user, maxTokens) {
+  if (PROVIDER === 'wix') return askWix(system, user, maxTokens);
+  if (PROVIDER === 'grok') return askGrok(apiKey, system, user);
+  return askClaude(apiKey, system, user);
+}
+
+// First, small request: which levels fit best (used only when the counselor checked none).
+async function pickLevels(apiKey, notesText) {
+  const system = 'You help a Christian counselor decide where a client\'s false beliefs most likely began. ' +
+    'The six levels are:\n' + ALL_LEVELS.map((l) => '- ' + l + ': ' + LEVEL_HINTS[l]).join('\n') +
+    '\nReply with the names of the 1 to 3 levels that fit best, separated by commas, and nothing else.';
+  const text = await ask(apiKey, system, notesText, 300);
+  const picked = ALL_LEVELS.filter((l) => String(text || '').toLowerCase().includes(l.toLowerCase()));
+  return picked.length ? picked.slice(0, 3) : ALL_LEVELS.slice();
 }
 
 async function askGrok(apiKey, system, user) {
@@ -89,7 +132,7 @@ async function askGrok(apiKey, system, user) {
     headers: {
       'content-type': 'application/json',
       authorization: 'Bearer ' + apiKey,
-      'x-grok-conv-id': 'belief-counseling-false-belief-finder',
+      'x-grok-conv-id': 'belief-counseling-lie-finder',
     },
     body: JSON.stringify({
       model: MODELS.grok,
@@ -98,7 +141,7 @@ async function askGrok(apiKey, system, user) {
     }),
   });
   const data = await res.json();
-  if (!res.ok) { console.error('False Belief Finder (Grok) error', res.status, JSON.stringify(data)); return null; }
+  if (!res.ok) { console.error('Lie Finder (Grok) error', res.status, JSON.stringify(data)); return null; }
   if (data.usage) console.log('Grok usage', JSON.stringify(data.usage));
   return (((data.choices || [])[0] || {}).message || {}).content || '';
 }
@@ -119,38 +162,49 @@ export const findLies = webMethod(Permissions.Admin, async (input) => {
 
     const { instructions, beliefs } = await loadFromGitHub();
     let apiKey = '';
-    try {
-      const raw = await elevate(secrets.getSecretValue)(KEY_NAMES[PROVIDER]);
-      apiKey = typeof raw === 'string' ? raw : raw && raw.value;
-    } catch (e) {
-      apiKey = '';
+    if (PROVIDER !== 'wix') {
+      try {
+        const raw = await elevate(secrets.getSecretValue)(KEY_NAMES[PROVIDER]);
+        apiKey = typeof raw === 'string' ? raw : raw && raw.value;
+      } catch (e) {
+        apiKey = '';
+      }
+      if (!apiKey) return { error: 'The search is not set up yet (the AI key is missing).' };
     }
-    if (!apiKey) return { error: 'The search is not set up yet (the AI key is missing).' };
 
-    // Fixed part (cached): instructions + the whole master list, same every time.
+    const notesText =
+      'Hunch: ' + (notes.hunch || '(not given)') +
+      '\n\nWhat the client has experienced: ' + (notes.experiences || '(not given)') +
+      '\n\nThe client’s exact words: ' + (notes.words || '(not given)') +
+      '\n\nWhat the Mining Tools showed: ' + (notes.mining || '(not given)');
+
+    // Levels first: the counselor's checked levels, or the AI's pick when none are checked.
+    const chosenByAI = !levels.length;
+    const searchLevels = chosenByAI ? await pickLevels(apiKey, notesText) : levels;
+    const shortList = beliefs.filter((b) => b.level === CORE || searchLevels.includes(b.level));
+
     const system = instructions +
       '\n\n## Master list of false beliefs (choose only from these; use the exact ID and wording)\n' +
-      '(Core False Beliefs are always considered. Prefer the levels the counselor checked; if none are checked, consider all levels.)\n' +
-      listForPrompt(beliefs);
+      '(This list holds the Core False Beliefs plus the levels being searched: ' + searchLevels.join(', ') + '.)\n' +
+      listForPrompt(shortList);
 
-    // Changing part: this search's notes.
     const user =
-      'Levels the counselor checked: ' + (levels.length ? levels.join(', ') : 'none checked (search all levels)') +
+      'Levels being searched: ' + searchLevels.join(', ') + (chosenByAI ? ' (chosen by the AI; the counselor checked none)' : ' (checked by the counselor)') +
       '\n\nHunch: ' + (notes.hunch || '(not given)') +
       '\n\nWhat the client has experienced: ' + (notes.experiences || '(not given)') +
       '\n\nThe client’s exact words: ' + (notes.words || '(not given)') +
       '\n\nWhat the Mining Tools showed: ' + (notes.mining || '(not given)') +
       '\n\nReply with the JSON only.';
 
-    const text = PROVIDER === 'grok'
-      ? await askGrok(apiKey, system, user)
-      : await askClaude(apiKey, system, user);
+    const text = await ask(apiKey, system, user, 3000);
     if (text === null) {
       return { error: 'The search service is busy or unavailable. Please try again in a minute.' };
     }
     const result = readJson(text);
     const known = new Set(beliefs.map((b) => b.id));
     result.beliefs = (result.beliefs || []).filter((b) => known.has(b.id));
+    result.levels_searched = searchLevels;
+    result.levels_chosen_by_ai = chosenByAI;
     return { result };
   } catch (e) {
     console.error('Lie Finder failed', e);

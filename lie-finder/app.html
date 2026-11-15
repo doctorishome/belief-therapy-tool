@@ -71,6 +71,12 @@ textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid #7FA0D6;ou
   .pp{display:flex;gap:18px;align-items:flex-start;border-top:1px solid #999;padding:14px 0;break-inside:avoid}
   .pp img{width:110px;height:110px}
 }
+.planitem>div:first-child{flex:1}
+.emailpick{display:inline-flex;align-items:center;gap:6px;color:#fff;font:15px Arial,sans-serif;white-space:nowrap;cursor:pointer}
+.emailpick input{width:18px;height:18px}
+a.btn{text-decoration:none;display:inline-flex;align-items:center}
+a.btn.disabled{opacity:.5;cursor:not-allowed}
+#emailnote.warn{color:#ffd68a;font-weight:bold}
 </style>
 </head>
 <body>
@@ -88,7 +94,7 @@ textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid #7FA0D6;ou
     <form class="card" id="form">
       <div class="step">
         <div class="stephead"><span class="num">1</span><span class="steptitle">Where do you think the lies started?</span></div>
-        <p class="help">Check every level that seems involved. The Core False Beliefs are always included.</p>
+        <p class="help">Check every level that seems involved. Not sure? Leave them all unchecked and the Lie Finder will choose the levels that fit best. The Core False Beliefs are always included.</p>
         <div class="levels" id="levels"></div>
       </div>
       <div class="step">
@@ -140,7 +146,9 @@ textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid #7FA0D6;ou
     <div id="planlist" style="display:flex;flex-direction:column;gap:10px"></div>
     <div class="row">
       <button type="button" class="btn goldbtn" id="print">Print the plan with scan codes</button>
+      <a class="btn goldbtn" id="emailcards" href="#" target="_blank" rel="noopener">Send these cards to my client</a>
     </div>
+    <p class="soft" id="emailnote" style="font-size:15px">Tick up to 2 cards to email. Your own email program opens with the lie, the truth and a Scripture for each card; add your client’s email address and press Send.</p>
     <p class="soft" style="font-size:15px">The printout lists each lie with a scan code. The client scans it with a phone camera to open the belief card, songs, audio and homework.</p>
   </section>
 </main>
@@ -160,6 +168,8 @@ textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid #7FA0D6;ou
   var checked = {};
   var byId = {};
   var plan = [];
+  var emailPick = [];   // ids of plan cards ticked for the email (2 at most)
+  var cardInfo = {};    // id -> {truth, verse} read from the card page
   var current = [];
   var connected = false;
   var waiting = false;
@@ -231,7 +241,10 @@ textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid #7FA0D6;ou
     if(!r || !r.beliefs){ showError('The search returned no results. Please add more detail and try again.'); return; }
     current=r.beliefs;
     $('safetytext').textContent=r.safety||''; show('safety', !!r.safety);
-    $('signstext').textContent=r.strongest_levels||''; show('signs', !!r.strongest_levels);
+    var lv = (r.levels_searched||[]).join(', ');
+    var sig = r.strongest_levels||'';
+    if(lv) sig = (sig? sig+' ' : '') + '(Levels searched: ' + lv + (r.levels_chosen_by_ai? ', chosen by the Lie Finder' : '') + ', plus the Core False Beliefs.)';
+    $('signstext').textContent=sig; show('signs', !!sig);
     $('missingtext').textContent=r.missing||''; show('missing', !!r.missing);
     drawResults();
     show('formview', false); show('resultview', true); window.scrollTo(0,0);
@@ -265,8 +278,60 @@ textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid #7FA0D6;ou
     });
   }
   function togglePlan(item){
-    if(inPlan(item.id)) plan=plan.filter(function(p){return p.id!==item.id;}); else plan.push(item);
+    if(inPlan(item.id)){
+      plan=plan.filter(function(p){return p.id!==item.id;});
+      emailPick=emailPick.filter(function(i){return i!==item.id;});
+    } else {
+      plan.push(item);
+      if(item.card){ loadCardInfo(item); if(emailPick.length<2) emailPick.push(item.id); }
+    }
     drawPlan(); drawResults();
+  }
+
+  // Email to the client: read each card's truth and key verse from the card page itself.
+  var PREFIX={Belief:'spiritual',Psych:'psych',Bio:'bio',Core:'core',Inter:'inter',Marriage:'marriage',Socio:'socio',Cult:'culture'};
+  function shortLink(card){
+    var m=String(card||'').match(/\/(Belief|Psych|Bio|Core|Inter|Marriage|Socio|Cult)-(\d+)-[^\/]*\.html$/);
+    return m ? 'https://www.beliefcounselor.com/card/'+PREFIX[m[1]]+'-'+parseInt(m[2],10) : card;
+  }
+  function txt(n){ return n ? n.textContent.replace(/\s+/g,' ').trim() : ''; }
+  function loadCardInfo(item){
+    if(cardInfo[item.id]) return;
+    cardInfo[item.id]={truth:'',verse:''};
+    fetch(item.card).then(function(r){return r.text();}).then(function(h){
+      var d=new DOMParser().parseFromString(h,'text/html');
+      var key=d.querySelector('.key'), verse='';
+      if(key){
+        var ref=txt(key.querySelector('.ref'));
+        var k=key.cloneNode(true); var rr=k.querySelector('.ref'); if(rr) rr.remove();
+        var words=txt(k).replace(/^[“"\s]+|[”"\s.]+$/g,'');
+        if(words) verse='“'+words+'”'+(ref?' '+ref:'');
+      }
+      cardInfo[item.id]={truth:txt(d.querySelector('p.truth')), verse:verse};
+      updateEmailLink();
+    }).catch(function(){});
+  }
+  function updateEmailLink(){
+    var a=$('emailcards'); if(!a) return;
+    var picks=plan.filter(function(p){return p.card && emailPick.indexOf(p.id)>=0;});
+    if(!picks.length){ a.classList.add('disabled'); a.setAttribute('aria-disabled','true'); a.href='#'; return; }
+    a.classList.remove('disabled'); a.removeAttribute('aria-disabled');
+    // Level 0: full verse; 1: verse reference only; 2: no truth either (only if a very long card needs it).
+    function build(level){
+      var body='I pray this information will be helpful as we work together.';
+      picks.forEach(function(p,i){
+        var c=cardInfo[p.id]||{};
+        body+='\n\n'+(i+1)+'. The lie: "'+p.belief+'"';
+        if(c.truth && level<2) body+='\nThe truth: '+c.truth;
+        if(c.verse) body+='\nScripture: '+(level===0 ? c.verse : (c.verse.match(/\(([^()]*)\)\s*$/)||[,''])[1] || c.verse);
+        body+='\nRead the card: '+shortLink(p.card);
+      });
+      body+='\n\nFor a short video overview of Belief Counseling:\nhttps://www.beliefcounselor.com/overview';
+      body+='\n\nThis educational resource is not a diagnosis or a substitute for professional care.';
+      return 'mailto:?subject='+encodeURIComponent('Belief Counseling information for you')+'&body='+encodeURIComponent(body);
+    }
+    var href=build(0); if(href.length>2000) href=build(1); if(href.length>2000) href=build(2);
+    a.href=href;
   }
   function drawPlan(){
     var box=$('planlist'); box.innerHTML='';
@@ -275,14 +340,28 @@ textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid #7FA0D6;ou
       var t=el('div'); var s=el('strong',null,'“'+p.belief+'”'); s.style.display='block'; t.appendChild(s);
       t.appendChild(el('span','soft', p.card?'Belief card, homework, songs and audio':'No card yet'));
       d.appendChild(t);
+      if(p.card){
+        var lab=el('label','emailpick'); var cb=document.createElement('input'); cb.type='checkbox';
+        cb.checked=emailPick.indexOf(p.id)>=0;
+        cb.onchange=function(){
+          if(cb.checked){
+            if(emailPick.length>=2){ cb.checked=false; $('emailnote').textContent='Please choose up to 2 cards per email, so the Scripture fits. To send more, send this email first, then choose the next two.'; $('emailnote').classList.add('warn'); return; }
+            emailPick.push(p.id);
+          } else { emailPick=emailPick.filter(function(i){return i!==p.id;}); }
+          $('emailnote').classList.remove('warn'); updateEmailLink();
+        };
+        lab.appendChild(cb); lab.appendChild(document.createTextNode(' Email')); d.appendChild(lab);
+      }
       var x=el('button','btn remove','Remove'); x.type='button'; x.onclick=function(){ togglePlan(p); }; d.appendChild(x);
       box.appendChild(d);
     });
     if(!plan.length) box.appendChild(el('p','soft','Add a lie from the results once you’ve confirmed it with your client.'));
     $('plancount').textContent = plan.length===1 ? '1 confirmed lie' : plan.length+' confirmed lies';
     $('print').disabled=!plan.length;
+    updateEmailLink();
   }
   drawPlan();
+  $('emailcards').addEventListener('click', function(e){ if(this.classList.contains('disabled')) e.preventDefault(); });
 
   // Printout with scan codes
   $('print').onclick=function(){
