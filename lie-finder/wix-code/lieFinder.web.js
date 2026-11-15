@@ -93,8 +93,7 @@ async function askClaude(apiKey, system, user) {
 
 // Claude through Wix's built-in AI. Wix signs the request; no key is needed.
 async function askWix(system, user, maxTokens) {
-  const send = auth.elevate(httpClient.fetchWithAuth);
-  const res = await send('https://www.wixapis.com/anthropic/v1/messages', {
+  const request = {
     method: 'POST',
     headers: { 'content-type': 'application/json', 'anthropic-version': '2023-06-01' },
     body: JSON.stringify({
@@ -103,9 +102,20 @@ async function askWix(system, user, maxTokens) {
       system,
       messages: [{ role: 'user', content: user }],
     }),
-  });
+  };
+  const url = 'https://www.wixapis.com/anthropic/v1/messages';
+  let res;
+  try {
+    res = await auth.elevate(httpClient.fetchWithAuth)(url, request);
+  } catch (e) {
+    console.error('Lie Finder: elevated Wix AI call failed, trying without elevation', e);
+    res = await httpClient.fetchWithAuth(url, request);
+  }
   const data = /** @type {any} */ (await res.json());
-  if (!res.ok) { console.error('Lie Finder (Wix AI) error', res.status, JSON.stringify(data)); return null; }
+  if (!res.ok) {
+    console.error('Lie Finder (Wix AI) error', res.status, JSON.stringify(data));
+    throw new Error('Wix AI answered ' + res.status + ': ' + JSON.stringify(data).slice(0, 200));
+  }
   if (data.usage) console.log('Wix AI usage', JSON.stringify(data.usage));
   return (data.content || []).filter((c) => c.type === 'text').map((c) => c.text).join('');
 }
@@ -208,6 +218,7 @@ export const findLies = webMethod(Permissions.Admin, async (input) => {
     return { result };
   } catch (e) {
     console.error('Lie Finder failed', e);
-    return { error: 'Something went wrong with the search. Please try again.' };
+    // While only the site owner can search, show the technical detail to help fix problems.
+    return { error: 'Something went wrong with the search. Please try again. (Detail: ' + String((e && e.message) || e).slice(0, 300) + ')' };
   }
 });
