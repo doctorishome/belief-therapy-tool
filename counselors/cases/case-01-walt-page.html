@@ -15,6 +15,9 @@ body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);backg
 .bar button{background:var(--gold);color:var(--navy);border:0;cursor:pointer}
 .bar a{color:var(--gold);border:1px solid var(--gold)}
 .sheet{max-width:740px;margin:0 auto;padding:28px 22px 64px}
+.who{display:flex;gap:16px;align-items:flex-start}
+.portrait{flex:0 0 72px;width:72px;height:72px;border-radius:50%;overflow:hidden;background:#f4efe3;border:2px solid var(--gold)}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
 h1{color:var(--navy);font-size:clamp(1.6rem,4vw,2.15rem);line-height:1.25;margin:0 0 8px}
 .copy{color:var(--mut);margin:0 0 22px;font-size:.98rem}
 h2{color:var(--navy);font-size:1.2rem;margin:26px 0 8px;border-bottom:2px solid var(--gold);padding-bottom:4px}
@@ -22,7 +25,9 @@ p{margin:0 0 12px}
 @media(max-width:560px){
   .bar{padding:12px}
   .sheet{padding:22px 16px 48px}
-  .bar button,.bar a{width:100%;text-align:center}
+  .bar button,.bar a{width:auto}
+  .who{gap:12px}
+  .portrait{flex-basis:56px;width:56px;height:56px}
 }
 @media print{
   .noprint{display:none}
@@ -36,12 +41,19 @@ p{margin:0 0 12px}
 <body>
 <div class="bar noprint">
   <div class="brand">Belief Counseling<small>Counselors’ Room</small></div>
-  <button type="button" onclick="window.print()">Print this page</button>
-  <a href="../../members/assessment.html">Back to Traditional Assessment</a>
+  <button type="button" onclick="window.print()">Print</button>
+  <a download="case-01-walt.pdf" href="case-01-walt.pdf">Save a copy</a>
+  <a href="../../members/assessment.html">Back</a>
 </div>
 <article class="sheet">
-  <h1>Belief Counseling Training Case 1: “Walt”</h1>
-  <p class="copy">(c) Dr. Brian Campbell, Belief Counseling. BeliefCounselor.com</p>
+  <div class="who">
+    <!-- Drop the approved portrait in as counselors/cases/case-01-walt.jpg -->
+    <span class="portrait"><img alt="" src="case-01-walt.jpg" onerror="this.remove()"></span>
+    <div>
+      <h1>Belief Counseling Training Case 1: “Walt”</h1>
+      <p class="copy">(c) Dr. Brian Campbell, Belief Counseling. BeliefCounselor.com</p>
+    </div>
+  </div>
   <h2>Reason for Referral</h2>
   <p>Walter “Walt” Hendricks, 58, was referred by his family physician after a routine physical in October. The doctor found nothing medically wrong but wrote, “Patient seems flat and has lost weight. Says he is ‘just tired.’ Recommend counseling.” Walt asked for a Christian counselor. On the phone he said, “I’m only coming because my daughter made me promise.”</p>
   <h2>Background</h2>

@@ -246,11 +246,14 @@ a.card.cc h3{color:var(--gold)}a.card.cc p{color:#dfe6f2}
 # Extra styles for the Live Interactive Diagnosis Practice section only.
 PRACTICE_CSS = """
 .item ol{margin:8px 0 0;padding-left:1.3em}
-.item ol li{margin:8px 0}
+.item ol li{margin:10px 0}
 .item ol a{color:var(--navy2)}
 .item .fine{margin:12px 0 0;font-size:.92rem}
 .chip.keep{text-transform:none;letter-spacing:0;font-size:.75rem}
 .chip.free{color:var(--navy);border-color:var(--gold);background:#f8f1d8}
+.caserow{display:flex;gap:12px;align-items:flex-start}
+.portrait{flex:0 0 48px;width:48px;height:48px;border-radius:50%;overflow:hidden;background:#f4efe3;border:2px solid var(--gold)}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
 """
 
 e = html.escape
@@ -308,15 +311,19 @@ def live_practice():
          "block into a new chat. You can type, or you can use voice."),
     ]
     lis = ["<li>%s</li>" % step for step in steps]
-    cases = ['<li><strong>Walt</strong> <span class="chip keep free">Free sample case</span>'
+    # Empty circle until counselors/cases/case-01-walt.jpg is added. onerror hides a missing file.
+    portrait = ('<span class="portrait"><img alt="" src="%s" onerror="this.remove()"></span>'
+                % e(href("C/cases/case-01-walt.jpg")))
+    blank = '<span class="portrait"></span>'
+    cases = ['<li><span class="caserow">%s<span><strong>Walt</strong> <span class="chip keep free">Free sample case</span>'
              "<p>58-year-old band director, referred by his doctor. He says he is “just tired.”</p>"
-             '<div class="links"><a target="_blank" rel="noopener" href="%s">Case page (print)</a>'
-             '<a download="case-01-walt.txt" href="%s">AI case file</a></div></li>'
-             % (page_href, file_href)]
+             '<div class="links"><a target="_blank" rel="noopener" href="%s">Open case</a>'
+             '<a download="case-01-walt.txt" href="%s">AI case file</a></div></span></span></li>'
+             % (portrait, page_href, file_href)]
     for _n in range(2, 11):
-        cases.append('<li>Coming soon <span class="chip keep">Members</span></li>')
-    note = ("One case is free for everyone. Members ($14.95) get the full case list. "
-            "Sign-up is not on this page yet.")
+        cases.append('<li><span class="caserow">%s<span>Coming soon <span class="chip keep">Members</span></span></span></li>'
+                     % blank)
+    note = "One case is free for everyone. Members ($14.95) get the full case list."
     return (
         "<h2>Live Interactive Diagnosis Practice</h2>"
         '<div class="item"><h4>AI-assisted practice cases</h4><p>%s</p><p>%s</p><p>%s</p></div>'
