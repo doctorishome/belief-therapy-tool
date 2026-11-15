@@ -157,8 +157,8 @@ PAGES = {
         ("DSM-5-TR Disorders", "", [
             ("Disorder reviews", "Teaching reviews of the major disorders: key features, what works, and Christian-integrated care.",
              [("Open the list of disorders", "C/reviews.html")]),
-            ("False Beliefs", "Use the False Belief Finder to find the false beliefs affecting a client.",
-             [("Open False Belief Finder", SITE + "/false-belief-finder")]),
+            ("False Beliefs", "Use the Lie Finder to find the false beliefs affecting a client.",
+             [("Open Lie Finder", SITE + "/false-belief-finder")]),
             ("Treatment Plan", "", []),
         ]),
     ],
@@ -277,11 +277,18 @@ def href(a):
     return "../counselors/" + a[2:] if a.startswith("C/") else a
 
 
+# The Lie Finder stands out in the menu: a cream button with a gold ring and a magnifying glass
+# (not gold text, which marks the page you are on).
+LIE_FINDER = '<a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a>'
+
+
 def nav(current):
     out = ['<div class="nav"><div class="brand">Belief Counseling<small>%s</small></div>' % e(ROOM)]
     for f, label, _, _ in MENU:
         cls = ["on"] if f == current else []
         out.append('<a%s href="%s">%s</a>' % (' class="%s"' % " ".join(cls) if cls else "", f, e(label)))
+        if f == "index.html":
+            out.append(LIE_FINDER)
     out.append('<a href="../counselors/membership.html">Membership</a>')
     out.append('<a class="pub" target="_blank" rel="noopener" href="%s">Public Site ↗</a></div>' % SITE)
     return "".join(out)
