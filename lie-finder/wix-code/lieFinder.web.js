@@ -104,7 +104,7 @@ async function askWix(system, user, maxTokens) {
       messages: [{ role: 'user', content: user }],
     }),
   });
-  const data = await res.json();
+  const data = /** @type {any} */ (await res.json());
   if (!res.ok) { console.error('Lie Finder (Wix AI) error', res.status, JSON.stringify(data)); return null; }
   if (data.usage) console.log('Wix AI usage', JSON.stringify(data.usage));
   return (data.content || []).filter((c) => c.type === 'text').map((c) => c.text).join('');
