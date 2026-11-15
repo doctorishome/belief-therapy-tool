@@ -321,17 +321,17 @@ HELP_SIGNUP = (
  '<ol>'
  '<li>Create your login with your email and a password.</li>'
  '<li>A credit card is required at sign-up.</li>'
- '<li>Nothing is charged during the 7-day free trial. Starting on day 8, membership is $29.95 a month unless you cancel before then. We\u2019ll email you a reminder 3 days before the free week ends.</li>'
+ '<li>Membership is $14.95 a month, starting the day you sign up.</li>'
  '</ol>'
  '<p>Cancel anytime from <a href="%s" target="_top">My Subscriptions</a>.</p>' % SUBS_URL
 )
 HELP_FAQS = [
- ("How does sign-up and the free week work?", HELP_SIGNUP),
+ ("How does sign-up work?", HELP_SIGNUP),
  ("How do I cancel?",
   '<p>Cancel from <a href="%s" target="_top">My Subscriptions</a>. Sign in, open My Subscriptions, and choose Cancel. You can cancel anytime.</p>'
   '<p>In the Counselors\u2019 Room, My Subscriptions is in the menu and opens the same page.</p>' % SUBS_URL),
  ("Will I get a refund if I cancel?",
-  '<p>If you cancel during the 7-day free trial, you pay nothing. If you cancel after you\u2019ve been billed, there is no refund for the rest of that billing month. You keep access until the end of that month, and you are not billed again. After that month, Clinical Companion and the member resources are no longer available.</p>'
+  '<p>If you cancel after you\u2019ve been billed, there is no refund for the rest of that billing month. You keep access until the end of that month, and you are not billed again. After that month, Clinical Companion and the member resources are no longer available.</p>'
   '<p>For a special circumstance, email <a href="mailto:%s">%s</a>.</p>' % (BRIAN, BRIAN)),
  ("What do I need to run it?", "A computer with an up-to-date web browser and an internet connection. Clinical Companion runs in the browser."),
  ("Can I enter real client information?", "Use fictional or de-identified information unless your plan states otherwise. Never enter real client names or details. Try a practice case before using Clinical Companion with clients. It supports, and does not replace, your professional clinical judgment."),

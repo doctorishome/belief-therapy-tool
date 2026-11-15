@@ -382,7 +382,7 @@ def page(f, label, heading, summary):
         start = ('<div class="start"><a href="../counselors/landing.html"><b>Start here: Introduction</b>'
                  '<span>What this site is for, an overview, and how to find your way around.</span></a>'
                  '<a href="../counselors/membership.html"><b>Membership</b>'
-                 '<span>One week free, then $29.95 a month. How sign-up works and what is included.</span></a></div>')
+                 '<span>$14.95 a month. Cancel anytime. How sign-up works and what is included.</span></a></div>')
         body = start + '<div class="grid">%s</div>' % cards
     else:
         parts = []
