@@ -68,8 +68,9 @@ var C = "../../";                                              // the counselors
 var GH = "https://doctorishome.github.io/belief-therapy-tool/";
 var SITE = "https://www.beliefcounselor.com";
 var FORM = C + "forms/Belief-Counseling-";
-// When the voice-over is recorded: put audio/slide-00.mp3 ... beside this file and set AUDIO = true.
-var AUDIO = false;
+// Voice-over: audio/slide-00.mp3 ... slide-14.mp3 (HeyGen narration, Paul - Serious voice).
+var AUDIO = true;
+var played = false;   // after the reader presses play once, each new slide starts its narration
 
 // Each slide: flow = label in the flow list (empty for the opening and closing slides); own = the counselor’s own work (shown in blue);
 // points = on-screen bullets; say = narration paragraphs; docs = [label, address] (no address = not ready yet).
@@ -233,6 +234,8 @@ function show(i){
   document.getElementById("slide").innerHTML = h + '</div>';
   var a = AUDIO ? '<audio controls src="audio/slide-'+("0"+at).slice(-2)+'.mp3" style="width:100%;margin-bottom:10px"></audio>' : '';
   document.getElementById("narr").innerHTML = a + s.say.map(function(p){return '<p>'+esc(p)+'</p>';}).join("");
+  var au = document.querySelector("#narr audio");
+  if (au) { au.addEventListener("play", function(){ played = true; }); if (played) { var pr = au.play(); if (pr && pr.catch) pr.catch(function(){}); } }
   document.getElementById("count").textContent = "Slide "+(at+1)+" of "+SLIDES.length;
   document.getElementById("prev").disabled = at === 0;
   document.getElementById("next").disabled = at === SLIDES.length-1;
