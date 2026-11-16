@@ -20,6 +20,12 @@
   .card p{margin:0;font-size:17px;line-height:1.6}
   .next{display:inline-block;margin-top:24px;background:var(--gold);color:#fff;text-decoration:none;border-radius:4px;padding:12px 22px;font:bold 16px Arial,Helvetica,sans-serif}
   .next:hover{background:#8f7142}
+  .story-h{margin:26px 0 6px;color:var(--navy);font-size:22px}
+  .story{display:flex;gap:28px;align-items:center;margin:0 0 14px}
+  .story-text{flex:1}
+  .story-pic{flex:0 0 42%;margin:0}
+  .story-pic img{width:100%;border-radius:10px;display:block}
+  @media (max-width:760px){.story{flex-direction:column}.story-pic{flex-basis:auto;width:100%}}
   @media (max-width:760px){.intro,.cards{grid-template-columns:1fr}h1{font-size:32px}h2{font-size:22px}body{font-size:17px}.lead{font-size:18px}}
 </style></head>
 <body><div class="wrap">
@@ -34,6 +40,15 @@
 
 <h2>Why Beliefs Matter</h2>
 <p>Most counseling approaches focus primarily on changing emotions or behavior. Belief Counseling begins one step deeper, with the underlying beliefs that give rise to both. Our beliefs shape what we think and how we think. Our thinking, in turn, shapes how we act and how we feel.</p>
+<h3 class="story-h">The Orange Peel</h3>
+<div class="story">
+<div class="story-text">
+<p>When I was about four years old, my mother saw me eating an orange peel. “Stop eating that,” she said. “That’s poison.” I believed her. Over the years I noticed that everyone carefully peeled their oranges and threw the peels away, which only confirmed what I already knew.</p>
+<p>I believed orange peels were poison until I was 28, when I watched in horror as my new wife grated orange peel into the icing for a cake. Fortunately, that belief did little harm. But many of the things we accept without question, especially as children, are far from harmless. They can shape how we see ourselves, others, and God for a lifetime.</p>
+</div>
+<!-- Picture for the orange peel story: put the image address in src and remove the hidden attribute. -->
+<figure class="story-pic" hidden><img src="" alt="The orange peel story"></figure>
+</div>
 <p>Underlying beliefs are like the ocean tide: deep, broad, and powerful. They often develop slowly over a lifetime, many of them learned in childhood and simply accepted as true. Because they lie so deep, they can be hard to see or put into words. Yet just as the tide shapes every wave that reaches the shore, our beliefs shape the thoughts, actions, and feelings that rise to the surface of our lives.</p>
 
 <div class="cards">
