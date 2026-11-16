@@ -63,15 +63,7 @@
   }
   box.innerHTML = h + "</div>";
 
-  // Inside a Wix page, ask the page code to move in the same window; otherwise open a new tab.
-  box.querySelectorAll("a[data-path]").forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      e.preventDefault();
-      var p = a.getAttribute("data-path"), done = false;
-      function onAck(ev) { if (ev.data && ev.data.type === "navigate-ok") done = true; }
-      window.addEventListener("message", onAck);
-      try { window.parent.postMessage({ type: "navigate", path: p }, "*"); } catch (x) {}
-      setTimeout(function () { window.removeEventListener("message", onAck); if (!done) { try { window.top.location.href = SITE + p; } catch (x) { window.open(SITE + p, "_blank"); } } }, 400);
-    });
-  });
+  // Each button moves the whole page (the visitor's current tab) straight to the next page.
+  // This works on every Wix page, with or without page code.
+  box.querySelectorAll("a[data-path]").forEach(function (a) { a.setAttribute("target", "_top"); });
 })();
