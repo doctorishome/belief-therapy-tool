@@ -45,7 +45,8 @@ PAGES = {
     "belief-counseling.html": [
         ("", "", [
             ("What Is a Belief?", "What beliefs are and how they shape thinking, feeling, and behavior.",
-             [("Open page", SITE + "/beliefs")]),
+             [("Open page", SITE + "/beliefs")],
+             "https://static.wixstatic.com/media/dbdded_4b31d62e4bab4f13b7c432e198166a64~mv2.png"),
             ("What Is Belief Counseling?", "The approach in plain language: identify, challenge, and replace false beliefs with truth.",
              [("Open page", SITE + "/belief-counseling")]),
             ("Why Beliefs Matter", "Why Belief Counseling starts with beliefs, one step beneath emotions and behavior.",
@@ -200,6 +201,10 @@ p.lead{color:var(--mut);margin:6px 0 12px}
 .item{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin:10px 0}
 .item h4{margin:0;color:var(--navy);font-size:1.08rem}
 .item p{margin:2px 0 0;color:var(--mut);font-size:.96rem}
+.item.pic{display:flex;gap:18px;align-items:center}
+.item.pic .ph{flex:0 0 240px;line-height:0}
+.item.pic img{width:240px;height:135px;object-fit:cover;border-radius:6px;display:block}
+@media(max-width:620px){.item.pic{flex-direction:column;align-items:flex-start}.item.pic .ph,.item.pic img{width:100%;height:auto}}
 .item .links{margin-top:8px;display:flex;flex-wrap:wrap;gap:8px}
 .item .links a{font:bold .85rem Arial,Helvetica,sans-serif;text-decoration:none;color:var(--navy);border:1.5px solid var(--navy);border-radius:20px;padding:4px 13px}
 .item .links a:first-child{background:var(--navy);color:#fff}
@@ -349,12 +354,17 @@ def item(it):
         base = href(it[2])
         return ('<div class="vid"><h4>▶ Video: %s</h4><video controls preload="none" poster="%s.jpg">'
                 '<source src="%s.mp4" type="video/mp4"></video></div>' % (e(it[1]), base, base))
-    title, desc, links = it
+    title, desc, links = it[:3]
+    pic = it[3] if len(it) > 3 else ""
     if not links:
         return '<div class="item soon"><h4>%s<span class="chip">Coming</span></h4>%s</div>' % (
             e(title), "<p>%s</p>" % e(desc) if desc else "")
     ls = "".join('<a%s href="%s">%s</a>' % (
         "" if a[2:] in IN_ROOM else ' target="_blank" rel="noopener"', e(href(a)), e(l)) for l, a in links)
+    if pic:
+        return ('<div class="item pic"><a class="ph" target="_blank" rel="noopener" href="%s"><img src="%s" alt=""></a>'
+                '<div><h4>%s</h4>%s<div class="links">%s</div></div></div>' % (
+                    e(href(links[0][1])), e(pic), e(title), "<p>%s</p>" % e(desc) if desc else "", ls))
     return '<div class="item"><h4>%s</h4>%s<div class="links">%s</div></div>' % (
         e(title), "<p>%s</p>" % e(desc) if desc else "", ls)
 
