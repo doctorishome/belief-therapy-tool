@@ -160,7 +160,7 @@
       function onAck(ev) { if (ev.data && ev.data.type === "navigate-ok") done = true; }
       window.addEventListener("message", onAck);
       window.parent.postMessage({ type: "navigate", path: p }, "*");
-      setTimeout(function () { window.removeEventListener("message", onAck); if (!done) window.open(href(p), "_blank"); }, 700);
+      setTimeout(function () { window.removeEventListener("message", onAck); if (!done) { try { window.top.location.href = href(p); } catch (x) { window.open(href(p), "_blank"); } } }, 400);
     });
   });
 </script>

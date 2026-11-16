@@ -71,7 +71,7 @@
       function onAck(ev) { if (ev.data && ev.data.type === "navigate-ok") done = true; }
       window.addEventListener("message", onAck);
       try { window.parent.postMessage({ type: "navigate", path: p }, "*"); } catch (x) {}
-      setTimeout(function () { window.removeEventListener("message", onAck); if (!done) window.open(SITE + p, "_blank"); }, 700);
+      setTimeout(function () { window.removeEventListener("message", onAck); if (!done) { try { window.top.location.href = SITE + p; } catch (x) { window.open(SITE + p, "_blank"); } } }, 400);
     });
   });
 })();
