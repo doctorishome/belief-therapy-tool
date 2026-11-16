@@ -1,7 +1,7 @@
 // Find Help - page code (Wix Studio site "Pearls Working 5", page "Find Help")
 // Paste into the page's code panel. The embedded page (pages/find-help.html) must be #html1.
 
-import { findHelp } from 'backend/findHelp.web';
+import { findHelp } from 'backend/lieFinder.web'   // findHelp is added at the end of backend/lieFinder.web.js;
 
 $w.onReady(function () {
   const box = $w('#html1');

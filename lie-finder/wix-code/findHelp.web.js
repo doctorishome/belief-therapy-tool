@@ -1,5 +1,5 @@
 // Find Help - public AI search (Wix Studio site "Pearls Working 5")
-// File name in Wix:  backend/findHelp.web.js
+// In Wix this code is ADDED TO THE END of backend/lieFinder.web.js (see findHelp-append-to-lieFinder.js).
 //
 // What it does: takes the few sentences a visitor writes about their problem, asks Claude
 // (through Wix's built-in AI, no key needed) to choose the 3-5 belief cards that fit best,
