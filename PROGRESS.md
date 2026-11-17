@@ -296,3 +296,4 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - Nov 17: Tips 6 (tip-pastors-daughter) and 7 (tip-stripper-and-keys) added to ProTips, members-only, topics Case Study + Trauma & Dissociation. Brian wants provocative tip titles.
 - Nov 17: Tip 8 "The Narcissistic Pastor and the Myth of Non-Directive Therapy" (ProTips id tip-narcissistic-pastor), members-only, topics Case Study + Personality Disorders. Scripture written out (BSB) instead of counseling4christians links.
 - Tip 8 email draft: 414d8226-4742-4390-bccb-85b28775c851
+- Nov 17: Tip 9 "Non-Directive Therapy Killed John" (ProTips id tip-nondirective-therapy-killed-john), members-only, topics Case Study + Counseling Approach. Includes a safety box for the domestic-violence question.
