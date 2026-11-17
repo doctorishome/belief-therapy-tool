@@ -300,3 +300,4 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - Email drafts: Tip 9 f879cdef-8d0d-4e15-a260-a3394a10f17c; Tip 3 ce404a6b-914a-41a8-8205-4f935b82f101 (all 9 tips now have a draft).
 - Nov 17: Tip 10 "Did God Do This to Me? Free Will, Pain, and Suffering" (ProTips id tip-free-will-pain-suffering), members-only, topic Faith & Suffering. Email draft 666b7056-7831-42a4-ac26-024746637dcf.
 - Nov 17: Tip 11 "The Bible Is the Best Mental Health Textbook Ever Written" (ProTips id tip-bible-mental-health-textbook), members-only, topic Christian CBT. Email draft 2529aa1b-2d50-4cf4-93cd-9f2f4561e499. Brian may send a link for his "Power of Truth" video/chapter.
+- Nov 17: Tip 12 "Did We Teach Her This? A Case of Gender Dysphoria" (ProTips id tip-did-we-teach-her-this), members-only, topics Case Study + Children & Families. Church references removed at Brian’s request. Email draft 90d6f493-c2d7-43ad-b2ac-c9b6dfc8e09d.
