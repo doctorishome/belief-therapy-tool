@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Weekly Professional Tips</title><meta name="description" content="A new Professional Tip from Dr. Brian Campbell each week. Two free sample tips; members read them all."><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Professional Tips</title><meta name="description" content="A new Professional Tip from Dr. Brian Campbell each week. Two free sample tips; members read them all."><style>
 :root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
@@ -86,36 +86,48 @@ ul.clean{padding-left:20px}ul.clean li{margin:5px 0}
 .pill{display:inline-block;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;border-radius:12px;padding:2px 10px;margin-left:6px;vertical-align:middle}
 .pill.free{background:var(--gold);color:var(--navy)}.pill.lk{background:#e4dfd2;color:#5b6678}
 .join{background:var(--navy);color:#fff;border-radius:10px;padding:22px;text-align:center;margin:22px 0}.join p{color:#dfe6f2;margin:6px 0 14px}.join a.li{color:var(--gold)}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.5px;background:#eef1f6;color:var(--navy2);border-radius:12px;padding:2px 9px;margin:6px 6px 0 0;text-transform:none}
+.topics{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px}.topics button{font:inherit;font-size:.92rem;background:#fff;color:var(--navy);border:1px solid var(--gold);border-radius:20px;padding:6px 16px;cursor:pointer}.topics button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+h2.more{margin-top:40px}.morelinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:14px 0}.morelinks a{display:block;background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:14px 18px;text-decoration:none;color:var(--ink)}.morelinks b{color:var(--navy);display:block;font-size:1.08rem}.morelinks span{color:var(--mut);font-size:.95rem}
 @media(max-width:560px){.t{flex-wrap:wrap}.t .go{margin-left:62px}}</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a class="l" href="../members/index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a class="l" href="../members/belief-counseling.html">Belief Counseling</a><a class="l" href="../members/process.html">The Process</a><a class="l" href="../members/assessment.html">Traditional Assessment</a><a class="l on" href="../members/tips.html">Professional Tips</a><a class="l" href="../members/library.html">Library</a><a class="l" target="_blank" rel="noopener" href="https://www.beliefcounselor.com/scriptures">Scripture Lookup</a><a class="l" href="../counselors/membership.html">Membership</a><span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a><a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a><a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->
-<div class="hero"><div class="eyebrow">Belief Counseling for Counselors</div><h1>Weekly Professional Tips</h1><p>A new tip from Dr. Campbell each week, drawn from 35 years of practice.</p></div>
-<div class="list"><div class="back" style="margin:0 0 6px"><a href="../members/tips.html">&larr; Professional Tips</a></div><p id="intro"></p><div id="tips"></div><div id="join"></div></div>
+<div class="hero"><div class="eyebrow">Belief Counseling for Counselors</div><h1>Professional Tips</h1><p>A new tip from Dr. Campbell each week, drawn from 35 years of practice.</p></div>
+<div class="list"><p id="intro"></p><div class="topics" id="topics"></div><div id="tips"></div><div id="join"></div><h2 class="more">More from Dr. Campbell</h2><div class="morelinks"><a href="cases.html"><b>Case Studies</b><span>Practice on composite cases with a guided supervisor.</span></a><a href="theory.html"><b>Theory</b><span>From CBT to Christian CBT, and How Beliefs Influence Personality.</span></a></div></div>
 <div class="foot">Educational training for counselors. Never enter real client names or details. · © Brian Campbell, Ph.D.</div>
 <script>
 /* THE TIPS. Add one line per tip. "show" is the date the tip appears (the week its email goes out).
    free:true = open to everyone as a sample. Tips that are not free open only for logged-in members. */
 var TIPS=[
- {n:1,title:"Sex in the Counseling Room",desc:"Vulnerable clients, what to do when a client crosses the line, and practical safeguards.",file:"tip-sex-in-counseling-room.html",show:"2026-11-17",free:true},
- {n:2,title:"My Thoughts on Demonic Possession",desc:"What 35 years with the most disturbed clients taught me.",file:"tip-demonic-possession.html",show:"2026-11-17",free:true}
+ {n:1,title:"Sex in the Counseling Room",desc:"Vulnerable clients, what to do when a client crosses the line, and practical safeguards.",file:"tip-sex-in-counseling-room.html",show:"2026-11-17",free:true,topics:["Ethics","Boundaries"]},
+ {n:2,title:"My Thoughts on Demonic Possession",desc:"What 35 years with the most disturbed clients taught me.",file:"tip-demonic-possession.html",show:"2026-11-17",free:true,topics:["Faith & Mental Illness"]},
+ {n:3,title:"Ethical Considerations When Choosing Treatment Modalities",desc:"Why counselors have an ethical duty to choose effective, evidence-based treatments.",file:"tip-ethics-treatment-modalities.html",show:"2026-11-17",free:false,topics:["Ethics"]}
 ];
+/* TO ADD A TIP: add a line above. "show" = the date it appears (the week its email goes out).
+   free:true = open to everyone as a sample; otherwise only logged-in members can open it.
+   "topics" = the topic buttons it appears under (a new topic name makes a new button). */
 var COMING_NEXT=true; /* shows a locked "next tip" line until the next tip is added */
 var JOIN="https://www.beliefcounselor.com/blank-11";
-var member=false, today=new Date().toISOString().slice(0,10);
+var member=false, topic="All", today=new Date().toISOString().slice(0,10);
 function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+function drawTopics(){
+  var names=["All"];TIPS.forEach(function(t){(t.topics||[]).forEach(function(x){if(names.indexOf(x)<0)names.push(x);});});
+  var box=document.getElementById('topics');box.innerHTML='';
+  names.forEach(function(nm){var b=document.createElement('button');b.type='button';b.textContent=nm;if(nm===topic)b.className='on';b.onclick=function(){topic=nm;drawTopics();draw();};box.appendChild(b);});
+}
 function draw(){
-  var live=TIPS.filter(function(t){return t.show<=today;}).sort(function(a,b){return b.n-a.n;});
+  var live=TIPS.filter(function(t){return t.show<=today&&(topic==="All"||(t.topics||[]).indexOf(topic)>=0);}).sort(function(a,b){return b.n-a.n;});
   var h='';
-  if(COMING_NEXT){var nx=(TIPS.length?Math.max.apply(null,TIPS.map(function(t){return t.n;})):0)+1;
+  if(COMING_NEXT&&topic==="All"){var nx=(TIPS.length?Math.max.apply(null,TIPS.map(function(t){return t.n;})):0)+1;
     h+='<div class="t lock"><div class="n">&#128274;</div><div><h3>Tip '+nx+': coming next week'+(member?'':'<span class="pill lk">Members only</span>')+'</h3><p>'+(member?'Watch for it in your email.':'Members receive each new tip by email and can read it here.')+'</p></div></div>';}
   live.forEach(function(t){
-    var open=member||t.free;
-    if(open){h+='<div class="t"><div class="n">'+t.n+'</div><div><h3>'+esc(t.title)+(t.free&&!member?'<span class="pill free">Free sample</span>':'')+'</h3><p>'+esc(t.desc)+'</p></div><a class="go dl" href="'+t.file+'">Read the tip</a></div>';}
-    else{h+='<div class="t lock"><div class="n">&#128274;</div><div><h3>'+esc(t.title)+'<span class="pill lk">Members only</span></h3><p>'+esc(t.desc)+'</p></div></div>';}
+    var open=member||t.free, tags=(t.topics||[]).map(function(x){return '<span class="tag">'+esc(x)+'</span>';}).join('');
+    if(open){h+='<div class="t"><div class="n">'+t.n+'</div><div><h3>'+esc(t.title)+(t.free&&!member?'<span class="pill free">Free sample</span>':'')+'</h3><p>'+esc(t.desc)+'</p><div>'+tags+'</div></div><a class="go dl" href="'+t.file+'">Read the tip</a></div>';}
+    else{h+='<div class="t lock"><div class="n">&#128274;</div><div><h3>'+esc(t.title)+'<span class="pill lk">Members only</span></h3><p>'+esc(t.desc)+'</p><div>'+tags+'</div></div></div>';}
   });
   document.getElementById('tips').innerHTML=h;
-  document.getElementById('intro').textContent=member?'Welcome back! The newest tip is at the top.':'Here are free sample tips. Members receive a new tip by email every week and can read every past tip here.';
+  document.getElementById('intro').textContent=member?'Welcome back! A new tip arrives by email each week. The newest is at the top. Choose a topic to see only those tips.':'A new tip from Dr. Campbell each week. Members receive each tip by email and can read every past tip here. Two tips are open as free samples.';
   document.getElementById('join').innerHTML=member?'':'<div class="join"><h3 style="color:#fff;margin:0">Want to read every tip?</h3><p>Members get a new Professional Tip by email each week, plus every past tip here.</p><a class="btn" target="_top" href="'+JOIN+'">Start your free week</a><p style="margin:12px 0 0;font-size:.9rem">Already a member? <a class="li" target="_top" href="'+JOIN+'">Log in</a></p></div>';
 }
-draw();
+drawTopics();draw();
 /* Ask the Wix page whether the visitor is a logged-in member. */
 window.addEventListener('message',function(e){var m=e.data;if(m&&m.type==='cc-member-status'){member=!!m.member;draw();}});
 var asked=0;function ask(){if(window.parent!==window&&asked<3){asked++;try{window.parent.postMessage({type:'cc-member-status?'},'*');}catch(e){}setTimeout(function(){if(!member)ask();},1500);}}ask();

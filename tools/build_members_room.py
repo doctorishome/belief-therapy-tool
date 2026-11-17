@@ -410,6 +410,16 @@ def page(f, label, heading, summary):
 def main():
     OUT.mkdir(exist_ok=True)
     for f, label, heading, summary in MENU:
+        if f == "tips.html":
+            # Professional Tips goes straight to the tips list (counselors/weekly-tips.html), Nov 17, 2026.
+            to = "../counselors/weekly-tips.html"
+            (OUT / f).write_text(
+                '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Professional Tips</title>'
+                '<meta http-equiv="refresh" content="0; url=%s"><script>location.replace("%s")</script></head>'
+                '<body><p><a href="%s">Continue to the Professional Tips</a></p></body></html>' % (to, to, to),
+                encoding="utf-8")
+            print("forwarder members/tips.html")
+            continue
         (OUT / f).write_text(page(f, label, heading, summary), encoding="utf-8")
         print("wrote members/" + f)
     for old, new in FORWARD.items():
