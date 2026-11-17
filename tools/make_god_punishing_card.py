@@ -71,6 +71,21 @@ def audio(title, url, minutes):
     )
 
 
+def verse_text(ref):
+    """Full BSB wording, with a closing period when the verse does not already end the sentence."""
+    text = scripture(ref, bible).rstrip()
+    if text and text[-1] not in ".!?…’”:":
+        text += "."
+    if text.endswith("’") or text.endswith("”"):
+        return text
+    return text
+
+
+def cite(ref):
+    """Reference with the full verse written out beside it."""
+    return '%s (“%s”)' % (ref, html.escape(verse_text(ref)))
+
+
 def gc_link(n):
     title = GC[str(n)][0]
     slug = re.sub(r"[^A-Za-z0-9]+", "-", title).strip("-")
@@ -79,7 +94,7 @@ def gc_link(n):
 
 
 KEY = "Romans 8:1"
-ALSO = ["Psalm 103:10–12", "Isaiah 53:5", "1 John 1:9", "John 9:1–3"]
+ALSO = ["Psalm 103:10–12", "Isaiah 53:5", "1 John 1:9", "John 9:1–3", "Hebrews 12:6"]
 PEARL_SLUGS = ["forgiveness", "god-all-loving", "grace", "guilt-shame", "suffering"]
 READING = "forgiveness"
 for s in PEARL_SLUGS + [READING]:
@@ -98,10 +113,10 @@ if kinds.count("classic") != 1 or len(songs) != 4:
 
 questions = [
     "What, exactly, do I think God is punishing me for?",
-    "If I have confessed that sin, what does 1 John 1:9 say He does?",
+    "If I have confessed that sin, what does %s say He does?" % cite("1 John 1:9"),
     "Is this trouble proof of punishment, or a hard thing that happens in a broken world?",
-    "What did Jesus already carry, according to Isaiah 53:5?",
-    "How is a Father’s loving discipline different from payback?",
+    "What did Jesus already carry, according to %s?" % cite("Isaiah 53:5"),
+    "How is a Father’s loving discipline, in %s, different from payback?" % cite("Hebrews 12:6"),
     "What would I tell a friend who said God was punishing them for the same trouble?",
 ]
 truths = [
@@ -113,10 +128,10 @@ truths = [
     "The Lord’s discipline is love, not revenge.",
 ]
 actions = [
-    "<strong>Name the charge.</strong> Write the sin you think God is punishing, then write 1 John 1:9 beside it and note whether you have confessed it.",
+    "<strong>Name the charge.</strong> Write the sin you think God is punishing, then write %s beside it and note whether you have confessed it." % cite("1 John 1:9"),
     "<strong>Separate trouble from a sentence.</strong> List the hardship, then one other explanation Scripture allows: a broken world, someone else’s sin, a natural consequence, or a Father’s training.",
-    "<strong>Read Romans 8:1 aloud</strong> each morning for seven days before you interpret the day.",
-    "<strong>Say it out loud to one safe believer:</strong> “I have been sure God is punishing me,” and ask them to pray Romans 8:1 with you.",
+    "<strong>Read %s aloud</strong> each morning for seven days before you interpret the day." % cite("Romans 8:1"),
+    "<strong>Say it out loud to one safe believer:</strong> “I have been sure God is punishing me,” and ask them to pray %s with you." % cite("Romans 8:1"),
 ]
 errs = [
     ("Emotional reasoning", "Feeling condemned and treating the feeling as God’s verdict."),
@@ -136,16 +151,14 @@ self_statements = [
 teaches = (
     "Scripture takes sin seriously, and it does not say that God is now punishing "
     "the person who belongs to Christ for sins Jesus already carried. "
-    "Romans 8:1 says, “Therefore, there is now no condemnation for those who are in Christ Jesus.” "
-    "Psalm 103:10 says, “He has not dealt with us according to our sins or repaid us according to our iniquities.” "
-    "Verse 12 says, “As far as the east is from the west, so far has He removed our transgressions from us.” "
-    "Isaiah 53:5 says “the punishment that brought us peace was upon Him.” "
-    "When we confess, “He is faithful and just to forgive us our sins and to cleanse us from all unrighteousness.” "
-    "When the disciples asked who had sinned so that a man was born blind, Jesus answered, "
-    "“Neither this man nor his parents sinned, but this happened so that the works of God would be displayed in him.” "
-    "God does discipline the children He loves. Hebrews 12:6 says, "
-    "“For the Lord disciplines the one He loves, and He chastises every son He receives.” "
-    "That discipline is a Father’s training for our good, not payback. "
+    "%s " % cite("Romans 8:1")
+    + "%s " % cite("Psalm 103:10")
+    + "%s " % cite("Psalm 103:12")
+    + "%s " % cite("Isaiah 53:5")
+    + "%s " % cite("1 John 1:9")
+    + "When the disciples asked who had sinned so that a man was born blind, %s " % cite("John 9:3")
+    + "God does discipline the children He loves. %s " % cite("Hebrews 12:6")
+    + "That discipline is a Father’s training for our good, not payback. "
     "Some trouble is the natural result of a choice. Some trouble comes with living in a broken world. "
     "Neither one means the cross was not enough."
 )
@@ -168,9 +181,9 @@ replacement = (
     "A hard season can be real without being a sentence, and when God corrects me it is a Father’s love, not revenge."
 )
 prayer = (
-    "Lord, I have been reading my pain as Your punishment. Thank You that there is now no condemnation "
-    "for those who are in Christ Jesus. When You correct me, let me receive a Father’s love, not a sentence. Amen."
-)
+    "Lord, I have been reading my pain as Your punishment. Thank You for what %s declares. "
+    "When You correct me, let me receive a Father’s love, not a sentence. Amen."
+) % cite("Romans 8:1")
 STEP = (
     "Choose steps you can do safely. If this belief comes with hopelessness or thoughts of ending your life, "
     "call or text 988 (the Suicide &amp; Crisis Lifeline), or call 911 in an emergency. You do not have to carry this alone."
@@ -189,7 +202,7 @@ head = re.sub(
     count=1,
 )
 
-refs = [KEY] + ALSO[:2]
+refs = [KEY] + ALSO
 scr = opts(
     ['<span class="ref">%s</span><span class="scrip">“%s”</span>' % (r, html.escape(scripture(r, bible).rstrip("."))) for r in refs]
 )
@@ -315,7 +328,7 @@ body = f'''<!-- ============ CARD ============ -->
 <ul class="opts">
 <li><strong>When the “God is punishing me” thought came:</strong> Each day, write down one moment when a hardship felt like a sentence from God. Write what happened, what you told yourself, and one more accurate statement.</li>
 <li><strong>My name in Scripture:</strong> Write a personal reminder based on my verse and read it aloud. Keep this application separate from the Bible quotation.
-  <span class="scrip">For example, Romans 8:1 becomes: “<strong>Sarah</strong> can write: “In Christ Jesus there is now no condemnation for me.””</span></li>
+  <span class="scrip">For example, {cite("Romans 8:1")} becomes: “<strong>Sarah</strong> can write: “In Christ Jesus there is now no condemnation for me.”” Keep that sentence as your own words, not as the Bible verse.</span></li>
 <li><strong>Gratitude journal:</strong> Each night, write three things I thank God for.</li>
 <li><strong>Truth recording:</strong> Record my own voice reading my Truth Card and verse, and listen in the car or on a walk.</li>
 <li><strong>Reading:</strong> The <a href="{PB}{READING}" target="_blank" rel="noopener">“{html.escape(PEARLS[READING])}” topic in Pearls</a>.</li>
@@ -380,5 +393,28 @@ body = f'''<!-- ============ CARD ============ -->
 
 '''
 
-OUT.write_text(head + body + script)
-print("wrote", OUT.name)
+page = head + body + script
+# Every chapter-and-verse citation must have its BSB wording beside it.
+ref_re = re.compile(
+    r"\b(?:[1-3] John|Psalm|Psalms|Isaiah|Romans|Hebrews|John|Lamentations) \d+:\d+(?:[–-]\d+)?"
+)
+plain = re.sub(r"<[^>]+>", " ", page)
+plain = html.unescape(plain)
+missing = []
+for m in ref_re.finditer(plain):
+    ref = m.group(0).replace("-", "–")
+    try:
+        words = verse_text(ref)
+    except Exception as exc:
+        missing.append("%s (%s)" % (ref, exc))
+        continue
+    window = plain[max(0, m.start() - 900): m.end() + 900]
+    probe = words[:48].rstrip(".,; ")
+    if probe not in window and words[:24] not in window:
+        missing.append(ref + " missing text near citation")
+if "Verse 12" in plain:
+    missing.append("bare 'Verse 12'")
+if missing:
+    raise SystemExit("scripture not written out:\n" + "\n".join(missing))
+OUT.write_text(page)
+print("wrote", OUT.name, "citations", len(ref_re.findall(plain)))
