@@ -356,6 +356,11 @@ def item(it):
         return '<h3 class="group">%s</h3>' % e(it[1])
     if it[0] == "video":
         base = href(it[2])
+        if "lesson-1-" not in it[2]:
+            # Members-only video (Nov 17, 2026): the player comes from the private Wix collection ProTips.
+            # See the LOCK_JS note in PROGRESS.md; members/process.html carries the script that fills it.
+            slug = "video-" + it[2].rsplit("/", 1)[-1]
+            return '<div class="vid" data-locked="%s"><h4>▶ Video: %s</h4><div class="vlock"></div></div>' % (slug, e(it[1]))
         return ('<div class="vid"><h4>▶ Video: %s</h4><video controls preload="none" poster="%s.jpg">'
                 '<source src="%s.mp4" type="video/mp4"></video></div>' % (e(it[1]), base, base))
     title, desc, links = it[:3]
