@@ -144,7 +144,7 @@ def write_card(d):
     gc_html = "\n".join(gc_link(n) for n in d["gc"])
     body = f'''<!-- ============ CARD ============ -->
 <div class="card belief">
-<div class="tag">Spiritual/Religious False Belief #{d["num"]} · God</div>
+<div class="tag">Spiritual/Religious False Belief #{d["num"]} · {html.escape(d.get("group", "God"))}</div>
 <h1>{shown}</h1>
 <div class="orn">✦ ✦ ✦</div>
 
