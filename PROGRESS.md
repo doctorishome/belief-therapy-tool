@@ -298,3 +298,4 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - Tip 8 email draft: 414d8226-4742-4390-bccb-85b28775c851
 - Nov 17: Tip 9 "Non-Directive Therapy Killed John" (ProTips id tip-nondirective-therapy-killed-john), members-only, topics Case Study + Counseling Approach. Includes a safety box for the domestic-violence question.
 - Email drafts: Tip 9 f879cdef-8d0d-4e15-a260-a3394a10f17c; Tip 3 ce404a6b-914a-41a8-8205-4f935b82f101 (all 9 tips now have a draft).
+- Nov 17: Tip 10 "Did God Do This to Me? Free Will, Pain, and Suffering" (ProTips id tip-free-will-pain-suffering), members-only, topic Faith & Suffering. Email draft 666b7056-7831-42a4-ac26-024746637dcf.
