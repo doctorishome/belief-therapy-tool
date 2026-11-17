@@ -118,5 +118,5 @@ function draw(){
 draw();
 /* Ask the Wix page whether the visitor is a logged-in member. */
 window.addEventListener('message',function(e){var m=e.data;if(m&&m.type==='cc-member-status'){member=!!m.member;draw();}});
-if(window.parent!==window){try{window.parent.postMessage({type:'cc-member-status?'},'*');}catch(e){}}
+var asked=0;function ask(){if(window.parent!==window&&asked<3){asked++;try{window.parent.postMessage({type:'cc-member-status?'},'*');}catch(e){}setTimeout(function(){if(!member)ask();},1500);}}ask();
 </script></body></html>
