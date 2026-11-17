@@ -12,7 +12,7 @@ for book in ("1 Timothy", "2 Timothy", "Galatians", "Ephesians", "Luke"):
 cite = g.cite
 
 C6 = dict(
-    num=6, file="I-Need-Someone-Else-To-Bring-My-Prayers-To-God",
+    num=6, group="Christ", file="I-Need-Someone-Else-To-Bring-My-Prayers-To-God",
     belief="I need a priest, a saint, or Mary to bring my prayers to God.",
     key="1 Timothy 2:5",
     also=["Hebrews 4:14–16", "Hebrews 7:25", "Ephesians 2:18", "John 14:13–14", "Luke 1:48"],
@@ -87,7 +87,7 @@ C6["prayer"] = (
 ) % cite("1 Timothy 2:5")
 
 C7 = dict(
-    num=7, file="Now-Its-Up-To-Me-To-Stay-Acceptable",
+    num=7, group="Christ", file="Now-Its-Up-To-Me-To-Stay-Acceptable",
     belief="Jesus saved me, but now it’s up to me to stay acceptable.",
     key="Ephesians 2:8–9",
     also=["Romans 5:1", "Romans 8:1", "Philippians 1:6", "Galatians 3:3"],
@@ -161,7 +161,7 @@ C7["prayer"] = (
 ) % cite("Ephesians 2:8–9")
 
 C8 = dict(
-    num=8, file="Jesus-Is-One-Way-Among-Many",
+    num=8, group="Christ", file="Jesus-Is-One-Way-Among-Many",
     belief="Jesus is one good way to God among many.",
     key="John 14:6",
     also=["Acts 4:12", "1 Timothy 2:5", "John 3:16"],
@@ -234,7 +234,7 @@ C8["prayer"] = (
 ) % cite("John 14:6")
 
 C9 = dict(
-    num=9, file="Jesus-Doesnt-Understand-What-Im-Going-Through",
+    num=9, group="Christ", file="Jesus-Doesnt-Understand-What-Im-Going-Through",
     belief="Jesus doesn’t understand what I’m going through.",
     key="Hebrews 4:15",
     also=["Hebrews 2:17–18", "Isaiah 53:3", "John 11:35", "Hebrews 4:14–16"],
@@ -308,7 +308,7 @@ C9["prayer"] = (
 ) % cite("Hebrews 4:15")
 
 C10 = dict(
-    num=10, file="My-Sins-Are-Too-Bad-For-Jesus",
+    num=10, group="Christ", file="My-Sins-Are-Too-Bad-For-Jesus",
     belief="Jesus died for other people’s sins, but not ones as bad as mine.",
     key="1 Timothy 1:15",
     also=["Isaiah 53:6", "1 John 2:1–2", "John 6:37", "Romans 5:8", "Hebrews 7:25"],
