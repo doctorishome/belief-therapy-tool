@@ -163,6 +163,8 @@ PAGES = {
         ("", "", [
             ("Introduction", "How the Professional Tips work and the topics you can expect.",
              [("Open", "C/tips.html")]),
+            ("Weekly Professional Tips", "A new tip each week. Start with two free samples: Sex in the Counseling Room, and My Thoughts on Demonic Possession.",
+             [("Open the tips", "C/weekly-tips.html")]),
             ("Sample Tips", "Ethics: Ethical Considerations When Choosing Treatment Modalities.",
              [("Read the tip", "C/tip-ethics-treatment-modalities.html"), ("All Ethics tips", "C/tips-ethics.html")]),
             ("Case Studies", "Practice on composite cases with a guided supervisor.",
