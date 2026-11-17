@@ -117,17 +117,17 @@ function drawTopics(){
   names.forEach(function(nm){var b=document.createElement('button');b.type='button';b.textContent=nm;if(nm===topic)b.className='on';b.onclick=function(){topic=nm;drawTopics();draw();};box.appendChild(b);});
 }
 function draw(){
-  var live=TIPS.filter(function(t){return t.show<=today&&(topic==="All"||(t.topics||[]).indexOf(topic)>=0);}).sort(function(a,b){return b.n-a.n;});
+  var live=TIPS.filter(function(t){return t.show<=today&&(topic==="All"||(t.topics||[]).indexOf(topic)>=0);}).sort(function(a,b){return a.n-b.n;});
   var h='';
-  if(COMING_NEXT&&topic==="All"){var nx=(TIPS.length?Math.max.apply(null,TIPS.map(function(t){return t.n;})):0)+1;
-    h+='<div class="t lock"><div class="n">&#128274;</div><div><h3>Tip '+nx+': coming next week'+(member?'':'<span class="pill lk">Members only</span>')+'</h3><p>'+(member?'Watch for it in your email.':'Members receive each new tip by email and can read it here.')+'</p></div></div>';}
   live.forEach(function(t){
     var open=member||t.free, tags=(t.topics||[]).map(function(x){return '<span class="tag">'+esc(x)+'</span>';}).join('');
     if(open){h+='<div class="t"><div class="n">'+t.n+'</div><div><h3>'+esc(t.title)+(t.free&&!member?'<span class="pill free">Free sample</span>':'')+'</h3><p>'+esc(t.desc)+'</p><div>'+tags+'</div></div><a class="go dl" href="'+t.file+'">Read the tip</a></div>';}
     else{h+='<div class="t lock"><div class="n">&#128274;</div><div><h3>'+esc(t.title)+'<span class="pill lk">Members only</span></h3><p>'+esc(t.desc)+'</p><div>'+tags+'</div></div></div>';}
   });
+  if(COMING_NEXT&&topic==="All"){var nx=(TIPS.length?Math.max.apply(null,TIPS.map(function(t){return t.n;})):0)+1;
+    h+='<div class="t lock"><div class="n">&#128274;</div><div><h3>Tip '+nx+': coming next week'+(member?'':'<span class="pill lk">Members only</span>')+'</h3><p>'+(member?'Watch for it in your email.':'Members receive each new tip by email and can read it here.')+'</p></div></div>';}
   document.getElementById('tips').innerHTML=h;
-  document.getElementById('intro').textContent=member?'Welcome back! A new tip arrives by email each week. The newest is at the top. Choose a topic to see only those tips.':'A new tip from Dr. Campbell each week. Members receive each tip by email and can read every past tip here. Two tips are open as free samples.';
+  document.getElementById('intro').textContent=member?'Welcome back! A new tip arrives by email each week and is added at the bottom of this list. Choose a topic to see only those tips.':'A new tip from Dr. Campbell each week. Members receive each tip by email and can read every past tip here. Two tips are open as free samples.';
   document.getElementById('join').innerHTML=member?'':'<div class="join"><h3 style="color:#fff;margin:0">Want to read every tip?</h3><p>Members get a new Professional Tip by email each week, plus every past tip here.</p><a class="btn" target="_top" href="'+JOIN+'">Start your free week</a><p style="margin:12px 0 0;font-size:.9rem">Already a member? <a class="li" target="_top" href="'+JOIN+'">Log in</a></p></div>';
 }
 drawTopics();draw();
