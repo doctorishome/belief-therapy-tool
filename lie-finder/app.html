@@ -148,7 +148,7 @@ a.btn.disabled{opacity:.5;cursor:not-allowed}
       <button type="button" class="btn goldbtn" id="print">Print the plan with scan codes</button>
       <a class="btn goldbtn" id="emailcards" href="#" target="_blank" rel="noopener">Send these cards to my client</a>
     </div>
-    <p class="soft" id="emailnote" style="font-size:15px">Tick up to 2 cards to email. Your own email program opens with the lie, the truth and a Scripture for each card; add your client’s email address and press Send.</p>
+    <p class="soft" id="emailnote" style="font-size:15px">Tick up to 2 cards to email. Your own email program opens with the same message as the card’s “Share this information” button: the lie, the truth, a Scripture, and a link to the full card with its homework, songs and audio. Add your client’s email address and press Send.</p>
     <p class="soft" style="font-size:15px">To send just one card and its homework, open the card and click <strong>“Share this information.”</strong></p>
     <p class="soft" style="font-size:15px">The printout lists each lie with a scan code. The client scans it with a phone camera to open the belief card, songs, audio and homework.</p>
   </section>
@@ -318,7 +318,8 @@ a.btn.disabled{opacity:.5;cursor:not-allowed}
   function txt(n){ return n ? n.textContent.replace(/\s+/g,' ').trim() : ''; }
   function loadCardInfo(item){
     if(cardInfo[item.id]) return;
-    cardInfo[item.id]={truth:'',verse:''};
+    cardInfo[item.id]={truth:'',verse:'',done:false};
+    updateEmailLink();
     fetch(item.card).then(function(r){return r.text();}).then(function(h){
       var d=new DOMParser().parseFromString(h,'text/html');
       var key=d.querySelector('.key'), verse='';
@@ -328,28 +329,36 @@ a.btn.disabled{opacity:.5;cursor:not-allowed}
         var words=txt(k).replace(/^[“"\s]+|[”"\s.]+$/g,'');
         if(words) verse='“'+words+'”'+(ref?' '+ref:'');
       }
-      cardInfo[item.id]={truth:txt(d.querySelector('p.truth')), verse:verse};
+      cardInfo[item.id]={truth:txt(d.querySelector('p.truth')), verse:verse, done:true};
       updateEmailLink();
-    }).catch(function(){});
+    }).catch(function(){ cardInfo[item.id].done=true; updateEmailLink(); });
   }
   function updateEmailLink(){
     var a=$('emailcards'); if(!a) return;
     var picks=plan.filter(function(p){return p.card && emailPick.indexOf(p.id)>=0;});
-    if(!picks.length){ a.classList.add('disabled'); a.setAttribute('aria-disabled','true'); a.href='#'; return; }
+    if(!picks.length){ a.textContent='Send these cards to my client'; a.classList.add('disabled'); a.setAttribute('aria-disabled','true'); a.href='#'; return; }
+    // Wait until each chosen card's truth and Scripture have been read, so the email is complete.
+    if(picks.some(function(p){ return !(cardInfo[p.id]&&cardInfo[p.id].done); })){
+      picks.forEach(loadCardInfo);
+      a.textContent='Preparing the email…'; a.classList.add('disabled'); a.setAttribute('aria-disabled','true'); a.href='#'; return;
+    }
+    a.textContent='Send these cards to my client';
     a.classList.remove('disabled'); a.removeAttribute('aria-disabled');
     // Level 0: full verse; 1: verse reference only; 2: no truth either (only if a very long card needs it).
     function build(level){
-      var body='I pray this information will be helpful as we work together.';
+      // Same wording as the "Share this information" button on each belief card.
+      var body='I pray that this Belief Counseling information might be helpful:';
       picks.forEach(function(p,i){
         var c=cardInfo[p.id]||{};
-        body+='\n\n'+(i+1)+'. The lie: "'+p.belief+'"';
-        if(c.truth && level<2) body+='\nThe truth: '+c.truth;
-        if(c.verse) body+='\nScripture: '+(level===0 ? c.verse : (c.verse.match(/\(([^()]*)\)\s*$/)||[,''])[1] || c.verse);
-        body+='\nRead the card: '+shortLink(p.card);
+        if(picks.length>1) body+='\n\n'+(i+1)+'.';
+        body+='\n\nThe lie: "'+p.belief+'"';
+        if(c.truth && level<2) body+='\n\nThe truth: '+c.truth;
+        if(c.verse) body+='\n\nScripture: '+(level===0 ? c.verse : (c.verse.match(/\(([^()]*)\)\s*$/)||[,''])[1] || c.verse);
+        body+='\n\nRead the full card, with its homework, songs and audio:\n'+shortLink(p.card);
       });
-      body+='\n\nFor a short video overview of Belief Counseling:\nhttps://www.beliefcounselor.com/overview';
+      body+='\n\nFor a general overview of Belief Counseling, see:\nhttps://www.beliefcounselor.com/overview';
       body+='\n\nThis educational resource is not a diagnosis or a substitute for professional care.';
-      return 'mailto:?subject='+encodeURIComponent('Belief Counseling information for you')+'&body='+encodeURIComponent(body);
+      return 'mailto:?subject='+encodeURIComponent('Belief Counseling information you may find helpful')+'&body='+encodeURIComponent(body);
     }
     var href=build(0); if(href.length>2000) href=build(1); if(href.length>2000) href=build(2);
     a.href=href;
