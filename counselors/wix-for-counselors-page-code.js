@@ -2,7 +2,7 @@
 // Shows the public landing page (counselors/landing.html) to visitors and the
 // members-only Welcome page (counselors/welcome.html) to signed-in members, in the
 // same embed box (#html1). The landing page's buttons send messages here:
-//   cc-start-free-week -> Wix checkout for the Clinical Companion plan (sign up + free week)
+//   cc-start-free-week -> Wix checkout for the Clinical Companion plan ($14.95/month)
 //   cc-login           -> Wix log-in window
 //   navigate {path}    -> move to another page of this site (for example "/" = public home page)
 //   cc-member-status?  -> answers {type:'cc-member-status', member:true/false} (Weekly Tips lock)
@@ -16,7 +16,7 @@ import wixLocationFrontend from 'wix-location-frontend';
 import { getMembersTip } from 'backend/cc-membership.web';
 
 const GH = 'https://doctorishome.github.io/belief-therapy-tool/counselors/';
-const PLAN_ID = 'e3d1c25e-0e6e-4ced-a2c3-32af360e23df';   // "Clinical Companion": 7 days free, then $29.95/month
+const PLAN_ID = 'e3d1c25e-0e6e-4ced-a2c3-32af360e23df';   // "Clinical Companion": $14.95/month, no free trial (checked Nov 17, 2026)
 const REQUIRE_PAID = true;    // keep in step with masterPage.js
 const ADMIN_ROLE_ID = '00000000-0000-0000-0000-000000000001'; // Wix's built-in "Admin" role
 
