@@ -90,7 +90,7 @@ var JOIN="https://www.beliefcounselor.com/blank-11";
 var slug=(new URLSearchParams(location.search).get('t')||'').toLowerCase();
 var done=false, tries=0;
 function locked(){
-  document.getElementById('msg').innerHTML='<p style="font-size:1.4rem;margin:0">&#128274;</p><h3>This tip is for members</h3><p>Members receive a new Professional Tip by email each week and can read every past tip in the Counselors’ Room.</p><p><a class="btn" target="_top" href="'+JOIN+'">Start your free week</a></p><p style="font-size:.9rem">Already a member? <a target="_top" href="'+JOIN+'">Log in</a></p><p style="font-size:.9rem"><a href="weekly-tips.html">&larr; All Professional Tips</a></p>';
+  document.getElementById('msg').innerHTML='<p style="font-size:1.4rem;margin:0">&#128274;</p><h3>This tip is for members</h3><p>Members receive a new Professional Tip by email each week and can read every past tip in the Counselors’ Room.</p><p><span class="btn soon" aria-disabled="true">Membership opens soon</span></p><p style="font-size:.9rem">Already a member? <a target="_top" href="'+JOIN+'">Log in</a></p><p style="font-size:.9rem"><a href="weekly-tips.html">&larr; All Professional Tips</a></p>';
 }
 window.addEventListener('message',function(e){var m=e.data;if(!m||m.type!=='cc-tip'||m.slug!==slug||done)return;done=true;
   if(m.ok&&m.html){document.open();document.write(m.html);document.close();}else{locked();}});

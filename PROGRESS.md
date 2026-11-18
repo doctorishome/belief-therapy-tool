@@ -302,3 +302,9 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - Nov 17: Tip 11 "The Bible Is the Best Mental Health Textbook Ever Written" (ProTips id tip-bible-mental-health-textbook), members-only, topic Christian CBT. Email draft 2529aa1b-2d50-4cf4-93cd-9f2f4561e499. Brian may send a link for his "Power of Truth" video/chapter.
 - Nov 17: Tip 12 "Did We Teach Her This? A Case of Gender Dysphoria" (ProTips id tip-did-we-teach-her-this), members-only, topics Case Study + Children & Families. Church references removed at Brian’s request. Email draft 90d6f493-c2d7-43ad-b2ac-c9b6dfc8e09d.
 - Nov 17: Tip 13 "The Lies Your Clients Tell Themselves" (ProTips id tip-lies-clients-tell-themselves), members-only, printable worksheet, topics Tools & Worksheets + Christian CBT. Email draft 75811adb-26a5-4431-b43b-a48301e8a288. Brian may send a permanent link for his "Self-Esteem" chapter.
+
+## Sign-up switched off before launch (Nov 17, 2026)
+- Brian is not ready to launch. Visitors may look around the Counselors' Room, but cannot sign up.
+- Every sign-up button now reads "Membership opens soon" (a non-clickable `span.btn.soon`): membership.html (2, plus a gold "Membership is not open yet" note), landing.html (2, now "Membership Opens Soon", still linking to membership.html), weekly-tips.html, members-tip.html, members/process.html. "Log in" links still work.
+- The Wix page code still handles cc-start-free-week, but no page sends it now. TO REOPEN: revert this commit (git revert) or put the old buttons back.
+- Tip release schedule: decided Option B (members see upcoming titles, locked, with dates) and Tuesday mornings, but the start date waits until Brian launches. When set: give each tip a `show` date (Tip 3 first, weekly), show future tips locked with "Coming <date>", and make getMembersTip refuse tips before their date. Tips 1-2 stay free and are not emailed (delete their drafts ea772a90..., 933f0781... at that time).
