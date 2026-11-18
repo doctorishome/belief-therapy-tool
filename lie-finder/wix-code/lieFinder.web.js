@@ -32,6 +32,7 @@ import { orders } from 'wix-pricing-plans.v2';
 
 const PLAN_ID = 'e3d1c25e-0e6e-4ced-a2c3-32af360e23df';   // "Clinical Companion", $14.95/month
 const ADMIN_ROLE_ID = '00000000-0000-0000-0000-000000000001';
+const REVIEWER_PLAN_ID = '5bc05d5f-005d-49ad-88b3-91cd1de583e7';   // free hidden 2-week "Reviewer" plan (Nov 18, 2026)
 const FREE_SEARCHES = 3;
 const TRIALS = 'LieFinderTrials';
 
@@ -52,7 +53,7 @@ async function whoIsAsking() {
   if (!full) {
     try {
       const list = await orders.memberListOrders();
-      full = ((list && list.orders) || []).some((o) => o && o.planId === PLAN_ID && (o.status === 'ACTIVE' || o.statusNew === 'ACTIVE'));
+      full = ((list && list.orders) || []).some((o) => o && (o.planId === PLAN_ID || o.planId === REVIEWER_PLAN_ID) && (o.status === 'ACTIVE' || o.statusNew === 'ACTIVE'));
     } catch (e) { full = false; }
   }
   let used = 0;
