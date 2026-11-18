@@ -14,14 +14,62 @@
 // False Beliefs) are sent. If no level is checked, a small first request asks the AI to
 // pick the 1-3 levels that fit best. This keeps each search small and inexpensive.
 //
-// Who can use it: right now only the site owner (Permissions.Admin), for testing.
-// When the Counselor's Room has members, change Permissions.Admin to Permissions.SiteMember.
+// Who can use it (Nov 18, 2026, Brian's choice):
+//   - Site owner/admin and members with an ACTIVE "Clinical Companion" plan: unlimited searches.
+//   - Anyone else must first make a free website login; then they get FREE_SEARCHES searches.
+//     Their count is kept in the private CMS collection "LieFinderTrials" (_id = member ID, count).
+//   - Not logged in: no search; the page asks them to log in or sign up (free).
 
 import { Permissions, webMethod } from 'wix-web-module';
 import { fetch } from 'wix-fetch';
 import { secrets } from 'wix-secrets-backend.v2';
 import { elevate } from 'wix-auth';
 import { httpClient, auth } from '@wix/essentials';
+import wixData from 'wix-data';
+import { currentMember } from 'wix-members-backend';
+import { members } from 'wix-members.v2';
+import { orders } from 'wix-pricing-plans.v2';
+
+const PLAN_ID = 'e3d1c25e-0e6e-4ced-a2c3-32af360e23df';   // "Clinical Companion", $14.95/month
+const ADMIN_ROLE_ID = '00000000-0000-0000-0000-000000000001';
+const FREE_SEARCHES = 3;
+const TRIALS = 'LieFinderTrials';
+
+// Who is asking, and how many free searches they have left.
+async function whoIsAsking() {
+  let memberId = '';
+  try {
+    const cur = await members.getCurrentMember();
+    const m = cur && cur.member ? cur.member : cur;
+    memberId = m && m._id ? String(m._id) : '';
+  } catch (e) { memberId = ''; }
+  if (!memberId) return { loggedIn: false, full: false, used: 0, freeLeft: 0 };
+  let full = false;
+  try {
+    const roles = await currentMember.getRoles();
+    full = (roles || []).some((r) => r._id === ADMIN_ROLE_ID || r.title === 'Admin');
+  } catch (e) { full = false; }
+  if (!full) {
+    try {
+      const list = await orders.memberListOrders();
+      full = ((list && list.orders) || []).some((o) => o && o.planId === PLAN_ID && (o.status === 'ACTIVE' || o.statusNew === 'ACTIVE'));
+    } catch (e) { full = false; }
+  }
+  let used = 0;
+  if (!full) {
+    try {
+      const item = await wixData.get(TRIALS, memberId, { suppressAuth: true });
+      used = (item && Number(item.count)) || 0;
+    } catch (e) { used = 0; }
+  }
+  return { loggedIn: true, full, memberId, used, freeLeft: full ? null : Math.max(0, FREE_SEARCHES - used) };
+}
+
+// The page asks this when it opens, to show "You have 3 free searches" (or nothing for members).
+export const lieFinderAccess = webMethod(Permissions.Anyone, async () => {
+  const w = await whoIsAsking();
+  return { loggedIn: w.loggedIn, full: w.full, freeLeft: w.freeLeft, freeTotal: FREE_SEARCHES };
+});
 
 const GITHUB = 'https://doctorishome.github.io/belief-therapy-tool/lie-finder/';
 const PROVIDER = 'wix';                  // 'wix', 'claude' or 'grok'
@@ -159,7 +207,14 @@ async function askGrok(apiKey, system, user) {
   return (((data.choices || [])[0] || {}).message || {}).content || '';
 }
 
-export const findLies = webMethod(Permissions.Admin, async (input) => {
+export const findLies = webMethod(Permissions.Anyone, async (input) => {
+  const who = await whoIsAsking();
+  if (!who.loggedIn) {
+    return { reason: 'login', error: 'Please log in (or sign up free) to try the Lie Finder. You get ' + FREE_SEARCHES + ' free searches.' };
+  }
+  if (!who.full && who.freeLeft <= 0) {
+    return { reason: 'limit', error: 'You have used your ' + FREE_SEARCHES + ' free searches. Become a member for unlimited searches.' };
+  }
   try {
     const levels = (Array.isArray(input && input.levels) ? input.levels : [])
       .filter((l) => ALL_LEVELS.includes(l));
@@ -224,10 +279,17 @@ export const findLies = webMethod(Permissions.Admin, async (input) => {
     result.beliefs = (result.beliefs || []).filter((b) => known.has(b.id));
     result.levels_searched = searchLevels;
     result.levels_chosen_by_ai = chosenByAI;
-    return { result };
+    let freeLeft = null;
+    if (!who.full) {
+      // Count this free search (only searches that returned results are counted).
+      try {
+        await wixData.save(TRIALS, { _id: who.memberId, count: who.used + 1 }, { suppressAuth: true });
+      } catch (e) { console.error('Lie Finder: could not save the free-search count', e); }
+      freeLeft = Math.max(0, FREE_SEARCHES - who.used - 1);
+    }
+    return { result, freeLeft, freeTotal: FREE_SEARCHES };
   } catch (e) {
     console.error('Lie Finder failed', e);
-    // While only the site owner can search, show the technical detail to help fix problems.
     return { error: 'Something went wrong with the search. Please try again. (Detail: ' + String((e && e.message) || e).slice(0, 300) + ')' };
   }
 });

@@ -77,6 +77,9 @@ textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid #7FA0D6;ou
 a.btn{text-decoration:none;display:inline-flex;align-items:center}
 a.btn.disabled{opacity:.5;cursor:not-allowed}
 #emailnote.warn{color:#ffd68a;font-weight:bold}
+.trial{background:#EEF2F8;border:1px solid #C9D4E6;border-left:5px solid var(--navy);border-radius:8px;padding:12px 16px;font-size:16px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.trial.done{background:#FBF3E1;border-color:#E8D3A3;border-left-color:var(--gold)}
+.trial .btn{min-height:40px}
 </style>
 </head>
 <body>
@@ -88,6 +91,8 @@ a.btn.disabled{opacity:.5;cursor:not-allowed}
       <h1 class="serif">Lie Finder</h1>
       <p class="lead">After your first interview, tell us your hunch. We'll suggest the lies most likely at work, why each one fits, and how to confirm it with your client.</p>
     </div>
+
+    <div id="trial" class="trial hidden" role="status" aria-live="polite"></div>
 
     <div class="privacy"><strong>Protect your client's privacy.</strong> Do not type names, addresses, or anything else that could identify your client. "34-year-old woman, recently divorced" is fine.</div>
 
@@ -196,8 +201,29 @@ a.btn.disabled{opacity:.5;cursor:not-allowed}
   window.addEventListener('message', function(e){
     var m=e.data; if(!m || m.source!=='lie-finder-site') return;
     if(m.type==='hello'){ connected=true; show('preview', false); }
+    if(m.type==='access'){ drawTrial(m.access); }
     if(m.type==='result'){ waiting=false; busy(false); render(m.result); }
-    if(m.type==='error'){ waiting=false; busy(false); showError(m.message || 'The search did not work. Please try again.'); }
+    if(m.type==='error'){ waiting=false; busy(false); showError(m.message || 'The search did not work. Please try again.'); if(m.reason==='login') drawTrial({loggedIn:false,freeTotal:3}); if(m.reason==='limit') drawTrial({loggedIn:true,full:false,freeLeft:0,freeTotal:3}); }
+  });
+
+  // Free trial notice: visitors log in free and get a few searches; members search without limit.
+  function drawTrial(a){
+    var box=$('trial'); if(!a){ return; }
+    if(a.full){ box.innerHTML=''; show('trial', false); return; }
+    var total=a.freeTotal||3, html, done=false;
+    if(!a.loggedIn){
+      html='<span><strong>Try the Lie Finder free.</strong> Log in or sign up (free) to get '+total+' free searches.</span><button type="button" class="btn primary" style="min-height:40px;padding:0 20px;font-size:16px" data-act="login">Log in or sign up free</button>';
+    } else if(a.freeLeft>0){
+      html='<span><strong>Free trial:</strong> you have '+a.freeLeft+' of '+total+' free searches left. Members search without limit.</span><button type="button" class="btn outline" data-act="join">About membership</button>';
+    } else {
+      done=true;
+      html='<span><strong>You have used your '+total+' free searches.</strong> Become a member for unlimited Lie Finder searches.</span><button type="button" class="btn add" data-act="join">About membership</button>';
+    }
+    box.innerHTML=html; box.classList.toggle('done', done); show('trial', true);
+  }
+  $('trial').addEventListener('click', function(e){
+    var b=e.target.closest('button[data-act]'); if(!b) return;
+    send({type: b.getAttribute('data-act')});
   });
   if(window.parent!==window){ send({type:'ready'}); }
   setTimeout(function(){ if(!connected) show('preview', true); }, 2500);
