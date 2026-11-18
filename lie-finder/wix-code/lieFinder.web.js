@@ -293,3 +293,43 @@ export const findLies = webMethod(Permissions.Anyone, async (input) => {
     return { error: 'Something went wrong with the search. Please try again. (Detail: ' + String((e && e.message) || e).slice(0, 300) + ')' };
   }
 });
+
+// ===== Scripture Lookup free trial (Nov 18, 2026, Brian's choice) =====
+// Logged-in non-members may open SCRIPTURE_FREE different topics on the Pearls Scripture Search page
+// (/scriptures). Opening the same topic again does not count. Members with an active plan and the
+// site owner/admins look up without limit. Topics opened are kept in the private CMS collection
+// "ScriptureTrials" (_id = member ID, topics = list of topic IDs, count).
+// (On the live site this section comes after the Find Help section appended to this file.)
+const SCRIPTURE_FREE = 5;
+const SCRIPTURE_TRIALS = 'ScriptureTrials';
+
+async function scriptureState() {
+  const w = await whoIsAsking();
+  let topics = [];
+  if (w.loggedIn && !w.full) {
+    try {
+      const it = await wixData.get(SCRIPTURE_TRIALS, w.memberId, { suppressAuth: true });
+      topics = Array.isArray(it && it.topics) ? it.topics : [];
+    } catch (e) { topics = []; }
+  }
+  return { w, topics };
+}
+
+export const scriptureAccess = webMethod(Permissions.Anyone, async () => {
+  const { w, topics } = await scriptureState();
+  return { loggedIn: w.loggedIn, full: w.full, freeLeft: w.full ? null : Math.max(0, SCRIPTURE_FREE - topics.length), freeTotal: SCRIPTURE_FREE };
+});
+
+export const useScriptureLookup = webMethod(Permissions.Anyone, async (topicId) => {
+  topicId = String(topicId || '').slice(0, 100);
+  const { w, topics } = await scriptureState();
+  if (!w.loggedIn) return { ok: false, reason: 'login', freeTotal: SCRIPTURE_FREE };
+  if (w.full) return { ok: true, full: true };
+  if (topics.includes(topicId)) return { ok: true, freeLeft: Math.max(0, SCRIPTURE_FREE - topics.length), freeTotal: SCRIPTURE_FREE };
+  if (topics.length >= SCRIPTURE_FREE) return { ok: false, reason: 'limit', freeLeft: 0, freeTotal: SCRIPTURE_FREE };
+  topics.push(topicId);
+  try {
+    await wixData.save(SCRIPTURE_TRIALS, { _id: w.memberId, topics, count: topics.length }, { suppressAuth: true });
+  } catch (e) { console.error('Scripture Lookup: could not save the free-lookup count', e); }
+  return { ok: true, freeLeft: Math.max(0, SCRIPTURE_FREE - topics.length), freeTotal: SCRIPTURE_FREE };
+});
