@@ -46,8 +46,20 @@ a{color:var(--navy2)}
 .paper .refs p{font-size:.88rem;padding-left:2em;text-indent:-2em;margin:6px 0;word-break:break-word}
 .paper .final{font-size:.85rem;color:var(--mut);font-style:italic;margin-top:18px}
 .foot{margin:34px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
-@media(max-width:620px){.paper{padding:6px 16px 22px;border-radius:0}}
-@media print{.nav,.tools,.foot{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
+.layout{max-width:1240px;margin:16px auto 0;padding:0 20px;display:flex;gap:22px;align-items:flex-start}
+.layout .paper{flex:1;min-width:0;max-width:none;margin:0}
+.toc{flex:0 0 250px;position:sticky;top:130px;max-height:calc(100vh - 150px);overflow:auto;background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:12px 10px 10px;font-size:.9rem;line-height:1.35}
+.toc h3{margin:0 6px 8px;color:var(--gold);font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase}
+.toc a{display:block;color:var(--navy);text-decoration:none;padding:6px 8px;border-radius:6px;border-left:3px solid transparent}
+.toc a.sub{padding-left:22px;font-size:.84rem;color:var(--mut)}
+.toc a:hover{background:var(--cream)}
+.toc a.cur{background:var(--cream);border-left-color:var(--gold);font-weight:bold}
+.toc .top{margin-top:8px;border-top:1px solid var(--line);padding-top:8px;font-size:.82rem;color:var(--mut)}
+.tocbtn{display:none}
+.paper h1,.paper h2{scroll-margin-top:140px}
+@media(max-width:900px){.layout{display:block}.toc{display:none;position:static;max-height:none;margin:0 0 14px}.toc.open{display:block}.tocbtn{display:inline-block}}
+@media(max-width:620px){.layout{padding:0}.paper{padding:6px 16px 22px;border-radius:0}}
+@media print{.nav,.tools,.foot,.toc{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
 """
 
 BACK = """<script>(function(){var b=document.getElementById('back');b.addEventListener('click',function(e){
@@ -60,7 +72,7 @@ def load(folder):
     m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m); return m
 
 
-def build(folder):
+def build(folder, outname=None):
     C = load(folder)
     docx = folder / f'{C.FILE}.docx'
     body = subprocess.run(['pandoc', str(docx), '-t', 'html', '--wrap=none'], capture_output=True, text=True, check=True).stdout
@@ -75,6 +87,10 @@ def build(folder):
         j = body.find('</h1>', i) + 5
         body = body[:j] + '<div class="refs">' + body[j:] + '</div>'
         body = re.sub(r'(<p><em>Prepared for Clinical Companion.*?</p>)</div>$', r'</div><p class="final">\1</p>', body.strip(), flags=re.S)
+    toc = []
+    for lvl, hid, txt in re.findall(r'<h([12]) id="([^"]+)">(.*?)</h[12]>', body):
+        toc.append(f'<a class="{'sub' if lvl == '2' else ''}" href="#{hid}">{re.sub(r'<[^>]+>', '', txt)}</a>')
+    TOC = '<nav class="toc" id="toc" aria-label="Contents"><h3>Contents</h3>' + ''.join(toc) + '<a class="top" href="#top">&#8593; Back to top</a></nav>'
     title = re.sub(r'(\s*\(DSM-5-TR\))?:\s*Teaching Overview\s*$', '', C.TITLE)
     page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} · DSM-5-TR Teaching Review</title>
@@ -84,15 +100,21 @@ def build(folder):
 <p>Clinical Companion Knowledge Library: for counselors and counseling students</p>
 <p class="by">Brian Campbell, Ph.D.</p>
 <p class="ai">Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.</p></div>
-<div class="tools"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="{C.FILE}.pdf" target="_blank" rel="noopener">Download or print the PDF</a></div>
-<div class="paper">
+<div class="tools" id="top"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="{C.FILE}.pdf" target="_blank" rel="noopener">Download or print the PDF</a><button type="button" class="btn ghost tocbtn" id="tocbtn" aria-expanded="false">&#9776; Contents</button></div>
+<div class="layout">{TOC}<div class="paper">
 {body}
-</div>
+</div></div>
 <div class="tools" style="padding-bottom:6px"><a class="btn" href="../../members/assessment.html#rvlist" onclick="try{{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){{history.back();return false;}}}}catch(e){{}}">&#8592; Back</a></div>
 <div class="foot">Teaching overview for counselors. Not a substitute for the DSM-5-TR or clinical judgment. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
-{BACK}{NAVJS}</body></html>
+{BACK}<script>(function(){{var t=document.getElementById('toc'),b=document.getElementById('tocbtn');if(!t)return;
+b.addEventListener('click',function(){{var o=t.classList.toggle('open');b.setAttribute('aria-expanded',o);}});
+var links=[].slice.call(t.querySelectorAll('a[href^="#"]:not(.top)'));
+t.addEventListener('click',function(e){{if(e.target.tagName==='A'&&window.innerWidth<=900){{t.classList.remove('open');b.setAttribute('aria-expanded','false');}}}});
+var hs=links.map(function(a){{return document.getElementById(a.getAttribute('href').slice(1));}});
+function mark(){{var y=150,cur=0;hs.forEach(function(h,i){{if(h&&h.getBoundingClientRect().top<y)cur=i;}});links.forEach(function(a,i){{a.classList.toggle('cur',i===cur);}});}}
+window.addEventListener('scroll',mark,{{passive:true}});mark();}})();</script>{NAVJS}</body></html>
 """
-    (OUT / f'{C.FILE}.html').write_text(page)
+    (OUT / (outname or f'{C.FILE}.html')).write_text(page)
     return C.FILE, title
 
 
