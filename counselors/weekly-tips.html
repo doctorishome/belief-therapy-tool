@@ -140,7 +140,7 @@ function draw(){
   if(COMING_NEXT&&topic==="All"){var nx=(TIPS.length?Math.max.apply(null,TIPS.map(function(t){return t.n;})):0)+1;
     h+='<div class="t lock"><div class="n">&#128274;</div><div><h3>Tip '+nx+': coming next week'+(member?'':'<span class="pill lk">Members only</span>')+'</h3><p>'+(member?'Watch for it in your email.':'Members receive each new tip by email.')+'</p></div></div>';}
   document.getElementById('tips').innerHTML=h;
-  document.getElementById('intro').textContent=member?'Welcome back! A new tip arrives in your email each week. Below are the topics of the tips; the first two can be read here. Choose a topic to see only those tips.':'A new tip from Dr. Campbell each week. Members receive each tip by email, and can preview the upcoming topics by clicking the categories below.';
+  document.getElementById('intro').textContent=member?'Welcome back! A new tip arrives in your email each week. Below are the topics of the tips; the first two can be read here. Choose a topic to see only those tips.':'A new tip from Dr. Campbell each week. Members receive each tip by email, and can preview the upcoming topics by clicking the topics below.';
   document.getElementById('join').innerHTML=member?'':'<div class="join"><h3 style="color:#fff;margin:0">Want every tip?</h3><p>Members get a new Professional Tip by email each week.</p><span class="btn soon" aria-disabled="true">Membership opens soon</span><p style="margin:12px 0 0;font-size:.9rem">Already a member? <a class="li" target="_top" href="'+JOIN+'">Log in</a></p></div>';
 }
 drawTopics();draw();
