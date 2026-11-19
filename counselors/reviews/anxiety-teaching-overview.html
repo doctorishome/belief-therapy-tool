@@ -1,0 +1,357 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anxiety Disorders · DSM-5-TR Teaching Review</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+
+.nav a.l:hover{border-color:var(--gold)}
+.nav a.on{color:#fff;border-color:var(--gold)}
+
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
+
+.nav .acct{display:inline-flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
+
+.nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
+
+.nav .dd{position:relative}
+
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
+
+.nav .dd>button::after{content:" \25BE";color:var(--gold);font-size:.8em}
+
+.nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
+
+.nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
+
+.nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
+
+.nav .menu a:hover{background:var(--cream)}
+
+.nav .menu a.sub{padding-left:38px;font-size:.92rem}
+.nav .menu a.sub::before{content:"\21B3  ";color:var(--gold)}
+
+.nav .menu a.sub.on{padding-left:35px}
+
+.nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
+
+.nav .dd.open .menu{display:block}
+
+.nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
+
+.nav .menu .x:hover{color:var(--navy);text-decoration:underline}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:8px 12px}}
+@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem;white-space:nowrap}.nav a.pub{font-size:.78rem;padding:4px 10px;white-space:nowrap}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
+
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.65}
+a{color:var(--navy2)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:46px 22px 40px;text-align:center}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.6rem);margin:0 0 10px;line-height:1.2}
+.hero p{max-width:760px;margin:4px auto 0;color:#dfe6f2;font-size:1rem}
+.hero .by{font-size:1.05rem;color:#fff;margin-top:12px}
+.hero .ai{font-size:.85rem;font-style:italic;color:#c8d1e0}
+.tools{max-width:960px;margin:0 auto;padding:22px 20px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:9px 20px;border-radius:24px;border:0;font:inherit;font-weight:bold;cursor:pointer}
+.btn.ghost{background:#fff;border:1px solid var(--navy);color:var(--navy)}
+.paper{max-width:960px;margin:16px auto 0;background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:10px 34px 30px;box-shadow:0 2px 8px rgba(18,40,76,.06)}
+.paper h1{color:var(--navy);font-size:1.45rem;margin:30px 0 10px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+.paper h2{color:var(--navy);font-size:1.15rem;margin:22px 0 6px}
+.paper p{margin:8px 0}
+.paper li{margin:4px 0}.paper li p{margin:0}
+.paper strong{color:var(--navy)}
+.paper table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.9rem;display:block;overflow-x:auto}
+.paper th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;border:1px solid var(--navy)}
+.paper th strong,.paper th a{color:#fff}
+.paper td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+.paper tr:nth-child(even) td{background:#f7f3e8}
+.paper td p,.paper th p{margin:0}
+.paper .refs p{font-size:.88rem;padding-left:2em;text-indent:-2em;margin:6px 0;word-break:break-word}
+.paper .final{font-size:.85rem;color:var(--mut);font-style:italic;margin-top:18px}
+.foot{margin:34px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:620px){.paper{padding:6px 16px 22px;border-radius:0}}
+@media print{.nav,.tools,.foot{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
+</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a class="l" href="../../members/index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a class="l" href="../../members/belief-counseling.html">Belief Counseling</a><a class="l" href="../../members/process.html">The Process</a><a class="l on" href="../../members/assessment.html">Traditional Assessment</a><a class="l" href="../../members/tips.html">Professional Tips</a><a class="l" href="../../members/library.html">Library</a><a class="l" target="_top" href="https://www.beliefcounselor.com/counselor-scriptures">Scripture Lookup</a><a class="l" href="../../counselors/membership.html">Membership</a><span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a><a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a><a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->
+<div class="hero"><div class="eyebrow">DSM-5-TR Teaching Review</div><h1>Anxiety Disorders</h1>
+<p>Clinical Companion Knowledge Library: for counselors and counseling students</p>
+<p class="by">Brian Campbell, Ph.D.</p>
+<p class="ai">Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.</p></div>
+<div class="tools"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="anxiety-teaching-overview.pdf" target="_blank" rel="noopener">Download or print the PDF</a></div>
+<div class="paper">
+<h1 id="what-they-are">1. What they are</h1>
+<p>Anxiety disorders are conditions in which <strong>fear (alarm about a present threat) and anxiety (dread about a possible future threat)</strong> are excessive for the situation, last longer than is developmentally expected, and drive <strong>avoidance or safety behaviors</strong> that cause distress or impairment. Everyday worry and normal developmental fears are not disorders. The line is crossed when fear is out of proportion, persistent, and impairing, and is not better explained by a substance, a medical condition, or another mental disorder.</p>
+<p><strong>The DSM-5-TR anxiety chapter (teaching set):</strong> generalized anxiety disorder (GAD), panic disorder, agoraphobia, social anxiety disorder, specific phobia, separation anxiety disorder (children <em>and</em> adults), and selective mutism. The chapter also includes substance/medication-induced anxiety disorder, anxiety disorder due to another medical condition, and other specified/unspecified anxiety disorder.</p>
+<p><strong>Neighbors, not members:</strong> obsessive-compulsive disorder (OCD) and related disorders, and trauma- and stressor-related disorders (PTSD, acute stress disorder, adjustment disorders), now have <strong>their own chapters</strong>. They share fear and avoidance, and exposure-based CBT logic overlaps, but they are separate diagnoses.</p>
+<p><strong>Counselor framing (general clinical consensus):</strong> anxiety disorders are very common, often begin in childhood or early adulthood, tend to persist without treatment, and are highly treatable. Avoidance keeps fear going; approach is the core of treatment.</p>
+<h1 id="core-symptoms-to-watch-for">2. Core symptoms to watch for</h1>
+<p>The DSM-5-TR criteria are paraphrased here in plain language. Use the manual itself for formal diagnosis.</p>
+<ul>
+<li><p><strong>GAD:</strong> hard-to-control, excessive worry about <strong>many</strong> life areas, present more days than not for <strong>at least 6 months</strong>, with <strong>3 or more</strong> of: restlessness/keyed up, easy fatigue, poor concentration or mind going blank, irritability, muscle tension, sleep disturbance (<strong>only 1 needed in children</strong>).</p></li>
+<li><p><strong>Panic disorder: recurrent, unexpected</strong> panic attacks (an abrupt surge of intense fear that peaks within minutes with <strong>4 or more</strong> physical/cognitive symptoms such as pounding heart, breathlessness, dizziness, chest pain, numbness, unreality, or fear of dying or losing control), followed by <strong>1 month or more</strong> of persistent worry about more attacks or a maladaptive change in behavior (e.g., avoiding exercise). <em>Panic attacks</em> can also occur as a specifier with any disorder.</p></li>
+<li><p><strong>Agoraphobia:</strong> marked fear or avoidance of <strong>2 or more</strong> of five situation types (public transportation, open spaces, enclosed places, lines or crowds, being outside the home alone) because escape or help might be hard to get. Usually lasts <strong>6 months or more</strong>. It is diagnosed independently of panic disorder.</p></li>
+<li><p><strong>Social anxiety disorder:</strong> marked fear of situations where one may be <strong>scrutinized</strong>, with fear of acting in a way that will be negatively evaluated (embarrassment, rejection). Situations are avoided or endured with intense fear, usually for <strong>6 months or more</strong>. In children it must occur with peers, not only adults. <em>Performance only</em> is a specifier.</p></li>
+<li><p><strong>Specific phobia:</strong> marked, immediate fear of a specific object or situation, usually <strong>6 months or more</strong>. Subtypes: animal, natural environment, blood-injection-injury (often with fainting), situational, and other.</p></li>
+<li><p><strong>Separation anxiety disorder:</strong> developmentally excessive fear of separation from attachment figures (<strong>3 or more</strong> signs, such as distress at separation, worry about harm to loved ones, refusal to leave home or sleep alone, nightmares, physical complaints). Lasts <strong>at least 4 weeks in youth</strong> and typically <strong>6 months or more in adults</strong>.</p></li>
+<li><p><strong>Selective mutism:</strong> consistent failure to speak in specific social settings (e.g., school) despite speaking elsewhere, lasting <strong>at least 1 month</strong> (not just the first month of school), and not due to a language or communication disorder.</p></li>
+</ul>
+<p><strong>Differential tips:</strong></p>
+<ul>
+<li><p>Worry content: GAD is diffuse; social anxiety is about evaluation; OCD involves intrusive obsessions plus compulsions; illness anxiety is about disease; PTSD fear is linked to a trauma.</p></li>
+<li><p>Panic attacks are a symptom, not a diagnosis. Ask whether they are <em>unexpected</em> (panic disorder) or <em>cued</em> (phobia, social anxiety, PTSD).</p></li>
+<li><p>Distinguish shyness from social anxiety by impairment and avoidance; consider autism or language disorders in selective mutism.</p></li>
+</ul>
+<p><strong>Medical and substance rule-outs (general clinical consensus):</strong> anxiety can be produced or worsened by <strong>hyperthyroidism</strong>, cardiac arrhythmias, asthma/COPD, hypoglycemia, vestibular problems, and, rarely, pheochromocytoma. Ask about <strong>caffeine</strong> and energy drinks, nicotine, <strong>stimulants</strong> (prescribed ADHD medication, cocaine, methamphetamine), decongestants, corticosteroids, thyroid hormone, and cannabis. Also ask about <strong>withdrawal</strong> from alcohol, benzodiazepines, or other sedatives. New-onset anxiety in later life or prominent physical symptoms warrants a medical evaluation.</p>
+<p><strong>Suicide and comorbidity:</strong> anxiety disorders are linked to suicidal behavior. In a meta-analysis of 42 observational studies, people with anxiety disorders had higher odds of suicidal ideation (OR 2.89), attempts (OR 2.47), and suicide deaths (OR 3.34) (Kanwar et al., 2013). A longitudinal meta-analysis found anxiety to be a statistically significant but <strong>weak</strong> independent predictor of ideation and attempts, with the strongest links for PTSD (Bentley et al., 2016). <strong>Teaching point (general clinical consensus):</strong> screen for suicide routinely, especially with co-occurring depression or substance use; "just anxiety" does not mean low risk. Comorbid depression, alcohol or other substance use, and multiple anxiety disorders are common.</p>
+<h1 id="frequently-used-assessment-instruments">3. Frequently used assessment instruments</h1>
+<p>These are among the most widely used measures for screening, rating severity, and tracking progress in anxiety disorders. <strong>Screening tools do not diagnose;</strong> a positive screen calls for a clinical interview against DSM-5-TR criteria. Click an instrument’s website to find it.</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 22%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Instrument</strong></th>
+<th><strong>Best used for</strong></th>
+<th><strong>Format</strong></th>
+<th><strong>Purchase required?</strong></th>
+<th><strong>Training or qualification</strong></th>
+<th><strong>Where to find it</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GAD-7</strong> (Generalized Anxiety Disorder-7)</td>
+<td>Screening and tracking generalized anxiety.</td>
+<td>Self-report, 7 items, about 2 minutes</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.phqscreeners.com/"><u>PHQ Screeners site</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>APA DSM-5 anxiety severity measures</strong></td>
+<td>Separate brief scales for panic, social anxiety, specific phobia, agoraphobia, separation anxiety, and generalized anxiety (adult and age 11 to 17 versions).</td>
+<td>Self-report, 10 items each</td>
+<td>No (free from the APA for clinical use)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.psychiatry.org/psychiatrists/practice/dsm/educational-resources/assessment-measures"><u>APA assessment measures</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>PSWQ</strong> (Penn State Worry Questionnaire)</td>
+<td>Severity of chronic, hard-to-control worry (generalized anxiety).</td>
+<td>Self-report, 16 items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1016/0005-7967(90)90135-6"><u>Original article</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>BAI</strong> (Beck Anxiety Inventory)</td>
+<td>Anxiety severity, especially physical symptoms; ages 17 to 80.</td>
+<td>Self-report, 21 items, 5 to 10 minutes</td>
+<td>Yes</td>
+<td>★ Level B</td>
+<td><a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/store/usd/p/100000251"><u>Pearson</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>STAI</strong> (State-Trait Anxiety Inventory)</td>
+<td>Separates current (state) anxiety from long-standing (trait) anxiety.</td>
+<td>Self-report, 40 items</td>
+<td>Yes (license per use)</td>
+<td>No special level listed by the publisher</td>
+<td><a target="_blank" rel="noopener" href="https://mindgarden.com/state-trait-anxiety-inventory-for-adults/29-staiad-manual.html"><u>Mind Garden</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>SCARED</strong> (Screen for Child Anxiety Related Disorders)</td>
+<td>Children and teens; screens panic, generalized, separation, social, and school anxiety.</td>
+<td>Child and parent forms, 41 items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://pediatricbipolar.pitt.edu/sites/default/files/assets/SCAREDChildVersion_1.19.18.pdf"><u>University of Pittsburgh (PDF)</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>MASC 2</strong> (Multidimensional Anxiety Scale for Children, 2nd ed.)</td>
+<td>Children and teens ages 8 to 19; self and parent forms.</td>
+<td>Self- and parent-report, 50 items</td>
+<td>Yes</td>
+<td>★ Level B</td>
+<td><a target="_blank" rel="noopener" href="https://storefront.mhs.com/collections/masc-2"><u>MHS</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>PHQ-9</strong> (Patient Health Questionnaire-9)</td>
+<td>Screening for co-occurring depression, which is common with anxiety.</td>
+<td>Self-report, 9 items, about 2 minutes</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.phqscreeners.com/"><u>PHQ Screeners site</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>C-SSRS</strong> (Columbia Suicide Severity Rating Scale)</td>
+<td>Screening for suicide risk; "just anxiety" does not mean low risk.</td>
+<td>Clinician- or staff-asked questions, a few minutes</td>
+<td>No (free)</td>
+<td>Free online training offered and recommended</td>
+<td><a target="_blank" rel="noopener" href="https://cssrs.columbia.edu/"><u>Columbia Lighthouse Project</u></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>★ = requires professional qualification to purchase or specialized training.</strong> Publishers sell these tests only to qualified users. At Pearson, <strong>Level B</strong> generally means a master’s degree in a related field with formal assessment training, or a health care license; <strong>Level C</strong> means a doctorate in psychology or a related field with formal assessment training, or state licensure in a related field (<a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/professional-assessments/ordering/how-to-order/qualifications/qualifications-policy.html"><u>Pearson qualifications policy</u></a>). MHS, PAR, and WPS use similar levels. Check each publisher’s page before ordering. "Original article" links go to the published study that introduced a free scale that has no official website; the scale can usually be obtained there or from its authors.</p>
+<h1 id="what-works-psychological-treatments-with-the-strongest-evidence">4. What works: psychological treatments with the strongest evidence</h1>
+<p><strong>Bottom line for class:</strong> <a target="_blank" rel="noopener" href="https://www.apa.org/ptsd-guideline/treatments/cognitive-behavioral-therapy"><u>CBT</u></a> built around <strong>exposure</strong> is the first-line psychological treatment across the anxiety disorders, with the largest and most consistent evidence base. <a target="_blank" rel="noopener" href="https://contextualscience.org/act"><u>ACT</u></a> and applied relaxation are credible alternatives for some disorders. Gains from CBT are durable for many clients, but long-term data are thinner than short-term data.</p>
+<h2 id="cbt-the-reference-standard">CBT: the reference standard</h2>
+<ul>
+<li><p><strong>Against placebo (the strictest test).</strong> In 41 placebo-controlled RCTs (N = 2,843), CBT had a moderate effect on the target disorder (g = 0.56) and roughly tripled the odds of response (OR 2.97). Effects were large for GAD and OCD and small-to-moderate for social anxiety and panic. Exposure-heavy protocols trended toward larger effects (Carpenter et al., 2018).</p></li>
+<li><p><strong>Durability.</strong> Across 69 RCTs, CBT beat control conditions up to 12 months after treatment. Beyond 12 months, effects remained significant for GAD (g = 0.22) and social anxiety (g = 0.42) but not clearly for panic disorder, and most trials were of low quality (van Dis et al., 2020).</p></li>
+<li><p><strong>Digital delivery.</strong> Across 64 trials, internet/computer CBT had a large effect versus control (g = 0.80) and matched face-to-face CBT in head-to-head studies (Andrews et al., 2018).</p></li>
+</ul>
+<h2 id="core-cbt-techniques-disorder-by-disorder">Core CBT techniques, disorder by disorder</h2>
+<ul>
+<li><p><strong>Exposure (all disorders).</strong> Repeated, planned approach to feared situations, sensations, or images while <strong>dropping safety behaviors</strong>. The <em>inhibitory learning</em> model emphasizes violating feared expectancies ("What did you predict? What actually happened?"), varying contexts, and tolerating fear rather than waiting for it to drop (Craske et al., 2014).</p></li>
+<li><p><strong>Specific phobia.</strong> Exposure-based treatment produced large effects and outperformed placebo and other psychotherapies. <strong>In vivo</strong> exposure beat imaginal or virtual-reality exposure at post-treatment. More sessions predicted somewhat better outcomes, but single-session formats also work (Wolitzky-Taylor et al., 2008).</p></li>
+<li><p><strong>Panic disorder: interoceptive exposure.</strong> Clients deliberately provoke feared body sensations (spinning, overbreathing, straw breathing) to learn they are not dangerous. A component network meta-analysis of 72 trials found <strong>interoceptive exposure and face-to-face delivery</strong> were associated with better efficacy and acceptability. <strong>Muscle relaxation and virtual-reality exposure</strong> were associated with <em>lower</em> efficacy. The best vs. worst "evidence-based CBT" packages differed greatly (OR for remission 7.69) (Pompoli et al., 2018). In a landmark multisite RCT (n = 312), CBT and imipramine each beat placebo (Barlow et al., 2000).</p></li>
+<li><p><strong>Social anxiety disorder: cognitive therapy and behavioral experiments.</strong> In a network meta-analysis of 101 trials, <strong>individual CBT</strong> had the largest effect of any psychological treatment versus waitlist (SMD −1.19) and beat psychological placebo (Mayo-Wilson et al., 2014). Clark's cognitive therapy uses <strong>behavioral experiments</strong> (e.g., dropping safety behaviors and checking what others actually notice), attention shifting, and video feedback. It outperformed exposure plus applied relaxation (84% vs. 42% no longer met criteria) (Clark et al., 2006).</p></li>
+<li><p><strong>GAD: CBT, then third-wave and relaxation.</strong> A network meta-analysis of 65 RCTs found CBT (SMD −0.74) and third-wave CBTs (−0.76) reduced GAD symptoms versus usual care. <strong>Only CBT remained superior at 3–12 months</strong>, so the authors called CBT the likely first-line therapy (Papola et al., 2024). An earlier meta-analysis found large effects of psychotherapy for GAD (g = 0.84), with signs that CBT outperformed applied relaxation in the longer term (Cuijpers et al., 2014).</p></li>
+<li><p><strong>Applied relaxation (AR).</strong> AR teaches rapid, cue-controlled relaxation applied at the first signs of anxiety. It is a credible option for GAD: an acceptance-based behavior therapy and AR produced comparable, large improvements (Hayes-Skelton et al., 2013). However, relaxation's advantage over usual care disappeared when high-risk-of-bias trials were removed (Papola et al., 2024). In panic CBT, muscle relaxation was a weak component (Pompoli et al., 2018).</p></li>
+<li><p><strong>OCD (brief note):</strong> <a target="_blank" rel="noopener" href="https://societyofclinicalpsychology.org/psychological-treatments/exposure-and-response-prevention-for-obsessive-compulsive-disorder/"><u>exposure and response prevention (ERP)</u></a>, a form of CBT, has very large effects versus waitlist (1.31) and placebo (1.33) (Öst et al., 2015). Refer to OCD-specific training; this is not covered further here.</p></li>
+</ul>
+<h2 id="other-approaches">Other approaches</h2>
+<ul>
+<li><p><strong>Acceptance and commitment therapy (ACT).</strong> Across 39 RCTs, ACT beat control conditions (g = 0.57) and did not differ significantly from CBT (A-Tjak et al., 2015). In an RCT with mixed anxiety disorders (n = 128), ACT and CBT, both including exposure, improved similarly (Arch et al., 2012). ACT is a reasonable alternative.</p></li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://interpersonalpsychotherapy.org/ipt-basics/overview-of-ipt/"><u>Interpersonal psychotherapy (IPT)</u></a>.</strong> IPT has weaker support for anxiety than for depression. For social anxiety disorder, cognitive therapy beat IPT on response at post-treatment (65.8% vs. 42.1%) and at 1 year (68.4% vs. 31.6%), although both beat waitlist (Stangier et al., 2011).</p></li>
+<li><p><strong>Children and adolescents.</strong> CBT (often with parent involvement) increased remission from the primary anxiety diagnosis (49.4% vs. 17.8% waitlist; NNT about 3), but evidence of superiority over usual care was weak (James et al., 2020). In the CAMS trial (n = 488, ages 7–17, separation, generalized, or social anxiety), response rates were <strong>80.7% for CBT plus sertraline</strong>, 59.7% CBT, 54.9% sertraline, and 23.7% placebo (Walkup et al., 2008). <strong>Selective mutism:</strong> a small pilot RCT of integrated behavior therapy (graduated exposure to speaking, school-based, with parents and teachers) found 75% responders (Bergman et al., 2013).</p></li>
+<li><p><strong>Medication (high-level referral notes).</strong> In a network meta-analysis of 89 GAD trials, duloxetine, pregabalin, venlafaxine, and escitalopram were efficacious with relatively good acceptability. Benzodiazepines and paroxetine worked but were poorly tolerated (Slee et al., 2019). SSRIs/SNRIs are common first-line choices, and benzodiazepines carry dependence and withdrawal risks (general clinical consensus). Refer for a medication evaluation when anxiety is severe or impairing, when there is a poor response to good-quality CBT, when comorbid depression is significant, or when the client prefers it.</p></li>
+</ul>
+<h1 id="christian-and-spiritually-integrated-interventions-what-the-evidence-shows">5. Christian and spiritually integrated interventions: what the evidence shows</h1>
+<p><strong>Models.</strong> Religiously or spiritually integrated CBT keeps the standard structure (psychoeducation, cognitive restructuring, exposure, homework) and draws on the client's own faith resources. The most common adaptations are using religious content in cognitive restructuring and motivation, and using religious practices (prayer, meditation, values, religious coping) to support behavioral and cognitive work (de Abreu Costa &amp; Moreira-Almeida, 2022). For Christian clients, examples include Scripture-informed reappraisal of catastrophic thinking, framing exposure as courage and trust, and contemplative prayer as an acceptance practice.</p>
+<p><strong>Key findings:</strong></p>
+<ul>
+<li><p><strong>Meta-analysis of faith-adapted CBT (depression and anxiety).</strong> Sixteen RCTs showed statistically significant benefits, but trials were <strong>small and at high risk of bias</strong>, especially from researcher and therapist allegiance. The authors said larger rigorous trials are needed before firm recommendations (Anderson et al., 2015).</p></li>
+<li><p><strong>Broadest meta-analysis.</strong> Across 97 studies, religion/spirituality-adapted therapy beat no treatment and modestly beat secular therapies (psychological g = 0.33). In the <strong>most rigorous additive designs</strong>, which test the same therapy with vs. without R/S content, outcomes were <strong>equivalent on psychological distress</strong> (g = 0.13, not significant) but <strong>better on spiritual well-being</strong> (g = 0.34) (Captari et al., 2018).</p></li>
+<li><p><strong>Religious/spiritual interventions across mental health outcomes.</strong> In 23 RCTs, the clearest benefit was for <strong>anxiety symptoms</strong>, though protocols were highly diverse and not standardized (Gonçalves et al., 2015).</p></li>
+<li><p><strong>GAD trials (multifaith).</strong> A spiritually based intervention delivered by a spiritual care counselor was comparable to CBT (response 63.6% vs. 72.3%; n = 22) (Koszycki et al., 2010). In a second pilot it outperformed supportive therapy and improved spiritual well-being (n = 23) (Koszycki et al., 2014).</p></li>
+<li><p><strong>Other faith-specific trials.</strong> A 2-week internet spiritually integrated program for religious Jewish adults with <em>subclinical</em> stress and worry (n = 125) beat waitlist and was rated more credible than progressive muscle relaxation (Rosmarin et al., 2010). A 4-week <strong>Christian meditation</strong> program for Christian university students with repetitive negative thinking (n = 71) beat waitlist on perseverative thinking (Knabb et al., 2020). A primary-care RCT (n = 180, mostly Christian) found 5 minutes of in-person <strong>Christian intercessory prayer</strong> reduced GAD-7 scores more than a music control at 2 and 6 weeks (Jacobson et al., 2026). It was a single-session adjunct in a symptom-screened (not diagnosed) sample.</p></li>
+</ul>
+<p><strong>Honest summary for teaching:</strong></p>
+<blockquote>
+<p>1. Faith-integrated approaches appear <strong>about as effective as standard treatment</strong> for reducing anxiety in religious clients. They are <strong>not consistently superior</strong>, and their added value is mainly in <strong>acceptability, engagement, and spiritual well-being</strong>.</p>
+<p>2. The evidence is <strong>thinner for anxiety than for depression</strong>. We found <strong>no large, rigorous RCT of Christian-integrated CBT for a DSM-diagnosed anxiety disorder</strong>. Most trials are small pilots, multifaith or other-faith protocols, subclinical or preventive samples, or short-term follow-up, with allegiance risk.</p>
+<p>3. <strong>Clinical consensus cautions:</strong> keep exposure central. Prayer, Scripture reading, or seeking reassurance from clergy can function as <strong>safety behaviors</strong> or compulsions (watch for scrupulosity, which belongs in the OCD chapter). Avoid framing anxiety as spiritual failure (e.g., misuse of "do not be anxious" texts), which adds shame.</p>
+<p>4. <strong>Practice ethics (general consensus):</strong> integrate faith only when the client prefers it and after a spiritual assessment. Stay within your competence and role, and never substitute integration for evidence-based structure or risk assessment.</p>
+</blockquote>
+<h1 id="practical-christian-integration-notes">6. Practical Christian-integration notes</h1>
+<p>These apply Dr. Campbell’s identify, challenge, replace-with-Scripture method within exposure-based CBT. Clinical items rest on the research above. Pastoral items are theological application, not research findings.</p>
+<ul>
+<li><p><strong>Identify (clinical).</strong> Listen for anxious predictions and for spiritual forms of anxiety: "If I really trusted God, I wouldn’t be anxious," "God won’t protect me," "Something terrible is going to happen." Ask whether prayer, Scripture reading, or seeking reassurance from clergy has become a way to escape fear rather than face it. To identify deeper false beliefs, see: <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/core-beliefs.html"><u>Core Beliefs</u></a>, <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf"><u>Parental Messages</u></a>, or use the <a target="_blank" rel="noopener" href="https://www.beliefcounselor.com/false-belief-finder"><u>Semantic Search Tool</u></a>.</p></li>
+<li><p><strong>Challenge (clinical).</strong> Turn beliefs into predictions and test them with exposure and behavioral experiments: "What did you predict? What actually happened?" (Craske et al., 2014). <strong>Possible cognitive errors</strong> to watch for, with their definitions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf"><u>Belief Counseling Cognitive Errors Checklist</u></a> and the symptoms they tend to feed:</p></li>
+</ul>
+<ul>
+<li><p><strong>Catastrophizing</strong> — expecting the worst possible outcome. <em>Feeds:</em> worry and panic. <em>Sounds like:</em> “If my heart races, I’m having a heart attack.”</p></li>
+<li><p><strong>Fortune telling</strong> — predicting a bad outcome. <em>Feeds:</em> anticipatory anxiety and avoidance. <em>Sounds like:</em> “I’ll freeze up and embarrass myself.”</p></li>
+<li><p><strong>Mind reading</strong> — assuming I know what others think. <em>Feeds:</em> social anxiety. <em>Sounds like:</em> “They can tell I’m nervous and think I’m weird.”</p></li>
+<li><p><strong>Emotional reasoning</strong> — I feel it, so it must be true. <em>Feeds:</em> panic and fear. <em>Sounds like:</em> “I feel afraid, so something bad must be happening.”</p></li>
+<li><p><strong>Underestimating myself</strong> — doubting I can cope. <em>Feeds:</em> avoidance and safety behaviors. <em>Sounds like:</em> “I couldn’t handle it if it happened.”</p></li>
+<li><p><strong>Avoidance</strong> — pushing away painful thoughts. <em>Feeds:</em> avoidance. <em>Sounds like:</em> “If I don’t go, I won’t have to feel it.”</p></li>
+<li><p><strong>Should statements</strong> — rigid musts and oughts. <em>Feeds:</em> spiritual guilt about anxiety. <em>Sounds like:</em> “I should never feel anxious if I trust God.”</p></li>
+</ul>
+<ul>
+<li><p><strong>Questions to dispute the belief.</strong> Have the client choose questions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf"><u>Questioning False Beliefs</u></a> form that “speak to” the belief, then test the answers with exposure. Do not let the questions become a new form of reassurance. To see how, watch Dr. Campbell’s video <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZjR0Mx1zEMY"><u>Integrated Christian Counseling: Questioning Your Beliefs</u></a>. Selected questions that fit the errors above:</p></li>
+</ul>
+<ul>
+<li><p>“What are the odds that the thing I dread will actually happen?” and “How often do the things I worry about actually occur?” <em>For:</em> catastrophizing.</p></li>
+<li><p>“If I were a betting person, would I bet a million dollars that the thing I dread will happen?” <em>For:</em> fortune telling.</p></li>
+<li><p>“Are there other ways of looking at this situation?” <em>For:</em> mind reading.</p></li>
+<li><p>“What’s the actual evidence for my belief?” <em>For:</em> emotional reasoning.</p></li>
+<li><p>“Am I underestimating my ability to cope?” <em>For:</em> underestimating myself.</p></li>
+<li><p>“Will I shrivel up and die if this happens?” <em>For:</em> avoidance.</p></li>
+<li><p>“Does God still love me despite my faults or limitations?” <em>For:</em> should statements and spiritual guilt.</p></li>
+</ul>
+<ul>
+<li><p><strong>Replace (pastoral).</strong> Offer Scripture of God’s presence, without implying that anxiety means weak faith:</p></li>
+</ul>
+<ul>
+<li><p>“Do not fear, for I am with you; do not be afraid, for I am your God. I will strengthen you; I will surely help you; I will uphold you with My right hand of righteousness.” (Isaiah 41:10)</p></li>
+<li><p>“For God has not given us a spirit of fear, but of power, love, and self-control.” (2 Timothy 1:7)</p></li>
+<li><p>“Cast all your anxiety on Him, because He cares for you.” (1 Peter 5:7). An invitation, not a rebuke.</p></li>
+<li><p>“Therefore do not worry about tomorrow, for tomorrow will worry about itself. Today has enough trouble of its own.” (Matthew 6:34). For fortune telling and worry.</p></li>
+</ul>
+<ul>
+<li><p><strong>Faith community (clinical).</strong> Church can be a place to practice approaching feared situations rather than avoiding them. Gently correct the misuse of "do not be anxious" texts to shame people.</p></li>
+<li><p><strong>Ministers:</strong> normalize anxiety, avoid giving repeated reassurance, and refer people with panic, phobias, or worry that disrupts daily life to a clinician trained in exposure-based CBT.</p></li>
+</ul>
+<h1 id="quick-classroom-takeaways">7. Quick classroom takeaways</h1>
+<ul>
+<li><p>Diagnose by <strong>focus of fear</strong>, <strong>duration</strong> (most ≥6 months; panic ≥1 month of concern; separation ≥4 weeks in youth; selective mutism ≥1 month), <strong>avoidance</strong>, and <strong>impairment</strong>. Always rule out medical and substance causes and screen for depression and suicide risk.</p></li>
+<li><p><strong>Exposure-based CBT</strong> is first-line: in vivo exposure for phobias, interoceptive exposure for panic, cognitive therapy with behavioral experiments for social anxiety, and CBT for GAD. ACT and applied relaxation are alternatives.</p></li>
+<li><p><strong>Faith-integrated care</strong> is a legitimate, client-centered option that performs about as well as standard care, with spiritual benefits. The evidence is still modest, so keep exposure at the core.</p></li>
+<li><p>Screen and track with the free GAD-7 and the APA anxiety severity measures; use the SCARED for children, and check for depression and suicide risk.</p></li>
+</ul>
+<h1 id="sources-note">Sources note</h1>
+<p>All journal articles listed in References were checked against Crossref (Oct 28, 2026). Each DOI below is a live link to the publisher record. Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).</p>
+<h1 id="references">References</h1><div class="refs">
+<p>Anderson, N., Heywood-Everett, S., Siddiqi, N., Wright, J., Meredith, J., &amp; McMillan, D. (2015). Faith-adapted psychological therapies for depression and anxiety: Systematic review and meta-analysis. <em>Journal of Affective Disorders, 176</em>, 183–196. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.jad.2015.01.019"><u>https://doi.org/10.1016/j.jad.2015.01.019</u></a></p>
+<p>Andrews, G., Basu, A., Cuijpers, P., Craske, M. G., McEvoy, P., English, C. L., &amp; Newby, J. M. (2018). Computer therapy for the anxiety and depression disorders is effective, acceptable and practical health care: An updated meta-analysis. <em>Journal of Anxiety Disorders, 55</em>, 70–78. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.janxdis.2018.01.001"><u>https://doi.org/10.1016/j.janxdis.2018.01.001</u></a></p>
+<p>Arch, J. J., Eifert, G. H., Davies, C., Plumb Vilardaga, J. C., Rose, R. D., &amp; Craske, M. G. (2012). Randomized clinical trial of cognitive behavioral therapy (CBT) versus acceptance and commitment therapy (ACT) for mixed anxiety disorders. <em>Journal of Consulting and Clinical Psychology, 80</em>(5), 750–765. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/a0028310"><u>https://doi.org/10.1037/a0028310</u></a></p>
+<p>A-Tjak, J. G., Davis, M. L., Morina, N., Powers, M. B., Smits, J. A., &amp; Emmelkamp, P. M. (2015). A meta-analysis of the efficacy of acceptance and commitment therapy for clinically relevant mental and physical health problems. <em>Psychotherapy and Psychosomatics, 84</em>(1), 30–36. <a target="_blank" rel="noopener" href="https://doi.org/10.1159/000365764"><u>https://doi.org/10.1159/000365764</u></a></p>
+<p>Barlow, D. H., Gorman, J. M., Shear, M. K., &amp; Woods, S. W. (2000). Cognitive-behavioral therapy, imipramine, or their combination for panic disorder: A randomized controlled trial. <em>JAMA, 283</em>(19), 2529–2536. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/jama.283.19.2529"><u>https://doi.org/10.1001/jama.283.19.2529</u></a></p>
+<p>Bentley, K. H., Franklin, J. C., Ribeiro, J. D., Kleiman, E. M., Fox, K. R., &amp; Nock, M. K. (2016). Anxiety and its disorders as risk factors for suicidal thoughts and behaviors: A meta-analytic review. <em>Clinical Psychology Review, 43</em>, 30–46. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.cpr.2015.11.008"><u>https://doi.org/10.1016/j.cpr.2015.11.008</u></a></p>
+<p>Bergman, R. L., Gonzalez, A., Piacentini, J., &amp; Keller, M. L. (2013). Integrated Behavior Therapy for Selective Mutism: A randomized controlled pilot study. <em>Behaviour Research and Therapy, 51</em>(10), 680–689. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.brat.2013.07.003"><u>https://doi.org/10.1016/j.brat.2013.07.003</u></a></p>
+<p>Captari, L. E., Hook, J. N., Hoyt, W., Davis, D. E., McElroy-Heltzel, S. E., &amp; Worthington, E. L., Jr. (2018). Integrating clients' religion and spirituality within psychotherapy: A comprehensive meta-analysis. <em>Journal of Clinical Psychology, 74</em>(11), 1938–1951. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.22681"><u>https://doi.org/10.1002/jclp.22681</u></a></p>
+<p>Carpenter, J. K., Andrews, L. A., Witcraft, S. M., Powers, M. B., Smits, J. A. J., &amp; Hofmann, S. G. (2018). Cognitive behavioral therapy for anxiety and related disorders: A meta-analysis of randomized placebo-controlled trials. <em>Depression and Anxiety, 35</em>(6), 502–514. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/da.22728"><u>https://doi.org/10.1002/da.22728</u></a></p>
+<p>Clark, D. M., Ehlers, A., Hackmann, A., McManus, F., Fennell, M., Grey, N., Waddington, L., &amp; Wild, J. (2006). Cognitive therapy versus exposure and applied relaxation in social phobia: A randomized controlled trial. <em>Journal of Consulting and Clinical Psychology, 74</em>(3), 568–578. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/0022-006X.74.3.568"><u>https://doi.org/10.1037/0022-006X.74.3.568</u></a></p>
+<p>Craske, M. G., Treanor, M., Conway, C. C., Zbozinek, T., &amp; Vervliet, B. (2014). Maximizing exposure therapy: An inhibitory learning approach. <em>Behaviour Research and Therapy, 58</em>, 10–23. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.brat.2014.04.006"><u>https://doi.org/10.1016/j.brat.2014.04.006</u></a></p>
+<p>Cuijpers, P., Sijbrandij, M., Koole, S., Huibers, M., Berking, M., &amp; Andersson, G. (2014). Psychological treatment of generalized anxiety disorder: A meta-analysis. <em>Clinical Psychology Review, 34</em>(2), 130–140. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.cpr.2014.01.002"><u>https://doi.org/10.1016/j.cpr.2014.01.002</u></a></p>
+<p>de Abreu Costa, M., &amp; Moreira-Almeida, A. (2022). Religion-adapted cognitive behavioral therapy: A review and description of techniques. <em>Journal of Religion and Health, 61</em>(1), 443–466. <a target="_blank" rel="noopener" href="https://doi.org/10.1007/s10943-021-01345-z"><u>https://doi.org/10.1007/s10943-021-01345-z</u></a></p>
+<p>Gonçalves, J. P. B., Lucchetti, G., Menezes, P. R., &amp; Vallada, H. (2015). Religious and spiritual interventions in mental health care: A systematic review and meta-analysis of randomized controlled clinical trials. <em>Psychological Medicine, 45</em>(14), 2937–2949. <a target="_blank" rel="noopener" href="https://doi.org/10.1017/S0033291715001166"><u>https://doi.org/10.1017/S0033291715001166</u></a></p>
+<p>Hayes-Skelton, S. A., Roemer, L., &amp; Orsillo, S. M. (2013). A randomized clinical trial comparing an acceptance-based behavior therapy to applied relaxation for generalized anxiety disorder. <em>Journal of Consulting and Clinical Psychology, 81</em>(5), 761–773. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/a0032871"><u>https://doi.org/10.1037/a0032871</u></a></p>
+<p>Jacobson, K., Zipp, J., Jones, B., Case-Cook, B., Schrieber, M., Brown, C. G., &amp; Brown, J. W. (2026). Prayer for pain and anxiety in a primary care setting: A randomized controlled trial. <em>Annals of Family Medicine, 24</em>(3), 192–197. <a target="_blank" rel="noopener" href="https://doi.org/10.1370/afm.250302"><u>https://doi.org/10.1370/afm.250302</u></a></p>
+<p>James, A. C., Reardon, T., Soler, A., James, G., &amp; Creswell, C. (2020). Cognitive behavioural therapy for anxiety disorders in children and adolescents. <em>Cochrane Database of Systematic Reviews, 2020</em>(11), CD013162. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/14651858.CD013162.pub2"><u>https://doi.org/10.1002/14651858.CD013162.pub2</u></a></p>
+<p>Kanwar, A., Malik, S., Prokop, L. J., Sim, L. A., Feldstein, D., Wang, Z., &amp; Murad, M. H. (2013). The association between anxiety disorders and suicidal behaviors: A systematic review and meta-analysis. <em>Depression and Anxiety, 30</em>(10), 917–929. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/da.22074"><u>https://doi.org/10.1002/da.22074</u></a></p>
+<p>Knabb, J. J., Vazquez, V. E., Garzon, F. L., Ford, K. M., Wang, K. T., Conner, K. W., Warren, S. E., &amp; Weston, D. M. (2020). Christian meditation for repetitive negative thinking: A multisite randomized trial examining the effects of a 4-week preventative program. <em>Spirituality in Clinical Practice, 7</em>(1), 34–50. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/scp0000206"><u>https://doi.org/10.1037/scp0000206</u></a></p>
+<p>Koszycki, D., Raab, K., Aldosary, F., &amp; Bradwejn, J. (2010). A multifaith spiritually based intervention for generalized anxiety disorder: A pilot randomized trial. <em>Journal of Clinical Psychology, 66</em>(4), 430–441. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.20663"><u>https://doi.org/10.1002/jclp.20663</u></a></p>
+<p>Koszycki, D., Bilodeau, C., Raab-Mayo, K., &amp; Bradwejn, J. (2014). A multifaith spiritually based intervention versus supportive therapy for generalized anxiety disorder: A pilot randomized controlled trial. <em>Journal of Clinical Psychology, 70</em>(6), 489–509. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.22052"><u>https://doi.org/10.1002/jclp.22052</u></a></p>
+<p>Mayo-Wilson, E., Dias, S., Mavranezouli, I., Kew, K., Clark, D. M., Ades, A. E., &amp; Pilling, S. (2014). Psychological and pharmacological interventions for social anxiety disorder in adults: A systematic review and network meta-analysis. <em>The Lancet Psychiatry, 1</em>(5), 368– 376. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/S2215-0366(14)70329-3"><u>https://doi.org/10.1016/S2215-0366(14)70329-3</u></a></p>
+<p>Öst, L.-G., Havnen, A., Hansen, B., &amp; Kvale, G. (2015). Cognitive behavioral treatments of obsessive-compulsive disorder: A systematic review and meta-analysis of studies published 1993–2014. <em>Clinical Psychology Review, 40</em>, 156–169. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.cpr.2015.06.003"><u>https://doi.org/10.1016/j.cpr.2015.06.003</u></a></p>
+<p>Papola, D., Miguel, C., Mazzaglia, M., Franco, P., Tedeschi, F., Romero, S. A., Patel, A. R., Ostuzzi, G., et al. (2024). Psychotherapies for generalized anxiety disorder in adults: A systematic review and network meta-analysis of randomized clinical trials. <em>JAMA Psychiatry, 81</em>(3), 250–259. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/jamapsychiatry.2023.3971"><u>https://doi.org/10.1001/jamapsychiatry.2023.3971</u></a></p>
+<p>Pompoli, A., Furukawa, T. A., Efthimiou, O., Imai, H., Tajika, A., &amp; Salanti, G. (2018). Dismantling cognitive-behaviour therapy for panic disorder: A systematic review and component network meta-analysis. <em>Psychological Medicine, 48</em>(12), 1945–1953. <a target="_blank" rel="noopener" href="https://doi.org/10.1017/S0033291717003919"><u>https://doi.org/10.1017/S0033291717003919</u></a></p>
+<p>Rosmarin, D. H., Pargament, K. I., Pirutinsky, S., &amp; Mahoney, A. (2010). A randomized controlled evaluation of a spiritually integrated treatment for subclinical anxiety in the Jewish community, delivered via the Internet. <em>Journal of Anxiety Disorders, 24</em>(7), 799–808. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.janxdis.2010.05.014"><u>https://doi.org/10.1016/j.janxdis.2010.05.014</u></a></p>
+<p>Slee, A., Nazareth, I., Bondaronek, P., Liu, Y., Cheng, Z., &amp; Freemantle, N. (2019). Pharmacological treatments for generalised anxiety disorder: A systematic review and network meta-analysis. <em>The Lancet, 393</em>(10173), 768–777. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/S0140-6736(18)31793-8"><u>https://doi.org/10.1016/S0140-6736(18)31793-8</u></a></p>
+<p>Stangier, U., Schramm, E., Heidenreich, T., Berger, M., &amp; Clark, D. M. (2011). Cognitive therapy vs interpersonal psychotherapy in social anxiety disorder: A randomized controlled trial. <em>Archives of General Psychiatry, 68</em>(7), 692–700. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/archgenpsychiatry.2011.67"><u>https://doi.org/10.1001/archgenpsychiatry.2011.67</u></a></p>
+<p>van Dis, E. A. M., van Veen, S. C., Hagenaars, M. A., Batelaan, N. M., Bockting, C. L. H., van den Heuvel, R. M., Cuijpers, P., &amp; Engelhard, I. M. (2020). Long-term outcomes of cognitive behavioral therapy for anxiety-related disorders: A systematic review and meta-analysis. <em>JAMA Psychiatry, 77</em>(3), 265–273. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/jamapsychiatry.2019.3986"><u>https://doi.org/10.1001/jamapsychiatry.2019.3986</u></a></p>
+<p>Walkup, J. T., Albano, A. M., Piacentini, J., Birmaher, B., Compton, S. N., Sherrill, J. T., Ginsburg, G. S., Rynn, M. A., et al. (2008). Cognitive behavioral therapy, sertraline, or a combination in childhood anxiety. <em>New England Journal of Medicine, 359</em>(26), 2753–2766. <a target="_blank" rel="noopener" href="https://doi.org/10.1056/NEJMoa0804633"><u>https://doi.org/10.1056/NEJMoa0804633</u></a></p>
+<p>Wolitzky-Taylor, K. B., Horowitz, J. D., Powers, M. B., &amp; Telch, M. J. (2008). Psychological approaches in the treatment of specific phobias: A meta-analysis. <em>Clinical Psychology Review, 28</em>(6), 1021–1037. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.cpr.2008.02.007"><u>https://doi.org/10.1016/j.cpr.2008.02.007</u></a></p>
+<p><em>Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All 31 references and DOIs verified via Crossref (Wednesday, Oct 28, 2026). Effect sizes as reported in the cited sources.</em></p>
+</div>
+</div>
+<div class="tools" style="padding-bottom:6px"><a class="btn" href="../../members/assessment.html#rvlist" onclick="try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){history.back();return false;}}catch(e){}">&#8592; Back</a></div>
+<div class="foot">Teaching overview for counselors. Not a substitute for the DSM-5-TR or clinical judgment. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
+<script>(function(){var b=document.getElementById('back');b.addEventListener('click',function(e){
+try{var r=document.referrer;if(r&&new URL(r).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});
+try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){document.body.firstElementChild.scrollIntoView({block:'start'});}}catch(e){}})();</script><!--navjs--><script>
+(function(){
+var dds=document.querySelectorAll('.nav .dd'),t;
+function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
+dds.forEach(function(d){
+  var b=d.firstChild;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll();if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}});
+  d.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();closeAll();b.focus();});
+  d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(closeAll,500);});
+  d.addEventListener('mouseenter',function(){clearTimeout(t);});
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+</script><!--/navjs--></body></html>

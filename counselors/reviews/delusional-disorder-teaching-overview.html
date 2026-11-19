@@ -1,0 +1,312 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Delusional Disorder · DSM-5-TR Teaching Review</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+
+.nav a.l:hover{border-color:var(--gold)}
+.nav a.on{color:#fff;border-color:var(--gold)}
+
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
+
+.nav .acct{display:inline-flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
+
+.nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
+
+.nav .dd{position:relative}
+
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
+
+.nav .dd>button::after{content:" \25BE";color:var(--gold);font-size:.8em}
+
+.nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
+
+.nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
+
+.nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
+
+.nav .menu a:hover{background:var(--cream)}
+
+.nav .menu a.sub{padding-left:38px;font-size:.92rem}
+.nav .menu a.sub::before{content:"\21B3  ";color:var(--gold)}
+
+.nav .menu a.sub.on{padding-left:35px}
+
+.nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
+
+.nav .dd.open .menu{display:block}
+
+.nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
+
+.nav .menu .x:hover{color:var(--navy);text-decoration:underline}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:8px 12px}}
+@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem;white-space:nowrap}.nav a.pub{font-size:.78rem;padding:4px 10px;white-space:nowrap}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
+
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.65}
+a{color:var(--navy2)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:46px 22px 40px;text-align:center}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.6rem);margin:0 0 10px;line-height:1.2}
+.hero p{max-width:760px;margin:4px auto 0;color:#dfe6f2;font-size:1rem}
+.hero .by{font-size:1.05rem;color:#fff;margin-top:12px}
+.hero .ai{font-size:.85rem;font-style:italic;color:#c8d1e0}
+.tools{max-width:960px;margin:0 auto;padding:22px 20px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:9px 20px;border-radius:24px;border:0;font:inherit;font-weight:bold;cursor:pointer}
+.btn.ghost{background:#fff;border:1px solid var(--navy);color:var(--navy)}
+.paper{max-width:960px;margin:16px auto 0;background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:10px 34px 30px;box-shadow:0 2px 8px rgba(18,40,76,.06)}
+.paper h1{color:var(--navy);font-size:1.45rem;margin:30px 0 10px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+.paper h2{color:var(--navy);font-size:1.15rem;margin:22px 0 6px}
+.paper p{margin:8px 0}
+.paper li{margin:4px 0}.paper li p{margin:0}
+.paper strong{color:var(--navy)}
+.paper table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.9rem;display:block;overflow-x:auto}
+.paper th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;border:1px solid var(--navy)}
+.paper th strong,.paper th a{color:#fff}
+.paper td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+.paper tr:nth-child(even) td{background:#f7f3e8}
+.paper td p,.paper th p{margin:0}
+.paper .refs p{font-size:.88rem;padding-left:2em;text-indent:-2em;margin:6px 0;word-break:break-word}
+.paper .final{font-size:.85rem;color:var(--mut);font-style:italic;margin-top:18px}
+.foot{margin:34px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:620px){.paper{padding:6px 16px 22px;border-radius:0}}
+@media print{.nav,.tools,.foot{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
+</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a class="l" href="../../members/index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a class="l" href="../../members/belief-counseling.html">Belief Counseling</a><a class="l" href="../../members/process.html">The Process</a><a class="l on" href="../../members/assessment.html">Traditional Assessment</a><a class="l" href="../../members/tips.html">Professional Tips</a><a class="l" href="../../members/library.html">Library</a><a class="l" target="_top" href="https://www.beliefcounselor.com/counselor-scriptures">Scripture Lookup</a><a class="l" href="../../counselors/membership.html">Membership</a><span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a><a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a><a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->
+<div class="hero"><div class="eyebrow">DSM-5-TR Teaching Review</div><h1>Delusional Disorder</h1>
+<p>Clinical Companion Knowledge Library: for counselors and counseling students</p>
+<p class="by">Brian Campbell, Ph.D.</p>
+<p class="ai">Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.</p></div>
+<div class="tools"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="delusional-disorder-teaching-overview.pdf" target="_blank" rel="noopener">Download or print the PDF</a></div>
+<div class="paper">
+<h1 id="what-it-is">1. What it is</h1>
+<p>Delusional disorder is the presence of one or more <strong>delusions</strong> (fixed false beliefs that are not changed by clear evidence) lasting <strong>at least 1 month</strong>, in a person who has never met the full criteria for schizophrenia. Apart from the delusion and its effects, the person often functions fairly well and does not seem obviously odd (American Psychiatric Association [APA], 2022). It is listed in DSM-5-TR’s schizophrenia spectrum chapter.</p>
+<p><strong>How common:</strong> in a nationally representative Finnish sample of 8,028 adults aged 30 and older, lifetime prevalence was 0.18%, compared with 0.87% for schizophrenia (Perälä et al., 2007).</p>
+<p><strong>Not simply mild schizophrenia.</strong> Followed for about 11 years, inpatients with delusional disorder had a later onset, no first-rank or significant negative symptoms, fewer and shorter hospital stays, and better outcomes in work, relationships, and self-sufficiency than patients with paranoid schizophrenia. The diagnosis was very stable and only rarely turned into schizophrenia (Marneros et al., 2012).</p>
+<p><strong>Counselor framing:</strong> most people with delusional disorder do not think they are ill. They come because of the consequences: conflict with neighbors, a broken marriage, lawsuits, repeated medical visits, or pressure from family. The belief feels like plain fact to them, so arguing about it usually backfires.</p>
+<h1 id="core-symptoms-to-watch-for">2. Core symptoms to watch for</h1>
+<p>DSM-5-TR criteria, paraphrased (APA, 2022); use the manual itself for formal diagnosis.</p>
+<ul>
+<li><p>One or more <strong>delusions</strong> lasting <strong>1 month or longer</strong>.</p></li>
+<li><p>The person has <strong>never met Criterion A for schizophrenia</strong>. Hallucinations, if present, are not prominent and fit the delusional theme (for example, sensing insects in the skin with a delusion of infestation).</p></li>
+<li><p>Apart from the delusion, <strong>functioning is not markedly impaired</strong> and behavior is not obviously bizarre.</p></li>
+<li><p>Any mood episodes have been <strong>brief</strong> compared with the delusional periods, and the condition is not due to a substance, a medical condition, or another mental disorder such as body dysmorphic disorder or OCD.</p></li>
+<li><p><strong>Types:</strong> <strong>persecutory</strong> (being conspired against, spied on, poisoned, harassed; the most common type), <strong>jealous</strong> (partner is unfaithful), <strong>erotomanic</strong> (another person, often of higher status, is in love with them), <strong>grandiose</strong> (great talent, insight, or a special identity or mission), <strong>somatic</strong> (bodily functions or sensations, such as infestation or a foul odor), <strong>mixed</strong>, and <strong>unspecified</strong>. A specifier notes <strong>bizarre content</strong> (clearly implausible, such as organs replaced without a scar).</p></li>
+</ul>
+<p><strong>Rule out:</strong> schizophrenia and other psychotic disorders; depression or bipolar disorder with psychotic features; OCD or body dysmorphic disorder with absent insight; substance use (especially stimulants and cannabis); and medical or neurological causes, including <strong>dementia in older adults</strong>. Paranoid personality disorder involves suspicion, not a fixed delusion. Beliefs shared by the person’s religious or cultural community are <strong>not</strong> delusions (APA, 2022).</p>
+<p><strong>Safety (general clinical consensus):</strong> ask about plans to confront, follow, or harm the supposed persecutor, partner, or object of love. <strong>Jealous and persecutory types carry a real risk of violence</strong>, and erotomanic types of stalking. Follow duty-to-warn laws, assess suicide risk, and refer for psychiatric evaluation in every case.</p>
+<h1 id="frequently-used-assessment-instruments">3. Frequently used assessment instruments</h1>
+<p>These are among the most widely used measures for screening, rating severity, and tracking progress in delusional disorder. <strong>Screening tools do not diagnose;</strong> a positive screen calls for a clinical interview against DSM-5-TR criteria. Click an instrument’s website to find it.</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 22%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Instrument</strong></th>
+<th><strong>Best used for</strong></th>
+<th><strong>Format</strong></th>
+<th><strong>Purchase required?</strong></th>
+<th><strong>Training or qualification</strong></th>
+<th><strong>Where to find it</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>APA Clinician-Rated Dimensions of Psychosis Symptom Severity</strong></td>
+<td>Rating hallucinations, delusions, disorganization, negative symptoms, cognition, depression, and mania.</td>
+<td>Clinician-rated, 8 items</td>
+<td>No (free from the APA for clinical use)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.psychiatry.org/psychiatrists/practice/dsm/educational-resources/assessment-measures"><u>APA assessment measures</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>PSYRATS</strong> (Psychotic Symptom Rating Scales)</td>
+<td>Rating delusions on conviction, preoccupation, distress, and disruption; the outcome measure in major delusion trials.</td>
+<td>Clinician interview; delusions scale 6 items</td>
+<td>No (free)</td>
+<td>★ Clinical interviewing skill; training recommended</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1017/S0033291799008661"><u>Original article</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>PDI-21</strong> (Peters et al. Delusions Inventory)</td>
+<td>Delusional ideas plus how distressing, preoccupying, and convincing they are.</td>
+<td>Self-report, 21 items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1093/oxfordjournals.schbul.a007116"><u>Original article</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>BABS</strong> (Brown Assessment of Beliefs Scale)</td>
+<td>How fixed a belief is and how much insight the person has.</td>
+<td>Clinician interview, 7 items</td>
+<td>No (free)</td>
+<td>★ Clinical interviewing skill; training recommended</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1176/ajp.155.1.102"><u>Original article</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>GPTS</strong> (Green Paranoid Thought Scales)</td>
+<td>Measuring persecutory ideas and ideas of reference.</td>
+<td>Self-report, 32 items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1017/S0033291707001638"><u>Original article</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>BPRS</strong> (Brief Psychiatric Rating Scale)</td>
+<td>Quick clinician rating of overall psychiatric symptoms, including psychosis.</td>
+<td>Clinician interview, 18 items</td>
+<td>No (free)</td>
+<td>★ Clinical interviewing skill; training recommended</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.2466/pr0.1962.10.3.799"><u>Original article</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>PANSS</strong> (Positive and Negative Syndrome Scale)</td>
+<td>The standard rating of positive, negative, and general symptoms in schizophrenia.</td>
+<td>Clinician interview, 30 items, 45 to 50 minutes</td>
+<td>Yes (licensed by MHS)</td>
+<td>★ Specialized training required</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1093/schbul/13.2.261"><u>Original article</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>C-SSRS</strong> (Columbia Suicide Severity Rating Scale)</td>
+<td>Screening and assessing suicide risk; brief screener and full versions.</td>
+<td>Clinician- or staff-asked questions, a few minutes</td>
+<td>No (free)</td>
+<td>Free online training offered and recommended</td>
+<td><a target="_blank" rel="noopener" href="https://cssrs.columbia.edu/"><u>Columbia Lighthouse Project</u></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>★ = requires professional qualification to purchase or specialized training.</strong> Publishers sell these tests only to qualified users. At Pearson, <strong>Level B</strong> generally means a master’s degree in a related field with formal assessment training, or a health care license; <strong>Level C</strong> means a doctorate in psychology or a related field with formal assessment training, or state licensure in a related field (<a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/professional-assessments/ordering/how-to-order/qualifications/qualifications-policy.html"><u>Pearson qualifications policy</u></a>). MHS, PAR, and WPS use similar levels. Check each publisher’s page before ordering. "Original article" links go to the published study that introduced a free scale that has no official website; the scale can usually be obtained there or from its authors.</p>
+<h1 id="what-works-treatment-and-the-evidence">4. What works: treatment and the evidence</h1>
+<p><strong>Bottom line for class:</strong> trial evidence specific to delusional disorder is very thin. Antipsychotic medication helps some patients, and cognitive therapy developed for persecutory delusions in psychosis is the most promising psychological approach. Engagement comes first.</p>
+<p><strong>Evidence overview (honest effect sizes):</strong></p>
+<ul>
+<li><p><strong>Cochrane review:</strong> of 141 citations, only <strong>one small trial</strong> (17 completers) qualified: <a target="_blank" rel="noopener" href="https://www.apa.org/ptsd-guideline/treatments/cognitive-behavioral-therapy"><u>CBT</u></a> versus supportive therapy. It showed a benefit on social self-esteem, but the evidence was very low quality. The reviewers concluded there was not enough evidence for firm recommendations and that offering treatments proven for other psychotic disorders is reasonable (Skelton et al., 2015).</p></li>
+<li><p><strong>CBT trial:</strong> in 24 people with delusional disorder randomized to 24 weeks of CBT or an attention-control therapy, both groups improved, but CBT had more effect on the emotion linked to the belief and on how the belief drove actions (O’Connor et al., 2007).</p></li>
+<li><p><strong>Cognitive therapy for persecutory delusions (mixed psychosis samples):</strong> in 130 adults with persistent persecutory delusions, the <a target="_blank" rel="noopener" href="https://www.psy.ox.ac.uk/research/oxford-cognitive-approaches-to-psychosis/projects-1/the-feeling-safe-programme"><strong><u>Feeling Safe Programme</u></strong></a> reduced delusional conviction (d = −0.86) and delusion severity (d = −1.20) at 6 months more than befriending (Freeman et al., 2021). In 150 patients, just six sessions of CBT targeting <strong>worry</strong> reduced persecutory delusions, and reduced worry accounted for about 66% of the change (Freeman et al., 2015).</p></li>
+<li><p><strong>Medication (referral notes):</strong> a review of 385 published cases (no randomized trials) found that about one-third of patients responded well to antipsychotics, somewhat more often with older (first-generation) drugs (39%) than newer ones (28%) (Muñoz-Negro &amp; Cervilla, 2016). Getting a suspicious patient to accept medication is often the main obstacle.</p></li>
+</ul>
+<p><strong>Cognitive work with delusional disorder: how it is used</strong> (Garety et al., 2001; Freeman et al., 2021):</p>
+<ul>
+<li><p><strong>Engage around the person’s own goals:</strong> "You’ve been under terrible strain. Let’s work on sleep, stress, and getting your life back." Do not argue about the belief or pretend to agree with it.</p></li>
+<li><p><strong>Reduce what keeps the belief going:</strong> worry, poor sleep, low self-esteem, avoidance, and safety behaviors such as constant checking or hiding, which prevent the person from learning that they are safe.</p></li>
+<li><p><strong>Gently examine the evidence:</strong> consider other explanations, notice "jumping to conclusions," and run small behavioral experiments ("What happens if you go to the store without checking for followers?").</p></li>
+</ul>
+<h1 id="religion-spirituality-and-christian-integration-what-the-evidence-shows">5. Religion, spirituality, and Christian integration: what the evidence shows</h1>
+<p><strong>Disorder-specific research.</strong> We found <strong>no study of religion or faith-integrated treatment specifically in delusional disorder</strong> (literature search, November 1, 2026). The findings below come from broader samples of people with psychosis.</p>
+<p><strong>Religious delusions.</strong> They appeared in 24% of 193 inpatients, who were more severely ill than patients with other delusions (Siddle et al., 2002). Rates vary by time, place, and probably personal religiosity (Cook, 2015). A second study found them no more severe, but these patients adhered less to treatment and got less support from their faith communities (Mohr et al., 2010).</p>
+<p><strong>Spiritual experience versus delusion.</strong> Members of new religious movements endorsed as many unusual beliefs as deluded inpatients but were far less distressed and preoccupied; Christian and nonreligious controls did not differ (Peters et al., 1999). Weigh conviction, preoccupation, distress, and whether the person’s faith community shares the belief, not the content alone (Pierre, 2001).</p>
+<p><strong>Faith as help or hindrance.</strong> Among 115 outpatients with psychosis, religion gave hope and meaning for 71% but spiritual despair for 14% (Mohr et al., 2006). Nonadherent patients more often saw a conflict between their religion and medication: 31% versus 8% of adherent patients (Borras et al., 2007). In 47 patients with psychosis, spiritual struggle was linked to more suicidal ideation (Rosmarin et al., 2013).</p>
+<p><strong>Clergy.</strong> One-quarter of U.S. adults who ever sought help for a mental disorder went to clergy, and most of those seeing clergy saw no other professional (Wang et al., 2003). Pastors may be the first to hear a delusion.</p>
+<p><strong>Honest summary for teaching:</strong></p>
+<ol type="1">
+<li><p>Medication and cognitive therapy for persecutory delusions are the best available evidence. Faith integration supports them; it does not replace them.</p></li>
+<li><p>No faith-integrated trial exists for delusional disorder. Ordinary faith is not a symptom; judge beliefs by their fixity, distress, and whether the person’s own church shares them.</p></li>
+<li><p>A respected pastor or faith community can help engage a suspicious person in care, or can unintentionally confirm the delusion. Work together carefully.</p></li>
+</ol>
+<h1 id="practical-christian-integration-notes">6. Practical Christian-integration notes</h1>
+<p>These apply Dr. Campbell’s identify, challenge, replace-with-Scripture method gently, within psychiatric and cognitive care. Clinical items rest on the research above. Pastoral items are theological application, not research findings.</p>
+<ul>
+<li><p><strong>Identify (clinical).</strong> Listen for the delusion and the fears beneath it, including spiritual forms: "My neighbors are working with the devil against me," "God told me my wife is unfaithful," "I have a special mission no one else understands." Notice the distress, isolation, and loss the belief has caused (Mohr et al., 2010). To identify deeper false beliefs, see: <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/core-beliefs.html"><u>Core Beliefs</u></a>, <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf"><u>Parental Messages</u></a>, or use the <a target="_blank" rel="noopener" href="https://www.beliefcounselor.com/false-belief-finder"><u>Semantic Search Tool</u></a>.</p></li>
+<li><p><strong>Challenge (clinical).</strong> Do not debate the delusion head-on. Focus on distress, safety, sleep, and worry, and gently test predictions and consider other explanations over time (Freeman et al., 2021). Ask whether the person’s church or Scripture actually teaches what they believe (Pierre, 2001). <strong>Possible cognitive errors</strong> to watch for, with their definitions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf"><u>Belief Counseling Cognitive Errors Checklist</u></a> and the symptoms they tend to feed:</p></li>
+</ul>
+<ul>
+<li><p><strong>Jumping to conclusions</strong> — deciding without the facts. <em>Feeds:</em> the delusion itself. <em>Sounds like:</em> “My wife was late, so she’s having an affair.”</p></li>
+<li><p><strong>Confirmatory bias</strong> — looking for proof I’m right, ignoring the rest. <em>Feeds:</em> a delusion that grows stronger. <em>Sounds like:</em> “The neighbor’s light was on again—more proof.”</p></li>
+<li><p><strong>Selective attention</strong> — noticing only what fits my belief. <em>Feeds:</em> suspicion. <em>Sounds like:</em> “I saw the same car twice today.”</p></li>
+<li><p><strong>Mind reading</strong> — assuming I know what others think. <em>Feeds:</em> fear and isolation. <em>Sounds like:</em> “They’re plotting against me.”</p></li>
+<li><p><strong>Emotional reasoning</strong> — I feel it, so it must be true. <em>Feeds:</em> fear. <em>Sounds like:</em> “I feel watched, so I must be watched.”</p></li>
+<li><p><strong>Catastrophizing</strong> — expecting the worst possible outcome. <em>Feeds:</em> anxiety and safety behaviors. <em>Sounds like:</em> “They’re going to harm me.”</p></li>
+</ul>
+<ul>
+<li><p><strong>Questions to dispute the belief.</strong> Do not use these to argue with a delusion or with the client’s faith. Once trust is built, have the client choose questions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf"><u>Questioning False Beliefs</u></a> form that “speak to” the distress, fears, and conclusions around the belief. To see how, watch Dr. Campbell’s video <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZjR0Mx1zEMY"><u>Integrated Christian Counseling: Questioning Your Beliefs</u></a>. Selected questions that fit the errors above:</p></li>
+</ul>
+<ul>
+<li><p>“Are there other ways of looking at this situation?” <em>For:</em> jumping to conclusions.</p></li>
+<li><p>“What are some of the best arguments against my belief or conclusion?” <em>For:</em> confirmatory bias.</p></li>
+<li><p>“Is it possible that I am distorting the facts?” <em>For:</em> selective attention.</p></li>
+<li><p>“What’s the actual evidence for my belief?” <em>For:</em> mind reading and emotional reasoning.</p></li>
+<li><p>“What are the odds that the thing I dread will actually happen?” <em>For:</em> catastrophizing.</p></li>
+<li><p>“How does the Bible speak to this?” <em>For:</em> spiritual forms of the belief.</p></li>
+<li><p>“Even if my thoughts are true, do I want to live the rest of my life this way?” <em>For:</em> the distress the belief causes.</p></li>
+</ul>
+<ul>
+<li><p><strong>Replace (pastoral).</strong> Offer Scripture that steadies fear and honors careful testing of beliefs:</p></li>
+</ul>
+<ul>
+<li><p>“He who dwells in the shelter of the Most High will rest in the shadow of the Almighty. I will say to the LORD, ‘You are my refuge and my fortress, my God, in whom I trust.’” (Psalm 91:1–2). Safety rooted in God, not in constant vigilance.</p></li>
+<li><p>“There is no fear in love, but perfect love drives out fear…” (1 John 4:18)</p></li>
+<li><p>“The first to state his case seems right until another comes and cross-examines him.” (Proverbs 18:17). Considering other explanations is wise, not disloyal.</p></li>
+<li><p>“Be anxious for nothing, but in everything, by prayer and petition, with thanksgiving, present your requests to God. And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus.” (Philippians 4:6–7). For the worry that feeds persecutory fears.</p></li>
+</ul>
+<ul>
+<li><p><strong>Faith community (clinical).</strong> Offer calm, consistent friendship without confirming or ridiculing the belief. Protect anyone the person believes is a persecutor or secret lover, and do not carry messages between them.</p></li>
+<li><p><strong>Ministers:</strong> avoid interpreting the belief as demonic attack or special revelation, encourage evaluation as care for the whole person, take any threat seriously, and refer promptly.</p></li>
+</ul>
+<h1 id="quick-classroom-takeaways">7. Quick classroom takeaways</h1>
+<ul>
+<li><p>Delusional disorder means one or more fixed false beliefs for at least 1 month without schizophrenia, with fairly preserved functioning. Types: persecutory, jealous, erotomanic, grandiose, somatic, mixed. Assess violence and suicide risk.</p></li>
+<li><p>Evidence is thin: antipsychotics help about one-third; cognitive therapy targeting worry, sleep, and safety behaviors reduces persecutory delusions. Engage first; never argue.</p></li>
+<li><p>Replace fear with the security of God’s love, and gently weigh beliefs as "another comes and cross-examines."</p></li>
+<li><p>Rate the belief’s conviction, preoccupation, and distress with the PSYRATS or PDI, and its fixity with the BABS; track change over time rather than arguing about content.</p></li>
+</ul>
+<h1 id="sources-note">Sources note</h1>
+<p>All 18 references were checked against Crossref, OpenAlex, and PubMed/Europe PMC records (Nov 1, 2026), and the figures quoted were checked against each study’s abstract. Each DOI is a live link to the publisher record. Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).</p>
+<h1 id="references">References</h1><div class="refs">
+<p>American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed., text rev.). <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.books.9780890425787"><u>https://doi.org/10.1176/appi.books.9780890425787</u></a></p>
+<p>Borras, L., Mohr, S., Brandt, P.-Y., Gilliéron, C., Eytan, A., &amp; Huguelet, P. (2007). Religious beliefs in schizophrenia: Their relevance for adherence to treatment. <em>Schizophrenia Bulletin, 33</em>(5), 1238–1246. <a target="_blank" rel="noopener" href="https://doi.org/10.1093/schbul/sbl070"><u>https://doi.org/10.1093/schbul/sbl070</u></a></p>
+<p>Cook, C. C. H. (2015). Religious psychopathology: The prevalence of religious content of delusions and hallucinations in mental disorder. <em>International Journal of Social Psychiatry, 61</em>(4), 404–425. <a target="_blank" rel="noopener" href="https://doi.org/10.1177/0020764015573089"><u>https://doi.org/10.1177/0020764015573089</u></a></p>
+<p>Freeman, D., Dunn, G., Startup, H., Pugh, K., Cordwell, J., Mander, H., Černis, E., Wingham, G., Shirvell, K., &amp; Kingdon, D. (2015). Effects of cognitive behaviour therapy for worry on persecutory delusions in patients with psychosis (WIT): A parallel, single-blind, randomised controlled trial with a mediation analysis. <em>The Lancet Psychiatry, 2</em>(4), 305–313. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/S2215-0366(15)00039-5"><u>https://doi.org/10.1016/S2215-0366(15)00039-5</u></a></p>
+<p>Freeman, D., Emsley, R., Diamond, R., Collett, N., Bold, E., Chadwick, E., Isham, L., Bird, J. C., Edwards, D., Kingdon, D., Fitzpatrick, R., Kabir, T., Waite, F., Carr, L., Causier, C., Černis, E., Kirkham, M., Lambe, S., Lister, R., . . . Twivy, E. (2021). Comparison of a theoretically driven cognitive therapy (the Feeling Safe Programme) with befriending for the treatment of persistent persecutory delusions: A parallel, single-blind, randomised controlled trial. <em>The Lancet Psychiatry, 8</em>(8), 696–707. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/S2215-0366(21)00158-9"><u>https://doi.org/10.1016/S2215-0366(21)00158-9</u></a></p>
+<p>Garety, P. A., Kuipers, E., Fowler, D., Freeman, D., &amp; Bebbington, P. E. (2001). A cognitive model of the positive symptoms of psychosis. <em>Psychological Medicine, 31</em>(2), 189–195. <a target="_blank" rel="noopener" href="https://doi.org/10.1017/S0033291701003312"><u>https://doi.org/10.1017/S0033291701003312</u></a></p>
+<p>Marneros, A., Pillmann, F., &amp; Wustmann, T. (2012). Delusional disorders—are they simply paranoid schizophrenia? <em>Schizophrenia Bulletin, 38</em>(3), 561–568. <a target="_blank" rel="noopener" href="https://doi.org/10.1093/schbul/sbq125"><u>https://doi.org/10.1093/schbul/sbq125</u></a></p>
+<p>Mohr, S., Borras, L., Betrisey, C., Brandt, P.-Y., Gilliéron, C., &amp; Huguelet, P. (2010). Delusions with religious content in patients with psychosis: How they interact with spiritual coping. <em>Psychiatry: Interpersonal and Biological Processes, 73</em>(2), 158– 172. <a target="_blank" rel="noopener" href="https://doi.org/10.1521/psyc.2010.73.2.158"><u>https://doi.org/10.1521/psyc.2010.73.2.158</u></a></p>
+<p>Mohr, S., Brandt, P.-Y., Borras, L., Gilliéron, C., &amp; Huguelet, P. (2006). Toward an integration of spirituality and religiousness into the psychosocial dimension of schizophrenia. <em>American Journal of Psychiatry, 163</em>(11), 1952–1959. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/ajp.2006.163.11.1952"><u>https://doi.org/10.1176/ajp.2006.163.11.1952</u></a></p>
+<p>Muñoz-Negro, J. E., &amp; Cervilla, J. A. (2016). A systematic review on the pharmacological treatment of delusional disorder. <em>Journal of Clinical Psychopharmacology, 36</em>(6), 684–690. <a target="_blank" rel="noopener" href="https://doi.org/10.1097/JCP.0000000000000595"><u>https://doi.org/10.1097/JCP.0000000000000595</u></a></p>
+<p>O’Connor, K., Stip, E., Pélissier, M.-C., Aardema, F., Guay, S., Gaudette, G., Van Haaster, I., Robillard, S., Grenier, S., Careau, Y., Doucet, P., &amp; Leblanc, V. (2007). Treating delusional disorder: A comparison of cognitive-behavioural therapy and attention placebo control. <em>The Canadian Journal of Psychiatry, 52</em>(3), 182–190. <a target="_blank" rel="noopener" href="https://doi.org/10.1177/070674370705200310"><u>https://doi.org/10.1177/070674370705200310</u></a></p>
+<p>Perälä, J., Suvisaari, J., Saarni, S. I., Kuoppasalmi, K., Isometsä, E., Pirkola, S., Partonen, T., Tuulio-Henriksson, A., Hintikka, J., Kieseppä, T., Härkänen, T., Koskinen, S., &amp; Lönnqvist, J. (2007). Lifetime prevalence of psychotic and bipolar I disorders in a general population. <em>Archives of General Psychiatry, 64</em>(1), 19–28. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/archpsyc.64.1.19"><u>https://doi.org/10.1001/archpsyc.64.1.19</u></a></p>
+<p>Peters, E., Day, S., McKenna, J., &amp; Orbach, G. (1999). Delusional ideation in religious and psychotic populations. <em>British Journal of Clinical Psychology, 38</em>(1), 83–96. <a target="_blank" rel="noopener" href="https://doi.org/10.1348/014466599162683"><u>https://doi.org/10.1348/014466599162683</u></a></p>
+<p>Pierre, J. M. (2001). Faith or delusion? At the crossroads of religion and psychosis. <em>Journal of Psychiatric Practice, 7</em>(3), 163– 172. <a target="_blank" rel="noopener" href="https://doi.org/10.1097/00131746-200105000-00004"><u>https://doi.org/10.1097/00131746-200105000-00004</u></a></p>
+<p>Rosmarin, D. H., Bigda-Peyton, J. S., Öngur, D., Pargament, K. I., &amp; Björgvinsson, T. (2013). Religious coping among psychotic patients: Relevance to suicidality and treatment outcomes. <em>Psychiatry Research, 210</em>(1), 182–187. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.psychres.2013.03.023"><u>https://doi.org/10.1016/j.psychres.2013.03.023</u></a></p>
+<p>Siddle, R., Haddock, G., Tarrier, N., &amp; Faragher, E. B. (2002). Religious delusions in patients admitted to hospital with schizophrenia. <em>Social Psychiatry and Psychiatric Epidemiology, 37</em>(3), 130–138. <a target="_blank" rel="noopener" href="https://doi.org/10.1007/s001270200005"><u>https://doi.org/10.1007/s001270200005</u></a></p>
+<p>Skelton, M., Khokhar, W. A., &amp; Thacker, S. P. (2015). Treatments for delusional disorder. <em>Cochrane Database of Systematic Reviews, 2015</em>(5), CD009785. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/14651858.CD009785.pub2"><u>https://doi.org/10.1002/14651858.CD009785.pub2</u></a></p>
+<p>Wang, P. S., Berglund, P. A., &amp; Kessler, R. C. (2003). Patterns and correlates of contacting clergy for mental disorders in the United States. <em>Health Services Research, 38</em>(2), 647–673. <a target="_blank" rel="noopener" href="https://doi.org/10.1111/1475-6773.00138"><u>https://doi.org/10.1111/1475-6773.00138</u></a></p>
+<p><em>Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All 18 references and DOIs verified via Crossref, OpenAlex, and PubMed/Europe PMC records (Sunday, Nov 1, 2026). Effect sizes as reported in the cited sources.</em></p>
+</div>
+</div>
+<div class="tools" style="padding-bottom:6px"><a class="btn" href="../../members/assessment.html#rvlist" onclick="try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){history.back();return false;}}catch(e){}">&#8592; Back</a></div>
+<div class="foot">Teaching overview for counselors. Not a substitute for the DSM-5-TR or clinical judgment. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
+<script>(function(){var b=document.getElementById('back');b.addEventListener('click',function(e){
+try{var r=document.referrer;if(r&&new URL(r).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});
+try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){document.body.firstElementChild.scrollIntoView({block:'start'});}}catch(e){}})();</script><!--navjs--><script>
+(function(){
+var dds=document.querySelectorAll('.nav .dd'),t;
+function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
+dds.forEach(function(d){
+  var b=d.firstChild;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll();if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}});
+  d.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();closeAll();b.focus();});
+  d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(closeAll,500);});
+  d.addEventListener('mouseenter',function(){clearTimeout(t);});
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+</script><!--/navjs--></body></html>

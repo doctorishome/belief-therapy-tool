@@ -1,0 +1,328 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PTSD and Trauma-Related Disorders · DSM-5-TR Teaching Review</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+
+.nav a.l:hover{border-color:var(--gold)}
+.nav a.on{color:#fff;border-color:var(--gold)}
+
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
+
+.nav .acct{display:inline-flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
+
+.nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
+
+.nav .dd{position:relative}
+
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
+
+.nav .dd>button::after{content:" \25BE";color:var(--gold);font-size:.8em}
+
+.nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
+
+.nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
+
+.nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
+
+.nav .menu a:hover{background:var(--cream)}
+
+.nav .menu a.sub{padding-left:38px;font-size:.92rem}
+.nav .menu a.sub::before{content:"\21B3  ";color:var(--gold)}
+
+.nav .menu a.sub.on{padding-left:35px}
+
+.nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
+
+.nav .dd.open .menu{display:block}
+
+.nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
+
+.nav .menu .x:hover{color:var(--navy);text-decoration:underline}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:8px 12px}}
+@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem;white-space:nowrap}.nav a.pub{font-size:.78rem;padding:4px 10px;white-space:nowrap}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
+
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.65}
+a{color:var(--navy2)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:46px 22px 40px;text-align:center}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.6rem);margin:0 0 10px;line-height:1.2}
+.hero p{max-width:760px;margin:4px auto 0;color:#dfe6f2;font-size:1rem}
+.hero .by{font-size:1.05rem;color:#fff;margin-top:12px}
+.hero .ai{font-size:.85rem;font-style:italic;color:#c8d1e0}
+.tools{max-width:960px;margin:0 auto;padding:22px 20px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:9px 20px;border-radius:24px;border:0;font:inherit;font-weight:bold;cursor:pointer}
+.btn.ghost{background:#fff;border:1px solid var(--navy);color:var(--navy)}
+.paper{max-width:960px;margin:16px auto 0;background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:10px 34px 30px;box-shadow:0 2px 8px rgba(18,40,76,.06)}
+.paper h1{color:var(--navy);font-size:1.45rem;margin:30px 0 10px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+.paper h2{color:var(--navy);font-size:1.15rem;margin:22px 0 6px}
+.paper p{margin:8px 0}
+.paper li{margin:4px 0}.paper li p{margin:0}
+.paper strong{color:var(--navy)}
+.paper table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.9rem;display:block;overflow-x:auto}
+.paper th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;border:1px solid var(--navy)}
+.paper th strong,.paper th a{color:#fff}
+.paper td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+.paper tr:nth-child(even) td{background:#f7f3e8}
+.paper td p,.paper th p{margin:0}
+.paper .refs p{font-size:.88rem;padding-left:2em;text-indent:-2em;margin:6px 0;word-break:break-word}
+.paper .final{font-size:.85rem;color:var(--mut);font-style:italic;margin-top:18px}
+.foot{margin:34px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:620px){.paper{padding:6px 16px 22px;border-radius:0}}
+@media print{.nav,.tools,.foot{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
+</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a class="l" href="../../members/index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a class="l" href="../../members/belief-counseling.html">Belief Counseling</a><a class="l" href="../../members/process.html">The Process</a><a class="l on" href="../../members/assessment.html">Traditional Assessment</a><a class="l" href="../../members/tips.html">Professional Tips</a><a class="l" href="../../members/library.html">Library</a><a class="l" target="_top" href="https://www.beliefcounselor.com/counselor-scriptures">Scripture Lookup</a><a class="l" href="../../counselors/membership.html">Membership</a><span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a><a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a><a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->
+<div class="hero"><div class="eyebrow">DSM-5-TR Teaching Review</div><h1>PTSD and Trauma-Related Disorders</h1>
+<p>Clinical Companion Knowledge Library: for counselors and counseling students</p>
+<p class="by">Brian Campbell, Ph.D.</p>
+<p class="ai">Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.</p></div>
+<div class="tools"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="ptsd-teaching-overview.pdf" target="_blank" rel="noopener">Download or print the PDF</a></div>
+<div class="paper">
+<h1 id="what-it-is">1. What it is</h1>
+<p>Posttraumatic stress disorder (PTSD) is a lasting reaction to a traumatic event in which the memory keeps intruding, the person avoids reminders, beliefs about self and world turn negative, and the body stays on alert. In DSM-5-TR it sits in "Trauma- and Stressor-Related Disorders," with acute stress disorder and adjustment disorders (American Psychiatric Association [APA], 2022).</p>
+<p><strong>How common:</strong> across 24 countries, 70.4% of adults had experienced at least one trauma, and rape, other sexual assault, stalking, and the unexpected death of a loved one carried the largest share of the PTSD burden (Kessler et al., 2017). In a U.S. sample, 89.7% reported a DSM-5 traumatic event and lifetime PTSD was 8.3%, higher in women (Kilpatrick et al., 2013).</p>
+<p><strong>Who develops it:</strong> risk factors each have modest effects. Factors during and after the trauma, such as its severity, <strong>lack of social support</strong>, and added life stress, predicted PTSD more strongly than factors before it (Brewin et al., 2000).</p>
+<p><strong>Counselor framing:</strong> most people exposed to trauma do not develop PTSD. For those who do, trauma-focused therapy is the first-line treatment, and a counselor trained in it can do much of the work.</p>
+<h1 id="core-symptoms-to-watch-for">2. Core symptoms to watch for</h1>
+<p>DSM-5-TR criteria for adults, paraphrased (APA, 2022); use the manual itself for formal diagnosis.</p>
+<ul>
+<li><p><strong>Exposure</strong> to actual or threatened death, serious injury, or sexual violence: directly, as a witness, by learning it happened to someone close (if violent or accidental), or by repeated exposure to grim details at work.</p></li>
+<li><p><strong>Intrusion</strong> (1 or more): unwanted memories, nightmares, flashbacks, distress at reminders, or strong body reactions to reminders.</p></li>
+<li><p><strong>Avoidance</strong> (1 or more) of trauma-related thoughts and feelings or of outside reminders.</p></li>
+<li><p><strong>Negative changes in thinking and mood</strong> (2 or more), including exaggerated negative beliefs ("I am bad," "no one can be trusted"), distorted blame of self or others, persistent fear, guilt, or shame, loss of interest, feeling cut off from others, and inability to feel positive emotions.</p></li>
+<li><p><strong>Arousal and reactivity</strong> (2 or more): irritability or anger, reckless behavior, hypervigilance, exaggerated startle, poor concentration, and sleep problems.</p></li>
+<li><p><strong>Duration and impact:</strong> more than 1 month, with significant distress or impairment, not due to a substance or medical condition. Specifiers: with dissociative symptoms; with delayed expression (full criteria 6 or more months after the event).</p></li>
+</ul>
+<p><strong>Related diagnoses (APA, 2022):</strong> <em>acute stress disorder</em> (3 days to 1 month after the trauma); <em>adjustment disorder</em> (a stressor that need not be traumatic, with milder symptoms); <em>prolonged grief disorder</em> (see its own review). Children 6 and under have separate criteria.</p>
+<p><strong>Screening tools:</strong> the 5-item PC-PTSD-5 showed excellent accuracy in primary care (AUC 0.94); a cut score of 3 maximized sensitivity (Prins et al., 2016). The 20-item PCL-5 tracks symptoms over time and showed strong reliability (α = .94, test-retest r = .82) (Blevins et al., 2015).</p>
+<p><strong>Suicide risk:</strong> across 50 studies, PTSD was linked to past suicide attempts and to past and current suicidal thinking, partly through co-occurring depression (Krysinska &amp; Lester, 2010). Ask directly.</p>
+<p><strong>When counselors must refer (general clinical consensus):</strong> refer for psychiatric evaluation for suicidality, psychosis, severe dissociation, or substance dependence. Address current danger (for example, ongoing domestic violence) before trauma processing.</p>
+<h1 id="frequently-used-assessment-instruments">3. Frequently used assessment instruments</h1>
+<p>These are among the most widely used measures for screening, rating severity, and tracking progress in PTSD and trauma-related disorders. <strong>Screening tools do not diagnose;</strong> a positive screen calls for a clinical interview against DSM-5-TR criteria. Click an instrument’s website to find it.</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 22%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Instrument</strong></th>
+<th><strong>Best used for</strong></th>
+<th><strong>Format</strong></th>
+<th><strong>Purchase required?</strong></th>
+<th><strong>Training or qualification</strong></th>
+<th><strong>Where to find it</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>PC-PTSD-5</strong> (Primary Care PTSD Screen)</td>
+<td>Quick screen for probable PTSD.</td>
+<td>Self-report, 5 items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.ptsd.va.gov/professional/assessment/screens/pc-ptsd.asp"><u>National Center for PTSD</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>LEC-5</strong> (Life Events Checklist)</td>
+<td>Which potentially traumatic events a person has experienced.</td>
+<td>Self-report, 17 items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.ptsd.va.gov/professional/assessment/te-measures/life_events_checklist.asp"><u>National Center for PTSD</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>PCL-5</strong> (PTSD Checklist for DSM-5)</td>
+<td>Measuring and tracking the 20 DSM-5 PTSD symptoms.</td>
+<td>Self-report, 20 items, 5 to 10 minutes</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.ptsd.va.gov/professional/assessment/adult-sr/ptsd-checklist.asp"><u>National Center for PTSD</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>CAPS-5</strong> (Clinician-Administered PTSD Scale)</td>
+<td>The gold-standard diagnostic interview for PTSD.</td>
+<td>Clinician interview, 45 to 60 minutes</td>
+<td>No (free on request)</td>
+<td>★ Master’s-level clinical or assessment training required to request; training strongly encouraged</td>
+<td><a target="_blank" rel="noopener" href="https://www.ptsd.va.gov/professional/assessment/adult-int/caps.asp"><u>National Center for PTSD</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>CAPS-CA-5</strong> (CAPS for Children and Adolescents)</td>
+<td>Diagnostic PTSD interview for ages 7 and older.</td>
+<td>Clinician interview</td>
+<td>No (free on request)</td>
+<td>★ Master’s-level clinical or assessment training required to request; training recommended</td>
+<td><a target="_blank" rel="noopener" href="https://www.ptsd.va.gov/professional/assessment/child/caps-ca.asp"><u>National Center for PTSD</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>TSCC</strong> (Trauma Symptom Checklist for Children)</td>
+<td>Trauma symptoms in children ages 8 to 16.</td>
+<td>Self-report, 54 items (screening form 20)</td>
+<td>Yes</td>
+<td>★ Level B</td>
+<td><a target="_blank" rel="noopener" href="https://www.parinc.com/TSCC"><u>PAR</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>TSI-2</strong> (Trauma Symptom Inventory-2)</td>
+<td>Broad trauma-related symptoms in adults ages 18 to 88.</td>
+<td>Self-report, 136 items, about 20 minutes</td>
+<td>Yes</td>
+<td>★ Level B</td>
+<td><a target="_blank" rel="noopener" href="https://www.parinc.com/products/TSI-2"><u>PAR</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>C-SSRS</strong> (Columbia Suicide Severity Rating Scale)</td>
+<td>Screening and assessing suicide risk; brief screener and full versions.</td>
+<td>Clinician- or staff-asked questions, a few minutes</td>
+<td>No (free)</td>
+<td>Free online training offered and recommended</td>
+<td><a target="_blank" rel="noopener" href="https://cssrs.columbia.edu/"><u>Columbia Lighthouse Project</u></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>★ = requires professional qualification to purchase or specialized training.</strong> Publishers sell these tests only to qualified users. At Pearson, <strong>Level B</strong> generally means a master’s degree in a related field with formal assessment training, or a health care license; <strong>Level C</strong> means a doctorate in psychology or a related field with formal assessment training, or state licensure in a related field (<a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/professional-assessments/ordering/how-to-order/qualifications/qualifications-policy.html"><u>Pearson qualifications policy</u></a>). MHS, PAR, and WPS use similar levels. Check each publisher’s page before ordering. "Original article" links go to the published study that introduced a free scale that has no official website; the scale can usually be obtained there or from its authors.</p>
+<h1 id="what-works-treatment-and-the-evidence">4. What works: treatment and the evidence</h1>
+<p><strong>Bottom line for class:</strong> <a target="_blank" rel="noopener" href="https://www.apa.org/ptsd-guideline/treatments/cognitive-behavioral-therapy"><u>trauma-focused CBT</u></a> is the first-line treatment and outperforms medication over the long term. Its effects are large, but many clients still have symptoms afterward.</p>
+<p><strong>Trauma-focused CBT (honest effect sizes):</strong></p>
+<ul>
+<li><p><strong>Breadth of evidence:</strong> across 114 trials (8,171 people), trauma-focused CBT and <a target="_blank" rel="noopener" href="https://www.apa.org/ptsd-guideline/treatments/eye-movement-reprocessing"><u>EMDR</u></a> had clinically important effects; <a target="_blank" rel="noopener" href="https://www.apa.org/ptsd-guideline/treatments/cognitive-processing-therapy"><u>Cognitive Processing Therapy (CPT)</u></a>, <a target="_blank" rel="noopener" href="https://www.apa.org/ptsd-guideline/treatments/cognitive-therapy"><u>Cognitive Therapy</u></a>, and <a target="_blank" rel="noopener" href="https://www.apa.org/ptsd-guideline/treatments/prolonged-exposure"><u>Prolonged Exposure</u></a> had the strongest evidence (Lewis et al., 2020). In 64 trials, effects were large (d about 1.0) and fewer than 4 people needed treatment for one to lose the diagnosis (Cusack et al., 2016).</p></li>
+<li><p><strong>CPT and exposure:</strong> among 171 women after rape, CPT and prolonged exposure were both highly effective and better than minimal attention (Resick et al., 2002).</p></li>
+<li><p><strong>Cognitive therapy for recent PTSD:</strong> at follow-up, 11% still had PTSD after cognitive therapy versus 61% after a self-help booklet (Ehlers et al., 2003).</p></li>
+<li><p><strong>Realistic expectations:</strong> in military PTSD, 49% to 70% improved meaningfully with CPT or prolonged exposure, but about two-thirds still met diagnostic criteria afterward (Steenkamp et al., 2015).</p></li>
+</ul>
+<p><strong>Medication (referral notes).</strong> SSRIs beat placebo, but the effect was small (SMD −0.28); fluoxetine, paroxetine, sertraline, and venlafaxine had support (Hoskins et al., 2021). At long-term follow-up, psychotherapy beat medication (SMD −0.83) (Merz et al., 2019).</p>
+<p><strong>What to avoid:</strong> single-session psychological debriefing right after a trauma did not prevent PTSD, and one trial found higher PTSD risk a year later (OR 2.88) (Rose et al., 2002).</p>
+<p><strong>CBT for PTSD: how it is used.</strong> PTSD persists when the trauma is appraised in excessively negative ways and the memory is poorly processed, so the person feels a <em>current</em> threat (Ehlers &amp; Clark, 2000). Treatment therefore:</p>
+<ul>
+<li><p><strong>Identifies "stuck points"</strong>, the beliefs about the trauma that keep it alive, such as "It was my fault," "I should have stopped it," or "The world is completely dangerous" (Resick et al., 2002).</p></li>
+<li><p><strong>Processes the memory</strong> through exposure or a written account, so it becomes a memory of the past rather than a present danger (Ehlers &amp; Clark, 2000).</p></li>
+<li><p><strong>Challenges and replaces</strong> distorted blame and overgeneralized beliefs with balanced ones, and gradually drops avoidance and safety behaviors.</p></li>
+</ul>
+<h1 id="religion-spirituality-and-christian-integration-what-the-evidence-shows">5. Religion, spirituality, and Christian integration: what the evidence shows</h1>
+<p><strong>Faith can help or hurt.</strong> Across 49 studies, positive religious coping was linked to better adjustment to stress and negative religious coping (feeling punished or abandoned by God) to worse adjustment (Ano &amp; Vasconcelles, 2005). Among 532 veterans in PTSD treatment, those higher on daily spiritual experiences, forgiveness, and positive religious coping fared better, while spiritual struggles predicted poorer outcomes (Currier et al., 2015).</p>
+<p><strong>Trauma can wound faith.</strong> In 1,385 veterans, killing others and failing to prevent death weakened religious faith, directly and through guilt, and weakened faith and guilt drove continued use of treatment more than symptom severity did (Fontana &amp; Rosenheck, 2004). <em>Moral injury</em>, the lasting harm of perpetrating, failing to prevent, or witnessing acts that violate deeply held moral beliefs, has spiritual as well as psychological effects (Litz et al., 2009).</p>
+<p><strong>Intervention studies (small, but growing):</strong></p>
+<ul>
+<li><p><strong>Christian-background women</strong> (randomized, n = 43): an 11-session spiritually focused group for older survivors of abuse lowered depression, anxiety, and PTSD symptoms, with gains kept at 3 months (Bowland et al., 2012).</p></li>
+<li><p><strong>Building Spiritual Strength</strong> (veterans): an 8-session spiritually integrated group reduced self-reported PTSD symptoms versus a wait-list (Harris et al., 2011). In a second trial (n = 138), it matched present-centered group therapy on clinician-rated PTSD and did better at easing distress in the relationship with God (Harris et al., 2018).</p></li>
+<li><p><strong>Spiritually Integrated CPT:</strong> a 12-session adaptation of CPT that draws on clients’ faith to address moral injury (Pearce et al., 2018). Evidence so far is a 6-person pilot showing improved PTSD symptoms and attachment to God (Duckworth et al., 2026).</p></li>
+</ul>
+<p><strong>Honest summary for teaching:</strong></p>
+<ol type="1">
+<li><p>Trauma-focused CBT (CPT, cognitive therapy, prolonged exposure) is the evidence base. Faith integration supports it; it does not replace it.</p></li>
+<li><p>Spiritual struggle and moral injury are common after trauma and predict worse outcomes, so assess them. Positive religious coping and forgiveness predict better outcomes.</p></li>
+<li><p>Faith-integrated trauma treatments show promise in small trials. Spiritually integrated CPT fits Belief Counseling most closely but has not yet been tested in a full randomized trial.</p></li>
+</ol>
+<h1 id="practical-christian-integration-notes">6. Practical Christian-integration notes</h1>
+<p>These apply Dr. Campbell’s identify, challenge, replace-with-Scripture method within trauma-focused CBT. Clinical items rest on the research above. Pastoral items are theological application, not research findings.</p>
+<ul>
+<li><p><strong>Identify (clinical).</strong> Take a spiritual history: has the trauma strengthened or shaken faith? Listen for spiritual stuck points such as "God was punishing me," "God abandoned me," or "I can never be forgiven for what I did" (Currier et al., 2015; Fontana &amp; Rosenheck, 2004). To identify deeper false beliefs, see: <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/core-beliefs.html"><u>Core Beliefs</u></a>, <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf"><u>Parental Messages</u></a>, or use the <a target="_blank" rel="noopener" href="https://www.beliefcounselor.com/false-belief-finder"><u>Semantic Search Tool</u></a>.</p></li>
+<li><p><strong>Challenge (clinical).</strong> Examine the evidence for distorted self-blame (what could the person actually know or control at the time?). Separate true moral responsibility, which calls for confession and repair, from false guilt, which calls for correction (Litz et al., 2009; Resick et al., 2002). <strong>Possible cognitive errors</strong> to watch for, with their definitions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf"><u>Belief Counseling Cognitive Errors Checklist</u></a> and the trauma symptoms they tend to feed:</p></li>
+</ul>
+<ul>
+<li><p><strong>Hindsight bias</strong> — I should have seen it coming. <em>Feeds:</em> guilt. <em>Sounds like:</em> “I should have seen it coming.”</p></li>
+<li><p><strong>Personalization</strong> — taking blame for things outside my control. <em>Feeds:</em> self-blame. <em>Sounds like:</em> “It was my fault.”</p></li>
+<li><p><strong>Emotional reasoning</strong> — I feel it, so it must be true. <em>Feeds:</em> false guilt. <em>Sounds like:</em> “I feel guilty, so I must be guilty.”</p></li>
+<li><p><strong>Overgeneralization</strong> — one event becomes a rule. <em>Feeds:</em> fear and mistrust. <em>Sounds like:</em> “Nowhere is safe, and no one can be trusted.”</p></li>
+<li><p><strong>Catastrophizing</strong> — expecting the worst possible outcome. <em>Feeds:</em> hypervigilance. <em>Sounds like:</em> “Something terrible is about to happen.”</p></li>
+<li><p><strong>Global labeling</strong> — one mistake becomes who I am. <em>Feeds:</em> shame and moral injury. <em>Sounds like:</em> “I’m ruined.”</p></li>
+<li><p><strong>Avoidance</strong> — pushing away painful thoughts. <em>Feeds:</em> avoidance of memories and reminders. <em>Sounds like:</em> “If I don’t talk about it, it can’t hurt me.”</p></li>
+</ul>
+<ul>
+<li><p><strong>Questions to dispute the belief.</strong> Have the client choose questions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf"><u>Questioning False Beliefs</u></a> form that “speak to” the belief. To see how, watch Dr. Campbell’s video <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZjR0Mx1zEMY"><u>Integrated Christian Counseling: Questioning Your Beliefs</u></a>. Selected questions that fit the errors above:</p></li>
+</ul>
+<ul>
+<li><p>“Is it possible to change the past?” <em>For:</em> hindsight bias.</p></li>
+<li><p>“Am I being too hard on myself?” and “How might an all-loving God look at me or this situation?” <em>For:</em> personalization and “God was punishing me”.</p></li>
+<li><p>“What’s the actual evidence for my belief?” <em>For:</em> emotional reasoning.</p></li>
+<li><p>“Is it possible that I am distorting the facts?” <em>For:</em> overgeneralization.</p></li>
+<li><p>“What are the odds that the thing I dread will actually happen?” <em>For:</em> catastrophizing.</p></li>
+<li><p>“Are my sins really too big for the God of the universe to forgive?” <em>For:</em> global labeling and moral injury.</p></li>
+<li><p>“Am I underestimating my ability to cope?” <em>For:</em> avoidance.</p></li>
+</ul>
+<ul>
+<li><p><strong>Replace (pastoral).</strong> Offer Scripture of God’s presence, healing, and forgiveness:</p></li>
+</ul>
+<ul>
+<li><p>“He heals the brokenhearted and binds up their wounds.” (Psalm 147:3)</p></li>
+<li><p>“When you pass through the waters, I will be with you; and when you go through the rivers, they will not overwhelm you.” (Isaiah 43:2). God was present in the trauma, not absent.</p></li>
+<li><p>“Therefore, there is now no condemnation for those who are in Christ Jesus.” (Romans 8:1). For false guilt and shame.</p></li>
+<li><p>“If we confess our sins, He is faithful and just to forgive us our sins and to cleanse us from all unrighteousness.” (1 John 1:9). For true moral injury.</p></li>
+</ul>
+<ul>
+<li><p><strong>Faith community (clinical).</strong> Lack of social support predicts PTSD (Brewin et al., 2000). With consent, help the client reconnect with a supportive church, and invite a pastor or chaplain to help address moral injury.</p></li>
+<li><p><strong>Ministers:</strong> offer presence and practical support; avoid pressing for detailed retelling or forced debriefing, and refer persistent symptoms beyond a month to a trained trauma therapist (Rose et al., 2002).</p></li>
+</ul>
+<h1 id="quick-classroom-takeaways">7. Quick classroom takeaways</h1>
+<ul>
+<li><p>Diagnose by trauma exposure plus intrusion, avoidance, negative thinking and mood, and arousal lasting over a month. Screen with the PC-PTSD-5 and track with the PCL-5.</p></li>
+<li><p>Trauma-focused CBT (CPT, cognitive therapy, prolonged exposure) is first-line, with large effects; medication helps less. Do not use single-session debriefing.</p></li>
+<li><p>Assess spiritual struggle and moral injury. Faith-integrated trauma groups show promising early results; challenge distorted blame and replace it with the truth of God’s presence and forgiveness.</p></li>
+<li><p>Screen with the PC-PTSD-5, track with the free PCL-5, and use the CAPS-5 interview when a formal diagnosis is needed.</p></li>
+</ul>
+<h1 id="sources-note">Sources note</h1>
+<p>All 25 references were checked against Crossref and PubMed (Oct 31, 2026), and the figures quoted were checked against each study’s abstract. Each DOI is a live link to the publisher record. Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).</p>
+<h1 id="references">References</h1><div class="refs">
+<p>American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders (5th ed., text rev.).</em> <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.books.9780890425787"><u>https://doi.org/10.1176/appi.books.9780890425787</u></a></p>
+<p>Ano, G. G., &amp; Vasconcelles, E. B. (2005). Religious coping and psychological adjustment to stress: A meta-analysis. <em>Journal of Clinical Psychology, 61</em>(4), 461–480. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.20049"><u>https://doi.org/10.1002/jclp.20049</u></a></p>
+<p>Blevins, C. A., Weathers, F. W., Davis, M. T., Witte, T. K., &amp; Domino, J. L. (2015). The Posttraumatic Stress Disorder Checklist for DSM-5 (PCL-5): Development and initial psychometric evaluation. <em>Journal of Traumatic Stress, 28</em>(6), 489–498. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jts.22059"><u>https://doi.org/10.1002/jts.22059</u></a></p>
+<p>Bowland, S., Edmond, T., &amp; Fallot, R. D. (2012). Evaluation of a spiritually focused intervention with older trauma survivors. <em>Social Work, 57</em>(1), 73–82. <a target="_blank" rel="noopener" href="https://doi.org/10.1093/sw/swr001"><u>https://doi.org/10.1093/sw/swr001</u></a></p>
+<p>Brewin, C. R., Andrews, B., &amp; Valentine, J. D. (2000). Meta-analysis of risk factors for posttraumatic stress disorder in trauma-exposed adults. <em>Journal of Consulting and Clinical Psychology, 68</em>(5), 748–766. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/0022-006X.68.5.748"><u>https://doi.org/10.1037/0022-006X.68.5.748</u></a></p>
+<p>Currier, J. M., Holland, J. M., &amp; Drescher, K. D. (2015). Spirituality factors in the prediction of outcomes of PTSD treatment for U.S. military veterans. <em>Journal of Traumatic Stress, 28</em>(1), 57–64. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jts.21978"><u>https://doi.org/10.1002/jts.21978</u></a></p>
+<p>Cusack, K., Jonas, D. E., Forneris, C. A., Wines, C., Sonis, J., Middleton, J. C., Feltner, C., Brownley, K. A., Olmsted, K. R., Greenblatt, A., Weil, A., &amp; Gaynes, B. N. (2016). Psychological treatments for adults with posttraumatic stress disorder: A systematic review and meta-analysis. <em>Clinical Psychology Review, 43</em>, 128–141. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.cpr.2015.10.003"><u>https://doi.org/10.1016/j.cpr.2015.10.003</u></a></p>
+<p>Duckworth, E. M., Hamrick, N., &amp; Clark, J. E. (2026). Repairing attachment insecurities with God and PTSD symptomology in adult survivors of childhood trauma: An exploratory study using Spiritually Integrated Cognitive Processing Therapy (SICPT). <em>Journal of Religion and Health, 65</em>(3), 3121–3136. <a target="_blank" rel="noopener" href="https://doi.org/10.1007/s10943-026-02593-7"><u>https://doi.org/10.1007/s10943-026-02593-7</u></a></p>
+<p>Ehlers, A., &amp; Clark, D. M. (2000). A cognitive model of posttraumatic stress disorder. <em>Behaviour Research and Therapy, 38</em>(4), 319–345. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/S0005-7967(99)00123-0"><u>https://doi.org/10.1016/S0005-7967(99)00123-0</u></a></p>
+<p>Ehlers, A., Clark, D. M., Hackmann, A., McManus, F., Fennell, M., Herbert, C., &amp; Mayou, R. (2003). A randomized controlled trial of cognitive therapy, a self-help booklet, and repeated assessments as early interventions for posttraumatic stress disorder. <em>Archives of General Psychiatry, 60</em>(10), 1024–1032. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/archpsyc.60.10.1024"><u>https://doi.org/10.1001/archpsyc.60.10.1024</u></a></p>
+<p>Fontana, A., &amp; Rosenheck, R. (2004). Trauma, change in strength of religious faith, and mental health service use among veterans treated for PTSD. <em>Journal of Nervous and Mental Disease, 192</em>(9), 579–584. <a target="_blank" rel="noopener" href="https://doi.org/10.1097/01.nmd.0000138224.17375.55"><u>https://doi.org/10.1097/01.nmd.0000138224.17375.55</u></a></p>
+<p>Harris, J. I., Erbes, C. R., Engdahl, B. E., Thuras, P., Murray-Swank, N., Grace, D., Ogden, H., Olson, R. H. A., Winskowski, A. M., Bacon, R., Malec, C., Campion, K., &amp; Le, T. (2011). The effectiveness of a trauma focused spiritually integrated intervention for veterans exposed to trauma. <em>Journal of Clinical Psychology, 67</em>(4), 425–438. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.20777"><u>https://doi.org/10.1002/jclp.20777</u></a></p>
+<p>Harris, J. I., Usset, T., Voecks, C., Thuras, P., Currier, J., &amp; Erbes, C. (2018). Spiritually integrated care for PTSD: A randomized controlled trial of "Building Spiritual Strength". <em>Psychiatry Research, 267</em>, 420–428. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.psychres.2018.06.045"><u>https://doi.org/10.1016/j.psychres.2018.06.045</u></a></p>
+<p>Hoskins, M. D., Bridges, J., Sinnerton, R., Nakamura, A., Underwood, J. F. G., Slater, A., Lee, M. R. D., Clarke, L., Lewis, C., Roberts, N. P., &amp; Bisson, J. I. (2021). Pharmacological therapy for post-traumatic stress disorder: A systematic review and meta-analysis of monotherapy, augmentation and head-to-head approaches. <em>European Journal of Psychotraumatology, 12</em>(1), 1802920. <a target="_blank" rel="noopener" href="https://doi.org/10.1080/20008198.2020.1802920"><u>https://doi.org/10.1080/20008198.2020.1802920</u></a></p>
+<p>Kessler, R. C., Aguilar-Gaxiola, S., Alonso, J., Benjet, C., Bromet, E. J., Cardoso, G., Degenhardt, L., de Girolamo, G., Dinolova, R. V., Ferry, F., Florescu, S., Gureje, O., Haro, J. M., Huang, Y., Karam, E. G., Kawakami, N., Lee, S., Lepine, J.-P., Levinson, D., . . . Koenen, K. C. (2017). Trauma and PTSD in the WHO World Mental Health Surveys. <em>European Journal of Psychotraumatology, 8</em>(sup5), 1353383. <a target="_blank" rel="noopener" href="https://doi.org/10.1080/20008198.2017.1353383"><u>https://doi.org/10.1080/20008198.2017.1353383</u></a></p>
+<p>Kilpatrick, D. G., Resnick, H. S., Milanak, M. E., Miller, M. W., Keyes, K. M., &amp; Friedman, M. J. (2013). National estimates of exposure to traumatic events and PTSD prevalence using DSM-IV and DSM-5 criteria. <em>Journal of Traumatic Stress, 26</em>(5), 537–547. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jts.21848"><u>https://doi.org/10.1002/jts.21848</u></a></p>
+<p>Krysinska, K., &amp; Lester, D. (2010). Post-traumatic stress disorder and suicide risk: A systematic review. <em>Archives of Suicide Research, 14</em>(1), 1–23. <a target="_blank" rel="noopener" href="https://doi.org/10.1080/13811110903478997"><u>https://doi.org/10.1080/13811110903478997</u></a></p>
+<p>Lewis, C., Roberts, N. P., Andrew, M., Starling, E., &amp; Bisson, J. I. (2020). Psychological therapies for post-traumatic stress disorder in adults: Systematic review and meta-analysis. <em>European Journal of Psychotraumatology, 11</em>(1), 1729633. <a target="_blank" rel="noopener" href="https://doi.org/10.1080/20008198.2020.1729633"><u>https://doi.org/10.1080/20008198.2020.1729633</u></a></p>
+<p>Litz, B. T., Stein, N., Delaney, E., Lebowitz, L., Nash, W. P., Silva, C., &amp; Maguen, S. (2009). Moral injury and moral repair in war veterans: A preliminary model and intervention strategy. <em>Clinical Psychology Review, 29</em>(8), 695–706. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.cpr.2009.07.003"><u>https://doi.org/10.1016/j.cpr.2009.07.003</u></a></p>
+<p>Merz, J., Schwarzer, G., &amp; Gerger, H. (2019). Comparative efficacy and acceptability of pharmacological, psychotherapeutic, and combination treatments in adults with posttraumatic stress disorder: A network meta-analysis. <em>JAMA Psychiatry, 76</em>(9), 904–913. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/jamapsychiatry.2019.0951"><u>https://doi.org/10.1001/jamapsychiatry.2019.0951</u></a></p>
+<p>Pearce, M., Haynes, K., Rivera, N. R., &amp; Koenig, H. G. (2018). Spiritually Integrated Cognitive Processing Therapy: A new treatment for post-traumatic stress disorder that targets moral injury. <em>Global Advances in Health and Medicine, 7</em>, 2164956118759939. <a target="_blank" rel="noopener" href="https://doi.org/10.1177/2164956118759939"><u>https://doi.org/10.1177/2164956118759939</u></a></p>
+<p>Prins, A., Bovin, M. J., Smolenski, D. J., Marx, B. P., Kimerling, R., Jenkins-Guarnieri, M. A., Kaloupek, D. G., Schnurr, P. P., Kaiser, A. P., Leyva, Y. E., &amp; Tiet, Q. Q. (2016). The Primary Care PTSD Screen for DSM-5 (PC-PTSD-5): Development and evaluation within a veteran primary care sample. <em>Journal of General Internal Medicine, 31</em>(10), 1206–1211. <a target="_blank" rel="noopener" href="https://doi.org/10.1007/s11606-016-3703-5"><u>https://doi.org/10.1007/s11606-016-3703-5</u></a></p>
+<p>Resick, P. A., Nishith, P., Weaver, T. L., Astin, M. C., &amp; Feuer, C. A. (2002). A comparison of cognitive-processing therapy with prolonged exposure and a waiting condition for the treatment of chronic posttraumatic stress disorder in female rape victims. <em>Journal of Consulting and Clinical Psychology, 70</em>(4), 867–879. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/0022-006X.70.4.867"><u>https://doi.org/10.1037/0022-006X.70.4.867</u></a></p>
+<p>Rose, S. C., Bisson, J., Churchill, R., &amp; Wessely, S. (2002). Psychological debriefing for preventing post traumatic stress disorder (PTSD). <em>Cochrane Database of Systematic Reviews, 2002</em>(2), CD000560. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/14651858.CD000560"><u>https://doi.org/10.1002/14651858.CD000560</u></a></p>
+<p>Steenkamp, M. M., Litz, B. T., Hoge, C. W., &amp; Marmar, C. R. (2015). Psychotherapy for military-related PTSD: A review of randomized clinical trials. <em>JAMA, 314</em>(5), 489–500. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/jama.2015.8370"><u>https://doi.org/10.1001/jama.2015.8370</u></a></p>
+<p><em>Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All 25 references and DOIs verified via Crossref and PubMed (Saturday, Oct 31, 2026). Effect sizes as reported in the cited sources.</em></p>
+</div>
+</div>
+<div class="tools" style="padding-bottom:6px"><a class="btn" href="../../members/assessment.html#rvlist" onclick="try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){history.back();return false;}}catch(e){}">&#8592; Back</a></div>
+<div class="foot">Teaching overview for counselors. Not a substitute for the DSM-5-TR or clinical judgment. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
+<script>(function(){var b=document.getElementById('back');b.addEventListener('click',function(e){
+try{var r=document.referrer;if(r&&new URL(r).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});
+try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){document.body.firstElementChild.scrollIntoView({block:'start'});}}catch(e){}})();</script><!--navjs--><script>
+(function(){
+var dds=document.querySelectorAll('.nav .dd'),t;
+function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
+dds.forEach(function(d){
+  var b=d.firstChild;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll();if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}});
+  d.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();closeAll();b.focus();});
+  d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(closeAll,500);});
+  d.addEventListener('mouseenter',function(){clearTimeout(t);});
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+</script><!--/navjs--></body></html>

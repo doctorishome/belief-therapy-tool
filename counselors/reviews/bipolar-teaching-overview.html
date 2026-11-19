@@ -1,0 +1,323 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bipolar Disorders · DSM-5-TR Teaching Review</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+
+.nav a.l:hover{border-color:var(--gold)}
+.nav a.on{color:#fff;border-color:var(--gold)}
+
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
+
+.nav .acct{display:inline-flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
+
+.nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
+
+.nav .dd{position:relative}
+
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
+
+.nav .dd>button::after{content:" \25BE";color:var(--gold);font-size:.8em}
+
+.nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
+
+.nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
+
+.nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
+
+.nav .menu a:hover{background:var(--cream)}
+
+.nav .menu a.sub{padding-left:38px;font-size:.92rem}
+.nav .menu a.sub::before{content:"\21B3  ";color:var(--gold)}
+
+.nav .menu a.sub.on{padding-left:35px}
+
+.nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
+
+.nav .dd.open .menu{display:block}
+
+.nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
+
+.nav .menu .x:hover{color:var(--navy);text-decoration:underline}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:8px 12px}}
+@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem;white-space:nowrap}.nav a.pub{font-size:.78rem;padding:4px 10px;white-space:nowrap}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
+
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.65}
+a{color:var(--navy2)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:46px 22px 40px;text-align:center}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.6rem);margin:0 0 10px;line-height:1.2}
+.hero p{max-width:760px;margin:4px auto 0;color:#dfe6f2;font-size:1rem}
+.hero .by{font-size:1.05rem;color:#fff;margin-top:12px}
+.hero .ai{font-size:.85rem;font-style:italic;color:#c8d1e0}
+.tools{max-width:960px;margin:0 auto;padding:22px 20px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:9px 20px;border-radius:24px;border:0;font:inherit;font-weight:bold;cursor:pointer}
+.btn.ghost{background:#fff;border:1px solid var(--navy);color:var(--navy)}
+.paper{max-width:960px;margin:16px auto 0;background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:10px 34px 30px;box-shadow:0 2px 8px rgba(18,40,76,.06)}
+.paper h1{color:var(--navy);font-size:1.45rem;margin:30px 0 10px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+.paper h2{color:var(--navy);font-size:1.15rem;margin:22px 0 6px}
+.paper p{margin:8px 0}
+.paper li{margin:4px 0}.paper li p{margin:0}
+.paper strong{color:var(--navy)}
+.paper table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.9rem;display:block;overflow-x:auto}
+.paper th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;border:1px solid var(--navy)}
+.paper th strong,.paper th a{color:#fff}
+.paper td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+.paper tr:nth-child(even) td{background:#f7f3e8}
+.paper td p,.paper th p{margin:0}
+.paper .refs p{font-size:.88rem;padding-left:2em;text-indent:-2em;margin:6px 0;word-break:break-word}
+.paper .final{font-size:.85rem;color:var(--mut);font-style:italic;margin-top:18px}
+.foot{margin:34px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:620px){.paper{padding:6px 16px 22px;border-radius:0}}
+@media print{.nav,.tools,.foot{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
+</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a class="l" href="../../members/index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a class="l" href="../../members/belief-counseling.html">Belief Counseling</a><a class="l" href="../../members/process.html">The Process</a><a class="l on" href="../../members/assessment.html">Traditional Assessment</a><a class="l" href="../../members/tips.html">Professional Tips</a><a class="l" href="../../members/library.html">Library</a><a class="l" target="_top" href="https://www.beliefcounselor.com/counselor-scriptures">Scripture Lookup</a><a class="l" href="../../counselors/membership.html">Membership</a><span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a><a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a><a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->
+<div class="hero"><div class="eyebrow">DSM-5-TR Teaching Review</div><h1>Bipolar Disorders</h1>
+<p>Clinical Companion Knowledge Library: for counselors and counseling students</p>
+<p class="by">Brian Campbell, Ph.D.</p>
+<p class="ai">Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.</p></div>
+<div class="tools"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="bipolar-teaching-overview.pdf" target="_blank" rel="noopener">Download or print the PDF</a></div>
+<div class="paper">
+<h1 id="what-it-is">1. What it is</h1>
+<p>Bipolar disorders are mood disorders marked by episodes of mania or hypomania, usually alternating with episodes of depression. In DSM-5-TR they have their own chapter, "Bipolar and Related Disorders," placed between the psychotic and depressive disorders (American Psychiatric Association [APA], 2022).</p>
+<p><strong>How common:</strong> across 61,392 adults in 11 countries, lifetime prevalence was 0.6% for bipolar I, 0.4% for bipolar II, and 2.4% for the whole bipolar spectrum. Three in four had at least one other disorder, most often anxiety, and depressive episodes caused severe role impairment more often than manic ones (about 74% vs. 51%) (Merikangas et al., 2011).</p>
+<p><strong>Often missed:</strong> across 27 studies (9,415 patients), management began a pooled 5.8 years after onset (Dagani et al., 2017). For a typical patient aged 25 to 45, remaining life expectancy is about 8 to 12 years shorter than average (Kessing et al., 2015).</p>
+<p><strong>Counselor framing:</strong> bipolar disorder is a lifelong medical-psychiatric illness. <strong>Medication is the foundation</strong>; counseling works alongside it, and its key jobs are early recognition, adherence, and relapse prevention.</p>
+<h1 id="core-symptoms-to-watch-for">2. Core symptoms to watch for</h1>
+<p>DSM-5-TR criteria, paraphrased (APA, 2022); use the manual itself for formal diagnosis.</p>
+<ul>
+<li><p><strong>Manic episode:</strong> abnormally elevated, expansive, or irritable mood <em>plus</em> increased activity or energy, most of the day, nearly every day, for <strong>at least 1 week</strong> (any length if hospitalized). Three or more of the following (four if mood is only irritable): grandiosity, <strong>decreased need for sleep</strong>, pressured speech, racing thoughts, distractibility, increased goal-directed activity or agitation, and risky pursuits (spending, sex, business ventures). It causes marked impairment, hospitalization, or psychosis.</p></li>
+<li><p><strong>Hypomanic episode:</strong> the same symptoms for <strong>at least 4 days</strong>, a clear change that others notice, but without marked impairment, hospitalization, or psychosis.</p></li>
+<li><p><strong>Bipolar I:</strong> at least one manic episode. <strong>Bipolar II:</strong> at least one hypomanic and one major depressive episode, never mania. <strong>Cyclothymic disorder:</strong> 2 years (1 in youth) of frequent hypomanic and depressive symptoms that never meet full episode criteria.</p></li>
+<li><p><strong>Specifiers</strong> include anxious distress, mixed features, rapid cycling (4 or more episodes in a year), psychotic features, peripartum onset, and seasonal pattern. A full manic episode that begins during antidepressant treatment and persists beyond the drug’s effect counts toward bipolar I.</p></li>
+</ul>
+<p><strong>Differential diagnosis (general clinical consensus):</strong> <em>unipolar depression</em>: always ask about past mania or hypomania before treating depression; <em>borderline personality disorder</em>: mood shifts over hours, tied to relationships, rather than episodes lasting days; <em>ADHD</em>: lifelong rather than episodic; <em>substances and medical causes</em> (stimulants, steroids, thyroid disease).</p>
+<p><strong>Screening:</strong> on the Mood Disorder Questionnaire, 7 or more "yes" items gave sensitivity of 0.73 and specificity of 0.90 in mood clinics (Hirschfeld et al., 2000). It is a screen, not a diagnosis.</p>
+<p><strong>Suicide risk:</strong> lifetime suicide attempts were reported by 36.3% with bipolar I and 32.4% with bipolar II, not a significant difference, so bipolar II is not "milder" for safety (Novick et al., 2010). Ask directly, especially in depressive and mixed states.</p>
+<p><strong>When counselors must refer (general clinical consensus):</strong> refer for psychiatric evaluation whenever mania, hypomania, psychosis, a mixed state, or suicidality is suspected. Use emergency services for danger to self or others or for severe mania with poor judgment. Counselors do not manage medication; coordinate with the prescriber through a signed release.</p>
+<h1 id="frequently-used-assessment-instruments">3. Frequently used assessment instruments</h1>
+<p>These are among the most widely used measures for screening, rating severity, and tracking progress in bipolar disorders. <strong>Screening tools do not diagnose;</strong> a positive screen calls for a clinical interview against DSM-5-TR criteria. Click an instrument’s website to find it.</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 22%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Instrument</strong></th>
+<th><strong>Best used for</strong></th>
+<th><strong>Format</strong></th>
+<th><strong>Purchase required?</strong></th>
+<th><strong>Training or qualification</strong></th>
+<th><strong>Where to find it</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>MDQ</strong> (Mood Disorder Questionnaire)</td>
+<td>Screening for a history of mania or hypomania (bipolar spectrum).</td>
+<td>Self-report, 13 yes/no items plus 2 questions</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.ajp.157.11.1873"><u>Original article</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>ASRM</strong> (Altman Self-Rating Mania Scale)</td>
+<td>Current manic or hypomanic symptoms; an APA DSM-5 Level 2 measure.</td>
+<td>Self-report, 5 items</td>
+<td>No (free from the APA for clinical use)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.psychiatry.org/psychiatrists/practice/dsm/educational-resources/assessment-measures"><u>APA assessment measures</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>YMRS</strong> (Young Mania Rating Scale)</td>
+<td>Clinician rating of manic symptom severity; standard in treatment research.</td>
+<td>Clinician interview, 11 items</td>
+<td>No (free)</td>
+<td>★ Clinical interviewing skill; training recommended</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1192/bjp.133.5.429"><u>Original article</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>PHQ-9</strong> (Patient Health Questionnaire-9)</td>
+<td>Tracking depressive episodes; always ask about past mania or hypomania as well.</td>
+<td>Self-report, 9 items, about 2 minutes</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.phqscreeners.com/"><u>PHQ Screeners site</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>C-SSRS</strong> (Columbia Suicide Severity Rating Scale)</td>
+<td>Screening and assessing suicide risk; brief screener and full versions.</td>
+<td>Clinician- or staff-asked questions, a few minutes</td>
+<td>No (free)</td>
+<td>Free online training offered and recommended</td>
+<td><a target="_blank" rel="noopener" href="https://cssrs.columbia.edu/"><u>Columbia Lighthouse Project</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>MMPI-3</strong> (Minnesota Multiphasic Personality Inventory-3)</td>
+<td>Broad personality and psychopathology assessment, with validity scales for over- and under-reporting.</td>
+<td>Self-report, 335 true/false items, about 25 to 50 minutes</td>
+<td>Yes</td>
+<td>★ Level C</td>
+<td><a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/store/usd/p/P100000004"><u>Pearson</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>MCMI-IV</strong> (Millon Clinical Multiaxial Inventory-IV)</td>
+<td>Adults in treatment; personality patterns alongside clinical syndromes.</td>
+<td>Self-report, 195 true/false items, about 25 to 30 minutes</td>
+<td>Yes</td>
+<td>★ Level C</td>
+<td><a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/store/usd/p/100001362"><u>Pearson</u></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>★ = requires professional qualification to purchase or specialized training.</strong> Publishers sell these tests only to qualified users. At Pearson, <strong>Level B</strong> generally means a master’s degree in a related field with formal assessment training, or a health care license; <strong>Level C</strong> means a doctorate in psychology or a related field with formal assessment training, or state licensure in a related field (<a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/professional-assessments/ordering/how-to-order/qualifications/qualifications-policy.html"><u>Pearson qualifications policy</u></a>). MHS, PAR, and WPS use similar levels. Check each publisher’s page before ordering. "Original article" links go to the published study that introduced a free scale that has no official website; the scale can usually be obtained there or from its authors.</p>
+<h1 id="what-works-treatment-and-the-evidence">4. What works: treatment and the evidence</h1>
+<p><strong>Bottom line for class:</strong> medication is the foundation. Skills-based psychotherapy <em>added to</em> medication lowers relapse and speeds recovery from bipolar depression. Psychotherapy alone is not a treatment for bipolar I.</p>
+<p><strong>Medication (referral notes).</strong> Lithium has the strongest evidence for long-term prevention (Geddes &amp; Miklowitz, 2013; Yatham et al., 2018). Versus placebo it reduced any mood episode (RR 0.66) and manic episodes (RR 0.52) (Severus et al., 2014) and reduced suicides (OR 0.13) (Cipriani et al., 2013). Adding a standard antidepressant to a mood stabilizer did not improve durable recovery (23.5% vs. 27.3% with placebo) (Sachs et al., 2007), and an antidepressant <em>without</em> a mood stabilizer nearly tripled the risk of mania (HR 2.83) (Viktorin et al., 2014). Nonadherence runs 10% to 60% (median 40%) in mood disorders, and attitudes and beliefs predict it at least as much as side effects do (Lingam &amp; Scott, 2002), which makes it a natural <a target="_blank" rel="noopener" href="https://www.apa.org/ptsd-guideline/treatments/cognitive-behavioral-therapy"><u>CBT</u></a> target.</p>
+<p><strong>Psychotherapy evidence (honest effect sizes):</strong></p>
+<ul>
+<li><p><strong>Overall:</strong> across 39 trials (3,863 people), manualized therapies plus medication lowered recurrence (OR 0.56). Psychoeducation with skills practice worked better in a group or family format than individually (OR 0.12), and CBT helped stabilize depressive symptoms (SMD −0.32) (Miklowitz et al., 2021).</p></li>
+<li><p><strong>CBT:</strong> in 19 trials (1,384 patients), CBT lowered relapse (OR 0.51) and improved depression (g = −0.49), mania severity (g = −0.58), and functioning (g = 0.46) (Chiang et al., 2017). In a relapse-prevention trial (n = 103), cognitive therapy brought fewer episodes, fewer days ill, fewer admissions, and better coping with warning signs over 12 months (Lam et al., 2003). <strong>Caution:</strong> in a large pragmatic trial (n = 253), CBT did not reduce recurrence overall; it helped people with fewer than 12 prior episodes but not those with more (Scott et al., 2006). Start early.</p></li>
+<li><p><strong>Group psychoeducation</strong> (21 sessions, n = 120) reduced recurrences and hospitalizations over 2 years (Colom et al., 2003).</p></li>
+<li><p><strong>Family-focused therapy</strong> (n = 101): relapse 35% vs. 54% with crisis management, with better medication adherence (Miklowitz et al., 2003).</p></li>
+<li><p><a target="_blank" rel="noopener" href="https://www.ipsrt.org/"><strong><u>Interpersonal and social rhythm therapy</u></strong></a> (n = 175): longer survival without a new episode, and more regular daily routines predicted fewer recurrences (Frank et al., 2005).</p></li>
+<li><p><strong>Bipolar depression</strong> (STEP-BD, n = 293): up to 30 sessions of family-focused therapy, social rhythm therapy, or CBT gave higher 1-year recovery (64.4% vs. 51.5%) and faster recovery than 3 sessions of collaborative care (Miklowitz et al., 2007).</p></li>
+</ul>
+<p><strong>CBT for bipolar disorder: how it is used</strong> (drawn from the trials above):</p>
+<ul>
+<li><p><strong>Teach the illness model</strong> and the role of medication; chart mood and sleep daily.</p></li>
+<li><p><strong>Map early warning signs</strong> of mania and depression and write a relapse-prevention plan (Lam et al., 2003).</p></li>
+<li><p><strong>Protect sleep and daily rhythms</strong>; sleep loss can trigger mania (Frank et al., 2005).</p></li>
+<li><p><strong>Challenge the beliefs</strong> that drive relapse: hypomanic thinking ("I don’t need sleep," "nothing can go wrong"), depressive thinking, and beliefs about medication (Lingam &amp; Scott, 2002). Involve family when possible (Miklowitz et al., 2003).</p></li>
+</ul>
+<h1 id="religion-spirituality-and-christian-integration-what-the-evidence-shows">5. Religion, spirituality, and Christian integration: what the evidence shows</h1>
+<p><strong>Faith matters to most patients.</strong> Among patients in remission, 78% held strong religious or spiritual beliefs and 81.5% practiced frequently; most linked their faith to managing the illness. Yet faith conflicted with medical illness models for 24% and with medical advice for 19% (Mitchell &amp; Romans, 2003).</p>
+<p><strong>Religious coping.</strong> Among 168 outpatients (88% religiously affiliated), intrinsic religiosity (OR 0.19) and positive religious coping (OR 0.25) were linked to fewer depressive symptoms, and negative religious coping to poorer psychological quality of life (Stroppa &amp; Moreira-Almeida, 2013). Among 334 veterans, more frequent private prayer or meditation was associated with mixed states, while mania and depression were not associated with religious involvement (Cruz et al., 2010); the direction of this link is unknown. A scoping review of 18 studies found intrinsic religiosity and positive coping most consistently tied to better outcomes, and found that patients want clinicians to take their faith into account (Jackson et al., 2022).</p>
+<p><strong>Intervention studies.</strong> We found <strong>no trial of Christian or religiously integrated CBT for bipolar disorder</strong> (PubMed search, October 31, 2026). The nearest evidence comes from other disorders:</p>
+<ul>
+<li><p>Religiously modified CBT (10 studies in depression, anxiety, and schizophrenia) mostly matched standard CBT; not yet well established, but acceptable to strongly religious clients (Lim et al., 2014).</p></li>
+<li><p>Faith-adapted CBT for depression and anxiety (16 trials) showed benefits, but trials were small and at risk of bias (Anderson et al., 2015).</p></li>
+<li><p>Religious CBT matched conventional CBT for major depression (n = 132) and was slightly more effective for more religious clients (Koenig et al., 2015).</p></li>
+</ul>
+<p><strong>Honest summary for teaching:</strong></p>
+<ol type="1">
+<li><p>Medication plus psychoeducation, CBT, family work, and rhythm regulation is the evidence base. Faith integration supports engagement and coping; it does not replace them.</p></li>
+<li><p>Intrinsic faith and positive religious coping go with fewer depressive symptoms, but conflict between faith and medical advice is a real threat to adherence.</p></li>
+<li><p>No bipolar-specific trial of religious CBT exists. Extend findings from depression cautiously, with consent, and in coordination with the prescriber.</p></li>
+</ol>
+<h1 id="practical-christian-integration-notes">6. Practical Christian-integration notes</h1>
+<p>These apply Dr. Campbell’s identify, challenge, replace-with-Scripture method alongside psychiatric care. Clinical items rest on the research above. Pastoral items are theological application, not research findings.</p>
+<ul>
+<li><p><strong>Identify (clinical).</strong> Take a spiritual history: does faith help, or does it conflict with treatment ("taking lithium means I don’t trust God") (Mitchell &amp; Romans, 2003)? Tell sincere faith from hypomanic religious grandiosity ("God has chosen me for a mission that can’t wait") by sleep loss, pressured speech, and change from the person’s usual faith, not by content. To identify deeper false beliefs, see: <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/core-beliefs.html"><u>Core Beliefs</u></a>, <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf"><u>Parental Messages</u></a>, or use the <a target="_blank" rel="noopener" href="https://www.beliefcounselor.com/false-belief-finder"><u>Semantic Search Tool</u></a>.</p></li>
+<li><p><strong>Challenge (clinical).</strong> Test the beliefs that drive relapse: "I feel fine, so I’m healed and can stop my medication," "this energy is God’s anointing," and, when depressed, "God has abandoned me." Use mood charts and shared evidence review, never argument about faith (Lingam &amp; Scott, 2002). <strong>Possible cognitive errors</strong> to watch for, with their definitions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf"><u>Belief Counseling Cognitive Errors Checklist</u></a> and the symptoms they tend to feed:</p></li>
+</ul>
+<ul>
+<li><p><strong>Emotional reasoning</strong> — I feel it, so it must be true. <em>Feeds:</em> stopping medication. <em>Sounds like:</em> “I feel fine, so I’m healed.”</p></li>
+<li><p><strong>Jumping to conclusions</strong> — deciding without the facts. <em>Feeds:</em> grandiose or spiritualized ideas in hypomania. <em>Sounds like:</em> “This idea came so fast, God must be in it.”</p></li>
+<li><p><strong>All-or-nothing thinking</strong> — no middle ground. <em>Feeds:</em> swings in self-view. <em>Sounds like:</em> “Either I’m completely well or completely broken.”</p></li>
+<li><p><strong>Global labeling</strong> — one mistake becomes who I am. <em>Feeds:</em> shame after episodes. <em>Sounds like:</em> “I’m just crazy.”</p></li>
+<li><p><strong>Overgeneralization</strong> — one event becomes a rule. <em>Feeds:</em> discouragement. <em>Sounds like:</em> “I’ll always be at the mercy of this illness.”</p></li>
+<li><p><strong>Fortune telling</strong> — predicting a bad outcome. <em>Feeds:</em> hopelessness in depression. <em>Sounds like:</em> “Another episode will wreck everything.” Always ask about suicide when you hear this.</p></li>
+<li><p><strong>Helplessness</strong> — outside forces control everything. <em>Feeds:</em> poor adherence and low energy. <em>Sounds like:</em> “Nothing I do changes my moods.”</p></li>
+</ul>
+<ul>
+<li><p><strong>Questions to dispute the belief.</strong> Use these mainly between episodes or during depression; during mania, focus on safety, sleep, and medication. Have the client choose questions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf"><u>Questioning False Beliefs</u></a> form that “speak to” the belief. To see how, watch Dr. Campbell’s video <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZjR0Mx1zEMY"><u>Integrated Christian Counseling: Questioning Your Beliefs</u></a>. Selected questions that fit the errors above:</p></li>
+</ul>
+<ul>
+<li><p>“What’s the actual evidence for my belief?” <em>For:</em> emotional reasoning.</p></li>
+<li><p>“Does my thinking reflect God’s will or my will?” <em>For:</em> jumping to conclusions.</p></li>
+<li><p>“Am I keeping things in perspective?” <em>For:</em> all-or-nothing thinking.</p></li>
+<li><p>“Doesn’t everyone have good points and bad points?” <em>For:</em> global labeling.</p></li>
+<li><p>“Have I dealt with problems like this in the past?” <em>For:</em> overgeneralization.</p></li>
+<li><p>“Has God given up hope that things will get better for me?” <em>For:</em> fortune telling.</p></li>
+<li><p>“Am I absolutely certain that nothing can be done about this problem or situation?” <em>For:</em> helplessness.</p></li>
+</ul>
+<ul>
+<li><p><strong>Replace (pastoral).</strong> Offer Scripture that supports self-control, rest, rhythm, and wise counsel:</p></li>
+</ul>
+<ul>
+<li><p>“For God has not given us a spirit of fear, but of power, love, and self-control.” (2 Timothy 1:7). Keeping a treatment plan is part of self-control.</p></li>
+<li><p>“In vain you rise early and stay up late, toiling for bread to eat—for He gives sleep to His beloved.” (Psalm 127:2). Sleep is a gift that protects against relapse.</p></li>
+<li><p>“To everything there is a season, and a time for every purpose under heaven.” (Ecclesiastes 3:1). Regular daily rhythms honor the way God made us.</p></li>
+<li><p>“Plans fail for lack of counsel, but with many advisers they succeed.” (Proverbs 15:22). The treatment team, family, and pastor are “many advisers.”</p></li>
+</ul>
+<ul>
+<li><p><strong>Faith community (clinical).</strong> With a signed release, help family and pastor learn the warning signs and support treatment (Miklowitz et al., 2003). Luke, “the beloved physician” (Colossians 4:14), can frame medicine as compatible with faith.</p></li>
+<li><p><strong>Ministers:</strong> use this for referral awareness only. Ministers cannot diagnose; refer suspected mania or severe depression promptly.</p></li>
+</ul>
+<h1 id="quick-classroom-takeaways">7. Quick classroom takeaways</h1>
+<ul>
+<li><p>Mania lasts at least 1 week, hypomania at least 4 days; always screen for past highs before treating depression.</p></li>
+<li><p>Medication, especially lithium, is the foundation. CBT, group or family psychoeducation, and social rhythm therapy reduce relapse when added to it.</p></li>
+<li><p>Faith is often a resource and sometimes a conflict with treatment. Assess it, support positive coping, and watch for religious grandiosity. No Christian-specific CBT trial for bipolar disorder exists yet.</p></li>
+<li><p>Screen every depressed client for past mania or hypomania (free MDQ), track current symptoms with the ASRM, and assess suicide risk with the C-SSRS.</p></li>
+</ul>
+<h1 id="sources-note">Sources note</h1>
+<p>All 28 references were checked against Crossref and PubMed (October 31, 2026), and the figures quoted were checked against each study’s abstract. Each DOI is a live link to the publisher record. Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).</p>
+<h1 id="references">References</h1><div class="refs">
+<p>American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders (5th ed., text rev.).</em> <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.books.9780890425787"><u>https://doi.org/10.1176/appi.books.9780890425787</u></a></p>
+<p>Anderson, N., Heywood-Everett, S., Siddiqi, N., Wright, J., Meredith, J., &amp; McMillan, D. (2015). Faith-adapted psychological therapies for depression and anxiety: Systematic review and meta-analysis. <em>Journal of Affective Disorders, 176</em>, 183–196. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.jad.2015.01.019"><u>https://doi.org/10.1016/j.jad.2015.01.019</u></a></p>
+<p>Chiang, K.-J., Tsai, J.-C., Liu, D., Lin, C.-H., Chiu, H.-L., &amp; Chou, K.-R. (2017). Efficacy of cognitive-behavioral therapy in patients with bipolar disorder: A meta-analysis of randomized controlled trials. <em>PLOS ONE, 12</em>(5), e0176849. <a target="_blank" rel="noopener" href="https://doi.org/10.1371/journal.pone.0176849"><u>https://doi.org/10.1371/journal.pone.0176849</u></a></p>
+<p>Cipriani, A., Hawton, K., Stockton, S., &amp; Geddes, J. R. (2013). Lithium in the prevention of suicide in mood disorders: Updated systematic review and meta-analysis. <em>BMJ, 346</em>, f3646. <a target="_blank" rel="noopener" href="https://doi.org/10.1136/bmj.f3646"><u>https://doi.org/10.1136/bmj.f3646</u></a></p>
+<p>Colom, F., Vieta, E., Martínez-Arán, A., Reinares, M., Goikolea, J. M., Benabarre, A., Torrent, C., Comes, M., Corbella, B., Parramon, G., &amp; Corominas, J. (2003). A randomized trial on the efficacy of group psychoeducation in the prophylaxis of recurrences in bipolar patients whose disease is in remission. <em>Archives of General Psychiatry, 60</em>(4), 402–407. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/archpsyc.60.4.402"><u>https://doi.org/10.1001/archpsyc.60.4.402</u></a></p>
+<p>Cruz, M., Pincus, H. A., Welsh, D. E., Greenwald, D., Lasky, E., &amp; Kilbourne, A. M. (2010). The relationship between religious involvement and clinical status of patients with bipolar disorder. <em>Bipolar Disorders, 12</em>(1), 68–76. <a target="_blank" rel="noopener" href="https://doi.org/10.1111/j.1399-5618.2009.00772.x"><u>https://doi.org/10.1111/j.1399-5618.2009.00772.x</u></a></p>
+<p>Dagani, J., Signorini, G., Nielssen, O., Bani, M., Pastore, A., de Girolamo, G., &amp; Large, M. (2017). Meta-analysis of the interval between the onset and management of bipolar disorder. <em>The Canadian Journal of Psychiatry, 62</em>(4), 247–258. <a target="_blank" rel="noopener" href="https://doi.org/10.1177/0706743716656607"><u>https://doi.org/10.1177/0706743716656607</u></a></p>
+<p>Frank, E., Kupfer, D. J., Thase, M. E., Mallinger, A. G., Swartz, H. A., Fagiolini, A. M., Grochocinski, V., Houck, P., Scott, J., Thompson, W., &amp; Monk, T. (2005). Two-year outcomes for interpersonal and social rhythm therapy in individuals with bipolar I disorder. <em>Archives of General Psychiatry, 62</em>(9), 996–1004. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/archpsyc.62.9.996"><u>https://doi.org/10.1001/archpsyc.62.9.996</u></a></p>
+<p>Geddes, J. R., &amp; Miklowitz, D. J. (2013). Treatment of bipolar disorder. <em>The Lancet, 381</em>(9878), 1672–1682. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/S0140-6736(13)60857-0"><u>https://doi.org/10.1016/S0140-6736(13)60857-0</u></a></p>
+<p>Hirschfeld, R. M. A., Williams, J. B. W., Spitzer, R. L., Calabrese, J. R., Flynn, L., Keck, P. E., Lewis, L., McElroy, S. L., Post, R. M., Rapport, D. J., Russell, J. M., Sachs, G. S., &amp; Zajecka, J. (2000). Development and validation of a screening instrument for bipolar spectrum disorder: The Mood Disorder Questionnaire. <em>American Journal of Psychiatry, 157</em>(11), 1873–1875. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.ajp.157.11.1873"><u>https://doi.org/10.1176/appi.ajp.157.11.1873</u></a></p>
+<p>Jackson, D. C., McLawhorn, D. E., Slutzky, A. R., Glatt, S. J., &amp; Daly, R. W. (2022). Bipolar disorder, religion, and spirituality: A scoping review. <em>Journal of Religion and Health, 61</em>(5), 3589–3614. <a target="_blank" rel="noopener" href="https://doi.org/10.1007/s10943-022-01502-y"><u>https://doi.org/10.1007/s10943-022-01502-y</u></a></p>
+<p>Kessing, L. V., Vradi, E., &amp; Andersen, P. K. (2015). Life expectancy in bipolar disorder. <em>Bipolar Disorders, 17</em>(5), 543–548. <a target="_blank" rel="noopener" href="https://doi.org/10.1111/bdi.12296"><u>https://doi.org/10.1111/bdi.12296</u></a></p>
+<p>Koenig, H. G., Pearce, M. J., Nelson, B., Shaw, S. F., Robins, C. J., Daher, N. S., Cohen, H. J., Berk, L. S., Bellinger, D. L., Pargament, K. I., Rosmarin, D. H., Vasegh, S., Kristeller, J., Juthani, N., Nies, D., &amp; King, M. B. (2015). Religious vs. conventional cognitive behavioral therapy for major depression in persons with chronic medical illness: A pilot randomized trial. <em>Journal of Nervous and Mental Disease, 203</em>(4), 243–251. <a target="_blank" rel="noopener" href="https://doi.org/10.1097/NMD.0000000000000273"><u>https://doi.org/10.1097/NMD.0000000000000273</u></a></p>
+<p>Lam, D. H., Watkins, E. R., Hayward, P., Bright, J., Wright, K., Kerr, N., Parr-Davis, G., &amp; Sham, P. (2003). A randomized controlled study of cognitive therapy for relapse prevention for bipolar affective disorder: Outcome of the first year. <em>Archives of General Psychiatry, 60</em>(2), 145–152. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/archpsyc.60.2.145"><u>https://doi.org/10.1001/archpsyc.60.2.145</u></a></p>
+<p>Lim, C., Sim, K., Renjan, V., Sam, H. F., &amp; Quah, S. L. (2014). Adapted cognitive-behavioral therapy for religious individuals with mental disorder: A systematic review. <em>Asian Journal of Psychiatry, 9</em>, 3–12. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.ajp.2013.12.011"><u>https://doi.org/10.1016/j.ajp.2013.12.011</u></a></p>
+<p>Lingam, R., &amp; Scott, J. (2002). Treatment non-adherence in affective disorders. <em>Acta Psychiatrica Scandinavica, 105</em>(3), 164–172. <a target="_blank" rel="noopener" href="https://doi.org/10.1034/j.1600-0447.2002.1r084.x"><u>https://doi.org/10.1034/j.1600-0447.2002.1r084.x</u></a></p>
+<p>Merikangas, K. R., Jin, R., He, J.-P., Kessler, R. C., Lee, S., Sampson, N. A., Viana, M. C., Andrade, L. H., Hu, C., Karam, E. G., Ladea, M., Medina-Mora, M. E., Ono, Y., Posada-Villa, J., Sagar, R., Wells, J. E., &amp; Zarkov, Z. (2011). Prevalence and correlates of bipolar spectrum disorder in the World Mental Health Survey Initiative. <em>Archives of General Psychiatry, 68</em>(3), 241–251. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/archgenpsychiatry.2011.12"><u>https://doi.org/10.1001/archgenpsychiatry.2011.12</u></a></p>
+<p>Miklowitz, D. J., George, E. L., Richards, J. A., Simoneau, T. L., &amp; Suddath, R. L. (2003). A randomized study of family-focused psychoeducation and pharmacotherapy in the outpatient management of bipolar disorder. <em>Archives of General Psychiatry, 60</em>(9), 904–912. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/archpsyc.60.9.904"><u>https://doi.org/10.1001/archpsyc.60.9.904</u></a></p>
+<p>Miklowitz, D. J., Otto, M. W., Frank, E., Reilly-Harrington, N. A., Wisniewski, S. R., Kogan, J. N., Nierenberg, A. A., Calabrese, J. R., Marangell, L. B., Gyulai, L., Araga, M., Gonzalez, J. M., Shirley, E. R., Thase, M. E., &amp; Sachs, G. S. (2007). Psychosocial treatments for bipolar depression: A 1-year randomized trial from the Systematic Treatment Enhancement Program. <em>Archives of General Psychiatry, 64</em>(4), 419–426. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/archpsyc.64.4.419"><u>https://doi.org/10.1001/archpsyc.64.4.419</u></a></p>
+<p>Miklowitz, D. J., Efthimiou, O., Furukawa, T. A., Scott, J., McLaren, R., Geddes, J. R., &amp; Cipriani, A. (2021). Adjunctive psychotherapy for bipolar disorder: A systematic review and component network meta-analysis. <em>JAMA Psychiatry, 78</em>(2), 141–150. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/jamapsychiatry.2020.2993"><u>https://doi.org/10.1001/jamapsychiatry.2020.2993</u></a></p>
+<p>Mitchell, L., &amp; Romans, S. (2003). Spiritual beliefs in bipolar affective disorder: Their relevance for illness management. <em>Journal of Affective Disorders, 75</em>(3), 247–257. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/S0165-0327(02)00055-1"><u>https://doi.org/10.1016/S0165-0327(02)00055-1</u></a></p>
+<p>Novick, D. M., Swartz, H. A., &amp; Frank, E. (2010). Suicide attempts in bipolar I and bipolar II disorder: A review and meta-analysis of the evidence. <em>Bipolar Disorders, 12</em>(1), 1–9. <a target="_blank" rel="noopener" href="https://doi.org/10.1111/j.1399-5618.2009.00786.x"><u>https://doi.org/10.1111/j.1399-5618.2009.00786.x</u></a></p>
+<p>Sachs, G. S., Nierenberg, A. A., Calabrese, J. R., Marangell, L. B., Wisniewski, S. R., Gyulai, L., Friedman, E. S., Bowden, C. L., Fossey, M. D., Ostacher, M. J., Ketter, T. A., Patel, J., Hauser, P., Rapport, D., Martinez, J. M., Allen, M. H., Miklowitz, D. J., Otto, M. W., Dennehy, E. B., &amp; Thase, M. E. (2007). Effectiveness of adjunctive antidepressant treatment for bipolar depression. <em>New England Journal of Medicine, 356</em>(17), 1711–1722. <a target="_blank" rel="noopener" href="https://doi.org/10.1056/NEJMoa064135"><u>https://doi.org/10.1056/NEJMoa064135</u></a></p>
+<p>Scott, J., Paykel, E., Morriss, R., Bentall, R., Kinderman, P., Johnson, T., Abbott, R., &amp; Hayhurst, H. (2006). Cognitive–behavioural therapy for severe and recurrent bipolar disorders: Randomised controlled trial. <em>British Journal of Psychiatry, 188</em>(4), 313–320. <a target="_blank" rel="noopener" href="https://doi.org/10.1192/bjp.188.4.313"><u>https://doi.org/10.1192/bjp.188.4.313</u></a></p>
+<p>Severus, E., Taylor, M. J., Sauer, C., Pfennig, A., Ritter, P., Bauer, M., &amp; Geddes, J. R. (2014). Lithium for prevention of mood episodes in bipolar disorders: Systematic review and meta-analysis. <em>International Journal of Bipolar Disorders, 2</em>, 15. <a target="_blank" rel="noopener" href="https://doi.org/10.1186/s40345-014-0015-8"><u>https://doi.org/10.1186/s40345-014-0015-8</u></a></p>
+<p>Stroppa, A., &amp; Moreira-Almeida, A. (2013). Religiosity, mood symptoms, and quality of life in bipolar disorder. <em>Bipolar Disorders, 15</em>(4), 385–393. <a target="_blank" rel="noopener" href="https://doi.org/10.1111/bdi.12069"><u>https://doi.org/10.1111/bdi.12069</u></a></p>
+<p>Viktorin, A., Lichtenstein, P., Thase, M. E., Larsson, H., Lundholm, C., Magnusson, P. K. E., &amp; Landén, M. (2014). The risk of switch to mania in patients with bipolar disorder during treatment with an antidepressant alone and in combination with a mood stabilizer. <em>American Journal of Psychiatry, 171</em>(10), 1067–1073. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.ajp.2014.13111501"><u>https://doi.org/10.1176/appi.ajp.2014.13111501</u></a></p>
+<p>Yatham, L. N., Kennedy, S. H., Parikh, S. V., Schaffer, A., Bond, D. J., Frey, B. N., Sharma, V., Goldstein, B. I., Rej, S., Beaulieu, S., Alda, M., MacQueen, G., Milev, R. V., Ravindran, A., O'Donovan, C., McIntosh, D., Lam, R. W., Vazquez, G., Kapczinski, F., . . . Berk, M. (2018). Canadian Network for Mood and Anxiety Treatments (CANMAT) and International Society for Bipolar Disorders (ISBD) 2018 guidelines for the management of patients with bipolar disorder. <em>Bipolar Disorders, 20</em>(2), 97–170. <a target="_blank" rel="noopener" href="https://doi.org/10.1111/bdi.12609"><u>https://doi.org/10.1111/bdi.12609</u></a></p>
+<p><em>Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All 28 references and DOIs verified via Crossref and PubMed (Saturday, Oct 31, 2026). Effect sizes as reported in the cited sources.</em></p>
+</div>
+</div>
+<div class="tools" style="padding-bottom:6px"><a class="btn" href="../../members/assessment.html#rvlist" onclick="try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){history.back();return false;}}catch(e){}">&#8592; Back</a></div>
+<div class="foot">Teaching overview for counselors. Not a substitute for the DSM-5-TR or clinical judgment. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
+<script>(function(){var b=document.getElementById('back');b.addEventListener('click',function(e){
+try{var r=document.referrer;if(r&&new URL(r).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});
+try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){document.body.firstElementChild.scrollIntoView({block:'start'});}}catch(e){}})();</script><!--navjs--><script>
+(function(){
+var dds=document.querySelectorAll('.nav .dd'),t;
+function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
+dds.forEach(function(d){
+  var b=d.firstChild;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll();if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}});
+  d.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();closeAll();b.focus();});
+  d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(closeAll,500);});
+  d.addEventListener('mouseenter',function(){clearTimeout(t);});
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+</script><!--/navjs--></body></html>

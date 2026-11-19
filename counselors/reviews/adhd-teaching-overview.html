@@ -1,0 +1,303 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ADHD in Children and Adults · DSM-5-TR Teaching Review</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+
+.nav a.l:hover{border-color:var(--gold)}
+.nav a.on{color:#fff;border-color:var(--gold)}
+
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
+
+.nav .acct{display:inline-flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
+
+.nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
+
+.nav .dd{position:relative}
+
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
+
+.nav .dd>button::after{content:" \25BE";color:var(--gold);font-size:.8em}
+
+.nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
+
+.nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
+
+.nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
+
+.nav .menu a:hover{background:var(--cream)}
+
+.nav .menu a.sub{padding-left:38px;font-size:.92rem}
+.nav .menu a.sub::before{content:"\21B3  ";color:var(--gold)}
+
+.nav .menu a.sub.on{padding-left:35px}
+
+.nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
+
+.nav .dd.open .menu{display:block}
+
+.nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
+
+.nav .menu .x:hover{color:var(--navy);text-decoration:underline}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:8px 12px}}
+@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem;white-space:nowrap}.nav a.pub{font-size:.78rem;padding:4px 10px;white-space:nowrap}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
+
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.65}
+a{color:var(--navy2)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:46px 22px 40px;text-align:center}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.6rem);margin:0 0 10px;line-height:1.2}
+.hero p{max-width:760px;margin:4px auto 0;color:#dfe6f2;font-size:1rem}
+.hero .by{font-size:1.05rem;color:#fff;margin-top:12px}
+.hero .ai{font-size:.85rem;font-style:italic;color:#c8d1e0}
+.tools{max-width:960px;margin:0 auto;padding:22px 20px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:9px 20px;border-radius:24px;border:0;font:inherit;font-weight:bold;cursor:pointer}
+.btn.ghost{background:#fff;border:1px solid var(--navy);color:var(--navy)}
+.paper{max-width:960px;margin:16px auto 0;background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:10px 34px 30px;box-shadow:0 2px 8px rgba(18,40,76,.06)}
+.paper h1{color:var(--navy);font-size:1.45rem;margin:30px 0 10px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+.paper h2{color:var(--navy);font-size:1.15rem;margin:22px 0 6px}
+.paper p{margin:8px 0}
+.paper li{margin:4px 0}.paper li p{margin:0}
+.paper strong{color:var(--navy)}
+.paper table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.9rem;display:block;overflow-x:auto}
+.paper th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;border:1px solid var(--navy)}
+.paper th strong,.paper th a{color:#fff}
+.paper td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+.paper tr:nth-child(even) td{background:#f7f3e8}
+.paper td p,.paper th p{margin:0}
+.paper .refs p{font-size:.88rem;padding-left:2em;text-indent:-2em;margin:6px 0;word-break:break-word}
+.paper .final{font-size:.85rem;color:var(--mut);font-style:italic;margin-top:18px}
+.foot{margin:34px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:620px){.paper{padding:6px 16px 22px;border-radius:0}}
+@media print{.nav,.tools,.foot{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
+</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a class="l" href="../../members/index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a class="l" href="../../members/belief-counseling.html">Belief Counseling</a><a class="l" href="../../members/process.html">The Process</a><a class="l on" href="../../members/assessment.html">Traditional Assessment</a><a class="l" href="../../members/tips.html">Professional Tips</a><a class="l" href="../../members/library.html">Library</a><a class="l" target="_top" href="https://www.beliefcounselor.com/counselor-scriptures">Scripture Lookup</a><a class="l" href="../../counselors/membership.html">Membership</a><span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a><a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a><a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->
+<div class="hero"><div class="eyebrow">DSM-5-TR Teaching Review</div><h1>ADHD in Children and Adults</h1>
+<p>Clinical Companion Knowledge Library: for counselors and counseling students</p>
+<p class="by">Brian Campbell, Ph.D.</p>
+<p class="ai">Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.</p></div>
+<div class="tools"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="adhd-teaching-overview.pdf" target="_blank" rel="noopener">Download or print the PDF</a></div>
+<div class="paper">
+<h1 id="what-it-is">1. What it is</h1>
+<p>Attention-deficit/hyperactivity disorder (ADHD) is a neurodevelopmental disorder: a lasting pattern of inattention and/or hyperactivity-impulsivity that begins in childhood and interferes with daily life (American Psychiatric Association [APA], 2022). It is not caused by poor parenting, laziness, or weak character.</p>
+<p><strong>How common:</strong> about 3.4% of children and adolescents worldwide (Polanczyk et al., 2015). In adults, ADHD persisting from childhood affects about 2.6%, and adult ADHD symptoms about 6.8% (Song et al., 2021).</p>
+<p><strong>It often continues into adulthood:</strong> by age 25, only about 15% still meet full criteria, but about 65% still have impairing symptoms (Faraone et al., 2006).</p>
+<p><strong>Counselor framing:</strong> ADHD is common, real, and treatable. Medication is the most effective treatment for core symptoms, and counseling helps with skills, family life, and the shame many people carry.</p>
+<h1 id="core-symptoms-to-watch-for">2. Core symptoms to watch for</h1>
+<p>DSM-5-TR criteria, paraphrased (APA, 2022); use the manual itself for formal diagnosis.</p>
+<ul>
+<li><p><strong>Inattention</strong> (6 or more symptoms; 5 for age 17 and older): careless mistakes, trouble sustaining attention, not seeming to listen, not finishing tasks, poor organization, avoiding sustained mental effort, losing things, distractibility, forgetfulness.</p></li>
+<li><p><strong>Hyperactivity-impulsivity</strong> (6 or more; 5 for age 17 and older): fidgeting, leaving one’s seat, restlessness, difficulty doing things quietly, being "on the go," talking excessively, blurting out answers, trouble waiting, interrupting.</p></li>
+<li><p><strong>Requirements:</strong> symptoms for at least 6 months; several present <strong>before age 12</strong>; present in <strong>2 or more settings</strong> (home, school, work); clear interference with functioning; not better explained by another disorder.</p></li>
+<li><p><strong>Presentations:</strong> combined, predominantly inattentive, or predominantly hyperactive-impulsive; severity mild, moderate, or severe.</p></li>
+</ul>
+<p><strong>Differential diagnosis (general clinical consensus):</strong> anxiety, depression, trauma, sleep problems, learning disorders, substance use, and bipolar disorder can all look like ADHD. Gather history from childhood and from more than one setting.</p>
+<p><strong>Screening adults:</strong> the 6-question WHO Adult ADHD Self-Report Scale screener outperformed the full 18-question version (sensitivity 68.7%, specificity 99.5%) (Kessler et al., 2005). It is a screen, not a diagnosis.</p>
+<p><strong>Risk and safety:</strong> across 57 studies, ADHD was linked to suicide attempts (OR 2.37), suicidal thoughts (OR 3.53), and completed suicide (OR 6.69) (Septier et al., 2019). In a national Danish cohort, death rates were about twice expected, mostly from accidents (Dalsgaard et al., 2015).</p>
+<p><strong>When counselors must refer (general clinical consensus):</strong> refer for diagnostic evaluation and medication consultation, and refer urgently for suicidality or substance misuse.</p>
+<h1 id="frequently-used-assessment-instruments">3. Frequently used assessment instruments</h1>
+<p>These are among the most widely used measures for screening, rating severity, and tracking progress in ADHD. <strong>Screening tools do not diagnose;</strong> a positive screen calls for a clinical interview against DSM-5-TR criteria. Click an instrument’s website to find it.</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 22%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Instrument</strong></th>
+<th><strong>Best used for</strong></th>
+<th><strong>Format</strong></th>
+<th><strong>Purchase required?</strong></th>
+<th><strong>Training or qualification</strong></th>
+<th><strong>Where to find it</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>ASRS v1.1</strong> (Adult ADHD Self-Report Scale, 6-item screener)</td>
+<td>Screening adults for ADHD.</td>
+<td>Self-report, 6 items</td>
+<td>No (free; the 18-item version needs permission)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.hcp.med.harvard.edu/ncs/asrs.php"><u>Harvard NCS site</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>NICHQ Vanderbilt Assessment Scales</strong></td>
+<td>Parent and teacher ratings of ADHD, ODD, conduct, anxiety, and depression symptoms, ages 6 to 12.</td>
+<td>Parent and teacher forms, initial and follow-up</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://nichq.org/wp-content/uploads/2024/09/NICHQ-Vanderbilt-Assessment-Scales.pdf"><u>NICHQ (PDF)</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>SNAP-IV</strong> (APA Level 2 Inattention, parent version)</td>
+<td>Parent rating of inattention and hyperactivity, ages 6 to 17.</td>
+<td>Parent-report, brief</td>
+<td>No (free from the APA for clinical use)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.psychiatry.org/psychiatrists/practice/dsm/educational-resources/assessment-measures"><u>APA assessment measures</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>Conners 4</strong></td>
+<td>ADHD and related problems, ages 6 to 18.</td>
+<td>Parent, teacher, and self-report forms (full, short, 12-item index)</td>
+<td>Yes</td>
+<td>★ Level B</td>
+<td><a target="_blank" rel="noopener" href="https://storefront.mhs.com/collections/conners-4"><u>MHS</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>CAARS 2</strong> (Conners Adult ADHD Rating Scales)</td>
+<td>ADHD in adults 18 and older, with self and observer forms.</td>
+<td>Self- and observer-report, 97 items (short and index forms available)</td>
+<td>Yes</td>
+<td>★ Level B</td>
+<td><a target="_blank" rel="noopener" href="https://storefront.mhs.com/collections/CAARS-2"><u>MHS</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>BRIEF2</strong> (Behavior Rating Inventory of Executive Function)</td>
+<td>Everyday executive function (planning, self-control, working memory), ages 5 to 18.</td>
+<td>Parent, teacher, and self-report forms, 55 to 63 items</td>
+<td>Yes</td>
+<td>★ Level B</td>
+<td><a target="_blank" rel="noopener" href="https://parinc.com/BRIEF2"><u>PAR</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>BASC-3</strong> (Behavior Assessment System for Children)</td>
+<td>Broad behavioral and emotional problems and strengths, ages 2 to 21 (college self-report to 25).</td>
+<td>Parent, teacher, and self-report forms</td>
+<td>Yes</td>
+<td>★ Level B</td>
+<td><a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/store/usd/p/100001402"><u>Pearson</u></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>★ = requires professional qualification to purchase or specialized training.</strong> Publishers sell these tests only to qualified users. At Pearson, <strong>Level B</strong> generally means a master’s degree in a related field with formal assessment training, or a health care license; <strong>Level C</strong> means a doctorate in psychology or a related field with formal assessment training, or state licensure in a related field (<a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/professional-assessments/ordering/how-to-order/qualifications/qualifications-policy.html"><u>Pearson qualifications policy</u></a>). MHS, PAR, and WPS use similar levels. Check each publisher’s page before ordering. "Original article" links go to the published study that introduced a free scale that has no official website; the scale can usually be obtained there or from its authors.</p>
+<h1 id="what-works-treatment-and-the-evidence">4. What works: treatment and the evidence</h1>
+<p><strong>Bottom line for class:</strong> medication has the largest effect on core symptoms. <a target="_blank" rel="noopener" href="https://www.cdc.gov/adhd/treatment/behavior-therapy.html"><u>Behavioral parent training</u></a> improves parenting, child conduct, and family life. <a target="_blank" rel="noopener" href="https://www.apa.org/ptsd-guideline/treatments/cognitive-behavioral-therapy"><u>CBT</u></a> helps adults who still struggle despite medication.</p>
+<p><strong>Medication (referral notes).</strong> Across 133 trials, all ADHD medications beat placebo in children; amphetamines (SMD −1.02) and methylphenidate (−0.78) had the largest effects, and the authors named methylphenidate the preferred first choice for children and adolescents and amphetamines for adults (Cortese et al., 2018). In the landmark MTA study, medication management and combined treatment improved core symptoms more than intensive behavioral treatment alone, and combined treatment helped more with conduct, anxiety, social skills, and family relations (MTA Cooperative Group, 1999).</p>
+<p><strong>Behavioral and psychological treatment (honest findings):</strong></p>
+<ul>
+<li><p><strong>Children:</strong> behavioral interventions improved parenting (SMD 0.63 to 0.68), conduct problems, social skills, and academic performance. Their effect on core ADHD symptoms disappeared when raters were blinded to treatment (Daley et al., 2014; Sonuga-Barke et al., 2013).</p></li>
+<li><p><strong>Adults:</strong> CBT beat wait-lists by a moderate-to-large margin (SMD 0.76) and active controls by a small-to-moderate margin (SMD 0.43) (Young et al., 2020). In medication-treated adults with remaining symptoms, CBT produced more responders than relaxation and education (53% vs. 23%) (Safren et al., 2010). Evidence quality is still low to moderate (Lopez et al., 2018).</p></li>
+</ul>
+<p><strong>CBT for ADHD: how it is used</strong> (Safren et al., 2010):</p>
+<ul>
+<li><p><strong>Organization and planning:</strong> one calendar and one task list, breaking tasks into steps, and prioritizing.</p></li>
+<li><p><strong>Reducing distractibility:</strong> working in short, timed blocks and removing distractions.</p></li>
+<li><p><strong>Challenging unhelpful beliefs</strong> that fuel procrastination and shame: "I’m lazy," "I’m stupid," "I’ll fail anyway," "I have to do it perfectly or not at all."</p></li>
+<li><p><strong>For children:</strong> parent training in consistent routines, praise, rewards, and calm consequences (Daley et al., 2014).</p></li>
+</ul>
+<h1 id="religion-spirituality-and-christian-integration-what-the-evidence-shows">5. Religion, spirituality, and Christian integration: what the evidence shows</h1>
+<p><strong>ADHD may make religious life harder.</strong> In more than 8,000 young people followed into adulthood, ADHD symptoms predicted <strong>lower</strong> religious involvement at nearly every stage, and in adulthood some religious practices combined with ADHD to predict worse outcomes (Dew et al., 2022). An earlier pilot study of 117 adolescent outpatients found no link between religiousness and an ADHD diagnosis (Dew et al., 2007).</p>
+<p><strong>Faith may still help.</strong> Among 578 adults with both substance use disorder and ADHD, higher religiousness was linked to <strong>less severe ADHD symptoms</strong>, though not through better self-control (Begeman et al., 2025).</p>
+<p><strong>Intervention studies.</strong> We found <strong>no trial of Christian or religiously integrated treatment for ADHD</strong> (PubMed search, October 31, 2026). The evidence is limited to the observational studies above.</p>
+<p><strong>Honest summary for teaching:</strong></p>
+<ol type="1">
+<li><p>Medication, parent training, and (for adults) CBT are the evidence base. Faith integration supports them; it does not replace them.</p></li>
+<li><p>ADHD can make prayer, Bible reading, and church attendance feel harder, and people may conclude they are "bad Christians." Faith communities can adapt rather than shame.</p></li>
+<li><p>No faith-integrated ADHD treatment has been tested. Integrate faith with care and stay alert to guilt and shame.</p></li>
+</ol>
+<h1 id="practical-christian-integration-notes">6. Practical Christian-integration notes</h1>
+<p>These apply Dr. Campbell’s identify, challenge, replace-with-Scripture method within CBT and family work. Clinical items rest on the research above. Pastoral items are theological application, not research findings.</p>
+<ul>
+<li><p><strong>Identify (clinical).</strong> Listen for shame-based beliefs: "I’m lazy and undisciplined," "If I really loved God I could focus in prayer," "Taking medication means I don’t trust God," or a parent’s "My child is just rebellious" (Dew et al., 2022). To identify deeper false beliefs, see: <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/core-beliefs.html"><u>Core Beliefs</u></a>, <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf"><u>Parental Messages</u></a>, or use the <a target="_blank" rel="noopener" href="https://www.beliefcounselor.com/false-belief-finder"><u>Semantic Search Tool</u></a>.</p></li>
+<li><p><strong>Challenge (clinical).</strong> Separate a brain-based difficulty from moral failure, and test the evidence for "lazy." Frame medication and practical supports as wise stewardship, not weak faith (Cortese et al., 2018). <strong>Possible cognitive errors</strong> to watch for, with their definitions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf"><u>Belief Counseling Cognitive Errors Checklist</u></a> and the symptoms they tend to feed:</p></li>
+</ul>
+<ul>
+<li><p><strong>Global labeling</strong> — one mistake becomes who I am. <em>Feeds:</em> shame and low self-esteem. <em>Sounds like:</em> “I’m just lazy.”</p></li>
+<li><p><strong>Overgeneralization</strong> — one event becomes a rule. <em>Feeds:</em> discouragement after missed deadlines. <em>Sounds like:</em> “I never finish anything.”</p></li>
+<li><p><strong>Comparisons</strong> — measuring myself against others. <em>Feeds:</em> shame. <em>Sounds like:</em> “Everyone else can sit still and get it done.”</p></li>
+<li><p><strong>Should statements</strong> — rigid musts and oughts. <em>Feeds:</em> guilt about inattention. <em>Sounds like:</em> “I should be able to focus in prayer like everyone else.”</p></li>
+<li><p><strong>Fortune telling</strong> — predicting a bad outcome. <em>Feeds:</em> procrastination and avoiding tasks. <em>Sounds like:</em> “I’ll mess it up, so why start?”</p></li>
+<li><p><strong>Unrealistic expectations</strong> — expecting too much of myself or others. <em>Feeds:</em> spiritual guilt about treatment. <em>Sounds like:</em> “If I trusted God, I wouldn’t need medicine.”</p></li>
+<li><p><strong>Jumping to conclusions</strong> — deciding without the facts. <em>Feeds:</em> harsh parenting (in parents). <em>Sounds like:</em> “He forgot his homework to defy me.”</p></li>
+</ul>
+<ul>
+<li><p><strong>Questions to dispute the belief.</strong> Have the client choose questions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf"><u>Questioning False Beliefs</u></a> form that “speak to” the belief. To see how, watch Dr. Campbell’s video <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZjR0Mx1zEMY"><u>Integrated Christian Counseling: Questioning Your Beliefs</u></a>. Selected questions that fit the errors above:</p></li>
+</ul>
+<ul>
+<li><p>“Doesn’t everyone have good points and bad points?” <em>For:</em> global labeling.</p></li>
+<li><p>“Am I exaggerating my faults or limitations?” <em>For:</em> overgeneralization.</p></li>
+<li><p>“How have other people handled situations like mine?” <em>For:</em> comparisons.</p></li>
+<li><p>“Do I really have to be perfect? Is any human being perfect?” <em>For:</em> should statements.</p></li>
+<li><p>“Have I dealt with problems like this in the past?” <em>For:</em> fortune telling.</p></li>
+<li><p>“How does the Bible speak to this?” <em>For:</em> unrealistic expectations about medication.</p></li>
+<li><p>“Is it possible that I am distorting the facts?” <em>For:</em> a parent’s jumping to conclusions.</p></li>
+</ul>
+<ul>
+<li><p><strong>Replace (pastoral).</strong> Offer Scripture of God’s understanding and grace:</p></li>
+</ul>
+<ul>
+<li><p>“As a father has compassion on his children, so the LORD has compassion on those who fear Him. For He knows our frame; He is mindful that we are dust.” (Psalm 103:13–14)</p></li>
+<li><p>“There are different gifts, but the same Spirit… There are different ways of working, but the same God works all things in all people.” (1 Corinthians 12:4–6)</p></li>
+<li><p>“My grace is sufficient for you, for My power is perfected in weakness.” (2 Corinthians 12:9)</p></li>
+<li><p>“Commit your works to the LORD and your plans will be achieved.” (Proverbs 16:3). Planning tools are a way to commit our work to the Lord.</p></li>
+</ul>
+<ul>
+<li><p><strong>Faith community (clinical).</strong> Suggest shorter, active devotional practices (reading plans, audio Bible, written prayer lists), and help children’s ministry leaders use clear routines, movement breaks, and praise.</p></li>
+<li><p><strong>Ministers:</strong> avoid treating ADHD behavior as only a spiritual problem; support parents and refer for evaluation.</p></li>
+</ul>
+<h1 id="quick-classroom-takeaways">7. Quick classroom takeaways</h1>
+<ul>
+<li><p>Diagnose by 6 or more symptoms (5 for adults) in two settings, beginning before age 12. Most children do not "grow out of" all symptoms. Screen adults with the ASRS, and ask about suicide and substances.</p></li>
+<li><p>Medication has the largest effect on core symptoms; parent training helps behavior and family life; CBT helps adults on medication.</p></li>
+<li><p>ADHD can make religious life harder and fuel shame. Replace "lazy" and "bad Christian" with the truth of God’s compassion and grace.</p></li>
+<li><p>Screen adults with the free ASRS and children with the free Vanderbilt scales; gather ratings from more than one setting before diagnosing.</p></li>
+</ul>
+<h1 id="sources-note">Sources note</h1>
+<p>All 17 references were checked against Crossref and PubMed (Oct 31, 2026), and the figures quoted were checked against each study’s abstract. Each DOI is a live link to the publisher record. Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).</p>
+<h1 id="references">References</h1><div class="refs">
+<p>American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders (5th ed., text rev.).</em> <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.books.9780890425787"><u>https://doi.org/10.1176/appi.books.9780890425787</u></a></p>
+<p>Begeman, A. H. A., Schellekens, A., van den Brink, W., Barta, C., Brynte, C., Crunelle, C. L., De Fuentes-Merillas, L., Demetrovics, Z., Dom, G., Franck, J., Grau, L., Hernandez, M., Icick, R., Kapitány-Fövény, M., Levin, F. R., Luderer, M., Markus, W., Matthys, F. I. A., Moggi, F., . . . Schaap-Jonker, H. (2025). Religiousness and self-control in patients with substance use disorder (SUD) and comorbid attention deficit/hyperactivity disorder (ADHD). <em>International Journal of Social Psychiatry, 71</em>(7), 1271–1280. <a target="_blank" rel="noopener" href="https://doi.org/10.1177/00207640251331973"><u>https://doi.org/10.1177/00207640251331973</u></a></p>
+<p>Cortese, S., Adamo, N., Del Giovane, C., Mohr-Jensen, C., Hayes, A. J., Carucci, S., Atkinson, L. Z., Tessari, L., Banaschewski, T., Coghill, D., Hollis, C., Simonoff, E., Zuddas, A., Barbui, C., Purgato, M., Steinhausen, H.-C., Shokraneh, F., Xia, J., &amp; Cipriani, A. (2018). Comparative efficacy and tolerability of medications for attention-deficit hyperactivity disorder in children, adolescents, and adults: A systematic review and network meta-analysis. <em>The Lancet Psychiatry, 5</em>(9), 727–738. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/S2215-0366(18)30269-4"><u>https://doi.org/10.1016/S2215-0366(18)30269-4</u></a></p>
+<p>Daley, D., van der Oord, S., Ferrin, M., Danckaerts, M., Doepfner, M., Cortese, S., &amp; Sonuga-Barke, E. J. S. (2014). Behavioral interventions in attention-deficit/hyperactivity disorder: A meta-analysis of randomized controlled trials across multiple outcome domains. <em>Journal of the American Academy of Child and Adolescent Psychiatry, 53</em>(8), 835–847.e5. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.jaac.2014.05.013"><u>https://doi.org/10.1016/j.jaac.2014.05.013</u></a></p>
+<p>Dalsgaard, S., Østergaard, S. D., Leckman, J. F., Mortensen, P. B., &amp; Pedersen, M. G. (2015). Mortality in children, adolescents, and adults with attention deficit hyperactivity disorder: A nationwide cohort study. <em>The Lancet, 385</em>(9983), 2190–2196. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/S0140-6736(14)61684-6"><u>https://doi.org/10.1016/S0140-6736(14)61684-6</u></a></p>
+<p>Dew, R. E., Daniel, S. S., &amp; Koenig, H. G. (2007). A pilot study on religiousness/spirituality and ADHD. <em>International Journal of Adolescent Medicine and Health, 19</em>(4), 507–510. <a target="_blank" rel="noopener" href="https://doi.org/10.1515/ijamh.2007.19.4.507"><u>https://doi.org/10.1515/ijamh.2007.19.4.507</u></a></p>
+<p>Dew, R. E., Kollins, S. H., &amp; Koenig, H. G. (2022). ADHD, religiosity, and psychiatric comorbidity in adolescence and adulthood. <em>Journal of Attention Disorders, 26</em>(2), 307–318. <a target="_blank" rel="noopener" href="https://doi.org/10.1177/1087054720972803"><u>https://doi.org/10.1177/1087054720972803</u></a></p>
+<p>Faraone, S. V., Biederman, J., &amp; Mick, E. (2006). The age-dependent decline of attention deficit hyperactivity disorder: A meta-analysis of follow-up studies. <em>Psychological Medicine, 36</em>(2), 159–165. <a target="_blank" rel="noopener" href="https://doi.org/10.1017/S003329170500471X"><u>https://doi.org/10.1017/S003329170500471X</u></a></p>
+<p>Kessler, R. C., Adler, L., Ames, M., Demler, O., Faraone, S., Hiripi, E., Howes, M. J., Jin, R., Secnik, K., Spencer, T., Ustun, T. B., &amp; Walters, E. E. (2005). The World Health Organization Adult ADHD Self-Report Scale (ASRS): A short screening scale for use in the general population. <em>Psychological Medicine, 35</em>(2), 245–256. <a target="_blank" rel="noopener" href="https://doi.org/10.1017/S0033291704002892"><u>https://doi.org/10.1017/S0033291704002892</u></a></p>
+<p>Lopez, P. L., Torrente, F. M., Ciapponi, A., Lischinsky, A. G., Cetkovich-Bakmas, M., Rojas, J. I., Romano, M., &amp; Manes, F. F. (2018). Cognitive-behavioural interventions for attention deficit hyperactivity disorder (ADHD) in adults. <em>Cochrane Database of Systematic Reviews, 2018</em>(3), CD010840. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/14651858.CD010840.pub2"><u>https://doi.org/10.1002/14651858.CD010840.pub2</u></a></p>
+<p>MTA Cooperative Group. (1999). A 14-month randomized clinical trial of treatment strategies for attention-deficit/hyperactivity disorder. <em>Archives of General Psychiatry, 56</em>(12), 1073–1086. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/archpsyc.56.12.1073"><u>https://doi.org/10.1001/archpsyc.56.12.1073</u></a></p>
+<p>Polanczyk, G. V., Salum, G. A., Sugaya, L. S., Caye, A., &amp; Rohde, L. A. (2015). Annual research review: A meta-analysis of the worldwide prevalence of mental disorders in children and adolescents. <em>Journal of Child Psychology and Psychiatry, 56</em>(3), 345–365. <a target="_blank" rel="noopener" href="https://doi.org/10.1111/jcpp.12381"><u>https://doi.org/10.1111/jcpp.12381</u></a></p>
+<p>Safren, S. A., Sprich, S., Mimiaga, M. J., Surman, C., Knouse, L., Groves, M., &amp; Otto, M. W. (2010). Cognitive behavioral therapy vs relaxation with educational support for medication-treated adults with ADHD and persistent symptoms: A randomized controlled trial. <em>JAMA, 304</em>(8), 875–880. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/jama.2010.1192"><u>https://doi.org/10.1001/jama.2010.1192</u></a></p>
+<p>Septier, M., Stordeur, C., Zhang, J., Delorme, R., &amp; Cortese, S. (2019). Association between suicidal spectrum behaviors and attention-deficit/hyperactivity disorder: A systematic review and meta-analysis. <em>Neuroscience and Biobehavioral Reviews, 103</em>, 109–118. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.neubiorev.2019.05.022"><u>https://doi.org/10.1016/j.neubiorev.2019.05.022</u></a></p>
+<p>Song, P., Zha, M., Yang, Q., Zhang, Y., Li, X., &amp; Rudan, I. (2021). The prevalence of adult attention-deficit hyperactivity disorder: A global systematic review and meta-analysis. <em>Journal of Global Health, 11</em>, 04009. <a target="_blank" rel="noopener" href="https://doi.org/10.7189/jogh.11.04009"><u>https://doi.org/10.7189/jogh.11.04009</u></a></p>
+<p>Sonuga-Barke, E. J. S., Brandeis, D., Cortese, S., Daley, D., Ferrin, M., Holtmann, M., Stevenson, J., Danckaerts, M., van der Oord, S., Döpfner, M., Dittmann, R. W., Simonoff, E., Zuddas, A., Banaschewski, T., Buitelaar, J., Coghill, D., Hollis, C., Konofal, E., Lecendreux, M., . . . European ADHD Guidelines Group. (2013). Nonpharmacological interventions for ADHD: Systematic review and meta-analyses of randomized controlled trials of dietary and psychological treatments. <em>American Journal of Psychiatry, 170</em>(3), 275–289. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.ajp.2012.12070991"><u>https://doi.org/10.1176/appi.ajp.2012.12070991</u></a></p>
+<p>Young, Z., Moghaddam, N., &amp; Tickle, A. (2020). The efficacy of cognitive behavioral therapy for adults with ADHD: A systematic review and meta-analysis of randomized controlled trials. <em>Journal of Attention Disorders, 24</em>(6), 875–888. <a target="_blank" rel="noopener" href="https://doi.org/10.1177/1087054716664413"><u>https://doi.org/10.1177/1087054716664413</u></a></p>
+<p><em>Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All 17 references and DOIs verified via Crossref and PubMed (Saturday, Oct 31, 2026). Effect sizes as reported in the cited sources.</em></p>
+</div>
+</div>
+<div class="tools" style="padding-bottom:6px"><a class="btn" href="../../members/assessment.html#rvlist" onclick="try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){history.back();return false;}}catch(e){}">&#8592; Back</a></div>
+<div class="foot">Teaching overview for counselors. Not a substitute for the DSM-5-TR or clinical judgment. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
+<script>(function(){var b=document.getElementById('back');b.addEventListener('click',function(e){
+try{var r=document.referrer;if(r&&new URL(r).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});
+try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){document.body.firstElementChild.scrollIntoView({block:'start'});}}catch(e){}})();</script><!--navjs--><script>
+(function(){
+var dds=document.querySelectorAll('.nav .dd'),t;
+function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
+dds.forEach(function(d){
+  var b=d.firstChild;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll();if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}});
+  d.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();closeAll();b.focus();});
+  d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(closeAll,500);});
+  d.addEventListener('mouseenter',function(){clearTimeout(t);});
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+</script><!--/navjs--></body></html>

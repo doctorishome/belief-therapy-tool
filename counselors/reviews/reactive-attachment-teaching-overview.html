@@ -1,0 +1,285 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reactive Attachment Disorder · DSM-5-TR Teaching Review</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+
+.nav a.l:hover{border-color:var(--gold)}
+.nav a.on{color:#fff;border-color:var(--gold)}
+
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
+
+.nav .acct{display:inline-flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
+
+.nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
+
+.nav .dd{position:relative}
+
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
+
+.nav .dd>button::after{content:" \25BE";color:var(--gold);font-size:.8em}
+
+.nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
+
+.nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
+
+.nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
+
+.nav .menu a:hover{background:var(--cream)}
+
+.nav .menu a.sub{padding-left:38px;font-size:.92rem}
+.nav .menu a.sub::before{content:"\21B3  ";color:var(--gold)}
+
+.nav .menu a.sub.on{padding-left:35px}
+
+.nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
+
+.nav .dd.open .menu{display:block}
+
+.nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
+
+.nav .menu .x:hover{color:var(--navy);text-decoration:underline}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:8px 12px}}
+@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem;white-space:nowrap}.nav a.pub{font-size:.78rem;padding:4px 10px;white-space:nowrap}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
+
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.65}
+a{color:var(--navy2)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:46px 22px 40px;text-align:center}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.6rem);margin:0 0 10px;line-height:1.2}
+.hero p{max-width:760px;margin:4px auto 0;color:#dfe6f2;font-size:1rem}
+.hero .by{font-size:1.05rem;color:#fff;margin-top:12px}
+.hero .ai{font-size:.85rem;font-style:italic;color:#c8d1e0}
+.tools{max-width:960px;margin:0 auto;padding:22px 20px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:9px 20px;border-radius:24px;border:0;font:inherit;font-weight:bold;cursor:pointer}
+.btn.ghost{background:#fff;border:1px solid var(--navy);color:var(--navy)}
+.paper{max-width:960px;margin:16px auto 0;background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:10px 34px 30px;box-shadow:0 2px 8px rgba(18,40,76,.06)}
+.paper h1{color:var(--navy);font-size:1.45rem;margin:30px 0 10px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+.paper h2{color:var(--navy);font-size:1.15rem;margin:22px 0 6px}
+.paper p{margin:8px 0}
+.paper li{margin:4px 0}.paper li p{margin:0}
+.paper strong{color:var(--navy)}
+.paper table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.9rem;display:block;overflow-x:auto}
+.paper th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;border:1px solid var(--navy)}
+.paper th strong,.paper th a{color:#fff}
+.paper td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+.paper tr:nth-child(even) td{background:#f7f3e8}
+.paper td p,.paper th p{margin:0}
+.paper .refs p{font-size:.88rem;padding-left:2em;text-indent:-2em;margin:6px 0;word-break:break-word}
+.paper .final{font-size:.85rem;color:var(--mut);font-style:italic;margin-top:18px}
+.foot{margin:34px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:620px){.paper{padding:6px 16px 22px;border-radius:0}}
+@media print{.nav,.tools,.foot{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
+</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a class="l" href="../../members/index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a class="l" href="../../members/belief-counseling.html">Belief Counseling</a><a class="l" href="../../members/process.html">The Process</a><a class="l on" href="../../members/assessment.html">Traditional Assessment</a><a class="l" href="../../members/tips.html">Professional Tips</a><a class="l" href="../../members/library.html">Library</a><a class="l" target="_top" href="https://www.beliefcounselor.com/counselor-scriptures">Scripture Lookup</a><a class="l" href="../../counselors/membership.html">Membership</a><span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a><a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a><a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->
+<div class="hero"><div class="eyebrow">DSM-5-TR Teaching Review</div><h1>Reactive Attachment Disorder</h1>
+<p>Clinical Companion Knowledge Library: for counselors and counseling students</p>
+<p class="by">Brian Campbell, Ph.D.</p>
+<p class="ai">Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.</p></div>
+<div class="tools"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="reactive-attachment-teaching-overview.pdf" target="_blank" rel="noopener">Download or print the PDF</a></div>
+<div class="paper">
+<h1 id="what-it-is">1. What it is</h1>
+<p>Reactive attachment disorder (RAD) is a disorder of early childhood in which a child <strong>rarely seeks or responds to comfort</strong> from caregivers and shows limited positive emotion, after <strong>severely insufficient care</strong>: social neglect, repeated changes of caregivers (as in multiple foster placements), or rearing in settings such as institutions where close bonds are nearly impossible (American Psychiatric Association [APA], 2022). It belongs to DSM-5-TR’s "Trauma- and Stressor-Related Disorders" chapter.</p>
+<p><strong>How common:</strong> among all 1,646 children aged 6 to 8 in a deprived urban area of the United Kingdom, an estimated 1.4% had RAD; the authors concluded it is not rare in such populations (Minnis et al., 2013). Children with RAD in the general population often have several other disorders, lower IQ, and poorer social skills (Pritchett et al., 2013).</p>
+<p><strong>A distinct disorder.</strong> Research supports RAD and disinhibited social engagement disorder as two separate disorders, although both arise from inadequate care (Zeanah &amp; Gleason, 2015).</p>
+<p><strong>Counselor framing:</strong> RAD is a wound from what a child did not receive, not a sign of a "bad" or manipulative child. Most of the work happens through the caregiver, and many of the families who seek help are foster or adoptive parents.</p>
+<h1 id="core-symptoms-to-watch-for">2. Core symptoms to watch for</h1>
+<p>DSM-5-TR criteria, paraphrased (APA, 2022); use the manual itself for formal diagnosis.</p>
+<ul>
+<li><p>A consistent pattern of <strong>inhibited, emotionally withdrawn behavior toward adult caregivers</strong>: the child <strong>rarely or minimally seeks comfort</strong> when distressed and <strong>rarely or minimally responds to comfort</strong> when it is offered.</p></li>
+<li><p>Persistent social and emotional disturbance with <strong>at least 2</strong> of: minimal social and emotional responsiveness to others; <strong>limited positive emotion</strong>; episodes of unexplained irritability, sadness, or fearfulness, even during calm, nonthreatening interactions with caregivers.</p></li>
+<li><p>A history of <strong>extremes of insufficient care</strong>: persistent lack of comfort, stimulation, and affection; repeated changes of primary caregivers; or rearing in unusual settings that severely limit opportunities to form selective attachments.</p></li>
+<li><p>The insufficient care is presumed to cause the behavior. The child has a developmental age of <strong>at least 9 months</strong>, signs are evident <strong>before age 5</strong>, and criteria for autism spectrum disorder are not met. Specify <strong>persistent</strong> (more than 12 months) and <strong>severe</strong> (all symptoms at relatively high levels).</p></li>
+</ul>
+<p><strong>Rule out:</strong> autism spectrum disorder (social difficulty without a history of neglect, plus restricted, repetitive behavior), intellectual disability, and depression. Note that "attachment disorder" is often used loosely online and in parenting circles for any difficult foster or adoptive child; the diagnosis requires the specific pattern above (APA, 2022; Chaffin et al., 2006).</p>
+<p><strong>Assessment and referral (general clinical consensus and practice parameter):</strong> directly observe the child with the primary caregiver (Zeanah et al., 2016). Refer for pediatric, developmental, and psychiatric evaluation; screen for co-occurring problems such as developmental delay, ADHD, and trauma symptoms; and report suspected ongoing abuse or neglect.</p>
+<h1 id="frequently-used-assessment-instruments">3. Frequently used assessment instruments</h1>
+<p>These are among the most widely used measures for screening, rating severity, and tracking progress in reactive attachment disorder. <strong>Screening tools do not diagnose;</strong> a positive screen calls for a clinical interview against DSM-5-TR criteria. Click an instrument’s website to find it. No single test diagnoses RAD; direct observation of the child with the caregiver is essential.</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 22%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Instrument</strong></th>
+<th><strong>Best used for</strong></th>
+<th><strong>Format</strong></th>
+<th><strong>Purchase required?</strong></th>
+<th><strong>Training or qualification</strong></th>
+<th><strong>Where to find it</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>DAI</strong> (Disturbances of Attachment Interview)</td>
+<td>Caregiver interview rating signs of RAD and DSED; used in the major research studies.</td>
+<td>Clinician interview with the caregiver</td>
+<td>No (free)</td>
+<td>★ Clinical interviewing skill; training recommended</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1097/00004583-200208000-00016"><u>Original article</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>RPQ</strong> (Relationship Problems Questionnaire)</td>
+<td>Brief parent or teacher screen for inhibited and disinhibited attachment behaviors.</td>
+<td>Parent- or teacher-report, 10 items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1002/mpr.127"><u>Original article</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>SDQ</strong> (Strengths and Difficulties Questionnaire)</td>
+<td>Screening for co-occurring emotional, conduct, attention, and peer problems.</td>
+<td>Parent, teacher, and self-report, 25 items</td>
+<td>No (free paper version)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.sdqinfo.org/"><u>SDQ website</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>BASC-3</strong> (Behavior Assessment System for Children)</td>
+<td>Broad behavioral and emotional assessment, ages 2 to 21.</td>
+<td>Parent, teacher, and self-report forms</td>
+<td>Yes</td>
+<td>★ Level B</td>
+<td><a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/store/usd/p/100001402"><u>Pearson</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>TSCYC</strong> (Trauma Symptom Checklist for Young Children)</td>
+<td>Caregiver report of trauma symptoms in children ages 3 to 12.</td>
+<td>Caregiver-report, 90 items (screening form 20)</td>
+<td>Yes</td>
+<td>★ Level B</td>
+<td><a target="_blank" rel="noopener" href="https://www.parinc.com/products/TSCYC"><u>PAR</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>NICHQ Vanderbilt Assessment Scales</strong></td>
+<td>Screening for co-occurring ADHD in children ages 6 to 12.</td>
+<td>Parent and teacher forms, initial and follow-up</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://nichq.org/wp-content/uploads/2024/09/NICHQ-Vanderbilt-Assessment-Scales.pdf"><u>NICHQ (PDF)</u></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>★ = requires professional qualification to purchase or specialized training.</strong> Publishers sell these tests only to qualified users. At Pearson, <strong>Level B</strong> generally means a master’s degree in a related field with formal assessment training, or a health care license; <strong>Level C</strong> means a doctorate in psychology or a related field with formal assessment training, or state licensure in a related field (<a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/professional-assessments/ordering/how-to-order/qualifications/qualifications-policy.html"><u>Pearson qualifications policy</u></a>). MHS, PAR, and WPS use similar levels. Check each publisher’s page before ordering. "Original article" links go to the published study that introduced a free scale that has no official website; the scale can usually be obtained there or from its authors.</p>
+<h1 id="what-works-treatment-and-the-evidence">4. What works: treatment and the evidence</h1>
+<p><strong>Bottom line for class:</strong> the core treatment is a stable, sensitive, consistent caregiver. Caregiver-focused interventions that build sensitivity have the best support. Coercive "attachment therapies" should be avoided.</p>
+<p><strong>Evidence overview (honest effect sizes):</strong></p>
+<ul>
+<li><p><strong>A family heals:</strong> in a randomized trial with institutionalized Romanian children (68 placed in foster care, 68 left in usual care), inhibited, withdrawn signs of RAD dropped quickly after foster placement and by 30 months were indistinguishable from never-institutionalized children (Smyke et al., 2012).</p></li>
+<li><p><strong>Treatment aims:</strong> the practice parameter calls for direct observation of the child with caregivers and has two aims: help the child form an attachment relationship when none exists, and improve any disturbed relating to non-caregivers (Zeanah et al., 2016).</p></li>
+<li><p><strong>Building caregiver sensitivity:</strong> across 70 studies, interventions improved parental sensitivity (d = 0.33) and infant attachment security (d = 0.20); the most effective were brief, behaviorally focused programs, and gains in sensitivity carried over to attachment (Bakermans-Kranenburg et al., 2003). In a randomized trial with 120 maltreated toddlers, <a target="_blank" rel="noopener" href="https://www.cebc4cw.org/program/attachment-and-biobehavioral-catch-up/"><u>Attachment and Biobehavioral Catch-up (ABC)</u></a> reduced disorganized attachment (32% vs. 57%) and increased secure attachment (52% vs. 33%) (Bernard et al., 2012). These studies did not diagnose RAD itself.</p></li>
+<li><p><strong>Avoid coercive therapies:</strong> a national task force warned that the benefits and risks of many "attachment therapies" are unproven and that some techniques used with foster and adopted children are potentially harmful (Chaffin et al., 2006). Physical restraint, "holding therapy," and forced eye contact or rebirthing-type methods have no place in care.</p></li>
+<li><p><strong>Medication (referral notes):</strong> no medication treats RAD. Medication may help co-occurring conditions such as ADHD.</p></li>
+</ul>
+<p><strong>Cognitive-behavioral work with RAD: how it is used</strong> (Bakermans-Kranenburg et al., 2003; Bernard et al., 2012):</p>
+<ul>
+<li><p><strong>Coach the caregiver</strong> to follow the child’s lead, respond warmly and predictably to distress, and offer comfort even when the child does not seem to want it.</p></li>
+<li><p><strong>Identify and challenge caregiver beliefs:</strong> "This child rejects me," "If we love enough, he will bond right away," "I am failing as a parent," "She is doing this on purpose."</p></li>
+<li><p><strong>Support the caregiver’s own regulation and respite,</strong> since steady, calm care over months is the treatment.</p></li>
+</ul>
+<h1 id="religion-spirituality-and-christian-integration-what-the-evidence-shows">5. Religion, spirituality, and Christian integration: what the evidence shows</h1>
+<p><strong>Disorder-specific research.</strong> We found <strong>no study of religion, faith communities, or faith-integrated treatment in reactive attachment disorder</strong> (literature search, November 1, 2026).</p>
+<p><strong>Related evidence.</strong> Across 49 studies, positive religious coping went with better adjustment to stress and negative religious coping (feeling punished or abandoned by God) with worse (Ano &amp; Vasconcelles, 2005), which bears on how exhausted foster and adoptive parents cope. Across 97 outcome studies, therapy adapted to clients’ religious beliefs worked about as well as standard therapy for distress and added spiritual benefits (Captari et al., 2018).</p>
+<p><strong>Honest summary for teaching:</strong></p>
+<ol type="1">
+<li><p>A stable, sensitive caregiver and caregiver-focused interventions are the evidence base. Faith integration supports them; it does not replace them.</p></li>
+<li><p>There is no research on faith and RAD. Faith communities can offer practical support and respite to foster and adoptive families.</p></li>
+<li><p>Unproven and coercive "attachment therapies" have sometimes been offered to foster and adoptive families (Chaffin et al., 2006). Guide families toward evidence-based help.</p></li>
+</ol>
+<h1 id="practical-christian-integration-notes">6. Practical Christian-integration notes</h1>
+<p>These apply Dr. Campbell’s identify, challenge, replace-with-Scripture method mainly with caregivers. Clinical items rest on the research above. Pastoral items are theological application, not research findings.</p>
+<ul>
+<li><p><strong>Identify (clinical).</strong> Listen for caregiver beliefs that drive harsh or discouraged parenting, including spiritual forms: "God called us to adopt, so it should not be this hard," "A strong-willed child must be broken," "I must be failing God." With older children, listen for "Adults can’t be counted on" (Chaffin et al., 2006). To identify deeper false beliefs, see: <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/core-beliefs.html"><u>Core Beliefs</u></a>, <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf"><u>Parental Messages</u></a>, or use the <a target="_blank" rel="noopener" href="https://www.beliefcounselor.com/false-belief-finder"><u>Semantic Search Tool</u></a>.</p></li>
+<li><p><strong>Challenge (clinical).</strong> Set realistic expectations: inhibited signs can improve quickly in a stable home, but trust takes time. Track small gains in seeking comfort (Smyke et al., 2012). <strong>Possible cognitive errors</strong> to watch for, mainly in caregivers, with their definitions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf"><u>Belief Counseling Cognitive Errors Checklist</u></a> and the problems they tend to feed:</p></li>
+</ul>
+<ul>
+<li><p><strong>Personalization</strong> — taking blame for things outside my control. <em>Feeds:</em> parental discouragement. <em>Sounds like:</em> “This child rejects me because I’m failing.”</p></li>
+<li><p><strong>Mind reading</strong> — assuming I know what others think. <em>Feeds:</em> harsh or withdrawn parenting. <em>Sounds like:</em> “She’s doing this on purpose to hurt me.”</p></li>
+<li><p><strong>Unrealistic expectations</strong> — expecting too much of myself or others. <em>Feeds:</em> exhaustion and guilt. <em>Sounds like:</em> “If we love him enough, he will bond right away.”</p></li>
+<li><p><strong>Fortune telling</strong> — predicting a bad outcome. <em>Feeds:</em> giving up. <em>Sounds like:</em> “He’ll never trust us.”</p></li>
+<li><p><strong>Disqualifying the positive</strong> — deciding good things don’t count. <em>Feeds:</em> missing small gains. <em>Sounds like:</em> “One hug doesn’t mean anything.”</p></li>
+<li><p><strong>Overgeneralization</strong> — one event becomes a rule. <em>Feeds:</em> withdrawal (in older children). <em>Sounds like:</em> “Adults can’t be counted on.”</p></li>
+</ul>
+<ul>
+<li><p><strong>Questions to dispute the belief.</strong> Have the parent (or an older child) choose questions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf"><u>Questioning False Beliefs</u></a> form that “speak to” the belief. To see how, watch Dr. Campbell’s video <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZjR0Mx1zEMY"><u>Integrated Christian Counseling: Questioning Your Beliefs</u></a>. Selected questions that fit the errors above:</p></li>
+</ul>
+<ul>
+<li><p>“Am I being too hard on myself?” and “How might an all-loving God look at me or this situation?” <em>For:</em> personalization and “I must be failing God”.</p></li>
+<li><p>“Are there other ways of looking at this situation?” <em>For:</em> mind reading.</p></li>
+<li><p>“Do I really have to be perfect? Is any human being perfect?” <em>For:</em> unrealistic expectations.</p></li>
+<li><p>“Can I really predict the future?” <em>For:</em> fortune telling.</p></li>
+<li><p>“Have I overlooked some of the gifts that God has given me?” <em>For:</em> disqualifying the positive.</p></li>
+<li><p>“Is it possible that I am distorting the facts?” <em>For:</em> overgeneralization.</p></li>
+</ul>
+<ul>
+<li><p><strong>Replace (pastoral).</strong> Offer Scripture of God’s faithful, adopting love, for parent and child:</p></li>
+</ul>
+<ul>
+<li><p>“God settles the lonely in families…” (Psalm 68:6)</p></li>
+<li><p>“For you did not receive a spirit of slavery that returns you to fear, but you received the Spirit of sonship, by whom we cry, ‘Abba! Father!’” (Romans 8:15). Adoption is at the heart of the gospel.</p></li>
+<li><p>“Can a woman forget her nursing child, or lack compassion for the son of her womb? Even if she could forget, I will not forget you!” (Isaiah 49:15)</p></li>
+<li><p>“Let us not grow weary in well-doing, for in due time we will reap a harvest if we do not give up.” (Galatians 6:9). Encouragement for the long, patient work of parenting.</p></li>
+</ul>
+<ul>
+<li><p><strong>Faith community (clinical).</strong> Offer meals, trained respite care, and parent support groups. Ask families what helps rather than offering unsolicited parenting advice.</p></li>
+<li><p><strong>Ministers:</strong> take caregiver exhaustion seriously, steer families away from coercive "attachment therapies," and refer to clinicians experienced with foster and adopted children.</p></li>
+</ul>
+<h1 id="quick-classroom-takeaways">7. Quick classroom takeaways</h1>
+<ul>
+<li><p>RAD means a withdrawn child who rarely seeks or accepts comfort, with limited positive emotion, after severe neglect or disrupted care; onset before age 5. Rule out autism.</p></li>
+<li><p>Treatment is a stable, sensitive caregiver plus caregiver-coaching interventions; withdrawn signs often improve quickly in a good home. Avoid coercive therapies.</p></li>
+<li><p>Replace "this child rejects me" with patient, adopting love: "God settles the lonely in families."</p></li>
+<li><p>Diagnose through caregiver interview (such as the DAI) and direct observation; brief screens (RPQ, SDQ) flag concern but do not diagnose.</p></li>
+</ul>
+<h1 id="sources-note">Sources note</h1>
+<p>All 11 references were checked against Crossref, OpenAlex, and PubMed/Europe PMC records (Nov 1, 2026), and the figures quoted were checked against each study’s abstract. Each DOI is a live link to the publisher record. Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).</p>
+<h1 id="references">References</h1><div class="refs">
+<p>American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed., text rev.). <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.books.9780890425787"><u>https://doi.org/10.1176/appi.books.9780890425787</u></a></p>
+<p>Ano, G. G., &amp; Vasconcelles, E. B. (2005). Religious coping and psychological adjustment to stress: A meta-analysis. <em>Journal of Clinical Psychology, 61</em>(4), 461–480. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.20049"><u>https://doi.org/10.1002/jclp.20049</u></a></p>
+<p>Bakermans-Kranenburg, M. J., van IJzendoorn, M. H., &amp; Juffer, F. (2003). Less is more: Meta-analyses of sensitivity and attachment interventions in early childhood. <em>Psychological Bulletin, 129</em>(2), 195–215. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/0033-2909.129.2.195"><u>https://doi.org/10.1037/0033-2909.129.2.195</u></a></p>
+<p>Bernard, K., Dozier, M., Bick, J., Lewis-Morrarty, E., Lindhiem, O., &amp; Carlson, E. (2012). Enhancing attachment organization among maltreated children: Results of a randomized clinical trial. <em>Child Development, 83</em>(2), 623–636. <a target="_blank" rel="noopener" href="https://doi.org/10.1111/j.1467-8624.2011.01712.x"><u>https://doi.org/10.1111/j.1467-8624.2011.01712.x</u></a></p>
+<p>Captari, L. E., Hook, J. N., Hoyt, W. T., Davis, D. E., McElroy-Heltzel, S. E., &amp; Worthington, E. L., Jr. (2018). Integrating clients’ religion and spirituality within psychotherapy: A comprehensive meta-analysis. <em>Journal of Clinical Psychology, 74</em>(11), 1938–1951. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.22681"><u>https://doi.org/10.1002/jclp.22681</u></a></p>
+<p>Chaffin, M., Hanson, R., Saunders, B. E., Nichols, T., Barnett, D., Zeanah, C., Berliner, L., Egeland, B., Newman, E., Lyon, T., Letourneau, E., &amp; Miller-Perrin, C. (2006). Report of the APSAC task force on attachment therapy, reactive attachment disorder, and attachment problems. <em>Child Maltreatment, 11</em>(1), 76–89. <a target="_blank" rel="noopener" href="https://doi.org/10.1177/1077559505283699"><u>https://doi.org/10.1177/1077559505283699</u></a></p>
+<p>Minnis, H., Macmillan, S., Pritchett, R., Young, D., Wallace, B., Butcher, J., Sim, F., Baynham, K., Davidson, C., &amp; Gillberg, C. (2013). Prevalence of reactive attachment disorder in a deprived population. <em>The British Journal of Psychiatry, 202</em>(5), 342–346. <a target="_blank" rel="noopener" href="https://doi.org/10.1192/bjp.bp.112.114074"><u>https://doi.org/10.1192/bjp.bp.112.114074</u></a></p>
+<p>Pritchett, R., Pritchett, J., Marshall, E., Davidson, C., &amp; Minnis, H. (2013). Reactive attachment disorder in the general population: A hidden ESSENCE disorder. <em>The Scientific World Journal, 2013</em>, 818157. <a target="_blank" rel="noopener" href="https://doi.org/10.1155/2013/818157"><u>https://doi.org/10.1155/2013/818157</u></a></p>
+<p>Smyke, A. T., Zeanah, C. H., Gleason, M. M., Drury, S. S., Fox, N. A., Nelson, C. A., &amp; Guthrie, D. (2012). A randomized controlled trial comparing foster care and institutional care for children with signs of reactive attachment disorder. <em>American Journal of Psychiatry, 169</em>(5), 508–514. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.ajp.2011.11050748"><u>https://doi.org/10.1176/appi.ajp.2011.11050748</u></a></p>
+<p>Zeanah, C. H., &amp; Gleason, M. M. (2015). Annual research review: Attachment disorders in early childhood—clinical presentation, causes, correlates, and treatment. <em>Journal of Child Psychology and Psychiatry, 56</em>(3), 207–222. <a target="_blank" rel="noopener" href="https://doi.org/10.1111/jcpp.12347"><u>https://doi.org/10.1111/jcpp.12347</u></a></p>
+<p>Zeanah, C. H., Chesher, T., Boris, N. W., &amp; the American Academy of Child and Adolescent Psychiatry Committee on Quality Issues. (2016). Practice parameter for the assessment and treatment of children and adolescents with reactive attachment disorder and disinhibited social engagement disorder. <em>Journal of the American Academy of Child and Adolescent Psychiatry, 55</em>(11), 990–1003. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.jaac.2016.08.004"><u>https://doi.org/10.1016/j.jaac.2016.08.004</u></a></p>
+<p><em>Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All 11 references and DOIs verified via Crossref, OpenAlex, and PubMed/Europe PMC records (Sunday, Nov 1, 2026). Effect sizes as reported in the cited sources.</em></p>
+</div>
+</div>
+<div class="tools" style="padding-bottom:6px"><a class="btn" href="../../members/assessment.html#rvlist" onclick="try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){history.back();return false;}}catch(e){}">&#8592; Back</a></div>
+<div class="foot">Teaching overview for counselors. Not a substitute for the DSM-5-TR or clinical judgment. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
+<script>(function(){var b=document.getElementById('back');b.addEventListener('click',function(e){
+try{var r=document.referrer;if(r&&new URL(r).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});
+try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){document.body.firstElementChild.scrollIntoView({block:'start'});}}catch(e){}})();</script><!--navjs--><script>
+(function(){
+var dds=document.querySelectorAll('.nav .dd'),t;
+function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
+dds.forEach(function(d){
+  var b=d.firstChild;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll();if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}});
+  d.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();closeAll();b.focus();});
+  d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(closeAll,500);});
+  d.addEventListener('mouseenter',function(){clearTimeout(t);});
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+</script><!--/navjs--></body></html>

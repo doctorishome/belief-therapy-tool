@@ -1,0 +1,290 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Avoidant Personality Disorder · DSM-5-TR Teaching Review</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+
+.nav a.l:hover{border-color:var(--gold)}
+.nav a.on{color:#fff;border-color:var(--gold)}
+
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
+
+.nav .acct{display:inline-flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
+
+.nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
+
+.nav .dd{position:relative}
+
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
+
+.nav .dd>button::after{content:" \25BE";color:var(--gold);font-size:.8em}
+
+.nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
+
+.nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
+
+.nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
+
+.nav .menu a:hover{background:var(--cream)}
+
+.nav .menu a.sub{padding-left:38px;font-size:.92rem}
+.nav .menu a.sub::before{content:"\21B3  ";color:var(--gold)}
+
+.nav .menu a.sub.on{padding-left:35px}
+
+.nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
+
+.nav .dd.open .menu{display:block}
+
+.nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
+
+.nav .menu .x:hover{color:var(--navy);text-decoration:underline}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:8px 12px}}
+@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem;white-space:nowrap}.nav a.pub{font-size:.78rem;padding:4px 10px;white-space:nowrap}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
+
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.65}
+a{color:var(--navy2)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:46px 22px 40px;text-align:center}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.6rem);margin:0 0 10px;line-height:1.2}
+.hero p{max-width:760px;margin:4px auto 0;color:#dfe6f2;font-size:1rem}
+.hero .by{font-size:1.05rem;color:#fff;margin-top:12px}
+.hero .ai{font-size:.85rem;font-style:italic;color:#c8d1e0}
+.tools{max-width:960px;margin:0 auto;padding:22px 20px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:9px 20px;border-radius:24px;border:0;font:inherit;font-weight:bold;cursor:pointer}
+.btn.ghost{background:#fff;border:1px solid var(--navy);color:var(--navy)}
+.paper{max-width:960px;margin:16px auto 0;background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:10px 34px 30px;box-shadow:0 2px 8px rgba(18,40,76,.06)}
+.paper h1{color:var(--navy);font-size:1.45rem;margin:30px 0 10px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+.paper h2{color:var(--navy);font-size:1.15rem;margin:22px 0 6px}
+.paper p{margin:8px 0}
+.paper li{margin:4px 0}.paper li p{margin:0}
+.paper strong{color:var(--navy)}
+.paper table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.9rem;display:block;overflow-x:auto}
+.paper th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;border:1px solid var(--navy)}
+.paper th strong,.paper th a{color:#fff}
+.paper td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+.paper tr:nth-child(even) td{background:#f7f3e8}
+.paper td p,.paper th p{margin:0}
+.paper .refs p{font-size:.88rem;padding-left:2em;text-indent:-2em;margin:6px 0;word-break:break-word}
+.paper .final{font-size:.85rem;color:var(--mut);font-style:italic;margin-top:18px}
+.foot{margin:34px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:620px){.paper{padding:6px 16px 22px;border-radius:0}}
+@media print{.nav,.tools,.foot{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
+</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a class="l" href="../../members/index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a class="l" href="../../members/belief-counseling.html">Belief Counseling</a><a class="l" href="../../members/process.html">The Process</a><a class="l on" href="../../members/assessment.html">Traditional Assessment</a><a class="l" href="../../members/tips.html">Professional Tips</a><a class="l" href="../../members/library.html">Library</a><a class="l" target="_top" href="https://www.beliefcounselor.com/counselor-scriptures">Scripture Lookup</a><a class="l" href="../../counselors/membership.html">Membership</a><span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a><a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a><a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->
+<div class="hero"><div class="eyebrow">DSM-5-TR Teaching Review</div><h1>Avoidant Personality Disorder</h1>
+<p>Clinical Companion Knowledge Library: for counselors and counseling students</p>
+<p class="by">Brian Campbell, Ph.D.</p>
+<p class="ai">Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.</p></div>
+<div class="tools"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="avoidant-personality-teaching-overview.pdf" target="_blank" rel="noopener">Download or print the PDF</a></div>
+<div class="paper">
+<h1 id="what-it-is">1. What it is</h1>
+<p>Avoidant personality disorder (AvPD) is a long-standing pattern of <strong>social inhibition, feelings of inadequacy, and hypersensitivity to negative evaluation</strong>, beginning by early adulthood (American Psychiatric Association [APA], 2022). It belongs to <strong>Cluster C</strong> (anxious or fearful). Unlike schizoid personality disorder, the person <strong>wants</strong> closeness but fears rejection.</p>
+<p><strong>How common:</strong> in a large U.S. national survey, 2.36% of adults met criteria (Grant et al., 2004). AvPD is chronic, begins early in life, causes substantial distress and disability, and is underrecognized and understudied (Lampe &amp; Malhi, 2018).</p>
+<p><strong>AvPD and social anxiety disorder.</strong> The two overlap heavily. The prevailing view treats AvPD as a more severe form of social anxiety disorder, though some evidence supports keeping it as a distinct diagnosis; self-concept, avoidance, and social thinking may help tell them apart (Lampe &amp; Malhi, 2018; Weinbrecht et al., 2016).</p>
+<p><strong>Counselor framing:</strong> the core wound is shame: "I am inadequate, and others will see it." Avoidance protects against rejection in the short term but confirms loneliness and inadequacy in the long term.</p>
+<h1 id="core-symptoms-to-watch-for">2. Core symptoms to watch for</h1>
+<p>DSM-5-TR criteria, paraphrased (APA, 2022); use the manual itself for formal diagnosis. A pervasive pattern, beginning by early adulthood, with <strong>4 or more</strong> of:</p>
+<ul>
+<li><p>Avoids work or activities involving significant contact with people because of <strong>fear of criticism, disapproval, or rejection</strong>.</p></li>
+<li><p>Unwilling to get involved with people <strong>unless certain of being liked</strong>.</p></li>
+<li><p>Shows <strong>restraint in intimate relationships</strong> for fear of being shamed or ridiculed.</p></li>
+<li><p><strong>Preoccupied with being criticized or rejected</strong> in social situations.</p></li>
+<li><p><strong>Inhibited in new social situations</strong> because of feelings of inadequacy.</p></li>
+<li><p>Views self as <strong>socially inept, unappealing, or inferior</strong> to others.</p></li>
+<li><p>Unusually <strong>reluctant to take risks</strong> or try new activities because they may prove embarrassing.</p></li>
+</ul>
+<p><strong>Distinguish from:</strong> social anxiety disorder (often co-occurs), schizoid personality disorder (little desire for relationships), dependent personality disorder (fear centers on being cared for rather than on rejection), and depression (APA, 2022; Lampe &amp; Malhi, 2018).</p>
+<p><strong>When counselors must refer (general clinical consensus):</strong> refer for evaluation when there is significant depression, suicidal thinking, alcohol or drug use to cope with social fear, or complete withdrawal from work or school.</p>
+<h1 id="frequently-used-assessment-instruments">3. Frequently used assessment instruments</h1>
+<p>These are among the most widely used measures for screening, rating severity, and tracking progress in avoidant personality disorder. <strong>Screening tools do not diagnose;</strong> a positive screen calls for a clinical interview against DSM-5-TR criteria. Click an instrument’s website to find it.</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 22%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Instrument</strong></th>
+<th><strong>Best used for</strong></th>
+<th><strong>Format</strong></th>
+<th><strong>Purchase required?</strong></th>
+<th><strong>Training or qualification</strong></th>
+<th><strong>Where to find it</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>SCID-5-PD</strong> (Structured Clinical Interview for DSM-5 Personality Disorders)</td>
+<td>Diagnosing all ten DSM-5 personality disorders, with an optional self-report screener.</td>
+<td>Semistructured clinician interview</td>
+<td>Yes</td>
+<td>★ Clinical interviewing skill; training recommended</td>
+<td><a target="_blank" rel="noopener" href="https://appi.org/Products/Interviewing/Structured-Clinical-Interview-for-DSM-5-Personalit"><u>APA Publishing</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>PID-5</strong> (Personality Inventory for DSM-5)</td>
+<td>Dimensional personality trait profile (negative affect, detachment, antagonism, disinhibition, psychoticism); brief and informant forms.</td>
+<td>Self-report; 220-item full or 25-item brief form</td>
+<td>No (free from the APA for clinical use)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.psychiatry.org/psychiatrists/practice/dsm/educational-resources/assessment-measures"><u>APA assessment measures</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>APA DSM-5 anxiety severity measures</strong></td>
+<td>The social anxiety scale tracks fear of others’ judgment; separate scales cover other anxiety disorders.</td>
+<td>Self-report, 10 items each</td>
+<td>No (free from the APA for clinical use)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.psychiatry.org/psychiatrists/practice/dsm/educational-resources/assessment-measures"><u>APA assessment measures</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>PAI</strong> (Personality Assessment Inventory)</td>
+<td>Broad clinical and personality assessment for adults, including scales for borderline and antisocial features.</td>
+<td>Self-report, 344 items, about 50 to 60 minutes</td>
+<td>Yes</td>
+<td>★ Level C</td>
+<td><a target="_blank" rel="noopener" href="https://www.parinc.com/product/groups/pai"><u>PAR</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>MCMI-IV</strong> (Millon Clinical Multiaxial Inventory-IV)</td>
+<td>Adults in treatment; personality patterns alongside clinical syndromes.</td>
+<td>Self-report, 195 true/false items, about 25 to 30 minutes</td>
+<td>Yes</td>
+<td>★ Level C</td>
+<td><a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/store/usd/p/100001362"><u>Pearson</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>MMPI-3</strong> (Minnesota Multiphasic Personality Inventory-3)</td>
+<td>Broad personality and psychopathology assessment, with validity scales for over- and under-reporting.</td>
+<td>Self-report, 335 true/false items, about 25 to 50 minutes</td>
+<td>Yes</td>
+<td>★ Level C</td>
+<td><a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/store/usd/p/P100000004"><u>Pearson</u></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>★ = requires professional qualification to purchase or specialized training.</strong> Publishers sell these tests only to qualified users. At Pearson, <strong>Level B</strong> generally means a master’s degree in a related field with formal assessment training, or a health care license; <strong>Level C</strong> means a doctorate in psychology or a related field with formal assessment training, or state licensure in a related field (<a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/professional-assessments/ordering/how-to-order/qualifications/qualifications-policy.html"><u>Pearson qualifications policy</u></a>). MHS, PAR, and WPS use similar levels. Check each publisher’s page before ordering. "Original article" links go to the published study that introduced a free scale that has no official website; the scale can usually be obtained there or from its authors.</p>
+<h1 id="what-works-treatment-and-the-evidence">4. What works: treatment and the evidence</h1>
+<p><strong>Bottom line for class:</strong> <a target="_blank" rel="noopener" href="https://www.apa.org/ptsd-guideline/treatments/cognitive-behavioral-therapy"><u>cognitive-behavioral therapy</u></a> has the best direct trial support for AvPD; <a target="_blank" rel="noopener" href="https://schematherapysociety.org/Schema-Therapy"><u>schema therapy</u></a> and short-term dynamic therapy also help Cluster C disorders.</p>
+<p><strong>Evidence overview (honest effect sizes):</strong></p>
+<ul>
+<li><p><strong>CBT:</strong> in a randomized trial of 62 patients with AvPD, 20 weekly sessions of CBT led to significantly greater improvement than brief dynamic therapy on several measures, with gains maintained at follow-up (Emmelkamp et al., 2006).</p></li>
+<li><p><strong>Cluster C trial:</strong> among 50 patients with Cluster C disorders, 40 sessions of either cognitive therapy or short-term dynamic therapy led to improvement maintained over 2 years; 42% (cognitive) and 54% (dynamic) had recovered from symptoms at 2 years, and about 40% in both groups had recovered in interpersonal problems and personality functioning (Svartberg et al., 2004).</p></li>
+<li><p><strong>Schema therapy:</strong> in a multicenter trial of 323 patients with Cluster C, paranoid, histrionic, or narcissistic personality disorder, schema therapy led to recovery more often than usual care or another psychotherapy (Bamelis et al., 2014).</p></li>
+<li><p><strong>The relationship matters:</strong> in an open trial of cognitive therapy for avoidant and obsessive-compulsive personality disorders (30 patients), stronger early alliance and repaired "ruptures" in the relationship predicted greater symptom improvement (Strauss et al., 2006).</p></li>
+<li><p><strong>Medication (referral notes):</strong> no medication is approved for AvPD; medications used for social anxiety disorder or depression may help co-occurring symptoms.</p></li>
+</ul>
+<p><strong>CBT for AvPD: how it is used</strong> (Emmelkamp et al., 2006; Strauss et al., 2006):</p>
+<ul>
+<li><p><strong>Gradual exposure:</strong> build a ladder of feared social situations and climb it step by step, dropping safety behaviors such as avoiding eye contact or rehearsing every sentence.</p></li>
+<li><p><strong>Identify and challenge core beliefs:</strong> "I am inadequate," "If people really knew me, they would reject me," "I must be sure people will like me before I take a risk," "Criticism proves I’m worthless."</p></li>
+<li><p><strong>Repair, don’t avoid:</strong> treat moments of tension in therapy as chances to practice speaking up and staying connected.</p></li>
+</ul>
+<h1 id="religion-spirituality-and-christian-integration-what-the-evidence-shows">5. Religion, spirituality, and Christian integration: what the evidence shows</h1>
+<p><strong>Disorder-specific research.</strong> We found <strong>no study of religion or spirituality in avoidant personality disorder</strong> and no faith-integrated treatment trial (literature search, November 1, 2026).</p>
+<p><strong>Related evidence.</strong> Across 49 studies, positive religious coping went with better adjustment to stress and negative religious coping with worse (Ano &amp; Vasconcelles, 2005). Across 97 outcome studies, therapy adapted to clients’ religious beliefs worked about as well as standard therapy for distress and produced added spiritual benefits (Captari et al., 2018).</p>
+<p><strong>Honest summary for teaching:</strong></p>
+<ol type="1">
+<li><p>CBT with gradual exposure, and schema or dynamic therapy for Cluster C, are the evidence base. Faith integration supports them; it does not replace them.</p></li>
+<li><p>There is no research on faith and AvPD. A gospel of unconditional acceptance speaks directly to the core belief of inadequacy.</p></li>
+<li><p>Church can feel like one of the most frightening places for these clients. Plan small, gradual steps rather than urging full involvement.</p></li>
+</ol>
+<h1 id="practical-christian-integration-notes">6. Practical Christian-integration notes</h1>
+<p>These apply Dr. Campbell’s identify, challenge, replace-with-Scripture method within CBT. Clinical items rest on the research above. Pastoral items are theological application, not research findings.</p>
+<ul>
+<li><p><strong>Identify (clinical).</strong> Listen for shame-based beliefs, including spiritual ones: "God puts up with me but doesn’t delight in me," "Everyone at church can see I don’t belong," "If I speak up in Bible study, I’ll sound stupid." To identify deeper false beliefs, see: <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/core-beliefs.html"><u>Core Beliefs</u></a>, <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf"><u>Parental Messages</u></a>, or use the <a target="_blank" rel="noopener" href="https://www.beliefcounselor.com/false-belief-finder"><u>Semantic Search Tool</u></a>.</p></li>
+<li><p><strong>Challenge (clinical).</strong> Test predictions with gradual social experiments, such as greeting one person after church or sharing one sentence in a small group, and record what actually happens (Emmelkamp et al., 2006). <strong>Possible cognitive errors</strong> to watch for, with their definitions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf"><u>Belief Counseling Cognitive Errors Checklist</u></a> and the symptoms they tend to feed:</p></li>
+</ul>
+<ul>
+<li><p><strong>Mind reading</strong> — assuming I know what others think. <em>Feeds:</em> fear of criticism. <em>Sounds like:</em> “They think I’m boring.”</p></li>
+<li><p><strong>Fortune telling</strong> — predicting a bad outcome. <em>Feeds:</em> avoiding social situations. <em>Sounds like:</em> “If I speak up in Bible study, I’ll sound stupid.”</p></li>
+<li><p><strong>Global labeling</strong> — one mistake becomes who I am. <em>Feeds:</em> feelings of inadequacy. <em>Sounds like:</em> “I’m socially inept.”</p></li>
+<li><p><strong>Selective attention</strong> — noticing only what fits my belief. <em>Feeds:</em> fear of rejection. <em>Sounds like:</em> “Nobody talked to me after church.”</p></li>
+<li><p><strong>Disqualifying the positive</strong> — deciding good things don’t count. <em>Feeds:</em> low self-worth. <em>Sounds like:</em> “They only invited me to be polite.”</p></li>
+<li><p><strong>Comparisons</strong> — measuring myself against others. <em>Feeds:</em> feeling inferior. <em>Sounds like:</em> “Everyone else belongs there.”</p></li>
+<li><p><strong>Avoidance</strong> — pushing away painful thoughts. <em>Feeds:</em> avoidance and isolation. <em>Sounds like:</em> “It’s safer to stay home.”</p></li>
+</ul>
+<ul>
+<li><p><strong>Questions to dispute the belief.</strong> Have the client choose questions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf"><u>Questioning False Beliefs</u></a> form that “speak to” the belief. To see how, watch Dr. Campbell’s video <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZjR0Mx1zEMY"><u>Integrated Christian Counseling: Questioning Your Beliefs</u></a>. Selected questions that fit the errors above:</p></li>
+</ul>
+<ul>
+<li><p>“What’s the actual evidence for my belief?” <em>For:</em> mind reading.</p></li>
+<li><p>“If I were a betting person, would I bet a million dollars that the thing I dread will happen?” <em>For:</em> fortune telling.</p></li>
+<li><p>“Doesn’t everyone have good points and bad points?” <em>For:</em> global labeling.</p></li>
+<li><p>“Is it possible that I am distorting the facts?” <em>For:</em> selective attention.</p></li>
+<li><p>“Have I overlooked some of the gifts that God has given me?” <em>For:</em> disqualifying the positive.</p></li>
+<li><p>“Does everyone have to like me in order for me to be happy?” <em>For:</em> comparisons and fear of rejection.</p></li>
+<li><p>“Am I underestimating my ability to cope?” <em>For:</em> avoidance.</p></li>
+<li><p>“Does God still love me despite my faults or limitations?” <em>For:</em> “God puts up with me”.</p></li>
+</ul>
+<ul>
+<li><p><strong>Replace (pastoral).</strong> Offer Scripture of acceptance and courage:</p></li>
+</ul>
+<ul>
+<li><p>“Accept one another, then, just as Christ accepted you, in order to bring glory to God.” (Romans 15:7). Acceptance comes before performance.</p></li>
+<li><p>“The fear of man is a snare, but whoever trusts in the LORD is set securely on high.” (Proverbs 29:25)</p></li>
+<li><p>“Do not fear, for I am with you; do not be afraid, for I am your God. I will strengthen you; I will surely help you; I will uphold you with My righteous right hand.” (Isaiah 41:10). For each step on the exposure ladder.</p></li>
+<li><p>“For God has not given us a spirit of fear, but of power, love, and self-control.” (2 Timothy 1:7)</p></li>
+</ul>
+<ul>
+<li><p><strong>Faith community (clinical).</strong> Pair the person with one warm, patient member; offer low-pressure roles (greeting team with a partner, behind-the-scenes service) that allow gradual belonging.</p></li>
+<li><p><strong>Ministers:</strong> notice quiet members, invite rather than pressure, avoid public correction or spotlighting, and refer when withdrawal or depression deepens.</p></li>
+</ul>
+<h1 id="quick-classroom-takeaways">7. Quick classroom takeaways</h1>
+<ul>
+<li><p>AvPD is pervasive social inhibition, inadequacy, and fear of rejection (4 of 7 criteria), with a desire for closeness. About 2.4% of U.S. adults; it overlaps heavily with social anxiety disorder.</p></li>
+<li><p>CBT with gradual exposure has the best direct support; schema and short-term dynamic therapy help Cluster C disorders. The therapy relationship itself is part of the treatment.</p></li>
+<li><p>Replace "If they knew me, they’d reject me" with "Christ accepted you," and practice courage one small step at a time.</p></li>
+<li><p>Confirm with a structured interview, and use the free APA social anxiety measure to track fear of others’ judgment.</p></li>
+</ul>
+<h1 id="sources-note">Sources note</h1>
+<p>All 10 references were checked against Crossref, OpenAlex, and PubMed/Europe PMC records (Nov 1, 2026), and the figures quoted were checked against each study’s abstract. Each DOI is a live link to the publisher record. Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).</p>
+<h1 id="references">References</h1><div class="refs">
+<p>American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders (5th ed., text rev.).</em> <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.books.9780890425787"><u>https://doi.org/10.1176/appi.books.9780890425787</u></a></p>
+<p>Ano, G. G., &amp; Vasconcelles, E. B. (2005). Religious coping and psychological adjustment to stress: A meta-analysis. <em>Journal of Clinical Psychology, 61</em>(4), 461–480. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.20049"><u>https://doi.org/10.1002/jclp.20049</u></a></p>
+<p>Bamelis, L. L. M., Evers, S. M. A. A., Spinhoven, P., &amp; Arntz, A. (2014). Results of a multicenter randomized controlled trial of the clinical effectiveness of schema therapy for personality disorders. <em>American Journal of Psychiatry, 171</em>(3), 305–322. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.ajp.2013.12040518"><u>https://doi.org/10.1176/appi.ajp.2013.12040518</u></a></p>
+<p>Captari, L. E., Hook, J. N., Hoyt, W. T., Davis, D. E., McElroy-Heltzel, S. E., &amp; Worthington, E. L. (2018). Integrating clients' religion and spirituality within psychotherapy: A comprehensive meta-analysis. <em>Journal of Clinical Psychology, 74</em>(11), 1938–1951. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.22681"><u>https://doi.org/10.1002/jclp.22681</u></a></p>
+<p>Emmelkamp, P. M. G., Benner, A., Kuipers, A., Feiertag, G. A., Koster, H. C., &amp; van Apeldoorn, F. J. (2006). Comparison of brief dynamic and cognitive-behavioural therapies in avoidant personality disorder. <em>The British Journal of Psychiatry, 189</em>(1), 60–64. <a target="_blank" rel="noopener" href="https://doi.org/10.1192/bjp.bp.105.012153"><u>https://doi.org/10.1192/bjp.bp.105.012153</u></a></p>
+<p>Grant, B. F., Hasin, D. S., Stinson, F. S., Dawson, D. A., Chou, S. P., Ruan, W. J., &amp; Pickering, R. P. (2004). Prevalence, correlates, and disability of personality disorders in the United States: Results from the National Epidemiologic Survey on Alcohol and Related Conditions. <em>The Journal of Clinical Psychiatry, 65</em>(7), 948–958. <a target="_blank" rel="noopener" href="https://doi.org/10.4088/JCP.v65n0711"><u>https://doi.org/10.4088/JCP.v65n0711</u></a></p>
+<p>Lampe, L., &amp; Malhi, G. S. (2018). Avoidant personality disorder: Current insights. <em>Psychology Research and Behavior Management, 11</em>, 55–66. <a target="_blank" rel="noopener" href="https://doi.org/10.2147/PRBM.S121073"><u>https://doi.org/10.2147/PRBM.S121073</u></a></p>
+<p>Strauss, J. L., Hayes, A. M., Johnson, S. L., Newman, C. F., Brown, G. K., Barber, J. P., Laurenceau, J.-P., &amp; Beck, A. T. (2006). Early alliance, alliance ruptures, and symptom change in a nonrandomized trial of cognitive therapy for avoidant and obsessive-compulsive personality disorders. <em>Journal of Consulting and Clinical Psychology, 74</em>(2), 337–345. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/0022-006X.74.2.337"><u>https://doi.org/10.1037/0022-006X.74.2.337</u></a></p>
+<p>Svartberg, M., Stiles, T. C., &amp; Seltzer, M. H. (2004). Randomized, controlled trial of the effectiveness of short-term dynamic psychotherapy and cognitive therapy for cluster C personality disorders. <em>American Journal of Psychiatry, 161</em>(5), 810–817. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.ajp.161.5.810"><u>https://doi.org/10.1176/appi.ajp.161.5.810</u></a></p>
+<p>Weinbrecht, A., Schulze, L., Boettcher, J., &amp; Renneberg, B. (2016). Avoidant personality disorder: A current review. <em>Current Psychiatry Reports, 18</em>(3), 29. <a target="_blank" rel="noopener" href="https://doi.org/10.1007/s11920-016-0665-6"><u>https://doi.org/10.1007/s11920-016-0665-6</u></a></p>
+<p><em>Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All 10 references and DOIs verified via Crossref, OpenAlex, and PubMed/Europe PMC records (Sunday, Nov 1, 2026). Effect sizes as reported in the cited sources.</em></p>
+</div>
+</div>
+<div class="tools" style="padding-bottom:6px"><a class="btn" href="../../members/assessment.html#rvlist" onclick="try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){history.back();return false;}}catch(e){}">&#8592; Back</a></div>
+<div class="foot">Teaching overview for counselors. Not a substitute for the DSM-5-TR or clinical judgment. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
+<script>(function(){var b=document.getElementById('back');b.addEventListener('click',function(e){
+try{var r=document.referrer;if(r&&new URL(r).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});
+try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){document.body.firstElementChild.scrollIntoView({block:'start'});}}catch(e){}})();</script><!--navjs--><script>
+(function(){
+var dds=document.querySelectorAll('.nav .dd'),t;
+function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
+dds.forEach(function(d){
+  var b=d.firstChild;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll();if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}});
+  d.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();closeAll();b.focus();});
+  d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(closeAll,500);});
+  d.addEventListener('mouseenter',function(){clearTimeout(t);});
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+</script><!--/navjs--></body></html>

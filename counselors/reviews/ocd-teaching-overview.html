@@ -1,0 +1,330 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Obsessive-Compulsive Disorder · DSM-5-TR Teaching Review</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+
+.nav a.l:hover{border-color:var(--gold)}
+.nav a.on{color:#fff;border-color:var(--gold)}
+
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
+
+.nav .acct{display:inline-flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
+
+.nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
+
+.nav .dd{position:relative}
+
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
+
+.nav .dd>button::after{content:" \25BE";color:var(--gold);font-size:.8em}
+
+.nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
+
+.nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
+
+.nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
+
+.nav .menu a:hover{background:var(--cream)}
+
+.nav .menu a.sub{padding-left:38px;font-size:.92rem}
+.nav .menu a.sub::before{content:"\21B3  ";color:var(--gold)}
+
+.nav .menu a.sub.on{padding-left:35px}
+
+.nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
+
+.nav .dd.open .menu{display:block}
+
+.nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
+
+.nav .menu .x:hover{color:var(--navy);text-decoration:underline}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:8px 12px}}
+@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem;white-space:nowrap}.nav a.pub{font-size:.78rem;padding:4px 10px;white-space:nowrap}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
+
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.65}
+a{color:var(--navy2)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:46px 22px 40px;text-align:center}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.6rem);margin:0 0 10px;line-height:1.2}
+.hero p{max-width:760px;margin:4px auto 0;color:#dfe6f2;font-size:1rem}
+.hero .by{font-size:1.05rem;color:#fff;margin-top:12px}
+.hero .ai{font-size:.85rem;font-style:italic;color:#c8d1e0}
+.tools{max-width:960px;margin:0 auto;padding:22px 20px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:9px 20px;border-radius:24px;border:0;font:inherit;font-weight:bold;cursor:pointer}
+.btn.ghost{background:#fff;border:1px solid var(--navy);color:var(--navy)}
+.paper{max-width:960px;margin:16px auto 0;background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:10px 34px 30px;box-shadow:0 2px 8px rgba(18,40,76,.06)}
+.paper h1{color:var(--navy);font-size:1.45rem;margin:30px 0 10px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+.paper h2{color:var(--navy);font-size:1.15rem;margin:22px 0 6px}
+.paper p{margin:8px 0}
+.paper li{margin:4px 0}.paper li p{margin:0}
+.paper strong{color:var(--navy)}
+.paper table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.9rem;display:block;overflow-x:auto}
+.paper th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;border:1px solid var(--navy)}
+.paper th strong,.paper th a{color:#fff}
+.paper td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+.paper tr:nth-child(even) td{background:#f7f3e8}
+.paper td p,.paper th p{margin:0}
+.paper .refs p{font-size:.88rem;padding-left:2em;text-indent:-2em;margin:6px 0;word-break:break-word}
+.paper .final{font-size:.85rem;color:var(--mut);font-style:italic;margin-top:18px}
+.foot{margin:34px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:620px){.paper{padding:6px 16px 22px;border-radius:0}}
+@media print{.nav,.tools,.foot{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
+</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a class="l" href="../../members/index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a class="l" href="../../members/belief-counseling.html">Belief Counseling</a><a class="l" href="../../members/process.html">The Process</a><a class="l on" href="../../members/assessment.html">Traditional Assessment</a><a class="l" href="../../members/tips.html">Professional Tips</a><a class="l" href="../../members/library.html">Library</a><a class="l" target="_top" href="https://www.beliefcounselor.com/counselor-scriptures">Scripture Lookup</a><a class="l" href="../../counselors/membership.html">Membership</a><span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a><a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a><a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->
+<div class="hero"><div class="eyebrow">DSM-5-TR Teaching Review</div><h1>Obsessive-Compulsive Disorder</h1>
+<p>Clinical Companion Knowledge Library: for counselors and counseling students</p>
+<p class="by">Brian Campbell, Ph.D.</p>
+<p class="ai">Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.</p></div>
+<div class="tools"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="ocd-teaching-overview.pdf" target="_blank" rel="noopener">Download or print the PDF</a></div>
+<div class="paper">
+<h1 id="what-it-is">1. What it is</h1>
+<p>Obsessive-compulsive disorder (OCD) involves <strong>obsessions</strong> (unwanted, intrusive thoughts, images, or urges that cause distress) and/or <strong>compulsions</strong> (repetitive behaviors or mental acts done to reduce that distress or prevent a feared outcome). In DSM-5-TR it heads its own chapter, "Obsessive-Compulsive and Related Disorders," separate from the anxiety disorders (American Psychiatric Association [APA], 2022).</p>
+<p><strong>How common:</strong> in a U.S. national survey, lifetime OCD was 2.3% and 12-month OCD 1.2%. Early onset was more common in men (Ruscio et al., 2010). Across 34 community studies worldwide, lifetime prevalence was 1.3%, and women were about 1.6 times more likely than men to be affected (Fawcett et al., 2020). Without adequate treatment OCD tends to be chronic (Öst et al., 2015).</p>
+<p><strong>Counselor framing (general clinical consensus):</strong> intrusive thoughts are normal; OCD is maintained by the <em>meaning</em> given to them and the rituals used to neutralize them.</p>
+<h1 id="core-symptoms-to-watch-for">2. Core symptoms to watch for</h1>
+<p>DSM-5-TR criteria, paraphrased (APA, 2022); use the manual itself for formal diagnosis.</p>
+<ul>
+<li><p><strong>Obsessions:</strong> recurring, intrusive, unwanted thoughts, urges, or images that cause marked anxiety or distress. The person tries to ignore, suppress, or neutralize them.</p></li>
+<li><p><strong>Compulsions:</strong> repetitive behaviors (washing, checking, ordering, confessing) or mental acts (praying, counting, repeating words, reviewing) the person feels driven to perform in response to an obsession or rigid rules. They aim to reduce distress or prevent a dreaded event but are not realistically connected to it or are clearly excessive.</p></li>
+<li><p><strong>Threshold:</strong> time-consuming (more than about an hour a day) or causing significant distress or impairment. Not due to a substance or medical condition and not better explained by another disorder.</p></li>
+<li><p><strong>Specifiers:</strong> insight is <em>good or fair</em>, <em>poor</em>, or <em>absent/delusional beliefs</em>. Absent insight is still OCD, not psychosis, when the content is OCD-typical. <em>Tic-related</em> applies with a current or past tic disorder.</p></li>
+<li><p><strong>Common themes:</strong> contamination, harm and checking, taboo thoughts (sexual, violent, blasphemous), symmetry and "just right."</p></li>
+</ul>
+<p><strong>Scrupulosity (religious or moral OCD):</strong> obsessive doubts about having sinned, intrusive blasphemous thoughts, and compulsive religious rituals, reassurance seeking, and avoidance (Abramowitz &amp; Jacoby, 2014). It correlates with inflated responsibility, the need to control thoughts, and <strong>moral thought-action fusion</strong> ("thinking it is as bad as doing it") (Nelson et al., 2006). Compared with other OCD, scrupulous clients were more religious, <strong>more likely to seek pastoral counseling</strong>, and less likely to seek medication. A more negative concept of God went with more severe symptoms (Siev et al., 2011). Among 180 patients, Catholics reported the highest scrupulosity, above Protestant, Jewish, and nonreligious patients (Buchholz et al., 2019). Scrupulous patients also showed higher rates of obsessive-compulsive personality disorder (OCPD), more depression, and a strong link between OCD severity and poor insight (Siev et al., 2021).</p>
+<p><strong>Differential tips (general clinical consensus; APA, 2022):</strong></p>
+<ul>
+<li><p><strong>GAD:</strong> worries concern real-life problems and feel reasonable. Obsessions feel intrusive and alien and are followed by rituals.</p></li>
+<li><p><strong>Related disorders:</strong> body dysmorphic disorder, hoarding, trichotillomania, and excoriation are separate diagnoses in the same chapter.</p></li>
+<li><p><strong>Psychotic disorders:</strong> absent-insight OCD stays on OCD-typical fears, without hallucinations or formal thought disorder.</p></li>
+<li><p><strong>OCPD:</strong> a lifelong, ego-syntonic pattern of perfectionism and control <em>without</em> true obsessions and compulsions. The two can co-occur.</p></li>
+<li><p><strong>Devotion vs. scrupulosity:</strong> healthy practice is chosen, flexible, and shared by one's community. Scrupulous rituals are fear-driven, repeated until they "feel right," and exceed what one's own tradition teaches (Abramowitz &amp; Jacoby, 2014).</p></li>
+</ul>
+<p><strong>Assessment tools:</strong></p>
+<ul>
+<li><p><strong>Y-BOCS:</strong> the clinician-rated severity standard. It has 10 items scored 0–40 (Goodman et al., 1989).</p></li>
+<li><p><strong>Self-reports:</strong> the 20-item DOCS covers four symptom dimensions (Abramowitz et al., 2010), and a validated scrupulosity subscale (DOCS-SR) has been added (Wetterneck et al., 2021). The 18-item OCI-R screens with six subscales (Foa et al., 2002).</p></li>
+<li><p><strong>PIOS:</strong> a 19-item scale measuring fear of sin and fear of God's punishment (Abramowitz et al., 2002). In patients it identified scrupulosity best among <strong>Christian</strong> clients (Huppert &amp; Fradkin, 2016).</p></li>
+</ul>
+<h1 id="frequently-used-assessment-instruments">3. Frequently used assessment instruments</h1>
+<p>These are among the most widely used measures for screening, rating severity, and tracking progress in OCD. <strong>Screening tools do not diagnose;</strong> a positive screen calls for a clinical interview against DSM-5-TR criteria. Click an instrument’s website to find it.</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 22%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Instrument</strong></th>
+<th><strong>Best used for</strong></th>
+<th><strong>Format</strong></th>
+<th><strong>Purchase required?</strong></th>
+<th><strong>Training or qualification</strong></th>
+<th><strong>Where to find it</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Y-BOCS</strong> (Yale-Brown Obsessive Compulsive Scale)</td>
+<td>The standard measure of OCD severity, with a symptom checklist.</td>
+<td>Clinician interview, 10 severity items</td>
+<td>No (free)</td>
+<td>★ Clinical interviewing skill; training recommended</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1001/archpsyc.1989.01810110048007"><u>Original article</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>CY-BOCS</strong> (Children’s Yale-Brown Obsessive Compulsive Scale)</td>
+<td>OCD severity in children and teens.</td>
+<td>Clinician interview with child and parent</td>
+<td>No (free)</td>
+<td>★ Clinical interviewing skill; training recommended</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1097/00004583-199706000-00023"><u>Original article</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>OCI-R</strong> (Obsessive-Compulsive Inventory-Revised)</td>
+<td>Quick self-report of OCD symptom types (washing, checking, ordering, obsessing, hoarding, neutralizing).</td>
+<td>Self-report, 18 items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1037/1040-3590.14.4.485"><u>Original article</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>DOCS</strong> (Dimensional Obsessive-Compulsive Scale)</td>
+<td>Severity across four OCD themes, including unacceptable (taboo, religious) thoughts.</td>
+<td>Self-report, 20 items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://docs.web.unc.edu"><u>DOCS website (UNC)</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>PIOS</strong> (Penn Inventory of Scrupulosity)</td>
+<td>Religious and moral obsessions (scrupulosity), such as fear of sin and of God’s punishment.</td>
+<td>Self-report, 19 items (revised version 15)</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1016/S0005-7967(01)00070-5"><u>Original article</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>APA Level 2 Repetitive Thoughts and Behaviors</strong> (adapted from FOCI)</td>
+<td>Brief follow-up when obsessive or repetitive symptoms are suspected.</td>
+<td>Self-report, 5 items</td>
+<td>No (free from the APA for clinical use)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.psychiatry.org/psychiatrists/practice/dsm/educational-resources/assessment-measures"><u>APA assessment measures</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>PHQ-9</strong> (Patient Health Questionnaire-9)</td>
+<td>Screening for co-occurring depression.</td>
+<td>Self-report, 9 items, about 2 minutes</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.phqscreeners.com/"><u>PHQ Screeners site</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>C-SSRS</strong> (Columbia Suicide Severity Rating Scale)</td>
+<td>Screening and assessing suicide risk; brief screener and full versions.</td>
+<td>Clinician- or staff-asked questions, a few minutes</td>
+<td>No (free)</td>
+<td>Free online training offered and recommended</td>
+<td><a target="_blank" rel="noopener" href="https://cssrs.columbia.edu/"><u>Columbia Lighthouse Project</u></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>★ = requires professional qualification to purchase or specialized training.</strong> Publishers sell these tests only to qualified users. At Pearson, <strong>Level B</strong> generally means a master’s degree in a related field with formal assessment training, or a health care license; <strong>Level C</strong> means a doctorate in psychology or a related field with formal assessment training, or state licensure in a related field (<a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/professional-assessments/ordering/how-to-order/qualifications/qualifications-policy.html"><u>Pearson qualifications policy</u></a>). MHS, PAR, and WPS use similar levels. Check each publisher’s page before ordering. "Original article" links go to the published study that introduced a free scale that has no official website; the scale can usually be obtained there or from its authors.</p>
+<h1 id="what-works-cbt-and-the-evidence">4. What works: CBT and the evidence</h1>
+<p><strong>Bottom line for class:</strong> <a target="_blank" rel="noopener" href="https://www.apa.org/ptsd-guideline/treatments/cognitive-behavioral-therapy"><u>CBT</u></a> built on <a target="_blank" rel="noopener" href="https://societyofclinicalpsychology.org/psychological-treatments/exposure-and-response-prevention-for-obsessive-compulsive-disorder/"><strong><u>exposure and response prevention (ERP)</u></strong></a> is the first-line psychological treatment. Cognitive therapy performs about as well, and SSRIs or clomipramine are the medication options.</p>
+<ul>
+<li><p><strong>ERP:</strong> planned, repeated contact with feared thoughts or situations while <strong>not</strong> performing compulsions, reassurance seeking, or mental neutralizing. Clients learn that distress fades and can be tolerated.</p></li>
+<li><p><strong>Meta-analytic evidence.</strong> Across 37 RCTs, CBT had very large effects versus waitlist (1.31) and placebo (1.33). ERP and cognitive therapy did not differ, CBT beat antidepressants (0.55), and adding medication to CBT was not significantly better than CBT plus placebo (Öst et al., 2015). An earlier meta-analysis of 16 RCTs (n = 756) found a large post-treatment effect (g = 1.39) (Olatunji et al., 2013). Across 47 studies, response was 70% after treatment and 69% at follow-up (about 2.5 years later on average) (Öst et al., 2026).</p></li>
+<li><p><strong>Landmark trial.</strong> In 122 adults, response rates were 62% for intensive ERP, 70% for ERP plus clomipramine, 42% for clomipramine, and 8% for placebo (Foa et al., 2005).</p></li>
+<li><p><strong>Cognitive therapy.</strong> Intrusions become obsessions when read as meaning one is <strong>responsible</strong> for preventing harm, and neutralizing keeps that belief alive (Salkovskis, 1985). Six belief domains are targeted: inflated responsibility, overimportance of thoughts, need to control thoughts, overestimated threat, intolerance of uncertainty, and perfectionism (Obsessive Compulsive Cognitions Working Group, 1997). <em>Thought-action fusion</em> is the belief that a thought is morally equal to an act or makes it more likely (Shafran et al., 1996). Test the <em>meaning</em> of thoughts, not their content.</p></li>
+<li><p><strong><a target="_blank" rel="noopener" href="https://contextualscience.org/act"><u>ACT</u></a> and inference-based therapy (brief).</strong> Eight sessions of ACT without in-session exposure beat relaxation training in 79 adults (Twohig et al., 2010). For poor-insight OCD (n = 90), an inference-based approach and CBT were equally effective (Visser et al., 2015).</p></li>
+<li><p><strong>Medication (referral notes).</strong> SSRIs beat placebo across 17 trials (Soomro et al., 2008). In a 54-trial network meta-analysis, clomipramine was not better than SSRIs, and combined treatment was judged likely best in severe OCD (Skapinakis et al., 2016).</p></li>
+</ul>
+<h1 id="religiously-integrated-cbt-for-ocd-what-the-evidence-shows">5. Religiously integrated CBT for OCD: what the evidence shows</h1>
+<p><strong>Models.</strong> The standard approach keeps ERP intact and adapts it to the client's faith. Treatment weakens rigid beliefs that are <em>inconsistent with the person's own religion</em>, builds tolerance of uncertainty, and drops rituals and reassurance (Abramowitz &amp; Jacoby, 2014). Huppert et al. (2007) adapted ERP for ultra-Orthodox Jewish patients by working within religious law and with religious authorities. Himle et al. (2011) reviewed religion and OCD and offered implications for both clinicians and clergy.</p>
+<p><strong>Clergy matter.</strong> In a survey of 70 Lutheran pastors, those from the more conservative denomination more often endorsed moral thought-action fusion and gave responses that risk reinforcing compulsions, such as urging purity of thought or regular confession of sinful thoughts (Deacon et al., 2013). Storch and Fuselier (2023) call for closer collaboration with clergy in treating scrupulosity.</p>
+<p><strong>Treatment studies (all small):</strong></p>
+<ul>
+<li><p><strong>ACT for scrupulosity (5 adults, multiple-baseline design):</strong> daily compulsions fell from 25.0 to 5.6 (4.3 at follow-up), and religious faith declined only slightly (Dehlin et al., 2013).</p></li>
+<li><p><strong>Religious CBT (Iran, n = 40):</strong> eight group sessions co-led by a psychiatrist and a clergyman reduced Y-BOCS scores through 6 months. This was a <strong>single-group study with no control</strong>, and patients were also on medication (Aouchekian et al., 2017).</p></li>
+<li><p><strong>Religion-adapted ACT (Iran, n = 36 randomized):</strong> the adapted protocol beat conventional ACT. However, it had 25 sessions versus 8, which confounds the comparison (Dehaghi et al., 2024).</p></li>
+<li><p><strong>CBT group plus religious psychoeducation (n = 23, randomized pilot):</strong> both groups were feasible and improved. Trends favored the integrated group on thought-action fusion; a larger trial is needed (Toprak &amp; Turkcapar, 2026).</p></li>
+</ul>
+<p><strong>Honest summary for teaching:</strong></p>
+<p>1. <strong>ERP and cognitive therapy remain the core</strong> for scrupulosity. Religious integration supports acceptability and</p>
+<p>engagement; it does not replace them.</p>
+<p>2. <strong>The evidence is very thin.</strong> We found <strong>no randomized trial of Christian-integrated CBT or ERP for OCD</strong>. Studies</p>
+<p>are case series, an uncontrolled trial, and small pilots, mostly Muslim samples in Iran or samples of unstated faith.</p>
+<p>3. <strong>Practice ethics (general consensus):</strong> integrate faith only with consent and after a spiritual assessment. Get</p>
+<p>ERP training or supervision, and refer when needed.</p>
+<h1 id="practical-christian-integration-notes">6. Practical Christian-integration notes</h1>
+<p>These apply Dr. Campbell's <strong>identify, challenge, replace-with-Scripture</strong> method. <em>Clinical</em> items rest on the research above. <em>Pastoral</em> items are theological application, not research findings.</p>
+<ul>
+<li><p><strong>Identify (clinical).</strong> Map the cycle: intrusion, then appraisal ("this thought means I am wicked"), then ritual (re-praying, confessing, checking), then brief relief, then more doubt. Call OCD OCD, not spiritual failure. To identify deeper false beliefs, see: <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/core-beliefs.html"><u>Core Beliefs</u></a>, <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf"><u>Parental Messages</u></a>, or use the <a target="_blank" rel="noopener" href="https://www.beliefcounselor.com/false-belief-finder"><u>Semantic Search Tool</u></a>.</p></li>
+<li><p><strong>Challenge (clinical).</strong> Challenge the <em>appraisal</em> (moral thought-action fusion, inflated responsibility, need for certainty), not whether a sin occurred. Debating content becomes reassurance. <strong>Possible cognitive errors</strong> to watch for, with their definitions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf"><u>Belief Counseling Cognitive Errors Checklist</u></a> and the symptoms they tend to feed:</p></li>
+</ul>
+<ul>
+<li><p><strong>Catastrophizing</strong> — expecting the worst possible outcome. <em>Feeds:</em> anxiety and compulsions. <em>Sounds like:</em> “If I don’t check, the house will burn down.”</p></li>
+<li><p><strong>Over-responsibility</strong> — I must control every outcome. <em>Feeds:</em> checking and rituals. <em>Sounds like:</em> “If someone gets sick, it will be my fault.”</p></li>
+<li><p><strong>Emotional reasoning</strong> — I feel it, so it must be true. <em>Feeds:</em> doubt and scrupulosity. <em>Sounds like:</em> “I feel guilty, so I must have sinned.”</p></li>
+<li><p><strong>Jumping to conclusions</strong> — deciding without the facts. <em>Feeds:</em> distress over intrusive thoughts. <em>Sounds like:</em> “Having this thought means I want it.”</p></li>
+<li><p><strong>Perfectionism</strong> — standards no one could meet. <em>Feeds:</em> repeating rituals. <em>Sounds like:</em> “My prayer has to be said perfectly.”</p></li>
+<li><p><strong>Should statements</strong> — rigid musts and oughts. <em>Feeds:</em> guilt over intrusions. <em>Sounds like:</em> “I should never have a bad thought.”</p></li>
+</ul>
+<ul>
+<li><p><strong>Questions to dispute the belief.</strong> Use them to question the appraisal, not to settle whether a sin or harm occurred; repeated questioning can become a ritual. Have the client choose questions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf"><u>Questioning False Beliefs</u></a> form that “speak to” the belief, then practice ERP. To see how, watch Dr. Campbell’s video <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZjR0Mx1zEMY"><u>Integrated Christian Counseling: Questioning Your Beliefs</u></a>. Selected questions that fit the errors above:</p></li>
+</ul>
+<ul>
+<li><p>“What’s the worst thing that could possibly happen, and “So what?”” <em>For:</em> catastrophizing.</p></li>
+<li><p>“Am I really the cause of the problem, or did someone just try to convince me that I am?” <em>For:</em> over-responsibility.</p></li>
+<li><p>“What’s the actual evidence for my belief?” <em>For:</em> emotional reasoning.</p></li>
+<li><p>“Can my negative thoughts defeat the Creator of the universe?” <em>For:</em> jumping to conclusions about thoughts.</p></li>
+<li><p>“Do I really have to be perfect? Is any human being perfect?” <em>For:</em> perfectionism.</p></li>
+<li><p>“Won’t God forgive me if I just ask?” <em>For:</em> scrupulosity and should statements.</p></li>
+</ul>
+<ul>
+<li><p><strong>Replace (pastoral).</strong> State identity and grace <em>once</em>, not as a repeated ritual: Romans 8:1, 1 John 3:20, Psalm 103:13–14, and Ephesians 2:8–9 (grace, not works). Matthew 6:7 (no "empty phrases") can frame repeated-prayer compulsions.</p></li>
+<li><p><strong>Faith-consistent ERP (clinical).</strong> Examples: praying once without "redoing it," reading a feared passage without reviewing, allowing a blasphemous intrusion without neutralizing, and keeping confession to the church's ordinary practice. With a signed release, ask the pastor to answer once and then decline repeated reassurance.</p></li>
+<li><p><strong>Ministers:</strong> use this for <strong>referral awareness only</strong>; refer suspected OCD to a licensed clinician trained in ERP.</p></li>
+</ul>
+<h1 id="quick-classroom-takeaways">7. Quick classroom takeaways</h1>
+<ul>
+<li><p>Diagnose by time (about an hour a day) or impairment; specify insight and tic history; screen for scrupulosity.</p></li>
+<li><p><strong>ERP and cognitive therapy</strong> are first-line with large, durable effects. SSRIs or clomipramine are options, and combined treatment helps severe cases.</p></li>
+<li><p><strong>Faith-integrated ERP</strong> is promising but thinly studied, with no Christian-specific trial. Keep response prevention at the core.</p></li>
+<li><p>Rate severity with the Y-BOCS, track with the free OCI-R or DOCS, and use the PIOS to measure religious scrupulosity.</p></li>
+</ul>
+<h1 id="sources-note">Sources note</h1>
+<p>All references were checked against Crossref (Oct 30, 2026). Each DOI is a live link to the publisher record. Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).</p>
+<h1 id="references">References</h1><div class="refs">
+<p>Abramowitz, J. S., Deacon, B. J., Olatunji, B. O., Wheaton, M. G., Berman, N. C., Losardo, D., Timpano, K. R., McGrath, P. B., Riemann, B. C., Adams, T., Björgvinsson, T., Storch, E. A., &amp; Hale, L. R. (2010). Assessment of obsessive-compulsive symptom dimensions: Development and evaluation of the Dimensional Obsessive-Compulsive Scale. <em>Psychological Assessment, 22</em>(1), 180–198. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/a0018260"><u>https://doi.org/10.1037/a0018260</u></a></p>
+<p>Abramowitz, J. S., Huppert, J. D., Cohen, A. B., Tolin, D. F., &amp; Cahill, S. P. (2002). Religious obsessions and compulsions in a non-clinical sample: The Penn Inventory of Scrupulosity (PIOS). <em>Behaviour Research and Therapy, 40</em>(7), 825–838. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/S0005-7967(01)00070-5"><u>https://doi.org/10.1016/S0005-7967(01)00070-5</u></a></p>
+<p>Abramowitz, J. S., &amp; Jacoby, R. J. (2014). Scrupulosity: A cognitive–behavioral analysis and implications for treatment. <em>Journal of Obsessive-Compulsive and Related Disorders, 3</em>(2), 140–149. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.jocrd.2013.12.007"><u>https://doi.org/10.1016/j.jocrd.2013.12.007</u></a></p>
+<p>American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed., text rev.). <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.books.9780890425787"><u>https://doi.org/10.1176/appi.books.9780890425787</u></a></p>
+<p>Aouchekian, S., Karimi, R., Najafi, M., Shafiee, K., Maracy, M., &amp; Almasi, A. (2017). Effect of religious cognitive behavioral therapy on religious obsessive-compulsive disorder (3 and 6 months follow-up). <em>Advanced Biomedical Research, 6</em>, 158. <a target="_blank" rel="noopener" href="https://doi.org/10.4103/abr.abr_115_16"><u>https://doi.org/10.4103/abr.abr_115_16</u></a></p>
+<p>Buchholz, J. L., Abramowitz, J. S., Riemann, B. C., Reuman, L., Blakey, S. M., Leonard, R. C., &amp; Thompson, K. A. (2019). Scrupulosity, religious affiliation and symptom presentation in obsessive compulsive disorder. <em>Behavioural and Cognitive Psychotherapy, 47</em>(4), 478–492. <a target="_blank" rel="noopener" href="https://doi.org/10.1017/S1352465818000711"><u>https://doi.org/10.1017/S1352465818000711</u></a></p>
+<p>Deacon, B. J., Vincent, A. M., &amp; Zhang, A. R. (2013). Lutheran clergy members' responses to scrupulosity: The effects of moral thought–action fusion and liberal vs. conservative denomination. <em>Journal of Obsessive-Compulsive and Related Disorders, 2</em>(2), 71–77. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.jocrd.2012.12.003"><u>https://doi.org/10.1016/j.jocrd.2012.12.003</u></a></p>
+<p>Dehaghi, A. A., Dolatshahi, B., Taremian, F., Pourshahbaz, A., &amp; Ansar, H. (2024). Evaluation of an acceptance and commitment therapy with religious content to control obsessive-compulsive disorder, dysfunctional beliefs, feeling guilty, scrupulosity, and thought control among Muslims in Iran. <em>Journal of Education and Health Promotion, 13</em>, 272. <a target="_blank" rel="noopener" href="https://doi.org/10.4103/jehp.jehp_760_23"><u>https://doi.org/10.4103/jehp.jehp_760_23</u></a></p>
+<p>Dehlin, J. P., Morrison, K. L., &amp; Twohig, M. P. (2013). Acceptance and commitment therapy as a treatment for scrupulosity in obsessive compulsive disorder. <em>Behavior Modification, 37</em>(3), 409–430. <a target="_blank" rel="noopener" href="https://doi.org/10.1177/0145445512475134"><u>https://doi.org/10.1177/0145445512475134</u></a></p>
+<p>Fawcett, E. J., Power, H., &amp; Fawcett, J. M. (2020). Women are at greater risk of OCD than men: A meta-analytic review of OCD prevalence worldwide. <em>The Journal of Clinical Psychiatry, 81</em>(4), 19r13085. <a target="_blank" rel="noopener" href="https://doi.org/10.4088/JCP.19r13085"><u>https://doi.org/10.4088/JCP.19r13085</u></a></p>
+<p>Foa, E. B., Huppert, J. D., Leiberg, S., Langner, R., Kichic, R., Hajcak, G., &amp; Salkovskis, P. M. (2002). The Obsessive-Compulsive Inventory: Development and validation of a short version. <em>Psychological Assessment, 14</em>(4), 485–496. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/1040-3590.14.4.485"><u>https://doi.org/10.1037/1040-3590.14.4.485</u></a></p>
+<p>Foa, E. B., Liebowitz, M. R., Kozak, M. J., Davies, S., Campeas, R., Franklin, M. E., Huppert, J. D., Kjernisted, K., Rowan, V., Schmidt, A. B., Simpson, H. B., &amp; Tu, X. (2005). Randomized, placebo-controlled trial of exposure and ritual prevention, clomipramine, and their combination in the treatment of obsessive-compulsive disorder. <em>American Journal of Psychiatry, 162</em>(1), 151–161. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.ajp.162.1.151"><u>https://doi.org/10.1176/appi.ajp.162.1.151</u></a></p>
+<p>Goodman, W. K., Price, L. H., Rasmussen, S. A., Mazure, C., Fleischmann, R. L., Hill, C. L., Heninger, G. R., &amp; Charney, D. S. (1989). The Yale-Brown Obsessive Compulsive Scale: I. Development, use, and reliability. <em>Archives of General Psychiatry, 46</em>(11), 1006–1011. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/archpsyc.1989.01810110048007"><u>https://doi.org/10.1001/archpsyc.1989.01810110048007</u></a></p>
+<p>Himle, J. A., Chatters, L. M., Taylor, R. J., &amp; Nguyen, A. (2011). The relationship between obsessive-compulsive disorder and religious faith: Clinical characteristics and implications for treatment. <em>Psychology of Religion and Spirituality, 3</em>(4), 241–258. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/a0023478"><u>https://doi.org/10.1037/a0023478</u></a></p>
+<p>Huppert, J. D., &amp; Fradkin, I. (2016). Validation of the Penn Inventory of Scrupulosity (PIOS) in scrupulous and nonscrupulous patients: Revision of factor structure and psychometrics. <em>Psychological Assessment, 28</em>(6), 639–651. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/pas0000203"><u>https://doi.org/10.1037/pas0000203</u></a></p>
+<p>Huppert, J. D., Siev, J., &amp; Kushner, E. S. (2007). When religion and obsessive–compulsive disorder collide: Treating scrupulosity in ultra-orthodox Jews. <em>Journal of Clinical Psychology, 63</em>(10), 925–941. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.20404"><u>https://doi.org/10.1002/jclp.20404</u></a></p>
+<p>Nelson, E. A., Abramowitz, J. S., Whiteside, S. P., &amp; Deacon, B. J. (2006). Scrupulosity in patients with obsessive–compulsive disorder: Relationship to clinical and cognitive phenomena. <em>Journal of Anxiety Disorders, 20</em>(8), 1071–1086. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.janxdis.2006.02.001"><u>https://doi.org/10.1016/j.janxdis.2006.02.001</u></a></p>
+<p>Obsessive Compulsive Cognitions Working Group. (1997). Cognitive assessment of obsessive-compulsive disorder. <em>Behaviour Research and Therapy, 35</em>(7), 667–681. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/S0005-7967(97)00017-X"><u>https://doi.org/10.1016/S0005-7967(97)00017-X</u></a></p>
+<p>Olatunji, B. O., Davis, M. L., Powers, M. B., &amp; Smits, J. A. J. (2013). Cognitive-behavioral therapy for obsessive-compulsive disorder: A meta-analysis of treatment outcome and moderators. <em>Journal of Psychiatric Research, 47</em>(1), 33–41. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.jpsychires.2012.08.020"><u>https://doi.org/10.1016/j.jpsychires.2012.08.020</u></a></p>
+<p>Öst, L.-G., Andersson, E., Clefberg, L., Fladvad, A., Havnen, A., Riise, E., Wahlund, T., &amp; Wergeland, G. J. (2026). Long-term follow-up of cognitive behavior therapy for obsessive-compulsive disorder in adults and children: A systematic review and meta-analysis. <em>Cognitive Behaviour Therapy</em>. Advance online publication. <a target="_blank" rel="noopener" href="https://doi.org/10.1080/16506073.2026.2696809"><u>https://doi.org/10.1080/16506073.2026.2696809</u></a></p>
+<p>Öst, L.-G., Havnen, A., Hansen, B., &amp; Kvale, G. (2015). Cognitive behavioral treatments of obsessive–compulsive disorder: A systematic review and meta-analysis of studies published 1993–2014. <em>Clinical Psychology Review, 40</em>, 156–169. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.cpr.2015.06.003"><u>https://doi.org/10.1016/j.cpr.2015.06.003</u></a></p>
+<p>Ruscio, A. M., Stein, D. J., Chiu, W. T., &amp; Kessler, R. C. (2010). The epidemiology of obsessive-compulsive disorder in the National Comorbidity Survey Replication. <em>Molecular Psychiatry, 15</em>(1), 53–63. <a target="_blank" rel="noopener" href="https://doi.org/10.1038/mp.2008.94"><u>https://doi.org/10.1038/mp.2008.94</u></a></p>
+<p>Salkovskis, P. M. (1985). Obsessional-compulsive problems: A cognitive-behavioural analysis. <em>Behaviour Research and Therapy, 23</em>(5), 571–583. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/0005-7967(85)90105-6"><u>https://doi.org/10.1016/0005-7967(85)90105-6</u></a></p>
+<p>Shafran, R., Thordarson, D. S., &amp; Rachman, S. (1996). Thought-action fusion in obsessive compulsive disorder. <em>Journal of Anxiety Disorders, 10</em>(5), 379–391. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/0887-6185(96)00018-7"><u>https://doi.org/10.1016/0887-6185(96)00018-7</u></a></p>
+<p>Siev, J., Baer, L., &amp; Minichiello, W. E. (2011). Obsessive-compulsive disorder with predominantly scrupulous symptoms: Clinical and religious characteristics. <em>Journal of Clinical Psychology, 67</em>(12), 1188–1196. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.20843"><u>https://doi.org/10.1002/jclp.20843</u></a></p>
+<p>Siev, J., Rasmussen, J., Sullivan, A. D. W., &amp; Wilhelm, S. (2021). Clinical features of scrupulosity: Associated symptoms and comorbidity. <em>Journal of Clinical Psychology, 77</em>(1), 173–188. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.23019"><u>https://doi.org/10.1002/jclp.23019</u></a></p>
+<p>Skapinakis, P., Caldwell, D. M., Hollingworth, W., Bryden, P., Fineberg, N. A., Salkovskis, P., Welton, N. J., Baxter, H., Kessler, D., Churchill, R., &amp; Lewis, G. (2016). Pharmacological and psychotherapeutic interventions for management of obsessive-compulsive disorder in adults: A systematic review and network meta-analysis. <em>The Lancet Psychiatry, 3</em>(8), 730–739. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/S2215-0366(16)30069-4"><u>https://doi.org/10.1016/S2215-0366(16)30069-4</u></a></p>
+<p>Soomro, G. M., Altman, D. G., Rajagopal, S., &amp; Oakley Browne, M. (2008). Selective serotonin re-uptake inhibitors (SSRIs) versus placebo for obsessive compulsive disorder (OCD). <em>Cochrane Database of Systematic Reviews, 2008</em>(1), CD001765. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/14651858.CD001765.pub3"><u>https://doi.org/10.1002/14651858.CD001765.pub3</u></a></p>
+<p>Storch, E. A., &amp; Fuselier, M. N. (2023). Maximizing outcomes by harnessing patient values: A call for increased collaboration with clergy in the treatment of scrupulosity-themed obsessive-compulsive disorder. <em>Journal of Cognitive Psychotherapy, 37</em>(1), 3–6. <a target="_blank" rel="noopener" href="https://doi.org/10.1891/JCP-2022-0038"><u>https://doi.org/10.1891/JCP-2022-0038</u></a></p>
+<p>Toprak, T. B., &amp; Turkcapar, M. H. (2026). A randomized mixed-methods pilot feasibility trial of CBT group therapy with 4T-integrated religious psychoeducation for religious obsessions and compulsions. <em>Psychotherapy Research, 36</em>(8), 1641– 1657. <a target="_blank" rel="noopener" href="https://doi.org/10.1080/10503307.2026.2632050"><u>https://doi.org/10.1080/10503307.2026.2632050</u></a></p>
+<p>Twohig, M. P., Hayes, S. C., Plumb, J. C., Pruitt, L. D., Collins, A. B., Hazlett-Stevens, H., &amp; Woidneck, M. R. (2010). A randomized clinical trial of acceptance and commitment therapy versus progressive relaxation training for obsessive-compulsive disorder. <em>Journal of Consulting and Clinical Psychology, 78</em>(5), 705–716. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/a0020508"><u>https://doi.org/10.1037/a0020508</u></a></p>
+<p>Visser, H. A., van Megen, H., van Oppen, P., Eikelenboom, M., Hoogendorn, A. W., Kaarsemaker, M., &amp; van Balkom, A. J. (2015). Inference-based approach versus cognitive behavioral therapy in the treatment of obsessive-compulsive disorder with poor insight: A 24-session randomized controlled trial. <em>Psychotherapy and Psychosomatics, 84</em>(5), 284– 293. <a target="_blank" rel="noopener" href="https://doi.org/10.1159/000382131"><u>https://doi.org/10.1159/000382131</u></a></p>
+<p>Wetterneck, C. T., Rouleau, T. M., Williams, M. T., Vallely, A., La Torre, J. T., &amp; Björgvinsson, T. (2021). A new scrupulosity scale for the Dimensional Obsessive-Compulsive Scale (DOCS): Validation with clinical and nonclinical samples. <em>Behavior Therapy, 52</em>(6), 1449–1463. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.beth.2021.04.001"><u>https://doi.org/10.1016/j.beth.2021.04.001</u></a></p>
+<p><em>Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All 33 references and DOIs verified via Crossref (Friday, Oct 30, 2026). Effect sizes as reported in the cited sources.</em></p>
+</div>
+</div>
+<div class="tools" style="padding-bottom:6px"><a class="btn" href="../../members/assessment.html#rvlist" onclick="try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){history.back();return false;}}catch(e){}">&#8592; Back</a></div>
+<div class="foot">Teaching overview for counselors. Not a substitute for the DSM-5-TR or clinical judgment. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
+<script>(function(){var b=document.getElementById('back');b.addEventListener('click',function(e){
+try{var r=document.referrer;if(r&&new URL(r).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});
+try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){document.body.firstElementChild.scrollIntoView({block:'start'});}}catch(e){}})();</script><!--navjs--><script>
+(function(){
+var dds=document.querySelectorAll('.nav .dd'),t;
+function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
+dds.forEach(function(d){
+  var b=d.firstChild;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll();if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}});
+  d.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();closeAll();b.focus();});
+  d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(closeAll,500);});
+  d.addEventListener('mouseenter',function(){clearTimeout(t);});
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+</script><!--/navjs--></body></html>

@@ -1,0 +1,321 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Borderline and Other Personality Disorders · DSM-5-TR Teaching Review</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+
+.nav a.l:hover{border-color:var(--gold)}
+.nav a.on{color:#fff;border-color:var(--gold)}
+
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
+
+.nav .acct{display:inline-flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
+
+.nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
+
+.nav .dd{position:relative}
+
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
+
+.nav .dd>button::after{content:" \25BE";color:var(--gold);font-size:.8em}
+
+.nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
+
+.nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
+
+.nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
+
+.nav .menu a:hover{background:var(--cream)}
+
+.nav .menu a.sub{padding-left:38px;font-size:.92rem}
+.nav .menu a.sub::before{content:"\21B3  ";color:var(--gold)}
+
+.nav .menu a.sub.on{padding-left:35px}
+
+.nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
+
+.nav .dd.open .menu{display:block}
+
+.nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
+
+.nav .menu .x:hover{color:var(--navy);text-decoration:underline}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:8px 12px}}
+@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem;white-space:nowrap}.nav a.pub{font-size:.78rem;padding:4px 10px;white-space:nowrap}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
+
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.65}
+a{color:var(--navy2)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:46px 22px 40px;text-align:center}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.6rem);margin:0 0 10px;line-height:1.2}
+.hero p{max-width:760px;margin:4px auto 0;color:#dfe6f2;font-size:1rem}
+.hero .by{font-size:1.05rem;color:#fff;margin-top:12px}
+.hero .ai{font-size:.85rem;font-style:italic;color:#c8d1e0}
+.tools{max-width:960px;margin:0 auto;padding:22px 20px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:9px 20px;border-radius:24px;border:0;font:inherit;font-weight:bold;cursor:pointer}
+.btn.ghost{background:#fff;border:1px solid var(--navy);color:var(--navy)}
+.paper{max-width:960px;margin:16px auto 0;background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:10px 34px 30px;box-shadow:0 2px 8px rgba(18,40,76,.06)}
+.paper h1{color:var(--navy);font-size:1.45rem;margin:30px 0 10px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+.paper h2{color:var(--navy);font-size:1.15rem;margin:22px 0 6px}
+.paper p{margin:8px 0}
+.paper li{margin:4px 0}.paper li p{margin:0}
+.paper strong{color:var(--navy)}
+.paper table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.9rem;display:block;overflow-x:auto}
+.paper th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;border:1px solid var(--navy)}
+.paper th strong,.paper th a{color:#fff}
+.paper td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+.paper tr:nth-child(even) td{background:#f7f3e8}
+.paper td p,.paper th p{margin:0}
+.paper .refs p{font-size:.88rem;padding-left:2em;text-indent:-2em;margin:6px 0;word-break:break-word}
+.paper .final{font-size:.85rem;color:var(--mut);font-style:italic;margin-top:18px}
+.foot{margin:34px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:620px){.paper{padding:6px 16px 22px;border-radius:0}}
+@media print{.nav,.tools,.foot{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
+</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a class="l" href="../../members/index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a class="l" href="../../members/belief-counseling.html">Belief Counseling</a><a class="l" href="../../members/process.html">The Process</a><a class="l on" href="../../members/assessment.html">Traditional Assessment</a><a class="l" href="../../members/tips.html">Professional Tips</a><a class="l" href="../../members/library.html">Library</a><a class="l" target="_top" href="https://www.beliefcounselor.com/counselor-scriptures">Scripture Lookup</a><a class="l" href="../../counselors/membership.html">Membership</a><span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a><a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a><a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->
+<div class="hero"><div class="eyebrow">DSM-5-TR Teaching Review</div><h1>Borderline and Other Personality Disorders</h1>
+<p>Clinical Companion Knowledge Library: for counselors and counseling students</p>
+<p class="by">Brian Campbell, Ph.D.</p>
+<p class="ai">Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.</p></div>
+<div class="tools"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="personality-disorders-teaching-overview.pdf" target="_blank" rel="noopener">Download or print the PDF</a></div>
+<div class="paper">
+<h1 id="what-it-is">1. What it is</h1>
+<p>A personality disorder is a long-standing, inflexible pattern of thinking, feeling, relating, and impulse control that differs markedly from cultural expectations, begins by adolescence or early adulthood, and causes distress or impairment across many situations (American Psychiatric Association [APA], 2022). DSM-5-TR groups ten personality disorders into three clusters: <strong>A</strong> (odd or eccentric: paranoid, schizoid, schizotypal), <strong>B</strong> (dramatic or erratic: antisocial, borderline, histrionic, narcissistic), and <strong>C</strong> (anxious or fearful: avoidant, dependent, obsessive-compulsive).</p>
+<p><strong>How common:</strong> across 46 studies in 21 countries, 7.8% of adults had at least one personality disorder (Winsper et al., 2020).</p>
+<p><strong>Borderline personality disorder (BPD)</strong> is the most studied and the focus of this review. It involves instability in emotions, relationships, and self-image, with impulsivity and often self-harm (Gunderson et al., 2018).</p>
+<p><strong>Hope for recovery:</strong> over 16 years, 78% to 99% of patients with BPD achieved symptom remission, though fewer (40% to 60%) achieved full recovery with good social and work functioning (Zanarini et al., 2012). BPD is not a life sentence.</p>
+<h1 id="core-symptoms-to-watch-for">2. Core symptoms to watch for</h1>
+<p>DSM-5-TR criteria for BPD, paraphrased (APA, 2022); use the manual itself for formal diagnosis. A pervasive pattern, beginning by early adulthood, with <strong>5 or more</strong> of:</p>
+<ul>
+<li><p>Frantic efforts to avoid real or imagined <strong>abandonment</strong>.</p></li>
+<li><p>Unstable, intense <strong>relationships</strong> that swing between idealizing and devaluing.</p></li>
+<li><p>Unstable <strong>self-image</strong> or sense of identity, and chronic feelings of <strong>emptiness</strong>.</p></li>
+<li><p><strong>Impulsivity</strong> in at least two self-damaging areas (such as spending, sex, substances, reckless driving, binge eating).</p></li>
+<li><p>Recurrent <strong>suicidal behavior, gestures, threats, or self-harm</strong>.</p></li>
+<li><p>Intense, reactive <strong>mood swings</strong> lasting hours to a few days, and intense, hard-to-control <strong>anger</strong>.</p></li>
+<li><p>Brief, stress-related <strong>paranoid thinking or dissociation</strong>.</p></li>
+</ul>
+<p><strong>Screening:</strong> the McLean Screening Instrument (MSI-BPD) was developed as a brief self-report screen for BPD (Zanarini et al., 2003). Diagnosis requires a full clinical assessment.</p>
+<p><strong>Suicide risk:</strong> across 8 studies of 1,179 patients with BPD, 94 died by suicide, far above the general-population rate (Pompili et al., 2005). Assess self-harm and suicide risk at every stage, and build a safety plan.</p>
+<p><strong>When counselors must refer (general clinical consensus):</strong> BPD needs a structured, specialist-supported approach. Refer for psychiatric evaluation for suicidality, serious self-harm, psychosis, or substance dependence, and seek consultation when treating BPD.</p>
+<h1 id="frequently-used-assessment-instruments">3. Frequently used assessment instruments</h1>
+<p>These are among the most widely used measures for screening, rating severity, and tracking progress in borderline and other personality disorders. <strong>Screening tools do not diagnose;</strong> a positive screen calls for a clinical interview against DSM-5-TR criteria. Click an instrument’s website to find it.</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 22%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Instrument</strong></th>
+<th><strong>Best used for</strong></th>
+<th><strong>Format</strong></th>
+<th><strong>Purchase required?</strong></th>
+<th><strong>Training or qualification</strong></th>
+<th><strong>Where to find it</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>MSI-BPD</strong> (McLean Screening Instrument for BPD)</td>
+<td>Quick screen for borderline personality disorder.</td>
+<td>Self-report, 10 yes/no items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1521/pedi.17.6.568.25355"><u>Original article</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>BSL-23</strong> (Borderline Symptom List-23)</td>
+<td>Tracking the severity of borderline symptoms during treatment.</td>
+<td>Self-report, 23 items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1159/000173701"><u>Original article</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>ZAN-BPD</strong> (Zanarini Rating Scale for BPD)</td>
+<td>Clinician rating of change in borderline symptoms.</td>
+<td>Clinician interview, 9 items</td>
+<td>No (free)</td>
+<td>★ Clinical interviewing skill; training recommended</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1521/pedi.17.3.233.22147"><u>Original article</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>SCID-5-PD</strong> (Structured Clinical Interview for DSM-5 Personality Disorders)</td>
+<td>Diagnosing all ten DSM-5 personality disorders, with an optional self-report screener.</td>
+<td>Semistructured clinician interview</td>
+<td>Yes</td>
+<td>★ Clinical interviewing skill; training recommended</td>
+<td><a target="_blank" rel="noopener" href="https://appi.org/Products/Interviewing/Structured-Clinical-Interview-for-DSM-5-Personalit"><u>APA Publishing</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>PID-5</strong> (Personality Inventory for DSM-5)</td>
+<td>Dimensional personality trait profile (negative affect, detachment, antagonism, disinhibition, psychoticism); brief and informant forms.</td>
+<td>Self-report; 220-item full or 25-item brief form</td>
+<td>No (free from the APA for clinical use)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.psychiatry.org/psychiatrists/practice/dsm/educational-resources/assessment-measures"><u>APA assessment measures</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>PAI</strong> (Personality Assessment Inventory)</td>
+<td>Broad clinical and personality assessment; includes a borderline features scale.</td>
+<td>Self-report, 344 items, about 50 to 60 minutes</td>
+<td>Yes</td>
+<td>★ Level C</td>
+<td><a target="_blank" rel="noopener" href="https://www.parinc.com/product/groups/pai"><u>PAR</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>MCMI-IV</strong> (Millon Clinical Multiaxial Inventory-IV)</td>
+<td>Adults in treatment; personality patterns alongside clinical syndromes.</td>
+<td>Self-report, 195 true/false items, about 25 to 30 minutes</td>
+<td>Yes</td>
+<td>★ Level C</td>
+<td><a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/store/usd/p/100001362"><u>Pearson</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>MMPI-3</strong> (Minnesota Multiphasic Personality Inventory-3)</td>
+<td>Broad personality and psychopathology assessment, with validity scales for over- and under-reporting.</td>
+<td>Self-report, 335 true/false items, about 25 to 50 minutes</td>
+<td>Yes</td>
+<td>★ Level C</td>
+<td><a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/store/usd/p/P100000004"><u>Pearson</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>C-SSRS</strong> (Columbia Suicide Severity Rating Scale)</td>
+<td>Screening and assessing suicide risk; brief screener and full versions.</td>
+<td>Clinician- or staff-asked questions, a few minutes</td>
+<td>No (free)</td>
+<td>Free online training offered and recommended</td>
+<td><a target="_blank" rel="noopener" href="https://cssrs.columbia.edu/"><u>Columbia Lighthouse Project</u></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>★ = requires professional qualification to purchase or specialized training.</strong> Publishers sell these tests only to qualified users. At Pearson, <strong>Level B</strong> generally means a master’s degree in a related field with formal assessment training, or a health care license; <strong>Level C</strong> means a doctorate in psychology or a related field with formal assessment training, or state licensure in a related field (<a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/professional-assessments/ordering/how-to-order/qualifications/qualifications-policy.html"><u>Pearson qualifications policy</u></a>). MHS, PAR, and WPS use similar levels. Check each publisher’s page before ordering. "Original article" links go to the published study that introduced a free scale that has no official website; the scale can usually be obtained there or from its authors.</p>
+<h1 id="what-works-treatment-and-the-evidence">4. What works: treatment and the evidence</h1>
+<p><strong>Bottom line for class:</strong> structured psychotherapy, especially <a target="_blank" rel="noopener" href="https://behavioraltech.org/resources/faqs/dialectical-behavior-therapy-dbt/"><u>dialectical behavior therapy (DBT)</u></a>, helps; well-organized general psychiatric care can work about as well. Medication does not treat BPD itself.</p>
+<p><strong>Evidence overview (honest effect sizes):</strong></p>
+<ul>
+<li><p><strong>Psychotherapy overall:</strong> in a Cochrane review of 75 trials (4,507 people), psychotherapy reduced BPD severity compared with usual care (SMD −0.52, moderate-quality evidence), and modestly reduced self-harm and suicide-related outcomes (Storebø et al., 2020). Another meta-analysis of 33 trials found small-to-moderate effects; DBT and psychodynamic approaches had the clearest support, and bias inflated many results (Cristea et al., 2017).</p></li>
+<li><p><strong>DBT</strong> (a cognitive-behavioral treatment teaching mindfulness, emotion regulation, distress tolerance, and relationship skills): compared with expert community therapists, DBT halved suicide attempts and reduced dropout and hospital use over 2 years (Linehan et al., 2006). However, <strong>general psychiatric management</strong> did about as well as DBT in a 1-year trial (McMain et al., 2009).</p></li>
+<li><p><strong>Standard CBT:</strong> adding CBT to usual care did not reduce the combined rate of suicidal acts, hospital admissions, and emergency visits, though suicidal acts alone did decline (Davidson et al., 2006).</p></li>
+<li><p><strong>Other personality disorders:</strong> among 323 patients, <a target="_blank" rel="noopener" href="https://schematherapysociety.org/Schema-Therapy"><u>schema therapy</u></a> (which targets long-standing core beliefs about self and others) led to recovery more often than usual care or another psychotherapy (Bamelis et al., 2014).</p></li>
+<li><p><strong>Medication (referral notes):</strong> in 46 trials, no medication improved BPD’s primary outcomes more than placebo (Stoffers-Winterling et al., 2022). Medication may still treat co-occurring depression, anxiety, or psychosis.</p></li>
+</ul>
+<p><strong>Cognitive-behavioral work with BPD: how it is used</strong> (Linehan et al., 2006; Bamelis et al., 2014):</p>
+<ul>
+<li><p><strong>Validate first, then change.</strong> Accept the person’s pain while building new skills.</p></li>
+<li><p><strong>Build skills:</strong> mindfulness, naming and regulating emotions, tolerating distress without self-harm, and asking for needs without damaging relationships.</p></li>
+<li><p><strong>Identify and challenge core beliefs</strong> such as "I am unlovable," "Everyone will abandon me," "I am bad," and "I can’t stand this feeling."</p></li>
+</ul>
+<h1 id="religion-spirituality-and-christian-integration-what-the-evidence-shows">5. Religion, spirituality, and Christian integration: what the evidence shows</h1>
+<p><strong>Spirituality and forgiveness are often lower in BPD.</strong> Among internal-medicine outpatients, people with more borderline symptoms reported lower spiritual well-being (Sansone et al., 2012), and in a sample of 307, lower forgiveness on many measures (Sansone et al., 2013).</p>
+<p><strong>Forgiveness grows with recovery.</strong> Over 20 years, patients with BPD began about 70% lower than comparison patients in acceptance and forgiveness, but these increased over time, and recovered patients reported about three times the levels of non-recovered patients (Zanarini et al., 2020).</p>
+<p><strong>Intervention study.</strong> Among 40 adults in outpatient DBT, a <strong>forgiveness module</strong> increased forgiveness and reduced attachment insecurity and psychiatric symptoms, gains kept at 6 weeks; the authors call for a randomized trial (Sandage et al., 2015). Clinicians are also advised to assess and sensitively engage spiritual and religious experiences within standard BPD care (Unruh, 2025).</p>
+<p><strong>Honest summary for teaching:</strong></p>
+<ol type="1">
+<li><p>DBT and other structured therapies, with good general psychiatric management, are the evidence base. Faith integration supports them; it does not replace them.</p></li>
+<li><p>Forgiveness and acceptance tend to grow as people with BPD recover, and a forgiveness module within DBT showed promising early results.</p></li>
+<li><p>No randomized trial of Christian-integrated treatment for BPD exists yet. Religious experiences can steady or destabilize these clients, so assess them carefully.</p></li>
+</ol>
+<h1 id="practical-christian-integration-notes">6. Practical Christian-integration notes</h1>
+<p>These apply Dr. Campbell’s identify, challenge, replace-with-Scripture method within DBT-informed, structured care. Clinical items rest on the research above. Pastoral items are theological application, not research findings.</p>
+<ul>
+<li><p><strong>Identify (clinical).</strong> Listen for core beliefs that drive abandonment fears, rage, and self-harm, often in spiritual form: "God will leave me like everyone else," "I am too bad to be loved," "I can never be forgiven" (Sansone et al., 2013). To identify deeper false beliefs, see: <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/core-beliefs.html"><u>Core Beliefs</u></a>, <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf"><u>Parental Messages</u></a>, or use the <a target="_blank" rel="noopener" href="https://www.beliefcounselor.com/false-belief-finder"><u>Semantic Search Tool</u></a>.</p></li>
+<li><p><strong>Challenge (clinical).</strong> Validate the pain, then test the evidence for all-or-nothing beliefs about self and others; practice skills before trying to change long-held beliefs (Linehan et al., 2006). <strong>Possible cognitive errors</strong> to watch for, with their definitions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf"><u>Belief Counseling Cognitive Errors Checklist</u></a> and the symptoms they tend to feed:</p></li>
+</ul>
+<ul>
+<li><p><strong>All-or-nothing thinking</strong> — no middle ground. <em>Feeds:</em> unstable relationships. <em>Sounds like:</em> “You’re either for me or against me.”</p></li>
+<li><p><strong>Emotional reasoning</strong> — I feel it, so it must be true. <em>Feeds:</em> emptiness and unstable self-image. <em>Sounds like:</em> “I feel empty, so I am nothing.”</p></li>
+<li><p><strong>Fortune telling</strong> — predicting a bad outcome. <em>Feeds:</em> fear of abandonment. <em>Sounds like:</em> “He’ll leave me like everyone else.”</p></li>
+<li><p><strong>Mind reading</strong> — assuming I know what others think. <em>Feeds:</em> anger and suspicion. <em>Sounds like:</em> “They secretly hate me.”</p></li>
+<li><p><strong>Global labeling</strong> — one mistake becomes who I am. <em>Feeds:</em> shame. <em>Sounds like:</em> “I’m too bad to be loved.”</p></li>
+<li><p><strong>Catastrophizing</strong> — expecting the worst possible outcome. <em>Feeds:</em> crises and self-harm. <em>Sounds like:</em> “I can’t survive this feeling.” Always ask about self-harm and suicide when you hear this.</p></li>
+</ul>
+<ul>
+<li><p><strong>Questions to dispute the belief.</strong> Have the client choose questions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf"><u>Questioning False Beliefs</u></a> form that “speak to” the belief. To see how, watch Dr. Campbell’s video <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZjR0Mx1zEMY"><u>Integrated Christian Counseling: Questioning Your Beliefs</u></a>. Selected questions that fit the errors above:</p></li>
+</ul>
+<ul>
+<li><p>“Am I keeping things in perspective?” <em>For:</em> all-or-nothing thinking.</p></li>
+<li><p>“What’s the actual evidence for my belief?” <em>For:</em> emotional reasoning.</p></li>
+<li><p>“Can I really predict the future?” and “Does God still love me despite my faults or limitations?” <em>For:</em> fortune telling and “God will leave me”.</p></li>
+<li><p>“Are there other ways of looking at this situation?” <em>For:</em> mind reading.</p></li>
+<li><p>“Are my sins really too big for the God of the universe to forgive?” <em>For:</em> global labeling and “I can never be forgiven”.</p></li>
+<li><p>“Am I underestimating my ability to cope?” <em>For:</em> catastrophizing.</p></li>
+</ul>
+<ul>
+<li><p><strong>Replace (pastoral).</strong> Offer Scripture of God’s permanent acceptance and of forgiveness:</p></li>
+</ul>
+<ul>
+<li><p>“Though my father and mother forsake me, the LORD will receive me.” (Psalm 27:10). For the fear of abandonment.</p></li>
+<li><p>“…for God has said: ‘Never will I leave you, never will I forsake you.’” (Hebrews 13:5)</p></li>
+<li><p>“Accept one another, then, just as Christ accepted you, in order to bring glory to God.” (Romans 15:7). Acceptance received, then given.</p></li>
+<li><p>“Bear with one another and forgive any complaint you may have against someone else. Forgive as the Lord forgave you.” (Colossians 3:13). Forgiveness as a gradual process, not a demand to reconcile with someone unsafe (Sandage et al., 2015).</p></li>
+</ul>
+<ul>
+<li><p><strong>Faith community (clinical).</strong> Help the church offer steady, consistent relationships with clear, kind limits. Unpredictable closeness and rejection can worsen BPD symptoms.</p></li>
+<li><p><strong>Ministers:</strong> keep healthy boundaries, take every mention of suicide or self-harm seriously, and refer to a qualified clinician.</p></li>
+</ul>
+<h1 id="quick-classroom-takeaways">7. Quick classroom takeaways</h1>
+<ul>
+<li><p>BPD involves 5 or more of 9 criteria marked by instability in emotion, relationships, and identity, with impulsivity and self-harm. Suicide risk is high; assess it at every stage.</p></li>
+<li><p>DBT and structured care work; standard CBT alone is less clear; medication does not treat BPD itself. Most patients remit over time.</p></li>
+<li><p>Forgiveness and acceptance grow with recovery. Replace "everyone will leave me" with the truth that God will never forsake His children.</p></li>
+<li><p>Screen for BPD with the free MSI-BPD, track change with the BSL-23, and confirm with a structured interview such as the SCID-5-PD.</p></li>
+</ul>
+<h1 id="sources-note">Sources note</h1>
+<p>All 18 references were checked against Crossref and PubMed (Oct 31, 2026), and the figures quoted were checked against each study’s abstract. Each DOI is a live link to the publisher record. Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).</p>
+<h1 id="references">References</h1><div class="refs">
+<p>American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders (5th ed., text rev.).</em> <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.books.9780890425787"><u>https://doi.org/10.1176/appi.books.9780890425787</u></a></p>
+<p>Bamelis, L. L. M., Evers, S. M. A. A., Spinhoven, P., &amp; Arntz, A. (2014). Results of a multicenter randomized controlled trial of the clinical effectiveness of schema therapy for personality disorders. <em>American Journal of Psychiatry, 171</em>(3), 305–322. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.ajp.2013.12040518"><u>https://doi.org/10.1176/appi.ajp.2013.12040518</u></a></p>
+<p>Cristea, I. A., Gentili, C., Cotet, C. D., Palomba, D., Barbui, C., &amp; Cuijpers, P. (2017). Efficacy of psychotherapies for borderline personality disorder: A systematic review and meta-analysis. <em>JAMA Psychiatry, 74</em>(4), 319–328. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/jamapsychiatry.2016.4287"><u>https://doi.org/10.1001/jamapsychiatry.2016.4287</u></a></p>
+<p>Davidson, K., Norrie, J., Tyrer, P., Gumley, A., Tata, P., Murray, H., &amp; Palmer, S. (2006). The effectiveness of cognitive behavior therapy for borderline personality disorder: Results from the Borderline Personality Disorder Study of Cognitive Therapy (BOSCOT) trial. <em>Journal of Personality Disorders, 20</em>(5), 450–465. <a target="_blank" rel="noopener" href="https://doi.org/10.1521/pedi.2006.20.5.450"><u>https://doi.org/10.1521/pedi.2006.20.5.450</u></a></p>
+<p>Gunderson, J. G., Herpertz, S. C., Skodol, A. E., Torgersen, S., &amp; Zanarini, M. C. (2018). Borderline personality disorder. <em>Nature Reviews Disease Primers, 4</em>, 18029. <a target="_blank" rel="noopener" href="https://doi.org/10.1038/nrdp.2018.29"><u>https://doi.org/10.1038/nrdp.2018.29</u></a></p>
+<p>Linehan, M. M., Comtois, K. A., Murray, A. M., Brown, M. Z., Gallop, R. J., Heard, H. L., Korslund, K. E., Tutek, D. A., Reynolds, S. K., &amp; Lindenboim, N. (2006). Two-year randomized controlled trial and follow-up of dialectical behavior therapy vs therapy by experts for suicidal behaviors and borderline personality disorder. <em>Archives of General Psychiatry, 63</em>(7), 757–766. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/archpsyc.63.7.757"><u>https://doi.org/10.1001/archpsyc.63.7.757</u></a></p>
+<p>McMain, S. F., Links, P. S., Gnam, W. H., Guimond, T., Cardish, R. J., Korman, L., &amp; Streiner, D. L. (2009). A randomized trial of dialectical behavior therapy versus general psychiatric management for borderline personality disorder. <em>American Journal of Psychiatry, 166</em>(12), 1365–1374. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.ajp.2009.09010039"><u>https://doi.org/10.1176/appi.ajp.2009.09010039</u></a></p>
+<p>Pompili, M., Girardi, P., Ruberto, A., &amp; Tatarelli, R. (2005). Suicide in borderline personality disorder: A meta-analysis. <em>Nordic Journal of Psychiatry, 59</em>(5), 319–324. <a target="_blank" rel="noopener" href="https://doi.org/10.1080/08039480500320025"><u>https://doi.org/10.1080/08039480500320025</u></a></p>
+<p>Sandage, S. J., Long, B., Moen, R., Jankowski, P. J., Worthington, E. L., Wade, N. G., &amp; Rye, M. S. (2015). Forgiveness in the treatment of borderline personality disorder: A quasi-experimental study. <em>Journal of Clinical Psychology, 71</em>(7), 625–640. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.22185"><u>https://doi.org/10.1002/jclp.22185</u></a></p>
+<p>Sansone, R. A., Kelley, A. R., &amp; Forbis, J. S. (2012). Religion/spirituality status and borderline personality symptomatology among outpatients in an internal medicine clinic. <em>International Journal of Psychiatry in Clinical Practice, 16</em>(1), 48–52. <a target="_blank" rel="noopener" href="https://doi.org/10.3109/13651501.2011.605956"><u>https://doi.org/10.3109/13651501.2011.605956</u></a></p>
+<p>Sansone, R. A., Kelley, A. R., &amp; Forbis, J. S. (2013). The relationship between forgiveness and borderline personality symptomatology. <em>Journal of Religion and Health, 52</em>(3), 974–980. <a target="_blank" rel="noopener" href="https://doi.org/10.1007/s10943-013-9704-3"><u>https://doi.org/10.1007/s10943-013-9704-3</u></a></p>
+<p>Stoffers-Winterling, J. M., Storebø, O. J., Pereira Ribeiro, J., Kongerslev, M. T., Völlm, B. A., Mattivi, J. T., Faltinsen, E., Todorovac, A., Jørgensen, M. S., Callesen, H. E., Sales, C. P., Schaug, J. P., Simonsen, E., &amp; Lieb, K. (2022). Pharmacological interventions for people with borderline personality disorder. <em>Cochrane Database of Systematic Reviews, 2022</em>(11), CD012956. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/14651858.CD012956.pub2"><u>https://doi.org/10.1002/14651858.CD012956.pub2</u></a></p>
+<p>Storebø, O. J., Stoffers-Winterling, J. M., Völlm, B. A., Kongerslev, M. T., Mattivi, J. T., Jørgensen, M. S., Faltinsen, E., Todorovac, A., Sales, C. P., Callesen, H. E., Lieb, K., &amp; Simonsen, E. (2020). Psychological therapies for people with borderline personality disorder. <em>Cochrane Database of Systematic Reviews, 2020</em>(5), CD012955. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/14651858.CD012955.pub2"><u>https://doi.org/10.1002/14651858.CD012955.pub2</u></a></p>
+<p>Unruh, B. T. (2025). Addressing spiritual and religious experiences in borderline personality disorder with good psychiatric management. <em>American Journal of Psychotherapy, 78</em>(1), 63–69. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.psychotherapy.20230047"><u>https://doi.org/10.1176/appi.psychotherapy.20230047</u></a></p>
+<p>Winsper, C., Bilgin, A., Thompson, A., Marwaha, S., Chanen, A. M., Singh, S. P., Wang, A., &amp; Furtado, V. (2020). The prevalence of personality disorders in the community: A global systematic review and meta-analysis. <em>The British Journal of Psychiatry, 216</em>(2), 69–78. <a target="_blank" rel="noopener" href="https://doi.org/10.1192/bjp.2019.166"><u>https://doi.org/10.1192/bjp.2019.166</u></a></p>
+<p>Zanarini, M. C., Vujanovic, A. A., Parachini, E. A., Boulanger, J. L., Frankenburg, F. R., &amp; Hennen, J. (2003). A screening measure for BPD: The McLean Screening Instrument for Borderline Personality Disorder (MSI-BPD). <em>Journal of Personality Disorders, 17</em>(6), 568–573. <a target="_blank" rel="noopener" href="https://doi.org/10.1521/pedi.17.6.568.25355"><u>https://doi.org/10.1521/pedi.17.6.568.25355</u></a></p>
+<p>Zanarini, M. C., Frankenburg, F. R., Reich, D. B., &amp; Fitzmaurice, G. (2012). Attainment and stability of sustained symptomatic remission and recovery among patients with borderline personality disorder and axis II comparison subjects: A 16-year prospective follow-up study. <em>American Journal of Psychiatry, 169</em>(5), 476–483. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.ajp.2011.11101550"><u>https://doi.org/10.1176/appi.ajp.2011.11101550</u></a></p>
+<p>Zanarini, M. C., Temes, C. M., Frankenburg, F. R., Reich, D. B., &amp; Fitzmaurice, G. M. (2020). Levels of acceptance and forgiveness reported by patients with BPD and personality-disordered comparison subjects over 20 years of prospective follow-up. <em>Journal of Personality Disorders, 34</em>(2), 262–272. <a target="_blank" rel="noopener" href="https://doi.org/10.1521/pedi_2019_33_395"><u>https://doi.org/10.1521/pedi_2019_33_395</u></a></p>
+<p><em>Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All 18 references and DOIs verified via Crossref and PubMed (Saturday, Oct 31, 2026). Effect sizes as reported in the cited sources.</em></p>
+</div>
+</div>
+<div class="tools" style="padding-bottom:6px"><a class="btn" href="../../members/assessment.html#rvlist" onclick="try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){history.back();return false;}}catch(e){}">&#8592; Back</a></div>
+<div class="foot">Teaching overview for counselors. Not a substitute for the DSM-5-TR or clinical judgment. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
+<script>(function(){var b=document.getElementById('back');b.addEventListener('click',function(e){
+try{var r=document.referrer;if(r&&new URL(r).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});
+try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){document.body.firstElementChild.scrollIntoView({block:'start'});}}catch(e){}})();</script><!--navjs--><script>
+(function(){
+var dds=document.querySelectorAll('.nav .dd'),t;
+function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
+dds.forEach(function(d){
+  var b=d.firstChild;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll();if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}});
+  d.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();closeAll();b.focus();});
+  d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(closeAll,500);});
+  d.addEventListener('mouseenter',function(){clearTimeout(t);});
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+</script><!--/navjs--></body></html>

@@ -1,0 +1,314 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Substance Use Disorders · DSM-5-TR Teaching Review</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+
+.nav a.l:hover{border-color:var(--gold)}
+.nav a.on{color:#fff;border-color:var(--gold)}
+
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
+
+.nav .acct{display:inline-flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
+
+.nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
+
+.nav .dd{position:relative}
+
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
+
+.nav .dd>button::after{content:" \25BE";color:var(--gold);font-size:.8em}
+
+.nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
+
+.nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
+
+.nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
+
+.nav .menu a:hover{background:var(--cream)}
+
+.nav .menu a.sub{padding-left:38px;font-size:.92rem}
+.nav .menu a.sub::before{content:"\21B3  ";color:var(--gold)}
+
+.nav .menu a.sub.on{padding-left:35px}
+
+.nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
+
+.nav .dd.open .menu{display:block}
+
+.nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
+
+.nav .menu .x:hover{color:var(--navy);text-decoration:underline}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:8px 12px}}
+@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem;white-space:nowrap}.nav a.pub{font-size:.78rem;padding:4px 10px;white-space:nowrap}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
+
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.65}
+a{color:var(--navy2)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:46px 22px 40px;text-align:center}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.6rem);margin:0 0 10px;line-height:1.2}
+.hero p{max-width:760px;margin:4px auto 0;color:#dfe6f2;font-size:1rem}
+.hero .by{font-size:1.05rem;color:#fff;margin-top:12px}
+.hero .ai{font-size:.85rem;font-style:italic;color:#c8d1e0}
+.tools{max-width:960px;margin:0 auto;padding:22px 20px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:9px 20px;border-radius:24px;border:0;font:inherit;font-weight:bold;cursor:pointer}
+.btn.ghost{background:#fff;border:1px solid var(--navy);color:var(--navy)}
+.paper{max-width:960px;margin:16px auto 0;background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:10px 34px 30px;box-shadow:0 2px 8px rgba(18,40,76,.06)}
+.paper h1{color:var(--navy);font-size:1.45rem;margin:30px 0 10px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+.paper h2{color:var(--navy);font-size:1.15rem;margin:22px 0 6px}
+.paper p{margin:8px 0}
+.paper li{margin:4px 0}.paper li p{margin:0}
+.paper strong{color:var(--navy)}
+.paper table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.9rem;display:block;overflow-x:auto}
+.paper th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;border:1px solid var(--navy)}
+.paper th strong,.paper th a{color:#fff}
+.paper td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+.paper tr:nth-child(even) td{background:#f7f3e8}
+.paper td p,.paper th p{margin:0}
+.paper .refs p{font-size:.88rem;padding-left:2em;text-indent:-2em;margin:6px 0;word-break:break-word}
+.paper .final{font-size:.85rem;color:var(--mut);font-style:italic;margin-top:18px}
+.foot{margin:34px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:620px){.paper{padding:6px 16px 22px;border-radius:0}}
+@media print{.nav,.tools,.foot{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
+</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a class="l" href="../../members/index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a class="l" href="../../members/belief-counseling.html">Belief Counseling</a><a class="l" href="../../members/process.html">The Process</a><a class="l on" href="../../members/assessment.html">Traditional Assessment</a><a class="l" href="../../members/tips.html">Professional Tips</a><a class="l" href="../../members/library.html">Library</a><a class="l" target="_top" href="https://www.beliefcounselor.com/counselor-scriptures">Scripture Lookup</a><a class="l" href="../../counselors/membership.html">Membership</a><span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a><a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a><a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->
+<div class="hero"><div class="eyebrow">DSM-5-TR Teaching Review</div><h1>Substance Use Disorders</h1>
+<p>Clinical Companion Knowledge Library: for counselors and counseling students</p>
+<p class="by">Brian Campbell, Ph.D.</p>
+<p class="ai">Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.</p></div>
+<div class="tools"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="substance-use-teaching-overview.pdf" target="_blank" rel="noopener">Download or print the PDF</a></div>
+<div class="paper">
+<h1 id="what-it-is">1. What it is</h1>
+<p>A substance use disorder (SUD) is a problematic pattern of using alcohol or another drug that continues despite clear harm. DSM-5-TR uses one set of 11 criteria across substances (alcohol, cannabis, opioids, stimulants, sedatives, and others) and rates severity by how many are met (American Psychiatric Association [APA], 2022).</p>
+<p><strong>How common:</strong> in the U.S., lifetime alcohol use disorder was 29.1% (13.9% in the past year), yet <strong>only 19.8% had ever been treated</strong> (Grant et al., 2015). Lifetime drug use disorder was 9.9% (3.9% in the past year) (Grant et al., 2016).</p>
+<p><strong>Rarely alone:</strong> across 22 surveys, people with SUDs had much higher odds of depression and anxiety; illicit drug use disorder carried nearly four times the odds of major depression (OR 3.80) (Lai et al., 2015).</p>
+<p><strong>Counselor framing:</strong> addiction is a treatable condition, not simply a moral failure. Most people with an SUD never receive treatment, so every counselor and pastor needs to screen for it.</p>
+<h1 id="core-symptoms-to-watch-for">2. Core symptoms to watch for</h1>
+<p>DSM-5-TR criteria, paraphrased (APA, 2022); use the manual itself for formal diagnosis. A problematic pattern causing distress or impairment, with <strong>2 or more of 11</strong> within 12 months:</p>
+<ul>
+<li><p><strong>Impaired control:</strong> using more or longer than intended; wanting or failing to cut down; much time spent getting, using, or recovering; craving.</p></li>
+<li><p><strong>Social impairment:</strong> failing major duties at work, school, or home; continuing despite relationship problems; giving up important activities.</p></li>
+<li><p><strong>Risky use:</strong> use in physically dangerous situations; continuing despite known physical or psychological harm.</p></li>
+<li><p><strong>Physical dependence:</strong> tolerance and withdrawal (these two do not count when a medication is taken as prescribed).</p></li>
+<li><p><strong>Severity:</strong> mild (2 to 3 criteria), moderate (4 to 5), severe (6 or more). Specifiers include early or sustained remission and "in a controlled environment."</p></li>
+</ul>
+<p><strong>Screening:</strong> the 3-question AUDIT-C detected heavy drinking as well as the full 10-item AUDIT (AUROC 0.891 vs. 0.881) (Bush et al., 1998). Ask about every substance, including prescription medications.</p>
+<p><strong>Suicide risk:</strong> suicide rates were about 10 times expected in alcohol use disorder, 13.5 times in opioid use disorder, and nearly 17 times with mixed drug use (Wilcox et al., 2004). Ask directly, especially during intoxication, withdrawal, and relapse.</p>
+<p><strong>When counselors must refer (general clinical consensus):</strong> refer for medical care when there is risk of dangerous withdrawal (alcohol, benzodiazepines), opioid use (overdose risk; medication treatment), pregnancy, suicidality, or serious medical or psychiatric illness.</p>
+<h1 id="frequently-used-assessment-instruments">3. Frequently used assessment instruments</h1>
+<p>These are among the most widely used measures for screening, rating severity, and tracking progress in substance use disorders. <strong>Screening tools do not diagnose;</strong> a positive screen calls for a clinical interview against DSM-5-TR criteria. Click an instrument’s website to find it.</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 22%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Instrument</strong></th>
+<th><strong>Best used for</strong></th>
+<th><strong>Format</strong></th>
+<th><strong>Purchase required?</strong></th>
+<th><strong>Training or qualification</strong></th>
+<th><strong>Where to find it</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>AUDIT</strong> (Alcohol Use Disorders Identification Test)</td>
+<td>Screening for hazardous and harmful drinking; first 3 items form the brief AUDIT-C.</td>
+<td>Self-report or interview, 10 items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.who.int/publications/i/item/who-msd-msb-01.6a"><u>World Health Organization</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>ASSIST</strong> (Alcohol, Smoking and Substance Involvement Screening Test)</td>
+<td>Screening risk across alcohol, tobacco, and other drugs.</td>
+<td>Interview, 8 questions</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.who.int/publications/i/item/978924159938-2"><u>World Health Organization</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>DAST-10</strong> (Drug Abuse Screening Test)</td>
+<td>Screening for problems from drug use (other than alcohol).</td>
+<td>Self-report, 10 yes/no items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1016/0306-4603(82)90005-3"><u>Original article</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>CRAFFT 2.1</strong></td>
+<td>Substance use screening for teens and young adults ages 12 to 21.</td>
+<td>Self-report or interview, a few minutes</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://crafft.org/"><u>CRAFFT website</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>APA Level 2 Substance Use</strong> (adapted from NIDA-modified ASSIST)</td>
+<td>Brief follow-up of substance use found on screening; adult and youth versions.</td>
+<td>Self-report, brief</td>
+<td>No (free from the APA for clinical use)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.psychiatry.org/psychiatrists/practice/dsm/educational-resources/assessment-measures"><u>APA assessment measures</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>SASSI-4 / SASSI-A3</strong> (Substance Abuse Subtle Screening Inventory)</td>
+<td>Likelihood of a substance use disorder, including in people who minimize use; adult and adolescent versions.</td>
+<td>Self-report, about 15 minutes</td>
+<td>Yes</td>
+<td>★ Level B</td>
+<td><a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/store/usd/p/100001916"><u>Pearson</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>PHQ-9</strong> (Patient Health Questionnaire-9)</td>
+<td>Screening for co-occurring depression.</td>
+<td>Self-report, 9 items, about 2 minutes</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.phqscreeners.com/"><u>PHQ Screeners site</u></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>★ = requires professional qualification to purchase or specialized training.</strong> Publishers sell these tests only to qualified users. At Pearson, <strong>Level B</strong> generally means a master’s degree in a related field with formal assessment training, or a health care license; <strong>Level C</strong> means a doctorate in psychology or a related field with formal assessment training, or state licensure in a related field (<a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/professional-assessments/ordering/how-to-order/qualifications/qualifications-policy.html"><u>Pearson qualifications policy</u></a>). MHS, PAR, and WPS use similar levels. Check each publisher’s page before ordering. "Original article" links go to the published study that introduced a free scale that has no official website; the scale can usually be obtained there or from its authors.</p>
+<h1 id="what-works-treatment-and-the-evidence">4. What works: treatment and the evidence</h1>
+<p><strong>Bottom line for class:</strong> several approaches work about equally well: <a target="_blank" rel="noopener" href="https://societyofclinicalpsychology.org/psychological-treatments/cognitive-behavioral-therapy-for-substance-use-disorders/"><u>CBT</u></a> and relapse prevention, <a target="_blank" rel="noopener" href="https://motivationalinterviewing.org/"><u>motivational interviewing</u></a>, <a target="_blank" rel="noopener" href="https://societyofclinicalpsychology.org/psychological-treatments/contingency-management-for-substance-use-disorder/"><u>contingency management</u></a>, and 12-step facilitation. For opioid and alcohol use disorders, medication adds real benefit, and for opioids it saves lives.</p>
+<p><strong>CBT (honest effect sizes):</strong></p>
+<ul>
+<li><p>Across 53 trials, CBT had a small overall effect (g = 0.15) that faded by 12 months, but a large effect against no treatment (g = 0.80) and for cannabis (g = 0.51) (Magill &amp; Ray, 2009).</p></li>
+<li><p>An updated meta-analysis found CBT beat minimal or no treatment by a moderate margin, but was <strong>not better than other specific therapies</strong> such as motivational or 12-step approaches (Magill et al., 2019).</p></li>
+<li><p>Relapse prevention (identifying high-risk situations and coping with them) was effective, especially for alcohol and when combined with medication (Irvin et al., 1999).</p></li>
+</ul>
+<p><strong>Other approaches.</strong> Psychosocial treatments for drug use have moderate effects overall, and <strong>contingency management</strong> (rewards for negative drug tests) had the strongest (Dutra et al., 2008): d = 0.42 overall and about 0.65 for opioids and cocaine (Prendergast et al., 2006). <strong>Motivational interviewing</strong> produced small, durable effects against weak comparisons (g = 0.28) but was not better than other specific treatments (Lundahl et al., 2010).</p>
+<p><strong>12-step programs.</strong> In a Cochrane review of 27 studies (10,565 people), manualized <a target="_blank" rel="noopener" href="https://www.aa.org/"><u>AA</u></a> and twelve-step facilitation <strong>improved continuous abstinence at 12 months</strong> compared with other treatments such as CBT (RR 1.21, high-certainty evidence) (Kelly et al., 2020).</p>
+<p><strong>Medication (referral notes).</strong> For alcohol, naltrexone (number needed to treat 12 to prevent heavy drinking) and acamprosate (12 to prevent any drinking) help (Jonas et al., 2014). In the COMBINE trial, naltrexone or a combined behavioral intervention each improved abstinence alongside medical management (Anton et al., 2006). For opioids, buprenorphine keeps people in treatment and at high doses reduces illicit use (Mattick et al., 2014); death rates were about 3 times higher out of methadone treatment than in it (Sordo et al., 2017). <strong>Never discourage <a target="_blank" rel="noopener" href="https://www.fda.gov/drugs/information-drug-class/information-about-medications-opioid-use-disorder-moud"><u>medication for opioid use disorder</u></a>.</strong></p>
+<p><strong>CBT for SUDs: how it is used:</strong></p>
+<ul>
+<li><p><strong>Build motivation</strong> before change; resolve ambivalence (Lundahl et al., 2010).</p></li>
+<li><p><strong>Map triggers and high-risk situations</strong>, and practice coping and refusal skills (Irvin et al., 1999).</p></li>
+<li><p><strong>Challenge permission-giving and hopeless beliefs</strong>: "I can handle just one," "I deserve it," "I can’t cope without it," "I’ve already blown it, so I might as well keep going" (Magill et al., 2019).</p></li>
+<li><p><strong>Plan for lapses</strong> so a slip does not become a full relapse, and connect the person to ongoing peer support (Kelly et al., 2020).</p></li>
+</ul>
+<h1 id="religion-spirituality-and-christian-integration-what-the-evidence-shows">5. Religion, spirituality, and Christian integration: what the evidence shows</h1>
+<p><strong>Faith is already part of most treatment.</strong> About 73% of U.S. addiction treatment programs include a spiritual element, mostly through 12-step programs that emphasize reliance on God or a Higher Power (Grim &amp; Grim, 2019).</p>
+<p><strong>Spirituality helps explain how recovery works.</strong> In AA, attending meetings increased spiritual practices, and this growth partly explained AA’s better drinking outcomes (Kelly et al., 2011).</p>
+<p><strong>Intervention studies:</strong></p>
+<ul>
+<li><p><strong>Spiritual and religious interventions overall</strong> (20 randomized trials, 3,700 people): a small but significant advantage over other treatments (d = 0.18). Because only 12-step approaches were compared head to head, this does not yet show that other faith-based treatments are superior (Hai et al., 2019).</p></li>
+<li><p><strong>Christian faith-based treatment</strong> (not randomized): compared with a secular program, residents of a Christian program grew more in religiosity, and that growth helped explain their abstinence 6 months after treatment (Yeung, 2022).</p></li>
+<li><p><strong>CBT in the church:</strong> a computer-delivered CBT program led by church health advisors in Black churches (n = 40) was feasible, with good retention and reduced substance use; a randomized trial is still needed (Jordan et al., 2021).</p></li>
+</ul>
+<p><strong>Honest summary for teaching:</strong></p>
+<ol type="1">
+<li><p>CBT, motivational interviewing, contingency management, 12-step facilitation, and (for alcohol and opioids) medication are the evidence base. Faith integration supports them; it does not replace them.</p></li>
+<li><p>Spiritual growth is one of the ways recovery works, and 12-step approaches have the strongest evidence among faith-oriented treatments.</p></li>
+<li><p>Christian-specific programs show promising but non-randomized results. Combine them with evidence-based care and medical treatment, never in place of it.</p></li>
+</ol>
+<h1 id="practical-christian-integration-notes">6. Practical Christian-integration notes</h1>
+<p>These apply Dr. Campbell’s identify, challenge, replace-with-Scripture method within CBT and relapse prevention. Clinical items rest on the research above. Pastoral items are theological application, not research findings.</p>
+<ul>
+<li><p><strong>Identify (clinical).</strong> Ask about faith as a resource and as a source of shame. Listen for beliefs such as "God could never forgive what I’ve done," "If I had enough faith I wouldn’t need treatment or medication," and "I’ve relapsed, so I’m not really a Christian." To identify deeper false beliefs, see: <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/core-beliefs.html"><u>Core Beliefs</u></a>, <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf"><u>Parental Messages</u></a>, or use the <a target="_blank" rel="noopener" href="https://www.beliefcounselor.com/false-belief-finder"><u>Semantic Search Tool</u></a>.</p></li>
+<li><p><strong>Challenge (clinical).</strong> Test permission-giving thoughts and shame with evidence and a lapse plan. Correct the belief that medication for opioid use disorder is "trading one drug for another" (Mattick et al., 2014; Sordo et al., 2017). <strong>Possible cognitive errors</strong> to watch for, with their definitions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf"><u>Belief Counseling Cognitive Errors Checklist</u></a> and the symptoms they tend to feed:</p></li>
+</ul>
+<ul>
+<li><p><strong>All-or-nothing thinking</strong> — no middle ground. <em>Feeds:</em> lapses turning into relapse. <em>Sounds like:</em> “I slipped once, so I’ve blown it; I might as well keep using.”</p></li>
+<li><p><strong>Emotional reasoning</strong> — I feel it, so it must be true. <em>Feeds:</em> giving in to cravings. <em>Sounds like:</em> “I need it so badly, I have to have it.”</p></li>
+<li><p><strong>Global labeling</strong> — one mistake becomes who I am. <em>Feeds:</em> shame. <em>Sounds like:</em> “I’m just an addict.”</p></li>
+<li><p><strong>Blaming others</strong> — others are responsible for how I feel. <em>Feeds:</em> continued use. <em>Sounds like:</em> “I only drink because of my wife.”</p></li>
+<li><p><strong>Fortune telling</strong> — predicting a bad outcome. <em>Feeds:</em> hopelessness. <em>Sounds like:</em> “I’ll never stay clean.”</p></li>
+<li><p><strong>Unrealistic expectations</strong> — expecting too much of myself or others. <em>Feeds:</em> refusing treatment. <em>Sounds like:</em> “If I had enough faith, I wouldn’t need treatment.”</p></li>
+</ul>
+<ul>
+<li><p><strong>Questions to dispute the belief.</strong> Have the client choose questions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf"><u>Questioning False Beliefs</u></a> form that “speak to” the belief. To see how, watch Dr. Campbell’s video <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZjR0Mx1zEMY"><u>Integrated Christian Counseling: Questioning Your Beliefs</u></a>. Selected questions that fit the errors above:</p></li>
+</ul>
+<ul>
+<li><p>“Am I keeping things in perspective?” and “Are there things that I can learn from my mistakes?” <em>For:</em> all-or-nothing thinking.</p></li>
+<li><p>“Will I shrivel up and die if this happens?” <em>For:</em> emotional reasoning about cravings.</p></li>
+<li><p>“Doesn’t everyone have good points and bad points?” and “Are my sins really too big for the God of the universe to forgive?” <em>For:</em> global labeling and “God could never forgive me”.</p></li>
+<li><p>“Hasn’t God given me free will and the ability to change?” <em>For:</em> blaming others.</p></li>
+<li><p>“Am I completely destined to stay this way my whole life?” <em>For:</em> fortune telling.</p></li>
+<li><p>“How does the Bible speak to this?” <em>For:</em> unrealistic expectations about treatment.</p></li>
+</ul>
+<ul>
+<li><p><strong>Replace (pastoral).</strong> Offer Scripture of freedom, forgiveness, and strength in temptation:</p></li>
+</ul>
+<ul>
+<li><p>“No temptation has seized you except what is common to man. And God is faithful; He will not let you be tempted beyond what you can bear. But when you are tempted, He will also provide an escape, so that you can stand up under it.” (1 Corinthians 10:13). Build the “escape” into the relapse plan.</p></li>
+<li><p>“Therefore if anyone is in Christ, he is a new creation. The old has passed away. Behold, the new has come!” (2 Corinthians 5:17)</p></li>
+<li><p>“Because of the loving devotion of the LORD we are not consumed, for His mercies never fail. They are new every morning; great is Your faithfulness!” (Lamentations 3:22–23). A lapse is not the end.</p></li>
+<li><p>“Therefore confess your sins to each other and pray for each other so that you may be healed.” (James 5:16). Accountability and peer support.</p></li>
+</ul>
+<ul>
+<li><p><strong>Faith community (clinical).</strong> Connect the person with a recovery group, such as AA or a church-based recovery ministry, and a sponsor or accountability partner (Kelly et al., 2020; Kelly et al., 2011).</p></li>
+<li><p><strong>Ministers:</strong> screen with the AUDIT-C, respond without shame, and refer for medical assessment before anyone stops alcohol, sedatives, or opioids suddenly.</p></li>
+</ul>
+<h1 id="quick-classroom-takeaways">7. Quick classroom takeaways</h1>
+<ul>
+<li><p>Diagnose by 2 or more of 11 criteria in a year; rate mild, moderate, or severe. Screen everyone (AUDIT-C), and ask about suicide and overdose risk.</p></li>
+<li><p>CBT, motivational interviewing, contingency management, and 12-step facilitation all work; medication is essential for opioid use disorder and helpful for alcohol use disorder.</p></li>
+<li><p>Faith and fellowship are part of how recovery works. Replace shame and "I’ve blown it" thinking with the truth of God’s forgiveness and new mercies.</p></li>
+<li><p>Screen adults with the AUDIT or ASSIST and teens with the CRAFFT; all three are free.</p></li>
+</ul>
+<h1 id="sources-note">Sources note</h1>
+<p>All 22 references were checked against Crossref and PubMed (Oct 31, 2026), and the figures quoted were checked against each study’s abstract. Each DOI is a live link to the publisher record. Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).</p>
+<h1 id="references">References</h1><div class="refs">
+<p>American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders (5th ed., text rev.).</em> <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.books.9780890425787"><u>https://doi.org/10.1176/appi.books.9780890425787</u></a></p>
+<p>Anton, R. F., O'Malley, S. S., Ciraulo, D. A., Cisler, R. A., Couper, D., Donovan, D. M., Gastfriend, D. R., Hosking, J. D., Johnson, B. A., LoCastro, J. S., Longabaugh, R., Mason, B. J., Mattson, M. E., Miller, W. R., Pettinati, H. M., Randall, C. L., Swift, R., Weiss, R. D., Williams, L. D., . . . COMBINE Study Research Group. (2006). Combined pharmacotherapies and behavioral interventions for alcohol dependence: The COMBINE study: A randomized controlled trial. <em>JAMA, 295</em>(17), 2003–2017. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/jama.295.17.2003"><u>https://doi.org/10.1001/jama.295.17.2003</u></a></p>
+<p>Bush, K., Kivlahan, D. R., McDonell, M. B., Fihn, S. D., &amp; Bradley, K. A. (1998). The AUDIT alcohol consumption questions (AUDIT-C): An effective brief screening test for problem drinking. <em>Archives of Internal Medicine, 158</em>(16), 1789–1795. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/archinte.158.16.1789"><u>https://doi.org/10.1001/archinte.158.16.1789</u></a></p>
+<p>Dutra, L., Stathopoulou, G., Basden, S. L., Leyro, T. M., Powers, M. B., &amp; Otto, M. W. (2008). A meta-analytic review of psychosocial interventions for substance use disorders. <em>American Journal of Psychiatry, 165</em>(2), 179–187. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.ajp.2007.06111851"><u>https://doi.org/10.1176/appi.ajp.2007.06111851</u></a></p>
+<p>Grant, B. F., Goldstein, R. B., Saha, T. D., Chou, S. P., Jung, J., Zhang, H., Pickering, R. P., Ruan, W. J., Smith, S. M., Huang, B., &amp; Hasin, D. S. (2015). Epidemiology of DSM-5 alcohol use disorder: Results from the National Epidemiologic Survey on Alcohol and Related Conditions III. <em>JAMA Psychiatry, 72</em>(8), 757–766. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/jamapsychiatry.2015.0584"><u>https://doi.org/10.1001/jamapsychiatry.2015.0584</u></a></p>
+<p>Grant, B. F., Saha, T. D., Ruan, W. J., Goldstein, R. B., Chou, S. P., Jung, J., Zhang, H., Smith, S. M., Pickering, R. P., Huang, B., &amp; Hasin, D. S. (2016). Epidemiology of DSM-5 drug use disorder: Results from the National Epidemiologic Survey on Alcohol and Related Conditions-III. <em>JAMA Psychiatry, 73</em>(1), 39–47. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/jamapsychiatry.2015.2132"><u>https://doi.org/10.1001/jamapsychiatry.2015.2132</u></a></p>
+<p>Grim, B. J., &amp; Grim, M. E. (2019). Belief, behavior, and belonging: How faith is indispensable in preventing and recovering from substance abuse. <em>Journal of Religion and Health, 58</em>(5), 1713–1750. <a target="_blank" rel="noopener" href="https://doi.org/10.1007/s10943-019-00876-w"><u>https://doi.org/10.1007/s10943-019-00876-w</u></a></p>
+<p>Hai, A. H., Franklin, C., Park, S., DiNitto, D. M., &amp; Aurelio, N. (2019). The efficacy of spiritual/religious interventions for substance use problems: A systematic review and meta-analysis of randomized controlled trials. <em>Drug and Alcohol Dependence, 202</em>, 134–148. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.drugalcdep.2019.04.045"><u>https://doi.org/10.1016/j.drugalcdep.2019.04.045</u></a></p>
+<p>Irvin, J. E., Bowers, C. A., Dunn, M. E., &amp; Wang, M. C. (1999). Efficacy of relapse prevention: A meta-analytic review. <em>Journal of Consulting and Clinical Psychology, 67</em>(4), 563–570. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/0022-006X.67.4.563"><u>https://doi.org/10.1037/0022-006X.67.4.563</u></a></p>
+<p>Jonas, D. E., Amick, H. R., Feltner, C., Bobashev, G., Thomas, K., Wines, R., Kim, M. M., Shanahan, E., Gass, C. E., Rowe, C. J., &amp; Garbutt, J. C. (2014). Pharmacotherapy for adults with alcohol use disorders in outpatient settings: A systematic review and meta-analysis. <em>JAMA, 311</em>(18), 1889–1900. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/jama.2014.3628"><u>https://doi.org/10.1001/jama.2014.3628</u></a></p>
+<p>Jordan, A., Babuscio, T., Nich, C., &amp; Carroll, K. M. (2021). A feasibility study providing substance use treatment in the Black church. <em>Journal of Substance Abuse Treatment, 124</em>, 108218. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.jsat.2020.108218"><u>https://doi.org/10.1016/j.jsat.2020.108218</u></a></p>
+<p>Kelly, J. F., Stout, R. L., Magill, M., Tonigan, J. S., &amp; Pagano, M. E. (2011). Spirituality in recovery: A lagged mediational analysis of Alcoholics Anonymous' principal theoretical mechanism of behavior change. <em>Alcoholism: Clinical and Experimental Research, 35</em>(3), 454–463. <a target="_blank" rel="noopener" href="https://doi.org/10.1111/j.1530-0277.2010.01362.x"><u>https://doi.org/10.1111/j.1530-0277.2010.01362.x</u></a></p>
+<p>Kelly, J. F., Humphreys, K., &amp; Ferri, M. (2020). Alcoholics Anonymous and other 12-step programs for alcohol use disorder. <em>Cochrane Database of Systematic Reviews, 2020</em>(3), CD012880. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/14651858.CD012880.pub2"><u>https://doi.org/10.1002/14651858.CD012880.pub2</u></a></p>
+<p>Lai, H. M. X., Cleary, M., Sitharthan, T., &amp; Hunt, G. E. (2015). Prevalence of comorbid substance use, anxiety and mood disorders in epidemiological surveys, 1990–2014: A systematic review and meta-analysis. <em>Drug and Alcohol Dependence, 154</em>, 1–13. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.drugalcdep.2015.05.031"><u>https://doi.org/10.1016/j.drugalcdep.2015.05.031</u></a></p>
+<p>Lundahl, B. W., Kunz, C., Brownell, C., Tollefson, D., &amp; Burke, B. L. (2010). A meta-analysis of motivational interviewing: Twenty-five years of empirical studies. <em>Research on Social Work Practice, 20</em>(2), 137–160. <a target="_blank" rel="noopener" href="https://doi.org/10.1177/1049731509347850"><u>https://doi.org/10.1177/1049731509347850</u></a></p>
+<p>Magill, M., &amp; Ray, L. A. (2009). Cognitive-behavioral treatment with adult alcohol and illicit drug users: A meta-analysis of randomized controlled trials. <em>Journal of Studies on Alcohol and Drugs, 70</em>(4), 516–527. <a target="_blank" rel="noopener" href="https://doi.org/10.15288/jsad.2009.70.516"><u>https://doi.org/10.15288/jsad.2009.70.516</u></a></p>
+<p>Magill, M., Ray, L., Kiluk, B., Hoadley, A., Bernstein, M., Tonigan, J. S., &amp; Carroll, K. (2019). A meta-analysis of cognitive-behavioral therapy for alcohol or other drug use disorders: Treatment efficacy by contrast condition. <em>Journal of Consulting and Clinical Psychology, 87</em>(12), 1093–1105. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/ccp0000447"><u>https://doi.org/10.1037/ccp0000447</u></a></p>
+<p>Mattick, R. P., Breen, C., Kimber, J., &amp; Davoli, M. (2014). Buprenorphine maintenance versus placebo or methadone maintenance for opioid dependence. <em>Cochrane Database of Systematic Reviews, 2014</em>(2), CD002207. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/14651858.CD002207.pub4"><u>https://doi.org/10.1002/14651858.CD002207.pub4</u></a></p>
+<p>Prendergast, M., Podus, D., Finney, J., Greenwell, L., &amp; Roll, J. (2006). Contingency management for treatment of substance use disorders: A meta-analysis. <em>Addiction, 101</em>(11), 1546–1560. <a target="_blank" rel="noopener" href="https://doi.org/10.1111/j.1360-0443.2006.01581.x"><u>https://doi.org/10.1111/j.1360-0443.2006.01581.x</u></a></p>
+<p>Sordo, L., Barrio, G., Bravo, M. J., Indave, B. I., Degenhardt, L., Wiessing, L., Ferri, M., &amp; Pastor-Barriuso, R. (2017). Mortality risk during and after opioid substitution treatment: Systematic review and meta-analysis of cohort studies. <em>BMJ, 357</em>, j1550. <a target="_blank" rel="noopener" href="https://doi.org/10.1136/bmj.j1550"><u>https://doi.org/10.1136/bmj.j1550</u></a></p>
+<p>Wilcox, H. C., Conner, K. R., &amp; Caine, E. D. (2004). Association of alcohol and drug use disorders and completed suicide: An empirical review of cohort studies. <em>Drug and Alcohol Dependence, 76</em>(Suppl.), S11–S19. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.drugalcdep.2004.08.003"><u>https://doi.org/10.1016/j.drugalcdep.2004.08.003</u></a></p>
+<p>Yeung, J. W. K. (2022). Faith-based intervention, change of religiosity, and abstinence of substance addicts. <em>Brazilian Journal of Psychiatry, 44</em>(1), 46–56. <a target="_blank" rel="noopener" href="https://doi.org/10.1590/1516-4446-2020-1576"><u>https://doi.org/10.1590/1516-4446-2020-1576</u></a></p>
+<p><em>Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All 22 references and DOIs verified via Crossref and PubMed (Saturday, Oct 31, 2026). Effect sizes as reported in the cited sources.</em></p>
+</div>
+</div>
+<div class="tools" style="padding-bottom:6px"><a class="btn" href="../../members/assessment.html#rvlist" onclick="try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){history.back();return false;}}catch(e){}">&#8592; Back</a></div>
+<div class="foot">Teaching overview for counselors. Not a substitute for the DSM-5-TR or clinical judgment. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
+<script>(function(){var b=document.getElementById('back');b.addEventListener('click',function(e){
+try{var r=document.referrer;if(r&&new URL(r).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});
+try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){document.body.firstElementChild.scrollIntoView({block:'start'});}}catch(e){}})();</script><!--navjs--><script>
+(function(){
+var dds=document.querySelectorAll('.nav .dd'),t;
+function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
+dds.forEach(function(d){
+  var b=d.firstChild;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll();if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}});
+  d.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();closeAll();b.focus();});
+  d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(closeAll,500);});
+  d.addEventListener('mouseenter',function(){clearTimeout(t);});
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+</script><!--/navjs--></body></html>

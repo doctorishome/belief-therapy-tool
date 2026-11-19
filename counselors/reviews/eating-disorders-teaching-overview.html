@@ -1,0 +1,308 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eating Disorders · DSM-5-TR Teaching Review</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+
+.nav a.l:hover{border-color:var(--gold)}
+.nav a.on{color:#fff;border-color:var(--gold)}
+
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
+
+.nav .acct{display:inline-flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
+
+.nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
+
+.nav .dd{position:relative}
+
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
+
+.nav .dd>button::after{content:" \25BE";color:var(--gold);font-size:.8em}
+
+.nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
+
+.nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
+
+.nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
+
+.nav .menu a:hover{background:var(--cream)}
+
+.nav .menu a.sub{padding-left:38px;font-size:.92rem}
+.nav .menu a.sub::before{content:"\21B3  ";color:var(--gold)}
+
+.nav .menu a.sub.on{padding-left:35px}
+
+.nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
+
+.nav .dd.open .menu{display:block}
+
+.nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
+
+.nav .menu .x:hover{color:var(--navy);text-decoration:underline}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:8px 12px}}
+@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem;white-space:nowrap}.nav a.pub{font-size:.78rem;padding:4px 10px;white-space:nowrap}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
+
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.65}
+a{color:var(--navy2)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:46px 22px 40px;text-align:center}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.6rem);margin:0 0 10px;line-height:1.2}
+.hero p{max-width:760px;margin:4px auto 0;color:#dfe6f2;font-size:1rem}
+.hero .by{font-size:1.05rem;color:#fff;margin-top:12px}
+.hero .ai{font-size:.85rem;font-style:italic;color:#c8d1e0}
+.tools{max-width:960px;margin:0 auto;padding:22px 20px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:9px 20px;border-radius:24px;border:0;font:inherit;font-weight:bold;cursor:pointer}
+.btn.ghost{background:#fff;border:1px solid var(--navy);color:var(--navy)}
+.paper{max-width:960px;margin:16px auto 0;background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:10px 34px 30px;box-shadow:0 2px 8px rgba(18,40,76,.06)}
+.paper h1{color:var(--navy);font-size:1.45rem;margin:30px 0 10px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+.paper h2{color:var(--navy);font-size:1.15rem;margin:22px 0 6px}
+.paper p{margin:8px 0}
+.paper li{margin:4px 0}.paper li p{margin:0}
+.paper strong{color:var(--navy)}
+.paper table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.9rem;display:block;overflow-x:auto}
+.paper th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;border:1px solid var(--navy)}
+.paper th strong,.paper th a{color:#fff}
+.paper td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+.paper tr:nth-child(even) td{background:#f7f3e8}
+.paper td p,.paper th p{margin:0}
+.paper .refs p{font-size:.88rem;padding-left:2em;text-indent:-2em;margin:6px 0;word-break:break-word}
+.paper .final{font-size:.85rem;color:var(--mut);font-style:italic;margin-top:18px}
+.foot{margin:34px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:620px){.paper{padding:6px 16px 22px;border-radius:0}}
+@media print{.nav,.tools,.foot{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
+</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a class="l" href="../../members/index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a class="l" href="../../members/belief-counseling.html">Belief Counseling</a><a class="l" href="../../members/process.html">The Process</a><a class="l on" href="../../members/assessment.html">Traditional Assessment</a><a class="l" href="../../members/tips.html">Professional Tips</a><a class="l" href="../../members/library.html">Library</a><a class="l" target="_top" href="https://www.beliefcounselor.com/counselor-scriptures">Scripture Lookup</a><a class="l" href="../../counselors/membership.html">Membership</a><span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a><a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a><a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->
+<div class="hero"><div class="eyebrow">DSM-5-TR Teaching Review</div><h1>Eating Disorders</h1>
+<p>Clinical Companion Knowledge Library: for counselors and counseling students</p>
+<p class="by">Brian Campbell, Ph.D.</p>
+<p class="ai">Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.</p></div>
+<div class="tools"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="eating-disorders-teaching-overview.pdf" target="_blank" rel="noopener">Download or print the PDF</a></div>
+<div class="paper">
+<h1 id="what-it-is">1. What it is</h1>
+<p>Eating disorders are persistent disturbances in eating and eating-related behavior that harm physical health or functioning. DSM-5-TR’s chapter "Feeding and Eating Disorders" includes anorexia nervosa, bulimia nervosa, binge-eating disorder, and avoidant/restrictive food intake disorder (American Psychiatric Association [APA], 2022). In anorexia and bulimia, self-worth depends heavily on weight and shape.</p>
+<p><strong>How common:</strong> in a U.S. national sample, lifetime prevalence was 0.80% for anorexia nervosa, 0.28% for bulimia nervosa, and 0.85% for binge-eating disorder, all higher in women (Udo &amp; Grilo, 2018). Across 94 studies worldwide, 8.4% of women and 2.2% of men had a lifetime eating disorder (Galmiche et al., 2019).</p>
+<p><strong>Among the deadliest mental disorders:</strong> across 36 studies, death rates were nearly 6 times expected in anorexia nervosa (standardized mortality ratio 5.86) and about twice expected in bulimia nervosa (1.93); one in five deaths in anorexia was a suicide (Arcelus et al., 2011).</p>
+<p><strong>Counselor framing:</strong> eating disorders are serious medical-psychiatric illnesses, not choices or vanity. Medical monitoring comes first; counseling works alongside it.</p>
+<h1 id="core-symptoms-to-watch-for">2. Core symptoms to watch for</h1>
+<p>DSM-5-TR criteria, paraphrased (APA, 2022); use the manual itself for formal diagnosis.</p>
+<ul>
+<li><p><strong>Anorexia nervosa:</strong> restricting food intake to a significantly low body weight; intense fear of gaining weight (or persistent behavior that prevents weight gain); and a disturbed view of one’s body or failure to recognize the seriousness of low weight. Subtypes: restricting, or binge-eating/purging.</p></li>
+<li><p><strong>Bulimia nervosa:</strong> recurrent binge eating (a large amount with loss of control) and recurrent compensatory behavior (vomiting, laxatives, fasting, excessive exercise), both at least weekly for 3 months, with self-evaluation unduly shaped by weight and shape, at normal or higher weight.</p></li>
+<li><p><strong>Binge-eating disorder:</strong> recurrent binges at least weekly for 3 months, with marked distress and 3 or more of: eating rapidly, until uncomfortably full, large amounts when not hungry, alone out of embarrassment, and feeling disgusted, depressed, or guilty afterward; no regular compensatory behavior.</p></li>
+<li><p><strong>Avoidant/restrictive food intake disorder:</strong> restricted eating that causes weight loss, nutritional deficiency, or impairment, driven by low interest, sensory aversion, or fear of consequences (such as choking) rather than body-image concerns.</p></li>
+</ul>
+<p><strong>Screening:</strong> the 5-question SCOFF was developed as a brief screening tool for eating disorders (Morgan et al., 1999). Ask directly about restricting, bingeing, purging, and compensatory exercise; many people hide these.</p>
+<p><strong>Suicide risk:</strong> suicide is the second leading cause of death in anorexia nervosa, and roughly one-quarter to one-third of people with anorexia, bulimia, or binge-eating disorder have thought about suicide (Smith et al., 2018).</p>
+<p><strong>When counselors must refer (general clinical consensus):</strong> every client needs a medical evaluation. Refer urgently for very low or rapidly falling weight, fainting, chest pain, frequent purging, or suicidality. Work in a team with a physician and a dietitian.</p>
+<h1 id="frequently-used-assessment-instruments">3. Frequently used assessment instruments</h1>
+<p>These are among the most widely used measures for screening, rating severity, and tracking progress in eating disorders. <strong>Screening tools do not diagnose;</strong> a positive screen calls for a clinical interview against DSM-5-TR criteria. Click an instrument’s website to find it.</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 22%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Instrument</strong></th>
+<th><strong>Best used for</strong></th>
+<th><strong>Format</strong></th>
+<th><strong>Purchase required?</strong></th>
+<th><strong>Training or qualification</strong></th>
+<th><strong>Where to find it</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>SCOFF</strong></td>
+<td>Very quick screen for anorexia and bulimia.</td>
+<td>Self-report or interview, 5 yes/no questions</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1136/bmj.319.7223.1467"><u>Original article</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>EAT-26</strong> (Eating Attitudes Test)</td>
+<td>Screening for eating disorder risk.</td>
+<td>Self-report, 26 items, about 2 minutes</td>
+<td>No (free; see permission terms)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.eat-26.com/"><u>EAT-26 website</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>EDE-Q</strong> (Eating Disorder Examination Questionnaire)</td>
+<td>Eating disorder attitudes and behaviors over the past 28 days.</td>
+<td>Self-report, 28 items</td>
+<td>No (free for non-commercial use)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://credo-oxford.com/7.2.html"><u>CREDO, University of Oxford</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>EDE</strong> (Eating Disorder Examination)</td>
+<td>The gold-standard eating disorder interview.</td>
+<td>Clinician interview, about 60 minutes</td>
+<td>No</td>
+<td>★ Training required for reliable use</td>
+<td><a target="_blank" rel="noopener" href="https://credo-oxford.com/7.2.html"><u>CREDO, University of Oxford</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>EDI-3</strong> (Eating Disorder Inventory-3)</td>
+<td>Eating disorder symptoms and related psychological traits, ages 13 to 53.</td>
+<td>Self-report, 91 items, about 20 minutes</td>
+<td>Yes</td>
+<td>★ Level B</td>
+<td><a target="_blank" rel="noopener" href="https://parinc.com/products/EDI-3"><u>PAR</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>BES</strong> (Binge Eating Scale)</td>
+<td>Severity of binge eating.</td>
+<td>Self-report, 16 items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1016/0306-4603(82)90024-7"><u>Original article</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>PHQ-9</strong> (Patient Health Questionnaire-9)</td>
+<td>Screening for co-occurring depression and suicidal thoughts.</td>
+<td>Self-report, 9 items, about 2 minutes</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.phqscreeners.com/"><u>PHQ Screeners site</u></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>★ = requires professional qualification to purchase or specialized training.</strong> Publishers sell these tests only to qualified users. At Pearson, <strong>Level B</strong> generally means a master’s degree in a related field with formal assessment training, or a health care license; <strong>Level C</strong> means a doctorate in psychology or a related field with formal assessment training, or state licensure in a related field (<a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/professional-assessments/ordering/how-to-order/qualifications/qualifications-policy.html"><u>Pearson qualifications policy</u></a>). MHS, PAR, and WPS use similar levels. Check each publisher’s page before ordering. "Original article" links go to the published study that introduced a free scale that has no official website; the scale can usually be obtained there or from its authors.</p>
+<h1 id="what-works-treatment-and-the-evidence">4. What works: treatment and the evidence</h1>
+<p><strong>Bottom line for class:</strong> <a target="_blank" rel="noopener" href="https://www.apa.org/ptsd-guideline/treatments/cognitive-behavioral-therapy"><u>CBT</u></a> is the first-line treatment for bulimia nervosa and binge-eating disorder. For adolescents with anorexia nervosa, <a target="_blank" rel="noopener" href="https://train2treat4ed.com/about"><u>family-based treatment</u></a> has the best evidence. Adult anorexia remains the hardest to treat, and several therapies work about equally well.</p>
+<p><strong>Evidence overview (honest findings):</strong></p>
+<ul>
+<li><p><strong>Bulimia and binge-eating disorder:</strong> therapist-led CBT beat wait-lists and other psychotherapies, was most effective in its manualized and enhanced forms, matched antidepressants at the end of treatment, and outperformed interpersonal therapy on symptoms after treatment (Linardon et al., 2017). CBT has kept its status as first-line therapy for bulimia (Hay, 2013).</p></li>
+<li><p><strong>Transdiagnostic CBT</strong> (<a target="_blank" rel="noopener" href="https://www.cbte.co/"><u>CBT-E</u></a>) treats the shared core of all eating disorders (Fairburn et al., 2003). In a trial with 154 outpatients who were not markedly underweight, it produced large, lasting improvement, and 51.3% were near the community norm at 60 weeks, regardless of diagnosis (Fairburn et al., 2009).</p></li>
+<li><p><strong>Binge-eating disorder:</strong> psychotherapy, mostly CBT, had large effects on binge eating, and CBT-based self-help had medium-to-large effects; medications had small effects (Hilbert et al., 2019). Lisdexamfetamine at 50 to 70 mg reduced binge days compared with placebo (McElroy et al., 2015).</p></li>
+<li><p><strong>Adolescent anorexia:</strong> family-based treatment produced more full remission than individual therapy at 6 and 12 months (Lock et al., 2010).</p></li>
+<li><p><strong>Adult anorexia:</strong> among 242 outpatients, enhanced CBT, focal psychodynamic therapy, and optimized usual care all increased weight, with no differences between them at 12 months (Zipfel et al., 2014).</p></li>
+</ul>
+<p><strong>CBT for eating disorders: how it is used.</strong> The core problem is an over-evaluation of shape, weight, and their control, which drives strict dieting; dieting sets up binges, and binges lead to compensatory behaviors (Fairburn et al., 2003). Treatment therefore:</p>
+<ul>
+<li><p><strong>Establishes regular eating</strong> (three meals and planned snacks) to break the diet–binge cycle, with weekly weighing done together (Fairburn et al., 2003).</p></li>
+<li><p><strong>Identifies and challenges</strong> beliefs that tie worth to weight: "I’m only acceptable if I’m thin," "If I eat this, I’ll lose control," "My body is disgusting" (Fairburn et al., 2003).</p></li>
+<li><p><strong>Addresses</strong> body checking and avoidance, perfectionism, low self-esteem, and mood triggers (Fairburn et al., 2009).</p></li>
+</ul>
+<h1 id="religion-spirituality-and-christian-integration-what-the-evidence-shows">5. Religion, spirituality, and Christian integration: what the evidence shows</h1>
+<p><strong>A secure relationship with God appears protective.</strong> Across 22 studies, deep, internalized faith and a secure relationship with God were linked to less disordered eating and body-image concern, while a superficial faith and an anxious relationship with God were linked to more (Akrawi et al., 2015).</p>
+<p><strong>Spiritual growth during treatment.</strong> Among 251 women in inpatient treatment, religiousness itself did not predict outcomes, but gains in spiritual well-being during treatment went with better eating attitudes, less body-shape concern, and better functioning (Smith et al., 2003).</p>
+<p><strong>Intervention studies (few, but promising):</strong></p>
+<ul>
+<li><p><strong>Spirituality group</strong> (randomized, 122 women inpatients): compared with cognitive or emotional-support groups, women in a spirituality group had lower psychological disturbance and eating-disorder symptoms at discharge and improved faster in the first 4 weeks (Richards et al., 2006).</p></li>
+<li><p><strong>Christian body affirmations</strong> (randomized, college women, mostly Christian): reading affirmations of God’s love and acceptance of their bodies significantly improved how women felt about their appearance after viewing thin-ideal images, compared with a control group; secular affirmations helped only marginally (Boyatzis et al., 2007).</p></li>
+</ul>
+<p><strong>Honest summary for teaching:</strong></p>
+<ol type="1">
+<li><p>CBT (including CBT-E), family-based treatment for adolescents, and medical monitoring are the evidence base. Faith integration supports them; it does not replace them.</p></li>
+<li><p>A secure, internalized faith is linked to less disordered eating, and spiritual growth during treatment tracks recovery.</p></li>
+<li><p>Faith-based interventions show early promise in small randomized studies, but no trial yet tests a full Christian-integrated CBT for eating disorders.</p></li>
+</ol>
+<h1 id="practical-christian-integration-notes">6. Practical Christian-integration notes</h1>
+<p>These apply Dr. Campbell’s identify, challenge, replace-with-Scripture method within CBT and medical care. Clinical items rest on the research above. Pastoral items are theological application, not research findings.</p>
+<ul>
+<li><p><strong>Identify (clinical).</strong> Explore how the person believes God sees them and their body. Listen for "God is disgusted with me when I eat," "Thinness is self-control and godliness," or "My body is sinful." Ask whether religious fasting is being used to hide restriction (general clinical consensus). To identify deeper false beliefs, see: <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/core-beliefs.html"><u>Core Beliefs</u></a>, <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf"><u>Parental Messages</u></a>, or use the <a target="_blank" rel="noopener" href="https://www.beliefcounselor.com/false-belief-finder"><u>Semantic Search Tool</u></a>.</p></li>
+<li><p><strong>Challenge (clinical).</strong> Test the belief that worth depends on weight or shape, and weigh "control" against what the disorder is actually doing to health, relationships, and faith (Fairburn et al., 2003). Gently address an anxious, punitive image of God (Akrawi et al., 2015). <strong>Possible cognitive errors</strong> to watch for, with their definitions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf"><u>Belief Counseling Cognitive Errors Checklist</u></a> and the symptoms they tend to feed:</p></li>
+</ul>
+<ul>
+<li><p><strong>All-or-nothing thinking</strong> — no middle ground. <em>Feeds:</em> restricting and bingeing. <em>Sounds like:</em> “I ate one cookie, so the day is ruined.”</p></li>
+<li><p><strong>Emotional reasoning</strong> — I feel it, so it must be true. <em>Feeds:</em> body dissatisfaction. <em>Sounds like:</em> “I feel fat, so I am fat.”</p></li>
+<li><p><strong>Global labeling</strong> — one mistake becomes who I am. <em>Feeds:</em> worth tied to weight or shape. <em>Sounds like:</em> “I’m disgusting.”</p></li>
+<li><p><strong>Selective attention</strong> — noticing only what fits my belief. <em>Feeds:</em> body checking. <em>Sounds like:</em> “All I see is my stomach.”</p></li>
+<li><p><strong>Perfectionism</strong> — standards no one could meet. <em>Feeds:</em> drive for thinness and control. <em>Sounds like:</em> “If I’m not thin enough, I’ve failed.”</p></li>
+<li><p><strong>Comparisons</strong> — measuring myself against others. <em>Feeds:</em> body dissatisfaction. <em>Sounds like:</em> “Everyone at church is thinner than me.”</p></li>
+<li><p><strong>Should statements</strong> — rigid musts and oughts. <em>Feeds:</em> rigid food rules. <em>Sounds like:</em> “I shouldn’t eat dessert, ever.”</p></li>
+</ul>
+<ul>
+<li><p><strong>Questions to dispute the belief.</strong> Have the client choose questions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf"><u>Questioning False Beliefs</u></a> form that “speak to” the belief. To see how, watch Dr. Campbell’s video <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZjR0Mx1zEMY"><u>Integrated Christian Counseling: Questioning Your Beliefs</u></a>. Selected questions that fit the errors above:</p></li>
+</ul>
+<ul>
+<li><p>“Am I keeping things in perspective?” <em>For:</em> all-or-nothing thinking.</p></li>
+<li><p>“What’s the actual evidence for my belief?” <em>For:</em> emotional reasoning.</p></li>
+<li><p>“Does God still love me despite my faults or limitations?” <em>For:</em> global labeling and “God is disgusted with me”.</p></li>
+<li><p>“Is it possible that I am distorting the facts?” <em>For:</em> selective attention.</p></li>
+<li><p>“Do I really have to be perfect? Is any human being perfect?” <em>For:</em> perfectionism.</p></li>
+<li><p>“Is this really the most important thing in life?” <em>For:</em> comparisons.</p></li>
+<li><p>“Even if my thoughts are true, do I want to live the rest of my life this way?” <em>For:</em> should statements.</p></li>
+</ul>
+<ul>
+<li><p><strong>Replace (pastoral).</strong> Offer Scripture of God’s acceptance and of the body’s goodness:</p></li>
+</ul>
+<ul>
+<li><p>“I praise You, for I am fearfully and wonderfully made. Marvelous are Your works, and I know this very well.” (Psalm 139:14)</p></li>
+<li><p>“…the LORD does not see as man does. For man sees the outward appearance, but the LORD sees the heart.” (1 Samuel 16:7)</p></li>
+<li><p>“For every creation of God is good, and nothing that is received with thanksgiving should be rejected.” (1 Timothy 4:4). Food received with thanks is a gift, not an enemy.</p></li>
+<li><p>“Do you not know that your body is a temple of the Holy Spirit who is in you…? Therefore glorify God with your body.” (1 Corinthians 6:19–20). Caring for the body, including eating, honors God.</p></li>
+</ul>
+<ul>
+<li><p><strong>Faith community (clinical).</strong> With consent, help family and church avoid diet talk and body comments, and support regular meals. Consider fasting practices carefully during recovery (general clinical consensus).</p></li>
+<li><p><strong>Ministers:</strong> never encourage weight loss or fasting in someone you suspect has an eating disorder; express concern kindly and refer for medical evaluation.</p></li>
+</ul>
+<h1 id="quick-classroom-takeaways">7. Quick classroom takeaways</h1>
+<ul>
+<li><p>Anorexia nervosa has the highest death rate of the eating disorders, and suicide accounts for many deaths. Screen (SCOFF), ask directly, and always involve a physician.</p></li>
+<li><p>CBT and CBT-E are first-line for bulimia and binge-eating disorder; family-based treatment for adolescent anorexia; adult anorexia needs a team approach.</p></li>
+<li><p>A secure, internalized faith is protective. Challenge beliefs that tie worth or holiness to weight, and replace them with the truth that God made the body good and sees the heart.</p></li>
+<li><p>Screen with the SCOFF or EAT-26 and track with the EDE-Q; any positive screen also calls for a medical evaluation.</p></li>
+</ul>
+<h1 id="sources-note">Sources note</h1>
+<p>All 18 references were checked against Crossref and PubMed (Oct 31, 2026), and the figures quoted were checked against each study’s abstract. Each DOI is a live link to the publisher record. Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).</p>
+<h1 id="references">References</h1><div class="refs">
+<p>Akrawi, D., Bartrop, R., Potter, U., &amp; Touyz, S. (2015). Religiosity, spirituality in relation to disordered eating and body image concerns: A systematic review. <em>Journal of Eating Disorders, 3</em>, 29. <a target="_blank" rel="noopener" href="https://doi.org/10.1186/s40337-015-0064-0"><u>https://doi.org/10.1186/s40337-015-0064-0</u></a></p>
+<p>American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders (5th ed., text rev.).</em> <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.books.9780890425787"><u>https://doi.org/10.1176/appi.books.9780890425787</u></a></p>
+<p>Arcelus, J., Mitchell, A. J., Wales, J., &amp; Nielsen, S. (2011). Mortality rates in patients with anorexia nervosa and other eating disorders: A meta-analysis of 36 studies. <em>Archives of General Psychiatry, 68</em>(7), 724–731. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/archgenpsychiatry.2011.74"><u>https://doi.org/10.1001/archgenpsychiatry.2011.74</u></a></p>
+<p>Boyatzis, C. J., Kline, S., &amp; Backof, S. (2007). Experimental evidence that theistic-religious body affirmations improve women's body image. <em>Journal for the Scientific Study of Religion, 46</em>(4), 553–564. <a target="_blank" rel="noopener" href="https://doi.org/10.1111/j.1468-5906.2007.00377.x"><u>https://doi.org/10.1111/j.1468-5906.2007.00377.x</u></a></p>
+<p>Fairburn, C. G., Cooper, Z., &amp; Shafran, R. (2003). Cognitive behaviour therapy for eating disorders: A "transdiagnostic" theory and treatment. <em>Behaviour Research and Therapy, 41</em>(5), 509–528. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/S0005-7967(02)00088-8"><u>https://doi.org/10.1016/S0005-7967(02)00088-8</u></a></p>
+<p>Fairburn, C. G., Cooper, Z., Doll, H. A., O'Connor, M. E., Bohn, K., Hawker, D. M., Wales, J. A., &amp; Palmer, R. L. (2009). Transdiagnostic cognitive-behavioral therapy for patients with eating disorders: A two-site trial with 60-week follow-up. <em>American Journal of Psychiatry, 166</em>(3), 311–319. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.ajp.2008.08040608"><u>https://doi.org/10.1176/appi.ajp.2008.08040608</u></a></p>
+<p>Galmiche, M., Déchelotte, P., Lambert, G., &amp; Tavolacci, M. P. (2019). Prevalence of eating disorders over the 2000–2018 period: A systematic literature review. <em>The American Journal of Clinical Nutrition, 109</em>(5), 1402–1413. <a target="_blank" rel="noopener" href="https://doi.org/10.1093/ajcn/nqy342"><u>https://doi.org/10.1093/ajcn/nqy342</u></a></p>
+<p>Hay, P. (2013). A systematic review of evidence for psychological treatments in eating disorders: 2005–2012. <em>International Journal of Eating Disorders, 46</em>(5), 462–469. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/eat.22103"><u>https://doi.org/10.1002/eat.22103</u></a></p>
+<p>Hilbert, A., Petroff, D., Herpertz, S., Pietrowsky, R., Tuschen-Caffier, B., Vocks, S., &amp; Schmidt, R. (2019). Meta-analysis of the efficacy of psychological and medical treatments for binge-eating disorder. <em>Journal of Consulting and Clinical Psychology, 87</em>(1), 91–105. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/ccp0000358"><u>https://doi.org/10.1037/ccp0000358</u></a></p>
+<p>Linardon, J., Wade, T. D., de la Piedad Garcia, X., &amp; Brennan, L. (2017). The efficacy of cognitive-behavioral therapy for eating disorders: A systematic review and meta-analysis. <em>Journal of Consulting and Clinical Psychology, 85</em>(11), 1080–1094. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/ccp0000245"><u>https://doi.org/10.1037/ccp0000245</u></a></p>
+<p>Lock, J., Le Grange, D., Agras, W. S., Moye, A., Bryson, S. W., &amp; Jo, B. (2010). Randomized clinical trial comparing family-based treatment with adolescent-focused individual therapy for adolescents with anorexia nervosa. <em>Archives of General Psychiatry, 67</em>(10), 1025–1032. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/archgenpsychiatry.2010.128"><u>https://doi.org/10.1001/archgenpsychiatry.2010.128</u></a></p>
+<p>McElroy, S. L., Hudson, J. I., Mitchell, J. E., Wilfley, D., Ferreira-Cornwell, M. C., Gao, J., Wang, J., Whitaker, T., Jonas, J., &amp; Gasior, M. (2015). Efficacy and safety of lisdexamfetamine for treatment of adults with moderate to severe binge-eating disorder: A randomized clinical trial. <em>JAMA Psychiatry, 72</em>(3), 235–246. <a target="_blank" rel="noopener" href="https://doi.org/10.1001/jamapsychiatry.2014.2162"><u>https://doi.org/10.1001/jamapsychiatry.2014.2162</u></a></p>
+<p>Morgan, J. F., Reid, F., &amp; Lacey, J. H. (1999). The SCOFF questionnaire: Assessment of a new screening tool for eating disorders. <em>BMJ, 319</em>(7223), 1467–1468. <a target="_blank" rel="noopener" href="https://doi.org/10.1136/bmj.319.7223.1467"><u>https://doi.org/10.1136/bmj.319.7223.1467</u></a></p>
+<p>Richards, P. S., Berrett, M. E., Hardman, R. K., &amp; Eggett, D. L. (2006). Comparative efficacy of spirituality, cognitive, and emotional support groups for treating eating disorder inpatients. <em>Eating Disorders, 14</em>(5), 401–415. <a target="_blank" rel="noopener" href="https://doi.org/10.1080/10640260600952548"><u>https://doi.org/10.1080/10640260600952548</u></a></p>
+<p>Smith, F. T., Hardman, R. K., Richards, P. S., &amp; Fischer, L. (2003). Intrinsic religiousness and spiritual well-being as predictors of treatment outcome among women with eating disorders. <em>Eating Disorders, 11</em>(1), 15–26. <a target="_blank" rel="noopener" href="https://doi.org/10.1080/10640260390167456-2199"><u>https://doi.org/10.1080/10640260390167456-2199</u></a></p>
+<p>Smith, A. R., Zuromski, K. L., &amp; Dodd, D. R. (2018). Eating disorders and suicidality: What we know, what we don't know, and suggestions for future research. <em>Current Opinion in Psychology, 22</em>, 63–67. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.copsyc.2017.08.023"><u>https://doi.org/10.1016/j.copsyc.2017.08.023</u></a></p>
+<p>Udo, T., &amp; Grilo, C. M. (2018). Prevalence and correlates of DSM-5-defined eating disorders in a nationally representative sample of U.S. adults. <em>Biological Psychiatry, 84</em>(5), 345–354. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.biopsych.2018.03.014"><u>https://doi.org/10.1016/j.biopsych.2018.03.014</u></a></p>
+<p>Zipfel, S., Wild, B., Groß, G., Friederich, H.-C., Teufel, M., Schellberg, D., Giel, K. E., de Zwaan, M., Dinkel, A., Herpertz, S., Burgmer, M., Löwe, B., Tagay, S., von Wietersheim, J., Zeeck, A., Schade-Brittinger, C., Schauenburg, H., &amp; Herzog, W. (2014). Focal psychodynamic therapy, cognitive behaviour therapy, and optimised treatment as usual in outpatients with anorexia nervosa (ANTOP study): Randomised controlled trial. <em>The Lancet, 383</em>(9912), 127–137. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/S0140-6736(13)61746-8"><u>https://doi.org/10.1016/S0140-6736(13)61746-8</u></a></p>
+<p><em>Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All 18 references and DOIs verified via Crossref and PubMed (Saturday, Oct 31, 2026). Effect sizes as reported in the cited sources.</em></p>
+</div>
+</div>
+<div class="tools" style="padding-bottom:6px"><a class="btn" href="../../members/assessment.html#rvlist" onclick="try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){history.back();return false;}}catch(e){}">&#8592; Back</a></div>
+<div class="foot">Teaching overview for counselors. Not a substitute for the DSM-5-TR or clinical judgment. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
+<script>(function(){var b=document.getElementById('back');b.addEventListener('click',function(e){
+try{var r=document.referrer;if(r&&new URL(r).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});
+try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){document.body.firstElementChild.scrollIntoView({block:'start'});}}catch(e){}})();</script><!--navjs--><script>
+(function(){
+var dds=document.querySelectorAll('.nav .dd'),t;
+function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
+dds.forEach(function(d){
+  var b=d.firstChild;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll();if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}});
+  d.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();closeAll();b.focus();});
+  d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(closeAll,500);});
+  d.addEventListener('mouseenter',function(){clearTimeout(t);});
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+</script><!--/navjs--></body></html>

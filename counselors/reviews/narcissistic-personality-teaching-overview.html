@@ -1,0 +1,296 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Narcissistic Personality Disorder · DSM-5-TR Teaching Review</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+
+.nav a.l:hover{border-color:var(--gold)}
+.nav a.on{color:#fff;border-color:var(--gold)}
+
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
+
+.nav .acct{display:inline-flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
+
+.nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
+
+.nav .dd{position:relative}
+
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
+
+.nav .dd>button::after{content:" \25BE";color:var(--gold);font-size:.8em}
+
+.nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
+
+.nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
+
+.nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
+
+.nav .menu a:hover{background:var(--cream)}
+
+.nav .menu a.sub{padding-left:38px;font-size:.92rem}
+.nav .menu a.sub::before{content:"\21B3  ";color:var(--gold)}
+
+.nav .menu a.sub.on{padding-left:35px}
+
+.nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
+
+.nav .dd.open .menu{display:block}
+
+.nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
+
+.nav .menu .x:hover{color:var(--navy);text-decoration:underline}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:8px 12px}}
+@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem;white-space:nowrap}.nav a.pub{font-size:.78rem;padding:4px 10px;white-space:nowrap}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
+
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.65}
+a{color:var(--navy2)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:46px 22px 40px;text-align:center}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.6rem);margin:0 0 10px;line-height:1.2}
+.hero p{max-width:760px;margin:4px auto 0;color:#dfe6f2;font-size:1rem}
+.hero .by{font-size:1.05rem;color:#fff;margin-top:12px}
+.hero .ai{font-size:.85rem;font-style:italic;color:#c8d1e0}
+.tools{max-width:960px;margin:0 auto;padding:22px 20px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:9px 20px;border-radius:24px;border:0;font:inherit;font-weight:bold;cursor:pointer}
+.btn.ghost{background:#fff;border:1px solid var(--navy);color:var(--navy)}
+.paper{max-width:960px;margin:16px auto 0;background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:10px 34px 30px;box-shadow:0 2px 8px rgba(18,40,76,.06)}
+.paper h1{color:var(--navy);font-size:1.45rem;margin:30px 0 10px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+.paper h2{color:var(--navy);font-size:1.15rem;margin:22px 0 6px}
+.paper p{margin:8px 0}
+.paper li{margin:4px 0}.paper li p{margin:0}
+.paper strong{color:var(--navy)}
+.paper table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.9rem;display:block;overflow-x:auto}
+.paper th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;border:1px solid var(--navy)}
+.paper th strong,.paper th a{color:#fff}
+.paper td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+.paper tr:nth-child(even) td{background:#f7f3e8}
+.paper td p,.paper th p{margin:0}
+.paper .refs p{font-size:.88rem;padding-left:2em;text-indent:-2em;margin:6px 0;word-break:break-word}
+.paper .final{font-size:.85rem;color:var(--mut);font-style:italic;margin-top:18px}
+.foot{margin:34px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:620px){.paper{padding:6px 16px 22px;border-radius:0}}
+@media print{.nav,.tools,.foot{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
+</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a class="l" href="../../members/index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a class="l" href="../../members/belief-counseling.html">Belief Counseling</a><a class="l" href="../../members/process.html">The Process</a><a class="l on" href="../../members/assessment.html">Traditional Assessment</a><a class="l" href="../../members/tips.html">Professional Tips</a><a class="l" href="../../members/library.html">Library</a><a class="l" target="_top" href="https://www.beliefcounselor.com/counselor-scriptures">Scripture Lookup</a><a class="l" href="../../counselors/membership.html">Membership</a><span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a><a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a><a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->
+<div class="hero"><div class="eyebrow">DSM-5-TR Teaching Review</div><h1>Narcissistic Personality Disorder</h1>
+<p>Clinical Companion Knowledge Library: for counselors and counseling students</p>
+<p class="by">Brian Campbell, Ph.D.</p>
+<p class="ai">Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.</p></div>
+<div class="tools"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="narcissistic-personality-teaching-overview.pdf" target="_blank" rel="noopener">Download or print the PDF</a></div>
+<div class="paper">
+<h1 id="what-it-is">1. What it is</h1>
+<p>Narcissistic personality disorder (NPD) is a long-standing pattern of <strong>grandiosity</strong> (in fantasy or behavior), <strong>need for admiration</strong>, and <strong>lack of empathy</strong>, beginning by early adulthood and present in many settings (American Psychiatric Association [APA], 2022). It belongs to <strong>Cluster B</strong> (dramatic or erratic).</p>
+<p><strong>How common:</strong> in a U.S. national survey of 34,653 adults, lifetime NPD was 6.2% (7.7% of men, 4.8% of women). NPD was linked to mental disability in men and often co-occurred with substance use, mood, anxiety, and other personality disorders (Stinson et al., 2008).</p>
+<p><strong>Two faces of narcissism.</strong> Researchers describe a <strong>grandiose</strong> form (arrogant, dominant, entitled) and a <strong>vulnerable</strong> form (hypersensitive, shame-prone, resentful, easily wounded). The two often occur together in the same person (Weinberg &amp; Ronningstam, 2022). Many patients first seek help for depression, relationship problems, or work crises rather than for narcissism itself (Caligor et al., 2015).</p>
+<p><strong>Counselor framing:</strong> beneath the confident surface is usually fragile, fluctuating self-esteem. Criticism or failure can trigger rage, shame, depression, or withdrawal. Change is possible but slow (Weinberg &amp; Ronningstam, 2022).</p>
+<h1 id="core-symptoms-to-watch-for">2. Core symptoms to watch for</h1>
+<p>DSM-5-TR criteria, paraphrased (APA, 2022); use the manual itself for formal diagnosis. A pervasive pattern, beginning by early adulthood, with <strong>5 or more</strong> of:</p>
+<ul>
+<li><p>A <strong>grandiose sense of self-importance</strong> (exaggerates achievements, expects to be seen as superior).</p></li>
+<li><p>Preoccupied with <strong>fantasies</strong> of unlimited success, power, brilliance, beauty, or ideal love.</p></li>
+<li><p>Believes he or she is <strong>"special"</strong> and should associate only with other special or high-status people.</p></li>
+<li><p>Requires <strong>excessive admiration</strong>.</p></li>
+<li><p>A <strong>sense of entitlement</strong> (expects favorable treatment or automatic compliance).</p></li>
+<li><p><strong>Exploits others</strong> to reach his or her own ends.</p></li>
+<li><p><strong>Lacks empathy;</strong> unwilling to recognize or identify with others’ feelings and needs.</p></li>
+<li><p>Often <strong>envious</strong> of others or believes others envy him or her.</p></li>
+<li><p>Shows <strong>arrogant, haughty</strong> behaviors or attitudes.</p></li>
+</ul>
+<p><strong>Distinguish from:</strong> healthy confidence and ambition; bipolar mania or hypomania (grandiosity tied to mood episodes); antisocial, histrionic, and borderline personality disorders; and narcissistic traits that are not pervasive or impairing (APA, 2022).</p>
+<p><strong>When counselors must refer (general clinical consensus):</strong> assess suicide risk carefully after humiliations, losses, or failures, when shame can turn quickly to despair. Refer for co-occurring substance use, depression, or bipolar symptoms, and assess risk to others when rage or exploitation is severe.</p>
+<h1 id="frequently-used-assessment-instruments">3. Frequently used assessment instruments</h1>
+<p>These are among the most widely used measures for screening, rating severity, and tracking progress in narcissistic personality disorder. <strong>Screening tools do not diagnose;</strong> a positive screen calls for a clinical interview against DSM-5-TR criteria. Click an instrument’s website to find it.</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 22%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Instrument</strong></th>
+<th><strong>Best used for</strong></th>
+<th><strong>Format</strong></th>
+<th><strong>Purchase required?</strong></th>
+<th><strong>Training or qualification</strong></th>
+<th><strong>Where to find it</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>PNI</strong> (Pathological Narcissism Inventory)</td>
+<td>Both grandiose and vulnerable narcissism.</td>
+<td>Self-report, 52 items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1037/a0016530"><u>Original article</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>NPI-16</strong> (Narcissistic Personality Inventory, short form)</td>
+<td>Grandiose narcissistic traits.</td>
+<td>Self-report, 16 forced-choice items</td>
+<td>No (free)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.jrp.2005.03.002"><u>Original article</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>SCID-5-PD</strong> (Structured Clinical Interview for DSM-5 Personality Disorders)</td>
+<td>Diagnosing all ten DSM-5 personality disorders, with an optional self-report screener.</td>
+<td>Semistructured clinician interview</td>
+<td>Yes</td>
+<td>★ Clinical interviewing skill; training recommended</td>
+<td><a target="_blank" rel="noopener" href="https://appi.org/Products/Interviewing/Structured-Clinical-Interview-for-DSM-5-Personalit"><u>APA Publishing</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>PID-5</strong> (Personality Inventory for DSM-5)</td>
+<td>Dimensional personality trait profile (negative affect, detachment, antagonism, disinhibition, psychoticism); brief and informant forms.</td>
+<td>Self-report; 220-item full or 25-item brief form</td>
+<td>No (free from the APA for clinical use)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.psychiatry.org/psychiatrists/practice/dsm/educational-resources/assessment-measures"><u>APA assessment measures</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>PAI</strong> (Personality Assessment Inventory)</td>
+<td>Broad clinical and personality assessment for adults, including scales for borderline and antisocial features.</td>
+<td>Self-report, 344 items, about 50 to 60 minutes</td>
+<td>Yes</td>
+<td>★ Level C</td>
+<td><a target="_blank" rel="noopener" href="https://www.parinc.com/product/groups/pai"><u>PAR</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>MCMI-IV</strong> (Millon Clinical Multiaxial Inventory-IV)</td>
+<td>Adults in treatment; personality patterns alongside clinical syndromes.</td>
+<td>Self-report, 195 true/false items, about 25 to 30 minutes</td>
+<td>Yes</td>
+<td>★ Level C</td>
+<td><a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/store/usd/p/100001362"><u>Pearson</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>MMPI-3</strong> (Minnesota Multiphasic Personality Inventory-3)</td>
+<td>Broad personality and psychopathology assessment, with validity scales for over- and under-reporting.</td>
+<td>Self-report, 335 true/false items, about 25 to 50 minutes</td>
+<td>Yes</td>
+<td>★ Level C</td>
+<td><a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/store/usd/p/P100000004"><u>Pearson</u></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>★ = requires professional qualification to purchase or specialized training.</strong> Publishers sell these tests only to qualified users. At Pearson, <strong>Level B</strong> generally means a master’s degree in a related field with formal assessment training, or a health care license; <strong>Level C</strong> means a doctorate in psychology or a related field with formal assessment training, or state licensure in a related field (<a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/professional-assessments/ordering/how-to-order/qualifications/qualifications-policy.html"><u>Pearson qualifications policy</u></a>). MHS, PAR, and WPS use similar levels. Check each publisher’s page before ordering. "Original article" links go to the published study that introduced a free scale that has no official website; the scale can usually be obtained there or from its authors.</p>
+<h1 id="what-works-treatment-and-the-evidence">4. What works: treatment and the evidence</h1>
+<p><strong>Bottom line for class:</strong> there are no randomized trials of treatment for NPD alone. <a target="_blank" rel="noopener" href="https://schematherapysociety.org/Schema-Therapy"><u>Schema therapy</u></a> has trial support across a group of personality disorders that included NPD; most treatments share a focus on clear goals, a strong alliance, and careful attention to the treatment relationship.</p>
+<p><strong>Evidence overview (honest):</strong></p>
+<ul>
+<li><p><strong>Schema therapy:</strong> in a multicenter trial of 323 patients with avoidant, dependent, obsessive-compulsive, paranoid, histrionic, or narcissistic personality disorder, schema therapy (which targets long-standing core beliefs) led to recovery more often than usual care or another psychotherapy (Bamelis et al., 2014). NPD made up only part of the sample.</p></li>
+<li><p><strong>Common elements:</strong> reviews find that the treatments used for NPD share clear goals, attention to the treatment frame, building the alliance, and monitoring the therapist’s own reactions; longitudinal studies show patients can improve, though gradually (Weinberg &amp; Ronningstam, 2022).</p></li>
+<li><p><strong>Diagnostic challenges:</strong> narcissistic patients may present with vulnerable features such as depression and shame rather than overt grandiosity, so NPD is easily missed (Caligor et al., 2015).</p></li>
+<li><p><strong>Medication (referral notes):</strong> no medication treats NPD itself; co-occurring depression, anxiety, bipolar disorder, or substance use may need medical care.</p></li>
+</ul>
+<p><strong>Cognitive and schema work with NPD: how it is used</strong> (Bamelis et al., 2014; Weinberg &amp; Ronningstam, 2022):</p>
+<ul>
+<li><p><strong>Align with the client’s goals</strong> (a better marriage, fewer work conflicts, less depression) before addressing narcissistic patterns directly.</p></li>
+<li><p><strong>Identify and challenge core beliefs:</strong> "I must be superior or I am worthless," "Rules don’t apply to me," "Other people exist to meet my needs," "Any criticism means I’m a failure."</p></li>
+<li><p><strong>Build empathy and tolerate ordinary limits:</strong> practice seeing others’ perspectives, accepting feedback without collapse or rage, and finding worth outside achievement and admiration.</p></li>
+</ul>
+<h1 id="religion-spirituality-and-christian-integration-what-the-evidence-shows">5. Religion, spirituality, and Christian integration: what the evidence shows</h1>
+<p><strong>Entitlement blocks forgiveness.</strong> Across six studies, narcissistic entitlement predicted less forgiveness, more insistence on repayment, and slower growth in forgiveness over time, even after accounting for personality, offense severity, apology, closeness, and religiosity (Exline et al., 2004).</p>
+<p><strong>Narcissism and faith.</strong> In three studies of mostly Roman Catholic adults in Poland, narcissistic traits were linked to using religion for social or emotional gain, to seeing God as punishing and vengeful (for the more antagonistic forms), and to a belief that God <strong>owes them</strong> special favors. Narcissism was not clearly linked to being more or less religious overall (Tokarz et al., 2026).</p>
+<p><strong>Humility can be taught.</strong> In a randomized trial of 59 adults, a 7.5-hour humility workbook increased humility, forgivingness, and patience and reduced general negativity compared with a control group, for religious and non-religious participants alike (Lavelock et al., 2014). Participants did not have NPD.</p>
+<p><strong>Broader evidence.</strong> Across 97 outcome studies, therapy adapted to clients’ religious beliefs worked about as well as standard therapy for distress and added spiritual benefits (Captari et al., 2018). We found <strong>no trial of Christian-integrated treatment for NPD</strong> (literature search, November 1, 2026).</p>
+<p><strong>Honest summary for teaching:</strong></p>
+<ol type="1">
+<li><p>Schema-focused and alliance-centered therapy are the best available approach. Faith integration supports it; it does not replace it.</p></li>
+<li><p>Entitlement undermines forgiveness and can distort faith into a transaction with God. Humility and forgiveness can grow with practice.</p></li>
+<li><p>No randomized trial of any treatment, faith-integrated or not, exists for NPD alone.</p></li>
+</ol>
+<h1 id="practical-christian-integration-notes">6. Practical Christian-integration notes</h1>
+<p>These apply Dr. Campbell’s identify, challenge, replace-with-Scripture method within schema-focused care. Clinical items rest on the research above. Pastoral items are theological application, not research findings.</p>
+<ul>
+<li><p><strong>Identify (clinical).</strong> Listen for entitlement and fragile worth in spiritual form: "God owes me for all I’ve done," "I’m more spiritual than the people at my church," "If I’m not the best, I’m nothing," "They need to earn my forgiveness" (Exline et al., 2004; Tokarz et al., 2026). To identify deeper false beliefs, see: <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/core-beliefs.html"><u>Core Beliefs</u></a>, <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf"><u>Parental Messages</u></a>, or use the <a target="_blank" rel="noopener" href="https://www.beliefcounselor.com/false-belief-finder"><u>Semantic Search Tool</u></a>.</p></li>
+<li><p><strong>Challenge (clinical).</strong> Explore what entitlement and unforgiveness have cost in relationships, test what happens when the client accepts a limit or admits a mistake, and build empathy through perspective-taking (Lavelock et al., 2014). <strong>Possible cognitive errors</strong> to watch for, with their definitions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf"><u>Belief Counseling Cognitive Errors Checklist</u></a> and the symptoms they tend to feed:</p></li>
+</ul>
+<ul>
+<li><p><strong>All-or-nothing thinking</strong> — no middle ground. <em>Feeds:</em> fragile self-worth. <em>Sounds like:</em> “If I’m not the best, I’m nothing.”</p></li>
+<li><p><strong>Unrealistic expectations</strong> — expecting too much of myself or others. <em>Feeds:</em> entitlement. <em>Sounds like:</em> “People should treat me as special.”</p></li>
+<li><p><strong>Blaming others</strong> — others are responsible for how I feel. <em>Feeds:</em> lack of accountability. <em>Sounds like:</em> “It’s their fault, not mine.”</p></li>
+<li><p><strong>Comparisons</strong> — measuring myself against others. <em>Feeds:</em> grandiosity and envy. <em>Sounds like:</em> “I’m more spiritual than the people at my church.”</p></li>
+<li><p><strong>Mind reading</strong> — assuming I know what others think. <em>Feeds:</em> belief that others are envious. <em>Sounds like:</em> “They’re just jealous of me.”</p></li>
+</ul>
+<ul>
+<li><p><strong>Questions to dispute the belief.</strong> Have the client choose questions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf"><u>Questioning False Beliefs</u></a> form that “speak to” the belief. To see how, watch Dr. Campbell’s video <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZjR0Mx1zEMY"><u>Integrated Christian Counseling: Questioning Your Beliefs</u></a>. Selected questions that fit the errors above:</p></li>
+</ul>
+<ul>
+<li><p>“Do I really have to be perfect? Is any human being perfect?” <em>For:</em> all-or-nothing thinking.</p></li>
+<li><p>“If I told Jesus my belief, would He agree with me?” <em>For:</em> entitlement.</p></li>
+<li><p>“Are there things that I can learn from my mistakes?” and “What would Christ do in this situation?” <em>For:</em> blaming others.</p></li>
+<li><p>“Is anyone perfect? Haven’t we all sinned and fallen short of the glory of God?” <em>For:</em> comparisons.</p></li>
+<li><p>“Are there other ways of looking at this situation?” <em>For:</em> mind reading.</p></li>
+<li><p>“How might Christ view this problem or situation?” <em>For:</em> “They need to earn my forgiveness”.</p></li>
+</ul>
+<ul>
+<li><p><strong>Replace (pastoral).</strong> Offer Scripture that grounds worth in grace and calls to humility:</p></li>
+</ul>
+<ul>
+<li><p>“For who makes you so superior? What do you have that you did not receive? And if you did receive it, why do you boast as though you did not?” (1 Corinthians 4:7)</p></li>
+<li><p>“For it is by grace you have been saved through faith, and this not from yourselves; it is the gift of God, not by works, so that no one can boast.” (Ephesians 2:8–9). Worth received, not earned, so it cannot be lost through failure.</p></li>
+<li><p>“For by the grace given me I say to every one of you: Do not think of yourself more highly than you ought, but think of yourself with sober judgment…” (Romans 12:3)</p></li>
+<li><p>“…‘God opposes the proud, but gives grace to the humble.’” (James 4:6)</p></li>
+</ul>
+<ul>
+<li><p><strong>Faith community (clinical).</strong> Offer accountability relationships and quiet service roles; be cautious about placing narcissistic members in leadership or platforms that feed grandiosity.</p></li>
+<li><p><strong>Ministers:</strong> set firm boundaries, avoid power struggles, support spouses and others affected, and refer when depression, rage, or exploitation is present.</p></li>
+</ul>
+<h1 id="quick-classroom-takeaways">7. Quick classroom takeaways</h1>
+<ul>
+<li><p>NPD is pervasive grandiosity, need for admiration, and lack of empathy (5 of 9 criteria). About 6% of U.S. adults over a lifetime; it has grandiose and vulnerable faces. Watch suicide risk after humiliation.</p></li>
+<li><p>No NPD-only trials; schema therapy and alliance-focused work are the best guides; change is slow but possible.</p></li>
+<li><p>Replace "I must be superior" and "God owes me" with grace that leaves no room for boasting, and practice humility and forgiveness.</p></li>
+<li><p>The free PNI captures both grandiose and vulnerable narcissism; confirm a diagnosis with a structured interview.</p></li>
+</ul>
+<h1 id="sources-note">Sources note</h1>
+<p>All 9 references were checked against Crossref, OpenAlex, and PubMed/Europe PMC records (Nov 1, 2026), and the figures quoted were checked against each study’s abstract. Each DOI is a live link to the publisher record. Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).</p>
+<h1 id="references">References</h1><div class="refs">
+<p>American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders (5th ed., text rev.).</em> <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.books.9780890425787"><u>https://doi.org/10.1176/appi.books.9780890425787</u></a></p>
+<p>Bamelis, L. L. M., Evers, S. M. A. A., Spinhoven, P., &amp; Arntz, A. (2014). Results of a multicenter randomized controlled trial of the clinical effectiveness of schema therapy for personality disorders. <em>American Journal of Psychiatry, 171</em>(3), 305–322. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.ajp.2013.12040518"><u>https://doi.org/10.1176/appi.ajp.2013.12040518</u></a></p>
+<p>Caligor, E., Levy, K. N., &amp; Yeomans, F. E. (2015). Narcissistic personality disorder: Diagnostic and clinical challenges. <em>American Journal of Psychiatry, 172</em>(5), 415–422. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.ajp.2014.14060723"><u>https://doi.org/10.1176/appi.ajp.2014.14060723</u></a></p>
+<p>Captari, L. E., Hook, J. N., Hoyt, W. T., Davis, D. E., McElroy-Heltzel, S. E., &amp; Worthington, E. L. (2018). Integrating clients' religion and spirituality within psychotherapy: A comprehensive meta-analysis. <em>Journal of Clinical Psychology, 74</em>(11), 1938–1951. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.22681"><u>https://doi.org/10.1002/jclp.22681</u></a></p>
+<p>Exline, J. J., Baumeister, R. F., Bushman, B. J., Campbell, W. K., &amp; Finkel, E. J. (2004). Too proud to let go: Narcissistic entitlement as a barrier to forgiveness. <em>Journal of Personality and Social Psychology, 87</em>(6), 894–912. <a target="_blank" rel="noopener" href="https://doi.org/10.1037/0022-3514.87.6.894"><u>https://doi.org/10.1037/0022-3514.87.6.894</u></a></p>
+<p>Lavelock, C. R., Worthington, E. L., Davis, D. E., Griffin, B. J., Reid, C. A., Hook, J. N., &amp; Van Tongeren, D. R. (2014). The quiet virtue speaks: An intervention to promote humility. <em>Journal of Psychology and Theology, 42</em>(1), 99–110. <a target="_blank" rel="noopener" href="https://doi.org/10.1177/009164711404200111"><u>https://doi.org/10.1177/009164711404200111</u></a></p>
+<p>Stinson, F. S., Dawson, D. A., Goldstein, R. B., Chou, S. P., Huang, B., Smith, S. M., Ruan, W. J., Pulay, A. J., Saha, T. D., Pickering, R. P., &amp; Grant, B. F. (2008). Prevalence, correlates, disability, and comorbidity of DSM-IV narcissistic personality disorder: Results from the Wave 2 National Epidemiologic Survey on Alcohol and Related Conditions. <em>The Journal of Clinical Psychiatry, 69</em>(7), 1033–1045. <a target="_blank" rel="noopener" href="https://doi.org/10.4088/JCP.v69n0701"><u>https://doi.org/10.4088/JCP.v69n0701</u></a></p>
+<p>Tokarz, J., Łowicki, P., &amp; Zajenkowski, M. (2026). Between ego and faith: Motivational, affective, and cognitive dimensions of religious engagement in narcissism. <em>Personality and Individual Differences, 256</em>, 113720. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.paid.2026.113720"><u>https://doi.org/10.1016/j.paid.2026.113720</u></a></p>
+<p>Weinberg, I., &amp; Ronningstam, E. (2022). Narcissistic personality disorder: Progress in understanding and treatment. <em>Focus, 20</em>(4), 368–377. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.focus.20220052"><u>https://doi.org/10.1176/appi.focus.20220052</u></a></p>
+<p><em>Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All 9 references and DOIs verified via Crossref, OpenAlex, and PubMed/Europe PMC records (Sunday, Nov 1, 2026). Effect sizes as reported in the cited sources.</em></p>
+</div>
+</div>
+<div class="tools" style="padding-bottom:6px"><a class="btn" href="../../members/assessment.html#rvlist" onclick="try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){history.back();return false;}}catch(e){}">&#8592; Back</a></div>
+<div class="foot">Teaching overview for counselors. Not a substitute for the DSM-5-TR or clinical judgment. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
+<script>(function(){var b=document.getElementById('back');b.addEventListener('click',function(e){
+try{var r=document.referrer;if(r&&new URL(r).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});
+try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){document.body.firstElementChild.scrollIntoView({block:'start'});}}catch(e){}})();</script><!--navjs--><script>
+(function(){
+var dds=document.querySelectorAll('.nav .dd'),t;
+function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
+dds.forEach(function(d){
+  var b=d.firstChild;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll();if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}});
+  d.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();closeAll();b.focus();});
+  d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(closeAll,500);});
+  d.addEventListener('mouseenter',function(){clearTimeout(t);});
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+</script><!--/navjs--></body></html>

@@ -1,0 +1,281 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Schizoid Personality Disorder · DSM-5-TR Teaching Review</title>
+<style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+
+.nav a.l:hover{border-color:var(--gold)}
+.nav a.on{color:#fff;border-color:var(--gold)}
+
+.nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
+
+.nav .acct{display:inline-flex;flex:0 0 auto;flex-wrap:wrap;align-items:center;gap:6px 18px}
+
+.nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
+
+.nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
+
+.nav .dd{position:relative}
+
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.92rem;padding:5px 2px;cursor:pointer}
+
+.nav .dd>button::after{content:" \25BE";color:var(--gold);font-size:.8em}
+
+.nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
+
+.nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
+
+.nav .menu a{display:block;padding:10px 18px;color:var(--navy);text-decoration:none;font-size:.97rem;white-space:nowrap}
+
+.nav .menu a:hover{background:var(--cream)}
+
+.nav .menu a.sub{padding-left:38px;font-size:.92rem}
+.nav .menu a.sub::before{content:"\21B3  ";color:var(--gold)}
+
+.nav .menu a.sub.on{padding-left:35px}
+
+.nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
+
+.nav .dd.open .menu{display:block}
+
+.nav .menu .x{display:block;width:100%;margin-top:4px;border:0;border-top:1px solid var(--line);background:none;color:#5b6474;font:inherit;font-size:.85rem;padding:9px 18px 4px;text-align:right;cursor:pointer}
+
+.nav .menu .x:hover{color:var(--navy);text-decoration:underline}
+@media(max-width:1100px){.nav{gap:8px 12px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:8px 12px}}
+@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem;white-space:nowrap}.nav a.pub{font-size:.78rem;padding:4px 10px;white-space:nowrap}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
+
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.65}
+a{color:var(--navy2)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:46px 22px 40px;text-align:center}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.6rem);margin:0 0 10px;line-height:1.2}
+.hero p{max-width:760px;margin:4px auto 0;color:#dfe6f2;font-size:1rem}
+.hero .by{font-size:1.05rem;color:#fff;margin-top:12px}
+.hero .ai{font-size:.85rem;font-style:italic;color:#c8d1e0}
+.tools{max-width:960px;margin:0 auto;padding:22px 20px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:bold;text-decoration:none;padding:9px 20px;border-radius:24px;border:0;font:inherit;font-weight:bold;cursor:pointer}
+.btn.ghost{background:#fff;border:1px solid var(--navy);color:var(--navy)}
+.paper{max-width:960px;margin:16px auto 0;background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:10px 34px 30px;box-shadow:0 2px 8px rgba(18,40,76,.06)}
+.paper h1{color:var(--navy);font-size:1.45rem;margin:30px 0 10px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+.paper h2{color:var(--navy);font-size:1.15rem;margin:22px 0 6px}
+.paper p{margin:8px 0}
+.paper li{margin:4px 0}.paper li p{margin:0}
+.paper strong{color:var(--navy)}
+.paper table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.9rem;display:block;overflow-x:auto}
+.paper th{background:var(--navy);color:#fff;text-align:left;padding:8px 10px;border:1px solid var(--navy)}
+.paper th strong,.paper th a{color:#fff}
+.paper td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+.paper tr:nth-child(even) td{background:#f7f3e8}
+.paper td p,.paper th p{margin:0}
+.paper .refs p{font-size:.88rem;padding-left:2em;text-indent:-2em;margin:6px 0;word-break:break-word}
+.paper .final{font-size:.85rem;color:var(--mut);font-style:italic;margin-top:18px}
+.foot{margin:34px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
+@media(max-width:620px){.paper{padding:6px 16px 22px;border-radius:0}}
+@media print{.nav,.tools,.foot{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
+</style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a class="l" href="../../members/index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a class="l" href="../../members/belief-counseling.html">Belief Counseling</a><a class="l" href="../../members/process.html">The Process</a><a class="l on" href="../../members/assessment.html">Traditional Assessment</a><a class="l" href="../../members/tips.html">Professional Tips</a><a class="l" href="../../members/library.html">Library</a><a class="l" target="_top" href="https://www.beliefcounselor.com/counselor-scriptures">Scripture Lookup</a><a class="l" href="../../counselors/membership.html">Membership</a><span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a><a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a><a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->
+<div class="hero"><div class="eyebrow">DSM-5-TR Teaching Review</div><h1>Schizoid Personality Disorder</h1>
+<p>Clinical Companion Knowledge Library: for counselors and counseling students</p>
+<p class="by">Brian Campbell, Ph.D.</p>
+<p class="ai">Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.</p></div>
+<div class="tools"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="schizoid-personality-teaching-overview.pdf" target="_blank" rel="noopener">Download or print the PDF</a></div>
+<div class="paper">
+<h1 id="what-it-is">1. What it is</h1>
+<p>Schizoid personality disorder (SzPD) is a long-standing pattern of <strong>detachment from social relationships</strong> and a <strong>restricted range of emotional expression</strong> with others, beginning by early adulthood (American Psychiatric Association [APA], 2022). It belongs to <strong>Cluster A</strong> (odd or eccentric). Unlike avoidant personality disorder, the person is generally not longing for closeness while fearing rejection; closeness simply holds little appeal.</p>
+<p><strong>How common:</strong> in a large U.S. national survey, 3.13% of adults met criteria for SzPD (Grant et al., 2004). Across Western community studies, estimates vary widely depending on how personality disorders are assessed (Volkert et al., 2018).</p>
+<p><strong>A debated diagnosis.</strong> A review of the research found comparatively little evidence for SzPD’s reliability and validity as a separate disorder. The authors suggested that "schizoid" patients may fall into an emotionally constricted group closer to schizotypal personality disorder and a withdrawn group closer to avoidant personality disorder, and they recommended rating schizoid traits on a continuum instead (Triebwasser et al., 2012). Separating schizoid from avoidant patterns remains a practical challenge (Lampe &amp; Malhi, 2018).</p>
+<p><strong>Counselor framing:</strong> solitude is not a disorder by itself. Many quiet, private people live well. The diagnosis applies only when the pattern is pervasive, inflexible, and causes real distress or impairment.</p>
+<h1 id="core-symptoms-to-watch-for">2. Core symptoms to watch for</h1>
+<p>DSM-5-TR criteria, paraphrased (APA, 2022); use the manual itself for formal diagnosis. A pervasive pattern, beginning by early adulthood, with <strong>4 or more</strong> of:</p>
+<ul>
+<li><p>Neither desires nor enjoys <strong>close relationships</strong>, including being part of a family.</p></li>
+<li><p>Almost always <strong>chooses solitary activities</strong>.</p></li>
+<li><p>Has little, if any, <strong>interest in sexual experiences</strong> with another person.</p></li>
+<li><p>Takes <strong>pleasure in few, if any, activities</strong>.</p></li>
+<li><p>Lacks <strong>close friends or confidants</strong> other than first-degree relatives.</p></li>
+<li><p>Appears <strong>indifferent to praise or criticism</strong>.</p></li>
+<li><p>Shows <strong>emotional coldness, detachment, or flattened affect</strong>.</p></li>
+</ul>
+<p><strong>Rule out:</strong> the pattern must not occur only during schizophrenia, a mood disorder with psychotic features, another psychotic disorder, or autism spectrum disorder, and must not be due to a medical condition. Also distinguish depression (loss of interest that is new rather than lifelong) and avoidant personality disorder (desire for closeness blocked by fear) (APA, 2022; Lampe &amp; Malhi, 2018).</p>
+<p><strong>When counselors must refer (general clinical consensus):</strong> refer for evaluation if there are signs of psychosis, significant depression, or substance use, or if withdrawal is new or worsening, which may point to another disorder.</p>
+<h1 id="frequently-used-assessment-instruments">3. Frequently used assessment instruments</h1>
+<p>These are among the most widely used measures for screening, rating severity, and tracking progress in schizoid personality disorder. <strong>Screening tools do not diagnose;</strong> a positive screen calls for a clinical interview against DSM-5-TR criteria. Click an instrument’s website to find it.</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 22%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Instrument</strong></th>
+<th><strong>Best used for</strong></th>
+<th><strong>Format</strong></th>
+<th><strong>Purchase required?</strong></th>
+<th><strong>Training or qualification</strong></th>
+<th><strong>Where to find it</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>SCID-5-PD</strong> (Structured Clinical Interview for DSM-5 Personality Disorders)</td>
+<td>Diagnosing all ten DSM-5 personality disorders, with an optional self-report screener.</td>
+<td>Semistructured clinician interview</td>
+<td>Yes</td>
+<td>★ Clinical interviewing skill; training recommended</td>
+<td><a target="_blank" rel="noopener" href="https://appi.org/Products/Interviewing/Structured-Clinical-Interview-for-DSM-5-Personalit"><u>APA Publishing</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>PID-5</strong> (Personality Inventory for DSM-5)</td>
+<td>Dimensional personality trait profile (negative affect, detachment, antagonism, disinhibition, psychoticism); brief and informant forms.</td>
+<td>Self-report; 220-item full or 25-item brief form</td>
+<td>No (free from the APA for clinical use)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.psychiatry.org/psychiatrists/practice/dsm/educational-resources/assessment-measures"><u>APA assessment measures</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>AQ / AQ-10</strong> (Autism Spectrum Quotient)</td>
+<td>Ruling out autism, which can look similar to schizoid detachment.</td>
+<td>Self- or parent-report, 50 items (10-item short form)</td>
+<td>No (free for clinicians and research)</td>
+<td>None beyond general clinical training</td>
+<td><a target="_blank" rel="noopener" href="https://www.autismresearchcentre.com/tests/"><u>Autism Research Centre, Cambridge</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>PAI</strong> (Personality Assessment Inventory)</td>
+<td>Broad clinical and personality assessment for adults, including scales for borderline and antisocial features.</td>
+<td>Self-report, 344 items, about 50 to 60 minutes</td>
+<td>Yes</td>
+<td>★ Level C</td>
+<td><a target="_blank" rel="noopener" href="https://www.parinc.com/product/groups/pai"><u>PAR</u></a></td>
+</tr>
+<tr class="odd">
+<td><strong>MCMI-IV</strong> (Millon Clinical Multiaxial Inventory-IV)</td>
+<td>Adults in treatment; personality patterns alongside clinical syndromes.</td>
+<td>Self-report, 195 true/false items, about 25 to 30 minutes</td>
+<td>Yes</td>
+<td>★ Level C</td>
+<td><a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/store/usd/p/100001362"><u>Pearson</u></a></td>
+</tr>
+<tr class="even">
+<td><strong>MMPI-3</strong> (Minnesota Multiphasic Personality Inventory-3)</td>
+<td>Broad personality and psychopathology assessment, with validity scales for over- and under-reporting.</td>
+<td>Self-report, 335 true/false items, about 25 to 50 minutes</td>
+<td>Yes</td>
+<td>★ Level C</td>
+<td><a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/store/usd/p/P100000004"><u>Pearson</u></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>★ = requires professional qualification to purchase or specialized training.</strong> Publishers sell these tests only to qualified users. At Pearson, <strong>Level B</strong> generally means a master’s degree in a related field with formal assessment training, or a health care license; <strong>Level C</strong> means a doctorate in psychology or a related field with formal assessment training, or state licensure in a related field (<a target="_blank" rel="noopener" href="https://www.pearsonassessments.com/professional-assessments/ordering/how-to-order/qualifications/qualifications-policy.html"><u>Pearson qualifications policy</u></a>). MHS, PAR, and WPS use similar levels. Check each publisher’s page before ordering. "Original article" links go to the published study that introduced a free scale that has no official website; the scale can usually be obtained there or from its authors.</p>
+<h1 id="what-works-treatment-and-the-evidence">4. What works: treatment and the evidence</h1>
+<p><strong>Bottom line for class:</strong> there are no controlled treatment trials for SzPD. Help usually targets the problem the person seeks help for (often depression, work stress, or family pressure) while respecting the client’s preferred distance.</p>
+<p><strong>Evidence overview (honest):</strong></p>
+<ul>
+<li><p><strong>No SzPD trials:</strong> we found no randomized trial of any psychotherapy or medication for SzPD (literature search, November 1, 2026). The diagnosis itself is debated, which has slowed research (Triebwasser et al., 2012).</p></li>
+<li><p><strong>Borrowed approaches:</strong> clinicians commonly use supportive and <a target="_blank" rel="noopener" href="https://www.apa.org/ptsd-guideline/treatments/cognitive-behavioral-therapy"><u>cognitive-behavioral methods</u></a> for co-occurring depression and anxiety, and social-skills practice when the client wants it. These are clinical practice, not SzPD-specific evidence.</p></li>
+<li><p><strong>Medication (referral notes):</strong> no medication treats SzPD itself. Co-occurring depression or anxiety may be treated in the usual ways.</p></li>
+</ul>
+<p><strong>Cognitive work with SzPD: how it is used (clinical practice):</strong></p>
+<ul>
+<li><p><strong>Respect the pace.</strong> Keep sessions practical and low-pressure; a steady, undemanding presence can itself be a new experience of safe connection.</p></li>
+<li><p><strong>Identify and examine core beliefs:</strong> "Relationships aren’t worth the trouble," "I’m better off alone," "Feelings are pointless," "Nothing is much fun anyway."</p></li>
+<li><p><strong>Experiment gently:</strong> track pleasure and meaning in small activities, and test whether brief, structured contact with one person adds anything worthwhile.</p></li>
+</ul>
+<h1 id="religion-spirituality-and-christian-integration-what-the-evidence-shows">5. Religion, spirituality, and Christian integration: what the evidence shows</h1>
+<p><strong>Disorder-specific research.</strong> We found <strong>no study of religion or spirituality in schizoid personality disorder</strong> and no faith-integrated treatment trial (literature search, November 1, 2026).</p>
+<p><strong>Related evidence.</strong> Across 49 studies, positive religious coping went with better adjustment to stress and negative religious coping with worse (Ano &amp; Vasconcelles, 2005). Across 97 outcome studies, therapy adapted to clients’ religious beliefs worked about as well as standard therapy for distress and produced added spiritual benefits (Captari et al., 2018).</p>
+<p><strong>Honest summary for teaching:</strong></p>
+<ol type="1">
+<li><p>No treatment has been tested for SzPD. Treat what brings the client in, and respect the client’s comfort with distance.</p></li>
+<li><p>There is no research on faith and SzPD. Some schizoid individuals value private, contemplative faith more than group activities; this need not be pathologized.</p></li>
+<li><p>Pressing for church involvement or emotional expression can drive these clients away. Offer connection, do not demand it.</p></li>
+</ol>
+<h1 id="practical-christian-integration-notes">6. Practical Christian-integration notes</h1>
+<p>These apply Dr. Campbell’s identify, challenge, replace-with-Scripture method in a gentle, client-paced way. Clinical items rest on the research above and on general clinical practice. Pastoral items are theological application, not research findings.</p>
+<ul>
+<li><p><strong>Identify (clinical).</strong> Listen for beliefs that close off connection: "I don’t need anyone," "Church is just people making noise," "God is distant, and that suits me," "Nothing matters much." To identify deeper false beliefs, see: <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/core-beliefs.html"><u>Core Beliefs</u></a>, <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Parental-Messages-Checklist.pdf"><u>Parental Messages</u></a>, or use the <a target="_blank" rel="noopener" href="https://www.beliefcounselor.com/false-belief-finder"><u>Semantic Search Tool</u></a>.</p></li>
+<li><p><strong>Challenge (clinical).</strong> Rather than arguing, explore small costs of total detachment the client already notices (loneliness at times, family strain, missed opportunities) and test one small, structured connection (Ano &amp; Vasconcelles, 2005). <strong>Possible cognitive errors</strong> to watch for, with their definitions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Cognitive-Errors-Checklist.pdf"><u>Belief Counseling Cognitive Errors Checklist</u></a> and the symptoms they tend to feed:</p></li>
+</ul>
+<ul>
+<li><p><strong>Overgeneralization</strong> — one event becomes a rule. <em>Feeds:</em> detachment. <em>Sounds like:</em> “People are always more trouble than they’re worth.”</p></li>
+<li><p><strong>All-or-nothing thinking</strong> — no middle ground. <em>Feeds:</em> avoiding closeness. <em>Sounds like:</em> “Either I’m completely on my own or I’ll be swallowed up.”</p></li>
+<li><p><strong>Fortune telling</strong> — predicting a bad outcome. <em>Feeds:</em> declining invitations. <em>Sounds like:</em> “Going to that group would be pointless.”</p></li>
+<li><p><strong>Selective attention</strong> — noticing only what fits my belief. <em>Feeds:</em> little pleasure in people. <em>Sounds like:</em> “All I notice at church is the noise.”</p></li>
+<li><p><strong>Disqualifying the positive</strong> — deciding good things don’t count. <em>Feeds:</em> emotional flatness. <em>Sounds like:</em> “That visit didn’t really matter to me.”</p></li>
+</ul>
+<ul>
+<li><p><strong>Questions to dispute the belief.</strong> Use them gently and without pressure; the goal is curiosity, not persuasion. Have the client choose questions from the <a target="_blank" rel="noopener" href="https://doctorishome.github.io/belief-therapy-tool/counselors/forms/Belief-Counseling-Questioning-False-Beliefs.pdf"><u>Questioning False Beliefs</u></a> form that “speak to” the belief. To see how, watch Dr. Campbell’s video <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZjR0Mx1zEMY"><u>Integrated Christian Counseling: Questioning Your Beliefs</u></a>. Selected questions that fit the errors above:</p></li>
+</ul>
+<ul>
+<li><p>“Are there other ways of looking at this situation?” <em>For:</em> overgeneralization.</p></li>
+<li><p>“Am I keeping things in perspective?” <em>For:</em> all-or-nothing thinking.</p></li>
+<li><p>“Can I really predict the future?” <em>For:</em> fortune telling.</p></li>
+<li><p>“Is it possible that I am distorting the facts?” <em>For:</em> selective attention.</p></li>
+<li><p>“Even if my thoughts are true, do I want to live the rest of my life this way?” <em>For:</em> the cost of total detachment.</p></li>
+<li><p>“How might an all-loving God look at me or this situation?” <em>For:</em> “God is distant, and that suits me”.</p></li>
+</ul>
+<ul>
+<li><p><strong>Replace (pastoral).</strong> Offer Scripture that shows God’s design for connection, gently and without pressure:</p></li>
+</ul>
+<ul>
+<li><p>“The LORD God also said, ‘It is not good for the man to be alone. I will make for him a suitable helper.’” (Genesis 2:18)</p></li>
+<li><p>“Two are better than one, because they have a good return for their labor. For if one falls down, his companion can lift him up; but pity the one who falls without another to help him up!” (Ecclesiastes 4:9–10)</p></li>
+<li><p>“God settles the lonely in families…” (Psalm 68:6). God’s initiative, not the person’s performance.</p></li>
+<li><p>“The LORD your God is among you; He is mighty to save. He will rejoice over you with gladness; He will quiet you with His love; He will rejoice over you with singing.” (Zephaniah 3:17). A God who draws near.</p></li>
+</ul>
+<ul>
+<li><p><strong>Faith community (clinical).</strong> Offer quiet, task-based ways to belong (setting up, tech support, prayer lists, one-on-one Bible study) instead of high-emotion small groups.</p></li>
+<li><p><strong>Ministers:</strong> accept reserved members without labeling them cold or unspiritual, and refer if withdrawal is new, deepening, or paired with odd beliefs or depression.</p></li>
+</ul>
+<h1 id="quick-classroom-takeaways">7. Quick classroom takeaways</h1>
+<ul>
+<li><p>SzPD is lifelong detachment from relationships and restricted emotion (4 of 7 criteria). It is distinct from avoidant PD (fear-driven) and depression (new loss of interest); its validity as a category is debated.</p></li>
+<li><p>No treatment trials exist; treat co-occurring problems and respect the client’s pace.</p></li>
+<li><p>Gently replace "I don’t need anyone" with the truth that "It is not good for the man to be alone," offered as invitation, not pressure.</p></li>
+<li><p>Confirm with a structured interview (SCID-5-PD), and screen for autism (AQ) and depression, which can look similar.</p></li>
+</ul>
+<h1 id="sources-note">Sources note</h1>
+<p>All 7 references were checked against Crossref, OpenAlex, and PubMed/Europe PMC records (Nov 1, 2026), and the figures quoted were checked against each study’s abstract. Each DOI is a live link to the publisher record. Assessment instrument links and purchase and qualification levels were checked on the publishers’ and distributors’ websites, or on Crossref for original articles (Nov 1, 2026).</p>
+<h1 id="references">References</h1><div class="refs">
+<p>American Psychiatric Association. (2022). <em>Diagnostic and statistical manual of mental disorders (5th ed., text rev.).</em> <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.books.9780890425787"><u>https://doi.org/10.1176/appi.books.9780890425787</u></a></p>
+<p>Ano, G. G., &amp; Vasconcelles, E. B. (2005). Religious coping and psychological adjustment to stress: A meta-analysis. <em>Journal of Clinical Psychology, 61</em>(4), 461–480. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.20049"><u>https://doi.org/10.1002/jclp.20049</u></a></p>
+<p>Captari, L. E., Hook, J. N., Hoyt, W. T., Davis, D. E., McElroy-Heltzel, S. E., &amp; Worthington, E. L. (2018). Integrating clients' religion and spirituality within psychotherapy: A comprehensive meta-analysis. <em>Journal of Clinical Psychology, 74</em>(11), 1938–1951. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/jclp.22681"><u>https://doi.org/10.1002/jclp.22681</u></a></p>
+<p>Grant, B. F., Hasin, D. S., Stinson, F. S., Dawson, D. A., Chou, S. P., Ruan, W. J., &amp; Pickering, R. P. (2004). Prevalence, correlates, and disability of personality disorders in the United States: Results from the National Epidemiologic Survey on Alcohol and Related Conditions. <em>The Journal of Clinical Psychiatry, 65</em>(7), 948–958. <a target="_blank" rel="noopener" href="https://doi.org/10.4088/JCP.v65n0711"><u>https://doi.org/10.4088/JCP.v65n0711</u></a></p>
+<p>Lampe, L., &amp; Malhi, G. S. (2018). Avoidant personality disorder: Current insights. <em>Psychology Research and Behavior Management, 11</em>, 55–66. <a target="_blank" rel="noopener" href="https://doi.org/10.2147/PRBM.S121073"><u>https://doi.org/10.2147/PRBM.S121073</u></a></p>
+<p>Triebwasser, J., Chemerinski, E., Roussos, P., &amp; Siever, L. J. (2012). Schizoid personality disorder. <em>Journal of Personality Disorders, 26</em>(6), 919–926. <a target="_blank" rel="noopener" href="https://doi.org/10.1521/pedi.2012.26.6.919"><u>https://doi.org/10.1521/pedi.2012.26.6.919</u></a></p>
+<p>Volkert, J., Gablonski, T.-C., &amp; Rabung, S. (2018). Prevalence of personality disorders in the general adult population in Western countries: Systematic review and meta-analysis. <em>The British Journal of Psychiatry, 213</em>(6), 709–715. <a target="_blank" rel="noopener" href="https://doi.org/10.1192/bjp.2018.202"><u>https://doi.org/10.1192/bjp.2018.202</u></a></p>
+<p><em>Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All 7 references and DOIs verified via Crossref, OpenAlex, and PubMed/Europe PMC records (Sunday, Nov 1, 2026). Effect sizes as reported in the cited sources.</em></p>
+</div>
+</div>
+<div class="tools" style="padding-bottom:6px"><a class="btn" href="../../members/assessment.html#rvlist" onclick="try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){history.back();return false;}}catch(e){}">&#8592; Back</a></div>
+<div class="foot">Teaching overview for counselors. Not a substitute for the DSM-5-TR or clinical judgment. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
+<script>(function(){var b=document.getElementById('back');b.addEventListener('click',function(e){
+try{var r=document.referrer;if(r&&new URL(r).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});
+try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){document.body.firstElementChild.scrollIntoView({block:'start'});}}catch(e){}})();</script><!--navjs--><script>
+(function(){
+var dds=document.querySelectorAll('.nav .dd'),t;
+function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
+dds.forEach(function(d){
+  var b=d.firstChild;
+  b.addEventListener('click',function(e){e.stopPropagation();var o=!d.classList.contains('open');closeAll();if(o){d.classList.add('open');b.setAttribute('aria-expanded','true');}});
+  d.querySelector('.x').addEventListener('click',function(e){e.stopPropagation();closeAll();b.focus();});
+  d.addEventListener('mouseleave',function(){clearTimeout(t);t=setTimeout(closeAll,500);});
+  d.addEventListener('mouseenter',function(){clearTimeout(t);});
+});
+document.addEventListener('click',closeAll);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll();});
+})();
+</script><!--/navjs--></body></html>
