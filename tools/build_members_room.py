@@ -115,7 +115,7 @@ PAGES = {
         ("Step 3: Replace", "Put biblical truth in the place of the false belief, and practice it.", [
             video(4, "replace", "Step 3: Replace"),
             ("Scriptures", "Pearls Scripture Search: more than 170 topics.",
-             [("Open Scripture Search", SITE + "/scriptures")]),
+             [("Open Scripture Search", SITE + "/counselor-scriptures")]),
             ("Prayer", "", []),
             ("Reinforce", "", []),
             ("Practice", "", []),
