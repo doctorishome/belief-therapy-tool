@@ -80,15 +80,27 @@ a{color:var(--navy2)}
 .paper .refs p{font-size:.88rem;padding-left:2em;text-indent:-2em;margin:6px 0;word-break:break-word}
 .paper .final{font-size:.85rem;color:var(--mut);font-style:italic;margin-top:18px}
 .foot{margin:34px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
-@media(max-width:620px){.paper{padding:6px 16px 22px;border-radius:0}}
-@media print{.nav,.tools,.foot{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
+.layout{max-width:1240px;margin:16px auto 0;padding:0 20px;display:flex;gap:22px;align-items:flex-start}
+.layout .paper{flex:1;min-width:0;max-width:none;margin:0}
+.toc{flex:0 0 250px;position:sticky;top:130px;max-height:calc(100vh - 150px);overflow:auto;background:#fff;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:12px 10px 10px;font-size:.9rem;line-height:1.35}
+.toc h3{margin:0 6px 8px;color:var(--gold);font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase}
+.toc a{display:block;color:var(--navy);text-decoration:none;padding:6px 8px;border-radius:6px;border-left:3px solid transparent}
+.toc a.sub{padding-left:22px;font-size:.84rem;color:var(--mut)}
+.toc a:hover{background:var(--cream)}
+.toc a.cur{background:var(--cream);border-left-color:var(--gold);font-weight:bold}
+.toc .top{margin-top:8px;border-top:1px solid var(--line);padding-top:8px;font-size:.82rem;color:var(--mut)}
+.tocbtn{display:none}
+.paper h1,.paper h2{scroll-margin-top:140px}
+@media(max-width:900px){.layout{display:block}.toc{display:none;position:static;max-height:none;margin:0 0 14px}.toc.open{display:block}.tocbtn{display:inline-block}}
+@media(max-width:620px){.layout{padding:0}.paper{padding:6px 16px 22px;border-radius:0}}
+@media print{.nav,.tools,.foot,.toc{display:none}.hero{background:none;color:var(--navy);padding:10px}.hero p,.hero .by,.hero .ai{color:var(--ink)}.paper{border:0;box-shadow:none}}
 </style></head><body><!--nav--><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a class="l" href="../../members/index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a class="l" href="../../members/belief-counseling.html">Belief Counseling</a><a class="l" href="../../members/process.html">The Process</a><a class="l on" href="../../members/assessment.html">Traditional Assessment</a><a class="l" href="../../members/tips.html">Professional Tips</a><a class="l" href="../../members/library.html">Library</a><a class="l" target="_top" href="https://www.beliefcounselor.com/counselor-scriptures">Scripture Lookup</a><a class="l" href="../../counselors/membership.html">Membership</a><span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a><a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a><a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->
 <div class="hero"><div class="eyebrow">DSM-5-TR Teaching Review</div><h1>Narcissistic Personality Disorder</h1>
 <p>Clinical Companion Knowledge Library: for counselors and counseling students</p>
 <p class="by">Brian Campbell, Ph.D.</p>
 <p class="ai">Prepared with AI research and drafting assistance; content directed, reviewed, and approved by the author. © 2026 Brian Campbell, Ph.D. All rights reserved.</p></div>
-<div class="tools"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="narcissistic-personality-teaching-overview.pdf" target="_blank" rel="noopener">Download or print the PDF</a></div>
-<div class="paper">
+<div class="tools" id="top"><a class="btn" id="back" href="../../members/assessment.html#rvlist">&#8592; Back</a><a class="btn ghost" href="narcissistic-personality-teaching-overview.pdf" target="_blank" rel="noopener">Download or print the PDF</a><button type="button" class="btn ghost tocbtn" id="tocbtn" aria-expanded="false">&#9776; Contents</button></div>
+<div class="layout"><nav class="toc" id="toc" aria-label="Contents"><h3>Contents</h3><a class="" href="#what-it-is">1. What it is</a><a class="" href="#core-symptoms-to-watch-for">2. Core symptoms to watch for</a><a class="" href="#frequently-used-assessment-instruments">3. Frequently used assessment instruments</a><a class="" href="#what-works-treatment-and-the-evidence">4. What works: treatment and the evidence</a><a class="" href="#religion-spirituality-and-christian-integration-what-the-evidence-shows">5. Religion, spirituality, and Christian integration: what the evidence shows</a><a class="" href="#practical-christian-integration-notes">6. Practical Christian-integration notes</a><a class="" href="#quick-classroom-takeaways">7. Quick classroom takeaways</a><a class="" href="#sources-note">Sources note</a><a class="" href="#references">References</a><a class="top" href="#top">&#8593; Back to top</a></nav><div class="paper">
 <h1 id="what-it-is">1. What it is</h1>
 <p>Narcissistic personality disorder (NPD) is a long-standing pattern of <strong>grandiosity</strong> (in fantasy or behavior), <strong>need for admiration</strong>, and <strong>lack of empathy</strong>, beginning by early adulthood and present in many settings (American Psychiatric Association [APA], 2022). It belongs to <strong>Cluster B</strong> (dramatic or erratic).</p>
 <p><strong>How common:</strong> in a U.S. national survey of 34,653 adults, lifetime NPD was 6.2% (7.7% of men, 4.8% of women). NPD was linked to mental disability in men and often co-occurred with substance use, mood, anxiety, and other personality disorders (Stinson et al., 2008).</p>
@@ -274,12 +286,18 @@ a{color:var(--navy2)}
 <p>Weinberg, I., &amp; Ronningstam, E. (2022). Narcissistic personality disorder: Progress in understanding and treatment. <em>Focus, 20</em>(4), 368–377. <a target="_blank" rel="noopener" href="https://doi.org/10.1176/appi.focus.20220052"><u>https://doi.org/10.1176/appi.focus.20220052</u></a></p>
 <p><em>Prepared for Clinical Companion (Brian Campbell). Teaching overview only. Clinically review before use. Not a substitute for the DSM-5-TR or clinical judgment. All 9 references and DOIs verified via Crossref, OpenAlex, and PubMed/Europe PMC records (Sunday, Nov 1, 2026). Effect sizes as reported in the cited sources.</em></p>
 </div>
-</div>
+</div></div>
 <div class="tools" style="padding-bottom:6px"><a class="btn" href="../../members/assessment.html#rvlist" onclick="try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){history.back();return false;}}catch(e){}">&#8592; Back</a></div>
 <div class="foot">Teaching overview for counselors. Not a substitute for the DSM-5-TR or clinical judgment. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div>
 <script>(function(){var b=document.getElementById('back');b.addEventListener('click',function(e){
 try{var r=document.referrer;if(r&&new URL(r).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});
-try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){document.body.firstElementChild.scrollIntoView({block:'start'});}}catch(e){}})();</script><!--navjs--><script>
+try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){document.body.firstElementChild.scrollIntoView({block:'start'});}}catch(e){}})();</script><script>(function(){var t=document.getElementById('toc'),b=document.getElementById('tocbtn');if(!t)return;
+b.addEventListener('click',function(){var o=t.classList.toggle('open');b.setAttribute('aria-expanded',o);});
+var links=[].slice.call(t.querySelectorAll('a[href^="#"]:not(.top)'));
+t.addEventListener('click',function(e){if(e.target.tagName==='A'&&window.innerWidth<=900){t.classList.remove('open');b.setAttribute('aria-expanded','false');}});
+var hs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+function mark(){var y=150,cur=0;hs.forEach(function(h,i){if(h&&h.getBoundingClientRect().top<y)cur=i;});links.forEach(function(a,i){a.classList.toggle('cur',i===cur);});}
+window.addEventListener('scroll',mark,{passive:true});mark();})();</script><!--navjs--><script>
 (function(){
 var dds=document.querySelectorAll('.nav .dd'),t;
 function closeAll(){dds.forEach(function(x){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false');});}
