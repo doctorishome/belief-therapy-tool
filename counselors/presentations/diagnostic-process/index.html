@@ -12,6 +12,10 @@ header a{color:var(--gold);font-weight:bold;text-decoration:none;font-size:.95re
 main{max-width:1040px;margin:0 auto;padding:14px 12px 30px}
 .stage{background:#fff;border-radius:10px;box-shadow:0 2px 10px rgba(18,40,76,.12);overflow:hidden;touch-action:pan-y}
 .stage img{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#fff}
+.stage{position:relative}
+.hot{position:absolute;display:none;width:4.9%;height:8.8%;border:0;padding:0;border-radius:50%;background:transparent;cursor:pointer}
+.hot:hover,.hot:focus-visible{box-shadow:0 0 0 4px #fff,0 0 0 7px var(--gold);outline:none}
+.stage.home .hot{display:block}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px;flex-wrap:wrap}
 .nav{display:flex;align-items:center;gap:8px}
 button{font:inherit;cursor:pointer;border-radius:22px;border:1px solid var(--navy);background:#fff;color:var(--navy);font-weight:bold;padding:8px 16px;font-size:1rem}
@@ -42,21 +46,25 @@ footer{color:var(--mut);font-size:.82rem;text-align:center;padding:10px}
 button.link{border:0;background:none;padding:0 4px;color:var(--navy);text-decoration:underline;font-weight:normal;font-size:.9rem;border-radius:0}
 .words{text-align:center;margin-top:4px}
 #pause{display:none}
+.ctl{display:none;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:10px}
+.ctl.on{display:flex}
+.ctl button{padding:7px 14px;font-size:.95rem}
 </style></head><body>
 <header><h1>Basic Diagnostic and Coding Procedures (DSM-5-TR)</h1>
 <nav style="display:flex;gap:16px;flex-wrap:wrap"><a href="tutorial.html" target="_blank" rel="noopener">Practice tutorial ↗</a><a href="https://doctorishome.github.io/belief-therapy-tool/counselors/reviews.html">&#8592; DSM-5-TR Reviews</a></nav></header>
 <main>
-<div class="stage" id="stage"><img id="slide" alt=""></div>
+<div class="stage" id="stage"><img id="slide" alt=""><button type="button" class="hot" data-step="1" style="left:5.75%;top:76.91%" aria-label="Go to step 1" title="Go to step 1"></button><button type="button" class="hot" data-step="2" style="left:12.00%;top:76.91%" aria-label="Go to step 2" title="Go to step 2"></button><button type="button" class="hot" data-step="3" style="left:18.19%;top:76.91%" aria-label="Go to step 3" title="Go to step 3"></button><button type="button" class="hot" data-step="4" style="left:24.38%;top:76.91%" aria-label="Go to step 4" title="Go to step 4"></button><button type="button" class="hot" data-step="5" style="left:30.56%;top:76.91%" aria-label="Go to step 5" title="Go to step 5"></button><button type="button" class="hot" data-step="6" style="left:36.75%;top:76.91%" aria-label="Go to step 6" title="Go to step 6"></button><button type="button" class="hot" data-step="7" style="left:43.00%;top:76.91%" aria-label="Go to step 7" title="Go to step 7"></button><button type="button" class="hot" data-step="8" style="left:49.19%;top:76.91%" aria-label="Go to step 8" title="Go to step 8"></button><button type="button" class="hot" data-step="9" style="left:55.38%;top:76.91%" aria-label="Go to step 9" title="Go to step 9"></button></div>
 <div class="bar">
  <div class="nav"><button id="prev" type="button" aria-label="Previous slide">&#9664; Back</button><span class="count" id="count" aria-live="polite"></span><button id="next" class="primary" type="button" aria-label="Next slide">Next &#9654;</button></div>
  <div class="tools">
   <button id="chartBtn" class="gold" type="button">See it on the flow chart</button>
    </div>
 </div>
-<div class="status" id="status" aria-live="polite"><span id="statusText"></span> <button type="button" id="pause" class="link">Pause</button></div>
+<div class="status" id="status" aria-live="polite"><span id="statusText"></span> <button type="button" id="pause" class="link" hidden>Pause</button></div>
+<div class="ctl" id="ctl" aria-label="Narration controls"><button type="button" id="rew" aria-label="Back 10 seconds">&#9194; Back 10 sec</button><button type="button" id="pp" class="primary" aria-label="Pause the narration">&#10074;&#10074; Pause</button><button type="button" id="stop" aria-label="Stop the narration">&#9632; Stop</button><button type="button" id="fwd" aria-label="Forward 10 seconds">Forward 10 sec &#9193;</button></div>
 <div class="words"><button type="button" id="wordsBtn" class="link" aria-expanded="false">Show the words</button></div>
 <div class="narr" id="narr"><h2>Narration</h2><div id="narrText"></div></div>
-<div class="hint">Each slide's narration plays by itself; Next lights up when it finishes.<br><span style="font-size:.8rem">Narration voice is AI-generated. Content written by Dr. Brian Campbell.</span></div>
+<div class="hint">Each slide's narration plays by itself. Use the buttons under the slide to pause, stop, or skip back or forward 10 seconds. On the first slide, click a numbered circle to jump to that step.<br><span style="font-size:.8rem">Narration voice is AI-generated. Content written by Dr. Brian Campbell.</span></div>
 </main>
 <div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="ovTitle"><div class="box">
  <div class="top"><b id="ovTitle"></b><button id="ovClose" class="primary" type="button">Close &#10005;</button></div>
@@ -73,10 +81,11 @@ const audio = new Audio(); audio.preload = "auto";
 const STEP_X = {1:220,2:760,3:900,4:900,5:900,6:900,7:445,8:1210,9:1490};
 const $ = id => document.getElementById(id);
 function esc(t){return t.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
-function status(t, canPause){ $("statusText").textContent = t; $("pause").style.display = canPause ? "inline" : "none"; }
+function status(t, canPause){ $("statusText").textContent = t; $("ctl").classList.toggle("on", !!canPause); }
+function setPP(){ const p = audio.paused; $("pp").innerHTML = p ? "&#9654; Play" : "&#10074;&#10074; Pause"; $("pp").setAttribute("aria-label", p ? "Play the narration" : "Pause the narration"); }
 function updateButtons(){
   const last = i === SLIDES.length - 1;
-  const free = !playing || heard.has(i);
+  const free = true;
   if (!started || i === 0) {
     $("prev").innerHTML = "Start &#9654;"; $("prev").classList.add("primary");
     $("prev").setAttribute("aria-label", "Start the presentation");
@@ -96,21 +105,25 @@ function playNarr(){
   const s = SLIDES[i];
   if (!s.audio) { finish(); return; }
   audio.src = s.audio; playing = true; updateButtons();
-  status("Narration playing…", true); $("pause").textContent = "Pause";
-  audio.play().catch(() => finish());
+  status("Narration playing…", true);
+  audio.play().then(setPP).catch(() => finish());
 }
 audio.onended = finish;
 audio.onerror = () => { if (playing) finish(); };
-$("pause").onclick = () => {
-  if (audio.paused) { audio.play(); $("pause").textContent = "Pause"; status("Narration playing…", true); }
-  else { audio.pause(); $("pause").textContent = "Resume"; status("Narration paused.", true); }
+$("pp").onclick = () => {
+  if (audio.paused) { audio.play().then(setPP); status("Narration playing…", true); }
+  else { audio.pause(); setPP(); status("Narration paused.", true); }
 };
+$("stop").onclick = () => { audio.pause(); try { audio.currentTime = 0; } catch(e){} finish(); status(i === SLIDES.length - 1 ? "Narration stopped. End of the presentation." : "Narration stopped. Click Next to continue.", false); };
+$("rew").onclick = () => { try { audio.currentTime = Math.max(0, audio.currentTime - 10); } catch(e){} };
+$("fwd").onclick = () => { try { if (audio.duration && audio.currentTime + 10 >= audio.duration) { $("stop").onclick(); } else audio.currentTime += 10; } catch(e){} };
 function show(n, autoplay){
   i = Math.max(0, Math.min(SLIDES.length-1, n));
   const s = SLIDES[i];
   audio.pause(); playing = false;
   $("slide").src = s.img; $("slide").alt = "Slide " + (i+1) + ": " + s.title;
   $("count").textContent = "Slide " + (i+1) + " of " + SLIDES.length;
+  $("stage").classList.toggle("home", i === 0);
   $("chartBtn").style.display = s.step ? "" : "none";
   $("narrText").innerHTML = s.notes.split(/\n\s*\n/).map(p=>"<p>"+esc(p).replace(/\n/g,"<br>")+"</p>").join("");
   history.replaceState(null, "", "#" + (i+1));
@@ -121,6 +134,7 @@ function goNext(){ if (!$("next").disabled) show(i+1, true); }
 function goBack(){ if (started && i > 0 && !$("prev").disabled) show(i-1, true); }
 $("prev").onclick = () => { if (!started) { started = true; playNarr(); } else goBack(); };
 $("next").onclick = goNext;
+document.querySelectorAll(".hot").forEach(b => b.onclick = () => { const k = +b.dataset.step; const n = SLIDES.findIndex(s => s.step === k); if (n >= 0) { started = true; show(n, true); } });
 $("wordsBtn").onclick = () => {
   const on = $("narr").classList.toggle("on");
   $("wordsBtn").textContent = on ? "Hide the words" : "Show the words";
