@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Live Interactive Diagnosis Practice</title><style>
+:root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
+.nav a{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+.nav a:hover,.nav a.on{color:#fff;border-color:var(--gold)}
+.nav a.on{color:var(--gold);font-weight:bold;border-bottom-width:3px}
+.nav a.pub{color:var(--gold);font-size:.85rem;border:1px solid var(--gold);border-radius:20px;padding:3px 12px}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:44px 22px 38px;text-align:center}
+.hero h1{font-size:clamp(1.8rem,4.5vw,2.7rem);margin:0 0 8px;line-height:1.2}
+.hero p{max-width:720px;margin:0 auto;font-size:1.1rem;color:#dfe6f2}
+.hero .eyebrow{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.wrap{max-width:900px;margin:0 auto;padding:26px 20px 20px}
+h2{color:var(--navy);font-size:1.5rem;margin:34px 0 6px;border-bottom:2px solid var(--gold);padding-bottom:6px}
+h3.group{color:var(--navy);font-size:1.02rem;letter-spacing:1px;text-transform:uppercase;margin:24px 0 8px}
+p.lead{color:var(--mut);margin:6px 0 12px}
+.item{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 16px;margin:10px 0}
+.item h4{margin:0;color:var(--navy);font-size:1.08rem}
+.item p{margin:2px 0 0;color:var(--mut);font-size:.96rem}
+.item.pic{display:flex;gap:18px;align-items:center}
+.rvtop{display:flex;gap:18px;align-items:center}.rvtop .ph{flex:0 0 240px;line-height:0}.rvtop img{width:240px;height:135px;object-fit:cover;border-radius:6px;display:block}.rvsub{color:var(--gold);font-weight:bold;letter-spacing:1px;text-transform:uppercase;font-size:.85rem;margin:2px 0 4px}@media(max-width:620px){.rvtop{flex-direction:column;align-items:flex-start}.rvtop .ph,.rvtop img{width:100%;height:auto}}
+.rgs{columns:3 220px;column-gap:28px;margin-top:14px;border-top:1px solid var(--line);padding-top:12px}.rg{break-inside:avoid;margin:0 0 12px}.rg h5{margin:0 0 4px;color:var(--navy);font-size:.92rem;letter-spacing:.3px}.rg ul{margin:0;padding-left:18px}.rg li{margin:2px 0;font-size:.95rem}.rg a{color:var(--navy)}
+.item.pic .ph{flex:0 0 240px;line-height:0}
+.item.pic img{width:240px;height:135px;object-fit:cover;border-radius:6px;display:block}
+@media(max-width:620px){.item.pic{flex-direction:column;align-items:flex-start}.item.pic .ph,.item.pic img{width:100%;height:auto}}
+.item .links{margin-top:8px;display:flex;flex-wrap:wrap;gap:8px}
+.item .links a{font:bold .85rem Arial,Helvetica,sans-serif;text-decoration:none;color:var(--navy);border:1.5px solid var(--navy);border-radius:20px;padding:4px 13px}
+.item .links a:first-child{background:var(--navy);color:#fff}
+.item .links a:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.item.soon{border-left-color:var(--line);background:#fffdf7}
+.chip{display:inline-block;font:bold .68rem Arial,Helvetica,sans-serif;letter-spacing:1px;text-transform:uppercase;color:var(--mut);border:1px solid var(--line);border-radius:12px;padding:1px 9px;margin-left:8px;vertical-align:middle}
+.vid{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;margin:10px 0}
+.vid video{display:block;width:100%;max-width:640px;margin:0 auto;border-radius:6px;background:#000}
+.vid h4{margin:0 0 8px;color:var(--navy);font-size:1.02rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:18px 0}
+a.card{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:8px;padding:16px 18px;box-shadow:0 2px 6px rgba(18,40,76,.06)}
+a.card:hover{box-shadow:0 6px 16px rgba(18,40,76,.16)}
+a.card h3{margin:0 0 4px;color:var(--navy);font-size:1.15rem}
+a.card p{margin:0;color:var(--mut);font-size:.96rem}
+a.card.cc{background:var(--navy);border-color:var(--gold)}
+a.card.cc h3{color:var(--gold)}a.card.cc p{color:#dfe6f2}
+.start{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:6px 0 4px}
+.start a{display:block;text-decoration:none;background:var(--navy);border-left:5px solid var(--gold);border-radius:0 8px 8px 0;padding:13px 18px}
+.start a b{display:block;color:var(--gold);font-size:1.1rem}.start a span{color:#dfe6f2;font-size:.95rem}
+.start a:hover{background:var(--navy2)}
+.lock{background:#fff;border:1px solid var(--gold);border-radius:8px;padding:14px 18px;margin:14px 0;color:var(--navy);font-weight:bold}
+.foot{margin:40px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}
+.foot a{color:var(--gold)}
+@media(max-width:1100px){.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 12px;gap:6px 10px}.nav a{font-size:.82rem}}
+
+.item ol.steps{margin:8px 0 0;padding-left:1.3em;list-style:decimal}
+.item ol.cases{margin:8px 0 0;padding-left:0;list-style:none}
+.item ol li{margin:10px 0}
+.item ol a{color:var(--navy2)}
+.item .fine{margin:12px 0 0;font-size:.92rem}
+.chip.keep{text-transform:none;letter-spacing:0;font-size:.75rem}
+.chip.free{color:var(--navy);border-color:var(--gold);background:#f8f1d8}
+.caserow{display:flex;gap:12px;align-items:center}
+.casenum{flex:0 0 1.4em;text-align:right;font-weight:bold;color:var(--navy)}
+.portrait{flex:0 0 88px;width:88px;height:88px;border-radius:50%;overflow:hidden;background:#f4efe3;border:2px solid var(--gold)}
+@media(max-width:560px){.portrait{flex-basis:72px;width:72px;height:72px}}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.casetext{min-width:0}
+.banner{margin:8px 0 16px}
+.banner img{display:block;width:100%;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(18,40,76,.12)}
+.banner figcaption{margin:6px 0 0;font:13px/1.4 Arial,Helvetica,sans-serif;color:var(--mut)}
+</style></head><body><div class="nav"><div class="brand">Belief Counseling<small>Counselors’ Room</small></div><a href="index.html">Welcome</a><a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a><a href="belief-counseling.html">Belief Counseling</a><a href="process.html">The Process</a><a class="on" href="assessment.html">Traditional Assessment</a><a href="tips.html">Professional Tips</a><a href="library.html">Library</a><a target="_top" href="https://www.beliefcounselor.com/counselor-scriptures">Scripture Lookup</a><a href="../counselors/membership.html">Membership</a><a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a></div><div class="hero"><div class="eyebrow">Traditional Assessment</div><h1>Live Interactive Diagnosis Practice</h1><p>Interview a fictional client played by an AI, with an AI supervisor coaching you.</p></div><div class="wrap"><p class="lead"><a href="assessment.html#dsm">&#8592; Back to Traditional Assessment</a></p><figure class="banner"><img alt="A counselor in training takes notes while interviewing a fictional AI client on her laptop." src="../counselors/cases/diagnosis-practice-banner.jpg"><figcaption>AI-generated image.</figcaption></figure><div class="item"><h4>AI-assisted practice cases</h4><p>You interview a fictional client, played by an AI, and practice the work as you would in the room. You walk through the DSM-5-TR diagnostic process, and you practice Belief Counseling: identify a false belief, challenge it, and replace it with Scripture. An AI supervisor coaches you along the way, with questions to ask, feedback, and help with the diagnosis.</p><p>There are two sessions. Session 1 is the first interview: a functional analysis, a safety check, a diagnostic hypothesis, belief mining, the first false beliefs, and the assessment tools. Session 2 finishes the diagnosis, challenges and replaces the main false belief, and chooses the belief cards that fit. At the end, the AI gives you the diagnosis, feedback, and a report you can print.</p><p>Every client is fictional. This is training, not clinical care.</p></div><div class="item"><h4>How to start a case</h4><ol class="steps"><li>Open <a target="_blank" rel="noopener" href="../counselors/cases/case-01-walt-page.html">Walt’s case page</a> and click Print, so you have the case in front of you. Have a pen and paper ready for notes.</li><li>Click ‘<a href="../counselors/cases/case-01-walt.txt" download="Walt-AI-Case-File.txt" target="_blank" rel="noopener">Save the AI case file</a>.’ It saves to your computer’s Downloads folder (on a phone, to your Files).</li><li>Open <a href="https://grok.com" target="_blank" rel="noopener">Grok</a>, <a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT</a>, or <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> and sign in to a free account.</li><li>Start a new chat. Click the paperclip or ‘+’ beside the message box and choose Walt-AI-Case-File.txt from Downloads.</li><li>Type OK and press Enter. The Supervisor welcomes you and the interview begins. Each reply starts with “Walt says:” or “Supervisor here:”. Type COACH anytime for help. If your messages run out, copy the “PICK UP HERE FOR SESSION 2” block into a new chat. You can type or use voice.</li></ol></div><div class="item"><h4>Practice Cases</h4><ol class="cases"><li><span class="caserow"><span class="casenum">1.</span><span class="portrait"><img alt="Walt (fictional client, AI-generated image)" src="../counselors/cases/case-01-walt.jpg"></span><span class="casetext"><strong>Walt</strong> <span class="chip keep free">Free sample case</span><p>58-year-old band director, referred by his doctor. He says he is “just tired.”</p><div class="links"><a target="_blank" rel="noopener" href="../counselors/cases/case-01-walt-page.html">Open case</a><a href="../counselors/cases/case-01-walt.txt" download="Walt-AI-Case-File.txt" target="_blank" rel="noopener">Save the AI case file</a></div></span></span></li><li><span class="caserow"><span class="casenum">2.</span><span class="portrait"></span><span class="casetext">Coming soon <span class="chip keep">Members</span></span></span></li><li><span class="caserow"><span class="casenum">3.</span><span class="portrait"></span><span class="casetext">Coming soon <span class="chip keep">Members</span></span></span></li><li><span class="caserow"><span class="casenum">4.</span><span class="portrait"></span><span class="casetext">Coming soon <span class="chip keep">Members</span></span></span></li><li><span class="caserow"><span class="casenum">5.</span><span class="portrait"></span><span class="casetext">Coming soon <span class="chip keep">Members</span></span></span></li><li><span class="caserow"><span class="casenum">6.</span><span class="portrait"></span><span class="casetext">Coming soon <span class="chip keep">Members</span></span></span></li><li><span class="caserow"><span class="casenum">7.</span><span class="portrait"></span><span class="casetext">Coming soon <span class="chip keep">Members</span></span></span></li><li><span class="caserow"><span class="casenum">8.</span><span class="portrait"></span><span class="casetext">Coming soon <span class="chip keep">Members</span></span></span></li><li><span class="caserow"><span class="casenum">9.</span><span class="portrait"></span><span class="casetext">Coming soon <span class="chip keep">Members</span></span></span></li><li><span class="caserow"><span class="casenum">10.</span><span class="portrait"></span><span class="casetext">Coming soon <span class="chip keep">Members</span></span></span></li></ol><p class="fine">One case is free for everyone. Members ($14.95) get the full case list.</p></div><p class="lead" style="margin-top:22px"><a href="assessment.html#dsm">&#8592; Back to Traditional Assessment</a></p></div><div class="foot">Educational training for counselors. Never enter real client names or details. · © Brian Campbell, Ph.D. · <a href="https://www.beliefcounselor.com/help" target="_top">Help &amp; Support</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script></body></html>
