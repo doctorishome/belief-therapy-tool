@@ -5,39 +5,94 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Email to Client</title>
 <!--
-  "Email to Client" button for the Counselors' Room Scripture page (/counselor-scriptures).
-  The Wix page code sends {type:'emailData', href:'mailto:?subject=...&body=...'} after a topic opens.
-  Clicking opens the counselor's own email program with the Scriptures filled in.
+  "Email to Client" box for the Counselors' Room Scripture page (/counselor-scriptures).
+  The Wix page code sends {type:'emailData', topic, scriptures, synopsis, chapterLabel, chapterUrl}
+  after a topic opens. The counselor ticks what to include (Scriptures / Synopsis / link to the
+  Godly Counsel chapter) and clicks the button: their own email program opens with it filled in.
   (Wix text links cannot carry an email body, so the button lives in this small embed.)
 -->
 <style>
   html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
-  .wrap { text-align: center; font-family: Georgia, serif; padding: 4px 6px; }
+  .wrap { text-align: center; font-family: Georgia, serif; color: #2D2A26; padding: 4px 6px; }
+  .opts { font-size: 16px; margin: 0 0 10px 0; line-height: 1.9; }
+  .opts .lead { font-weight: 700; margin-right: 6px; }
+  .opts label { display: inline-block; margin: 0 8px; cursor: pointer; white-space: nowrap; }
+  .opts input { width: 17px; height: 17px; vertical-align: -3px; margin: 0 4px 0 0; accent-color: #596653; cursor: pointer; }
+  .opts label.hide { display: none; }
   a.btn {
     display: inline-block; background: #596653; color: #fff; text-decoration: none;
     font-size: 18px; font-weight: 700; padding: 9px 22px; border-radius: 8px;
     box-shadow: 0 2px 6px rgba(45,42,38,.25);
   }
   a.btn:hover { background: #48543f; }
-  a.btn.off { background: #a7ab9f; pointer-events: none; }
+  a.btn.off { background: #a7ab9f; pointer-events: none; box-shadow: none; }
   p { color: #596653; font-size: 14px; line-height: 1.3; margin: 6px 0 0 0; }
 </style>
 </head>
 <body>
 <div class="wrap">
+  <div class="opts">
+    <span class="lead">Include:</span>
+    <label id="lScr"><input type="checkbox" id="cScr" checked>Scriptures</label>
+    <label id="lSyn"><input type="checkbox" id="cSyn">Synopsis</label>
+    <label id="lChap"><input type="checkbox" id="cChap">Link to book chapter</label>
+  </div>
   <a id="btn" class="btn off" href="#" target="_top">&#9993; Email to Client</a>
-  <p>Opens your email with these Scriptures filled in.<br>Add your client's address, then send.</p>
+  <p>Opens your email with your choices filled in.<br>Add your client's address, then send.</p>
 </div>
 <script>
+  var data = null;
   var btn = document.getElementById('btn');
+  var cScr = document.getElementById('cScr'), cSyn = document.getElementById('cSyn'), cChap = document.getElementById('cChap');
+
+  function niceName(s) {
+    return String(s || '').toLowerCase().replace(/(^|[\s,\/(-])([a-z])/g, function (m, a, b) { return a + b.toUpperCase(); });
+  }
+
+  function build() {
+    if (!data) { btn.className = 'btn off'; return; }
+    var useScr = cScr.checked && data.scriptures;
+    var useSyn = cSyn.checked && data.synopsis;
+    var useChap = cChap.checked && data.chapterUrl;
+    if (!useScr && !useSyn && !useChap) { btn.className = 'btn off'; btn.href = '#'; return; }
+
+    var name = niceName(data.topic);
+    var parts = ['Hello,', ''];
+    parts.push(useScr
+      ? 'Here are the Scriptures on "' + name + '" that we talked about in our session.'
+      : 'Here is the reading on "' + name + '" that we talked about in our session.');
+    if (useScr) {
+      parts.push('', 'SCRIPTURES', '', data.scriptures);
+    }
+    if (useSyn) {
+      parts.push('', '', 'SYNOPSIS', '(from Godly Counsel: Scriptures for Today’s World)', '', data.synopsis);
+    }
+    if (useChap) {
+      parts.push('', '', 'BOOK CHAPTER', (data.chapterLabel || 'Godly Counsel chapter') + ':', data.chapterUrl);
+    }
+    parts.push('', '', (useSyn || useChap)
+      ? '(From Pearls: Scriptures to Live By and Godly Counsel: Scriptures for Today’s World, by Dr. Brian Campbell)'
+      : '(From Pearls: Scriptures to Live By, by Dr. Brian Campbell)');
+
+    var body = parts.join('\n').replace(/\r\n?/g, '\n').replace(/\n/g, '\r\n');
+    btn.href = 'mailto:?subject=' + encodeURIComponent('Scriptures from our session') + '&body=' + encodeURIComponent(body);
+    btn.className = 'btn';
+  }
+
+  [cScr, cSyn, cChap].forEach(function (c) { c.addEventListener('change', build); });
+
   window.addEventListener('message', function (e) {
     var d = e.data || {};
-    if (d.type === 'emailData' && typeof d.href === 'string' && d.href.indexOf('mailto:') === 0) {
-      btn.href = d.href;
-      btn.className = 'btn';
-    }
+    if (d.type !== 'emailData') return;
+    var newTopic = !data || data.topic !== d.topic;
+    data = d;
+    document.getElementById('lScr').className = d.scriptures ? '' : 'hide';
+    document.getElementById('lSyn').className = d.synopsis ? '' : 'hide';
+    document.getElementById('lChap').className = d.chapterUrl ? '' : 'hide';
+    if (newTopic) { cScr.checked = true; cSyn.checked = false; cChap.checked = false; }
+    build();
   });
-  // Same plain mailto link (target _top) as the belief cards' "Share this information" button.
+
   try { window.parent.postMessage({ type: 'emailReady' }, '*'); } catch (e) {}
 </script>
 </body>

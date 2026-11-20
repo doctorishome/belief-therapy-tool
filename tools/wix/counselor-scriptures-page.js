@@ -48,8 +48,8 @@ $w.onReady(async function () {
     try {
         $w('#html4').collapse();
         $w('#html4').onMessage((event) => {
-            if (event.data && event.data.type === 'emailReady' && emailHref) {
-                $w('#html4').postMessage({ type: 'emailData', href: emailHref });
+            if (event.data && event.data.type === 'emailReady' && emailData) {
+                $w('#html4').postMessage(emailData);
             }
         });
     } catch (e) {}
@@ -204,31 +204,46 @@ async function openTopic(item, keepAtTop) {
 const EMAIL_TOPICS = ['abortion'];
 const EMAIL_ALL = false;
 const EMAIL_PAGE = 'https://doctorishome.github.io/belief-therapy-tool/counselors/email-client-button.html';
-let emailHref = '';
+let emailData = null;
+let lastCounsel = null;
 
-function emailHrefFor(topic) {
-    const name = String(topic.topicName || '');
-    const niceName = name.toLowerCase().replace(/(^|[\s,/(-])([a-z])/g, (m, a, b) => a + b.toUpperCase());
-    const scriptures = String(topic.scriptureContent || '').replace(/\r\n?/g, '\n').trim();
-    const body =
-        'Hello,\n\n' +
-        'Here are the Scriptures on "' + niceName + '" that we talked about in our session.\n\n' +
-        scriptures + '\n\n' +
-        '(From Pearls: Scriptures to Live By, by Dr. Brian Campbell)\n';
-    return 'mailto:?subject=' + encodeURIComponent('Scriptures from our session') +
-        '&body=' + encodeURIComponent(body.replace(/\n/g, '\r\n'));
+// Godly Counsel PDFs are stored as wix:document://v1/ugd/<file>/<name>; email needs a normal web address.
+function publicFileUrl(url) {
+    const value = String(url || '');
+    const m = value.match(/^wix:document:\/\/v1\/(ugd\/[^/]+)/);
+    if (m) return 'https://f5ebb4be-1a1e-48f8-8fa9-70737c1c6393.usrfiles.com/' + m[1];
+    return /^https?:\/\//.test(value) ? value : '';
+}
+
+function emailDataFor(topic) {
+    const synopsisParts = separateCounselReference(getSynopsis(topic));
+    const synopsis = normalizeSynopsisParagraphs(synopsisParts.text || '').replace(/•\s*/g, '\n• ').trim();
+    const counsel = lastCounsel;
+    let chapterLabel = '';
+    if (counsel) {
+        chapterLabel = 'Godly Counsel, ' + (counsel.chapterNumber ? 'Chapter ' + counsel.chapterNumber + ': ' : '') +
+            (counsel.chapterTitle || '') + (counsel.pageRange ? ', ' + counsel.pageRange : '');
+    }
+    return {
+        type: 'emailData',
+        topic: String(topic.topicName || ''),
+        scriptures: String(topic.scriptureContent || '').replace(/\r\n?/g, '\n').trim(),
+        synopsis,
+        chapterLabel,
+        chapterUrl: counsel ? publicFileUrl(counsel.pdfUrl) : ''
+    };
 }
 
 function showEmailButton(topic) {
     try {
         const box = $w('#html4');
         const ok = topic && (EMAIL_ALL || EMAIL_TOPICS.includes(normalizeText(topic.topicName)));
-        if (!ok) { emailHref = ''; box.collapse(); return; }
-        emailHref = emailHrefFor(topic);
+        if (!ok) { emailData = null; box.collapse(); return; }
+        emailData = emailDataFor(topic);
         if (box.src !== EMAIL_PAGE) box.src = EMAIL_PAGE;
         box.expand();
-        box.postMessage({ type: 'emailData', href: emailHref });
-        setTimeout(() => { try { box.postMessage({ type: 'emailData', href: emailHref }); } catch (e) {} }, 1500);
+        box.postMessage(emailData);
+        setTimeout(() => { try { if (emailData) box.postMessage(emailData); } catch (e) {} }, 1500);
     } catch (e) {
         // The email embed is not on this page
     }
@@ -242,6 +257,7 @@ async function renderSelectedTopic() {
     const synopsis = getSynopsis(selectedTopic);
     const synopsisText = normalizeSynopsisParagraphs(synopsis);
     const counsel = await resolveGodlyCounselChapter(selectedTopic.godlyCounselChapter);
+    lastCounsel = counsel;
 
     $w('#detailScripture').html = createDetailHtml(
         selectedTopic._id,
