@@ -340,3 +340,9 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
   counselors/email-client-button.html; page code sends a mailto (subject "Scriptures from our session",
   body = topic Scriptures). Wix text links can't carry an email body, hence the embed.
   Page code copy: tools/wix/counselor-scriptures-page.js. To turn on for all topics: EMAIL_ALL = true.
+
+## Nov 20, 2026 — SEO plan Jobs 1–4
+- Job 1: The Wix site display name is now "Belief Counseling", so page titles end in "| Belief Counseling".
+- Job 3 and indexing: The site-wide noindex was removed and sitemap.xml now works. Members-only and unused pages are hidden from Google (page-level noindex on /blank-11, /false-belief-finder, /counselor-scriptures, /blank-12 through /blank-17, /clinical-companion, /challenges, Adult History, four online-program pages, and Plans & Pricing).
+- Job 2: Google Search Console is connected and verified, and the sitemap was submitted.
+- Job 4: Eight public addresses were renamed and published, with a 301 redirect from each old address. /blank-3 is /questioning-beliefs. /blank-4 is /spiritual-religious. /blank-5 is /behavioral-experiments. /blank-7 is /psychological-cognitive-false-beliefs. /blank-8 is /interpersonal-false-beliefs. /blank-9 is /socioeconomic-false-beliefs. /blank-10 is /sociocultural-false-beliefs. /blank is /sociocultural. Links in this repository were updated to the new addresses. /blank-6 and /blank-11 through /blank-17 were left as they are. The Sociocultural embed still accepts /blank as a fallback.

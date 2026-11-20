@@ -8,11 +8,11 @@
   var SITE = "https://www.beliefcounselor.com";
   var LEVELS = [
     { key: "bio",           name: "Biological/Physical",     explore: "/biological-physical",     results: "/biological-physical-false-beliefs" },
-    { key: "psych",         name: "Psychological/Cognitive", explore: "/psychological-cognitive", results: "/blank-7" },
-    { key: "inter",         name: "Interpersonal",           explore: "/interpersonal",           results: "/blank-8" },
-    { key: "socioeconomic", name: "Socioeconomic",           explore: "/socioeconomic",           results: "/blank-9" },
-    { key: "sociocultural", name: "Sociocultural",           explore: "/blank",                   results: "/blank-10" },
-    { key: "spiritual",     name: "Spiritual/Religious",     explore: "/blank-4",                 results: "/spiritual-religious-false-beliefs" }
+    { key: "psych",         name: "Psychological/Cognitive", explore: "/psychological-cognitive", results: "/psychological-cognitive-false-beliefs" },
+    { key: "inter",         name: "Interpersonal",           explore: "/interpersonal",           results: "/interpersonal-false-beliefs" },
+    { key: "socioeconomic", name: "Socioeconomic",           explore: "/socioeconomic",           results: "/socioeconomic-false-beliefs" },
+    { key: "sociocultural", name: "Sociocultural",           explore: "/sociocultural",           results: "/sociocultural-false-beliefs" },
+    { key: "spiritual",     name: "Spiritual/Religious",     explore: "/spiritual-religious",     results: "/spiritual-religious-false-beliefs" }
   ];
   var AFTER_LAST = { label: "Forward to Core False Beliefs", path: "/core-beliefs" };
 
