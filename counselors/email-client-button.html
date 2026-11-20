@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Email to Client</title>
+<!--
+  "Email to Client" button for the Counselors' Room Scripture page (/counselor-scriptures).
+  The Wix page code sends {type:'emailData', href:'mailto:?subject=...&body=...'} after a topic opens.
+  Clicking opens the counselor's own email program with the Scriptures filled in.
+  (Wix text links cannot carry an email body, so the button lives in this small embed.)
+-->
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; }
+  .wrap { text-align: center; font-family: Georgia, serif; padding: 6px 8px; }
+  a.btn {
+    display: inline-block; background: #596653; color: #fff; text-decoration: none;
+    font-size: 19px; font-weight: 700; padding: 12px 26px; border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(45,42,38,.25);
+  }
+  a.btn:hover { background: #48543f; }
+  a.btn.off { background: #a7ab9f; pointer-events: none; }
+  p { color: #596653; font-size: 14px; margin: 8px 0 0 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a id="btn" class="btn off" href="#" target="_top">&#9993; Email to Client</a>
+  <p>Opens your email with these Scriptures filled in. Add your client's address, then send.</p>
+</div>
+<script>
+  var btn = document.getElementById('btn');
+  window.addEventListener('message', function (e) {
+    var d = e.data || {};
+    if (d.type === 'emailData' && typeof d.href === 'string' && d.href.indexOf('mailto:') === 0) {
+      btn.href = d.href;
+      btn.className = 'btn';
+    }
+  });
+  // Same plain mailto link (target _top) as the belief cards' "Share this information" button.
+  try { window.parent.postMessage({ type: 'emailReady' }, '*'); } catch (e) {}
+</script>
+</body>
+</html>
