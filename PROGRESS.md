@@ -346,3 +346,7 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - Job 3 and indexing: The site-wide noindex was removed and sitemap.xml now works. Members-only and unused pages are hidden from Google (page-level noindex on /blank-11, /false-belief-finder, /counselor-scriptures, /blank-12 through /blank-17, /clinical-companion, /challenges, Adult History, four online-program pages, and Plans & Pricing).
 - Job 2: Google Search Console is connected and verified, and the sitemap was submitted.
 - Job 4: Eight public addresses were renamed and published, with a 301 redirect from each old address. /blank-3 is /questioning-beliefs. /blank-4 is /spiritual-religious. /blank-5 is /behavioral-experiments. /blank-7 is /psychological-cognitive-false-beliefs. /blank-8 is /interpersonal-false-beliefs. /blank-9 is /socioeconomic-false-beliefs. /blank-10 is /sociocultural-false-beliefs. /blank is /sociocultural. Links in this repository were updated to the new addresses. /blank-6 and /blank-11 through /blank-17 were left as they are. The Sociocultural embed still accepts /blank as a fallback.
+
+## Nov 20, 2026 — SEO plan Jobs 5–6
+- Job 5: Custom search titles and descriptions were put on 23 public Wix pages. Those titles and descriptions are live.
+- Job 6: Picture descriptions (alt text) were added to 12 images in the Wix editor and 3 in this repo. The leftover “This is a Custom Element” placeholder was removed on /questioning-beliefs. Decorative images were skipped.
