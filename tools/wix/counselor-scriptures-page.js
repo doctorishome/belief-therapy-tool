@@ -203,7 +203,7 @@ async function openTopic(item, keepAtTop) {
 // Trial (Nov 19, 2026): shown only for the topics listed here. To show it on every topic, set EMAIL_ALL = true.
 const EMAIL_TOPICS = ['abortion'];
 const EMAIL_ALL = false;
-const EMAIL_PAGE = 'https://doctorishome.github.io/belief-therapy-tool/counselors/email-client-button.html';
+const EMAIL_PAGE = 'https://doctorishome.github.io/belief-therapy-tool/counselors/email-client-button.html?v=3';
 let emailData = null;
 let lastCounsel = null;
 
