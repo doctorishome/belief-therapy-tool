@@ -5,11 +5,11 @@
   var DISCLAIMER = "This educational resource is not a diagnosis or a substitute for professional care.";
   var MAX = 1800;
   var PAGES = [
-    { test: /\/belief-lists\/psychological\.html$|\/belief-cards\/psychological\//, url: SITE + "/blank-7" },
+    { test: /\/belief-lists\/psychological\.html$|\/belief-cards\/psychological\//, url: SITE + "/psychological-cognitive-false-beliefs" },
     { test: /\/belief-lists\/biological|\/belief-cards\/biological\//, url: SITE + "/biological-physical-false-beliefs" },
-    { test: /\/belief-lists\/interpersonal|\/belief-cards\/interpersonal\//, url: SITE + "/blank-8" },
-    { test: /\/belief-lists\/socioeconomic|\/belief-cards\/socioeconomic\//, url: SITE + "/blank-9" },
-    { test: /\/belief-lists\/sociocultural|\/belief-cards\/sociocultural\//, url: SITE + "/blank-10" },
+    { test: /\/belief-lists\/interpersonal|\/belief-cards\/interpersonal\//, url: SITE + "/interpersonal-false-beliefs" },
+    { test: /\/belief-lists\/socioeconomic|\/belief-cards\/socioeconomic\//, url: SITE + "/socioeconomic-false-beliefs" },
+    { test: /\/belief-lists\/sociocultural|\/belief-cards\/sociocultural\//, url: SITE + "/sociocultural-false-beliefs" },
     { test: /\/belief-lists\/spiritual|\/belief-cards\/Belief-|\/belief-cards\/spiritual/, url: SITE + "/spiritual-religious-false-beliefs" },
     { test: /\/belief-lists\/core|\/belief-cards\/core\//, url: SITE + "/core-beliefs" },
     { test: /\/counselors\/landing\.html$|\/members\//, url: SITE + "/blank-11" }
@@ -28,7 +28,7 @@
     for (var i = 0; i < PAGES.length; i++) {
       if (PAGES[i].test.test(path)) return PAGES[i].url;
     }
-    return SITE + "/blank-7";
+    return SITE + "/psychological-cognitive-false-beliefs";
   }
   function cardNumber() {
     var tag = text(document.querySelector(".tag"));

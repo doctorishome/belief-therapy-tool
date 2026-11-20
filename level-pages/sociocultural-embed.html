@@ -1,6 +1,6 @@
 <!-- Wix custom code (Settings > Custom Code), added through the Wix Custom Embeds API.
      Name: "Sociocultural page - Belief Mining Tools box". Position: Body end. Loads on every page,
-     but only acts on the Sociocultural level page (/blank). It hides the old placeholder lines at the
+     but only acts on the Sociocultural level page (/sociocultural; /blank still works as a fallback). It hides the old placeholder lines at the
      bottom of that page and adds the same Belief Mining Tools box the other level pages show
      (level-pages/tools.html?level=sociocultural), including the Back / Forward bar.
      To change the worksheets or buttons, edit level-pages/tools.html (no Wix editing needed). -->
@@ -8,7 +8,10 @@
 (function () {
   if (window.__bcSocioTools) return; window.__bcSocioTools = true;
   var SRC = "https://doctorishome.github.io/belief-therapy-tool/level-pages/tools.html?level=sociocultural";
-  function onPage() { return location.pathname.replace(/\/+$/, "") === "/blank"; }
+  function onPage() {
+    var path = location.pathname.replace(/\/+$/, "");
+    return path === "/sociocultural" || path === "/blank";
+  }
   function apply() {
     if (!onPage() || document.getElementById("bc-socio-tools")) return;
     var main = document.querySelector("main"); if (!main) return;
