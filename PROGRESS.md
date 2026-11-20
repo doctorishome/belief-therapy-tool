@@ -336,7 +336,7 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 ## Nov 19, 2026 — Counselor Scripture Search: description, phone layout, Email to Client (trial)
 - /counselor-scriptures description rewritten (approved text). Font 18px desktop, 17px mobile; on the
   mobile layout the two book pictures were moved below the text (Y 910, section height 1160).
-- "Email to Client" button (trial on ABORTION only): Wix embed #html4 in the stack under #detailBox shows
+- "Email to Client" button (now on every topic; was a trial on ABORTION): Wix embed #html4 in the stack under #detailBox shows
   counselors/email-client-button.html; page code sends a mailto (subject "Scriptures from our session",
   body = topic Scriptures). Wix text links can't carry an email body, hence the embed.
   Page code copy: tools/wix/counselor-scriptures-page.js. To turn on for all topics: EMAIL_ALL = true.

@@ -202,7 +202,7 @@ async function openTopic(item, keepAtTop) {
 // with this topic's Scriptures filled in; the counselor adds the client's address and sends.
 // Trial (Nov 19, 2026): shown only for the topics listed here. To show it on every topic, set EMAIL_ALL = true.
 const EMAIL_TOPICS = ['abortion'];
-const EMAIL_ALL = false;
+const EMAIL_ALL = true;   // Nov 19, 2026: on for every topic after Brian's test
 const EMAIL_PAGE = 'https://doctorishome.github.io/belief-therapy-tool/counselors/email-client-button.html?v=3';
 let emailData = null;
 let lastCounsel = null;
