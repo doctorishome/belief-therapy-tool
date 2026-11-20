@@ -46,10 +46,10 @@ $w.onReady(async function () {
     $w('#detailBox').collapse();
     $w('#learnMoreButton').collapse();
     try {
-        $w('#emailEmbed').collapse();
-        $w('#emailEmbed').onMessage((event) => {
+        $w('#html4').collapse();
+        $w('#html4').onMessage((event) => {
             if (event.data && event.data.type === 'emailReady' && emailHref) {
-                $w('#emailEmbed').postMessage({ type: 'emailData', href: emailHref });
+                $w('#html4').postMessage({ type: 'emailData', href: emailHref });
             }
         });
     } catch (e) {}
@@ -88,6 +88,7 @@ $w('#detailTopicName').collapse();
 
         selectedTopic = null;
         lockReason = null;
+        showEmailButton(null);
         await $w('#detailBox').collapse();
         await $w('#resultsRepeater').expand();
 
@@ -196,7 +197,7 @@ async function openTopic(item, keepAtTop) {
     if (!keepAtTop) await $w('#detailBox').scrollTo();
 }
 
-// "Email to Client" button (Counselors' Room page only). A small embed (#emailEmbed) holds the button,
+// "Email to Client" button (Counselors' Room page only). A small embed (#html4) holds the button,
 // because Wix text links cannot carry an email body. Clicking opens the counselor's own email program
 // with this topic's Scriptures filled in; the counselor adds the client's address and sends.
 // Trial (Nov 19, 2026): shown only for the topics listed here. To show it on every topic, set EMAIL_ALL = true.
@@ -220,7 +221,7 @@ function emailHrefFor(topic) {
 
 function showEmailButton(topic) {
     try {
-        const box = $w('#emailEmbed');
+        const box = $w('#html4');
         const ok = topic && (EMAIL_ALL || EMAIL_TOPICS.includes(normalizeText(topic.topicName)));
         if (!ok) { emailHref = ''; box.collapse(); return; }
         emailHref = emailHrefFor(topic);
@@ -289,6 +290,7 @@ function getDocumentUrl(documentValue) {
 
 async function returnToTopics() {
     selectedTopic = null;
+    showEmailButton(null);
     try { wixLocationFrontend.queryParams.remove(['topic']); } catch (e) {}
     await $w('#detailBox').collapse();
     $w('#searchInput').value = '';
