@@ -9,9 +9,9 @@
   *{box-sizing:border-box}
   html,body{margin:0;background:#f4f1ea;color:var(--body);font-family:Georgia,"Times New Roman",serif}
   .bar{max-width:8.5in;margin:16px auto 0;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:0 16px}
-  .bar button{font-family:inherit;font-size:16px;padding:10px 22px;border-radius:6px;cursor:pointer;border:1px solid var(--ink)}
+  .bar button,.bar a.pdf{font-family:inherit;font-size:16px;padding:10px 22px;border-radius:6px;cursor:pointer;border:1px solid var(--ink);text-decoration:none;display:inline-block}
   .bar .print{background:var(--ink);color:#fff}
-  .bar .clear{background:#fff;color:var(--ink)}
+  .bar a.pdf{background:#fff;color:var(--ink)}
   .tip{max-width:8.5in;margin:8px auto 0;text-align:center;font-size:15px;line-height:1.55;color:#6b6250;padding:0 16px}.tip b{color:#2f4357}
   .page{max-width:8.5in;margin:16px auto 24px;background:#fff;border:1.5px solid var(--gold);padding:.45in .5in .5in;box-shadow:0 2px 10px rgba(0,0,0,.06)}
   .page + .page{margin-top:0}
@@ -20,16 +20,15 @@
   h1{font-size:26px;color:var(--ink);margin:6px 0 2px}
   .sub{font-style:italic;color:var(--goldtext);font-size:14px;margin:0}
   .who{display:flex;gap:24px;margin:18px 0 6px;font-size:14px;font-weight:700}
-  .who label{display:flex;align-items:flex-end;gap:6px}
+  .who div{display:flex;align-items:flex-end;gap:6px}
   .who .name{flex:1}
-  .who input{flex:1;border:0;border-bottom:1px solid #555;font:inherit;font-weight:400;padding:2px 4px;min-width:120px;background:transparent}
+  .who .line{flex:1;border-bottom:1px solid #555;min-width:140px;height:1.15em}
   .grid{display:grid;grid-template-columns:1fr 1fr;column-gap:28px;row-gap:26px;margin-top:16px}
   section h2{font-size:17px;color:var(--ink);margin:0 0 8px;padding-bottom:4px;border-bottom:1.5px solid var(--line)}
-  .item{display:flex;align-items:flex-start;gap:6px;font-size:14px;line-height:1.35;margin:5px 0;cursor:pointer}
-  .item input{margin:3px 0 0;width:15px;height:15px;flex:none;accent-color:var(--ink)}
+  .item{display:flex;align-items:flex-start;gap:6px;font-size:14px;line-height:1.35;margin:5px 0}
+  .box{width:13px;height:13px;margin:2px 0 0;border:1.5px solid var(--ink);flex:none;background:#fff}
   .note{font-style:italic;color:var(--goldtext);font-size:12.5px;margin:10px 0 4px}
-  textarea{width:100%;min-height:80px;font:14px/26px Georgia,serif;border:0;resize:vertical;padding:0 2px;
-    background:repeating-linear-gradient(to bottom,transparent 0,transparent 25px,#999 25px,#999 26px);}
+  .lines span{display:block;border-bottom:1px solid #999;height:26px}
   footer{margin-top:28px;text-align:center;font-size:13px;color:#555;font-style:italic}
   .pgno{text-align:right;font-size:12px;color:#777;margin-bottom:10px}
   @media (max-width:640px){
@@ -48,17 +47,17 @@
     .who{margin:12px 0 4px}
     .grid{grid-template-columns:1fr 1fr;row-gap:18px;margin-top:10px}
     .item{font-size:13px;margin:3px 0}
-    textarea{resize:none;min-height:78px}
+    .lines span{height:24px}
     section{break-inside:avoid}
   }
 </style>
 </head>
 <body>
   <div class="bar">
-    <button class="print" onclick="window.print()">Print this form</button>
-    <button class="clear" onclick="clearForm()">Clear my answers</button>
+    <button class="print" type="button" onclick="window.print()">Print or save as PDF</button>
+    <a class="pdf" href="Life_Events_Beliefs_Screening.pdf">Download PDF</a>
   </div>
-  <p class="tip"><b>This form is clickable.</b> Click a box to check it, and click on a line to type your notes. When you finish, click <b>Print this form</b>; to keep a copy on your computer, choose <b>Save as PDF</b> in the print window. Click <b>Clear my answers</b> to start over. Nothing you check or type is saved or sent anywhere; it disappears when you close or reload the page. You can also print the form blank and fill it in by hand.</p>
+  <p class="tip"><b>For counselor use:</b> print or save this form as a PDF and give it to your client to complete by hand.</p>
 
   <div class="page">
     <header>
@@ -68,57 +67,57 @@
     </header>
 
     <div class="who">
-      <label class="name">Name: <input type="text" aria-label="Name"></label>
-      <label>Date: <input type="text" aria-label="Date"></label>
+      <div class="name">Name: <span class="line"></span></div>
+      <div>Date: <span class="line"></span></div>
     </div>
 
     <div class="grid">
       <section>
         <h2>Biological</h2>
-        <label class="item"><input type="checkbox">Diagnosed with a genetic or chronic medical disorder</label>
-        <label class="item"><input type="checkbox">Serious injury or accident</label>
-        <label class="item"><input type="checkbox">Serious or life-threatening illness</label>
-        <label class="item"><input type="checkbox">Currently under a doctor's care for an ongoing condition</label>
-        <label class="item"><input type="checkbox">Taking medication that affects mood, sleep, or energy</label>
-        <label class="item"><input type="checkbox">Family history of significant illness</label>
+        <div class="item"><span class="box"></span>Diagnosed with a genetic or chronic medical disorder</div>
+        <div class="item"><span class="box"></span>Serious injury or accident</div>
+        <div class="item"><span class="box"></span>Serious or life-threatening illness</div>
+        <div class="item"><span class="box"></span>Currently under a doctor's care for an ongoing condition</div>
+        <div class="item"><span class="box"></span>Taking medication that affects mood, sleep, or energy</div>
+        <div class="item"><span class="box"></span>Family history of significant illness</div>
         <p class="note">If checked, briefly note the emotional/mental impact:</p>
-        <textarea aria-label="Biological notes"></textarea>
+        <div class="lines" aria-hidden="true"><span></span><span></span><span></span></div>
       </section>
 
       <section>
         <h2>Psychological</h2>
-        <label class="item"><input type="checkbox">Ever diagnosed with a mental health condition</label>
-        <label class="item"><input type="checkbox">Received counseling or therapy before</label>
-        <label class="item"><input type="checkbox">Long-lasting fear, worry, or sadness</label>
-        <label class="item"><input type="checkbox">A difficult or painful childhood memory that still affects you</label>
-        <label class="item"><input type="checkbox">Difficulty controlling anger or intense emotions</label>
-        <label class="item"><input type="checkbox">Significant anxiety</label>
-        <label class="item"><input type="checkbox">Significant depression</label>
+        <div class="item"><span class="box"></span>Ever diagnosed with a mental health condition</div>
+        <div class="item"><span class="box"></span>Received counseling or therapy before</div>
+        <div class="item"><span class="box"></span>Long-lasting fear, worry, or sadness</div>
+        <div class="item"><span class="box"></span>A difficult or painful childhood memory that still affects you</div>
+        <div class="item"><span class="box"></span>Difficulty controlling anger or intense emotions</div>
+        <div class="item"><span class="box"></span>Significant anxiety</div>
+        <div class="item"><span class="box"></span>Significant depression</div>
         <p class="note">If checked, briefly note the emotional/mental impact:</p>
-        <textarea aria-label="Psychological notes"></textarea>
+        <div class="lines" aria-hidden="true"><span></span><span></span><span></span></div>
       </section>
     </div>
 
     <div class="grid">
       <section>
         <h2>Interpersonal</h2>
-        <label class="item"><input type="checkbox">Parents divorced, separated, or absent</label>
-        <label class="item"><input type="checkbox">Grew up with conflict, harsh discipline, or emotional distance</label>
-        <label class="item"><input type="checkbox">Significant relationship loss (death, breakup, estrangement)</label>
-        <label class="item"><input type="checkbox">History of abuse — emotional, physical, or sexual</label>
-        <label class="item"><input type="checkbox">Current conflict or dissatisfaction in a close relationship</label>
+        <div class="item"><span class="box"></span>Parents divorced, separated, or absent</div>
+        <div class="item"><span class="box"></span>Grew up with conflict, harsh discipline, or emotional distance</div>
+        <div class="item"><span class="box"></span>Significant relationship loss (death, breakup, estrangement)</div>
+        <div class="item"><span class="box"></span>History of abuse — emotional, physical, or sexual</div>
+        <div class="item"><span class="box"></span>Current conflict or dissatisfaction in a close relationship</div>
         <p class="note">If checked, briefly note the emotional/mental impact:</p>
-        <textarea aria-label="Interpersonal notes"></textarea>
+        <div class="lines" aria-hidden="true"><span></span><span></span><span></span></div>
       </section>
 
       <section>
         <h2>Socioeconomic</h2>
-        <label class="item"><input type="checkbox">Significant financial hardship, past or present</label>
-        <label class="item"><input type="checkbox">Job loss or major career disruption</label>
-        <label class="item"><input type="checkbox">Major life-stage pressure (new parent, retirement, caregiving)</label>
-        <label class="item"><input type="checkbox">Housing instability at any point</label>
+        <div class="item"><span class="box"></span>Significant financial hardship, past or present</div>
+        <div class="item"><span class="box"></span>Job loss or major career disruption</div>
+        <div class="item"><span class="box"></span>Major life-stage pressure (new parent, retirement, caregiving)</div>
+        <div class="item"><span class="box"></span>Housing instability at any point</div>
         <p class="note">If checked, briefly note the emotional/mental impact:</p>
-        <textarea aria-label="Socioeconomic notes"></textarea>
+        <div class="lines" aria-hidden="true"><span></span><span></span><span></span></div>
       </section>
     </div>
   </div>
@@ -128,33 +127,25 @@
     <div class="grid">
       <section>
         <h2>Sociocultural</h2>
-        <label class="item"><input type="checkbox">Raised in a community with strong expectations that still weigh on you</label>
-        <label class="item"><input type="checkbox">Experienced discrimination or exclusion because of your background</label>
-        <label class="item"><input type="checkbox">Significant cultural or generational conflict with family</label>
+        <div class="item"><span class="box"></span>Raised in a community with strong expectations that still weigh on you</div>
+        <div class="item"><span class="box"></span>Experienced discrimination or exclusion because of your background</div>
+        <div class="item"><span class="box"></span>Significant cultural or generational conflict with family</div>
         <p class="note">If checked, briefly note the emotional/mental impact:</p>
-        <textarea aria-label="Sociocultural notes"></textarea>
+        <div class="lines" aria-hidden="true"><span></span><span></span><span></span></div>
       </section>
 
       <section>
         <h2>Spiritual</h2>
-        <label class="item"><input type="checkbox">Raised in a religious or Christian home</label>
-        <label class="item"><input type="checkbox">Currently feel distant from God, or experiencing a crisis of faith</label>
-        <label class="item"><input type="checkbox">Belief that God is disappointed in or punishing you</label>
-        <label class="item"><input type="checkbox">A church or faith community experience that hurt you</label>
+        <div class="item"><span class="box"></span>Raised in a religious or Christian home</div>
+        <div class="item"><span class="box"></span>Currently feel distant from God, or experiencing a crisis of faith</div>
+        <div class="item"><span class="box"></span>Belief that God is disappointed in or punishing you</div>
+        <div class="item"><span class="box"></span>A church or faith community experience that hurt you</div>
         <p class="note">If checked, briefly note the emotional/mental impact:</p>
-        <textarea aria-label="Spiritual notes"></textarea>
+        <div class="lines" aria-hidden="true"><span></span><span></span><span></span></div>
       </section>
     </div>
 
     <footer>Thank you — this helps your counselor understand the full picture behind what you're experiencing. Your answers are confidential within your counseling relationship.</footer>
   </div>
-
-<script>
-  function clearForm(){
-    if(!confirm('Clear all checked boxes and notes on this page?')) return;
-    document.querySelectorAll('input[type=checkbox]').forEach(function(c){c.checked=false;});
-    document.querySelectorAll('input[type=text],textarea').forEach(function(t){t.value='';});
-  }
-</script>
 </body>
 </html>
