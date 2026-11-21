@@ -347,6 +347,9 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - Job 2: Google Search Console is connected and verified, and the sitemap was submitted.
 - Job 4: Eight public addresses were renamed and published, with a 301 redirect from each old address. /blank-3 is /questioning-beliefs. /blank-4 is /spiritual-religious. /blank-5 is /behavioral-experiments. /blank-7 is /psychological-cognitive-false-beliefs. /blank-8 is /interpersonal-false-beliefs. /blank-9 is /socioeconomic-false-beliefs. /blank-10 is /sociocultural-false-beliefs. /blank is /sociocultural. Links in this repository were updated to the new addresses. /blank-6 and /blank-11 through /blank-17 were left as they are. The Sociocultural embed still accepts /blank as a fallback.
 
+## Nov 21, 2026 — Disorders page layout
+- The Disorders page (members/disorders.html, ?tip=room-disorders) is now a full-width list: one heading, a short intro, and the same 29 reviews in category columns (3 across on a desktop, 1 on a phone). The thumbnail card is gone. The Assessment tab still shows the original reviews card. The list is read from members/dsm-reviews-card.html.
+
 ## Nov 20, 2026 — Counselors' Room: Assessment label and Disorders tab
 - The room menu item "Traditional Assessment" is now "Assessment". The page, the link, and ?tip=room-assessment are unchanged. The Welcome card uses the same shorter title.
 - A new menu item, Disorders, sits right after Assessment. It opens ?tip=room-disorders (counselors/room-disorders.html), which shows members/disorders.html. The page heading is "DSM-5-TR Disorders". The reviews list is the same Major DSM-5-TR Disorders card that stays on the Assessment tab; members/disorders.html is built from that card (members/dsm-reviews-card.html) so the two lists match. Review links work the same way. Back on a review uses the browser's back button when you opened it from Disorders, and otherwise returns to Assessment.

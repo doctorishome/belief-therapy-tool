@@ -414,13 +414,67 @@ def page(f, label, heading, summary):
             % (e(heading), CSS + (PRACTICE_CSS if f == "assessment.html" else ""), nav(f), e(heading), e(summary), body, SITE))
 
 
+# Full-width Disorders page. The links come from members/dsm-reviews-card.html,
+# the same card the Assessment tab shows, so the two lists stay the same.
+DSM_CSS = """
+.dsm{max-width:1120px;margin:0 auto;padding:28px 24px 8px}
+.cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 26px;align-items:start}
+.cat{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:8px;padding:14px 16px 8px;box-shadow:0 2px 6px rgba(18,40,76,.05)}
+.cat h2{margin:0 0 6px;padding:0 0 8px;border-bottom:1px solid var(--line);color:var(--navy);font-size:1.08rem;line-height:1.3;display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.cat h2 .n{flex:0 0 auto;font:bold .72rem Arial,Helvetica,sans-serif;letter-spacing:.4px;color:var(--navy);background:#f8f1d8;border:1px solid var(--gold);border-radius:12px;padding:1px 8px}
+.cat ul{margin:0;padding:0;list-style:none}
+.cat li{margin:0;border-top:1px solid #f3eee0}
+.cat li:first-child{border-top:0}
+.cat a{display:block;padding:8px 2px;color:var(--navy);text-decoration:none}
+.cat a:hover{text-decoration:underline}
+@media(max-width:700px){.dsm{padding:18px 14px 4px}.cats{grid-template-columns:1fr;gap:14px}.cat a{padding:10px 2px}}
+"""
+DSM_INTRO = ("Teaching reviews of the major disorders: key features, what works, and Christian-integrated care. "
+             "Click a disorder to open its review; use Back to return here.")
+
+
+def disorder_groups():
+    """Categories and review links from the shared Assessment card."""
+    import re
+    card = (OUT / "dsm-reviews-card.html").read_text(encoding="utf-8")
+    groups = []
+    for title, ul in re.findall(r"<h5>(.*?)</h5><ul>(.*?)</ul>", card):
+        links = re.findall(r'<a href="([^"]+)">([^<]*)</a>', ul)
+        groups.append((html.unescape(title), links))
+    if sum(len(links) for _, links in groups) != 29:
+        raise SystemExit("dsm-reviews-card.html no longer has 29 disorder links")
+    return groups
+
+
+def disorders_list_html():
+    parts = ['<div class="dsm"><div class="cats">']
+    for title, links in disorder_groups():
+        items = "".join('<li><a href="%s">%s</a></li>' % (e(href), e(html.unescape(text))) for href, text in links)
+        parts.append('<section class="cat"><h2>%s<span class="n">%d</span></h2><ul>%s</ul></section>'
+                     % (e(title), len(links), items))
+    parts.append("</div></div>")
+    return "".join(parts)
+
+
+def write_disorders_page():
+    """Rewrite the Disorders page layout. The menu, footer, and scroll script stay as they are."""
+    path = OUT / "disorders.html"
+    current = path.read_text(encoding="utf-8")
+    head, rest = current.split('<div class="hero">', 1)
+    if ".dsm{" not in head:
+        head = head.replace("</style>", DSM_CSS + "</style>", 1)
+    foot = '<div class="foot">' + rest.split('<div class="foot">', 1)[1]
+    hero = ('<div class="hero"><div class="eyebrow">Belief Counseling for Counselors</div>'
+            '<h1>DSM-5-TR Disorders</h1><p>%s</p></div>' % e(DSM_INTRO))
+    path.write_text(head + hero + disorders_list_html() + foot, encoding="utf-8")
+    print("wrote members/disorders.html")
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     for f, label, heading, summary in MENU:
         if f == "disorders.html":
-            # The Disorders tab is members/disorders.html, copied from the reviews card
-            # on the Assessment page (members/dsm-reviews-card.html). Do not rebuild it here.
-            print("skip members/disorders.html")
+            write_disorders_page()
             continue
         if f == "tips.html":
             # Professional Tips goes straight to the tips list (counselors/weekly-tips.html), Nov 17, 2026.
