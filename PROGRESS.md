@@ -367,3 +367,8 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
   Removed "Session notes" and the limits-of-confidentiality section (belongs in the Confidentiality Agreement;
   "minimum necessary" doesn't apply to authorized releases). Counselor page notes expanded.
   2 pages + counselor page. Builder: tools/build_release_form.js (logo.png beside it).
+
+## Nov 21, 2026 — Professional Tips 19 and 20 (members-only, ProTips)
+- Tip 19 "The Woman Who Was Locked in a Box" (Brian's Tip #15, Schizophrenia; ProTips id tip-woman-locked-in-box), topics Case Study + Psychosis (new). Cuba is Brian's deliberate disguise (doc also said Costa Rica). counseling4christians and schizophrenia.com links replaced with NIMH. Added "For counselors" command-hallucination safety box (988) and link to Tip 2. Email draft 21a3083f-5b3c-4b9f-8379-c287981c987b.
+- Tip 20 "The Man Who Thought He Caused Pearl Harbor" (Brian's Tip #16, catatonia + freeze commentary; ProTips id tip-man-pearl-harbor), topics Case Study + Psychosis + Biology & the Brain. 1944 -> 1941 (Brian OK'd), 36 years to 1977; "carrier" -> "Navy ship"; antelope video YouTube sYEQQeCZ0O4 (Brian's link); Psychology Today freeze article linked; DSM-5 "with catatonia" note. Email draft 97daf9ea-f0d9-4151-bbe2-a4d198dcdc49.
+- Built from the current weekly-tips.html head + nav (Assessment/Disorders/counselor-scriptures), not the older Tip 15 head. Local builder (not in repo, members-only): /home/claude/tips/build.py.
