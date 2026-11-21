@@ -355,3 +355,12 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 ## Nov 20, 2026 — SEO plan Jobs 5–6
 - Job 5: Custom search titles and descriptions were put on 23 public Wix pages. Those titles and descriptions are live.
 - Job 6: Picture descriptions (alt text) were added to 12 images in the Wix editor and 3 in this repo. The leftover “This is a Custom Element” placeholder was removed on /questioning-beliefs. Decorative images were skipped.
+## Nov 21, 2026 — Release of Confidential Information revised (HIPAA 45 CFR 164.508)
+- Brian re-sent his 2024 sample release and asked for it revised for the website. Rebuilt the Word + PDF
+  (same file names, same links on Traditional Assessment and the Flow of Care slide): added who may release,
+  other names, two-way option, records date range, specially protected info (alcohol/drug, HIV, genetic) with
+  initials, psychotherapy-notes exclusion, how shared, default end of one year, required statements
+  (revoke, treatment not conditioned, redisclosure, copy), representative's relationship, revoked-on line.
+  Removed "Session notes" and the limits-of-confidentiality section (belongs in the Confidentiality Agreement;
+  "minimum necessary" doesn't apply to authorized releases). Counselor page notes expanded.
+  2 pages + counselor page. Builder: tools/build_release_form.js (logo.png beside it).
