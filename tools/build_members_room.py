@@ -28,8 +28,10 @@ MENU = [
      "The basics: what a belief is, what Belief Counseling is, and who should practice it."),
     ("process.html", "The Process", "The Process",
      "Three steps: Identify, Challenge, and Replace."),
-    ("assessment.html", "Traditional Assessment", "Traditional Assessment",
+    ("assessment.html", "Assessment", "Traditional Assessment",
      "Diagnosis, intake, sample forms, and the first interview."),
+    ("disorders.html", "Disorders", "DSM-5-TR Disorders",
+     "Teaching reviews of the major disorders: key features, what works, and Christian-integrated care."),
     ("tips.html", "Professional Tips", "Professional Tips",
      "Tips, case studies, theory, and insights from 35 years of practice."),
     ("library.html", "Library", "Library",
@@ -415,6 +417,11 @@ def page(f, label, heading, summary):
 def main():
     OUT.mkdir(exist_ok=True)
     for f, label, heading, summary in MENU:
+        if f == "disorders.html":
+            # The Disorders tab is members/disorders.html, copied from the reviews card
+            # on the Assessment page (members/dsm-reviews-card.html). Do not rebuild it here.
+            print("skip members/disorders.html")
+            continue
         if f == "tips.html":
             # Professional Tips goes straight to the tips list (counselors/weekly-tips.html), Nov 17, 2026.
             to = "../counselors/weekly-tips.html"
