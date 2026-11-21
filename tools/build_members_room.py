@@ -35,7 +35,7 @@ MENU = [
     ("tips.html", "Professional Tips", "Professional Tips",
      "Tips, case studies, theory, and insights from 35 years of practice."),
     ("library.html", "Library", "Library",
-     "Books, videos, and articles."),
+     "Books, videos, articles, and forms."),
 ]
 
 
@@ -181,6 +181,8 @@ PAGES = {
             ("Books", "Books Dr. Campbell recommends for counselors and clients.", [("Open", "C/books.html")]),
             ("Videos", "Teaching videos, with the forms that go with them.", [("Open", "C/videos.html")]),
             ("Articles", "All of Dr. Campbell’s articles for counselors in one place.", [("Open", "C/articles.html")]),
+            ("Forms", "Forms for your practice and for belief work, ready to print or download.",
+             [("Open", "C/forms-library.html")]),
         ]),
     ],
 }
