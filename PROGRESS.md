@@ -341,6 +341,9 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
   body = topic Scriptures). Wix text links can't carry an email body, hence the embed.
   Page code copy: tools/wix/counselor-scriptures-page.js. To turn on for all topics: EMAIL_ALL = true.
 
+## Nov 21, 2026 — Life Events & Beliefs Screening is a print form
+- Life_Events_Beliefs_Screening.html is now a blank form for counselors to print or download (Life_Events_Beliefs_Screening.pdf) and give to a client. The clickable boxes, typed notes, and Clear button are gone. Other worksheets are unchanged.
+
 ## Nov 20, 2026 — SEO plan Jobs 1–4
 - Job 1: The Wix site display name is now "Belief Counseling", so page titles end in "| Belief Counseling".
 - Job 3 and indexing: The site-wide noindex was removed and sitemap.xml now works. Members-only and unused pages are hidden from Google (page-level noindex on /blank-11, /false-belief-finder, /counselor-scriptures, /blank-12 through /blank-17, /clinical-companion, /challenges, Adult History, four online-program pages, and Plans & Pricing).
