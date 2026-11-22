@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suicide Risk Screening &amp; Safety Plan | Belief Counseling</title>
+<style>
+  :root{--ink:#2f4357;--gold:#b08a4b;--goldtext:#a8742e;--line:#c9b48a;--body:#2b2b2b}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#f4f1ea;color:var(--body);font-family:Georgia,"Times New Roman",serif}
+  .bar{max-width:8.5in;margin:16px auto 0;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:0 16px}
+  .bar button,.bar a.pdf{font-family:inherit;font-size:16px;padding:10px 22px;border-radius:6px;cursor:pointer;border:1px solid var(--ink);text-decoration:none;display:inline-block}
+  .bar .print{background:var(--ink);color:#fff}
+  .bar a.pdf{background:#fff;color:var(--ink)}
+  .tip{max-width:8.5in;margin:8px auto 0;text-align:center;font-size:15px;line-height:1.55;color:#6b6250;padding:0 16px}.tip b{color:#2f4357}
+  .page{max-width:8.5in;margin:16px auto 24px;background:#fff;border:1.5px solid var(--gold);padding:.45in .5in .5in;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+  .page + .page{margin-top:0}
+  header{text-align:center}
+  header img{width:70px;height:auto}
+  h1{font-size:25px;color:var(--ink);margin:6px 0 2px}
+  .sub{font-style:italic;color:var(--goldtext);font-size:14px;margin:0}
+  .who{display:flex;gap:18px;margin:14px 0 4px;font-size:13.5px;font-weight:700;flex-wrap:wrap}
+  .who div{display:flex;align-items:flex-end;gap:6px;flex:1;min-width:150px}
+  .who .line{flex:1;border-bottom:1px solid #555;min-width:60px;height:1.15em}
+  .grid{display:grid;grid-template-columns:1fr 1fr;column-gap:26px;row-gap:16px;margin-top:12px}
+  section{margin-top:14px}
+  .grid section{margin-top:0}
+  h2{font-size:16.5px;color:var(--ink);margin:0 0 7px;padding-bottom:4px;border-bottom:1.5px solid var(--line)}
+  h3{font-size:14px;color:var(--ink);margin:10px 0 4px}
+  p,li{font-size:13.5px;line-height:1.4;margin:4px 0}
+  .item{display:flex;align-items:flex-start;gap:6px;font-size:13.5px;line-height:1.33;margin:4px 0}
+  .box{width:13px;height:13px;margin:2px 0 0;border:1.5px solid var(--ink);flex:none;background:#fff;display:inline-block;vertical-align:-2px}
+  .note{font-style:italic;color:var(--goldtext);font-size:12.5px;margin:8px 0 3px}
+  .lines span{display:block;border-bottom:1px solid #999;height:24px}
+  .fill{display:inline-block;border-bottom:1px solid #777;min-width:120px;height:1em;vertical-align:baseline}
+  .fill.w{min-width:220px}
+  .row{display:flex;gap:16px;align-items:flex-end;font-size:13.5px;margin:7px 0}
+  .row > span{display:flex;gap:6px;align-items:flex-end;flex:1}
+  .row .fill{flex:1;min-width:40px}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+  th,td{border:1px solid #bfb39a;padding:5px 6px;vertical-align:top;text-align:left}
+  th{background:#f4efe4;color:var(--ink);font-size:12.5px}
+  td.c,th.c{text-align:center;width:54px;white-space:nowrap}
+  .q{font-weight:700}
+  .eg{font-style:italic;color:#555;font-size:12px;display:block;margin-top:2px}
+  .instr{background:#faf7f0;border-left:3px solid var(--gold);padding:6px 10px;font-size:13px;margin:6px 0}
+  .credit{font-size:11px;color:#555;line-height:1.35;margin-top:6px}
+  .risk td{font-size:13px}
+  .alert{border:1.5px solid #8a2b2b;background:#fbf3f1;padding:8px 12px;font-size:13.5px;margin-top:12px}
+  .alert b{color:#8a2b2b}
+  .step{font-weight:700;color:var(--ink)}
+  ol.src{padding-left:20px;margin:4px 0}
+  ol.src li{font-size:11.5px;line-height:1.35;margin:2px 0;word-break:break-word}
+  footer{margin-top:14px;text-align:center;font-size:12.5px;color:#555;font-style:italic}
+  .pgno{text-align:right;font-size:12px;color:#777;margin-bottom:6px}
+  @media (max-width:640px){
+    .page{padding:20px 16px;border-left:0;border-right:0}
+    .grid{grid-template-columns:1fr}
+    .who,.row{flex-direction:column;gap:10px;align-items:stretch}
+  }
+  @media print{
+    @page{size:letter;margin:.35in}
+    html,body{background:#fff}
+    .bar,.tip{display:none}
+    .page{box-shadow:none;margin:0;width:100%;max-width:100%;padding:.28in .38in;border:1.5px solid var(--gold);page-break-after:always;break-after:page}
+    .page:last-child{page-break-after:auto;break-after:auto}
+    header img{width:56px}
+    h1{font-size:22px}
+    tr{break-inside:avoid}
+    .sp .lines span{height:25px}
+    .sp .row{margin:9px 0}
+    .sp p{margin:9px 0 3px}
+    p,li,.item{font-size:12.5px}
+    .item{margin:2.5px 0}
+    td,th{padding:3.5px 5px;font-size:12px}
+    .eg{font-size:11px}
+    .lines span{height:21px}
+    h2{font-size:15px;margin-bottom:5px}
+    section{margin-top:10px}
+    .row{margin:5px 0;font-size:12.5px}
+  }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <button class="print" type="button" onclick="window.print()">Print or save as PDF</button>
+    <a class="pdf" href="suicide-prevention-form.pdf">Download PDF</a>
+  </div>
+  <p class="tip"><b>For counselor use:</b> print this form and complete it by hand with your client. Part 7 (My Safety Plan, page 5) is written together with the client, and the client keeps a copy.</p>
+
+  <!-- PAGE 1 -->
+  <div class="page">
+    <header>
+      <img src="belief-counseling-logo.png" alt="Belief Counseling">
+      <h1>Suicide Risk Screening &amp; Safety Plan</h1>
+      <p class="sub">Counselor-administered screening, risk formulation, safety planning, and follow-up</p>
+    </header>
+
+    <div class="who">
+      <div>Client: <span class="line"></span></div>
+      <div style="flex:.6">Date: <span class="line"></span></div>
+    </div>
+    <div class="who" style="margin-top:6px">
+      <div>Counselor: <span class="line"></span></div>
+      <div style="flex:.6">Age: <span class="line"></span></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;font-size:13px;margin:8px 0 2px"><b style="color:var(--ink)">Reason for screening:</b>
+      <span class="item" style="margin:0"><span class="box"></span>Intake</span>
+      <span class="item" style="margin:0"><span class="box"></span>Routine re-screen</span>
+      <span class="item" style="margin:0"><span class="box"></span>Client disclosed thoughts</span>
+      <span class="item" style="margin:0"><span class="box"></span>Warning signs</span>
+      <span class="item" style="margin:0"><span class="box"></span>Other</span>
+    </div>
+
+    <section>
+      <h2>When to Use This Form</h2>
+      <p>Screen every client at intake (ages 12 and up) and again whenever there is a crisis, a major loss, worsening depression, new warning signs, or a care transition. Ask directly and calmly; asking about suicide does not plant the idea. If the client is in immediate danger, stop the form, stay with the client, and call <b>911</b> or <b>988</b>.</p>
+    </section>
+
+    <section>
+      <h2>Part 1 &nbsp;Screening Questions (Columbia Protocol, C-SSRS Screener)</h2>
+      <div class="instr">Ask questions 1 and 2. <b>If YES to 2</b>, ask questions 3, 4, 5 and 6. <b>If NO to 2</b>, go directly to question 6. Read the questions exactly as written. Mark Yes (Y) or No (N) in each column.</div>
+      <table>
+        <tr><th>Question</th><th class="c" colspan="2">Lifetime<br>(most suicidal)</th><th class="c" colspan="2">Past month</th></tr>
+        <tr><th></th><th class="c">Y</th><th class="c">N</th><th class="c">Y</th><th class="c">N</th></tr>
+        <tr><td><span class="q">1) Have you wished you were dead or wished you could go to sleep and not wake up?</span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td></tr>
+        <tr><td><span class="q">2) Have you actually had any thoughts of killing yourself?</span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td></tr>
+        <tr><td><span class="q">3) Have you been thinking about how you might do this?</span><span class="eg">E.g. “I thought about taking an overdose but I never made a specific plan as to when where or how I would actually do it….and I would never go through with it.”</span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td></tr>
+        <tr><td><span class="q">4) Have you had these thoughts and had some intention of acting on them?</span><span class="eg">As opposed to “I have the thoughts but I definitely will not do anything about them.”</span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td></tr>
+        <tr><td><span class="q">5) Have you started to work out or worked out the details of how to kill yourself? Did you intend to carry out this plan?</span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td></tr>
+        <tr><th>Suicidal behavior</th><th class="c" colspan="2">Lifetime</th><th class="c" colspan="2">Past 3 months</th></tr>
+        <tr><td><span class="q">6) Have you ever done anything, started to do anything, or prepared to do anything to end your life?</span><span class="eg">Examples: Took pills, tried to shoot yourself, cut yourself, or hang yourself, took out pills but didn’t swallow any, held a gun but changed your mind or it was grabbed from your hand, went to the roof but didn’t jump, collected pills, obtained a gun, gave away valuables, wrote a will or suicide note, etc.<br><b>If YES, ask: Was this within the past three months?</b></span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td><td class="c"><span class="box"></span></td></tr>
+      </table>
+      <p class="note">Client’s own words / details of any “Yes” answer:</p>
+      <div class="lines" aria-hidden="true"><span></span><span></span></div>
+      <p class="credit">Questions 1–6: Columbia-Suicide Severity Rating Scale (C-SSRS), Screen Version, Posner K. et al. © 2008 The Research Foundation for Mental Hygiene, Inc. Used without modification of item wording, as permitted for community and healthcare settings by The Columbia Lighthouse Project (cssrs.columbia.edu). The counselor should complete Columbia’s free training before use.</p>
+    </section>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page">
+    <div class="pgno">Page 2 &nbsp;·&nbsp; Client: <span class="fill"></span></div>
+    <section style="margin-top:0">
+      <h2>Part 2 &nbsp;Risk Factors and Warning Signs</h2>
+      <p class="note" style="margin-top:0">Check all that apply. Warning signs (right column) suggest risk is rising now.</p>
+      <div class="grid" style="margin-top:4px">
+        <div>
+          <h3>Clinical and history</h3>
+          <div class="item"><span class="box"></span>Prior suicide attempt or self-harm</div>
+          <div class="item"><span class="box"></span>Depression, bipolar disorder, psychosis, PTSD, or eating disorder</div>
+          <div class="item"><span class="box"></span>Alcohol or drug misuse (current or recent)</div>
+          <div class="item"><span class="box"></span>Chronic pain or serious medical illness</div>
+          <div class="item"><span class="box"></span>Recent psychiatric hospitalization or discharge</div>
+          <div class="item"><span class="box"></span>Family history of suicide</div>
+          <div class="item"><span class="box"></span>History of abuse, trauma, or bullying</div>
+          <h3>Life situation</h3>
+          <div class="item"><span class="box"></span>Recent loss (death, divorce, breakup, job, finances, housing)</div>
+          <div class="item"><span class="box"></span>Legal problems, shame, or public humiliation</div>
+          <div class="item"><span class="box"></span>Social isolation or living alone</div>
+          <div class="item"><span class="box"></span>Recent suicide of someone known to the client</div>
+          <div class="item"><span class="box"></span>Access to firearms or stockpiled medications</div>
+          <div class="item"><span class="box"></span>Recent conflict with family, church, or community</div>
+        </div>
+        <div>
+          <h3>Warning signs (now)</h3>
+          <div class="item"><span class="box"></span>Talking or writing about wanting to die or being a burden</div>
+          <div class="item"><span class="box"></span>Hopelessness; “no way out” or “nothing will change”</div>
+          <div class="item"><span class="box"></span>Searching for or obtaining a method</div>
+          <div class="item"><span class="box"></span>Withdrawing from people and activities</div>
+          <div class="item"><span class="box"></span>Agitation, rage, or severe anxiety</div>
+          <div class="item"><span class="box"></span>Severe insomnia or big change in sleep</div>
+          <div class="item"><span class="box"></span>Increased alcohol or drug use</div>
+          <div class="item"><span class="box"></span>Reckless behavior; dramatic mood change</div>
+          <div class="item"><span class="box"></span>Giving away possessions; saying goodbye</div>
+          <div class="item"><span class="box"></span>Feeling trapped or in unbearable pain</div>
+          <div class="item"><span class="box"></span>Belief of being beyond God’s forgiveness, or that others would be better off without them</div>
+          <p class="note">Recent triggers or stressors:</p>
+          <div class="lines" aria-hidden="true"><span></span><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Part 3 &nbsp;Protective Factors and Reasons for Living</h2>
+      <p class="note" style="margin-top:0">Protective factors do not cancel out high risk, but they guide the safety plan.</p>
+      <div class="grid" style="margin-top:4px">
+        <div>
+          <div class="item"><span class="box"></span>Engaged in counseling; willing to make a safety plan</div>
+          <div class="item"><span class="box"></span>Supportive family, spouse, or friends</div>
+          <div class="item"><span class="box"></span>Responsibility for children, family, or pets</div>
+          <div class="item"><span class="box"></span>Problem-solving and coping skills</div>
+          <div class="item"><span class="box"></span>Hope for the future; plans and goals</div>
+          <div class="item"><span class="box"></span>Access to medical and mental health care</div>
+          <div class="item"><span class="box"></span>No access to firearms or lethal means</div>
+        </div>
+        <div>
+          <div class="item"><span class="box"></span>Personal faith or spiritual practices (prayer, Scripture, worship)</div>
+          <div class="item"><span class="box"></span>Belonging to a church or faith community</div>
+          <div class="item"><span class="box"></span>A pastor, elder, or mentor the client trusts</div>
+          <div class="item"><span class="box"></span>Moral or religious beliefs against suicide (note how the client experiences these: hope, or added guilt)</div>
+          <div class="item"><span class="box"></span>Sense of meaning, purpose, or calling</div>
+          <div class="item"><span class="box"></span>Other: <span class="fill"></span></div>
+        </div>
+      </div>
+      <p class="note">Reasons for living, in the client’s own words:</p>
+      <div class="lines" aria-hidden="true"><span></span><span></span><span></span></div>
+    </section>
+    </div>
+
+  <!-- PAGE 3 -->
+  <div class="page">
+    <div class="pgno">Page 3 &nbsp;·&nbsp; Client: <span class="fill"></span></div>
+    <section style="margin-top:0">
+      <h2>Part 4 &nbsp;Risk Level and Actions Taken</h2>
+      <p class="note" style="margin-top:0">Guide based on the Columbia screener triage and SAMHSA SAFE-T. Final risk level is the counselor’s clinical judgment.</p>
+      <table class="risk">
+        <tr><th style="width:24%">Risk level</th><th>Typical findings</th><th style="width:36%">Usual response</th></tr>
+        <tr><td><span class="box"></span> <b>Low</b></td><td>“Yes” to question 1 or 2 only; no method, intent, plan, or recent behavior; protective factors present.</td><td>Safety plan; crisis numbers; outpatient follow-up; re-screen next visit.</td></tr>
+        <tr><td><span class="box"></span> <b>Moderate</b></td><td>“Yes” to question 3, or suicidal behavior more than 3 months ago; several risk factors.</td><td>Safety plan; lethal means counseling; consultation; more frequent sessions; consider psychiatric evaluation.</td></tr>
+        <tr><td><span class="box"></span> <b>High</b></td><td>“Yes” to question 4 or 5, or suicidal behavior in the past 3 months.</td><td>Do not leave client alone; immediate evaluation for higher level of care (crisis team, emergency department, 911/988); lethal means removed.</td></tr>
+      </table>
+      <p class="note">Rationale for risk level (key risk factors, warning signs, protective factors):</p>
+      <div class="lines" aria-hidden="true"><span></span><span></span><span></span></div>
+
+      <h3>Actions taken (check all that apply)</h3>
+      <div class="grid" style="margin-top:2px;row-gap:0">
+        <div>
+          <div class="item"><span class="box"></span>Safety plan completed (Part 7); client given a copy</div>
+          <div class="item"><span class="box"></span>Lethal means counseling (Part 5)</div>
+          <div class="item"><span class="box"></span>988 and crisis resources given</div>
+          <div class="item"><span class="box"></span>Consulted with: <span class="fill"></span></div>
+          <div class="item"><span class="box"></span>Referred for psychiatric / medical evaluation</div>
+          <div class="item"><span class="box"></span>Session frequency increased</div>
+        </div>
+        <div>
+          <div class="item"><span class="box"></span>Support person notified (with consent, or as needed for safety): <span class="fill"></span></div>
+          <div class="item"><span class="box"></span>Mobile crisis team or 988 called with client</div>
+          <div class="item"><span class="box"></span>Escorted / referred to emergency department</div>
+          <div class="item"><span class="box"></span>911 called (imminent danger)</div>
+          <div class="item"><span class="box"></span>Other: <span class="fill"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Part 5 &nbsp;Lethal Means Counseling Notes</h2>
+      <p>Ask about access to firearms, medications (including stockpiles), and other methods named by the client. Discuss safe storage or temporary removal, ideally with a family member’s help. Reducing access during a crisis saves lives.</p>
+      <table>
+        <tr><th>Means</th><th class="c">Access?</th><th>Plan agreed (who, what, by when)</th><th class="c">Confirmed</th></tr>
+        <tr><td>Firearms</td><td class="c">Y <span class="box"></span> N <span class="box"></span></td><td></td><td class="c"><span class="box"></span></td></tr>
+        <tr><td>Medications / pills</td><td class="c">Y <span class="box"></span> N <span class="box"></span></td><td></td><td class="c"><span class="box"></span></td></tr>
+        <tr><td>Alcohol / drugs</td><td class="c">Y <span class="box"></span> N <span class="box"></span></td><td></td><td class="c"><span class="box"></span></td></tr>
+        <tr><td>Other: <span class="fill" style="min-width:70px"></span></td><td class="c">Y <span class="box"></span> N <span class="box"></span></td><td></td><td class="c"><span class="box"></span></td></tr>
+      </table>
+      <p class="note">Person helping with safe storage and how follow-up will be confirmed:</p>
+      <div class="lines" aria-hidden="true"><span></span><span></span></div>
+    </section>
+    </div>
+
+  <!-- PAGE 4 -->
+  <div class="page">
+    <div class="pgno">Page 4 &nbsp;·&nbsp; Client: <span class="fill"></span></div>
+    <section style="margin-top:0">
+      <h2>Part 6 &nbsp;Follow-Up Plan and Signature</h2>
+      <div class="row"><span>Next appointment (date / time): <span class="fill"></span></span></div>
+      <div class="row"><span>Check-in before next visit (phone or message) on: <span class="fill"></span></span><span>By: <span class="fill"></span></span></div>
+      <div class="item"><span class="box"></span>Caring contacts planned (brief, supportive notes, texts, or calls over the coming weeks and months)</div>
+      <div class="item"><span class="box"></span>Re-screen at next session and whenever risk changes</div>
+      <div class="item"><span class="box"></span>If client misses an appointment, reach out the same day</div>
+      <div class="item"><span class="box"></span>Coordinate care with other providers (with written consent)</div>
+      <div class="item"><span class="box"></span>Safety plan reviewed and updated on: <span class="fill"></span></div>
+      <p class="note">Additional notes:</p>
+      <div class="lines" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="row" style="margin-top:14px"><span>Counselor signature: <span class="fill"></span></span><span style="flex:.5">Date: <span class="fill"></span></span></div>
+      <div class="row"><span>Credentials / license #: <span class="fill"></span></span><span style="flex:.5">Time: <span class="fill"></span></span></div>
+    </section>
+    <div class="alert"><b>Important:</b> Screening tools support, but do not replace, clinical judgment. This form is not a substitute for training, consultation, or the laws and professional standards of your state. <b>If there is imminent danger, call 911 or 988.</b></div>
+    <section style="margin-top:16px">
+      <h2>Sources</h2>
+      <ol class="src">
+        <li>Posner K, Brown GK, Stanley B, et al. The Columbia–Suicide Severity Rating Scale. <i>Am J Psychiatry</i>. 2011;168(12):1266–1277. Screener and terms of use: The Columbia Lighthouse Project, cssrs.columbia.edu/the-columbia-scale-c-ssrs/cssrs-for-communities-and-healthcare/</li>
+        <li>The Joint Commission. National Patient Safety Goal NPSG.15.01.01, Reduce the Risk for Suicide (Behavioral Health Care and Human Services, effective January 2026). jointcommission.org/en-us/knowledge-library/suicide-prevention</li>
+        <li>National Institute of Mental Health. Ask Suicide-Screening Questions (ASQ) Toolkit. nimh.nih.gov/research/research-conducted-at-nimh/asq-toolkit-materials</li>
+        <li>SAMHSA. SAFE-T: Suicide Assessment Five-Step Evaluation and Triage (PEP24-01-036), 2024. library.samhsa.gov/product/safe-t-suicide-assessment-five-step-evaluation-and-triage/pep24-01-036</li>
+        <li>Stanley B, Brown GK. Safety Planning Intervention: A brief intervention to mitigate suicide risk. <i>Cogn Behav Pract</i>. 2012;19(2):256–264. suicidesafetyplan.com</li>
+        <li>Counseling on Access to Lethal Means (CALM). Zero Suicide / Education Development Center. zerosuicide.edc.org/resources/resource-database/counseling-access-lethal-means-calm</li>
+        <li>U.S. Department of Health and Human Services. 2024 National Strategy for Suicide Prevention. Washington, DC: HHS; April 2024. hhs.gov/sites/default/files/national-strategy-for-suicide-prevention.pdf</li>
+        <li>988 Suicide &amp; Crisis Lifeline. 988lifeline.org</li>
+        <li>Motto JA, Bostrom AG. A randomized controlled trial of postcrisis suicide prevention. <i>Psychiatr Serv</i>. 2001;52(6):828–833. (Caring contacts.)</li>
+      </ol>
+    </section>
+    <footer>Christian Belief Counseling · beliefcounselor.com · For use by trained counselors. Keep completed forms in the client’s confidential record.</footer>
+  </div>
+
+  <!-- PAGE 5: SAFETY PLAN -->
+  <div class="page sp">
+    <div class="pgno">Page 5 &nbsp;·&nbsp; Client keeps a copy of this page</div>
+    <header>
+      <h1 style="font-size:21px">Part 7 &nbsp;My Safety Plan</h1>
+      <p class="sub">Written together with my counselor, in my own words</p>
+    </header>
+    <div class="who"><div>Name: <span class="line"></span></div><div style="flex:.6">Date: <span class="line"></span></div></div>
+
+    <p><span class="step">1. My warning signs</span> (thoughts, feelings, situations that tell me a crisis may be starting):</p>
+    <div class="lines" aria-hidden="true"><span></span><span></span><span></span></div>
+    <p><span class="step">2. Things I can do on my own to cope</span> (prayer, Scripture, music, a walk, breathing, etc.):</p>
+    <div class="lines" aria-hidden="true"><span></span><span></span><span></span></div>
+    <p><span class="step">3. People and places that help take my mind off things:</span></p>
+    <div class="row"><span>Name: <span class="fill"></span></span><span>Phone: <span class="fill"></span></span></div>
+    <div class="row"><span>Place: <span class="fill"></span></span><span>Place: <span class="fill"></span></span></div>
+    <p><span class="step">4. People I can ask for help</span> (family, friends, pastor, church members):</p>
+    <div class="row"><span>Name: <span class="fill"></span></span><span>Phone: <span class="fill"></span></span></div>
+    <div class="row"><span>Name: <span class="fill"></span></span><span>Phone: <span class="fill"></span></span></div>
+    <p><span class="step">5. Professionals and crisis lines I can contact:</span></p>
+    <div class="row"><span>Counselor: <span class="fill"></span></span><span>Phone: <span class="fill"></span></span></div>
+    <div class="row"><span>Doctor / psychiatrist: <span class="fill"></span></span><span>Phone: <span class="fill"></span></span></div>
+    <div class="row"><span>Nearest emergency room: <span class="fill"></span></span></div>
+    <p style="margin-top:6px"><b>988 Suicide &amp; Crisis Lifeline:</b> call or text <b>988</b>, or chat at 988lifeline.org (24/7, free). Veterans: dial 988, then press 1. <b>Emergency: 911.</b></p>
+    <p><span class="step">6. Making my surroundings safer</span> (what I will store safely or give to someone to hold):</p>
+    <div class="lines" aria-hidden="true"><span></span><span></span><span></span></div>
+    <p><span class="step">7. My reasons for living</span> (people, faith, hopes, what matters most to me):</p>
+    <div class="lines" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="row" style="margin-top:12px"><span>My signature: <span class="fill"></span></span><span>Counselor: <span class="fill"></span></span></div>
+    <p class="credit">This safety plan follows the steps of the Safety Planning Intervention developed by Barbara Stanley, PhD and Gregory K. Brown, PhD (suicidesafetyplan.com). It is an independently written form, not the copyrighted Stanley-Brown Safety Plan template.</p>
+      <footer>If you are in danger or can’t keep yourself safe, call or text 988 or call 911 right away. You are not alone.</footer>
+  </div>
+
+</body>
+</html>
