@@ -140,7 +140,23 @@
   .audio .aload{margin:8px 0 0;padding:6px 10px;background:#fff;border:1px solid var(--gold);border-radius:6px;font-size:14px;font-weight:600;color:var(--navy)}
   .audio .aload[hidden]{display:none}
   @media print{.audio .aload{display:none}}
+
+  /* Bible Hub context links (preview only) */
+  .ref a{color:inherit;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+  .ref a:hover{color:var(--gold)}
+  .hub{display:block;margin:8px 0 0;font:600 12.5px/1.4 system-ui,sans-serif;letter-spacing:.01em;font-style:normal;color:#8a7d68}
+  .hub a{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:2px}
+  .hub a:hover{color:var(--gold)}
+  .hub-sep{margin:0 8px;color:var(--gold);font-weight:400}
+  .ctxnote{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--line);font-style:normal;font-size:15px;line-height:1.55;color:#5a5348}
+  .ctxnote .clbl{font:600 11px system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin:0 0 4px}
+  .hubnote{margin:8px 0 0;font-size:13px;color:#5a5348;font-style:italic}
+  .previewbanner{background:#1F3A5F;color:#FFFDF8;text-align:center;font:600 13px/1.4 system-ui,sans-serif;letter-spacing:.04em;padding:8px 16px;margin:0 0 16px;border-radius:4px}
+  @media print{
+    .hub,.hubnote,.previewbanner{display:none}
+  }
 </style></head><body><div class="wrap" id="top">
+<p class="previewbanner">Preview only — not published. Bible Hub links open in a new tab.</p>
 
 <div class="printbar">
 <p><strong>Print this card and homework</strong> to fill out with a pen. Choose what you’d like to print:</p>
@@ -167,15 +183,22 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 
 <h2>What Scripture teaches</h2>
 <p>If God, the Judge of all, has forgiven you, no one, including you, has the right to keep condemning you. “Who will bring any charge against God’s elect? It is God who justifies.” Refusing to accept God’s verdict can quietly set your own judgment above His. Paul, who had persecuted Christians, chose to forget what was behind and press on. Accepting forgiveness does not mean the wrong did not matter; it means you trust that Christ’s payment was enough.</p>
-<div class="key"><q>Who will bring any charge against God’s elect? It is God who justifies</q> <span class="ref">(Romans 8:33)</span>.</div>
+<div class="key" id="main-scripture"><q>Who will bring any charge against God’s elect? It is God who justifies</q> <span class="ref">(<a href="https://biblehub.com/romans/8-33.htm" target="_blank" rel="noopener">Romans 8:33</a>)</span>.
+<span class="hub"><a href="https://biblehub.com/bsb/romans/8.htm" target="_blank" rel="noopener">Read in context</a><span class="hub-sep">·</span><a href="https://biblehub.com/commentaries/romans/8-33.htm" target="_blank" rel="noopener">Commentary</a></span>
+<div class="ctxnote"><span class="clbl">Context</span>Paul wrote this letter to the believers in Rome. Near the end of chapter 8, he is assuring them that those who are in Christ are secure before God. The question in this verse is legal: who can bring a charge against God’s people? The answer is that no charge can stand, because God Himself is the one who has already declared them righteous.</div></div>
 
 <h2>Also see</h2>
-<div class="also">
-<p><q>Therefore, there is now no condemnation for those who are in Christ Jesus</q> <span class="ref">(Romans 8:1)</span>.</p>
-<p><q>Brothers, I do not consider myself yet to have taken hold of it. But one thing I do: Forgetting what is behind and straining toward what is ahead, I press on toward the goal to win the prize of God’s heavenly calling in Christ Jesus</q> <span class="ref">(Philippians 3:13–14)</span>.</p>
-<p><q>As far as the east is from the west, so far has He removed our transgressions from us</q> <span class="ref">(Psalm 103:12)</span>.</p>
-<p><q>Therefore if anyone is in Christ, he is a new creation. The old has passed away. Behold, the new has come!</q> <span class="ref">(2 Corinthians 5:17)</span>.</p>
+<div class="also" id="also-see">
+<p><q>Therefore, there is now no condemnation for those who are in Christ Jesus</q> <span class="ref">(<a href="https://biblehub.com/romans/8-1.htm" target="_blank" rel="noopener">Romans 8:1</a>)</span>.
+<span class="hub"><a href="https://biblehub.com/bsb/romans/8.htm" target="_blank" rel="noopener">Read in context</a><span class="hub-sep">·</span><a href="https://biblehub.com/commentaries/romans/8-1.htm" target="_blank" rel="noopener">Commentary</a></span></p>
+<p><q>Brothers, I do not consider myself yet to have taken hold of it. But one thing I do: Forgetting what is behind and straining toward what is ahead, I press on toward the goal to win the prize of God’s heavenly calling in Christ Jesus</q> <span class="ref">(<a href="https://biblehub.com/philippians/3-13.htm" target="_blank" rel="noopener">Philippians 3:13–14</a>)</span>.
+<span class="hub"><a href="https://biblehub.com/bsb/philippians/3.htm" target="_blank" rel="noopener">Read in context</a><span class="hub-sep">·</span><a href="https://biblehub.com/commentaries/philippians/3-13.htm" target="_blank" rel="noopener">Commentary</a></span></p>
+<p><q>As far as the east is from the west, so far has He removed our transgressions from us</q> <span class="ref">(<a href="https://biblehub.com/psalms/103-12.htm" target="_blank" rel="noopener">Psalm 103:12</a>)</span>.
+<span class="hub"><a href="https://biblehub.com/bsb/psalms/103.htm" target="_blank" rel="noopener">Read in context</a><span class="hub-sep">·</span><a href="https://biblehub.com/commentaries/psalms/103-12.htm" target="_blank" rel="noopener">Commentary</a></span></p>
+<p><q>Therefore if anyone is in Christ, he is a new creation. The old has passed away. Behold, the new has come!</q> <span class="ref">(<a href="https://biblehub.com/2_corinthians/5-17.htm" target="_blank" rel="noopener">2 Corinthians 5:17</a>)</span>.
+<span class="hub"><a href="https://biblehub.com/bsb/2_corinthians/5.htm" target="_blank" rel="noopener">Read in context</a><span class="hub-sep">·</span><a href="https://biblehub.com/commentaries/2_corinthians/5-17.htm" target="_blank" rel="noopener">Commentary</a></span></p>
 </div>
+<p class="hubnote">“Read in context” opens the chapter in the Berean Standard Bible on Bible Hub. “Commentary” opens classic commentaries for that verse. Both open in a new tab.</p>
 
 <h2>Common self-statements</h2>
 <ul>
@@ -291,12 +314,17 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 <div class="fill"><span>In my own words:</span><i></i></div>
 
 <div class="step"><div class="num">4</div><div><h2>My Scripture</h2><p class="why">The verse that speaks most directly to me. This is the one I will memorize.</p></div></div>
-<ul class="opts">
-<li><span class="ref">Romans 8:33</span><span class="scrip">“Who will bring any charge against God’s elect? It is God who justifies.”</span></li>
-<li><span class="ref">Romans 8:1</span><span class="scrip">“Therefore, there is now no condemnation for those who are in Christ Jesus.”</span></li>
-<li><span class="ref">Philippians 3:13–14</span><span class="scrip">“Brothers, I do not consider myself yet to have taken hold of it. But one thing I do: Forgetting what is behind and straining toward what is ahead, I press on toward the goal to win the prize of God’s heavenly calling in Christ Jesus.”</span></li>
-<li><span class="ref">Psalm 103:12</span><span class="scrip">“As far as the east is from the west, so far has He removed our transgressions from us.”</span></li>
-<li><span class="ref">2 Corinthians 5:17</span><span class="scrip">“Therefore if anyone is in Christ, he is a new creation. The old has passed away. Behold, the new has come!”</span></li>
+<ul class="opts" id="homework-scripture">
+<li><span class="ref"><a href="https://biblehub.com/romans/8-33.htm" target="_blank" rel="noopener">Romans 8:33</a></span><span class="scrip">“Who will bring any charge against God’s elect? It is God who justifies.”</span>
+<span class="hub"><a href="https://biblehub.com/bsb/romans/8.htm" target="_blank" rel="noopener">Read in context</a><span class="hub-sep">·</span><a href="https://biblehub.com/commentaries/romans/8-33.htm" target="_blank" rel="noopener">Commentary</a></span></li>
+<li><span class="ref"><a href="https://biblehub.com/romans/8-1.htm" target="_blank" rel="noopener">Romans 8:1</a></span><span class="scrip">“Therefore, there is now no condemnation for those who are in Christ Jesus.”</span>
+<span class="hub"><a href="https://biblehub.com/bsb/romans/8.htm" target="_blank" rel="noopener">Read in context</a><span class="hub-sep">·</span><a href="https://biblehub.com/commentaries/romans/8-1.htm" target="_blank" rel="noopener">Commentary</a></span></li>
+<li><span class="ref"><a href="https://biblehub.com/philippians/3-13.htm" target="_blank" rel="noopener">Philippians 3:13–14</a></span><span class="scrip">“Brothers, I do not consider myself yet to have taken hold of it. But one thing I do: Forgetting what is behind and straining toward what is ahead, I press on toward the goal to win the prize of God’s heavenly calling in Christ Jesus.”</span>
+<span class="hub"><a href="https://biblehub.com/bsb/philippians/3.htm" target="_blank" rel="noopener">Read in context</a><span class="hub-sep">·</span><a href="https://biblehub.com/commentaries/philippians/3-13.htm" target="_blank" rel="noopener">Commentary</a></span></li>
+<li><span class="ref"><a href="https://biblehub.com/psalms/103-12.htm" target="_blank" rel="noopener">Psalm 103:12</a></span><span class="scrip">“As far as the east is from the west, so far has He removed our transgressions from us.”</span>
+<span class="hub"><a href="https://biblehub.com/bsb/psalms/103.htm" target="_blank" rel="noopener">Read in context</a><span class="hub-sep">·</span><a href="https://biblehub.com/commentaries/psalms/103-12.htm" target="_blank" rel="noopener">Commentary</a></span></li>
+<li><span class="ref"><a href="https://biblehub.com/2_corinthians/5-17.htm" target="_blank" rel="noopener">2 Corinthians 5:17</a></span><span class="scrip">“Therefore if anyone is in Christ, he is a new creation. The old has passed away. Behold, the new has come!”</span>
+<span class="hub"><a href="https://biblehub.com/bsb/2_corinthians/5.htm" target="_blank" rel="noopener">Read in context</a><span class="hub-sep">·</span><a href="https://biblehub.com/commentaries/2_corinthians/5-17.htm" target="_blank" rel="noopener">Commentary</a></span></li>
 </ul>
 <div class="fill"><span>A verse I found myself:</span><i></i></div>
 <div class="lines"><i></i></div>
@@ -385,7 +413,7 @@ window.addEventListener('afterprint', function(){ document.body.classList.remove
 <h2>Prayer</h2>
 <p class="prayer">Father, thank You that You have forgiven me completely. Help me reject the lie that I can never forgive myself. I accept Your verdict over my own. Help me grieve what I did, make it right where I can, and then press on toward what You have ahead for me. In Jesus’ name, Amen.</p>
 <div class="foot">✦ ✦ ✦</div>
-<p class="bnote">Scripture quotations are from the Berean Standard Bible (BSB), which is in the public domain.</p>
+<p class="bnote">Scripture quotations are from the Berean Standard Bible (BSB), which is in the public domain. Verse context and commentary links go to Bible Hub and open in a new tab.</p>
 </div>
 
 <p class="back"><a href="#top">Back to top</a> · <a href="https://www.beliefcounselor.com/spiritual-religious-false-beliefs" target="_top">All Spiritual/Religious False Beliefs</a></p>
