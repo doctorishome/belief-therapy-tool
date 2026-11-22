@@ -341,6 +341,9 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
   body = topic Scriptures). Wix text links can't carry an email body, hence the embed.
   Page code copy: tools/wix/counselor-scriptures-page.js. To turn on for all topics: EMAIL_ALL = true.
 
+## Nov 21, 2026 — Library Forms page
+- The Counselors' Room Library has a fourth card, Forms, opening counselors/forms-library.html. It lists practice forms and belief worksheets already in the repo, with print and download links. Books, Videos, and Articles were not changed.
+
 ## Nov 21, 2026 — Life Events & Beliefs Screening is a print form
 - Life_Events_Beliefs_Screening.html is now a blank form for counselors to print or download (Life_Events_Beliefs_Screening.pdf) and give to a client. The clickable boxes, typed notes, and Clear button are gone. Other worksheets are unchanged.
 
