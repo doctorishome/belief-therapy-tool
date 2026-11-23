@@ -384,3 +384,8 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 ## Nov 23, 2026 — Guidelines in the Counselors' Room menu
 - New menu item "Guidelines" between The Process and Assessment, on all 52 pages that carry the room menu (and counselors/room-nav.html, used by /counselor-scriptures). It opens counselors/guidelines.html; ?tip=room-guidelines goes there through counselors/room-guidelines.html. On the guidelines page, Guidelines (not Belief Counseling) is now the highlighted menu item. The card on the Belief Counseling page stays.
 - Members-only tips stored in the Wix ProTips collection still carry the older menu (no Guidelines) until they are rebuilt.
+
+## Nov 23, 2026 — Grief and Loss guidelines (draft for Brian's review)
+- Brian wants specialty guidelines for Grief (loss of a loved one), Trauma (incl. PTSD), and Abuse (sexual or physical). Doing Grief first for his review, then Trauma and Abuse in the same format.
+- counselors/guidelines-grief.html, built by tools/guidelines/build_grief.py (reuses head/styles/menu of counselors/guidelines.html). 10 guidelines, PGD DSM-5-TR criteria box, false-belief table linked to the Grief and Loss belief cards (Inter-046–050) and Belief-079/080, missteps table, Quick Check, For Students, 8 APA references with DOIs (checked). Verses checked with tools/verse.py.
+- NOT yet linked from the menu or the general guidelines page. Review link: beliefcounselor.com/blank-11?tip=guidelines-grief. Plan once approved: a "Specialty guidelines" box on counselors/guidelines.html linking Grief, Trauma, Abuse.
