@@ -400,3 +400,4 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - The built-in Claude browser cannot save downloads to Brian's computer; that is why the video is embedded from HeyGen rather than hosted here.
 - On counselors/guidelines.html, guideline 1's "Training video 1 (coming soon)" is replaced by an embedded player (div.gvid, iframe https://app.heygen.com/embeds/7b3eaa3d32854ff2a6a27363f6255776). Share setting: anyone with the link.
 - For videos 12-14 use Julian Living Room 4 look (softer setting).
+- Nov 23: Pearls abortion card (pearls/abortion.html) set as the model for all Pearls cards: verses back in Georgia 17px (Arial removed), "Commentary" links now go to David Guzik's Enduring Word chapter pages (all 10 checked), note under the box updated. Rules for converting the other Pearls cards are in PEARLS-CARD-STYLE.md (for Grok or any helper).
