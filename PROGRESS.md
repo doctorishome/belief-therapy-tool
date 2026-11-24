@@ -428,3 +428,4 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - Scripts for the five new videos are in /home/claude/avatar/scripts.md (not yet in the Docs/Word script document).
 - Guideline 1 video moved to directly under its heading (trial; Brian to review before doing the rest).
 - All guideline videos (1–14) moved to directly under each guideline's title; closing message stays at the end.
+- Grief, Trauma and Abuse guideline pages: added '← Back to all Guidelines' button (returns to that guideline on guidelines.html) and 'Back to top' at the bottom. Guideline 6 two videos left as-is pending Brian's review.
