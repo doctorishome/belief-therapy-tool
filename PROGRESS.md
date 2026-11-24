@@ -442,3 +442,4 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - guidelines.html At-a-Glance item 16 + section #sp-sexual (<!--vid16--> placeholder). Abuse and Trauma pages link to it.
 - Guideline 16 video live (HeyGen ec23b182fab44a7aa2b24dac9f8cc560, 2:47, Office 8 + Paul - Serious). Script in /home/claude/avatar/scripts.md (Presentation 19).
 - 2026-11-24: Pearls cards: verses and synopsis 20px / line-height 1.55, references 16px, 34px between verses (Brian approved after phone preview). PEARLS-CARD-STYLE.md and the Grok Word file updated.
+- 2026-11-24: Pearls references centered on their own line (option A; links stay left). Style guide + Grok Word file updated.
