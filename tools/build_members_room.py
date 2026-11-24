@@ -28,13 +28,13 @@ MENU = [
      "The basics: what a belief is, what Belief Counseling is, and who should practice it."),
     ("theory.html", "Theory", "Theory",
      "Theory content is coming soon."),
-    ("process.html", "The Process", "The Process",
+    ("process.html", "Process", "The Process",
      "Three steps: Identify, Challenge, and Replace."),
     ("assessment.html", "Assessment", "Traditional Assessment",
      "Diagnosis, intake, sample forms, and the first interview."),
     ("disorders.html", "Disorders", "DSM-5-TR Disorders",
      "Teaching reviews of the major disorders: key features, what works, and Christian-integrated care."),
-    ("tips.html", "Professional Tips", "Professional Tips",
+    ("tips.html", "Tips", "Professional Tips",
      "Tips, case studies, theory, and insights from 35 years of practice."),
     ("library.html", "Library", "Library",
      "Books, videos, articles, and forms."),
@@ -196,10 +196,10 @@ body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);backg
 .nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:8px 12px;display:flex;flex-wrap:nowrap;justify-content:space-between;align-items:center;gap:8px}
 .brand{color:#fff;font-weight:bold;font-size:clamp(12px,0.9vw,15px);margin:0;letter-spacing:0;flex:0 0 auto;line-height:1.05}
 .brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72em;letter-spacing:.8px;text-transform:uppercase;white-space:nowrap}
-.nav .sep{flex:0 0 4px;width:4px;height:4px;border-radius:50%;background:#c9a227}.nav a{color:#e9edf5;text-decoration:none;font-size:clamp(10.5px,1.05vw - 0.2px,14.5px);line-height:1;padding:0;border-bottom:2px solid transparent;white-space:nowrap}
+.nav .sep{flex:0 0 4px;width:4px;height:4px;border-radius:50%;background:#c9a227}.nav a{color:#e9edf5;text-decoration:none;font-size:clamp(11px,1.429vw - 3.29px,15px);line-height:1;padding:0;border-bottom:2px solid transparent;white-space:nowrap}
 .nav a:hover,.nav a.on{color:#fff;border-color:var(--gold)}
 .nav a.on{color:var(--gold);font-weight:bold;border-bottom-width:3px}
-.nav a.pub{color:var(--gold);font-size:clamp(10.5px,1.05vw - 0.2px,14.5px);border:1px solid var(--gold);border-radius:20px;padding:2px 8px}
+.nav a.pub{color:var(--gold);font-size:clamp(11px,1.429vw - 3.29px,15px);border:1px solid var(--gold);border-radius:20px;padding:2px 8px}
 .hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:44px 22px 38px;text-align:center}
 .hero h1{font-size:clamp(1.8rem,4.5vw,2.7rem);margin:0 0 8px;line-height:1.2}
 .hero p{max-width:720px;margin:0 auto;font-size:1.1rem;color:#dfe6f2}

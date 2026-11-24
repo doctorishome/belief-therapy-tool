@@ -6,9 +6,9 @@ import glob, os, re
 
 # The menu matches the Counselors' Room (members/, built by tools/build_members_room.py).
 M = "../members/"
-MENU = [("index.html", "Welcome"), ("belief-counseling.html", "Belief Counseling"), ("theory.html", "Theory"), ("process.html", "The Process"),
+MENU = [("index.html", "Welcome"), ("belief-counseling.html", "Belief Counseling"), ("theory.html", "Theory"), ("process.html", "Process"),
         ("assessment.html", "Assessment"), ("disorders.html", "Disorders"),
-        ("tips.html", "Professional Tips"), ("library.html", "Library")]
+        ("tips.html", "Tips"), ("library.html", "Library")]
 # Which menu item is underlined on each kept page
 SECTION = {"core-beliefs.html": "process.html", "reviews.html": "assessment.html",
            "tips.html": "tips.html", "tips-ethics.html": "tips.html", "tip-ethics-treatment-modalities.html": "tips.html",
