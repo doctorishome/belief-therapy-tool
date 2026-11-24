@@ -4,8 +4,8 @@ The model card is `pearls/abortion.html`. Every other Pearls topic card should m
 
 ## 1. Look (do not change)
 - Title: Georgia, bold, 26 px.
-- Verses in the beige box: Georgia (inherited from the page; do NOT add Arial or any other font), 17 px, line-height 1.65.
-- Verse references: bold, underlined in gold, same font and size as the verses.
+- Verses in the beige box (and Synopsis/Guidance text): Georgia (inherited from the page; do NOT add Arial or any other font), 19 px, line-height 1.65.
+- Verse references: bold, underlined in gold, Georgia, 15 px (smaller than the verses). Wrap the parentheses and the reference link in `<span class="ref-wrap">` so the parentheses are 15 px too.
 - Section headings (e.g., "God's Guidance"): Georgia, bold, green #596653, 23 px.
 - "Read in context · Commentary" links: system font, 600 weight, 12.5 px.
 - Copy the whole `<style>` block from `pearls/abortion.html` unchanged. Do not restyle.
