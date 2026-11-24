@@ -116,7 +116,7 @@ def nav(active):
         out.append('<a class="pub" target="_blank" rel="noopener" href="%s">%s</a>' % (u, t))
     if active == 'welcome':
         out.append('<a class="needhelp" target="_top" href="%s">Need Help?</a>' % HELP_URL)
-    out.append('</div><!--/nav-->')
+    out.append('</div><script>/* Inside the Wix Counselors’ Room, ask the Wix page to open these menu links. The address still works if this file is opened on its own. */(function(){if(!window.parent||window.parent===window)return;var root=document.querySelector(".nav");if(!root)return;root.addEventListener("click",function(e){if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;var a=e.target&&e.target.closest?e.target.closest("a"):null;if(!a||!root.contains(a))return;var href=a.getAttribute("href")||"";if(href.indexOf("https://www.beliefcounselor.com")!==0)return;var u;try{u=new URL(href);}catch(err){return;}e.preventDefault();window.parent.postMessage({type:"navigate",path:(u.pathname||"/")+u.search+u.hash},"*");});})();</script><!--/nav-->')
     return ''.join(out)
 FOOT='<div class="foot">Educational training for counselors. Never enter real client names or details. · Scripture quotations: Berean Standard Bible (BSB), public domain. · © Brian Campbell, Ph.D.</div>'
 HELP_URL='https://www.beliefcounselor.com/help'
