@@ -341,6 +341,9 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
   body = topic Scriptures). Wix text links can't carry an email body, hence the embed.
   Page code copy: tools/wix/counselor-scriptures-page.js. To turn on for all topics: EMAIL_ALL = true.
 
+## Nov 24, 2026 — Pearls Batch 1
+- Five noindex preview cards in the abortion-card style, Berean Standard Bible: pearls/action.html, pearls/adolescent-guidance.html, pearls/adolescent-rebellion.html, pearls/adultery.html, and pearls/alcoholism.html. Each verse links to Bible Hub and to David Guzik’s Enduring Word commentary.
+
 ## Nov 21, 2026 — Library Forms page
 - The Counselors' Room Library has a fourth card, Forms, opening counselors/forms-library.html. It lists practice forms and belief worksheets already in the repo, with print and download links. Books, Videos, and Articles were not changed.
 
