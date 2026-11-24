@@ -30,7 +30,9 @@ def nav(page):
     h.append('<span class="acct"><a class="l" target="_top" href="https://www.beliefcounselor.com/my-subscriptions">My Subscriptions</a>'
              '<a class="l" target="_top" href="https://www.beliefcounselor.com/account-settings">My Account</a></span>'
              '<a class="pub" target="_blank" rel="noopener" href="https://www.beliefcounselor.com">Public Site ↗</a>'
-             '<a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div><script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script><!--/nav-->')
+             '<a class="needhelp" target="_top" href="https://www.beliefcounselor.com/help">Need Help?</a></div>'
+             '<script>/* When moving between pages inside the Wix page, show the new page from its top. */(function(){try{if(window.top!==window&&document.referrer&&new URL(document.referrer).host===location.host){var t=document.body.firstElementChild||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script>'
+             '<script>/* Inside the Wix Counselors’ Room, ask the Wix page to open these menu links. The address still works if this file is opened on its own. */(function(){if(!window.parent||window.parent===window)return;var root=document.querySelector(".nav");if(!root)return;root.addEventListener("click",function(e){if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;var a=e.target&&e.target.closest?e.target.closest("a"):null;if(!a||!root.contains(a))return;var href=a.getAttribute("href")||"";if(href.indexOf("https://www.beliefcounselor.com")!==0)return;var u;try{u=new URL(href);}catch(err){return;}e.preventDefault();window.parent.postMessage({type:"navigate",path:(u.pathname||"/")+u.search+u.hash},"*");});})();</script><!--/nav-->')
     return "".join(h)
 
 

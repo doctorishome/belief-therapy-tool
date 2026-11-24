@@ -288,6 +288,7 @@ def nav(current):
             out.append(LIE_FINDER)
     out.append('<a href="../counselors/membership.html">Membership</a>')
     out.append('<a class="pub" target="_blank" rel="noopener" href="%s">Public Site ↗</a></div>' % SITE)
+    out.append('<script>/* Inside the Wix Counselors’ Room, ask the Wix page to open these menu links. The address still works if this file is opened on its own. */(function(){if(!window.parent||window.parent===window)return;var root=document.querySelector(".nav");if(!root)return;root.addEventListener("click",function(e){if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;var a=e.target&&e.target.closest?e.target.closest("a"):null;if(!a||!root.contains(a))return;var href=a.getAttribute("href")||"";if(href.indexOf("https://www.beliefcounselor.com")!==0)return;var u;try{u=new URL(href);}catch(err){return;}e.preventDefault();window.parent.postMessage({type:"navigate",path:(u.pathname||"/")+u.search+u.hash},"*");});})();</script>')
     return "".join(out)
 
 
