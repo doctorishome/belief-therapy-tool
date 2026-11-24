@@ -193,13 +193,13 @@ CSS = """
 :root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
 *{box-sizing:border-box}
 body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
-.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:8px 12px;display:flex;flex-wrap:nowrap;justify-content:space-between;align-items:center;gap:8px}
-.brand{color:#fff;font-weight:bold;font-size:clamp(12px,0.9vw,15px);margin:0;letter-spacing:0;flex:0 0 auto;line-height:1.05}
-.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72em;letter-spacing:.8px;text-transform:uppercase;white-space:nowrap}
-.nav .sep{flex:0 0 4px;width:4px;height:4px;border-radius:50%;background:#c9a227}.nav a{color:#e9edf5;text-decoration:none;font-size:clamp(11px,1.429vw - 3.29px,15px);line-height:1;padding:0;border-bottom:2px solid transparent;white-space:nowrap}
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:6px 4px;display:flex;flex-wrap:nowrap;justify-content:space-between;align-items:center;gap:8px}
+.brand{color:#fff;font-weight:bold;font-size:clamp(14px,0.5vw + 9px,18px);margin:0 6px 0 0;letter-spacing:0;flex:0 0 auto;line-height:1.05}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72em;letter-spacing:.2px;text-transform:uppercase;white-space:nowrap}
+.nav .sep{flex:0 0 4px;width:4px;height:4px;margin:0 3px;border-radius:50%;background:#c9a227}.nav a{color:#e9edf5;text-decoration:none;font-size:clamp(14px,0.781vw + 6px,17px);line-height:1;padding:0;border-bottom:2px solid transparent;white-space:nowrap}
 .nav a:hover,.nav a.on{color:#fff;border-color:var(--gold)}
 .nav a.on{color:var(--gold);font-weight:bold;border-bottom-width:3px}
-.nav a.pub{color:var(--gold);font-size:clamp(11px,1.429vw - 3.29px,15px);border:1px solid var(--gold);border-radius:20px;padding:2px 8px}
+.nav a.pub{color:var(--gold);font-size:clamp(14px,0.781vw + 6px,17px);border:1px solid var(--gold);border-radius:20px;padding:1px 6px}
 .hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:44px 22px 38px;text-align:center}
 .hero h1{font-size:clamp(1.8rem,4.5vw,2.7rem);margin:0 0 8px;line-height:1.2}
 .hero p{max-width:720px;margin:0 auto;font-size:1.1rem;color:#dfe6f2}
@@ -278,7 +278,7 @@ def href(a):
 
 # The Lie Finder stands out in the menu: a cream button with a gold ring and a magnifying glass
 # (not gold text, which marks the page you are on).
-LIE_FINDER = '<a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:5px;background:transparent;color:#e9edf5;font-weight:normal;border:1px solid #c9a227;text-decoration:none;border-radius:20px;padding:2px 10px"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>False Beliefs</a>'
+LIE_FINDER = '<a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:3px;background:transparent;color:#e9edf5;font-weight:normal;border:1px solid #c9a227;text-decoration:none;border-radius:20px;padding:0 4px"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>False Beliefs</a>'
 
 
 def nav(current):
