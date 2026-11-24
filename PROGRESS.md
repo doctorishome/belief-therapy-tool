@@ -435,3 +435,4 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - guidelines.html: At-a-Glance item 15 and section #sp-substance (video placeholder comment <!--vid15-->). Trauma page links to it.
 - Videos 12–14 being remade with Julian Office 8 (same HeyGen ids, so no page change). Brian chose Office 8 for all videos.
 - Guideline 15 video: narration /home/claude/avatar/plan3.json, slides inject3.js (V18-1..11).
+- Guideline 15 video live (HeyGen e70ac88e43284c0db41fcc37caaf4e61, 2:41, Julian Office 8 + Paul - Serious). Videos 12–14 re-rendered with Office 8 and checked.
