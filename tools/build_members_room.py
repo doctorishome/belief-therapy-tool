@@ -193,10 +193,10 @@ CSS = """
 :root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
 *{box-sizing:border-box}
 body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
-.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
 .brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
 .brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
-.nav a{color:#e9edf5;text-decoration:none;font-size:.92rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+.nav a{color:#e9edf5;text-decoration:none;font-size:.84rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
 .nav a:hover,.nav a.on{color:#fff;border-color:var(--gold)}
 .nav a.on{color:var(--gold);font-weight:bold;border-bottom-width:3px}
 .nav a.pub{color:var(--gold);font-size:.85rem;border:1px solid var(--gold);border-radius:20px;padding:3px 12px}
@@ -248,7 +248,7 @@ PRACTICE_CSS = """
 .item ol.cases{margin:8px 0 0;padding-left:0;list-style:none}
 .item ol li{margin:10px 0}
 .item ol a{color:var(--navy2)}
-.item .fine{margin:12px 0 0;font-size:.92rem}
+.item .fine{margin:12px 0 0;font-size:.84rem}
 .chip.keep{text-transform:none;letter-spacing:0;font-size:.75rem}
 .chip.free{color:var(--navy);border-color:var(--gold);background:#f8f1d8}
 .caserow{display:flex;gap:12px;align-items:center}
