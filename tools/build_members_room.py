@@ -289,7 +289,8 @@ def nav(current):
         items.append('<a%s href="%s">%s</a>' % (' class="%s"' % " ".join(cls) if cls else "", f, e(label)))
         if f == "index.html":
             items.append(LIE_FINDER)
-    items.append('<a href="../counselors/membership.html">Membership</a>')
+    if current == "index.html":  # Membership only on the Welcome page (Brian, Nov 24, 2026)
+        items.append('<a href="../counselors/membership.html">Membership</a>')
     items.append('<a class="pub" target="_blank" rel="noopener" href="%s">Public Site ↗</a>' % SITE)
     out.append('<i class="sep" aria-hidden="true"></i>'.join(items))
     out.append('</div>')
