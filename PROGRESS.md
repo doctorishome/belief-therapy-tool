@@ -341,6 +341,9 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
   body = topic Scriptures). Wix text links can't carry an email body, hence the embed.
   Page code copy: tools/wix/counselor-scriptures-page.js. To turn on for all topics: EMAIL_ALL = true.
 
+## Nov 24, 2026 — Pearls verse text at Lora 23 px
+- Brian compared 23 px and 25 px and chose 23. On all six Pearls preview cards, verse text and Synopsis / God's Guidance text are Lora at 23 px. References stay at 15 px, and the Bible Hub links stay at 13 px.
+
 ## Nov 24, 2026 — Pearls cards in Lora at 25 px
 - All six Pearls preview cards now load Lora. Verse text and Synopsis / God's Guidance text are 25 px in Lora. Chapter-and-verse references stay at 15 px, and the Bible Hub links stay at 13 px.
 
