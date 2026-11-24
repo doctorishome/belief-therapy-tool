@@ -5,10 +5,10 @@ The model card is `pearls/abortion.html`. Every other Pearls topic card should m
 ## 1. Look (do not change)
 - Load Google Font Lora in the page head (`Lora` 400, 700, and italic 400).
 - Title: `'Lora', Georgia, serif`, bold, 26 px.
-- Verses in the beige box (and Synopsis/Guidance text): `'Lora', Georgia, serif`, 23 px, line-height 1.65. Do not use Arial.
-- Verse references: bold, underlined in gold, `'Lora', Georgia, serif`, 15 px (smaller than the verses). Wrap the parentheses and the reference link in `<span class="ref-wrap">` so the parentheses are 15 px too.
+- Verses in the beige box (and Synopsis/Guidance text): `'Lora', Georgia, serif`, 20 px, line-height 1.55. Do not use Arial. (Changed Nov 24, 2026 from 23 px / 1.65 so verses read well on a phone.)
+- Verse references: bold, underlined in gold, `'Lora', Georgia, serif`, 16 px (smaller than the verses). Wrap the parentheses and the reference link in `<span class="ref-wrap">` so the parentheses are 16 px too.
 - Section headings (e.g., "God's Guidance"): `'Lora', Georgia, serif`, bold, green #596653, 23 px.
-- "Read in context · Commentary" links (`.hub`): system font, 600 weight, 16 px, shown as a block with `margin: 6px 0 22px`. Do not put `<br><br>` after `.hub`; that margin is the gap before the next verse (about 22 px). The last `.hub`, the one before the note, has no bottom margin.
+- "Read in context · Commentary" links (`.hub`): system font, 600 weight, 16 px, shown as a block with `margin: 6px 0 34px`. Do not put `<br><br>` after `.hub`; that margin is the gap before the next verse (about 34 px). The last `.hub`, the one before the note, has no bottom margin.
 - Copy the whole `<style>` block from `pearls/abortion.html` unchanged. Do not restyle.
 
 ## 2. Bible text
