@@ -436,3 +436,7 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - Videos 12–14 being remade with Julian Office 8 (same HeyGen ids, so no page change). Brian chose Office 8 for all videos.
 - Guideline 15 video: narration /home/claude/avatar/plan3.json, slides inject3.js (V18-1..11).
 - Guideline 15 video live (HeyGen e70ac88e43284c0db41fcc37caaf4e61, 2:41, Julian Office 8 + Paul - Serious). Videos 12–14 re-rendered with Office 8 and checked.
+
+## 2026-11-24 — Guideline 16: Sexual Abuse
+- New page counselors/guidelines-sexual-abuse.html (10 guidelines; RAINN 800-656-4673 box; facts checked: CDC 1 in 4 girls/1 in 20 boys, NISVS 2016/17 1 in 4 women attempted/completed rape, Smith 2000 delayed disclosure 28%/47%, Möller 2017 tonic immobility 70%; APA memory guidance). Back button -> guidelines.html#sp-sexual.
+- guidelines.html At-a-Glance item 16 + section #sp-sexual (<!--vid16--> placeholder). Abuse and Trauma pages link to it.
