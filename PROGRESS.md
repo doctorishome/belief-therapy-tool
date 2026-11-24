@@ -426,3 +426,4 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - New HeyGen videos (Paul - Serious voice, slides only): G2 d8982404…, G3 99ec5681…, G4 5c710e14…, G8 e02ef46c…, G11 362de205….
 - guidelines.html: combined G3/G4 video (28dfee5e…) removed; every guideline 1–14 now has its own video (16 players incl. G6 parts and closing).
 - Scripts for the five new videos are in /home/claude/avatar/scripts.md (not yet in the Docs/Word script document).
+- Guideline 1 video moved to directly under its heading (trial; Brian to review before doing the rest).
