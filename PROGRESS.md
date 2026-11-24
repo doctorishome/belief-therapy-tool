@@ -427,3 +427,4 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - guidelines.html: combined G3/G4 video (28dfee5e…) removed; every guideline 1–14 now has its own video (16 players incl. G6 parts and closing).
 - Scripts for the five new videos are in /home/claude/avatar/scripts.md (not yet in the Docs/Word script document).
 - Guideline 1 video moved to directly under its heading (trial; Brian to review before doing the rest).
+- All guideline videos (1–14) moved to directly under each guideline's title; closing message stays at the end.
