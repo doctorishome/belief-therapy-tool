@@ -341,6 +341,9 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
   body = topic Scriptures). Wix text links can't carry an email body, hence the embed.
   Page code copy: tools/wix/counselor-scriptures-page.js. To turn on for all topics: EMAIL_ALL = true.
 
+## Nov 24, 2026 — Pearls verse text at 21 px
+- On all six Pearls preview cards, the verse text and the Synopsis / God's Guidance text are 21 px. Chapter-and-verse references stay at 15 px, and the Bible Hub links stay at 13 px.
+
 ## Nov 24, 2026 — Pearls card type sizes
 - On all six Pearls preview cards, verse text and the Synopsis / God's Guidance text are 19 px. Chapter-and-verse references, including the parentheses, are 15 px. The Bible Hub links stay smaller.
 
