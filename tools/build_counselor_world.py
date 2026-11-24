@@ -11,9 +11,9 @@ CSS="""
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
 a{color:var(--navy2)}
-.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:11px 12px 2px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:1px 4px}
 .brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
-.nav a.l{color:#e9edf5;text-decoration:none;font-size:.84rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+.nav a.l{color:#e9edf5;text-decoration:none;font-size:1rem;line-height:1.15;padding:2px 1px;border-bottom:2px solid transparent;white-space:nowrap}
 .nav a.l:hover{border-color:var(--gold)}.nav a.on{color:#fff;border-color:var(--gold)}
 .nav a.pub{color:var(--gold);font-size:.85rem;text-decoration:none;border:1px solid var(--gold);border-radius:20px;padding:3px 12px;white-space:nowrap}
 .hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:54px 22px 46px;text-align:center}
@@ -37,8 +37,8 @@ h3{color:var(--navy);margin:0 0 4px;font-size:1.12rem}
 .tag.free{background:var(--gold);color:var(--navy)}
 ul.clean{padding-left:20px}ul.clean li{margin:5px 0}
 .foot{margin:40px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}.foot a{color:var(--gold)}
-@media(max-width:1100px){.nav{gap:4px 8px}.brand{flex:1 0 100%;margin-right:0}}
-@media(max-width:560px){.nav{padding:8px 12px;gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
+@media(max-width:1100px){.nav{gap:1px 3px}.brand{flex:1 0 100%;margin-right:0}}
+@media(max-width:560px){.nav{padding:8px 10px 2px;gap:2px 6px}.nav a.l{font-size:.95rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.step{flex-direction:column}}
 """
 NAV_CSS = """/*nav*/
 .nav a.l,.nav a.pub,.nav a.needhelp{white-space:nowrap}
@@ -46,7 +46,7 @@ NAV_CSS = """/*nav*/
 .nav a.needhelp{display:inline-block;flex:0 0 auto;background:var(--gold);color:var(--navy);font-weight:bold;font-size:.9rem;line-height:1.2;text-decoration:none;border-radius:20px;padding:7px 16px}
 .nav a.needhelp:hover{background:#e0bc4a;color:var(--navy)}
 .nav .dd{position:relative}
-.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:.84rem;padding:5px 2px;cursor:pointer}
+.nav .dd>button{background:none;border:0;border-bottom:2px solid transparent;color:#e9edf5;font:inherit;font-size:1rem;line-height:1.15;padding:2px 1px;cursor:pointer}
 .nav .dd>button::after{content:" \\25BE";color:var(--gold);font-size:.8em}
 .nav .dd>button:hover,.nav .dd.on>button{color:#fff;border-color:var(--gold)}
 .nav .menu{display:none;position:absolute;left:-10px;top:100%;min-width:210px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 10px 24px rgba(18,40,76,.22);padding:6px 0;z-index:30}
@@ -55,8 +55,8 @@ NAV_CSS = """/*nav*/
 .nav .menu a.on{background:var(--cream);font-weight:bold;border-left:3px solid var(--gold);padding-left:15px}
 .nav .dd.open .menu{display:block}
 @media(hover:hover){.nav .dd:hover .menu{display:block}}
-@media(max-width:1100px){.nav{gap:4px 8px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:4px 8px}}
-@media(max-width:560px){.nav{gap:8px 10px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.82rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.82rem;white-space:nowrap}}
+@media(max-width:1100px){.nav{gap:1px 3px}.brand{flex:1 0 100%;margin-right:0}.nav .acct{gap:4px 8px}}
+@media(max-width:560px){.nav{gap:2px 6px}.nav .acct{gap:8px 10px}.nav a.l{font-size:.95rem}.nav a.pub{font-size:.78rem;padding:4px 10px}.nav a.needhelp{font-size:.84rem;padding:7px 14px}.nav .dd{position:static}.nav .menu{left:12px;right:12px;min-width:0}.nav .dd>button{font-size:.95rem;white-space:nowrap}}
 /*/nav*/"""
 NAV_JS = """<!--navjs--><script>
 document.querySelectorAll('.nav .dd>button').forEach(function(b){
