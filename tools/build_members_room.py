@@ -26,6 +26,8 @@ MENU = [
      "Everything for counselors, in the order you learn it."),
     ("belief-counseling.html", "Belief Counseling", "Belief Counseling",
      "The basics: what a belief is, what Belief Counseling is, and who should practice it."),
+    ("theory.html", "Theory", "Theory",
+     "Theory content is coming soon."),
     ("process.html", "The Process", "The Process",
      "Three steps: Identify, Challenge, and Replace."),
     ("assessment.html", "Assessment", "Traditional Assessment",
@@ -276,7 +278,7 @@ def href(a):
 
 # The Lie Finder stands out in the menu: a cream button with a gold ring and a magnifying glass
 # (not gold text, which marks the page you are on).
-LIE_FINDER = '<a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Lie Finder</a>'
+LIE_FINDER = '<a class="lf" target="_top" href="https://www.beliefcounselor.com/false-belief-finder" style="display:inline-flex;align-items:center;gap:6px;background:#faf6ec;color:#12284c;font-weight:bold;border:0;text-decoration:none;border-radius:20px;padding:4px 14px;box-shadow:0 0 0 2px #c9a227 inset"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>False Beliefs</a>'
 
 
 def nav(current):
@@ -420,6 +422,9 @@ def page(f, label, heading, summary):
 def main():
     OUT.mkdir(exist_ok=True)
     for f, label, heading, summary in MENU:
+        if f == "theory.html":
+            print("skip members/theory.html")
+            continue
         if f == "disorders.html":
             # The Disorders tab is members/disorders.html, copied from the reviews card
             # on the Assessment page (members/dsm-reviews-card.html). Do not rebuild it here.
