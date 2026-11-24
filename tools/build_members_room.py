@@ -193,13 +193,13 @@ CSS = """
 :root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
 *{box-sizing:border-box}
 body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
-.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:11px 12px 2px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:1px 4px}
-.brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
-.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
-.nav a{color:#e9edf5;text-decoration:none;font-size:1rem;line-height:1.15;padding:2px 1px;border-bottom:2px solid transparent;white-space:nowrap}
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:8px 12px;display:flex;flex-wrap:nowrap;justify-content:space-between;align-items:center;gap:8px}
+.brand{color:#fff;font-weight:bold;font-size:clamp(12px,0.9vw,15px);margin:0;letter-spacing:0;flex:0 0 auto;line-height:1.05}
+.brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72em;letter-spacing:.8px;text-transform:uppercase;white-space:nowrap}
+.nav .sep{flex:0 0 4px;width:4px;height:4px;border-radius:50%;background:#c9a227}.nav a{color:#e9edf5;text-decoration:none;font-size:clamp(10.5px,1.05vw - 0.2px,14.5px);line-height:1;padding:0;border-bottom:2px solid transparent;white-space:nowrap}
 .nav a:hover,.nav a.on{color:#fff;border-color:var(--gold)}
 .nav a.on{color:var(--gold);font-weight:bold;border-bottom-width:3px}
-.nav a.pub{color:var(--gold);font-size:.85rem;border:1px solid var(--gold);border-radius:20px;padding:3px 12px}
+.nav a.pub{color:var(--gold);font-size:clamp(10.5px,1.05vw - 0.2px,14.5px);border:1px solid var(--gold);border-radius:20px;padding:2px 8px}
 .hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:44px 22px 38px;text-align:center}
 .hero h1{font-size:clamp(1.8rem,4.5vw,2.7rem);margin:0 0 8px;line-height:1.2}
 .hero p{max-width:720px;margin:0 auto;font-size:1.1rem;color:#dfe6f2}
@@ -238,7 +238,7 @@ a.card.cc h3{color:var(--gold)}a.card.cc p{color:#dfe6f2}
 .lock{background:#fff;border:1px solid var(--gold);border-radius:8px;padding:14px 18px;margin:14px 0;color:var(--navy);font-weight:bold}
 .foot{margin:40px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}
 .foot a{color:var(--gold)}
-@media(max-width:1100px){.brand{flex:1 0 100%;margin-right:0}}
+
 @media(max-width:560px){.nav{padding:8px 10px 2px;gap:2px 6px}.nav a{font-size:.95rem}}
 """
 
@@ -283,13 +283,16 @@ LIE_FINDER = '<a class="lf" target="_top" href="https://www.beliefcounselor.com/
 
 def nav(current):
     out = ['<div class="nav"><div class="brand">Belief Counseling<small>%s</small></div>' % e(ROOM)]
+    items = []
     for f, label, _, _ in MENU:
         cls = ["on"] if f == current else []
-        out.append('<a%s href="%s">%s</a>' % (' class="%s"' % " ".join(cls) if cls else "", f, e(label)))
+        items.append('<a%s href="%s">%s</a>' % (' class="%s"' % " ".join(cls) if cls else "", f, e(label)))
         if f == "index.html":
-            out.append(LIE_FINDER)
-    out.append('<a href="../counselors/membership.html">Membership</a>')
-    out.append('<a class="pub" target="_blank" rel="noopener" href="%s">Public Site ↗</a></div>' % SITE)
+            items.append(LIE_FINDER)
+    items.append('<a href="../counselors/membership.html">Membership</a>')
+    items.append('<a class="pub" target="_blank" rel="noopener" href="%s">Public Site ↗</a>' % SITE)
+    out.append('<i class="sep" aria-hidden="true"></i>'.join(items))
+    out.append('</div>')
     out.append('<script>/* Inside the Wix Counselors’ Room, ask the Wix page to open these menu links. The address still works if this file is opened on its own. */(function(){if(!window.parent||window.parent===window)return;var root=document.querySelector(".nav");if(!root)return;root.addEventListener("click",function(e){if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;var a=e.target&&e.target.closest?e.target.closest("a"):null;if(!a||!root.contains(a))return;var href=a.getAttribute("href")||"";if(href.indexOf("https://www.beliefcounselor.com")!==0)return;var u;try{u=new URL(href);}catch(err){return;}e.preventDefault();window.parent.postMessage({type:"navigate",path:(u.pathname||"/")+u.search+u.hash},"*");});})();</script>')
     return "".join(out)
 
