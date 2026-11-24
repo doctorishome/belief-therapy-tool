@@ -8,7 +8,7 @@ The model card is `pearls/abortion.html`. Every other Pearls topic card should m
 - Verses in the beige box (and Synopsis/Guidance text): `'Lora', Georgia, serif`, 23 px, line-height 1.65. Do not use Arial.
 - Verse references: bold, underlined in gold, `'Lora', Georgia, serif`, 15 px (smaller than the verses). Wrap the parentheses and the reference link in `<span class="ref-wrap">` so the parentheses are 15 px too.
 - Section headings (e.g., "God's Guidance"): `'Lora', Georgia, serif`, bold, green #596653, 23 px.
-- "Read in context · Commentary" links: system font, 600 weight, 12.5 px.
+- "Read in context · Commentary" links (`.hub`): system font, 600 weight, 16 px.
 - Copy the whole `<style>` block from `pearls/abortion.html` unchanged. Do not restyle.
 
 ## 2. Bible text
