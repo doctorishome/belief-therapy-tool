@@ -429,3 +429,9 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - Guideline 1 video moved to directly under its heading (trial; Brian to review before doing the rest).
 - All guideline videos (1–14) moved to directly under each guideline's title; closing message stays at the end.
 - Grief, Trauma and Abuse guideline pages: added '← Back to all Guidelines' button (returns to that guideline on guidelines.html) and 'Back to top' at the bottom. Guideline 6 two videos left as-is pending Brian's review.
+
+## 2026-11-24 — Guideline 15: Substance Use and Addiction
+- New page counselors/guidelines-substance.html (10 guidelines, hotline box incl. SAMHSA 1-800-662-4357, missteps table, quick check, references checked online; BSB verses checked with tools/verse.py). Bottom back button returns to guidelines.html#sp-substance.
+- guidelines.html: At-a-Glance item 15 and section #sp-substance (video placeholder comment <!--vid15-->). Trauma page links to it.
+- Videos 12–14 being remade with Julian Office 8 (same HeyGen ids, so no page change). Brian chose Office 8 for all videos.
+- Guideline 15 video: narration /home/claude/avatar/plan3.json, slides inject3.js (V18-1..11).
