@@ -17,7 +17,7 @@ def rep(m):
 s,n=re.subn(r'<div class="gvid-f"><iframe src="https://app\.heygen\.com/embeds/([a-f0-9]+)" title="([^"]*)"[^>]*></iframe></div>',rep,s)
 assert n==18,n
 css=('<style id="gvid-ctl">.gvid-f video{position:absolute;inset:0;width:100%;height:100%;background:#12284c}'
- '.gctl{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:10px 0 4px}'
+ '.gctl{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:10px 0 16px}'
  '.gctl button{font:inherit;font-family:system-ui,sans-serif;cursor:pointer;border-radius:22px;border:1px solid var(--navy);background:#fff;color:var(--navy);font-weight:700;padding:7px 14px;font-size:.95rem;line-height:1.2}'
  '.gctl button.pri{background:var(--navy);color:#fff;min-width:7.5em}'
  '.gctl button:hover{border-color:var(--gold)}'
