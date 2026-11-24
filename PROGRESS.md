@@ -440,3 +440,4 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 ## 2026-11-24 — Guideline 16: Sexual Abuse
 - New page counselors/guidelines-sexual-abuse.html (10 guidelines; RAINN 800-656-4673 box; facts checked: CDC 1 in 4 girls/1 in 20 boys, NISVS 2016/17 1 in 4 women attempted/completed rape, Smith 2000 delayed disclosure 28%/47%, Möller 2017 tonic immobility 70%; APA memory guidance). Back button -> guidelines.html#sp-sexual.
 - guidelines.html At-a-Glance item 16 + section #sp-sexual (<!--vid16--> placeholder). Abuse and Trauma pages link to it.
+- Guideline 16 video live (HeyGen ec23b182fab44a7aa2b24dac9f8cc560, 2:47, Office 8 + Paul - Serious). Script in /home/claude/avatar/scripts.md (Presentation 19).
