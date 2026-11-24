@@ -21,7 +21,7 @@ TITLES = {
 
 def player(n, vid, dur, label=None):
     m, s = dur.split(':')
-    k = label or f'Training video {n}'
+    k = label or f'Guideline video {n}'
     return (f'<div class="gvid"><div class="gvid-k">{k} · {int(m)} min {int(s)} sec</div>'
             f'<div class="gvid-f"><iframe src="https://app.heygen.com/embeds/{vid}" '
             f'title="{TITLES[n]} (training video)" allow="encrypted-media; fullscreen" '
@@ -38,7 +38,7 @@ def main(idfile):
     for n, (vid, dur) in sorted(ids.items()):
         if n < 2:
             continue
-        note = f'<p class="vidsoon">Training video {n} (coming soon) covers this guideline.</p>'
+        note = f'<p class="vidsoon">Guideline video {n} (coming soon) covers this guideline.</p>'
         if n == 2:
             if note in s:
                 s = s.replace(note, player(2, vid, dur), 1)
