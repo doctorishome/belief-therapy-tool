@@ -193,10 +193,10 @@ CSS = """
 :root{--navy:#12284c;--navy2:#1d3a6b;--gold:#c9a227;--cream:#faf6ec;--ink:#1f2a3a;--mut:#5b6678;--line:#e3dcc6}
 *{box-sizing:border-box}
 body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
-.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:10px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+.nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:11px 12px 2px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:1px 4px}
 .brand{color:#fff;font-weight:bold;font-size:1.05rem;margin-right:auto;letter-spacing:.3px}
 .brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase}
-.nav a{color:#e9edf5;text-decoration:none;font-size:.84rem;padding:5px 2px;border-bottom:2px solid transparent;white-space:nowrap}
+.nav a{color:#e9edf5;text-decoration:none;font-size:1rem;line-height:1.15;padding:2px 1px;border-bottom:2px solid transparent;white-space:nowrap}
 .nav a:hover,.nav a.on{color:#fff;border-color:var(--gold)}
 .nav a.on{color:var(--gold);font-weight:bold;border-bottom-width:3px}
 .nav a.pub{color:var(--gold);font-size:.85rem;border:1px solid var(--gold);border-radius:20px;padding:3px 12px}
@@ -239,7 +239,7 @@ a.card.cc h3{color:var(--gold)}a.card.cc p{color:#dfe6f2}
 .foot{margin:40px 0 0;padding:20px;text-align:center;color:#c8d1e0;background:var(--navy);font-size:.85rem}
 .foot a{color:var(--gold)}
 @media(max-width:1100px){.brand{flex:1 0 100%;margin-right:0}}
-@media(max-width:560px){.nav{padding:8px 12px;gap:6px 10px}.nav a{font-size:.82rem}}
+@media(max-width:560px){.nav{padding:8px 10px 2px;gap:2px 6px}.nav a{font-size:.95rem}}
 """
 
 # Extra styles for the Live Interactive Diagnosis Practice section only.
