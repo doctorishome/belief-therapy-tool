@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sit In on a Session: Linda, "I Am Worthless" | Belief Counseling</title>
+<style>
+body{margin:0;background:#fbf8f2;color:#2b2b2b;font:17px/1.6 Georgia,"Times New Roman",serif}
+.wrap{max-width:860px;margin:0 auto;padding:22px 18px 40px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;background:#8A6A1F;color:#fff;border:0;border-radius:6px;padding:8px 16px;font:600 15px Arial,sans-serif;text-decoration:none;cursor:pointer}
+.btn.dark{background:#1F3864}
+h1{color:#1F3864;font-size:30px;margin:18px 0 4px} h2{color:#1F3864;font-size:22px;margin:30px 0 8px}
+h3{color:#1F3864;font-size:19px;margin:26px 0 6px;border-bottom:1px solid #e3d8c3;padding-bottom:3px}
+.sub{color:#6b5a35;font:15px Arial,sans-serif;margin:0 0 14px}
+.note{font:14px Arial,sans-serif;color:#555;background:#f1ebde;border-left:4px solid #8A6A1F;padding:8px 12px;margin:12px 0}
+.stage{position:relative;border-radius:10px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.18);aspect-ratio:16/9;background:#ddd}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s}
+.stage img.on{opacity:1}
+.cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.65));color:#fff;font:600 15px Arial,sans-serif;padding:24px 14px 10px}
+.player{background:#fff;border:1px solid #e3d8c3;border-radius:10px;padding:12px 14px;margin-top:12px}
+.ctrls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.ctrls button{background:#1F3864;color:#fff;border:0;border-radius:6px;padding:9px 16px;font:600 15px Arial,sans-serif;cursor:pointer;min-width:96px}
+.ctrls button.play{background:#8A6A1F;min-width:110px}
+.bar{display:flex;align-items:center;gap:10px;margin-top:10px;font:14px Arial,sans-serif;color:#555}
+.bar input{flex:1;accent-color:#8A6A1F}
+.parts{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.parts button{background:#f1ebde;border:1px solid #d9c9a6;color:#4a3c1a;border-radius:14px;padding:3px 11px;font:13px Arial,sans-serif;cursor:pointer}
+.parts button.cur{background:#8A6A1F;color:#fff;border-color:#8A6A1F}
+ul.listen li{margin:4px 0}
+.script p{margin:8px 0} .nar{background:#f6f2ea;padding:6px 10px;border-radius:4px} .nar b{color:#8A6A1F} .cou b{color:#1F3864} .lin b{color:#7A2E2E}
+i.dir{color:#888;font-size:14px}
+.foot{font:13px Arial,sans-serif;color:#777;margin-top:30px;border-top:1px solid #e3d8c3;padding-top:10px}
+@media print{.player,.stage,.top,.btn{display:none}}
+</style></head><body><div class="wrap" id="top">
+<div class="top"><a class="btn dark" href="../../../members/process.html">&larr; Back to The Process</a><button class="btn" onclick="document.getElementById('script').scrollIntoView({behavior:'smooth'})">Read the script</button></div>
+<h1>Sit In on a Session: Linda, &ldquo;I Am Worthless&rdquo;</h1>
+<p class="sub">Session 1: Opening Assessment &middot; about 12 minutes</p>
+<div class="note">A dramatized session with a fictional client, voiced by AI, for training. A narrator pauses the session to point out what the counselor is doing and why.</div>
+<div class="stage" id="stage">
+<img src="linda-main.jpg" class="on" data-k="main" alt="The counselor and Linda in the counseling office">
+<img src="linda-father.jpg" data-k="father" alt="Linda looks down as she remembers her father">
+<img src="linda-realization.jpg" data-k="realization" alt="Linda realizes where her picture of God came from">
+<img src="linda-tears.jpg" data-k="tears" alt="Linda in tears as she names the belief">
+<div class="cap" id="cap">Part 1: The opening and the presenting problem</div></div>
+<div class="player">
+<audio id="au" src="part0.mp3" preload="auto"></audio>
+<div class="ctrls"><button onclick="sk(-10)">&#8634; Back 10</button><button class="play" id="pp" onclick="tg()">&#9654; Play</button><button onclick="au.pause();go(0,false)">&#9632; Stop</button><button onclick="sk(10)">Forward 10 &#8635;</button></div>
+<div class="bar"><span id="t0">0:00</span><input type="range" id="rg" min="0" max="708" step="1" value="0"><span id="t1">11:48</span></div>
+<div class="parts" id="parts"></div>
+</div>
+<h2>What to listen for</h2>
+<ul class="listen">
+<li>How the counselor gathers information across all six levels before reaching any conclusion.</li>
+<li>A medical referral and a calm, direct safety screening.</li>
+<li>Linda discounting her husband&rsquo;s encouragement, and the clue it gives about her deeper belief.</li>
+<li>Linda reaching her own insight about her father and her picture of God.</li>
+<li>The core belief offered as a question, not a pronouncement, and no Scripture or refutation yet.</li>
+<li>How the counselor begins to form a tentative diagnostic impression.</li>
+</ul>
+<h2 id="script">The script</h2>
+<p><button class="btn" onclick="window.print()">Print the script</button></p>
+<div class="script">
+<p class="nar"><b>Narrator:</b> Welcome to Belief Counseling Training. In this demonstration, you&#x27;ll listen to the first session between a Christian counselor and a new client named Linda. Linda is forty-four years old, an office manager at a dental practice, married, with two teenage children. She is a fictional client, created for training. As you listen, pay attention to how the counselor gathers information across all six levels of analysis before reaching any conclusions, and how the counselor begins to form a diagnostic impression. From time to time, I&#x27;ll pause the session to point out what&#x27;s happening, and why.</p>
+<h3>Part One: The opening, and the presenting problem</h3>
+<p class="cou"><b>Counselor:</b> <i class="dir">[warm, calm]</i> Linda, thank you for coming in. Before we start, I&#x27;d like to hear in your own words what brings you here today.</p>
+<p class="lin"><b>Linda:</b> <i class="dir">[hesitant, tired]</i> I don&#x27;t really know where to start. I&#x27;ve just been... down. For about three months. I cry in the car on the way to work. My husband says I&#x27;m not myself.</p>
+<p class="cou"><b>Counselor:</b> Three months of feeling down, crying on the way to work. Did anything happen around the time this started?</p>
+<p class="lin"><b>Linda:</b> I was passed over for a promotion. The practice hired someone from outside. She&#x27;s younger, and she has a degree I don&#x27;t have. <i class="dir">[sighs]</i> I know it shouldn&#x27;t be a big deal, but I keep thinking about it.</p>
+<p class="cou"><b>Counselor:</b> <i class="dir">[gently]</i> What goes through your mind when you think about it?</p>
+<p class="lin"><b>Linda:</b> <i class="dir">[quietly]</i> That I&#x27;m just... not good enough. I never will be. I&#x27;ve worked there eleven years, and they still didn&#x27;t want me.</p>
+<p class="nar"><b>Narrator:</b> Let&#x27;s pause here. The counselor has already heard a possible automatic thought: I&#x27;m not good enough, and I never will be. But notice that the counselor doesn&#x27;t jump on it. It&#x27;s a clue, not a conclusion. We never declare a core belief from a single response. First, we gather the whole picture, across all six levels.</p>
+<h3>Part Two: The biological level</h3>
+<p class="cou"><b>Counselor:</b> Before we go further, I want to ask about your physical health, because it&#x27;s an important part of the picture. How have you been sleeping?</p>
+<p class="lin"><b>Linda:</b> Badly. I wake up around three in the morning and can&#x27;t get back to sleep.</p>
+<p class="cou"><b>Counselor:</b> And your energy, and your appetite?</p>
+<p class="lin"><b>Linda:</b> Exhausted, all the time. I&#x27;m not hungry much.</p>
+<p class="cou"><b>Counselor:</b> Has the low mood been there most of the day, nearly every day?</p>
+<p class="lin"><b>Linda:</b> Most days, yes. Mornings are the worst.</p>
+<p class="cou"><b>Counselor:</b> What about the things you used to enjoy? And how is your concentration at work?</p>
+<p class="lin"><b>Linda:</b> <i class="dir">[flat]</i> I don&#x27;t really enjoy anything anymore. I used to love working in my garden. I haven&#x27;t touched it this year. And at work, I read the same email three times and still don&#x27;t take it in.</p>
+<p class="cou"><b>Counselor:</b> Have you ever gone through a stretch like this before?</p>
+<p class="lin"><b>Linda:</b> <i class="dir">[thinking]</i> Not like this. I&#x27;ve had down days, but nothing that lasted this long.</p>
+<p class="cou"><b>Counselor:</b> When did you last see your doctor for a checkup? And are you taking any medications?</p>
+<p class="lin"><b>Linda:</b> Nothing but vitamins. My last physical was... maybe three years ago.</p>
+<p class="cou"><b>Counselor:</b> I&#x27;d like you to schedule a physical soon, and let your doctor know about the sleep, the fatigue, and the low mood. Some medical conditions, such as thyroid problems, can cause exactly these symptoms. I want to be sure we&#x27;re not missing something physical.</p>
+<p class="nar"><b>Narrator:</b> Early-morning waking, fatigue, and low appetite could reflect depression. But they could also have a medical cause. We don&#x27;t assume a person&#x27;s distress comes from faulty beliefs when biological or physical factors may be contributing. A referral for a medical exam is good practice, not a detour.</p>
+<h3>Part Three: Safety screening</h3>
+<p class="cou"><b>Counselor:</b> <i class="dir">[calm, caring]</i> Linda, when people have been feeling this low for this long, sometimes they have thoughts of not wanting to be here, or of hurting themselves. Have you had any thoughts like that?</p>
+<p class="lin"><b>Linda:</b> <i class="dir">[quietly, after a pause]</i> Once or twice, I&#x27;ve thought my family might be better off without me. But I would never do anything. <i class="dir">[firmly]</i> I couldn&#x27;t do that to my kids.</p>
+<p class="cou"><b>Counselor:</b> Thank you for being honest. That takes courage. When those thoughts come, have you ever thought about how you might do it, or made any plans?</p>
+<p class="lin"><b>Linda:</b> No. Nothing like that. It&#x27;s more like... a feeling that I&#x27;m a burden.</p>
+<p class="cou"><b>Counselor:</b> I&#x27;m glad you told me. If those thoughts ever become stronger, or you start thinking about acting on them, I want you to call me, or call or text nine-eight-eight, any time, day or night. Can you agree to that?</p>
+<p class="lin"><b>Linda:</b> Yes.</p>
+<p class="nar"><b>Narrator:</b> Beliefs about worthlessness and depression often travel together, so safety screening is not optional. The counselor asked directly and calmly, clarified whether there was a plan, and set a clear safety step. Also notice Linda&#x27;s words: I&#x27;m a burden. That&#x27;s another clue, and it points in the same direction as, I&#x27;m not good enough.</p>
+<h3>Part Four: The interpersonal level</h3>
+<p class="cou"><b>Counselor:</b> You said you&#x27;ve felt not good enough, and that you never will be. Is that a familiar feeling, or is it new?</p>
+<p class="lin"><b>Linda:</b> <i class="dir">[small, sad laugh]</i> It&#x27;s not new. My father used to say, Can&#x27;t you do anything right? Mostly when I made mistakes. Sometimes when I didn&#x27;t.</p>
+<p class="cou"><b>Counselor:</b> How did you respond when he said that?</p>
+<p class="lin"><b>Linda:</b> I tried harder. I got straight A&#x27;s. <i class="dir">[pause]</i> It never mattered. My mother never stood up for me. She just stayed quiet.</p>
+<p class="cou"><b>Counselor:</b> And your husband. How does he respond to what you&#x27;re going through?</p>
+<p class="lin"><b>Linda:</b> <i class="dir">[warmer]</i> He&#x27;s wonderful, honestly. He tells me they made a mistake at work. <i class="dir">[flat]</i> But I figure he has to say that. He&#x27;s my husband.</p>
+<p class="nar"><b>Narrator:</b> Let&#x27;s stop and think. What do you notice about how Linda handles her husband&#x27;s encouragement? And what might that tell you about her beliefs? Take a moment to consider your answer before we continue.</p>
+<p class="nar"><b>Narrator:</b> Linda discounts the positive. Her husband&#x27;s support doesn&#x27;t count, because, as she says, he has to say that. This is a cognitive error that often protects a deeper belief. Evidence against the belief gets dismissed, and evidence for it gets remembered. Notice also the message from her father: Can&#x27;t you do anything right? It&#x27;s the kind of message a child can absorb as a verdict about her worth, not just her performance.</p>
+<h3>Part Five: The socioeconomic and sociocultural levels</h3>
+<p class="cou"><b>Counselor:</b> The promotion you didn&#x27;t get. Was there a financial side to it as well?</p>
+<p class="lin"><b>Linda:</b> Yes. It came with a raise, and we&#x27;re stretched thin, with my son starting college next year. <i class="dir">[quietly]</i> I feel like I let my family down.</p>
+<p class="cou"><b>Counselor:</b> You mentioned your pastor suggested counseling. Tell me about your church. How does it feel to be there right now?</p>
+<p class="lin"><b>Linda:</b> I love my church. But I&#x27;ve stopped going to the women&#x27;s Bible study. Everyone there seems to have it together. Good Christian women aren&#x27;t supposed to fall apart like this.</p>
+<p class="cou"><b>Counselor:</b> <i class="dir">[curious, gentle]</i> Where did you learn that good Christian women aren&#x27;t supposed to fall apart?</p>
+<p class="lin"><b>Linda:</b> <i class="dir">[uncertain]</i> I don&#x27;t know. Nobody ever said it exactly. It&#x27;s just... how it feels.</p>
+<p class="nar"><b>Narrator:</b> Two new pressures have come to light. The first is a real financial strain. That&#x27;s a genuine socioeconomic stressor, not a distortion. The second is an unspoken message from her church culture. Messages like this are often never stated out loud. They&#x27;re absorbed. The counselor&#x27;s question, Where did you learn that?, invites Linda to notice that a belief she&#x27;s been treating as fact actually had a source.</p>
+<h3>Part Six: The spiritual level</h3>
+<p class="cou"><b>Counselor:</b> How would you describe your relationship with God right now?</p>
+<p class="lin"><b>Linda:</b> I know I&#x27;m saved. I accepted Christ when I was twelve. But I think God is... disappointed in me. I haven&#x27;t really prayed in weeks. It feels like I&#x27;d just be bothering Him.</p>
+<p class="cou"><b>Counselor:</b> <i class="dir">[softly]</i> Disappointed. And bothering Him. Where do you think that picture of God comes from?</p>
+<p class="lin"><b>Linda:</b> <i class="dir">[slowly, realizing]</i> I guess... it&#x27;s how my dad was.</p>
+<p class="nar"><b>Narrator:</b> This is a pivotal moment. Linda has connected her picture of God to her picture of her father, on her own. The counselor didn&#x27;t suggest it. The counselor asked, and waited. When clients reach an insight themselves, it carries far more weight than when we hand it to them.</p>
+<h3>Part Seven: A tentative hypothesis</h3>
+<p class="cou"><b>Counselor:</b> <i class="dir">[gently, thoughtfully]</i> Linda, let me pull together what I&#x27;m hearing, and you tell me if it fits. You&#x27;ve said you&#x27;re not good enough. That you never will be. That you&#x27;re a burden. That you let your family down. And that God is disappointed in you. When your husband says something encouraging, it doesn&#x27;t seem to count. I wonder if underneath all of these, there&#x27;s one deeper belief. Something like: I am worthless. Does that fit your experience? Or would you put it differently?</p>
+<p class="lin"><b>Linda:</b> <i class="dir">[crying softly]</i> Yes. That&#x27;s it. That&#x27;s what I&#x27;ve always felt. <i class="dir">[pause]</i> I&#x27;ve never said it out loud.</p>
+<p class="cou"><b>Counselor:</b> <i class="dir">[warmly]</i> Thank you for saying it now. That&#x27;s an important step, because we can&#x27;t challenge a belief we haven&#x27;t named. Before we go further, I&#x27;d like you to take two things home. First, schedule that checkup with your doctor. Second, I&#x27;m going to give you a short checklist called Parental Messages. As you go through it, check any messages you remember receiving growing up. We&#x27;ll look at it together next time.</p>
+<p class="nar"><b>Narrator:</b> Notice how the counselor offered the hypothesis. Collaboratively, as a question, not a pronouncement, and Linda was invited to put it in her own words. The belief was named only after information had been gathered across all six levels. Notice also what the counselor did not do yet. No Scripture. No refutation. Rushing to challenge a belief before it&#x27;s fully understood is one of the most common mistakes new counselors make. That work begins in the next session.</p>
+<h3>Part Eight: Diagnostic impressions</h3>
+<p class="nar"><b>Narrator:</b> <i class="dir">[measured]</i> While the counselor was listening for Linda&#x27;s beliefs, the counselor was also listening for a diagnosis. Linda described a depressed mood most of the day, nearly every day, for about three months. She has lost interest in things she used to enjoy. She wakes early and can&#x27;t get back to sleep. She has little appetite, constant fatigue, and trouble concentrating. She feels worthless and guilty, and she has had passing thoughts that her family would be better off without her. Together, these point to a possible Major Depressive Disorder, single episode. But a first session is a beginning, not a verdict. The counselor holds this impression tentatively and does not announce a diagnosis to Linda yet.</p>
+<p class="nar"><b>Narrator:</b> What else would you need to know before you were confident in this diagnosis? Take a moment to consider your answer before we continue.</p>
+<p class="nar"><b>Narrator:</b> In the next session, the counselor will go over each criterion with Linda, confirm how long each symptom has lasted, and may give a brief measure, such as the PHQ-9. Other explanations need to be ruled out. The medical exam will check for a physical cause, such as a thyroid problem. The counselor will ask about alcohol and other substances, and about any past periods of unusually high energy or elation, which could point to a bipolar disorder instead. And because Linda&#x27;s low mood began after a disappointment at work, the counselor will weigh an adjustment disorder with depressed mood. But when the full criteria for major depression are met, that is the diagnosis, whatever set it off. The family&#x27;s financial strain can be noted as well, with a Z code, as a problem that affects treatment.</p>
+<p class="nar"><b>Narrator:</b> Notice, too, how the diagnosis and the belief fit together. Feeling worthless is one of the symptoms of depression, and I am worthless is the core belief we will challenge. Working on one helps the other.</p>
+<p class="nar"><b>Narrator:</b> This concludes the demonstration of Session One.</p>
+</div>
+<div class="foot">&copy; 2026 Brian Campbell, Ph.D. All rights reserved. Fictional client created for training; voices generated with AI.<br><a href="#top">Back to top &uarr;</a></div>
+</div>
+<script>
+const au=document.getElementById('au'),pp=document.getElementById('pp'),rg=document.getElementById('rg');
+const SEG=[['part0.mp3',0],['part1.mp3',180.01],['part2.mp3',360.02],['part3.mp3',540.0]],TOTAL=708.36;
+let si=0;
+const P=[[0,'Part 1: The opening and the presenting problem','main'],[112,'Part 2: The biological level','main'],[211,'Part 3: Safety screening','main'],[287,'Part 4: The interpersonal level','father'],[373,'Part 5: The socioeconomic and sociocultural levels','main'],[447,'Part 6: The spiritual level','realization'],[490,'Part 7: A tentative hypothesis','main'],[518,'Part 7: A tentative hypothesis','tears'],[585,'Part 8: Diagnostic impressions','main']];
+const L=[[0,'1. Opening'],[112,'2. Biological'],[211,'3. Safety'],[287,'4. Interpersonal'],[373,'5. Socioeconomic &amp; sociocultural'],[447,'6. Spiritual'],[490,'7. Hypothesis'],[585,'8. Diagnosis']];
+const box=document.getElementById('parts');
+function now(){return SEG[si][1]+(au.currentTime||0)}
+function go(t,play){t=Math.min(Math.max(0,t),TOTAL-0.5);let k=0;SEG.forEach((g,i)=>{if(t>=g[1])k=i});const off=t-SEG[k][1];
+ if(k!==si){si=k;au.src=SEG[k][0];au.addEventListener('loadedmetadata',function h(){au.removeEventListener('loadedmetadata',h);au.currentTime=off;if(play)au.play().catch(()=>{});upd()});au.load()}
+ else{au.currentTime=off;if(play)au.play().catch(()=>{})}upd(t)}
+L.forEach(([t,n])=>{const b=document.createElement('button');b.innerHTML=n;b.onclick=()=>go(t,true);box.appendChild(b)});
+function f(s){s=Math.max(0,Math.floor(s));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+function sk(d){go(now()+d,!au.paused)}
+function tg(){au.paused?au.play().catch(()=>{}):au.pause()}
+function upd(tt){const t=(typeof tt==='number')?tt:now();document.getElementById('t0').textContent=f(t);if(!rg.dragging)rg.value=t;
+let cur=P[0];for(const p of P)if(t>=p[0])cur=p;document.getElementById('cap').textContent=cur[1];
+document.querySelectorAll('#stage img').forEach(i=>i.classList.toggle('on',i.dataset.k===cur[2]));
+let li=0;L.forEach((l,k)=>{if(t>=l[0])li=k});[...box.children].forEach((b,k)=>b.classList.toggle('cur',k===li));
+pp.innerHTML=au.paused?'&#9654; Play':'&#10074;&#10074; Pause'}
+au.addEventListener('timeupdate',()=>upd());au.addEventListener('play',()=>upd());au.addEventListener('pause',()=>upd());
+au.addEventListener('ended',()=>{if(si<SEG.length-1){si++;au.src=SEG[si][0];au.load();au.play().catch(()=>{})}else{upd()}});
+rg.max=Math.floor(TOTAL);document.getElementById('t1').textContent=f(TOTAL);
+rg.addEventListener('input',()=>{rg.dragging=true;document.getElementById('t0').textContent=f(rg.value)});
+rg.addEventListener('change',()=>{rg.dragging=false;go(+rg.value,!au.paused)});
+upd();
+</script></body></html>
