@@ -194,13 +194,13 @@ CSS = """
 *{box-sizing:border-box}
 body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.6}
 .nav{position:sticky;top:0;z-index:5;background:var(--navy);border-bottom:3px solid var(--gold);padding:22px 8px 14px;display:flex;flex-wrap:nowrap;justify-content:space-between;align-items:center;gap:8px}
-.brand{color:#fff;font-weight:bold;font-size:clamp(14px,0.5vw + 9px,18px);margin:0 6px 0 0;letter-spacing:0;flex:0 0 auto;line-height:1.05}
+.brand{color:#fff;font-weight:bold;font-size:clamp(18px,0.4vw + 14px,22px);margin:0 6px 0 0;letter-spacing:0;flex:0 0 auto;line-height:1.05}
 .brand small{display:block;color:var(--gold);font-weight:normal;font-size:.72em;letter-spacing:.2px;text-transform:uppercase;white-space:nowrap}
-.nav .sep{flex:0 0 4px;width:4px;height:4px;margin:0 3px;border-radius:50%;background:#c9a227}.nav a{color:#e9edf5;text-decoration:none;font-size:clamp(14px,0.66vw + 6.6px,17.6px);line-height:1;padding:0;border-bottom:2px solid transparent;white-space:nowrap}
-@media(max-width:1260px){.nav{flex-wrap:wrap;justify-content:center;gap:6px 4px}.nav .brand{flex:1 0 100%;text-align:center;margin:0 0 2px}}/*.nav.wrapfix*/
+.nav .sep{flex:0 0 4px;width:4px;height:4px;margin:0 3px;border-radius:50%;background:#c9a227}.nav a{color:#e9edf5;text-decoration:none;font-size:clamp(17px,0.4vw + 13px,20px);line-height:1;padding:0;border-bottom:2px solid transparent;white-space:nowrap}
+@media(max-width:4000px){.nav{flex-wrap:wrap;justify-content:center;gap:6px 4px}.nav .brand{flex:1 0 100%;text-align:center;margin:0 0 2px}}/*.nav.wrapfix*/
 .nav a:hover,.nav a.on{color:#fff;border-color:var(--gold)}
 .nav a.on{color:var(--gold);font-weight:bold;border-bottom-width:3px}
-.nav a.pub{color:var(--gold);font-size:clamp(14px,0.66vw + 6.6px,17.6px);border:1px solid var(--gold);border-radius:20px;padding:1px 6px}
+.nav a.pub{color:var(--gold);font-size:clamp(17px,0.4vw + 13px,20px);border:1px solid var(--gold);border-radius:20px;padding:1px 6px}
 .hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:44px 22px 38px;text-align:center}
 .hero h1{font-size:clamp(1.8rem,4.5vw,2.7rem);margin:0 0 8px;line-height:1.2}
 .hero p{max-width:720px;margin:0 auto;font-size:1.1rem;color:#dfe6f2}
