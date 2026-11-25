@@ -44,8 +44,15 @@
   .wrap{background:#fff;border:1.5px solid #c9a227;border-radius:10px;padding:34px 44px 30px;box-shadow:0 4px 18px rgba(18,40,76,.08)}
   @media (max-width:600px){body{padding:12px 8px 24px}.wrap{padding:22px 18px 20px}}
   @media print{html,body{background:#fff}body{padding:0}.wrap{border:0;box-shadow:none;padding:0}}
+
+  .backbar{margin:0 0 18px}
+  .backbar a{display:inline-block;font:bold 15px Arial,Helvetica,sans-serif;background:var(--navy);color:#fff;text-decoration:none;border-radius:20px;padding:7px 16px}
+  .backbar a:hover{background:var(--gold);color:#fff}
+  .backbar.end{margin:28px 0 0}
+  @media print{.backbar{display:none}}
 </style></head>
-<body><div class="wrap">
+<body><div id="top"></div><div class="wrap">
+<p class="backbar"><a href="../../members/process.html">&larr; Back to The Process</a></p>
 
 <p class="tag">For Counselors</p>
 <h1>Behavioral Interventions in Christian Cognitive-Behavioral Therapy</h1>
@@ -108,4 +115,5 @@
 
 <p class="note"><strong>Educational note:</strong> This material introduces behavioral interventions. Selecting and carrying out clinical techniques requires professional judgment, training, and consideration of each client’s circumstances.</p>
 
-</div></body></html>
+<p class="backbar end"><a href="../../members/process.html">&larr; Back to The Process</a> &nbsp;<a href="#top" style="background:#fff;color:var(--navy);border:1.5px solid var(--navy)">Back to top &uarr;</a></p>
+</div><script>/* Inside the Wix page, show this page from its top. */(function(){try{if(window.top!==window){var t=document.getElementById("top")||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script></body></html>
