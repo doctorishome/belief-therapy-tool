@@ -27,7 +27,7 @@ MENU = [
     ("belief-counseling.html", "Belief Counseling", "Belief Counseling",
      "The basics: what a belief is, what Belief Counseling is, and who should practice it."),
     ("theory.html", "Theory", "Theory",
-     "Theory content is coming soon."),
+     "The ideas behind Belief Counseling: where it came from and how beliefs shape a person."),
     ("process.html", "Process", "The Process",
      "Three steps: Identify, Challenge, and Replace."),
     ("assessment.html", "Assessment", "Traditional Assessment",

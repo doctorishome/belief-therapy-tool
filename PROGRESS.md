@@ -464,3 +464,4 @@ Welcome blank-11, Process blank-12, Tips blank-13, Theory blank-14, Cases blank-
 - 2026-11-24: Room menu type raised ~10% (clamp(14px,0.66vw + 6.6px,17.6px)); wrap breakpoint 1260px.
 - 2026-11-24: Brian: menu still too small. Room menus now always two lines (brand centered on top, links centered below; wrap media set to max-width:4000px), link type clamp(17px,0.4vw + 13px,20px), brand clamp(18px,0.4vw + 14px,22px), row gap 10px. room-nav.html (Wix fixed-height strip on Scripture page) unchanged.
 - 2026-11-24: guidelines.html intro paragraph now in a navy box with gold left edge (.gintro), white box when printed.
+- 2026-11-24: Theory tab (members/theory.html, hand-edited; builder skips it) now lists 2 articles as cards (summary + Read the full article PDF + Download Word): From CBT to Christian CBT: A Brief History; How Beliefs Influence Personality (files in counselors/theory/).
