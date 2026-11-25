@@ -282,15 +282,17 @@ LIE_FINDER = '<a class="lf" target="_top" href="https://www.beliefcounselor.com/
 
 
 def nav(current):
-    out = ['<div class="nav"><div class="brand">Belief Counseling<small>%s</small></div>' % e(ROOM)]
+    if current == "index.html":  # Welcome page: more room at the top, Membership under the brand (Brian, Nov 24, 2026)
+        out = ['<style>.nav.welcome{padding:22px 8px 14px}.nav .brand a.mem{display:inline-block;margin-top:6px;color:#e9edf5;font-weight:normal;font-size:.8em;letter-spacing:0;border-bottom:2px solid transparent}.nav .brand a.mem:hover{color:#fff;border-color:var(--gold)}</style>'
+               '<div class="nav welcome"><div class="brand">Belief Counseling<small>%s</small><a class="mem" href="../counselors/membership.html">Membership</a></div>' % e(ROOM)]
+    else:
+        out = ['<div class="nav"><div class="brand">Belief Counseling<small>%s</small></div>' % e(ROOM)]
     items = []
     for f, label, _, _ in MENU:
         cls = ["on"] if f == current else []
         items.append('<a%s href="%s">%s</a>' % (' class="%s"' % " ".join(cls) if cls else "", f, e(label)))
         if f == "index.html":
             items.append(LIE_FINDER)
-    if current == "index.html":  # Membership only on the Welcome page (Brian, Nov 24, 2026)
-        items.append('<a href="../counselors/membership.html">Membership</a>')
     items.append('<a class="pub" target="_blank" rel="noopener" href="%s">Public Site ↗</a>' % SITE)
     out.append('<i class="sep" aria-hidden="true"></i>'.join(items))
     out.append('</div>')
