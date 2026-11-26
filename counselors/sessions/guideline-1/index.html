@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hear Guideline 1 in Action | Belief Counseling</title>
+<style>
+body{margin:0;background:#fbf8f2;color:#2b2b2b;font:17px/1.6 Georgia,"Times New Roman",serif}
+.wrap{max-width:860px;margin:0 auto;padding:22px 18px 40px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;background:#8A6A1F;color:#fff;border:0;border-radius:6px;padding:8px 16px;font:600 15px Arial,sans-serif;text-decoration:none;cursor:pointer}
+.btn.dark{background:#1F3864}
+h1{color:#1F3864;font-size:30px;margin:18px 0 4px} h2{color:#1F3864;font-size:22px;margin:30px 0 8px}
+h3{color:#1F3864;font-size:19px;margin:26px 0 6px;border-bottom:1px solid #e3d8c3;padding-bottom:3px}
+.sub{color:#6b5a35;font:15px Arial,sans-serif;margin:0 0 14px}
+.note{font:14px Arial,sans-serif;color:#555;background:#f1ebde;border-left:4px solid #8A6A1F;padding:8px 12px;margin:12px 0}
+.stage{position:relative;border-radius:10px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.18);aspect-ratio:16/9;background:#ddd}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s}
+.stage img.on{opacity:1}
+.cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.65));color:#fff;font:600 15px Arial,sans-serif;padding:24px 14px 10px}
+.player{background:#fff;border:1px solid #e3d8c3;border-radius:10px;padding:12px 14px;margin-top:12px}
+.ctrls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.ctrls button{background:#1F3864;color:#fff;border:0;border-radius:6px;padding:9px 16px;font:600 15px Arial,sans-serif;cursor:pointer;min-width:96px}
+.ctrls button.play{background:#8A6A1F;min-width:110px}
+.bar{display:flex;align-items:center;gap:10px;margin-top:10px;font:14px Arial,sans-serif;color:#555}
+.bar input{flex:1;accent-color:#8A6A1F}
+.parts{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.parts button{background:#f1ebde;border:1px solid #d9c9a6;color:#4a3c1a;border-radius:14px;padding:3px 11px;font:13px Arial,sans-serif;cursor:pointer}
+.parts button.cur{background:#8A6A1F;color:#fff;border-color:#8A6A1F}
+ul.listen li{margin:4px 0}
+.script p{margin:8px 0} .nar{background:#f6f2ea;padding:6px 10px;border-radius:4px} .nar b{color:#8A6A1F} .cou b{color:#1F3864} .lin b{color:#7A2E2E}
+i.dir{color:#888;font-size:14px}
+.foot{font:13px Arial,sans-serif;color:#777;margin-top:30px;border-top:1px solid #e3d8c3;padding-top:10px}
+@media print{.player,.stage,.top,.btn{display:none}}
+</style></head><body><div class="wrap" id="top">
+<div class="top"><a class="btn dark" href="../../guidelines.html">&larr; Back to the Guidelines</a><button class="btn" onclick="document.getElementById('script').scrollIntoView({behavior:'smooth'})">Read the script</button></div>
+<h1>Hear Guideline 1 in Action</h1>
+<p class="sub">Establish Safety, Trust, and Collaboration &middot; about 5 minutes</p>
+<div class="note">A dramatized first session with a fictional client, voiced by AI, for training. A narrator pauses the scene to point out what the counselor is doing and why.</div>
+<div class="stage" id="stage">
+<img src="mark.jpg" class="on" data-k="main" alt="The counselor listens as Mark, a new client, sits leaning forward in her office">
+<div class="cap" id="cap">Guideline 1: Establish Safety, Trust, and Collaboration</div></div>
+<div class="player">
+<audio id="au" src="part0.mp3" preload="auto"></audio>
+<div class="ctrls"><button onclick="sk(-10)">&#8634; Back 10</button><button class="play" id="pp" onclick="tg()">&#9654; Play</button><button onclick="au.pause();go(0,false)">&#9632; Stop</button><button onclick="sk(10)">Forward 10 &#8635;</button></div>
+<div class="bar"><span id="t0">0:00</span><input type="range" id="rg" min="0" max="286" step="1" value="0"><span id="t1">0:00</span></div>
+</div>
+<h2>What to listen for</h2>
+<ul class="listen">
+<li>Listening and reflecting before offering any interpretation.</li>
+<li>Respect, empathy, and real interest in the client&rsquo;s point of view.</li>
+<li>Setting goals together, in the client&rsquo;s own words.</li>
+<li>Inviting disagreement and feedback.</li>
+<li>Not mistaking a quick religious answer for real progress.</li>
+</ul>
+<h2 id="script">The script</h2>
+<p><button class="btn" onclick="window.print()">Print the script</button></p>
+<div class="script">
+<p class="nar"><b>Narrator:</b> <i class="dir">[warm, measured]</i> Guideline 1: Establish Safety, Trust, and Collaboration. The relationship is not a warm-up before the real work. It is part of the work. In this scene, Mark, a fifty-two-year-old husband and father, is meeting a counselor for the first time. His pastor referred him. Listen to how the counselor builds trust before she tries to change anything.</p>
+<p class="cou"><b>Counselor:</b> <i class="dir">[friendly, unhurried]</i> Mark, thank you for coming in. Before we start, I'd like to hear what brings you here, in your own words.</p>
+<p class="lin"><b>Mark:</b> <i class="dir">[guarded]</i> My pastor thought I should come. Honestly, I'm not sure what talking is going to do.</p>
+<p class="cou"><b>Counselor:</b> <i class="dir">[calm]</i> That's fair. You're not sure this will help, and you came anyway. What made you willing to give it a try?</p>
+<p class="lin"><b>Mark:</b> <i class="dir">[sighs]</i> My wife. She says I'm not myself. ... Two years ago I started a business. I put our savings into it. It failed in March. We lost almost everything.</p>
+<p class="cou"><b>Counselor:</b> <i class="dir">[gentle]</i> That's a lot to lose.</p>
+<p class="lin"><b>Mark:</b> <i class="dir">[flat]</i> It was my fault. I talked her into it. She trusted me, and I failed my family.</p>
+<p class="nar"><b>Narrator:</b> <i class="dir">[softer]</i> Let's stop here for a moment. Mark has just said something that sounds like a false belief: “I failed my family.” Many counselors would jump in to correct it. What would you do? <i class="dir">[long pause]</i> Listen to what this counselor does.</p>
+<p class="cou"><b>Counselor:</b> <i class="dir">[quietly]</i> It sounds as though you've been carrying a tremendous amount of guilt. Would you tell me more about what happened?</p>
+<p class="lin"><b>Mark:</b> <i class="dir">[slowly]</i> ... The numbers looked good. Then our biggest client backed out. I kept putting more money in, thinking I could turn it around. I couldn't. Every morning I watch my wife leave for work, and I think, I did that to her.</p>
+<p class="cou"><b>Counselor:</b> So every morning there's a reminder, and the guilt comes right back.</p>
+<p class="lin"><b>Mark:</b> <i class="dir">[quietly]</i> Yeah. Exactly.</p>
+<p class="nar"><b>Narrator:</b> Notice that the counselor has not argued with Mark, and she has not rushed to reassure him. She reflected what he said, close to his own words. Mark's answer, “Yeah. Exactly,” tells us he feels understood. That is where trust begins.</p>
+<p class="lin"><b>Mark:</b> <i class="dir">[a little defensive]</i> I'll be honest. I saw a counselor at our old church. He told me I just needed to trust God more. I left feeling worse.</p>
+<p class="cou"><b>Counselor:</b> <i class="dir">[sincere]</i> I'm sorry that happened. It sounds like you came away feeling judged instead of helped.</p>
+<p class="lin"><b>Mark:</b> Pretty much.</p>
+<p class="cou"><b>Counselor:</b> Then I'd like us to do this differently. If I say something that doesn't fit, or doesn't feel helpful, will you tell me? You won't hurt my feelings. That kind of feedback helps me help you.</p>
+<p class="lin"><b>Mark:</b> <i class="dir">[surprised]</i> ... Okay. I can do that.</p>
+<p class="nar"><b>Narrator:</b> Here the counselor invites disagreement. Mark's last experience taught him that counseling means being corrected. By asking for his feedback, she makes him a partner, not a student being graded.</p>
+<p class="cou"><b>Counselor:</b> Mark, if our time together really helped, what would be different for you? What would you notice?</p>
+<p class="lin"><b>Mark:</b> <i class="dir">[thinking]</i> I guess... I could look my wife in the eye again. And I'd sleep. I haven't slept a full night since March.</p>
+<p class="cou"><b>Counselor:</b> Looking your wife in the eye, and sleeping through the night. Those sound like good places to start. We'll keep coming back to them to see how we're doing.</p>
+<p class="nar"><b>Narrator:</b> The goals are Mark's, in his own words, not the counselor's. She also noticed his sleep problem, which she will want to look at more closely. Looking at the whole person in that way is the next guideline, Assess Before Intervening.</p>
+<p class="lin"><b>Mark:</b> <i class="dir">[quickly, a bit forced]</i> And I know God is in control. I know Romans 8:28. I just need to have more faith, and it'll all work out.</p>
+<p class="cou"><b>Counselor:</b> <i class="dir">[gently]</i> That verse means a lot to you. ... I also noticed how quickly you said it. Sometimes we know something in our heads while our hearts are still hurting. Could both be true for you right now?</p>
+<p class="lin"><b>Mark:</b> <i class="dir">[long pause, voice catching]</i> ... Yeah. I believe it. I just don't feel it.</p>
+<p class="nar"><b>Narrator:</b> <i class="dir">[warmly]</i> This is one of the most important moments in the session. Mark gave a quick, faith-filled answer. A less careful counselor might have said, “Amen, that's great,” and counted it as progress. Instead, she honored his faith and made room for the hurt underneath it. Agreement, compliance, or religious enthusiasm is not the same as progress.</p>
+<p class="cou"><b>Counselor:</b> Thank you for being honest with me. That's exactly the kind of thing we can work on together.</p>
+<p class="nar"><b>Narrator:</b> Let's review what the counselor did. She listened and reflected before offering any interpretation. She showed respect, empathy, and real interest in Mark's point of view. She set goals with him, in his own words. She invited him to disagree and give feedback. And she did not mistake a quick religious answer for real change. Notice, too, that she did not challenge “I failed my family” yet. That comes later, once trust is in place. As James 1:19 says, “Everyone should be quick to listen, slow to speak, and slow to anger.”</p>
+</div>
+<div class="foot">&copy; 2026 Brian Campbell, Ph.D. All rights reserved. Fictional client created for training; voices generated with AI. Scripture quotation from the Berean Standard Bible.<br><a href="#top">Back to top &uarr;</a></div>
+</div>
+<script>
+const au=document.getElementById('au'),pp=document.getElementById('pp'),rg=document.getElementById('rg');
+const SEG=[['part0.mp3',0],['part1.mp3',143.5]],TOTAL=286.89;
+let si=0;
+function now(){return SEG[si][1]+(au.currentTime||0)}
+function go(t,play){t=Math.min(Math.max(0,t),TOTAL-0.5);let k=0;SEG.forEach((g,i)=>{if(t>=g[1])k=i});const off=t-SEG[k][1];
+ if(k!==si){si=k;au.src=SEG[k][0];au.addEventListener('loadedmetadata',function h(){au.removeEventListener('loadedmetadata',h);au.currentTime=off;if(play)au.play().catch(()=>{});upd()});au.load()}
+ else{au.currentTime=off;if(play)au.play().catch(()=>{})}upd(t)}
+function f(s){s=Math.max(0,Math.floor(s));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+function sk(d){go(now()+d,!au.paused)}
+function tg(){au.paused?au.play().catch(()=>{}):au.pause()}
+function upd(tt){const t=(typeof tt==='number')?tt:now();document.getElementById('t0').textContent=f(t);if(!rg.dragging)rg.value=t;
+pp.innerHTML=au.paused?'&#9654; Play':'&#10074;&#10074; Pause'}
+au.addEventListener('timeupdate',()=>upd());au.addEventListener('play',()=>upd());au.addEventListener('pause',()=>upd());
+au.addEventListener('ended',()=>{if(si<SEG.length-1){si++;au.src=SEG[si][0];au.load();au.play().catch(()=>{})}else{upd()}});
+document.getElementById('t1').textContent=f(TOTAL);
+rg.addEventListener('input',()=>{rg.dragging=true;document.getElementById('t0').textContent=f(rg.value)});
+rg.addEventListener('change',()=>{rg.dragging=false;go(+rg.value,!au.paused)});
+upd();
+</script><script>/* Inside the Wix page, show this page from its top. */(function(){try{if(window.top!==window){var t=document.getElementById("top")||document.body;t.scrollIntoView({block:"start"});}}catch(e){}})();</script></body></html>
